@@ -79,13 +79,19 @@ all:
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/bin/false
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/bin/seq
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/bin/awk
+	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/bin/top
 # sbin
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/init
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/halt
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/reboot
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/poweroff
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/swapon
+	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/swapoff
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/chroot
+# overlay
+# copy all files in overlay to rootfs
+	cp -r overlay/* $(TMP_ROOTFS_OUTPUT)
+	chmod +x $(TMP_ROOTFS_OUTPUT)/etc/init.d/rcS
 
 	cd $(TMP_ROOTFS_OUTPUT) && find . | cpio -o -H newc | gzip > ../rootfs.cpio.gz
 

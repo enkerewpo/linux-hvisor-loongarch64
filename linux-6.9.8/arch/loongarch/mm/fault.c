@@ -49,6 +49,9 @@ static void __kprobes no_context(struct pt_regs *regs,
 	 */
 	bust_spinlocks(1);
 
+	// print vmalloc start and vmalloc end
+	pr_alert("vmalloc start: %lx, vmalloc end: %lx\n", VMALLOC_START, VMALLOC_END);
+
 	pr_alert("CPU %d Unable to handle kernel paging request at "
 	       "virtual address %0*lx, era == %0*lx, ra == %0*lx\n",
 	       raw_smp_processor_id(), field, address, field, regs->csr_era,

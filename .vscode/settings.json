@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.loongarch": "makefile",
+        "*.S": "loongarch",
+        "*.asm": "loongarch",
+        "qspinlock_types.h": "c"
+    }
+}

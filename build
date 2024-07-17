@@ -40,6 +40,13 @@ if [ "$1" = "menuconfig" ]; then
     exit 0
 fi
 
+if [ "$1" = "rootfs" ]; then
+    echo "Building rootfs"
+    cd rootfs
+    make
+    exit 0
+fi
+
 if [ "$1" = "save" ]; then
     echo "Running save defconfig, copying .config to arch/$ARCH/configs/$TARGET_DEFCONFIG"
     cd $LINUX_SRC_DIR
