@@ -1,3 +1,4 @@
 output
 *.gz
 busybox/*
+*.cpio.gz
