@@ -93,6 +93,11 @@ all:
 	cp -r overlay/* $(TMP_ROOTFS_OUTPUT)
 	chmod +x $(TMP_ROOTFS_OUTPUT)/etc/init.d/rcS
 
+# copy hvisor stuff
+	cp ../../hvisor-tool/tools/hvisor $(TMP_ROOTFS_OUTPUT)/bin
+	mkdir -p $(TMP_ROOTFS_OUTPUT)/lib/modules
+	cp ../../hvisor-tool/driver/hvisor.ko $(TMP_ROOTFS_OUTPUT)/lib/modules
+
 	cd $(TMP_ROOTFS_OUTPUT) && find . | cpio -o -H newc | gzip > ../rootfs.cpio.gz
 
 # http://ftp.loongnix.cn/toolchain/gcc/release/loongarch/gcc8/toolchain-loongarch64-linux-gnu-cross-830-rc1.0-2022-04-22.tar.xz
