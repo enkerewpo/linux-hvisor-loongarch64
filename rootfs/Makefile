@@ -80,6 +80,14 @@ all:
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/bin/seq
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/bin/awk
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/bin/top
+	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/bin/less
+	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/bin/more
+	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/bin/killall
+	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/bin/ping
+	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/bin/ifconfig
+	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/bin/ip
+	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/bin/netstat
+	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/bin/uname
 # sbin
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/init
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/halt
@@ -87,16 +95,33 @@ all:
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/poweroff
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/swapon
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/swapoff
+	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/chown
+	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/mknod
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/chroot
+	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/insmod
+	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/rmmod
+	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/lsmod
+	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/modprobe
+	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/ifup
 # overlay
 # copy all files in overlay to rootfs
 	cp -r overlay/* $(TMP_ROOTFS_OUTPUT)
 	chmod +x $(TMP_ROOTFS_OUTPUT)/etc/init.d/rcS
 
 # copy hvisor stuff
+# first check whether hvisor-tool exists
+# if not, skip this step
+
+ifeq (,$(wildcard ../../hvisor-tool))
+	@echo "hvisor-tool not found, skip copying hvisor stuff"
+else
+	@echo "======================================="
+	@echo "hvisor-tool found, copying hvisor stuff"
+	@echo "======================================="
 	cp ../../hvisor-tool/tools/hvisor $(TMP_ROOTFS_OUTPUT)/bin
 	mkdir -p $(TMP_ROOTFS_OUTPUT)/lib/modules
 	cp ../../hvisor-tool/driver/hvisor.ko $(TMP_ROOTFS_OUTPUT)/lib/modules
+endif
 
 	cd $(TMP_ROOTFS_OUTPUT) && find . | cpio -o -H newc | gzip > ../rootfs.cpio.gz
 
