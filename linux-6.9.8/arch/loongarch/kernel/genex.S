@@ -26,7 +26,7 @@ SYM_FUNC_START(__arch_cpu_idle)
 	nop
 	nop
 	nop
-	// idle	0
+	idle	0
 	/* end of rollback region */
 1:	jr	ra
 SYM_FUNC_END(__arch_cpu_idle)

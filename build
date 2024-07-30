@@ -56,7 +56,7 @@ fi
 
 if [ "$1" = "kernel" ]; then
     echo "Building kernel"
-    make $ARGS -j$NUM_JOBS
+    make $ARGS -j$NUM_JOBS EXTRA_CFLAGS="-DCONFIG_GENERIC_IDLE_POLL_SETUP"
     # objdump the asm of vmlinux, dump all sections' data
     cd $LINUX_SRC_DIR
     # loongarch64-unknown-linux-gnu-objdump -D vmlinux >vmlinux.asm

@@ -138,7 +138,7 @@
 
  chosen {
   stdout-path = "serial0:115200n8";
-  bootargs = "earlycon console=ttyS0,115200n8 initramfs_async=false rootwait";
+  bootargs = "earlycon console=ttyS0,115200n8 initramfs_async=false rootwait nohlt";
 
 
  };
