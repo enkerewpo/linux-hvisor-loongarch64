@@ -1,0 +1,26 @@
+Welcome to hvisor(loongarch) root linux! Buildroot/wheatfox 2024
+[root@dedsec /]# ./in
+sh: ./in: No such file or directory
+[root@dedsec /]# ./install.sh 
+[   12.220738] hvisor: loading out-of-tree module taints kernel.
+[   12.225346] hvisor init done!!!
+successfully installed hvisor, goodbye
+[root@dedsec /]# ./run_guest1.sh 
+[   14.420596] hvisor_map: filp = 0000000038b1abaa
+[   14.421055] hvisor_map: vma->vm_pgoff = 90001
+[   14.421173] hvisor_map: size = 2000
+zone_start: json[   14.422205] reserved memory count: 1
+[   14.422388] child node name: nonroot
+[   14.422512] child node full_name: nonroot@c0000000
+[   14.422670] OF: reserved mem: of_reserved_mem_lookup: name nonroot@c0000000
+_config_path /to[   14.422856] OF: reserved mem: of_reserved_mem_lookup: reserved_mem[0].name ����������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
+[   14.453588] failed to get reserved memory struct, rmem = 0000000000000000
+[   14.455850] The physical address to be mapped is not within the reserved memory
+ol/guest1.json
+zone_id(from json) = 5
+memory_region 0: type 0, physical_start c0000000, virtual_start 90000000, size 800000
+memory_region 1: type 1, physical_start 1fe00000, virtual_start 1fe00000, size 1000
+load_image_to_memory: page_size 1000, map_size 2000
+load_image_to_memory: virt_addr 0xffffffffffffffff
+Error mapping memory: Bad address
+[root@dedsec /]# QEMU: Terminated
