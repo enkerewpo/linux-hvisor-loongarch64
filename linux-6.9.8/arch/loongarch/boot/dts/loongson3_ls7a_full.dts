@@ -150,8 +150,8 @@
 
   reg = <0 0x00200000 0 0x0ee00000
   0 0x90000000 0 0x10000000
-  0 0xe0000000 0 0x10000000
-  0 0xc0000000 0 0x9f00000
+  0 0xf0000000 0 0x10000000
+  0 0xc0000000 0 0x30000000
   >;
  };
 
@@ -162,9 +162,9 @@
 
 	nonroot0xc0000000 {
 		no-map;
-		reg = <0x00 0xc0000000 0x00 0x9f00000>;
+		reg = <0x00 0xc0000000 0x00 0x30000000>;
 	};
-};
+ };
 
  cpuic: interrupt-controller {
   compatible = "loongson,cpu-interrupt-controller";
@@ -187,9 +187,6 @@
   compatible = "loongson,nbus", "simple-bus";
   #address-cells = <2>;
   #size-cells = <2>;
-
-
-
 
   ranges = <0 0x10000000 0 0x10000000 0 0x10000000
   0 0x2000000 0 0x2000000 0 0x2000000
