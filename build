@@ -8,6 +8,7 @@ ARCH=loongarch
 CROSS_COMPILE=loongarch64-unknown-linux-gnu-
 NUM_JOBS=16
 TARGET_DEFCONFIG=loongson3_defconfig
+NONROOT_TARGET_DEFCONFIG=loongson3_nonroot_defconfig
 LINUX_SRC_DIR=linux-6.9.8
 ARGS="-C $LINUX_SRC_DIR ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE"
 
@@ -25,6 +26,12 @@ fi
 if [ "$1" = "def" ]; then
     echo "Running defconfig"
     make $ARGS $TARGET_DEFCONFIG
+    exit 0
+fi
+
+if [ "$1" = "nonroot" ]; then
+    echo "Running nonroot defconfig"
+    make $ARGS $NONROOT_TARGET_DEFCONFIG
     exit 0
 fi
 
