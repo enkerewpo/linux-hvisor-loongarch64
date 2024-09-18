@@ -364,6 +364,8 @@ static const struct bus_type virtio_bus = {
 
 int __register_virtio_driver(struct virtio_driver *driver, struct module *owner)
 {
+	pr_info("[WHEATFOX] __register_virtio_driver, driver->driver.name: %s\n", driver->driver.name);
+	
 	/* Catch this early. */
 	BUG_ON(driver->feature_table_size && !driver->feature_table);
 	driver->driver.bus = &virtio_bus;

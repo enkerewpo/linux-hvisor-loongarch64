@@ -137,10 +137,8 @@
  };
 
  chosen {
-  stdout-path = "serial0:115200n8";
-  bootargs = "earlycon console=ttyS0,115200n8 initramfs_async=false rootwait debug";
-//   bootargs = "earlycon console=ttyS0,115200n8 initramfs_async=false rootwait nohlt";
-
+   stdout-path = "serial0:115200n8";
+   bootargs = "earlycon console=ttyS0,115200n8 initramfs_async=false rootwait debug";
  };
 
  mem: memory {
@@ -151,6 +149,15 @@
   0 0x90000000 0 0x10000000
   >;
  };
+
+  // virtio console
+  virtio_mmio@10001000 {
+    dma-coherent;
+    compatible = "virtio,mmio";
+    interrupt-parent = <&icu>;
+    interrupts = <1>;
+    reg = <0x0 0x10001000 0x0 0x200>;
+  };
 
  cpuic: interrupt-controller {
   compatible = "loongson,cpu-interrupt-controller";
@@ -202,11 +209,12 @@
    reg = <0 0x1fe001e0 0 0x10>;
    clocks = <&clks 12>;
    clock-frequency = <100000000>;
-
+  //  interrupts = <13>;
    interrupt-parent = <&icu>;
    no-loopback-test;
    status = "okay";
   };
+
 # 104 "loongson3_ls7a.dts"
  };
 };

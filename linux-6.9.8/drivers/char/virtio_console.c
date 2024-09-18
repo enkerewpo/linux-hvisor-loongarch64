@@ -1327,6 +1327,8 @@ static int add_port(struct ports_device *portdev, u32 id)
 	dev_t devt;
 	int err;
 
+	pr_info("[WHEATFOX] add_port, name: %s\n", portdev->vdev->dev.parent->kobj.name);
+
 	port = kmalloc(sizeof(*port), GFP_KERNEL);
 	if (!port) {
 		err = -ENOMEM;
@@ -1968,6 +1970,8 @@ static int virtcons_probe(struct virtio_device *vdev)
 	int err;
 	bool multiport;
 
+	pr_info("[WHEATFOX] virtcons_probe, name: %s\n", vdev->dev.parent->kobj.name);
+
 	/* We only need a config space if features are offered */
 	if (!vdev->config->get &&
 	    (virtio_has_feature(vdev, VIRTIO_CONSOLE_F_SIZE)
@@ -2197,6 +2201,8 @@ static struct virtio_driver virtio_rproc_serial = {
 static int __init virtio_console_init(void)
 {
 	int err;
+
+	pr_info("[WHEATFOX] virtio_console_init\n");
 
 	err = class_register(&port_class);
 	if (err)

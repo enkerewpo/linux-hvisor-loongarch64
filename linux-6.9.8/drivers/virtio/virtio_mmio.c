@@ -619,6 +619,8 @@ static int virtio_mmio_probe(struct platform_device *pdev)
 	unsigned long magic;
 	int rc;
 
+	pr_info("[WHEATFOX] virtio_mmio_probe\n");
+
 	vm_dev = kzalloc(sizeof(*vm_dev), GFP_KERNEL);
 	if (!vm_dev)
 		return -ENOMEM;
@@ -727,6 +729,8 @@ static int vm_cmdline_set(const char *device,
 	unsigned int irq;
 	int processed, consumed = 0;
 	struct platform_device *pdev;
+
+	pr_info("[WHEATFOX] vm_cmdline_set\n");
 
 	/* Consume "size" part of the command line parameter */
 	size = memparse(device, &str);

@@ -4,3 +4,5 @@ vmlinux.readelf.txt
 GPATH
 GRTAGS
 GTAGS
+.flag
+nr_tmp
