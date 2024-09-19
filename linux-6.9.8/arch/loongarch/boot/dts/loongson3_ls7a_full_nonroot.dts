@@ -141,6 +141,11 @@
    bootargs = "earlycon console=ttyS0,115200n8 initramfs_async=false rootwait debug";
  };
 
+//  chosen {
+//   stdout-path = "/virtio_mmio@10001000";
+//   bootargs = "earlycon console=ttyS0,115200n8 initramfs_async=false rootwait debug";
+// };
+
  mem: memory {
   name = "memory";
   device_type = "memory";

@@ -36,6 +36,7 @@ function cp_nonroot() {
     echo "Copying vmlinux.bin to $WORKDIR/nr_tmp"
     cp $LINUX_SRC_DIR_FULL/arch/$ARCH/boot/vmlinux.bin $WORKDIR/nr_tmp/vmlinux.bin
     cp $LINUX_SRC_DIR_FULL/vmlinux $WORKDIR/nr_tmp/vmlinux
+    loongarch64-unknown-linux-gnu-readelf -a $WORKDIR/nr_tmp/vmlinux >$WORKDIR/nr_tmp/vmlinux.readelf.txt
 }
 
 function build_kernel() {
