@@ -145,9 +145,9 @@
 
  hvisor_device {
   compatible = "hvisor";
-  interrupt-parent = <0x01>;
+  interrupt-parent = <&cpuic>;
   interrupts = <0x00 0x20 0x01>;
-  };
+ };
 
  mem: memory {
   name = "memory";
