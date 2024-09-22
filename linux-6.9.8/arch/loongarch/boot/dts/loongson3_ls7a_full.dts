@@ -3,17 +3,8 @@
 # 0 "<command-line>"
 # 1 "loongson3_ls7a.dts"
 /dts-v1/;
-
-
-
-
 # 1 "loongson3.dtsi" 1
-
 / {
-
-
-
-
  cpus {
   #address-cells = <1>;
   #size-cells = <0>;
@@ -31,98 +22,78 @@
    compatible = "cache";
    next-level-cache = <&scache0>;
   };
-
   vcache1: l2-cache1 {
    compatible = "cache";
    next-level-cache = <&scache0>;
   };
-
   vcache2: l2-cache2 {
    compatible = "cache";
    next-level-cache = <&scache0>;
   };
-
   vcache3: l2-cache3 {
    compatible = "cache";
    next-level-cache = <&scache0>;
   };
-
   vcache4: l2-cache4 {
    compatible = "cache";
    next-level-cache = <&scache1>;
   };
-
   vcache5: l2-cache5 {
    compatible = "cache";
    next-level-cache = <&scache1>;
   };
-
   vcache6: l2-cache6 {
    compatible = "cahce";
    next-level-cache = <&scache1>;
   };
-
   vcache7: l2-cache7 {
    compatible = "cache";
    next-level-cache = <&scache1>;
   };
-
   vcache8: l2-cache8 {
    compatible = "cache";
    next-level-cache = <&scache2>;
   };
-
   vcache9: l2-cache9 {
    compatible = "cache";
    next-level-cache = <&scache2>;
   };
-
   vcachea: l2-cachea {
    compatible = "cache";
    next-level-cache = <&scache2>;
   };
-
   vcacheb: l2-cacheb {
    compatible = "cache";
    next-level-cache = <&scache2>;
   };
-
   vcachec: l2-cachec {
    compatible = "cache";
    next-level-cache = <&scache3>;
   };
-
   vcached: l2-cached {
    compatible = "cache";
    next-level-cache = <&scache3>;
   };
-
   vcachee: l2-cachee {
    compatible = "cache";
    next-level-cache = <&scache3>;
   };
-
   vcachef: l2-cachef {
    compatible = "cache";
    next-level-cache = <&scache3>;
   };
-
   scache0: l3-cache0 {
    compatible = "cache";
   };
-
   scache1: l3-cache1 {
    compatible = "cache";
   };
-
   scache2: l3-cache2 {
    compatible = "cache";
   };
-
   scache3: l3-cache3 {
    compatible = "cache";
-  };
- };
+  }; };
 };
 # 7 "loongson3_ls7a.dts" 2
 / {
@@ -133,14 +104,12 @@
 
  aliases {
   serial0 = &uart0;
-
  };
 
  chosen {
   stdout-path = "serial0:115200n8";
   bootargs = "earlycon console=ttyS0,115200n8 initramfs_async=false rootwait debug";
 //   bootargs = "earlycon console=ttyS0,115200n8 initramfs_async=false rootwait nohlt";
-
  };
 
  hvisor_device {
@@ -153,7 +122,6 @@
   name = "memory";
   device_type = "memory";
 
-
   reg = <0 0x00200000 0 0x0ee00000
   0 0x90000000 0 0x10000000
   0 0xf0000000 0 0x10000000
@@ -165,7 +133,6 @@
 	#address-cells = <0x02>;
 	#size-cells = <0x02>;
 	ranges;
-
 	nonroot0xc0000000 {
 		no-map;
 		reg = <0x00 0xc0000000 0x00 0x30000000>;
@@ -222,8 +189,7 @@
    reg = <0 0x1fe001e0 0 0x10>;
    clocks = <&clks 12>;
    clock-frequency = <100000000>;
-
-   interrupt-parent = <&icu>;
+   interrupt-parent = <&cpuic>;
    no-loopback-test;
    status = "okay";
   };
