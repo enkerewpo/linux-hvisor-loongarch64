@@ -137,12 +137,14 @@
  };
 
 //  chosen {
-//    stdout-path = "serial0:115200n8";
-//    bootargs = "earlycon console=ttyS0,115200n8 initramfs_async=false rootwait debug";
+//   stdout-path = "serial0:115200n8";
+//   //  bootargs = "earlycon console=ttyS0,115200n8 initramfs_async=false rootwait debug";
+//   bootargs = "earlycon initramfs_async=false rootwait debug";
 //  };
 
  chosen {
   stdout-path = "/virtio_mmio@10001000";
+  // stdout-path = "serial0:115200n8";
   bootargs = "earlycon initramfs_async=false rootwait debug";
 };
 
@@ -215,9 +217,9 @@
    clocks = <&clks 12>;
    clock-frequency = <100000000>;
   //  interrupts = <13>;
-   interrupt-parent = <&icu>;
+  //  interrupt-parent = <&icu>;
    no-loopback-test;
-   status = "disabled";
+  //  status = "disabled";
   };
 
 # 104 "loongson3_ls7a.dts"

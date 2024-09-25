@@ -6,7 +6,7 @@
 
 ARCH=loongarch
 CROSS_COMPILE=loongarch64-unknown-linux-gnu-
-NUM_JOBS=16
+NUM_JOBS=$(nproc)
 TARGET_DEFCONFIG=loongson3_defconfig
 NONROOT_TARGET_DEFCONFIG=loongson3_nonroot_defconfig
 LINUX_SRC_DIR=linux-6.9.8
