@@ -143,8 +143,8 @@
 //  };
 
  chosen {
-  stdout-path = "/virtio_mmio@10001000";
-  // stdout-path = "serial0:115200n8";
+  // stdout-path = "/virtio_mmio@10001000";
+  stdout-path = "serial0:115200n8";
   bootargs = "earlycon initramfs_async=false rootwait debug";
 };
 
@@ -157,14 +157,6 @@
   >;
  };
 
-  // virtio console
-  virtio_mmio@10001000 {
-    dma-coherent;
-    compatible = "virtio,mmio";
-    interrupt-parent = <&icu>;
-    interrupts = <1>;
-    reg = <0x0 0x10001000 0x0 0x200>;
-  };
 
  cpuic: interrupt-controller {
   compatible = "loongson,cpu-interrupt-controller";
@@ -193,6 +185,15 @@
   0 0x20000000 0 0x20000000 0 0x10000000
   0 0x40000000 0 0x40000000 0 0x40000000
   0xfe 0x00000000 0xfe 0x00000000 0 0x40000000>;
+
+  // virtio console
+  virtio_mmio@10001000 {
+    dma-coherent;
+    compatible = "virtio,mmio";
+    // interrupt-parent = <&icu>;
+    interrupts = <66>;
+    reg = <0x0 0x10001000 0x0 0x200>;
+  };
 
   osc_clk: osc-clock@0 {
    #clock-cells = <0>;

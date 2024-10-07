@@ -438,6 +438,8 @@ struct irq_domain *irq_find_matching_fwspec(struct irq_fwspec *fwspec,
 	struct fwnode_handle *fwnode = fwspec->fwnode;
 	int rc;
 
+	pr_info("[WHEATFOX] irq_find_matching_fwspec, fwnode@%p, bus_token=%d\n", fwnode, bus_token);	
+
 	/* We might want to match the legacy controller last since
 	 * it might potentially be set to match all interrupts in
 	 * the absence of a device node. This isn't a problem so far
@@ -449,6 +451,9 @@ struct irq_domain *irq_find_matching_fwspec(struct irq_fwspec *fwspec,
 	 */
 	mutex_lock(&irq_domain_mutex);
 	list_for_each_entry(h, &irq_domain_list, link) {
+
+		pr_info("[WHEATFOX] irq_find_matching_fwspec, listing, h->name=%s\n", h->name);
+
 		if (h->ops->select && bus_token != DOMAIN_BUS_ANY)
 			rc = h->ops->select(h, fwspec, bus_token);
 		else if (h->ops->match)
@@ -458,8 +463,11 @@ struct irq_domain *irq_find_matching_fwspec(struct irq_fwspec *fwspec,
 			      ((bus_token == DOMAIN_BUS_ANY) ||
 			       (h->bus_token == bus_token)));
 
+		pr_info("[WHEATFOX] irq_find_matching_fwspec, rc=%d\n", rc);
+
 		if (rc) {
 			found = h;
+			pr_info("[WHEATFOX] irq_find_matching_fwspec, found h@%p\n", h);
 			break;
 		}
 	}

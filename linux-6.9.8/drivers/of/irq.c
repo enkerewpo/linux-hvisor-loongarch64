@@ -433,11 +433,19 @@ int of_irq_get(struct device_node *dev, int index)
 	struct of_phandle_args oirq;
 	struct irq_domain *domain;
 
+	pr_info("[WHEATFOX] of_irq_get, dev@%p, index=%d\n", dev, index);
+
 	rc = of_irq_parse_one(dev, index, &oirq);
+
+	pr_info("[WHEATFOX] of_irq_get, of_irq_parse_one rc=%d\n", rc);
+
 	if (rc)
 		return rc;
 
 	domain = irq_find_host(oirq.np);
+
+	pr_info("[WHEATFOX] of_irq_get, irq_find_host domain@%p\n", domain);
+
 	if (!domain) {
 		rc = -EPROBE_DEFER;
 		goto out;

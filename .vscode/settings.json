@@ -3,7 +3,9 @@
         "*.loongarch": "makefile",
         "*.S": "loongarch",
         "*.asm": "loongarch",
-        "qspinlock_types.h": "c"
+        "qspinlock_types.h": "c",
+        "*.tcc": "c",
+        "random": "c"
     },
     "editor.tabSize": 4,
     "editor.insertSpaces": true,

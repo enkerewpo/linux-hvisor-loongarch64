@@ -174,6 +174,8 @@ static int virtio_features_ok(struct virtio_device *dev)
 
 	might_sleep();
 
+	pr_info("[WHEATFOX] virtio_features_ok, dev->id.device: %d\n", dev->id.device);
+
 	if (virtio_check_mem_acc_cb(dev)) {
 		if (!virtio_has_feature(dev, VIRTIO_F_VERSION_1)) {
 			dev_warn(&dev->dev,
@@ -196,6 +198,8 @@ static int virtio_features_ok(struct virtio_device *dev)
 	if (!(status & VIRTIO_CONFIG_S_FEATURES_OK)) {
 		dev_err(&dev->dev, "virtio: device refuses features: %x\n",
 			status);
+		pr_info("[WHEATFOX] virtio_features_ok, status: %x\n", status);
+		pr_info("[WHEATFOX] virtio_features_ok, VIRTIO_CONFIG_S_FEATURES_OK: %x\n", VIRTIO_CONFIG_S_FEATURES_OK);
 		return -ENODEV;
 	}
 	return 0;
@@ -243,11 +247,15 @@ static int virtio_dev_probe(struct device *_d)
 	u64 driver_features;
 	u64 driver_features_legacy;
 
+	pr_info("[WHEATFOX] virtio_dev_probe, dev->id.device: %d\n", dev->id.device);
+
 	/* We have a driver! */
 	virtio_add_status(dev, VIRTIO_CONFIG_S_DRIVER);
 
 	/* Figure out what features the device supports. */
 	device_features = dev->config->get_features(dev);
+
+	pr_info("[WHEATFOX] virtio_dev_probe, device_features: %llx\n", device_features);
 
 	/* Figure out what features the driver supports. */
 	driver_features = 0;
@@ -298,7 +306,12 @@ static int virtio_dev_probe(struct device *_d)
 		}
 	}
 
+	pr_info("[WHEATFOX] virtio_dev_probe, calling virtio_features_ok\n");
+
 	err = virtio_features_ok(dev);
+
+	pr_info("[WHEATFOX] virtio_dev_probe, virtio_features_ok -> err: %d\n", err);
+
 	if (err)
 		goto err;
 

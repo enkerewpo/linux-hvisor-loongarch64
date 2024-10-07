@@ -1829,6 +1829,9 @@ static int init_vqs(struct ports_device *portdev)
 		goto free;
 	}
 
+	pr_info("[WHEATFOX] init_vqs, vqs@%p, io_callbacks@%p, io_names@%p, in_vqs@%p, out_vqs@%p\n",
+		vqs, io_callbacks, io_names, portdev->in_vqs, portdev->out_vqs);
+
 	/*
 	 * For backward compat (newer host but older guest), the host
 	 * spawns a console port first and also inits the vqs for port
@@ -1855,10 +1858,16 @@ static int init_vqs(struct ports_device *portdev)
 			io_names[j + 1] = "output";
 		}
 	}
+
+	pr_info("[WHEATFOX] init_vqs, calling virtio_find_vqs, nr_queues=%u\n", nr_queues);
+
 	/* Find the queues. */
 	err = virtio_find_vqs(portdev->vdev, nr_queues, vqs,
 			      io_callbacks,
 			      (const char **)io_names, NULL);
+
+	pr_info("[WHEATFOX] init_vqs, virtio_find_vqs returned %d\n", err);
+
 	if (err)
 		goto free;
 
@@ -1880,6 +1889,8 @@ static int init_vqs(struct ports_device *portdev)
 	kfree(io_callbacks);
 	kfree(vqs);
 
+	pr_info("[WHEATFOX] init_vqs, all ok\n");
+
 	return 0;
 
 free:
@@ -1888,6 +1899,8 @@ free:
 	kfree(io_names);
 	kfree(io_callbacks);
 	kfree(vqs);
+
+	pr_info("[WHEATFOX] init_vqs, error %d\n", err);
 
 	return err;
 }
