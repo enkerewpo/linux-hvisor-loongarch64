@@ -1829,7 +1829,7 @@ static int init_vqs(struct ports_device *portdev)
 		goto free;
 	}
 
-	pr_info("[WHEATFOX] init_vqs, vqs@%p, io_callbacks@%p, io_names@%p, in_vqs@%p, out_vqs@%p\n",
+	pr_info("[WHEATFOX] init_vqs, vqs@%px, io_callbacks@%px, io_names@%px, in_vqs@%px, out_vqs@%px\n",
 		vqs, io_callbacks, io_names, portdev->in_vqs, portdev->out_vqs);
 
 	/*

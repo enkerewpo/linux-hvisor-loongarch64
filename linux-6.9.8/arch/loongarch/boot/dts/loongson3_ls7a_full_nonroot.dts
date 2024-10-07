@@ -157,6 +157,14 @@
   >;
  };
 
+  // virtio console
+  virtio_mmio@10001000 {
+    dma-coherent;
+    compatible = "virtio,mmio";
+    interrupt-parent = <&cpuic>;
+    interrupts = <0x00 0x20 0x01>;
+    reg = <0x0 0x10001000 0x0 0x200>;
+  };
 
  cpuic: interrupt-controller {
   compatible = "loongson,cpu-interrupt-controller";
@@ -164,16 +172,16 @@
   #interrupt-cells = <1>;
  };
 
- icu: interrupt-controller@1fe01400 {
-  compatible = "loongson";
-  interrupt-controller;
-  #interrupt-cells = <1>;
-  reg = <0 0x1fe01400 0 0x40
-  0 0x1fe01040 0 16>;
-  interrupt-parent = <&cpuic>;
-  interrupt-names = "cascade";
-  interrupts = <3>;
- };
+//  icu: interrupt-controller@1fe01400 {
+//   compatible = "loongson";
+//   interrupt-controller;
+//   #interrupt-cells = <1>;
+//   reg = <0 0x1fe01400 0 0x40
+//   0 0x1fe01040 0 16>;
+//   interrupt-parent = <&cpuic>;
+//   interrupt-names = "cascade";
+//   interrupts = <3>;
+//  };
 
  board: platform {
   compatible = "loongson,nbus", "simple-bus";
@@ -186,15 +194,6 @@
   0 0x40000000 0 0x40000000 0 0x40000000
   0xfe 0x00000000 0xfe 0x00000000 0 0x40000000>;
 
-  // virtio console
-  virtio_mmio@10001000 {
-    dma-coherent;
-    compatible = "virtio,mmio";
-    // interrupt-parent = <&icu>;
-    interrupts = <66>;
-    reg = <0x0 0x10001000 0x0 0x200>;
-  };
-
   osc_clk: osc-clock@0 {
    #clock-cells = <0>;
    compatible = "fixed-clock";
@@ -204,7 +203,7 @@
   };
 
   clks: clock-controller@1fe00480 {
-   compatible = "loongson,ls2x-clk";
+   compatible = "loongson";
    reg = <0 0x1fe00480 0 1>;
    clocks = <&osc_clk>;
    clock-names = "ref_clk";
@@ -217,10 +216,9 @@
    reg = <0 0x1fe001e0 0 0x10>;
    clocks = <&clks 12>;
    clock-frequency = <100000000>;
-  //  interrupts = <13>;
-  //  interrupt-parent = <&icu>;
+   interrupt-parent = <&cpuic>;
    no-loopback-test;
-  //  status = "disabled";
+   status = "okay";
   };
 
 # 104 "loongson3_ls7a.dts"

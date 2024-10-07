@@ -438,7 +438,7 @@ struct irq_domain *irq_find_matching_fwspec(struct irq_fwspec *fwspec,
 	struct fwnode_handle *fwnode = fwspec->fwnode;
 	int rc;
 
-	pr_info("[WHEATFOX] irq_find_matching_fwspec, fwnode@%p, bus_token=%d\n", fwnode, bus_token);	
+	pr_info("[WHEATFOX] irq_find_matching_fwspec, fwnode@%px, bus_token=%d\n", fwnode, bus_token);	
 
 	/* We might want to match the legacy controller last since
 	 * it might potentially be set to match all interrupts in
@@ -467,7 +467,7 @@ struct irq_domain *irq_find_matching_fwspec(struct irq_fwspec *fwspec,
 
 		if (rc) {
 			found = h;
-			pr_info("[WHEATFOX] irq_find_matching_fwspec, found h@%p\n", h);
+			pr_info("[WHEATFOX] irq_find_matching_fwspec, found h@%px\n", h);
 			break;
 		}
 	}

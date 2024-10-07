@@ -145,16 +145,16 @@
   #interrupt-cells = <1>;
  };
 
- icu: interrupt-controller@1fe01400 {
-  compatible = "loongson";
-  interrupt-controller;
-  #interrupt-cells = <1>;
-  reg = <0 0x1fe01400 0 0x40
-  0 0x1fe01040 0 16>;
-  interrupt-parent = <&cpuic>;
-  interrupt-names = "cascade";
-  interrupts = <3>;
- };
+//  icu: interrupt-controller@1fe01400 {
+//   compatible = "loongson";
+//   interrupt-controller;
+//   #interrupt-cells = <1>;
+//   reg = <0 0x1fe01400 0 0x40
+//   0 0x1fe01040 0 16>;
+//   interrupt-parent = <&cpuic>;
+//   interrupt-names = "cascade";
+//   interrupts = <3>;
+//  };
 
  board: platform {
   compatible = "loongson,nbus", "simple-bus";

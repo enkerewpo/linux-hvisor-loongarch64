@@ -181,7 +181,7 @@ int platform_get_irq_optional(struct platform_device *dev, unsigned int num)
 	struct fwnode_handle *fwnode = dev_fwnode(&dev->dev);
 	struct resource *r;
 
-	pr_info("[WHEATFOX] platform_get_irq_optional, dev@%p, num=%d, fwnode@%p\n", dev, num, fwnode);
+	pr_info("[WHEATFOX] platform_get_irq_optional, dev@%px, num=%d, fwnode@%px\n", dev, num, fwnode);
 
 	if (is_of_node(fwnode)) {
 		pr_info("[WHEATFOX] platform_get_irq_optional, is_of_node\n");
@@ -200,7 +200,7 @@ int platform_get_irq_optional(struct platform_device *dev, unsigned int num)
 		}
 	}
 
-	pr_info("[WHEATFOX] platform_get_irq_optional, r@%p\n", r);
+	pr_info("[WHEATFOX] platform_get_irq_optional, r@%px\n", r);
 
 	/*
 	 * The resources may pass trigger flags to the irqs that need
@@ -268,6 +268,9 @@ int platform_get_irq(struct platform_device *dev, unsigned int num)
 	int ret;
 
 	ret = platform_get_irq_optional(dev, num);
+
+	pr_info("[WHEATFOX] platform_get_irq, dev@%px, num=%d, platform_get_irq_optional ret=%d\n", dev, num, ret);
+
 	if (ret < 0)
 		return dev_err_probe(&dev->dev, ret,
 				     "IRQ index %u not found\n", num);

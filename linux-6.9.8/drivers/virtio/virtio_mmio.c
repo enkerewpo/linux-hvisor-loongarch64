@@ -498,7 +498,7 @@ static int vm_find_vqs(struct virtio_device *vdev, unsigned int nvqs,
 	int irq = platform_get_irq(vm_dev->pdev, 0);
 	int i, err, queue_idx = 0;
 
-	pr_info("[WHEATOFX] vm_find_vqs start, vm_dev@%p, irq=%d\n", vm_dev, irq);
+	pr_info("[WHEATFOX] vm_find_vqs start, vm_dev@%px, irq=%d\n", vm_dev, irq);
 
 	if (irq < 0)
 		return irq;
@@ -640,7 +640,7 @@ static int virtio_mmio_probe(struct platform_device *pdev)
 		goto free_vm_dev;
 	}
 
-	pr_info("[WHEATFOX] virtio_mmio_probe: base = %p, now checking magic value\n", vm_dev->base);
+	pr_info("[WHEATFOX] virtio_mmio_probe: base = %px, now checking magic value\n", vm_dev->base);
 
 	/* Check magic value */
 	magic = readl(vm_dev->base + VIRTIO_MMIO_MAGIC_VALUE);
