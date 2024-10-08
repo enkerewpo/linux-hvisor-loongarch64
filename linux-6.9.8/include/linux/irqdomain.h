@@ -322,16 +322,16 @@ static inline struct irq_domain *irq_find_host(struct device_node *node)
 {
 	struct irq_domain *d;
 
-	pr_info("[WHEATFOX] irq_find_host, node@%p\n", node);
+	pr_info("[WHEATFOX] irq_find_host, node@%px\n", node);
 
 	d = irq_find_matching_host(node, DOMAIN_BUS_WIRED);
 
-	pr_info("[WHEATFOX] irq_find_host, irq_find_matching_host d@%p\n", d);
+	pr_info("[WHEATFOX] irq_find_host, irq_find_matching_host d@%px\n", d);
 
 	if (!d)
 		d = irq_find_matching_host(node, DOMAIN_BUS_ANY);
 
-	pr_info("[WHEATFOX] irq_find_host, irq_find_matching_host d@%p\n", d);
+	pr_info("[WHEATFOX] irq_find_host, irq_find_matching_host d@%px\n", d);
 	return d;
 }
 
