@@ -58,6 +58,13 @@ if [ "$1" = "def" ]; then
     exit 0
 fi
 
+if [ "$1" = "nonroot_def" ]; then
+    echo "Running nonroot defconfig"
+    make $ARGS $NONROOT_TARGET_DEFCONFIG
+    echo "NONROOT" >.flag
+    exit 0
+fi
+
 if [ "$1" = "nonroot" ]; then
     cp $LINUX_SRC_DIR_FULL/../rootfs/buildroot/rootfs.cpio.gz $LINUX_SRC_DIR_FULL/../rootfs/nonroot_tmproot.cpio.gz
     # unpack the cpio
@@ -68,6 +75,9 @@ if [ "$1" = "nonroot" ]; then
     sudo cpio -id <$LINUX_SRC_DIR_FULL/../rootfs/nonroot_tmproot.cpio
     # modify the rootfs, rm /tools
     sudo rm -rf tool
+    # replace the /etc/profile with contents of rootfs/nonroot_profile
+    sudo cp $LINUX_SRC_DIR_FULL/../rootfs/nonroot_profile etc/profile
+    sudo tail -n 10 etc/profile
     # repack the cpio
     sudo find . | cpio -o -H newc | gzip -9 >../nonroot_fs.cpio.gz
     cd $LINUX_SRC_DIR_FULL/../rootfs
@@ -103,6 +113,13 @@ if [ "$1" = "save" ]; then
     echo "Running save defconfig, copying .config to arch/$ARCH/configs/$TARGET_DEFCONFIG"
     cd $LINUX_SRC_DIR
     cp .config arch/$ARCH/configs/$TARGET_DEFCONFIG
+    exit 0
+fi
+
+if [ "$1" = "nonroot_save" ]; then
+    echo "Running save defconfig, copying .config to arch/$ARCH/configs/$NONROOT_TARGET_DEFCONFIG"
+    cd $LINUX_SRC_DIR
+    cp .config arch/$ARCH/configs/$NONROOT_TARGET_DEFCONFIG
     exit 0
 fi
 

@@ -143,9 +143,9 @@
 //  };
 
  chosen {
-  // stdout-path = "/virtio_mmio@10001000";
-  stdout-path = "serial0:115200n8";
-  bootargs = "earlycon initramfs_async=false rootwait debug";
+  stdout-path = "/virtio_mmio@10001000";
+  // stdout-path = "serial0:115200n8";
+  bootargs = "earlycon console=hvc0 rootwait debug";
 };
 
  mem: memory {

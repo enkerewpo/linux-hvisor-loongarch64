@@ -1380,6 +1380,7 @@ static int add_port(struct ports_device *portdev, u32 id)
 			err, id);
 		goto free_cdev;
 	}
+	pr_info("[WHEATFOX] after device_create, name = %s\n", port->dev->kobj.name);
 
 	spin_lock_init(&port->inbuf_lock);
 	spin_lock_init(&port->outvq_lock);
