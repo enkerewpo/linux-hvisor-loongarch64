@@ -801,6 +801,8 @@ static ssize_t port_fops_write(struct file *filp, const char __user *ubuf,
 	bool nonblock;
 	struct scatterlist sg[1];
 
+	// pr_info("[WHEATFOX] (port_fops_write) count: %d\n", count);
+
 	/* Userspace could be out to fool us */
 	if (!count)
 		return 0;

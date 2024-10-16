@@ -10,8 +10,14 @@ fi
 
 export EDITOR='/bin/vi'
 
-ls -R /dev
+# ls -R /dev
+# echo "HELLO WORLD!"	
+# echo "HELLO FROM NONROOT VIRTIO DRIVER! /dev/vport0p0" > /dev/vport0p0
+echo "HELLO FROM NONROOT VIRTIO DRIVER! /dev/hvc0" > /dev/hvc0
 
-echo "HELLO FROM NONROOT VIRTIO DRIVER!" > /dev/vport0p0
-echo "HELLO FROM NONROOT VIRTIO DRIVER!" > /dev/hvc0
+while true; do
+	echo "HELLO FROM NONROOT VIRTIO DRIVER! /dev/hvc0 HEARTBEAT" > /dev/hvc0
+	sleep 1
+done
+
 poweroff
