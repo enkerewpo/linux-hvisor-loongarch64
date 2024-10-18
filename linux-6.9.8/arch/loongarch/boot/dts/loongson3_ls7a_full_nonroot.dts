@@ -5,7 +5,7 @@
 /dts-v1/;
 
 
-
+#include <dt-bindings/interrupt-controller/irq.h>
 
 # 1 "loongson3.dtsi" 1
 
@@ -132,8 +132,7 @@
  #size-cells = <2>;
 
  aliases {
-  serial0 = &uart0;
-
+  // serial0 = &uart0;
  };
 
 //  chosen {
@@ -143,7 +142,7 @@
 //  };
 
  chosen {
-  stdout-path = "/virtio_mmio@10001000";
+  // stdout-path = "/virtio_mmio@10001000";
   // stdout-path = "serial0:115200n8";
   bootargs = "earlycon console=hvc0 rootwait debug";
   // bootargs = "earlycon rootwait debug";
@@ -163,7 +162,7 @@
     dma-coherent;
     compatible = "virtio,mmio";
     interrupt-parent = <&cpuic>;
-    interrupts = <0x00 0x20 0x01>;
+    interrupts = <4>; // = hwirq
     reg = <0x0 0x10001000 0x0 0x200>;
   };
 
@@ -172,17 +171,6 @@
   interrupt-controller;
   #interrupt-cells = <1>;
  };
-
-//  icu: interrupt-controller@1fe01400 {
-//   compatible = "loongson";
-//   interrupt-controller;
-//   #interrupt-cells = <1>;
-//   reg = <0 0x1fe01400 0 0x40
-//   0 0x1fe01040 0 16>;
-//   interrupt-parent = <&cpuic>;
-//   interrupt-names = "cascade";
-//   interrupts = <3>;
-//  };
 
  board: platform {
   compatible = "loongson,nbus", "simple-bus";
@@ -194,6 +182,21 @@
   0 0x20000000 0 0x20000000 0 0x10000000
   0 0x40000000 0 0x40000000 0 0x40000000
   0xfe 0x00000000 0xfe 0x00000000 0 0x40000000>;
+
+  // liointc: interrupt-controller@1fe01400 {
+  //   compatible = "loongson,liointc-1.0";
+  //   reg = <0x0 0x1fe01400 0x0 0x64>;
+
+  //   interrupt-controller;
+  //   #interrupt-cells = <2>;
+  //   interrupt-parent = <&cpuic>;
+  //   interrupts = <2>;
+  //   interrupt-names = "int0";
+  //   loongson,parent_int_map = <0xffffffff>, /* int0 */
+  //           <0x00000000>, /* int1 */
+  //           <0x00000000>, /* int2 */
+  //           <0x00000000>; /* int3 */
+  // };
 
   osc_clk: osc-clock@0 {
    #clock-cells = <0>;
@@ -211,16 +214,15 @@
    #clock-cells = <1>;
   };
 
-  uart0: serial@1fe001e0 {
-   device_type = "serial";
-   compatible = "ns16550a";
-   reg = <0 0x1fe001e0 0 0x10>;
-   clocks = <&clks 12>;
-   clock-frequency = <100000000>;
-   interrupt-parent = <&cpuic>;
-   no-loopback-test;
-   status = "okay";
-  };
+  // uart0: serial@1fe001e0 {
+  //   compatible = "ns16550a";
+  //   reg = <0x0 0x1fe001e0 0x0 0x10>;
+  //   clock-frequency = <100000000>;
+  //   interrupt-parent = <&liointc>;
+  //   interrupts = <10 IRQ_TYPE_LEVEL_HIGH>;
+  //   no-loopback-test;
+  //   // status = "disabled";
+  // };
 
 # 104 "loongson3_ls7a.dts"
  };
