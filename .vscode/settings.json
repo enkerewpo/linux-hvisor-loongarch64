@@ -5,7 +5,8 @@
         "*.asm": "loongarch",
         "qspinlock_types.h": "c",
         "*.tcc": "c",
-        "random": "c"
+        "random": "c",
+        "unistd.h": "c"
     },
     "editor.tabSize": 4,
     "editor.insertSpaces": true,

@@ -1,10 +1,15 @@
-chown -R 0:0 /
-ln -sf /dev/null /dev/tty2
-ln -sf /dev/null /dev/tty3
-ln -sf /dev/null /dev/tty4
-# link /dev/tty1 to /dev/console
 ln -sf /dev/console /dev/tty1
-# mount sysfs proc
 mount -t sysfs sysfs /sys
 mount -t proc proc /proc
 echo "Welcome to hvisor(loongarch) zone0 root linux! wheatfox 2024"
+
+# print "heartbeat" per second, 30 times
+cnt=0
+while true; do
+    echo "heartbeat $cnt"
+    cnt=$((cnt + 1))
+    if [ $cnt -eq 30 ]; then
+        break
+    fi
+    sleep 1
+done

@@ -22,6 +22,9 @@ MODE = debug
 TMP_ROOTFS_OUTPUT := ./output
 
 all:
+# build my_init
+	$(CC) -o my_init/init my_init/init.c -static
+
 # pack rootfs.cpio.gz from built busybox
 	rm -rf $(TMP_ROOTFS_OUTPUT)
 	mkdir -p $(TMP_ROOTFS_OUTPUT)
@@ -50,7 +53,8 @@ all:
 	cd $(TMP_ROOTFS_OUTPUT)/dev && sudo mknod -m 666 console c 5 1
 	cp busybox/busybox $(TMP_ROOTFS_OUTPUT)/bin
 # bin
-	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/init
+# ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/init
+	cp my_init/init $(TMP_ROOTFS_OUTPUT)/init
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/bin/sh
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/bin/ls
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/bin/cat
@@ -95,9 +99,9 @@ all:
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/poweroff
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/swapon
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/swapoff
-	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/chown
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/mknod
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/chroot
+	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/chown
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/insmod
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/rmmod
 	ln -s /bin/busybox $(TMP_ROOTFS_OUTPUT)/sbin/lsmod
@@ -112,16 +116,16 @@ all:
 # first check whether hvisor-tool exists
 # if not, skip this step
 
-ifeq (,$(wildcard ../../hvisor-tool))
-	@echo "hvisor-tool not found, skip copying hvisor stuff"
-else
-	@echo "======================================="
-	@echo "hvisor-tool found, copying hvisor stuff"
-	@echo "======================================="
-	cp ../../hvisor-tool/tools/hvisor $(TMP_ROOTFS_OUTPUT)/bin
-	mkdir -p $(TMP_ROOTFS_OUTPUT)/lib/modules
-	cp ../../hvisor-tool/driver/hvisor.ko $(TMP_ROOTFS_OUTPUT)/lib/modules
-endif
+# ifeq (,$(wildcard ../../hvisor-tool))
+# 	@echo "hvisor-tool not found, skip copying hvisor stuff"
+# else
+# 	@echo "======================================="
+# 	@echo "hvisor-tool found, copying hvisor stuff"
+# 	@echo "======================================="
+# 	cp ../../hvisor-tool/tools/hvisor $(TMP_ROOTFS_OUTPUT)/bin
+# 	mkdir -p $(TMP_ROOTFS_OUTPUT)/lib/modules
+# 	cp ../../hvisor-tool/driver/hvisor.ko $(TMP_ROOTFS_OUTPUT)/lib/modules
+# endif
 
 	cd $(TMP_ROOTFS_OUTPUT) && find . | cpio -o -H newc | gzip > ../rootfs.cpio.gz
 

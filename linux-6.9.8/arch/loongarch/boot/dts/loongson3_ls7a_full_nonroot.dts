@@ -133,6 +133,7 @@
 
  aliases {
   // serial0 = &uart0;
+  vconsole0 = &vc;
  };
 
 //  chosen {
@@ -142,7 +143,7 @@
 //  };
 
  chosen {
-  // stdout-path = "/virtio_mmio@10001000";
+  // stdout-path = "vconsole0";
   // stdout-path = "serial0:115200n8";
   bootargs = "earlycon console=hvc0 rootwait debug";
   // bootargs = "earlycon rootwait debug";
@@ -158,11 +159,11 @@
  };
 
   // virtio console
-  virtio_mmio@10001000 {
+  vc:virtio_mmio@10001000 {
     dma-coherent;
     compatible = "virtio,mmio";
     interrupt-parent = <&cpuic>;
-    interrupts = <4>; // = hwirq
+    interrupts = <9>; // = hwirq
     reg = <0x0 0x10001000 0x0 0x200>;
   };
 

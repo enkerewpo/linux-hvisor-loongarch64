@@ -160,20 +160,20 @@
   0 0x40000000 0 0x40000000 0 0x40000000
   0xfe 0x00000000 0xfe 0x00000000 0 0x40000000>;
 
-  liointc: interrupt-controller@1fe01400 {
-    compatible = "loongson,liointc-1.0";
-    reg = <0x0 0x1fe01400 0x0 0x64>;
+  // liointc: interrupt-controller@1fe01400 {
+  //   compatible = "loongson,liointc-1.0";
+  //   reg = <0x0 0x1fe01400 0x0 0x64>;
 
-    interrupt-controller;
-    #interrupt-cells = <2>;
-    interrupt-parent = <&cpuic>;
-    interrupts = <2>;
-    interrupt-names = "int0";
-    loongson,parent_int_map = <0xffffffff>, /* int0 */
-            <0x00000000>, /* int1 */
-            <0x00000000>, /* int2 */
-            <0x00000000>; /* int3 */
-  };
+  //   interrupt-controller;
+  //   #interrupt-cells = <2>;
+  //   interrupt-parent = <&cpuic>;
+  //   interrupts = <2>;
+  //   interrupt-names = "int0";
+  //   loongson,parent_int_map = <0xffffffff>, /* int0 */
+  //           <0x00000000>, /* int1 */
+  //           <0x00000000>, /* int2 */
+  //           <0x00000000>; /* int3 */
+  // };
 
   osc_clk: osc-clock@0 {
    #clock-cells = <0>;
@@ -195,8 +195,8 @@
     compatible = "ns16550a";
     reg = <0x0 0x1fe001e0 0x0 0x10>;
     clock-frequency = <100000000>;
-    interrupt-parent = <&liointc>;
-    interrupts = <10 IRQ_TYPE_LEVEL_HIGH>;
+    // interrupt-parent = <&liointc>;
+    // interrupts = <10 IRQ_TYPE_LEVEL_HIGH>;
     no-loopback-test;
     // status = "disabled";
     status = "okay";
