@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: GPL-2.0
 /*
  * Copyright (C) 2023 Loongson Technology Corporation Limited
+ * Modified for hvisor by wheatfox(enkerewpo@hotmail.com) syswonder.org 2024
  */
 
 /dts-v1/;
@@ -16,13 +17,15 @@
 	};
 
 	chosen {
-		stdout-path = "serial0:115200n8";
+		// stdout-path = "serial0:115200n8";
+		bootargs = "earlycon console=hvc0 rootwait debug";
 	};
 
 	memory@200000 {
 		device_type = "memory";
-		reg = <0x0 0x00200000 0x0 0x0ee00000>,
-		      <0x0 0x90000000 0x0 0x70000000>;
+		reg = <0 0x00200000 0 0x0ee00000
+		0 0x90000000 0 0x10000000
+		>;
 	};
 
 	// virtio console
