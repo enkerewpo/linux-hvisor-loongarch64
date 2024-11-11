@@ -25,17 +25,13 @@
 		      <0x0 0x90000000 0x0 0x70000000>;
 	};
 
-	reserved-memory {
-		#address-cells = <2>;
-		#size-cells = <2>;
-		ranges;
-
-		linux,cma {
-			compatible = "shared-dma-pool";
-			reusable;
-			size = <0x0 0x2000000>;
-			linux,cma-default;
-		};
+	// virtio console
+	virtio_mmio@10001000 {
+		dma-coherent;
+		compatible = "virtio,mmio";
+		interrupt-parent = <&cpuintc>;
+		interrupts = <4>; // = hwirq
+		reg = <0x0 0x10001000 0x0 0x200>;
 	};
 };
 

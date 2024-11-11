@@ -1,9 +1,0 @@
-#!/bin/bash
-
-echo "Copying vmlinux* for nonroot"
-TARGET_LINUX_DIR=/home/wheatfox/Documents/Code/linux-6.9.8-la64/linux-6.9.8
-TARGET_ARCH_BOOT_DIR=$TARGET_LINUX_DIR/arch/loongarch/boot
-COPY_DEST=/home/wheatfox/Documents/Code/linux-6.9.8-la64/nonroot_tmp
-
-cp $TARGET_LINUX_DIR/vmlinux $TARGET_ARCH_BOOT_DIR/vmlinux.bin $COPY_DEST
-echo "Copied vmlinux* for nonroot"

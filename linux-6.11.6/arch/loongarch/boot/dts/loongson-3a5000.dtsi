@@ -122,7 +122,7 @@
 		//  };
  
 		//  liointc: interrupt-controller@1fe01400 {
-		// 	 compatible = "loongson,liointc-1.0";
+		// 	 compatible = "loongson,liointc-2.0";
 		// 	 reg = <0x0 0x1fe01400 0x0 0x64>;
  
 		// 	 interrupt-controller;
@@ -178,7 +178,6 @@
 			 reg = <0x0 0x1fe001e0 0x0 0x10>;
 			 clock-frequency = <100000000>;
 			//  interrupt-parent = <&liointc>;
-			 interrupt-parent = <&cpuintc>;
 			//  interrupts = <10 IRQ_TYPE_LEVEL_HIGH>;
 			 no-loopback-test;
 			 status = "disabled";
