@@ -1,0 +1,8 @@
+output
+*.gz
+busybox/*
+*.cpio.gz
+busybox
+systemd
+*.cpio
+nonroot_tmproot

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# https://www.qemu.org/docs/master/system/loongarch/virt.html
+
+KERNEL_PATH=linux-6.9.8/arch/loongarch/boot/vmlinux.efi
+
+qemu-system-loongarch64 -machine virt -m 4G -cpu la464 \
+    -smp 1 -bios QEMU_EFI.fd -kernel $KERNEL_PATH \
+    -serial mon:stdio \
+    -append "root=/dev/ram rdinit=/init console=ttyS0,115200" \
+    --nographic

@@ -1,0 +1,6 @@
+linux 6.9.8 for hvisor(loongarch64) zone0
+
+the goal is boot linux 6.9.8 with fdt in hvisor zone0 without
+modifying the kernel source code.
+
+sudo apt install libncurses-dev flex bison bc

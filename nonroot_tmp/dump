@@ -1,0 +1,10 @@
+#!/bin/bash
+
+TARGET_LINUX_DIR=/home/wheatfox/Documents/Code/linux-6.9.8-la64/linux-6.9.8
+TARGET_ARCH_BOOT_DIR=$TARGET_LINUX_DIR/arch/loongarch/boot
+COPY_DEST=/home/wheatfox/Documents/Code/linux-6.9.8-la64/nonroot_tmp
+
+# now readelf the vmlinux to get the sections
+loongarch64-unknown-linux-gnu-readelf -a $COPY_DEST/vmlinux > $COPY_DEST/vmlinux_sections.txt
+# now objdump the vmlinux to get the assembly
+loongarch64-unknown-linux-gnu-objdump -D $COPY_DEST/vmlinux > $COPY_DEST/vmlinux.asm

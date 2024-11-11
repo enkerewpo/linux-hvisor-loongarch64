@@ -1,0 +1,9 @@
+vmlinux.asm
+vmlinux.readelf.txt
+.vscode-ctags
+GPATH
+GRTAGS
+GTAGS
+.flag
+nr_tmp
+.vscode*

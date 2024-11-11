@@ -1,0 +1,4 @@
+#!/bin/bash
+
+unset LD_LIBRARY_PATH
+make -C ../hvisor-uefi world && ./run_qemu
