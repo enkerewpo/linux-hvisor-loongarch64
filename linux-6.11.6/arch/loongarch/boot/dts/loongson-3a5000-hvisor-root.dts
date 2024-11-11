@@ -30,18 +30,15 @@
 		>;
 	};
 
-	// reserved-memory {
-	// 	#address-cells = <2>;
-	// 	#size-cells = <2>;
-	// 	ranges;
-
-	// 	linux,cma {
-	// 		compatible = "shared-dma-pool";
-	// 		reusable;
-	// 		size = <0x0 0x2000000>;
-	// 		linux,cma-default;
-	// 	};
-	// };
+	reserved-memory {
+		#address-cells = <0x02>;
+		#size-cells = <0x02>;
+		ranges;
+		nonroot0xc0000000 {
+			no-map;
+			reg = <0x00 0xc0000000 0x00 0x30000000>;
+		};
+	};
 };
 
 &uart0 {
