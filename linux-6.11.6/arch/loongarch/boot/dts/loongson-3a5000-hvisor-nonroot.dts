@@ -17,7 +17,8 @@
 	};
 
 	chosen {
-		// stdout-path = "serial0:115200n8";
+		stdout-path = "/virtio_mmio@10001000";
+		// bootargs = "earlycon console=ttyS0,115200n8 initramfs_async=false rootwait debug";
 		bootargs = "earlycon console=hvc0 rootwait debug";
 	};
 
