@@ -623,6 +623,8 @@ static int virtio_mmio_probe(struct platform_device *pdev)
 	if (!vm_dev)
 		return -ENOMEM;
 
+	pr_info("wheatfox:: virtio_mmio_probe, vm_dev: %px\n", vm_dev);
+
 	vm_dev->vdev.dev.parent = &pdev->dev;
 	vm_dev->vdev.dev.release = virtio_mmio_release_dev;
 	vm_dev->vdev.config = &virtio_mmio_config_ops;
@@ -636,6 +638,8 @@ static int virtio_mmio_probe(struct platform_device *pdev)
 		goto free_vm_dev;
 	}
 
+	pr_info("wheatfox:: virtio_mmio_probe, base: %px\n", vm_dev->base);
+
 	/* Check magic value */
 	magic = readl(vm_dev->base + VIRTIO_MMIO_MAGIC_VALUE);
 	if (magic != ('v' | 'i' << 8 | 'r' << 16 | 't' << 24)) {
@@ -643,6 +647,8 @@ static int virtio_mmio_probe(struct platform_device *pdev)
 		rc = -ENODEV;
 		goto free_vm_dev;
 	}
+
+	pr_info("wheatfox:: virtio_mmio_probe, magic: 0x%08lx check passed\n", magic);
 
 	/* Check device version */
 	vm_dev->version = readl(vm_dev->base + VIRTIO_MMIO_VERSION);
@@ -652,6 +658,8 @@ static int virtio_mmio_probe(struct platform_device *pdev)
 		rc = -ENXIO;
 		goto free_vm_dev;
 	}
+
+	pr_info("wheatfox:: virtio_mmio_probe, device version: %ld\n", vm_dev->version);
 
 	vm_dev->vdev.id.device = readl(vm_dev->base + VIRTIO_MMIO_DEVICE_ID);
 	if (vm_dev->vdev.id.device == 0) {
@@ -663,6 +671,9 @@ static int virtio_mmio_probe(struct platform_device *pdev)
 		goto free_vm_dev;
 	}
 	vm_dev->vdev.id.vendor = readl(vm_dev->base + VIRTIO_MMIO_VENDOR_ID);
+
+	pr_info("wheatfox:: virtio_mmio_probe, device id: %d, vendor id: %d\n",
+			vm_dev->vdev.id.device, vm_dev->vdev.id.vendor);
 
 	if (vm_dev->version == 1) {
 		writel(PAGE_SIZE, vm_dev->base + VIRTIO_MMIO_GUEST_PAGE_SIZE);

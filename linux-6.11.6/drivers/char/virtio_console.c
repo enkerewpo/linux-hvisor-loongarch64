@@ -1327,6 +1327,8 @@ static int add_port(struct ports_device *portdev, u32 id)
 	dev_t devt;
 	int err;
 
+	pr_info("wheatfox:: add_port, portdev=%px, id=%u\n", portdev, id);
+
 	port = kmalloc(sizeof(*port), GFP_KERNEL);
 	if (!port) {
 		err = -ENOMEM;
@@ -1378,6 +1380,9 @@ static int add_port(struct ports_device *portdev, u32 id)
 			err, id);
 		goto free_cdev;
 	}
+
+	pr_info("wheatfox:: add_port, after device_create, name=%s\n",
+		 dev_name(port->dev));
 
 	spin_lock_init(&port->inbuf_lock);
 	spin_lock_init(&port->outvq_lock);
@@ -1809,6 +1814,8 @@ static int init_vqs(struct ports_device *portdev)
 	u32 i, j, nr_ports, nr_queues;
 	int err;
 
+	pr_info("wheatfox:: init_vqs start, portdev: %px\n", portdev);
+
 	nr_ports = portdev->max_nr_ports;
 	nr_queues = use_multiport(portdev) ? (nr_ports + 1) * 2 : 2;
 
@@ -1869,6 +1876,8 @@ static int init_vqs(struct ports_device *portdev)
 	}
 	kfree(vqs_info);
 	kfree(vqs);
+
+	pr_info("wheatfox:: init_vqs success\n");
 
 	return 0;
 

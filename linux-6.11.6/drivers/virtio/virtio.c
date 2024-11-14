@@ -351,6 +351,9 @@ static int virtio_dev_probe(struct device *_d)
 
 	virtio_config_core_enable(dev);
 
+	// dump device type, etc
+	pr_info("wheatfox:: virtio_dev_probe, device: %s\n", dev_name(&dev->dev));
+
 	return 0;
 
 err:

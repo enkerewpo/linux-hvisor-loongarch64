@@ -30,6 +30,12 @@
 		>;
 	};
 	
+	hvisor_device {
+		compatible = "hvisor";
+		interrupt-parent = <&cpuintc>;
+		interrupts = <4>;
+	};
+	
 	reserved-memory {
 		#address-cells = <0x02>;
 		#size-cells = <0x02>;
