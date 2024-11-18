@@ -80,8 +80,8 @@ if [ "$1" = "nonroot" ]; then
     sudo rm -rf tool
     sudo rm -rf *.sh
     # replace the /etc/profile with contents of rootfs/nonroot_profile
-    # sudo cp $LINUX_SRC_DIR_FULL/../rootfs/nonroot_profile etc/profile
-    # sudo tail -n 10 etc/profile
+    sudo cp $LINUX_SRC_DIR_FULL/../rootfs/nonroot_profile etc/profile
+    sudo tail -n 10 etc/profile
     # repack the cpio
     sudo find . | cpio -o -H newc | gzip -9 >../nonroot_fs.cpio.gz
     cd $LINUX_SRC_DIR_FULL/../rootfs

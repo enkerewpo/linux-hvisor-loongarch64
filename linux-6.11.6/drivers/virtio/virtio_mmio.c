@@ -625,6 +625,21 @@ static int virtio_mmio_probe(struct platform_device *pdev)
 
 	pr_info("wheatfox:: virtio_mmio_probe, vm_dev: %px\n", vm_dev);
 
+	// dump pdev info like regions
+	pr_info("wheatfox:: virtio_mmio_probe, pdev->name: %s\n", pdev->name);
+	pr_info("wheatfox:: virtio_mmio_probe, pdev->id: %d\n", pdev->id);
+	pr_info("wheatfox:: virtio_mmio_probe, pdev->num_resources: %d\n", pdev->num_resources);
+	pr_info("wheatfox:: virtio_mmio_probe, pdev->dev->of_node: %px\n", pdev->dev.of_node);
+	// dump of node info
+	pr_info("wheatfox:: virtio_mmio_probe, pdev->dev->of_node->name: %s\n", pdev->dev.of_node->name);
+	pr_info("wheatfox:: virtio_mmio_probe, pdev->dev->of_node->full_name: %s\n", pdev->dev.of_node->full_name);
+	// dump mem regions
+	for (int i = 0; i < pdev->num_resources; i++) {
+		pr_info("wheatfox:: virtio_mmio_probe, pdev->resource[%d].start: %llx\n", i, pdev->resource[i].start);
+		pr_info("wheatfox:: virtio_mmio_probe, pdev->resource[%d].end: %llx\n", i, pdev->resource[i].end);
+		pr_info("wheatfox:: virtio_mmio_probe, pdev->resource[%d].flags: %x\n", i, pdev->resource[i].flags);
+	}
+
 	vm_dev->vdev.dev.parent = &pdev->dev;
 	vm_dev->vdev.dev.release = virtio_mmio_release_dev;
 	vm_dev->vdev.config = &virtio_mmio_config_ops;

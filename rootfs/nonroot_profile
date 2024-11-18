@@ -10,4 +10,6 @@ fi
 
 export EDITOR='/bin/vi'
 
+echo "HELLO FROM VIRTIO HVC0" > /dev/hvc0
+
 echo "Welcome to nonroot! you are using a virtio-console :) wheatfox 2024"
