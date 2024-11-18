@@ -50,7 +50,7 @@ function build_kernel() {
     loongarch64-unknown-linux-gnu-readelf -a vmlinux >vmlinux.readelf.txt
     # dump asm
     # echo "Running objdump"
-    loongarch64-unknown-linux-gnu-objdump -D vmlinux >vmlinux.asm
+    # loongarch64-unknown-linux-gnu-objdump -D vmlinux >vmlinux.asm
     echo "Done"
 }
 
