@@ -12,4 +12,7 @@ export EDITOR='/bin/vi'
 
 echo "HELLO FROM VIRTIO HVC0" > /dev/hvc0
 
-echo "Welcome to nonroot! you are using a virtio-console :) wheatfox 2024"
+# open /bin/wsh
+/bin/wsh
+
+# exec bash --login </dev/hvc0 >/dev/hvc0 2>&1

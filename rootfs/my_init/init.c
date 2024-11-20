@@ -3,23 +3,25 @@
 
 int main()
 {
-    // print something into /dev/hvc0 for testing virtio console
-    const char *target_device = "/dev/hvc0";
-    FILE *f = fopen(target_device, "w");
-    if (f == NULL)
+    const char *hvc = "/dev/hvc0";
+    FILE *f = fopen(hvc, "w");
+    FILE *f2 = fopen(hvc, "r");
+    if (f == NULL || f2 == NULL)
     {
-        printf("Failed to open %s\n", target_device);
         return 1;
     }
-    printf("Writing to %s\n", target_device);
-    int count = 10;
-    while (count--)
-    {
-        fprintf(f, "Hello, world!\n");
-    }
-    fflush(f);
-    fclose(f);
 
+    fprintf(f, "Hello world from virtio wsh!\n");
+
+    char c;
+    while (1)
+    {
+        c = fgetc(f2);
+        fprintf(f, "you input: %c\n", c);
+        fflush(f);
+    }
+
+    fclose(f);
     // can't reach here
     while (1)
         ;

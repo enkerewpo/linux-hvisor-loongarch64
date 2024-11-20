@@ -2573,6 +2573,7 @@ irqreturn_t vring_interrupt(int irq, void *_vq)
 
 	if (!more_used(vq)) {
 		pr_debug("virtqueue interrupt with no work for %p\n", vq);
+		pr_info("wheatfox: virtqueue interrupt with no work for %p\n", vq);
 		return IRQ_NONE;
 	}
 
@@ -2591,6 +2592,7 @@ irqreturn_t vring_interrupt(int irq, void *_vq)
 		vq->event_triggered = true;
 
 	pr_debug("virtqueue callback for %p (%p)\n", vq, vq->vq.callback);
+	// pr_info("wheatfox: virtqueue callback for %px (%px)\n", vq, vq->vq.callback);
 	if (vq->vq.callback)
 		vq->vq.callback(&vq->vq);
 
