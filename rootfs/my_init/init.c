@@ -40,21 +40,18 @@ int main()
             fprintf(f, "Hello world!\n");
             continue;
         }
-        if (strcmp(cmd, "ls") == 0)
+        // run process but all input and output are from/to hvc0
+        fprintf(f, "Running %s command...\n", cmd);
+        int pid = fork();
+        if (pid == 0)
         {
-            // run process but all input and output are from/to hvc0
-            fprintf(f, "Running ls command...\n");
-            int pid = fork();
-            if (pid == 0)
-            {
-                dup2(fileno(f), 1);
-                dup2(fileno(f), 2);
-                execl("/bin/ls", "ls", NULL);
-            }
-            waitpid(pid, NULL, 0);
-            fprintf(f, "ls command finished.\n");
-            continue;
+            dup2(fileno(f), STDIN_FILENO);
+            dup2(fileno(f), STDOUT_FILENO);
+            dup2(fileno(f), STDERR_FILENO);
+            execlp(cmd, cmd, NULL);
         }
+        waitpid(pid, NULL, 0);
+        fprintf(f, "Command %s finished.\n", cmd);
     }
 
     fprintf(f, "Goodbye!\n");
