@@ -2573,7 +2573,7 @@ irqreturn_t vring_interrupt(int irq, void *_vq)
 
 	if (!more_used(vq)) {
 		pr_debug("virtqueue interrupt with no work for %p\n", vq);
-		pr_info("wheatfox: virtqueue interrupt with no work for %p\n", vq);
+		// pr_info("wheatfox: virtqueue interrupt with no work for %p\n", vq);
 		return IRQ_NONE;
 	}
 

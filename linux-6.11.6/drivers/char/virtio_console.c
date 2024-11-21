@@ -656,7 +656,7 @@ static ssize_t fill_readbuf(struct port *port, u8 __user *out_buf,
 	struct port_buffer *buf;
 	unsigned long flags;
 
-	pr_info("wheatfox: fill_readbuf: port=%p, out_buf=%p, out_count=%zu, to_user=%d\n", port, out_buf, out_count, to_user);
+	// pr_info("wheatfox: fill_readbuf: port=%p, out_buf=%p, out_count=%zu, to_user=%d\n", port, out_buf, out_count, to_user);
 
 	if (!out_count || !port_has_data(port))
 		return 0;
@@ -664,7 +664,7 @@ static ssize_t fill_readbuf(struct port *port, u8 __user *out_buf,
 	buf = port->inbuf;
 	out_count = min(out_count, buf->len - buf->offset);
 
-	pr_info("wheatfox: fill_readbuf: buf=%p, buf->len=%zu, buf->offset=%zu, out_count=%zu\n", buf, buf->len, buf->offset, out_count);
+	// pr_info("wheatfox: fill_readbuf: buf=%p, buf->len=%zu, buf->offset=%zu, out_count=%zu\n", buf, buf->len, buf->offset, out_count);
 
 	if (to_user) {
 		ssize_t ret;
@@ -1737,8 +1737,8 @@ static void in_intr(struct virtqueue *vq)
 	spin_lock_irqsave(&port->inbuf_lock, flags);
 	port->inbuf = get_inbuf(port);
 
-	pr_info("wheatfox:: in_intr, port->inbuf: %px, len: %u, offset: %u, data: %s\n",
-		 port->inbuf, port->inbuf->len, port->inbuf->offset, port->inbuf->buf);
+	// pr_info("wheatfox:: in_intr, port->inbuf: %px, len: %u, offset: %u, data: %s\n",
+	// 	 port->inbuf, port->inbuf->len, port->inbuf->offset, port->inbuf->buf);
 
 	/*
 	 * Normally the port should not accept data when the port is
@@ -1767,8 +1767,8 @@ static void in_intr(struct virtqueue *vq)
 
 	wake_up_interruptible(&port->waitqueue);
 
-	pr_info("wheatfox:: in_intr: is_console_port: %d, port->cons.hvc: %px, hvc_poll: %d\n",
-		 is_console_port(port), port->cons.hvc, hvc_poll(port->cons.hvc));
+	// pr_info("wheatfox:: in_intr: is_console_port: %d, port->cons.hvc: %px, hvc_poll: %d\n",
+	// 	 is_console_port(port), port->cons.hvc, hvc_poll(port->cons.hvc));
 
 	hvc_kick(); // CAUTION
 

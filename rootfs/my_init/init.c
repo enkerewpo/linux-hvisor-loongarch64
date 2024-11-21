@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <string.h>
+#include <sys/wait.h>
 
 int main()
 {
@@ -13,15 +15,53 @@ int main()
 
     fprintf(f, "Hello world from virtio wsh!\n");
 
-    char c;
+    // char c;
+    // while (1)
+    // {
+    //     c = fgetc(f2);
+    //     fprintf(f, "you input: %c\n", c);
+    //     fflush(f);
+    // }
+
+    // shell loop
     while (1)
     {
-        c = fgetc(f2);
-        fprintf(f, "you input: %c\n", c);
+        fprintf(f, "wsh> ");
         fflush(f);
+        char cmd[100];
+        fscanf(f2, "%s", cmd);
+        fprintf(f, "You entered: %s\n", cmd);
+        if (strcmp(cmd, "exit") == 0)
+        {
+            break;
+        }
+        if (strcmp(cmd, "hello") == 0)
+        {
+            fprintf(f, "Hello world!\n");
+            continue;
+        }
+        if (strcmp(cmd, "ls") == 0)
+        {
+            // run process but all input and output are from/to hvc0
+            fprintf(f, "Running ls command...\n");
+            int pid = fork();
+            if (pid == 0)
+            {
+                dup2(fileno(f), 1);
+                dup2(fileno(f), 2);
+                execl("/bin/ls", "ls", NULL);
+            }
+            waitpid(pid, NULL, 0);
+            fprintf(f, "ls command finished.\n");
+            continue;
+        }
     }
 
+    fprintf(f, "Goodbye!\n");
+
+    fclose(f2);
     fclose(f);
+
     // can't reach here
     while (1)
         ;
