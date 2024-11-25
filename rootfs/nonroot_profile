@@ -13,6 +13,11 @@ export EDITOR='/bin/vi'
 echo "HELLO FROM VIRTIO HVC0" > /dev/hvc0
 
 # open /bin/wsh
-/bin/wsh
+# /bin/wsh
 
-# exec bash --login </dev/hvc0 >/dev/hvc0 2>&1
+# we only need to open bash on hvc0 once so write .shell_lock at /
+
+if [ ! -f /.shell_lock ]; then
+	touch /.shell_lock
+	exec bash --login </dev/hvc0 >/dev/hvc0 2>&1
+fi
