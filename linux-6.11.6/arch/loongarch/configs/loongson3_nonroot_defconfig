@@ -3,6 +3,7 @@
 # Linux/loongarch 6.9.8 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="loongarch64-unknown-linux-gnu-gcc (GCC) 13.0.1 20230316 (experimental)"
+CONFIG_CONSOLE_POLL=y
 CONFIG_CC_IS_GCC=y
 CONFIG_GCC_VERSION=130001
 CONFIG_CLANG_VERSION=0

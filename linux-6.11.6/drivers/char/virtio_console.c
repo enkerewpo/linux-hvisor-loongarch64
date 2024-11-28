@@ -1770,7 +1770,7 @@ static void in_intr(struct virtqueue *vq)
 	// pr_info("wheatfox:: in_intr: is_console_port: %d, port->cons.hvc: %px, hvc_poll: %d\n",
 	// 	 is_console_port(port), port->cons.hvc, hvc_poll(port->cons.hvc));
 
-	hvc_kick(); // CAUTION
+	// hvc_kick(); // CAUTION
 
 	if (is_console_port(port) && hvc_poll(port->cons.hvc)) {
 		hvc_kick();

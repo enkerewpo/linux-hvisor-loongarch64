@@ -1,7 +1,7 @@
 export PATH="/bin:/sbin:/usr/bin:/usr/sbin"
 
 if [ "$PS1" ]; then
-	if [ "`id -u`" -eq 0 ]; then
+	if [ "$(id -u)" -eq 0 ]; then
 		export PS1='[\u@\h \W]# '
 	else
 		export PS1='$ '
@@ -10,13 +10,9 @@ fi
 
 export EDITOR='/bin/vi'
 
-echo "HELLO FROM VIRTIO HVC0" > /dev/hvc0
+echo "Welcome to hvisor nonroot linux with virtio console! / wheatfox"
 
-# open /bin/wsh
-# /bin/wsh
-
-# we only need to open bash on hvc0 once so write .shell_lock at /
-
+# we only need to open bash on hvc0 once so write .shell_lock at / to prevent endless loop
 if [ ! -f /.shell_lock ]; then
 	touch /.shell_lock
 	exec bash --login </dev/hvc0 >/dev/hvc0 2>&1

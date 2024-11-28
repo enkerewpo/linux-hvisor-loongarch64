@@ -659,6 +659,7 @@ static int __hvc_poll(struct hvc_struct *hp, bool may_sleep)
 
 	/* No tty attached, just skip */
 	tty = tty_port_tty_get(&hp->port);
+	// pr_info("wheatfox: tty = %px\n", tty);
 	if (tty == NULL)
 		goto bail;
 
@@ -683,6 +684,7 @@ static int __hvc_poll(struct hvc_struct *hp, bool may_sleep)
 	}
 
 	n = hp->ops->get_chars(hp->vtermno, buf, count);
+	// pr_info("wheatfox: get_chars = %d\n", n);
 	if (n <= 0) {
 		/* Hangup the tty when disconnected from host */
 		if (n == -EPIPE) {
@@ -721,6 +723,7 @@ static int __hvc_poll(struct hvc_struct *hp, bool may_sleep)
 		tty_insert_flip_char(&hp->port, buf[i], 0);
 	}
 	read_total += n;
+	// pr_info("wheatfox: read_total = %d\n", read_total);
 
 	if (may_sleep) {
 		/* Keep going until the flip is full */
@@ -755,6 +758,8 @@ static int __hvc_poll(struct hvc_struct *hp, bool may_sleep)
 		tty_flip_buffer_push(&hp->port);
 	}
 	tty_kref_put(tty);
+
+	// pr_info("wheatfox: poll_mask = %d\n", poll_mask);
 
 	return poll_mask;
 }
