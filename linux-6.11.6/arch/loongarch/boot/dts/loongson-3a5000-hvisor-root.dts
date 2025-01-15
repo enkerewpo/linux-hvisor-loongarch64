@@ -30,7 +30,7 @@
 		>;
 	};
 	
-	hvisor_device {
+	hvisor_virtio_device {
 		compatible = "hvisor";
 		interrupt-parent = <&cpuintc>;
 		interrupts = <4>;
