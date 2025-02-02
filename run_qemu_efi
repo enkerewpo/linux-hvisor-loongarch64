@@ -2,7 +2,7 @@
 
 # https://www.qemu.org/docs/master/system/loongarch/virt.html
 
-KERNEL_PATH=linux-6.9.8/arch/loongarch/boot/vmlinux.efi
+KERNEL_PATH=linux-6.11.6/arch/loongarch/boot/vmlinux.efi
 
 qemu-system-loongarch64 -machine virt -m 4G -cpu la464 \
     -smp 1 -bios QEMU_EFI.fd -kernel $KERNEL_PATH \
