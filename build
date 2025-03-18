@@ -1,135 +1,118 @@
 #!/bin/bash
 
-# wheatfox's build script for Loongson 3A5000 hvisor's linux zone
-# target is vmlinux ELF file for booting the zone
-# 2024.3.12
+# wheatfox's optimized build script for Loongson 3A5000 hvisor's linux zone
+# 2024.3.18
+
+set -e # Exit on error
 
 ARCH=loongarch
 CROSS_COMPILE=loongarch64-unknown-linux-gnu-
 NUM_JOBS=$(nproc)
 TARGET_DEFCONFIG=loongson3_defconfig
 NONROOT_TARGET_DEFCONFIG=loongson3_nonroot_defconfig
-LINUX_SRC_DIR=linux-6.11.6
+LINUX_SRC_DIR=$(realpath linux-6.11.6)
 ARGS="-C $LINUX_SRC_DIR ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE"
+WORKDIR=$(dirname "$LINUX_SRC_DIR")
+FLAG_PATH="$WORKDIR/.flag"
 
-if [ "$1" = "help" ] || [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ "$1" = "" ]; then
-    echo "  Commands:"
-    echo "    help                - Show this help"
-    echo "    def                 - Run defconfig"
-    echo "    clean               - Clean the build"
-    echo "    menuconfig          - Run menuconfig"
-    echo "    save                - Save defconfig"
-    echo "    kernel              - Build kernel"
+show_help() {
+    cat <<EOF
+Commands:
+    help                - Show this help
+    def                 - Run defconfig
+    nonroot_def         - Run nonroot defconfig
+    clean               - Clean the build
+    menuconfig          - Run menuconfig
+    save                - Save defconfig
+    nonroot_save        - Save nonroot defconfig
+    kernel              - Build kernel (default root mode)
+    nonroot             - Setup & build nonroot version
+    rootfs              - Build rootfs
+EOF
     exit 0
-fi
-
-LINUX_SRC_DIR_FULL=$(realpath $LINUX_SRC_DIR)
-
-function cp_nonroot() {
-    # only use this after compiling nonroot defconfig
-    # copy arch/$ARCH/boot/vmlinux.bin to nr_tmp/vmlinux.bin
-    # first read the flag and assert it's NONROOT
-    WORKDIR=$LINUX_SRC_DIR_FULL/../
-    FLAG_PATH=$WORKDIR/.flag
-    rm -rf $WORKDIR/nr_tmp
-    mkdir $WORKDIR/nr_tmp
-    echo "Copying vmlinux.bin to $WORKDIR/nr_tmp"
-    cp $LINUX_SRC_DIR_FULL/arch/$ARCH/boot/vmlinux.bin $WORKDIR/nr_tmp/vmlinux.bin
-    cp $LINUX_SRC_DIR_FULL/vmlinux $WORKDIR/nr_tmp/vmlinux
-    loongarch64-unknown-linux-gnu-readelf -a $WORKDIR/nr_tmp/vmlinux >$WORKDIR/nr_tmp/vmlinux.readelf.txt
 }
 
-function build_kernel() {
+cp_nonroot() {
+    echo "Copying vmlinux.bin to $WORKDIR/nr_tmp"
+    rm -rf "$WORKDIR/nr_tmp"
+    mkdir "$WORKDIR/nr_tmp"
+    cp "$LINUX_SRC_DIR/arch/$ARCH/boot/vmlinux.bin" "$WORKDIR/nr_tmp/vmlinux.bin"
+    cp "$LINUX_SRC_DIR/vmlinux" "$WORKDIR/nr_tmp/vmlinux"
+    $CROSS_COMPILE"readelf" -a "$WORKDIR/nr_tmp/vmlinux" >"$WORKDIR/nr_tmp/vmlinux.readelf.txt"
+}
+
+build_kernel() {
     echo "Building kernel"
-    make $ARGS -j$NUM_JOBS # EXTRA_CFLAGS="-DCONFIG_GENERIC_IDLE_POLL_SETUP"
-    # objdump the asm of vmlinux, dump all sections' data
-    cd $LINUX_SRC_DIR
-    # loongarch64-unknown-linux-gnu-objdump -D vmlinux >vmlinux.asm
-    # readelf
+    make $ARGS -j$NUM_JOBS
     echo "Running readelf"
-    loongarch64-unknown-linux-gnu-readelf -a vmlinux >vmlinux.readelf.txt
-    # dump asm
-    # echo "Running objdump"
-    # loongarch64-unknown-linux-gnu-objdump -D vmlinux >vmlinux.asm
+    $CROSS_COMPILE"readelf" -a "$LINUX_SRC_DIR/vmlinux" >"$LINUX_SRC_DIR/vmlinux.readelf.txt"
     echo "Done"
 }
 
-if [ "$1" = "def" ]; then
+setup_nonroot_rootfs() {
+    local ROOTFS_DIR="$WORKDIR/rootfs"
+    local TMPROOT="$ROOTFS_DIR/nonroot_tmproot"
+
+    echo "Setting up nonroot rootfs"
+    cp "$ROOTFS_DIR/buildroot/rootfs.cpio.gz" "$ROOTFS_DIR/nonroot_tmproot.cpio.gz"
+    gzip -d "$ROOTFS_DIR/nonroot_tmproot.cpio.gz" -f
+    sudo rm -rf "$TMPROOT"
+    sudo mkdir "$TMPROOT"
+    cd "$TMPROOT"
+    sudo cpio -id <"$ROOTFS_DIR/nonroot_tmproot.cpio"
+    sudo rm -rf tool *.sh
+    sudo cp "$ROOTFS_DIR/nonroot_profile" etc/profile
+    sudo cp "$ROOTFS_DIR/my_init/init" bin/wsh
+    sudo find . | cpio -o -H newc | gzip -9 >"$ROOTFS_DIR/nonroot_fs.cpio.gz"
+    echo "Rootfs setup complete"
+}
+
+[ "$1" = "" ] || [ "$1" = "help" ] || [ "$1" = "-h" ] || [ "$1" = "--help" ] && show_help
+
+case "$1" in
+def)
     echo "Running defconfig"
     make $ARGS $TARGET_DEFCONFIG
-    echo "ROOT" >.flag
-    exit 0
-fi
-
-if [ "$1" = "nonroot_def" ]; then
+    echo "ROOT" >"$FLAG_PATH"
+    ;;
+nonroot_def)
     echo "Running nonroot defconfig"
     make $ARGS $NONROOT_TARGET_DEFCONFIG
-    echo "NONROOT" >.flag
-    exit 0
-fi
-
-if [ "$1" = "nonroot" ]; then
-    cp $LINUX_SRC_DIR_FULL/../rootfs/buildroot/rootfs.cpio.gz $LINUX_SRC_DIR_FULL/../rootfs/nonroot_tmproot.cpio.gz
-    # unpack the cpio
-    sudo rm -rf $LINUX_SRC_DIR_FULL/../rootfs/nonroot_tmproot
-    gzip -d $LINUX_SRC_DIR_FULL/../rootfs/nonroot_tmproot.cpio.gz -f
-    sudo mkdir $LINUX_SRC_DIR_FULL/../rootfs/nonroot_tmproot
-    cd $LINUX_SRC_DIR_FULL/../rootfs/nonroot_tmproot
-    sudo cpio -id <$LINUX_SRC_DIR_FULL/../rootfs/nonroot_tmproot.cpio
-    # modify the rootfs, rm /tools
-    sudo rm -rf tool
-    sudo rm -rf *.sh
-    # replace the /etc/profile with contents of rootfs/nonroot_profile
-    sudo cp $LINUX_SRC_DIR_FULL/../rootfs/nonroot_profile etc/profile
-    sudo tail -n 10 etc/profile
-    # add rootfs/my_init/init to wsh
-    sudo cp $LINUX_SRC_DIR_FULL/../rootfs/my_init/init bin/wsh
-    # repack the cpio
-    sudo find . | cpio -o -H newc | gzip -9 >../nonroot_fs.cpio.gz
-    cd $LINUX_SRC_DIR_FULL/../rootfs
-    echo "Running nonroot defconfig"
-    cd $LINUX_SRC_DIR_FULL/..
+    echo "NONROOT" >"$FLAG_PATH"
+    ;;
+nonroot)
+    setup_nonroot_rootfs
     make $ARGS $NONROOT_TARGET_DEFCONFIG
-    echo "NONROOT" >.flag
+    echo "NONROOT" >"$FLAG_PATH"
     build_kernel
     cp_nonroot
-    exit 0
-fi
-
-if [ "$1" = "clean" ]; then
+    ;;
+clean)
     echo "Cleaning the build"
     make $ARGS clean
-    exit 0
-fi
-
-if [ "$1" = "menuconfig" ]; then
+    ;;
+menuconfig)
     echo "Running menuconfig"
     make $ARGS menuconfig
-    exit 0
-fi
-
-if [ "$1" = "rootfs" ]; then
+    ;;
+rootfs)
     echo "Building rootfs"
-    cd rootfs
+    cd "$WORKDIR/rootfs"
     make
-    exit 0
-fi
-
-if [ "$1" = "save" ]; then
-    echo "Running save defconfig, copying .config to arch/$ARCH/configs/$TARGET_DEFCONFIG"
-    cd $LINUX_SRC_DIR
-    cp .config arch/$ARCH/configs/$TARGET_DEFCONFIG
-    exit 0
-fi
-
-if [ "$1" = "nonroot_save" ]; then
-    echo "Running save defconfig, copying .config to arch/$ARCH/configs/$NONROOT_TARGET_DEFCONFIG"
-    cd $LINUX_SRC_DIR
-    cp .config arch/$ARCH/configs/$NONROOT_TARGET_DEFCONFIG
-    exit 0
-fi
-
-if [ "$1" = "kernel" ]; then
+    ;;
+save)
+    echo "Saving defconfig"
+    cp "$LINUX_SRC_DIR/.config" "$LINUX_SRC_DIR/arch/$ARCH/configs/$TARGET_DEFCONFIG"
+    ;;
+nonroot_save)
+    echo "Saving nonroot defconfig"
+    cp "$LINUX_SRC_DIR/.config" "$LINUX_SRC_DIR/arch/$ARCH/configs/$NONROOT_TARGET_DEFCONFIG"
+    ;;
+kernel)
     build_kernel
-    exit 0
-fi
+    ;;
+*)
+    echo "Unknown command: $1"
+    show_help
+    ;;
+esac
