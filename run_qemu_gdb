@@ -2,7 +2,8 @@
 
 # https://www.qemu.org/docs/master/system/loongarch/virt.html
 
-KERNEL_PATH=linux-6.11.6/vmlinux
+CHOSEN=$(cat chosen)
+KERNEL_PATH=linux-${CHOSEN}/vmlinux
 
 qemu-system-loongarch64 -machine virt -m 4G -cpu la464 \
     -smp 1 -kernel $KERNEL_PATH \

@@ -1,0 +1,217 @@
+// SPDX-License-Identifier: GPL-2.0
+/*
+* Copyright (C) 2023 Loongson Technology Corporation Limited
+*/
+
+/dts-v1/;
+
+#include <dt-bindings/interrupt-controller/irq.h>
+
+/ {
+	cpus {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		
+		cpu@0 {
+			compatible = "loongson,loongson3";
+			device_type = "cpu";
+			reg = <0x0>;
+			l2-cache = <&vcache0>;
+			next-level-cache = <&scache0>;
+			numa-node-id = <0>;
+		};
+		vcache0: l2-cache0 {
+			compatible = "cache";
+			next-level-cache = <&scache0>;
+		};
+		vcache1: l2-cache1 {
+			compatible = "cache";
+			next-level-cache = <&scache0>;
+		};
+		vcache2: l2-cache2 {
+			compatible = "cache";
+			next-level-cache = <&scache0>;
+		};
+		vcache3: l2-cache3 {
+			compatible = "cache";
+			next-level-cache = <&scache0>;
+		};
+		vcache4: l2-cache4 {
+			compatible = "cache";
+			next-level-cache = <&scache1>;
+		};
+		vcache5: l2-cache5 {
+			compatible = "cache";
+			next-level-cache = <&scache1>;
+		};
+		vcache6: l2-cache6 {
+			compatible = "cahce";
+			next-level-cache = <&scache1>;
+		};
+		vcache7: l2-cache7 {
+			compatible = "cache";
+			next-level-cache = <&scache1>;
+		};
+		vcache8: l2-cache8 {
+			compatible = "cache";
+			next-level-cache = <&scache2>;
+		};
+		vcache9: l2-cache9 {
+			compatible = "cache";
+			next-level-cache = <&scache2>;
+		};
+		vcachea: l2-cachea {
+			compatible = "cache";
+			next-level-cache = <&scache2>;
+		};
+		vcacheb: l2-cacheb {
+			compatible = "cache";
+			next-level-cache = <&scache2>;
+		};
+		vcachec: l2-cachec {
+			compatible = "cache";
+			next-level-cache = <&scache3>;
+		};
+		vcached: l2-cached {
+			compatible = "cache";
+			next-level-cache = <&scache3>;
+		};
+		vcachee: l2-cachee {
+			compatible = "cache";
+			next-level-cache = <&scache3>;
+		};
+		vcachef: l2-cachef {
+			compatible = "cache";
+			next-level-cache = <&scache3>;
+		};
+		scache0: l3-cache0 {
+			compatible = "cache";
+		};
+		scache1: l3-cache1 {
+			compatible = "cache";
+		};
+		scache2: l3-cache2 {
+			compatible = "cache";
+		};
+		scache3: l3-cache3 {
+			compatible = "cache";
+	}; };
+};
+
+/ {
+	#address-cells = <2>;
+	#size-cells = <2>;
+	
+	cpuintc: interrupt-controller {
+		compatible = "loongson,cpu-interrupt-controller";
+		#interrupt-cells = <1>;
+		interrupt-controller;
+		phandle = <0x8001>;
+	};
+	
+	eiointc: eiointc@1400 {
+		reg = <0x00 0x1400 0x00 0x800>;
+		interrupts = <0x03>;
+		interrupt-parent = <0x8001>;
+		#interrupt-cells = <0x01>;
+		interrupt-controller;
+		compatible = "loongson,ls2k2000-eiointc";
+		phandle = <0x8002>;
+	};
+	
+	pic: platic@10000000 {
+		loongson,pic-base-vec = <0x00>;
+		interrupt-parent = <0x8002>;
+		#interrupt-cells = <0x02>;
+		interrupt-controller;
+		reg = <0x00 0x10000000 0x00 0x400>;
+		compatible = "loongson,pch-pic-1.0";
+		phandle = <0x8003>;
+	};
+	
+	board: platform {
+		compatible = "loongson,nbus", "simple-bus";
+		
+		ranges = <0 0x10000000 0 0x10000000 0 0x10000000
+		0 0x2000000 0 0x2000000 0 0x2000000
+		0 0x20000000 0 0x20000000 0 0x10000000
+		0 0x40000000 0 0x40000000 0 0x40000000
+		0xfe 0x00000000 0xfe 0x00000000 0 0x40000000>;
+		
+		#address-cells = <2>;
+		#size-cells = <2>;
+		
+		liointc: interrupt-controller@1fe01400 {
+			compatible = "loongson,liointc-1.0";
+			reg = <0x0 0x1fe01400 0x0 0x64>;
+			interrupt-controller;
+			#interrupt-cells = <2>;
+			interrupt-parent = <&cpuintc>;
+			interrupts = <2>;
+			interrupt-names = "int0";
+			loongson,parent_int_map = <0xffffffff>, /* int0 */
+			<0x00000000>, /* int1 */
+			<0x00000000>, /* int2 */
+			<0x00000000>; /* int3 */
+		};
+		
+		rtc: rtc@100d0100 {
+			interrupt-parent = <0x8003>;
+			interrupts = <0x03 0x04>;
+			reg = <0x00 0x100d0100 0x00 0x100>;
+			compatible = "loongson,ls7a-rtc";
+		};
+		
+		pcie: pcie@20000000 {
+			interrupt-map-mask = <0x1800 0x00 0x00 0x07>;
+			interrupt-map = <0x00 0x00 0x00 0x01 0x8003 0x10 0x00 0x00 0x00 0x02 0x8003 0x11 0x00 0x00 0x00 0x03 0x8003 0x12 0x00 0x00 0x00 0x04 0x8003 0x13 0x800 0x00 0x00 0x01 0x8003 0x11 0x800 0x00 0x00 0x02 0x8003 0x12 0x800 0x00 0x00 0x03 0x8003 0x13 0x800 0x00 0x00 0x04 0x8003 0x10 0x1000 0x00 0x00 0x01 0x8003 0x12 0x1000 0x00 0x00 0x02 0x8003 0x13 0x1000 0x00 0x00 0x03 0x8003 0x10 0x1000 0x00 0x00 0x04 0x8003 0x11 0x1800 0x00 0x00 0x01 0x8003 0x13 0x1800 0x00 0x00 0x02 0x8003 0x10 0x1800 0x00 0x00 0x03 0x8003 0x11 0x1800 0x00 0x00 0x04 0x8003 0x12>;
+			msi-map = <0x00 0x8004 0x00 0x10000>;
+			ranges = <0x1000000 0x00 0x4000 0x00 0x18004000 0x00 0xc000 0x2000000 0x00 0x40000000 0x00 0x40000000 0x00 0x40000000>;
+			reg = <0x00 0x20000000 0x00 0x8000000>;
+			dma-coherent;
+			bus-range = <0x00 0x7f>;
+			linux,pci-domain = <0x00>;
+			#size-cells = <0x02>;
+			#address-cells = <0x03>;
+			device_type = "pci";
+			compatible = "pci-host-ecam-generic";
+		};
+		
+		msi: msi@2ff00000 {
+			loongson,msi-num-vecs = <0xe0>;
+			loongson,msi-base-vec = <0x20>;
+			interrupt-parent = <0x8002>;
+			interrupt-controller;
+			reg = <0x00 0x2ff00000 0x00 0x08>;
+			compatible = "loongson,pch-msi-1.0";
+			phandle = <0x8004>;
+		};
+		
+		osc_clk: osc-clock@0 {
+			#clock-cells = <0>;
+			compatible = "fixed-clock";
+			clock-frequency = <100000000>;
+			clock-output-names = "ref_clk";
+			reg = <0 0 0 0>;
+		};
+		
+		clks: clock-controller@1fe00480 {
+			compatible = "loongson";
+			reg = <0 0x1fe00480 0 1>;
+			clocks = <&osc_clk>;
+			clock-names = "ref_clk";
+			#clock-cells = <1>;
+		};
+		
+		uart0: serial@1fe001e0 {
+			compatible = "ns16550a";
+			reg = <0x0 0x1fe001e0 0x0 0x10>;
+			clock-frequency = <100000000>;
+			interrupt-parent = <&liointc>;
+			interrupts = <10 IRQ_TYPE_LEVEL_HIGH>;
+			no-loopback-test;
+			status = "disabled";
+		};
+		
+	};
+};
