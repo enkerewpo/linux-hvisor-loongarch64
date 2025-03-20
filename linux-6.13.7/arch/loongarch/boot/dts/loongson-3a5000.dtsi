@@ -106,7 +106,7 @@
 		compatible = "loongson,cpu-interrupt-controller";
 		#interrupt-cells = <1>;
 		interrupt-controller;
-		
+		phandle = <0x8001>;
 	};
 	
 	board: platform {
@@ -121,19 +121,19 @@
 		#address-cells = <2>;
 		#size-cells = <2>;
 		
-		liointc: interrupt-controller@1fe01400 {
-			compatible = "loongson,liointc-2.0";
-			reg = <0x0 0x1fe01400 0x0 0x64>;
-			interrupt-controller;
-			#interrupt-cells = <2>;
-			interrupt-parent = <&cpuintc>;
-			interrupts = <2>;
-			interrupt-names = "int0";
-			loongson,parent_int_map = <0xffffffff>, /* int0 */
-			<0x00000000>, /* int1 */
-			<0x00000000>, /* int2 */
-			<0x00000000>; /* int3 */
-		};
+		// liointc: interrupt-controller@1fe01400 {
+		// 	compatible = "loongson,liointc-1.0";
+		// 	reg = <0x0 0x1fe01400 0x0 0x64>;
+		// 	interrupt-controller;
+		// 	#interrupt-cells = <2>;
+		// 	interrupt-parent = <&cpuintc>;
+		// 	interrupts = <2>;
+		// 	interrupt-names = "int0";
+		// 	loongson,parent_int_map = <0xffffffff>, /* int0 */
+		// 	<0x00000000>, /* int1 */
+		// 	<0x00000000>, /* int2 */
+		// 	<0x00000000>; /* int3 */
+		// };
 		
 		eiointc: interrupt-controller@1fe01600 {
 			compatible = "loongson,ls2k2000-eiointc";
@@ -142,6 +142,7 @@
 			#interrupt-cells = <1>;
 			interrupt-parent = <&cpuintc>;
 			interrupts = <3>;
+			phandle = <0x8002>;
 		};
 		
 		pic: interrupt-controller@10000000 {
@@ -151,6 +152,7 @@
 			#interrupt-cells = <2>;
 			loongson,pic-base-vec = <0>;
 			interrupt-parent = <&eiointc>;
+			phandle = <0x8003>;
 		};
 		
 		msi: msi-controller@1fe01140 {
@@ -162,6 +164,7 @@
 			loongson,msi-base-vec = <64>;
 			loongson,msi-num-vecs = <192>;
 			interrupt-parent = <&eiointc>;
+			phandle = <0x8004>;
 		};
 		
 		rtc0: rtc@100d0100 {
@@ -192,119 +195,24 @@
 			compatible = "ns16550a";
 			reg = <0x0 0x1fe001e0 0x0 0x10>;
 			clock-frequency = <100000000>;
-			interrupt-parent = <&liointc>;
+			// interrupt-parent = <&liointc>;
 			interrupts = <10 IRQ_TYPE_LEVEL_HIGH>;
 			no-loopback-test;
 			status = "disabled";
 		};
 		
-		pcie@1a000000 {
+		
+		pcie@20000000 {
 			compatible = "loongson,ls7a-pci";
 			reg = <0x0 0x1a000000 0x0 0x02000000>,
-			<0xfe 0x0 0x0 0x20000000>;
+			      <0xfe 0x0 0x0 0x20000000>;
 			#address-cells = <3>;
 			#size-cells = <2>;
 			device_type = "pci";
 			msi-parent = <&msi>;
 			bus-range = <0x0 0xff>;
 			ranges = <0x01000000 0x0 0x00008000 0x0 0x18408000 0x0 0x00008000>,
-			<0x02000000 0x0 0x60000000 0x0 0x60000000 0x0 0x20000000>;
-			
-			pcie@9,0 {
-				reg = <0x4800 0x0 0x0 0x0 0x0>;
-				#address-cells = <3>;
-				#size-cells = <2>;
-				device_type = "pci";
-				interrupt-parent = <&pic>;
-				#interrupt-cells = <1>;
-				interrupt-map-mask = <0x0 0x0 0x0 0x0>;
-				interrupt-map = <0x0 0x0 0x0 0x0 &pic 32 IRQ_TYPE_LEVEL_HIGH>;
-				ranges;
-			};
-			
-			pcie@a,0 {
-				reg = <0x5000 0x0 0x0 0x0 0x0>;
-				#address-cells = <3>;
-				#size-cells = <2>;
-				device_type = "pci";
-				interrupt-parent = <&pic>;
-				#interrupt-cells = <1>;
-				interrupt-map-mask = <0x0 0x0 0x0 0x0>;
-				interrupt-map = <0x0 0x0 0x0 0x0 &pic 33 IRQ_TYPE_LEVEL_HIGH>;
-				ranges;
-			};
-			
-			pcie@b,0 {
-				reg = <0x5800 0x0 0x0 0x0 0x0>;
-				#address-cells = <3>;
-				#size-cells = <2>;
-				device_type = "pci";
-				interrupt-parent = <&pic>;
-				#interrupt-cells = <1>;
-				interrupt-map-mask = <0x0 0x0 0x0 0x0>;
-				interrupt-map = <0x0 0x0 0x0 0x0 &pic 34 IRQ_TYPE_LEVEL_HIGH>;
-				ranges;
-			};
-			
-			pcie@c,0 {
-				reg = <0x6000 0x0 0x0 0x0 0x0>;
-				#address-cells = <3>;
-				#size-cells = <2>;
-				device_type = "pci";
-				interrupt-parent = <&pic>;
-				#interrupt-cells = <1>;
-				interrupt-map-mask = <0x0 0x0 0x0 0x0>;
-				interrupt-map = <0x0 0x0 0x0 0x0 &pic 35 IRQ_TYPE_LEVEL_HIGH>;
-				ranges;
-			};
-			
-			pcie@d,0 {
-				reg = <0x6800 0x0 0x0 0x0 0x0>;
-				#address-cells = <3>;
-				#size-cells = <2>;
-				device_type = "pci";
-				interrupt-parent = <&pic>;
-				#interrupt-cells = <1>;
-				interrupt-map-mask = <0x0 0x0 0x0 0x0>;
-				interrupt-map = <0x0 0x0 0x0 0x0 &pic 36 IRQ_TYPE_LEVEL_HIGH>;
-				ranges;
-			};
-			
-			pcie@e,0 {
-				reg = <0x7000 0x0 0x0 0x0 0x0>;
-				#address-cells = <3>;
-				#size-cells = <2>;
-				device_type = "pci";
-				interrupt-parent = <&pic>;
-				#interrupt-cells = <1>;
-				interrupt-map-mask = <0x0 0x0 0x0 0x0>;
-				interrupt-map = <0x0 0x0 0x0 0x0 &pic 37 IRQ_TYPE_LEVEL_HIGH>;
-				ranges;
-			};
-			
-			pcie@f,0 {
-				reg = <0x7800 0x0 0x0 0x0 0x0>;
-				#address-cells = <3>;
-				#size-cells = <2>;
-				device_type = "pci";
-				interrupt-parent = <&pic>;
-				#interrupt-cells = <1>;
-				interrupt-map-mask = <0x0 0x0 0x0 0x0>;
-				interrupt-map = <0x0 0x0 0x0 0x0 &pic 40 IRQ_TYPE_LEVEL_HIGH>;
-				ranges;
-			};
-			
-			pcie@10,0 {
-				reg = <0x8000 0x0 0x0 0x0 0x0>;
-				#address-cells = <3>;
-				#size-cells = <2>;
-				device_type = "pci";
-				interrupt-parent = <&pic>;
-				#interrupt-cells = <1>;
-				interrupt-map-mask = <0x0 0x0 0x0 0x0>;
-				interrupt-map = <0x0 0x0 0x0 0x0 &pic 30 IRQ_TYPE_LEVEL_HIGH>;
-				ranges;
-			};
+				 <0x02000000 0x0 0x60000000 0x0 0x60000000 0x0 0x20000000>;
 		};
 	};
 	
