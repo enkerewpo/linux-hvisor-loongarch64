@@ -4,7 +4,7 @@
 
 KERNEL_PATH=nr_tmp/vmlinux
 
-qemu-system-loongarch64 -machine virt -m 4G -cpu la464 \
+qemu-system-loongarch64 -machine virt -m 16G -cpu la464 \
     -smp 1 -kernel $KERNEL_PATH \
     --nographic \
     -serial mon:stdio
