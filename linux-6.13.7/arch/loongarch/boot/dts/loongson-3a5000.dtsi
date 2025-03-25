@@ -202,14 +202,14 @@
 			compatible = "ns16550a";
 			reg = <0x0 0x1fe001e0 0x0 0x10>;
 			clock-frequency = <100000000>; // 100M
-			// interrupt-parent = <&liointc>;
+			interrupt-parent = <&liointc>;
 			interrupts = <10 IRQ_TYPE_LEVEL_HIGH>; // liointc IRQ 10
 			no-loopback-test;
 			// status = "disabled";
 		};
 		
 		
-		pcie@20000000 {
+		pcie@1a000000 {
 			compatible = "loongson,ls7a-pci";
 			reg = <0x00 0x1a000000 0x0 0x02000000>, // PCIe 配置空间，32M
 			      <0xfe 0x00000000 0x0 0x20000000>; // 高地址 MMIO 区域，512M
