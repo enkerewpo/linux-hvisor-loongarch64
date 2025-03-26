@@ -361,8 +361,7 @@ static int loongson_pci_probe(struct platform_device *pdev)
 	bridge->ops = priv->data->ops;
 	bridge->map_irq = loongson_map_irq;
 
-	pr_info("[wheatfox] loongson_pci_probe: bridge %s, cfg0 %p, cfg1 %p, calling pci_host_probe\n",
-		node->name, priv->cfg0_base, priv->cfg1_base);
+	pr_info("[wheatfox] loongson_pci_probe: bridge %s initialized, calling pci_host_probe\n", node->name);
 	
 	return pci_host_probe(bridge);
 }

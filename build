@@ -14,6 +14,10 @@ LLD=$LLVM_HOME/ld.lld
 OBJCOPY=$LLVM_HOME/llvm-objcopy
 READELF=$LLVM_HOME/llvm-readelf
 
+GNU_OBJCOPY=loongarch64-unknown-linux-gnu-objcopy
+GNU_READELF=loongarch64-unknown-linux-gnu-readelf
+GNU_OBJDUMP=loongarch64-unknown-linux-gnu-objdump
+
 NUM_JOBS=$(nproc)
 
 TARGET_DEFCONFIG=loongson3_root_defconfig
@@ -23,7 +27,7 @@ LINUX_SRC_DIR=$(realpath linux-6.13.7)
 
 # set the LLVM=1 one if you want to use clang to build the kernel
 
-# ARGS="-C $LINUX_SRC_DIR ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE LLVM=$LLVM CC=$CLANG LD=$LLD OBJCOPY=$OBJCOPY READELF=$READELF"
+# ARGS="-C $LINUX_SRC_DIR ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE LLVM=$LLVM CC=$CLANG LD=$LLD OBJCOPY=$OBJCOPY READELF=$GNU_READELF"
 ARGS="-C $LINUX_SRC_DIR ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE"
 
 WORKDIR=$(dirname "$LINUX_SRC_DIR")
@@ -52,7 +56,7 @@ cp_nonroot() {
     mkdir "$WORKDIR/nr_tmp"
     cp "$LINUX_SRC_DIR/arch/$ARCH/boot/vmlinux.bin" "$WORKDIR/nr_tmp/vmlinux.bin"
     cp "$LINUX_SRC_DIR/vmlinux" "$WORKDIR/nr_tmp/vmlinux"
-    $READELF -a "$WORKDIR/nr_tmp/vmlinux" > "$WORKDIR/nr_tmp/vmlinux.readelf.txt"
+    $GNU_READELF -a "$WORKDIR/nr_tmp/vmlinux" > "$WORKDIR/nr_tmp/vmlinux.readelf.txt"
 }
 
 build_kernel() {
@@ -64,7 +68,8 @@ build_kernel() {
     echo ""
     make $ARGS -j$NUM_JOBS
     echo "Running readelf"
-    $READELF -a "$LINUX_SRC_DIR/vmlinux" > "$LINUX_SRC_DIR/vmlinux.readelf.txt"
+    $GNU_READELF -a "$LINUX_SRC_DIR/vmlinux" > "$LINUX_SRC_DIR/vmlinux.readelf.txt"
+    $GNU_OBJDUMP -d "$LINUX_SRC_DIR/vmlinux" > "$LINUX_SRC_DIR/vmlinux.asm"
     echo "Generating compile_commands.json"
     cd "$LINUX_SRC_DIR"
     python3 scripts/clang-tools/gen_compile_commands.py

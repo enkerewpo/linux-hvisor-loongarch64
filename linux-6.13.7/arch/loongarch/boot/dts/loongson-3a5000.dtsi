@@ -179,7 +179,7 @@
 			reg = <0x0 0x100d0100 0x0 0x100>;
 			interrupt-parent = <&pic>; // pic-rtc0
 			interrupts = <52 IRQ_TYPE_LEVEL_HIGH>;
-			// status = "disabled";
+			status = "disabled";
 		};
 		
 		osc_clk: osc-clock@0 {
@@ -211,8 +211,8 @@
 		
 		pcie@1a000000 {
 			compatible = "loongson,ls7a-pci";
-			reg = <0x00 0x1a000000 0x0 0x02000000>, // PCIe 配置空间，32M
-			      <0xfe 0x00000000 0x0 0x20000000>; // 高地址 MMIO 区域，512M
+			reg = <0x00 0x1a000000 0x0 0x02000000>, // PCIe 配置空间
+			      <0xfe 0x00000000 0x0 0x20000000>; // HT保留地址空间（PCI配置访问地址）
 			#address-cells = <3>; // 【Addr】【Device】【Function】
 			#size-cells = <2>;
 			device_type = "pci";
