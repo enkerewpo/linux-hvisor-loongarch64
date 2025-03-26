@@ -8,7 +8,7 @@ CROSS_COMPILE=loongarch64-unknown-linux-gnu-
 
 # set to your LLVM installation path, linux require clang 18+ to build
 LLVM=1
-LLVM_HOME=/home/wheatfox/tryredox/clang+llvm-18.1.8-x86_64-linux-gnu-ubuntu-18.04/bin/
+LLVM_HOME=/opt/clang+llvm-18.1.8-x86_64-linux-gnu-ubuntu-18.04/bin
 CLANG=$LLVM_HOME/clang
 LLD=$LLVM_HOME/ld.lld
 OBJCOPY=$LLVM_HOME/llvm-objcopy
