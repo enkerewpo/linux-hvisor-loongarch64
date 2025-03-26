@@ -10,7 +10,7 @@
 
 / {
 	compatible = "loongson,ls3a5000-root", "loongson,ls3a5000";
-	model = "Loongson-3A5000 hvisor root zone board";
+	model = "Loongson3 hvisor root zone board";
 	
 	aliases {
 		serial0 = &uart0;
