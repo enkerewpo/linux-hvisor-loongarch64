@@ -104,9 +104,9 @@
 	
 	cpuintc: interrupt-controller {
 		compatible = "loongson,cpu-interrupt-controller";
-		#interrupt-cells = <1>; // 中断标识符用一个 cell (32b)
+		#interrupt-cells = <1>;// 中断标识符用一个 cell (32b)
 		interrupt-controller;
-		phandle = <0x8001>; // node 引用号
+		phandle = <0x8001>;// node 引用号
 	};
 	
 	board: platform {
@@ -131,34 +131,34 @@
 			compatible = "loongson,liointc-1.0";
 			reg = <0x0 0x1fe01400 0x0 0x64>;
 			interrupt-controller;
-			#interrupt-cells = <2>; // 【IRQ number】【IRQ trigger】
+			#interrupt-cells = <2>;// 【IRQ number】【IRQ trigger】
 			interrupt-parent = <&cpuintc>;
-			interrupts = <2>; // 作为 cpuintc 的 HWI 2
+			interrupts = <2>;// 作为 cpuintc 的 HWI 2
 			interrupt-names = "int0";
-			loongson,parent_int_map = 
-			<0xffffffff>, /* int0 */ // 32 个 liointc 中断路由给 CPU 的 int0 中断线
+			loongson,parent_int_map =
+			<0xffffffff>, /* int0 */// 32 个 liointc 中断路由给 CPU 的 int0 中断线
 			<0x00000000>, /* int1 */
 			<0x00000000>, /* int2 */
 			<0x00000000>; /* int3 */
 		};
 		
 		eiointc: interrupt-controller@1fe01600 {
-			compatible = "loongson,ls2k2000-eiointc"; // 没找到 3 系的 eiointc 驱动，估计复用了 2K 系列的
+			compatible = "loongson,ls2k2000-eiointc";// 没找到 3 系的 eiointc 驱动，估计复用了 2K 系列的
 			reg = <0x0 0x1fe01600 0x0 0xea00>;
 			interrupt-controller;
 			#interrupt-cells = <1>;
 			interrupt-parent = <&cpuintc>;
-			interrupts = <3>; // cpuintc 的 HWI 3
+			interrupts = <3>;// cpuintc 的 HWI 3
 			phandle = <0x8002>;
 		};
 		
 		pic: interrupt-controller@10000000 {
-			compatible = "loongson,pch-pic-1.0"; // Platform Controller Hub - Programmable Interrupt Controller
+			compatible = "loongson,pch-pic-1.0";// Platform Controller Hub - Programmable Interrupt Controller
 			reg = <0x0 0x10000000 0x0 0x400>;
 			interrupt-controller;
 			#interrupt-cells = <2>;
-			loongson,pic-base-vec = <0>; // PIC 起始中断向量号
-			interrupt-parent = <&eiointc>; // eiointc-pic
+			loongson,pic-base-vec = <0>;// PIC 起始中断向量号
+			interrupt-parent = <&eiointc>;// eiointc-pic
 			phandle = <0x8003>;
 		};
 		
@@ -167,17 +167,17 @@
 			reg = <0x0 0x1fe01140 0x0 0x8>;
 			interrupt-controller;
 			#interrupt-cells = <1>;
-			msi-controller; // msi 控制器
-			loongson,msi-base-vec = <64>; // MSI 起始中断向量号
-			loongson,msi-num-vecs = <192>; // MSI 最大向量数
-			interrupt-parent = <&eiointc>; // eiointc-msi
+			msi-controller;// msi 控制器
+			loongson,msi-base-vec = <64>;// MSI 起始中断向量号
+			loongson,msi-num-vecs = <192>;// MSI 最大向量数
+			interrupt-parent = <&eiointc>;// eiointc-msi
 			phandle = <0x8004>;
 		};
 		
 		rtc0: rtc@100d0100 {
-			compatible = "loongson,ls7a-rtc"; // Real Time Clock
+			compatible = "loongson,ls7a-rtc";// Real Time Clock
 			reg = <0x0 0x100d0100 0x0 0x100>;
-			interrupt-parent = <&pic>; // pic-rtc0
+			interrupt-parent = <&pic>;// pic-rtc0
 			interrupts = <52 IRQ_TYPE_LEVEL_HIGH>;
 			status = "disabled";
 		};
@@ -193,7 +193,7 @@
 		clks: clock-controller@1fe00480 {
 			compatible = "loongson";
 			reg = <0 0x1fe00480 0 1>;
-			clocks = <&osc_clk>; // clks-osc_clk
+			clocks = <&osc_clk>;// clks-osc_clk
 			clock-names = "ref_clk";
 			#clock-cells = <1>;
 		};
@@ -201,9 +201,9 @@
 		uart0: serial@1fe001e0 {
 			compatible = "ns16550a";
 			reg = <0x0 0x1fe001e0 0x0 0x10>;
-			clock-frequency = <100000000>; // 100M
+			clock-frequency = <100000000>;// 100M
 			interrupt-parent = <&liointc>;
-			interrupts = <10 IRQ_TYPE_LEVEL_HIGH>; // liointc IRQ 10
+			interrupts = <10 IRQ_TYPE_LEVEL_HIGH>;// liointc IRQ 10
 			no-loopback-test;
 			// status = "disabled";
 		};
@@ -211,17 +211,112 @@
 		
 		pcie@1a000000 {
 			compatible = "loongson,ls7a-pci";
-			reg = <0x00 0x1a000000 0x0 0x02000000>, // PCIe 配置空间
-			      <0xfe 0x00000000 0x0 0x20000000>; // HT保留地址空间（PCI配置访问地址）
-			#address-cells = <3>; // 【Addr】【Device】【Function】
+			reg =
+			<0x00 0x1a000000 0x0 0x02000000>,// PCIe 配置空间
+			<0xfe 0x00000000 0x0 0x20000000>;// HT保留地址空间（PCI配置访问地址）
+			#address-cells = <3>;
 			#size-cells = <2>;
 			device_type = "pci";
-			msi-parent = <&msi>; // MSI 由 msi 节点负责
-			bus-range = <0x0 0xff>; // bus 号的范围
+			msi-parent = <&msi>;// MSI 由 msi 节点负责
+			bus-range = <0x0 0xff>;// bus 号的范围
 			// PCIe 空间映射
 			ranges =
-				 <0x01000000 0x0 0x00008000 0x0 0x18408000 0x0 0x00008000>, // 0x01000000（IO）【PCIe空间基地址】【CPU空间地址】【大小】
-				 <0x02000000 0x0 0x60000000 0x0 0x60000000 0x0 0x20000000>; // 0x02000000（MEM）【PCIe空间基地址】【CPU空间地址】【大小】
+			<0x01000000 0x0 0x00008000 0x0 0x18408000 0x0 0x00008000>,// 0x01000000（IO）【PCIe空间基地址】【CPU空间地址】【大小】
+			<0x02000000 0x0 0x60000000 0x0 0x60000000 0x0 0x20000000>;// 0x02000000（MEM）【PCIe空间基地址】【CPU空间地址】【大小】
+			
+			gmac0: ethernet@3,0 {
+				reg = <0x1800 0x0 0x0 0x0 0x0>;
+				interrupt-parent = <&pic>;
+				interrupts = <12 IRQ_TYPE_LEVEL_HIGH>,
+				<13 IRQ_TYPE_LEVEL_HIGH>;
+				interrupt-names = "macirq", "eth_lpi";
+				
+				phy-mode = "gmii";
+				phy-handle = <&phy0>;
+				mdio {
+					compatible = "snps,dwmac-mdio";
+					#address-cells = <1>;
+					#size-cells = <0>;
+					phy0: ethernet-phy@0 {
+						reg = <2>;
+					};
+				};
+				
+				// status = "disabled";
+			};
+			
+			pcie@9,0 {
+				reg = <0x4800 0x0 0x0 0x0 0x0>;
+				#address-cells = <3>;
+				#size-cells = <2>;
+				device_type = "pci";
+				interrupt-parent = <&pic>;
+				#interrupt-cells = <1>;
+				interrupt-map-mask = <0x0 0x0 0x0 0x0>;
+				interrupt-map = <0x0 0x0 0x0 0x0 &pic 32 IRQ_TYPE_LEVEL_HIGH>;
+				ranges;
+			};
+			
+			pcie@a,0 {
+				reg = <0x5000 0x0 0x0 0x0 0x0>;
+				#address-cells = <3>;
+				#size-cells = <2>;
+				device_type = "pci";
+				interrupt-parent = <&pic>;
+				#interrupt-cells = <1>;
+				interrupt-map-mask = <0x0 0x0 0x0 0x0>;
+				interrupt-map = <0x0 0x0 0x0 0x0 &pic 33 IRQ_TYPE_LEVEL_HIGH>;
+				ranges;
+			};
+			
+			pcie@b,0 {
+				reg = <0x5800 0x0 0x0 0x0 0x0>;
+				#address-cells = <3>;
+				#size-cells = <2>;
+				device_type = "pci";
+				interrupt-parent = <&pic>;
+				#interrupt-cells = <1>;
+				interrupt-map-mask = <0x0 0x0 0x0 0x0>;
+				interrupt-map = <0x0 0x0 0x0 0x0 &pic 34 IRQ_TYPE_LEVEL_HIGH>;
+				ranges;
+			};
+			
+			pcie@c,0 {
+				reg = <0x6000 0x0 0x0 0x0 0x0>;
+				#address-cells = <3>;
+				#size-cells = <2>;
+				device_type = "pci";
+				interrupt-parent = <&pic>;
+				#interrupt-cells = <1>;
+				interrupt-map-mask = <0x0 0x0 0x0 0x0>;
+				interrupt-map = <0x0 0x0 0x0 0x0 &pic 35 IRQ_TYPE_LEVEL_HIGH>;
+				ranges;
+			};
+			
+			pcie@d,0 {
+				reg = <0x6800 0x0 0x0 0x0 0x0>;
+				#address-cells = <3>;
+				#size-cells = <2>;
+				device_type = "pci";
+				interrupt-parent = <&pic>;
+				#interrupt-cells = <1>;
+				interrupt-map-mask = <0x0 0x0 0x0 0x0>;
+				interrupt-map = <0x0 0x0 0x0 0x0 &pic 36 IRQ_TYPE_LEVEL_HIGH>;
+				ranges;
+			};
+			
+			pcie@e,0 {
+				reg = <0x7000 0x0 0x0 0x0 0x0>;
+				#address-cells = <3>;
+				#size-cells = <2>;
+				device_type = "pci";
+				interrupt-parent = <&pic>;
+				#interrupt-cells = <1>;
+				interrupt-map-mask = <0x0 0x0 0x0 0x0>;
+				interrupt-map = <0x0 0x0 0x0 0x0 &pic 37 IRQ_TYPE_LEVEL_HIGH>;
+				ranges;
+			};
+			
 		};
 	};
 	
