@@ -45,6 +45,94 @@
 			reg = <0x00 0xc0000000 0x00 0x30000000>;
 		};
 	};
+	
+	pcie@1a000000 {
+		compatible = "loongson,ls7a-pci";
+		
+		// configuration space
+		reg =
+		<0x00 0x1a000000 0x0 0x20000000>,
+		<0xfe 0x00000000 0x0 0x20000000>;
+		
+		#address-cells = <3>;
+		#size-cells = <2>;
+		device_type = "pci";
+		msi-parent = <&msi>;
+		bus-range = <0x0 0xff>;
+		
+		// PCIe resources
+		ranges =
+		<0x01000000 0x0 0x00008000 0x0 0x18408000 0x0 0x00008000>,// 0x01000000 (IO) [PCIe space base address][CPU space address][size]
+		<0x02000000 0x0 0x60000000 0x0 0x60000000 0x0 0x20000000>;// 0x02000000 (MEM) [PCIe space base address][CPU space address][size]
+		
+		gmac0: ethernet@3,0 {
+			reg = <0x1800 0x0 0x0 0x0 0x0>;
+			interrupt-parent = <&pic>;
+			interrupts = <12 IRQ_TYPE_LEVEL_HIGH>,
+			<13 IRQ_TYPE_LEVEL_HIGH>;
+			interrupt-names = "macirq", "eth_lpi";
+			
+			phy-mode = "gmii";
+			phy-handle = <&phy0>;
+			mdio {
+				compatible = "snps,dwmac-mdio";
+				#address-cells = <1>;
+				#size-cells = <0>;
+				phy0: ethernet-phy@0 {
+					reg = <2>;
+				};
+			};
+			// status = "disabled";
+		};
+		
+		pcie@9,0 {
+			reg = <0x4800 0x0 0x0 0x0 0x0>;
+			#address-cells = <3>;
+			#size-cells = <2>;
+			device_type = "pci";
+			interrupt-parent = <&pic>;
+			#interrupt-cells = <1>;
+			interrupt-map-mask = <0x0 0x0 0x0 0x0>;
+			interrupt-map = <0x0 0x0 0x0 0x0 &pic 32 IRQ_TYPE_LEVEL_HIGH>;
+			ranges;
+		};// f0p0
+		
+		pcie@a,0 {
+			reg = <0x5000 0x0 0x0 0x0 0x0>;
+			#address-cells = <3>;
+			#size-cells = <2>;
+			device_type = "pci";
+			interrupt-parent = <&pic>;
+			#interrupt-cells = <1>;
+			interrupt-map-mask = <0x0 0x0 0x0 0x0>;
+			interrupt-map = <0x0 0x0 0x0 0x0 &pic 33 IRQ_TYPE_LEVEL_HIGH>;
+			ranges;
+		};// f0p1
+		
+		pcie@b,0 {
+			reg = <0x5800 0x0 0x0 0x0 0x0>;
+			#address-cells = <3>;
+			#size-cells = <2>;
+			device_type = "pci";
+			interrupt-parent = <&pic>;
+			#interrupt-cells = <1>;
+			interrupt-map-mask = <0x0 0x0 0x0 0x0>;
+			interrupt-map = <0x0 0x0 0x0 0x0 &pic 34 IRQ_TYPE_LEVEL_HIGH>;
+			ranges;
+		};// f0p2
+		
+		pcie@c,0 {
+			reg = <0x6000 0x0 0x0 0x0 0x0>;
+			#address-cells = <3>;
+			#size-cells = <2>;
+			device_type = "pci";
+			interrupt-parent = <&pic>;
+			#interrupt-cells = <1>;
+			interrupt-map-mask = <0x0 0x0 0x0 0x0>;
+			interrupt-map = <0x0 0x0 0x0 0x0 &pic 35 IRQ_TYPE_LEVEL_HIGH>;
+			ranges;
+		};// f0p3
+	};
 };
 
 &uart0 {
