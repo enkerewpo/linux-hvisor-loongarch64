@@ -51,6 +51,7 @@ static struct pci_config_window *gen_pci_init(struct device *dev,
 
 int pci_host_common_probe(struct platform_device *pdev)
 {
+	printk("[kai] pci_host_common_probe\n");
 	struct device *dev = &pdev->dev;
 	struct pci_host_bridge *bridge;
 	struct pci_config_window *cfg;

@@ -329,6 +329,8 @@ static int loongson_pci_probe(struct platform_device *pdev)
 	if (!bridge)
 		return -ENODEV;
 
+	pr_info("[wheatfox] loongson_pci_probe: found bridge %s\n", node->name);
+
 	priv = pci_host_bridge_priv(bridge);
 	priv->pdev = pdev;
 	priv->data = of_device_get_match_data(dev);
@@ -349,9 +351,15 @@ static int loongson_pci_probe(struct platform_device *pdev)
 		if (!regs)
 			dev_info(dev, "missing mem resource for cfg1\n");
 		else {
+			printk("[kai] loongson_pci_reg1: start=%llx, end=%llx\n", regs->start, regs->end);
+			regs->start += 0xe0000000000;
+			regs->end += 0xe0000000000;
+			printk("[kai] force regs -> start=%llx, end=%llx\n", regs->start, regs->end);
 			priv->cfg1_base = devm_pci_remap_cfg_resource(dev, regs);
 			if (IS_ERR(priv->cfg1_base))
 				priv->cfg1_base = NULL;
+			else 
+				printk("[kai] loongson_cfg1_base=%px\n", priv->cfg1_base);
 		}
 	}
 
@@ -359,6 +367,8 @@ static int loongson_pci_probe(struct platform_device *pdev)
 	bridge->ops = priv->data->ops;
 	bridge->map_irq = loongson_map_irq;
 
+	pr_info("[wheatfox] loongson_pci_probe: bridge %s initialized, calling pci_host_probe\n", node->name);
+	
 	return pci_host_probe(bridge);
 }
 

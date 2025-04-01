@@ -1,1 +1,0 @@
-nr_tmp/vmlinux.readelf.txt
