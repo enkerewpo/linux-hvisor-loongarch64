@@ -8,3 +8,4 @@ GTAGS
 nr_tmp
 .vscode*
 nvme_ext4.img
+chosen
