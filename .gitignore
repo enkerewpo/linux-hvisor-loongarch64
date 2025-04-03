@@ -10,4 +10,3 @@ nr_tmp
 nvme_ext4.img
 chosen
 build
-loongson3_root_defconfig

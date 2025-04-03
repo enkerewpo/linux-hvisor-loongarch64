@@ -191,7 +191,13 @@ CONFIG_CHECKPOINT_RESTORE=y
 CONFIG_SCHED_AUTOGROUP=y
 CONFIG_RELAY=y
 CONFIG_BLK_DEV_INITRD=y
-CONFIG_INITRAMFS_SOURCE="/home/xzk/packages/rootfs.cpio.gz"
+
+CONFIG_INITRAMFS_SOURCE="/home/wheatfox/Documents/Code/hvisor-la64-linux/rootfs/buildroot/rootfs.cpio.gz"
+
+# QUICK COPY :)
+# CONFIG_INITRAMFS_SOURCE="/home/wheatfox/Documents/Code/hvisor-la64-linux/rootfs/buildroot/rootfs.cpio.gz"
+# CONFIG_INITRAMFS_SOURCE="/home/xzk/packages/rootfs.cpio.gz"
+
 CONFIG_INITRAMFS_ROOT_UID=0
 CONFIG_INITRAMFS_ROOT_GID=0
 CONFIG_RD_GZIP=y
