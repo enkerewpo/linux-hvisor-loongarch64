@@ -7,6 +7,20 @@ CROSS_COMPILE=loongarch64-unknown-linux-gnu-
 # set to `6.13.7`/ `git` in the ./chosen file
 CHOSEN=$(cat chosen)
 
+# first we recursively clone all submodules
+
+init_submodules() {
+    echo "Initializing submodules"
+    git submodule update --init --recursive
+    echo "Chosen linux source: $CHOSEN"
+    echo "======================================================================="
+    echo "Submodules:"
+    git submodule status
+    echo "======================================================================="
+}
+
+init_submodules
+
 # set to your LLVM installation path, linux require clang 18+ to build
 LLVM=0
 LLVM_HOME=/home/wheatfox/tryredox/clang+llvm-18.1.8-x86_64-linux-gnu-ubuntu-18.04/bin/
@@ -57,7 +71,7 @@ cp_nonroot() {
     mkdir "$WORKDIR/nr_tmp"
     cp "$LINUX_SRC_DIR/arch/$ARCH/boot/vmlinux.bin" "$WORKDIR/nr_tmp/vmlinux.bin"
     cp "$LINUX_SRC_DIR/vmlinux" "$WORKDIR/nr_tmp/vmlinux"
-    $GNU_READELF -a "$WORKDIR/nr_tmp/vmlinux" > "$WORKDIR/nr_tmp/vmlinux.readelf.txt"
+    $GNU_READELF -a "$WORKDIR/nr_tmp/vmlinux" >"$WORKDIR/nr_tmp/vmlinux.readelf.txt"
 }
 
 build_kernel() {
@@ -69,8 +83,8 @@ build_kernel() {
     echo ""
     make $ARGS -j$NUM_JOBS
     echo "Running readelf"
-    $GNU_READELF -a "$LINUX_SRC_DIR/vmlinux" > "$LINUX_SRC_DIR/vmlinux.readelf.txt"
-    $GNU_OBJDUMP -d "$LINUX_SRC_DIR/vmlinux" > "$LINUX_SRC_DIR/vmlinux.asm"
+    $GNU_READELF -a "$LINUX_SRC_DIR/vmlinux" >"$LINUX_SRC_DIR/vmlinux.readelf.txt"
+    $GNU_OBJDUMP -d "$LINUX_SRC_DIR/vmlinux" >"$LINUX_SRC_DIR/vmlinux.asm"
     echo "Generating compile_commands.json"
     cd "$LINUX_SRC_DIR"
     python3 scripts/clang-tools/gen_compile_commands.py
@@ -88,11 +102,11 @@ setup_nonroot_rootfs() {
     sudo rm -rf "$TMPROOT"
     sudo mkdir "$TMPROOT"
     cd "$TMPROOT"
-    sudo cpio -id < "$ROOTFS_DIR/nonroot_tmproot.cpio"
+    sudo cpio -id <"$ROOTFS_DIR/nonroot_tmproot.cpio"
     sudo rm -rf tool *.sh
     sudo cp "$ROOTFS_DIR/nonroot_profile" etc/profile
     sudo cp "$ROOTFS_DIR/my_init/init" bin/wsh
-    sudo find . | cpio -o -H newc | gzip -9 > "$ROOTFS_DIR/nonroot_fs.cpio.gz"
+    sudo find . | cpio -o -H newc | gzip -9 >"$ROOTFS_DIR/nonroot_fs.cpio.gz"
     echo "Rootfs setup complete"
 }
 
@@ -102,17 +116,17 @@ case "$1" in
 def)
     echo "Running defconfig"
     make $ARGS $TARGET_DEFCONFIG
-    echo "ROOT" > "$FLAG"
+    echo "ROOT" >"$FLAG"
     ;;
 nonroot_def)
     echo "Running nonroot defconfig"
     make $ARGS $NONROOT_TARGET_DEFCONFIG
-    echo "NONROOT" > "$FLAG"
+    echo "NONROOT" >"$FLAG"
     ;;
 nonroot)
     setup_nonroot_rootfs
     make $ARGS $NONROOT_TARGET_DEFCONFIG
-    echo "NONROOT" > "$FLAG"
+    echo "NONROOT" >"$FLAG"
     build_kernel
     cp_nonroot
     ;;
