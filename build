@@ -37,13 +37,12 @@ check_chosen() {
 
 # check if linux-$CHOSEN directory exists
 check_chosen $CHOSEN
+echo "Chosen linux source: linux-$CHOSEN"
 
 # first we recursively clone all submodules
-
 init_submodules() {
     echo "Initializing submodules"
     git submodule update --init --recursive
-    echo "Chosen linux source: linux-$CHOSEN"
     echo "======================================================================="
     echo "Submodules:"
     git submodule status
