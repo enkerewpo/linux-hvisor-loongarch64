@@ -352,9 +352,6 @@ static int loongson_pci_probe(struct platform_device *pdev)
 			dev_info(dev, "missing mem resource for cfg1\n");
 		else {
 			printk("[kai] loongson_pci_reg1: start=%llx, end=%llx\n", regs->start, regs->end);
-			regs->start += 0xe0000000000;
-			regs->end += 0xe0000000000;
-			printk("[kai] force regs -> start=%llx, end=%llx\n", regs->start, regs->end);
 			priv->cfg1_base = devm_pci_remap_cfg_resource(dev, regs);
 			if (IS_ERR(priv->cfg1_base))
 				priv->cfg1_base = NULL;

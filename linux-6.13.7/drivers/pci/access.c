@@ -101,7 +101,7 @@ int pci_generic_config_read(struct pci_bus *bus, unsigned int devfn,
 	else
 		*val = readl(addr);
 	
-	printk("[kai] %s: addr: 0x%px, val: 0x%x\n", __func__, addr, *val);
+	// printk("[kai] %s: addr: 0x%px, val: 0x%x\n", __func__, addr, *val);
 
 	return PCIBIOS_SUCCESSFUL;
 }
@@ -123,7 +123,7 @@ int pci_generic_config_write(struct pci_bus *bus, unsigned int devfn,
 	else
 		writel(val, addr);
 
-	printk("[kai] %s: addr: 0x%px, val: 0x%x\n", __func__, addr, val);
+	// printk("[kai] %s: addr: 0x%px, val: 0x%x\n", __func__, addr, val);
 
 	return PCIBIOS_SUCCESSFUL;
 }
