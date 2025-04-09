@@ -10,13 +10,11 @@ fi
 
 export EDITOR='/bin/vi'
 
-echo "Welcome to hvisor nonroot linux with virtio console! / wheatfox" > /dev/hvc0
-echo "If you see this, it means that the /dev/hvc0 output is working." > /dev/hvc0
-echo "Starting nonroot shell..." > /dev/hvc0
-
 # we only need to open bash on hvc0 once so write .shell_lock at / to prevent endless loop
 if [ ! -f /.shell_lock ]; then
 	touch /.shell_lock
-	# exec bash --login </dev/hvc0 >/dev/hvc0 2>&1
-	/bin/wsh
+	echo "----------------------------------------------------------------------------------" >/dev/hvc0
+	echo "Welcome to hvisor nonroot linux with virtio console! / wheatfox" >/dev/hvc0
+	exec bash --login </dev/hvc0 >/dev/hvc0 2>&1
+	# /bin/wsh
 fi

@@ -109,34 +109,16 @@
 		phandle = <0x8001>;
 	};
 	
-	eiointc: eiointc@1400 {
-		reg = <0x00 0x1400 0x00 0x800>;
-		interrupts = <0x03>;
-		interrupt-parent = <0x8001>;
-		#interrupt-cells = <0x01>;
-		interrupt-controller;
-		compatible = "loongson,ls2k2000-eiointc";
-		phandle = <0x8002>;
-	};
-	
-	pic: platic@10000000 {
-		loongson,pic-base-vec = <0x00>;
-		interrupt-parent = <0x8002>;
-		#interrupt-cells = <0x02>;
-		interrupt-controller;
-		reg = <0x00 0x10000000 0x00 0x400>;
-		compatible = "loongson,pch-pic-1.0";
-		phandle = <0x8003>;
-	};
-	
 	board: platform {
 		compatible = "loongson,nbus", "simple-bus";
 		
-		ranges = <0 0x10000000 0 0x10000000 0 0x10000000
-		0 0x2000000 0 0x2000000 0 0x2000000
-		0 0x20000000 0 0x20000000 0 0x10000000
-		0 0x40000000 0 0x40000000 0 0x40000000
-		0xfe 0x00000000 0xfe 0x00000000 0 0x40000000>;
+		ranges = <
+		0x00  0x10000000  0x00  0x10000000  0x00  0x10000000
+		0x00  0x02000000  0x00  0x02000000  0x00  0x02000000
+		0x00  0x20000000  0x00  0x20000000  0x00  0x10000000
+		0x00  0x40000000  0x00  0x40000000  0x00  0x40000000
+		0xfe  0x00000000  0xfe  0x00000000  0x00  0x40000000
+		>;
 		
 		#address-cells = <2>;
 		#size-cells = <2>;
@@ -149,42 +131,51 @@
 			interrupt-parent = <&cpuintc>;
 			interrupts = <2>;
 			interrupt-names = "int0";
-			loongson,parent_int_map = <0xffffffff>, /* int0 */
+			loongson,parent_int_map =
+			<0xffffffff>, /* int0 */
 			<0x00000000>, /* int1 */
 			<0x00000000>, /* int2 */
 			<0x00000000>; /* int3 */
 		};
 		
-		rtc: rtc@100d0100 {
-			interrupt-parent = <0x8003>;
-			interrupts = <0x03 0x04>;
-			reg = <0x00 0x100d0100 0x00 0x100>;
-			compatible = "loongson,ls7a-rtc";
-		};
-		
-		pcie: pcie@20000000 {
-			interrupt-map-mask = <0x1800 0x00 0x00 0x07>;
-			interrupt-map = <0x00 0x00 0x00 0x01 0x8003 0x10 0x00 0x00 0x00 0x02 0x8003 0x11 0x00 0x00 0x00 0x03 0x8003 0x12 0x00 0x00 0x00 0x04 0x8003 0x13 0x800 0x00 0x00 0x01 0x8003 0x11 0x800 0x00 0x00 0x02 0x8003 0x12 0x800 0x00 0x00 0x03 0x8003 0x13 0x800 0x00 0x00 0x04 0x8003 0x10 0x1000 0x00 0x00 0x01 0x8003 0x12 0x1000 0x00 0x00 0x02 0x8003 0x13 0x1000 0x00 0x00 0x03 0x8003 0x10 0x1000 0x00 0x00 0x04 0x8003 0x11 0x1800 0x00 0x00 0x01 0x8003 0x13 0x1800 0x00 0x00 0x02 0x8003 0x10 0x1800 0x00 0x00 0x03 0x8003 0x11 0x1800 0x00 0x00 0x04 0x8003 0x12>;
-			msi-map = <0x00 0x8004 0x00 0x10000>;
-			ranges = <0x1000000 0x00 0x4000 0x00 0x18004000 0x00 0xc000 0x2000000 0x00 0x40000000 0x00 0x40000000 0x00 0x40000000>;
-			reg = <0x00 0x20000000 0x00 0x8000000>;
-			dma-coherent;
-			bus-range = <0x00 0x7f>;
-			linux,pci-domain = <0x00>;
-			#size-cells = <0x02>;
-			#address-cells = <0x03>;
-			device_type = "pci";
-			compatible = "pci-host-ecam-generic";
-		};
-		
-		msi: msi@2ff00000 {
-			loongson,msi-num-vecs = <0xe0>;
-			loongson,msi-base-vec = <0x20>;
-			interrupt-parent = <0x8002>;
+		eiointc: interrupt-controller@1fe01600 {
+			compatible = "loongson,ls2k2000-eiointc";
+			reg = <0x0 0x1fe01600 0x0 0xea00>;
 			interrupt-controller;
-			reg = <0x00 0x2ff00000 0x00 0x08>;
+			#interrupt-cells = <1>;
+			interrupt-parent = <&cpuintc>;
+			interrupts = <3>;
+			phandle = <0x8002>;
+		};
+		
+		pic: interrupt-controller@10000000 {
+			compatible = "loongson,pch-pic-1.0";// Platform Controller Hub - Programmable Interrupt Controller
+			reg = <0x0 0x10000000 0x0 0x400>;
+			interrupt-controller;
+			#interrupt-cells = <2>;
+			loongson,pic-base-vec = <0>;
+			interrupt-parent = <&eiointc>;
+			phandle = <0x8003>;
+		};
+		
+		msi: msi-controller@1fe01140 {
 			compatible = "loongson,pch-msi-1.0";
+			reg = <0x0 0x1fe01140 0x0 0x8>;
+			interrupt-controller;
+			#interrupt-cells = <1>;
+			msi-controller;
+			loongson,msi-base-vec = <64>;
+			loongson,msi-num-vecs = <192>;
+			interrupt-parent = <&eiointc>;
 			phandle = <0x8004>;
+		};
+		
+		rtc0: rtc@100d0100 {
+			compatible = "loongson,ls7a-rtc";// Real Time Clock
+			reg = <0x0 0x100d0100 0x0 0x100>;
+			interrupt-parent = <&pic>;// pic-rtc0
+			interrupts = <52 IRQ_TYPE_LEVEL_HIGH>;
+			status = "disabled";
 		};
 		
 		osc_clk: osc-clock@0 {
@@ -198,7 +189,7 @@
 		clks: clock-controller@1fe00480 {
 			compatible = "loongson";
 			reg = <0 0x1fe00480 0 1>;
-			clocks = <&osc_clk>;
+			clocks = <&osc_clk>;// clks-osc_clk
 			clock-names = "ref_clk";
 			#clock-cells = <1>;
 		};
@@ -206,12 +197,11 @@
 		uart0: serial@1fe001e0 {
 			compatible = "ns16550a";
 			reg = <0x0 0x1fe001e0 0x0 0x10>;
-			clock-frequency = <100000000>;
+			clock-frequency = <100000000>;// 100M
 			interrupt-parent = <&liointc>;
-			interrupts = <10 IRQ_TYPE_LEVEL_HIGH>;
+			interrupts = <10 IRQ_TYPE_LEVEL_HIGH>;// liointc IRQ 10
 			no-loopback-test;
-			status = "disabled";
+			// status = "disabled";
 		};
-		
 	};
 };

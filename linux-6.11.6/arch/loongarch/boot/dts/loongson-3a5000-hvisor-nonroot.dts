@@ -10,7 +10,7 @@
 
 / {
 	compatible = "loongson,ls3a5000-root", "loongson,ls3a5000";
-	model = "Loongson-3A5000 hvisor nonroot zone board";
+	model = "Loongson3 hvisor nonroot zone board";
 	
 	aliases {
 		serial0 = &uart0;
@@ -37,6 +37,15 @@
 		interrupt-parent = <&cpuintc>;
 		interrupts = <4>;// = hwirq
 		reg = <0x0 0x30001000 0x0 0x200>;
+		status = "okay";
+	};
+	// virtio blk
+	virtio_mmio@30002000 {
+		dma-coherent;
+		compatible = "virtio,mmio";
+		interrupt-parent = <&cpuintc>;
+		interrupts = <5>;// = hwirq
+		reg = <0x0 0x30002000 0x0 0x200>;
 		status = "okay";
 	};
 };
