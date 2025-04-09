@@ -59,6 +59,7 @@ LLD=$LLVM_HOME/ld.lld
 LLVM_OBJCOPY=$LLVM_HOME/llvm-objcopy
 LLVM_READELF=$LLVM_HOME/llvm-readelf
 
+GNU_GCC=loongarch64-unknown-linux-gnu-gcc
 GNU_OBJCOPY=loongarch64-unknown-linux-gnu-objcopy
 GNU_READELF=loongarch64-unknown-linux-gnu-readelf
 GNU_OBJDUMP=loongarch64-unknown-linux-gnu-objdump
@@ -135,6 +136,7 @@ setup_nonroot_rootfs() {
     sudo cpio -id <"$ROOTFS_DIR/nonroot_tmproot.cpio"
     sudo rm -rf tool *.sh
     sudo cp "$ROOTFS_DIR/nonroot_profile" etc/profile
+    $GNU_GCC "$ROOTFS_DIR/my_init/init.c" -o "$ROOTFS_DIR/my_init/init" -static
     sudo cp "$ROOTFS_DIR/my_init/init" bin/wsh
     sudo find . | cpio -o -H newc | gzip -9 >"$ROOTFS_DIR/nonroot_fs.cpio.gz"
     echo "Rootfs setup complete"
