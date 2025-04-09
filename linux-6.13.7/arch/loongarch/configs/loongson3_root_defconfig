@@ -198,6 +198,12 @@ CONFIG_INITRAMFS_SOURCE="/home/wheatfox/Documents/Code/hvisor-la64-linux/rootfs/
 # CONFIG_INITRAMFS_SOURCE="/home/wheatfox/Documents/Code/hvisor-la64-linux/rootfs/buildroot/rootfs.cpio.gz"
 # CONFIG_INITRAMFS_SOURCE="/home/xzk/packages/rootfs.cpio.gz"
 
+# CONFIG_INITRAMFS_SOURCE="/home/wheatfox/Documents/Code/hvisor-la64-linux/rootfs/nonroot_fs.cpio.gz"
+
+# QUICK COPY :)
+# CONFIG_INITRAMFS_SOURCE="/home/wheatfox/Documents/Code/hvisor-la64-linux/rootfs/nonroot_fs.cpio.gz"
+# CONFIG_INITRAMFS_SOURCE="/home/xzk/workspace/loongarch/hvisor-la64-linux/rootfs/nonroot_fs.cpio.gz"
+
 CONFIG_INITRAMFS_ROOT_UID=0
 CONFIG_INITRAMFS_ROOT_GID=0
 CONFIG_RD_GZIP=y
@@ -1567,16 +1573,7 @@ CONFIG_NET_CORE=y
 # CONFIG_WIREGUARD is not set
 # CONFIG_EQUALIZER is not set
 # CONFIG_NET_FC is not set
-<<<<<<< HEAD
-CONFIG_NET_TEAM=y
-# CONFIG_NET_TEAM_MODE_BROADCAST is not set
-# CONFIG_NET_TEAM_MODE_ROUNDROBIN is not set
-# CONFIG_NET_TEAM_MODE_RANDOM is not set
-# CONFIG_NET_TEAM_MODE_ACTIVEBACKUP is not set
-# CONFIG_NET_TEAM_MODE_LOADBALANCE is not set
-=======
 # CONFIG_NET_TEAM is not set
->>>>>>> c6344cac67cdbb45d72a919d1ba799819574f137
 # CONFIG_MACVLAN is not set
 # CONFIG_IPVLAN is not set
 # CONFIG_VXLAN is not set
