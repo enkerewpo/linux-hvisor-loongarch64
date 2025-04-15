@@ -196,12 +196,22 @@
 		
 		uart0: serial@1fe001e0 {
 			compatible = "ns16550a";
-			reg = <0x0 0x1fe001e0 0x0 0x10>;
+			reg = <0x0 0x1fe001e0 0x0 0x8>;
 			clock-frequency = <100000000>;// 100M
 			interrupt-parent = <&liointc>;
-			interrupts = <10 IRQ_TYPE_LEVEL_HIGH>;// liointc IRQ 10
+			interrupts = <10 IRQ_TYPE_LEVEL_HIGH>;
 			no-loopback-test;
-			// status = "disabled";
+			status = "disabled";
+		};
+		
+		uart1: serial@10080000 {
+			compatible = "ns16550a";
+			reg = <0x0 0x10080000 0x0 0x100>;
+			clock-frequency = <50000000>;// 50M (according to ACPI ASL)
+			interrupt-parent = <&liointc>;
+			interrupts = <15 IRQ_TYPE_LEVEL_HIGH>;
+			no-loopback-test;
+			status = "disabled";
 		};
 	};
 };

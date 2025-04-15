@@ -13,7 +13,7 @@
 	model = "Loongson3 hvisor nonroot zone board";
 	
 	aliases {
-		serial0 = &uart0;
+		serial0 = &uart1;
 	};
 	
 	chosen {
@@ -50,6 +50,6 @@
 	};
 };
 
-&uart0 {
+&uart1 {
 	status = "okay";
 };
