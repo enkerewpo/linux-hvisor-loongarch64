@@ -7,4 +7,4 @@ sudo apt install libncurses-dev flex bison bc
 
 current supported root/nonroot linux kernel version: v6.13.7 (stable in 2025.3)
 
-modify the `chosoen` file to `6.13.7`/`git` to use the corresponding kernel version
+modify the `chosen` file to `6.13.7`/`git` to use the corresponding kernel version
