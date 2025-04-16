@@ -198,8 +198,8 @@
 			compatible = "ns16550a";
 			reg = <0x0 0x1fe001e0 0x0 0x8>;
 			clock-frequency = <100000000>;// 100M
-			interrupt-parent = <&liointc>;
-			interrupts = <10 IRQ_TYPE_LEVEL_HIGH>;
+			// interrupt-parent = <&liointc>;
+			// interrupts = <10 IRQ_TYPE_LEVEL_HIGH>;
 			no-loopback-test;
 			status = "disabled";
 		};
@@ -208,8 +208,8 @@
 			compatible = "ns16550a";
 			reg = <0x0 0x10080000 0x0 0x100>;
 			clock-frequency = <50000000>;// 50M (according to ACPI ASL)
-			interrupt-parent = <&liointc>;
-			interrupts = <15 IRQ_TYPE_LEVEL_HIGH>;
+			// interrupt-parent = <&liointc>;
+			// interrupts = <15 IRQ_TYPE_LEVEL_HIGH>;
 			no-loopback-test;
 			status = "disabled";
 		};

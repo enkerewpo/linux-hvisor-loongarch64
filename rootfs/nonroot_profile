@@ -10,7 +10,15 @@ fi
 
 export EDITOR='/bin/vi'
 
-# we only need to open bash on hvc0 once so write .shell_lock at / to prevent endless loop
+YELLOW_START="\033[33m"
+YELLOW_END="\033[0m"
+BOLD_START="\033[1m"
+BOLD_END="\033[0m"
+
+
+
+# uncomment this to login into hvc0 virtio console
+# ========================================================================================
 if [ ! -f /.shell_lock ]; then
 	touch /.shell_lock
 	echo "----------------------------------------------------------------------------------" >/dev/hvc0
@@ -18,3 +26,12 @@ if [ ! -f /.shell_lock ]; then
 	exec bash --login </dev/hvc0 >/dev/hvc0 2>&1
 	# /bin/wsh
 fi
+# ========================================================================================
+
+
+
+
+# uncomment this to login into normal COM uart
+# ========================================================================================
+# echo -e "${YELLOW_START}${BOLD_START}Welcome to hvisor(loongarch) nonroot linux! Buildroot/wheatfox 2025${BOLD_END}${YELLOW_END}"
+# ========================================================================================

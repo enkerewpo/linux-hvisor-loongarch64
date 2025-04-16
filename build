@@ -138,6 +138,9 @@ setup_nonroot_rootfs() {
     sudo cp "$ROOTFS_DIR/nonroot_profile" etc/profile
     $GNU_GCC "$ROOTFS_DIR/my_init/init.c" -o "$ROOTFS_DIR/my_init/init" -static
     sudo cp "$ROOTFS_DIR/my_init/init" bin/wsh
+    # change hostname to nonroot-dedsec
+    sudo rm -f etc/hostname
+    sudo echo "nonroot-dedsec" | sudo tee etc/hostname
     sudo find . | cpio -o -H newc | gzip -9 >"$ROOTFS_DIR/nonroot_fs.cpio.gz"
     echo "Rootfs setup complete"
 }

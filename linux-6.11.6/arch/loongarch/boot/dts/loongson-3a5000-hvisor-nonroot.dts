@@ -52,4 +52,5 @@
 
 &uart1 {
 	status = "okay";
+	// set the above 'uart1' to 'uart0' if you don't have a COM connection right now
 };
