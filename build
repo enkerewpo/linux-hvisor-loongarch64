@@ -49,7 +49,7 @@ init_submodules() {
     echo "======================================================================="
 }
 
-init_submodules
+# init_submodules
 
 # set to your LLVM installation path, linux require clang 18+ to build
 LLVM=1
@@ -179,11 +179,11 @@ rootfs)
     make
     ;;
 save)
-    echo "Saving defconfig"
+    echo "Saving defconfig (for root zone) - $TARGET_DEFCONFIG"
     cp "$LINUX_SRC_DIR/.config" "$LINUX_SRC_DIR/arch/$ARCH/configs/$TARGET_DEFCONFIG"
     ;;
 nonroot_save)
-    echo "Saving nonroot defconfig"
+    echo "Saving defconfig (for nonroot zone) - $NONROOT_TARGET_DEFCONFIG"
     cp "$LINUX_SRC_DIR/.config" "$LINUX_SRC_DIR/arch/$ARCH/configs/$NONROOT_TARGET_DEFCONFIG"
     ;;
 kernel)
