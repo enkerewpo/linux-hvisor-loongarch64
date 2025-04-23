@@ -175,7 +175,7 @@
 			reg = <0x0 0x100d0100 0x0 0x100>;
 			interrupt-parent = <&pic>;// pic-rtc0
 			interrupts = <52 IRQ_TYPE_LEVEL_HIGH>;
-			status = "disabled";
+			// status = "disabled";
 		};
 		
 		osc_clk: osc-clock@0 {
@@ -198,8 +198,8 @@
 			compatible = "ns16550a";
 			reg = <0x0 0x1fe001e0 0x0 0x8>;
 			clock-frequency = <100000000>;// 100M
-			interrupt-parent = <&pic>;
-			interrupts = <2 IRQ_TYPE_LEVEL_HIGH>;
+			interrupt-parent = <&liointc>;
+			interrupts = <10 IRQ_TYPE_LEVEL_HIGH>;
 			no-loopback-test;
 			status = "disabled";
 		};

@@ -1,11 +1,41 @@
 #!/bin/bash
 set -e
 
+# ANSI color codes
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+MAGENTA='\033[0;35m'
+CYAN='\033[0;36m'
+BOLD='\033[1m'
+DIM='\033[2m'
+NC='\033[0m' # No Color
+
+# Box drawing characters
+TOP_LEFT="╭"
+TOP_RIGHT="╮"
+BOTTOM_LEFT="╰"
+BOTTOM_RIGHT="╯"
+HORIZONTAL="─"
+VERTICAL="│"
+T_DOWN="┬"
+T_UP="┴"
+T_RIGHT="├"
+T_LEFT="┤"
+CROSS="┼"
+
 ARCH=loongarch
 CROSS_COMPILE=loongarch64-unknown-linux-gnu-
 
+# Create target directory structure
+setup_target_dirs() {
+    mkdir -p target/root
+    mkdir -p target/nonroot
+}
+
 print_available_versions() {
-    echo "Available versions to set in the ./chosen file:"
+    echo -e "${BOLD}Available versions to set in the chosen files:${NC}"
     # dump all the dirname with linux-*
     cnt=0
     for dir in $(ls -d linux-*); do
@@ -13,43 +43,34 @@ print_available_versions() {
             # get the suffix of the directory
             suffix=${dir#linux-}
             cnt=$((cnt + 1))
-            echo "$cnt) $suffix"
+            echo -e "${CYAN}$cnt)${NC} $suffix"
         fi
     done
 }
 
-# if chosen file is not present, print error and exit
-if [ ! -f chosen ]; then
-    echo "Error: chosen file not found. Please set the kernel version suffix in the chosen file."
+# Check if chosen files exist
+if [ ! -f chosen_root ] || [ ! -f chosen_nonroot ]; then
+    echo -e "${RED}Error:${NC} chosen_root or chosen_nonroot files not found. Please set the kernel version suffixes."
     print_available_versions
     exit 1
 fi
 
-CHOSEN=$(cat chosen)
+CHOSEN_ROOT=$(cat chosen_root)
+CHOSEN_NONROOT=$(cat chosen_nonroot)
 
 check_chosen() {
     if [ ! -d "linux-$1" ]; then
-        echo "Error: linux-$1 directory not found. Please set the kernel version suffix in the chosen file."
+        echo -e "${RED}Error:${NC} linux-$1 directory not found. Please set the kernel version suffix in the chosen files."
         print_available_versions
         exit 1
     fi
 }
 
-# check if linux-$CHOSEN directory exists
-check_chosen $CHOSEN
-echo "Chosen linux source: linux-$CHOSEN"
-
-# first we recursively clone all submodules
-init_submodules() {
-    echo "Initializing submodules"
-    git submodule update --init --recursive
-    echo "======================================================================="
-    echo "Submodules:"
-    git submodule status
-    echo "======================================================================="
-}
-
-# init_submodules
+# check if linux directories exist
+check_chosen $CHOSEN_ROOT
+check_chosen $CHOSEN_NONROOT
+echo -e "${GREEN}Chosen linux source for root:${NC} linux-$CHOSEN_ROOT"
+echo -e "${GREEN}Chosen linux source for nonroot:${NC} linux-$CHOSEN_NONROOT"
 
 # set to your LLVM installation path, linux require clang 18+ to build
 LLVM=1
@@ -69,65 +90,113 @@ NUM_JOBS=$(nproc)
 TARGET_DEFCONFIG=loongson3_root_defconfig
 NONROOT_TARGET_DEFCONFIG=loongson3_nonroot_defconfig
 
-LINUX_SRC_DIR=$(realpath linux-$CHOSEN)
+LINUX_SRC_DIR_ROOT=$(realpath linux-$CHOSEN_ROOT)
+LINUX_SRC_DIR_NONROOT=$(realpath linux-$CHOSEN_NONROOT)
 
-# set the LLVM=1 one if you want to use clang to build the kernel
+ARGS_ROOT="-C $LINUX_SRC_DIR_ROOT ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE"
+ARGS_NONROOT="-C $LINUX_SRC_DIR_NONROOT ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE"
 
-# ARGS="-C $LINUX_SRC_DIR ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE LLVM=$LLVM CC=$CLANG LD=$LLD OBJCOPY=$OBJCOPY READELF=$GNU_READELF"
-ARGS="-C $LINUX_SRC_DIR ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE"
-
-WORKDIR=$(dirname "$LINUX_SRC_DIR")
+WORKDIR=$(dirname "$LINUX_SRC_DIR_ROOT")
 FLAG="$WORKDIR/.flag"
 
+print_box() {
+    local width=$1
+    local title=$2
+    local color=$3
+    local content=$4
+    
+    # Print top border
+    echo -e "${color}${TOP_LEFT}${HORIZONTAL}${title}${HORIZONTAL}"
+    printf "%${width}s" | tr " " "${HORIZONTAL}"
+    echo -e "${TOP_RIGHT}${NC}"
+    
+    # Print content
+    echo -e "${color}${VERTICAL}${NC}${content}${color}${VERTICAL}${NC}"
+    
+    # Print bottom border
+    echo -e "${color}${BOTTOM_LEFT}"
+    printf "%${width}s" | tr " " "${HORIZONTAL}"
+    echo -e "${BOTTOM_RIGHT}${NC}"
+}
+
 show_help() {
-    cat <<EOF
-Commands:
-    help                - Show this help
-    def                 - Run defconfig
-    nonroot_def         - Run nonroot defconfig
-    clean               - Clean the build
-    menuconfig          - Run menuconfig
-    save                - Save defconfig
-    nonroot_save        - Save nonroot defconfig
-    kernel              - Build kernel (default root mode)
-    nonroot             - Setup & build nonroot version
-    rootfs              - Build rootfs
-EOF
+    {
+        echo -e "\n${BOLD}${MAGENTA}LoongArch Linux Kernel Builder${NC}"
+        echo -e "wheatfox (wheatfox17@icloud.com)\n"
+        echo -e "${DIM}This program is a tool for building LoongArch Linux kernels.${NC}\n"
+        
+        echo -e "${BOLD}Synopsis${NC}"
+        echo -e "    build [option...] subcommand [root|nonroot]"
+        echo -e "    where subcommand is one of the following:\n"
+        
+        echo -e "${BOLD}Main commands:${NC}"
+        echo -e "    ${CYAN}def${NC} [root|nonroot]     | Run defconfig for specified zone"
+        echo -e "    ${CYAN}build${NC} [root|nonroot]   | Build kernel for specified zone"
+        echo -e "    ${CYAN}save${NC} [root|nonroot]    | Save defconfig for specified zone"
+        echo -e "    ${CYAN}menu${NC} [root|nonroot]    | Run menuconfig for specified zone\n"
+        
+        echo -e "${BOLD}Utility commands:${NC}"
+        echo -e "    ${CYAN}help${NC}                  | Show this help message"
+        echo -e "    ${CYAN}clean${NC}                 | Clean all builds (root and nonroot)"
+        echo -e "    ${CYAN}rootfs${NC}                | Build rootfs"
+        echo -e "    ${CYAN}nonroot_setup${NC}         | Setup nonroot rootfs\n"
+        
+        echo -e "${BOLD}Build Flow:${NC}"
+        echo -e "    1. For root zone:"
+        echo -e "       - Run '${CYAN}def root${NC}' to configure"
+        echo -e "       - Run '${CYAN}build root${NC}' to build"
+        echo -e "       - Run '${CYAN}save root${NC}' to save config (optional)\n"
+        echo -e "    2. For nonroot zone:"
+        echo -e "       - Run '${CYAN}def nonroot${NC}' to configure"
+        echo -e "       - Run '${CYAN}build nonroot${NC}' to build"
+        echo -e "       - Run '${CYAN}save nonroot${NC}' to save config (optional)\n"
+        
+        echo -e "${BOLD}Output:${NC}"
+        echo -e "    Files will be organized in ${GREEN}target/root${NC} and ${GREEN}target/nonroot${NC} directories."
+    } | less -R
     exit 0
 }
 
-cp_nonroot() {
-    echo "Copying vmlinux.bin to $WORKDIR/nr_tmp"
-    rm -rf "$WORKDIR/nr_tmp"
-    mkdir "$WORKDIR/nr_tmp"
-    cp "$LINUX_SRC_DIR/arch/$ARCH/boot/vmlinux.bin" "$WORKDIR/nr_tmp/vmlinux.bin"
-    cp "$LINUX_SRC_DIR/vmlinux" "$WORKDIR/nr_tmp/vmlinux"
-    $GNU_READELF -a "$WORKDIR/nr_tmp/vmlinux" >"$WORKDIR/nr_tmp/vmlinux.readelf.txt"
+copy_to_target() {
+    local type=$1
+    local src_dir=$2
+    local timestamp=$(date "+%Y-%m-%d_%H-%M-%S")
+    
+    echo -e "${GREEN}Copying files to target/$type${NC}"
+    cp "$src_dir/arch/$ARCH/boot/vmlinux.bin" "target/$type/vmlinux.bin"
+    $GNU_READELF -a "$src_dir/vmlinux" > "target/$type/vmlinux.readelf.txt"
+    echo "$timestamp" > "target/$type/build_timestamp.txt"
 }
 
 build_kernel() {
+    local type=$1
+    local src_dir=$2
+    local args=$3
+    
     if [ ! -f "$FLAG" ]; then
-        echo "Please run defconfig or nonroot_def first"
+        echo -e "${RED}Error:${NC} Please run defconfig first"
         exit 1
     fi
-    echo "Building kernel with LLVM=$LLVM, NUM_JOBS=$NUM_JOBS, ARGS=\"$ARGS\""
+    
+    echo -e "${GREEN}Building kernel for $type with LLVM=$LLVM, NUM_JOBS=$NUM_JOBS${NC}"
     echo ""
-    make $ARGS -j$NUM_JOBS
-    echo "Running readelf"
-    $GNU_READELF -a "$LINUX_SRC_DIR/vmlinux" >"$LINUX_SRC_DIR/vmlinux.readelf.txt"
-    $GNU_OBJDUMP -d "$LINUX_SRC_DIR/vmlinux" >"$LINUX_SRC_DIR/vmlinux.asm"
-    echo "Generating compile_commands.json"
-    cd "$LINUX_SRC_DIR"
+    make $args -j$NUM_JOBS
+    echo -e "${GREEN}Running readelf${NC}"
+    $GNU_READELF -a "$src_dir/vmlinux" > "$src_dir/vmlinux.readelf.txt"
+    $GNU_OBJDUMP -d "$src_dir/vmlinux" > "$src_dir/vmlinux.asm"
+    echo -e "${GREEN}Generating compile_commands.json${NC}"
+    cd "$src_dir"
     python3 scripts/clang-tools/gen_compile_commands.py
     cd ..
-    echo "Done"
+    copy_to_target $type $src_dir
+    echo -e "${GREEN}Done${NC}"
 }
 
 setup_nonroot_rootfs() {
     local ROOTFS_DIR="$WORKDIR/rootfs"
     local TMPROOT="$ROOTFS_DIR/nonroot_tmproot"
 
-    echo "Setting up nonroot rootfs"
+    echo -e "${GREEN}Setting up nonroot rootfs${NC}"
     cp "$ROOTFS_DIR/buildroot/rootfs.cpio.gz" "$ROOTFS_DIR/nonroot_tmproot.cpio.gz"
     gzip -d "$ROOTFS_DIR/nonroot_tmproot.cpio.gz" -f
     sudo rm -rf "$TMPROOT"
@@ -138,59 +207,139 @@ setup_nonroot_rootfs() {
     sudo cp "$ROOTFS_DIR/nonroot_profile" etc/profile
     $GNU_GCC "$ROOTFS_DIR/my_init/init.c" -o "$ROOTFS_DIR/my_init/init" -static
     sudo cp "$ROOTFS_DIR/my_init/init" bin/wsh
-    # change hostname to nonroot-dedsec
     sudo rm -f etc/hostname
     sudo echo "nonroot-dedsec" | sudo tee etc/hostname
     sudo find . | cpio -o -H newc | gzip -9 >"$ROOTFS_DIR/nonroot_fs.cpio.gz"
-    echo "Rootfs setup complete"
+    echo -e "${GREEN}Rootfs setup complete${NC}"
 }
+
+# Create target directories
+setup_target_dirs
 
 [ "$1" = "" ] || [ "$1" = "help" ] || [ "$1" = "-h" ] || [ "$1" = "--help" ] && show_help
 
 case "$1" in
+# Main commands
 def)
-    echo "Running defconfig"
-    make $ARGS $TARGET_DEFCONFIG
-    echo "ROOT" >"$FLAG"
+    case "$2" in
+        root)
+            echo -e "${YELLOW}Running defconfig for root zone${NC}"
+            make $ARGS_ROOT $TARGET_DEFCONFIG
+            echo "ROOT" >"$FLAG"
+            ;;
+        nonroot)
+            echo -e "${YELLOW}Running defconfig for nonroot zone${NC}"
+            make $ARGS_NONROOT $NONROOT_TARGET_DEFCONFIG
+            echo "NONROOT" >"$FLAG"
+            ;;
+        *)
+            echo -e "${RED}Error:${NC} Please specify 'root' or 'nonroot'"
+            show_help
+            ;;
+    esac
     ;;
-nonroot_def)
-    echo "Running nonroot defconfig"
-    make $ARGS $NONROOT_TARGET_DEFCONFIG
-    echo "NONROOT" >"$FLAG"
+
+build)
+    case "$2" in
+        root)
+            build_kernel "root" "$LINUX_SRC_DIR_ROOT" "$ARGS_ROOT"
+            ;;
+        nonroot)
+            build_kernel "nonroot" "$LINUX_SRC_DIR_NONROOT" "$ARGS_NONROOT"
+            ;;
+        *)
+            echo -e "${RED}Error:${NC} Please specify 'root' or 'nonroot'"
+            show_help
+            ;;
+    esac
     ;;
-nonroot)
-    setup_nonroot_rootfs
-    make $ARGS $NONROOT_TARGET_DEFCONFIG
-    echo "NONROOT" >"$FLAG"
-    build_kernel
-    cp_nonroot
+
+save)
+    case "$2" in
+        root)
+            echo -e "${YELLOW}Saving defconfig (for root zone) - $TARGET_DEFCONFIG${NC}"
+            cp "$LINUX_SRC_DIR_ROOT/.config" "$LINUX_SRC_DIR_ROOT/arch/$ARCH/configs/$TARGET_DEFCONFIG"
+            ;;
+        nonroot)
+            echo -e "${YELLOW}Saving defconfig (for nonroot zone) - $NONROOT_TARGET_DEFCONFIG${NC}"
+            cp "$LINUX_SRC_DIR_NONROOT/.config" "$LINUX_SRC_DIR_NONROOT/arch/$ARCH/configs/$NONROOT_TARGET_DEFCONFIG"
+            ;;
+        *)
+            echo -e "${RED}Error:${NC} Please specify 'root' or 'nonroot'"
+            show_help
+            ;;
+    esac
     ;;
+
+menu)
+    case "$2" in
+        root)
+            echo -e "${YELLOW}Running menuconfig for root zone${NC}"
+            make $ARGS_ROOT menuconfig
+            ;;
+        nonroot)
+            echo -e "${YELLOW}Running menuconfig for nonroot zone${NC}"
+            make $ARGS_NONROOT menuconfig
+            ;;
+        *)
+            echo -e "${RED}Error:${NC} Please specify 'root' or 'nonroot'"
+            show_help
+            ;;
+    esac
+    ;;
+
+# Utility commands
 clean)
-    echo "Cleaning the build"
-    make $ARGS clean
+    echo -e "${YELLOW}Cleaning all builds${NC}"
+    make $ARGS_ROOT clean
+    make $ARGS_NONROOT clean
     ;;
-menuconfig)
-    echo "Running menuconfig"
-    make $ARGS menuconfig
-    ;;
+
 rootfs)
-    echo "Building rootfs"
+    echo -e "${YELLOW}Building rootfs${NC}"
     cd "$WORKDIR/rootfs"
     make
     ;;
-save)
-    echo "Saving defconfig (for root zone) - $TARGET_DEFCONFIG"
-    cp "$LINUX_SRC_DIR/.config" "$LINUX_SRC_DIR/arch/$ARCH/configs/$TARGET_DEFCONFIG"
+
+nonroot_setup)
+    setup_nonroot_rootfs
+    ;;
+
+# Legacy commands (for backward compatibility)
+root_def)
+    echo -e "${YELLOW}Running defconfig for root zone (legacy command)${NC}"
+    make $ARGS_ROOT $TARGET_DEFCONFIG
+    echo "ROOT" >"$FLAG"
+    ;;
+nonroot_def)
+    echo -e "${YELLOW}Running defconfig for nonroot zone (legacy command)${NC}"
+    make $ARGS_NONROOT $NONROOT_TARGET_DEFCONFIG
+    echo "NONROOT" >"$FLAG"
+    ;;
+root_build)
+    build_kernel "root" "$LINUX_SRC_DIR_ROOT" "$ARGS_ROOT"
+    ;;
+nonroot_build)
+    build_kernel "nonroot" "$LINUX_SRC_DIR_NONROOT" "$ARGS_NONROOT"
+    ;;
+root_save)
+    echo -e "${YELLOW}Saving defconfig (for root zone) - $TARGET_DEFCONFIG (legacy command)${NC}"
+    cp "$LINUX_SRC_DIR_ROOT/.config" "$LINUX_SRC_DIR_ROOT/arch/$ARCH/configs/$TARGET_DEFCONFIG"
     ;;
 nonroot_save)
-    echo "Saving defconfig (for nonroot zone) - $NONROOT_TARGET_DEFCONFIG"
-    cp "$LINUX_SRC_DIR/.config" "$LINUX_SRC_DIR/arch/$ARCH/configs/$NONROOT_TARGET_DEFCONFIG"
+    echo -e "${YELLOW}Saving defconfig (for nonroot zone) - $NONROOT_TARGET_DEFCONFIG (legacy command)${NC}"
+    cp "$LINUX_SRC_DIR_NONROOT/.config" "$LINUX_SRC_DIR_NONROOT/arch/$ARCH/configs/$NONROOT_TARGET_DEFCONFIG"
     ;;
-kernel)
-    build_kernel
+root_menuconfig)
+    echo -e "${YELLOW}Running menuconfig for root zone (legacy command)${NC}"
+    make $ARGS_ROOT menuconfig
+    ;;
+nonroot_menuconfig)
+    echo -e "${YELLOW}Running menuconfig for nonroot zone (legacy command)${NC}"
+    make $ARGS_NONROOT menuconfig
     ;;
 *)
-    echo "Unknown command: $1"
+    echo -e "${RED}Unknown command: $1${NC}"
     show_help
     ;;
 esac
