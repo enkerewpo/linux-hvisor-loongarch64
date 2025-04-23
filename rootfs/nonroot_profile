@@ -19,13 +19,13 @@ BOLD_END="\033[0m"
 
 # uncomment this to login into hvc0 virtio console
 # ========================================================================================
-if [ ! -f /.shell_lock ]; then
-	touch /.shell_lock
-	echo "----------------------------------------------------------------------------------" >/dev/hvc0
-	echo "Welcome to hvisor nonroot linux with virtio console! / wheatfox" >/dev/hvc0
-	exec bash --login </dev/hvc0 >/dev/hvc0 2>&1
-	# /bin/wsh
-fi
+# if [ ! -f /.shell_lock ]; then
+# 	touch /.shell_lock
+# 	echo "----------------------------------------------------------------------------------" >/dev/hvc0
+# 	echo "Welcome to hvisor nonroot linux with virtio console! / wheatfox" >/dev/hvc0
+# 	exec bash --login </dev/hvc0 >/dev/hvc0 2>&1
+# 	# /bin/wsh
+# fi
 # ========================================================================================
 
 
@@ -33,5 +33,5 @@ fi
 
 # uncomment this to login into normal COM uart
 # ========================================================================================
-# echo -e "${YELLOW_START}${BOLD_START}Welcome to hvisor(loongarch) nonroot linux! Buildroot/wheatfox 2025${BOLD_END}${YELLOW_END}"
+echo -e "${YELLOW_START}${BOLD_START}Welcome to hvisor(loongarch) nonroot linux! Buildroot/wheatfox 2025${BOLD_END}${YELLOW_END}"
 # ========================================================================================

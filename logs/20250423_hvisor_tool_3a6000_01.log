@@ -1,0 +1,530 @@
+[root@dedsec /]# ls
+bin               install.sh        mnt               start.sh
+boot              lib               mon.sh            sys
+daemon.sh         lib64             nohup.out         tmp
+dev               libdrm-install    opt               tool
+etc               linux2.sh         proc              usr
+guest1.sh         linux2_virtio.sh  root              var
+home              linuxrc           run
+init              media             sbin
+c[root@dedsec /]# cat daemon.sh 
+#!/bin/bash
+
+# Default configuration file
+CONFIG_FILE="/tool/virtio_cfg.json"
+
+# Check if a parameter is provided
+if [ $# -gt 0 ]; then
+    case "$1" in
+        "blk")
+            CONFIG_FILE="/tool/virtio_cfg_blk.json"
+            ;;
+        "console")
+            CONFIG_FILE="/tool/virtio_cfg_console.json"
+            ;;
+        *)
+            echo "Usage: $0 [blk|console]"
+            echo "  blk     - Use block device configuration"
+            echo "  console - Use console configuration"
+            echo "  no args - Use default configuration (both block and console)"
+            exit 1
+            ;;
+    esac
+fi
+
+# check whether /dev/hvisor exists, if not, run /install.sh
+if [ ! -e /dev/hvisor ]; then
+    echo "hvisor not installed, installing..."
+    /install.sh
+fi
+
+mkdir -p /dev/pts
+mount -t devpts devpts /dev/pts
+
+cp -r libdrm-install/lib/* /lib64/
+
+echo "Starting hvisor with configuration: $CONFIG_FILE"
+nohup hvisor virtio start "$CONFIG_FILE" &
+
+# spawn a process to monitor nohup.out
+# /mon.sh &[root@dedsec /]# ./daemon.sh blk
+[   72.996498] hvisor: loading out-of-tree module taints kernel.
+[   73.002407] hvisor init done!!!
+hvisor not insta[INFO  0] (hvisor::hypercall:130) handle hvc init virtio, shared_region_addr = 0x93fa5000
+[INFO  0] (hvisor::hypercall:157) hvisor device region base is 0x9000000093fa5000
+[   73.010407] virtio bridge mmap succeed!
+[   73.014783] non root region mmap succeed!
+[   73.019032] non root region mmap succeed!
+lled, installing...
+successfully installed hvisor
+Starting hvisor with configuration: /tool/virtio_cfg_blk.json
+nohup: appending output to nohup.out
+[root@dedsec /]# cat nohup.out 
+hello09:47:33 INFO  virtio.c:1088: hvisor init
+09:47:33 INFO  virtio.c:1114: hvisor init okay!
+09:47:33 INFO  virtio.c:1252: wheatfox: num_regions is 2
+09:47:33 INFO  virtio.c:1270: wheatfox: zone0_ipa is c0000000, zonex_ipa is 0, mem_size is 10000000
+09:47:33 INFO  virtio.c:1278: wheatfox: mmap zone0_ipa is c0000000, zonex_ipa is 0, mem_size is 10000000 finished
+09:47:33 INFO  virtio.c:1270: wheatfox: zone0_ipa is d0000000, zonex_ipa is 90000000, mem_size is 10000000
+09:47:33 INFO  virtio.c:1278: wheatfox: mmap zone0_ipa is d0000000, zonex_ipa is 90000000, mem_size is 10000000 finished
+09:47:33 INFO  virtio.c:1126: wheatfox: in create_virtio_device_from_json
+09:47:33 INFO  virtio.c:1150: wheatfox: dev_type is 2
+09:47:33 INFO  virtio.c:1160: wheatfox: base_addr is 30002000, len is 200, irq_id is 5
+09:47:33 INFO  virtio.c:1168: wheatfox: img is /tool/linux2-disk.ext4
+09:47:33 INFO  virtio.c:146: create virtio device type virtio-blk, zone id 2, base addr 30002000, len 200, irq id 5
+09:47:33 INFO  virtio.c:308: initializing mmio registers for virtio-blk
+09:47:33 INFO  virtio.c:165: wheatfox: vdev->base_addr is 30002000, vdev->len is 200, vdev->zone_id is 2, vdev->irq_id is 5
+09:47:33 INFO  virtio.c:243: Initializing virtio queue for zone:2, device type:virtio-blk
+09:47:33 INFO  virtio.c:179: wheatfox: init_blk_dev and init_virtio_queue finished
+
+09:47:33 INFO  virtio_blk.c:149: wheatfox: virtio_blk_init: /tool/linux2-disk.ext4, size is 16384
+09:47:33 INFO  virtio.c:230: create virtio-blk success
+[root@dedsec /]# ./start.sh 
+booting zone lin[   84.214718] non root region mmap succeed!
+ux2 with virtio.[   84.234911] non root region mmap succeed!
+[   84.238969] hvisor: calling hypercall to start zone
+[INFO  0] (hvisor::hypercall:222) hv_zone_start: config: HvZoneConfig {
+    zone_id: 0x2,
+    cpus: 0x4,
+    num_memory_regions: 0x8,
+    memory_regions: [
+        HvConfigMemoryRegion {
+            mem_type: 0x0,
+            physical_start: 0xc0000000,
+            virtual_start: 0x0,
+            size: 0x10000000,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x0,
+            physical_start: 0xd0000000,
+            virtual_start: 0x90000000,
+            size: 0x10000000,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x1,
+            physical_start: 0x1fe00000,
+            virtual_start: 0x1fe00000,
+            size: 0x2000,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x1,
+            physical_start: 0x10080000,
+            virtual_start: 0x10080000,
+            size: 0x1000,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x2,
+            physical_start: 0x30001000,
+            virtual_start: 0x30001000,
+            size: 0x200,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x2,
+            physical_start: 0x30002000,
+            virtual_start: 0x30002000,
+            size: 0x200,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x1,
+            physical_start: 0xffffffff0000,
+            virtual_start: 0xffffffff0000,
+            size: 0x1000,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x1,
+            physical_start: 0x10000000,
+            virtual_start: 0x10000000,
+            size: 0x1000,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x0,
+            physical_start: 0x0,
+            virtual_start: 0x0,
+            size: 0x0,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x0,
+            physical_start: 0x0,
+            virtual_start: 0x0,
+            size: 0x0,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x0,
+            physical_start: 0x0,
+            virtual_start: 0x0,
+            size: 0x0,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x0,
+            physical_start: 0x0,
+            virtual_start: 0x0,
+            size: 0x0,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x0,
+            physical_start: 0x0,
+            virtual_start: 0x0,
+            size: 0x0,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x0,
+            physical_start: 0x0,
+            virtual_start: 0x0,
+            size: 0x0,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x0,
+            physical_start: 0x0,
+            virtual_start: 0x0,
+            size: 0x0,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x0,
+            physical_start: 0x0,
+            virtual_start: 0x0,
+            size: 0x0,
+        },
+    ],
+    num_interrupts: 0x2,
+    interrupts: [
+        0x4,
+        0x5,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+    ],
+    num_ivc_configs: 0x0,
+    ivc_configs: [
+        HvIvcConfig {
+            ivc_id: 0x0,
+            peer_id: 0x0,
+            control_table_ipa: 0x0,
+            shared_mem_ipa: 0x0,
+            rw_sec_size: 0x0,
+            out_sec_size: 0x0,
+            interrupt_num: 0x0,
+            max_peers: 0x0,
+        },
+        HvIvcConfig {
+            ivc_id: 0x0,
+            peer_id: 0x0,
+            control_table_ipa: 0x0,
+            shared_mem_ipa: 0x0,
+            rw_sec_size: 0x0,
+            out_sec_size: 0x0,
+            interrupt_num: 0x0,
+            max_peers: 0x0,
+        },
+    ],
+    entry_point: 0x9000000000e4c000,
+    kernel_load_paddr: 0xc0200000,
+    kernel_size: 0x1fb0000,
+    dtb_load_paddr: 0xc0000000,
+    dtb_size: 0x5000,
+    name: [
+        0x6c,
+        0x69,
+        0x6e,
+        0x75,
+        0x78,
+        0x32,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+    ],
+    arch_config: HvArchZoneConfig {
+        dummy: 0x0,
+    },
+    pci_config: HvPciConfig {
+        ecam_base: 0x0,
+        ecam_size: 0x0,
+        io_base: 0x0,
+        io_size: 0x0,
+        pci_io_base: 0x0,
+        mem32_base: 0x0,
+        mem32_size: 0x0,
+        pci_mem32_base: 0x0,
+        mem64_base: 0x0,
+        mem64_size: 0x0,
+        pci_mem64_base: 0x0,
+    },
+    num_pci_devs: 0x0,
+    alloc_pci_devs: [
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+    ],
+}
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x0
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x90000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x1FE00000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x10080000
+[INFO  0] (hvisor::arch::loongarch64::zone:62) loongarch64: pt_init: register virtio mmio region: HvConfigMemoryRegion {
+    mem_type: 0x2,
+    physical_start: 0x30001000,
+    virtual_start: 0x30001000,
+    size: 0x200,
+}
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x30001000
+[INFO  0] (hvisor::arch::loongarch64::zone:62) loongarch64: pt_init: register virtio mmio region: HvConfigMemoryRegion {
+    mem_type: 0x2,
+    physical_start: 0x30002000,
+    virtual_start: 0x30002000,
+    size: 0x200,
+}
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x30002000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0xFFFFFFFF0000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x10000000
+[INFO  0] (hvisor::arch::loongarch64::zone:91) loongarch64: pt_init: add mmio handler for 0x1fe0_xxxx mmio region
+[INFO  0] (hvisor::zone:222) zone cpu_set: 0b100
+[INFO  2] (hvisor::event:112) cpu 2 wakeup
+[INFO  2] (hvisor::arch::loongarch64::s2pt:168) loongarch64: S2PTInstr::activate: root_pa: 0x90000001008db000
+[INFO  2] (hvisor::arch::loongarch64::s2pt:180) loongarch64: S2PTInstr::activate: set tlbrentry to 0x1000a0000 done!
+[INFO  2] (hvisor::arch::loongarch64::cpu:77) loongarch64: CPU2 run@0x9000000000e4c000
+[INFO  2] (hvisor::arch::loongarch64::cpu:82) loongarch64: @ArchCpu {
+    ctx: LoongArch64ZoneContext {
+        x: [
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+        ],
+        sepc: 0x9000000000e4c000,
+        gcsr_crmd: 0x8,
+        gcsr_prmd: 0x0,
+        gcsr_euen: 0x0,
+        gcsr_misc: 0x0,
+        gcsr_ectl: 0x10000,
+        gcsr_estat: 0x0,
+        gcsr_era: 0x0,
+        gcsr_badv: 0x0,
+        gcsr_badi: 0x0,
+        gcsr_eentry: 0x1c000000,
+        gcsr_tlbidx: 0xe000000,
+        gcsr_tlbehi: 0x0,
+        gcsr_tlbelo0: 0x0,
+        gcsr_tlbelo1: 0x0,
+        gcsr_asid: 0xa0000,
+        gcsr_pgdl: 0x0,
+        gcsr_pgdh: 0x0,
+        gcsr_pgd: 0x0,
+        gcsr_pwcl: 0x0,
+        gcsr_pwch: 0x0,
+        gcsr_stlbps: 0xe,
+        gcsr_ravcfg: 0x0,
+        gcsr_cpuid: 0x2,
+        gcsr_prcfg1: 0x72f8,
+        gcsr_prcfg2: 0x3ffff000,
+        gcsr_prcfg3: 0x8073f2,
+        gcsr_save0: 0xb0,
+        gcsr_save1: 0x107dc,
+        gcsr_save2: 0x120001ccc,
+        gcsr_save3: 0x0,
+        gcsr_save4: 0x87eed9dfb5ffb99b,
+        gcsr_save5: 0xcd76ea1fbb4d57fa,
+        gcsr_save6: 0x8decc05ea4fabf75,
+        gcsr_save7: 0xbba0cd5d9c676545,
+        gcsr_save8: 0x0,
+        gcsr_save9: 0x0,
+        gcsr_save10: 0x0,
+        gcsr_save11: 0x0,
+        gcsr_save12: 0x0,
+        gcsr_save13: 0x0,
+        gcsr_save14: 0x0,
+        gcsr_save15: 0x0,
+        gcsr_tid: 0x2,
+        gcsr_tcfg: 0x0,
+        gcsr_tval: 0xffffffffffff,
+        gcsr_cntc: 0x0,
+        gcsr_ticlr: 0x0,
+        gcsr_llbctl: 0x0,
+        gcsr_tlbrentry: 0x0,
+        gcsr_tlbrbadv: 0x0,
+        gcsr_tlbrera: 0x0,
+        gcsr_tlbrsave: 0x0,
+        gcsr_tlbrelo0: 0x0,
+        gcsr_tlbrelo1: 0x0,
+        gcsr_tlbrehi: 0x0,
+        gcsr_tlbrprmd: 0x0,
+        gcsr_dmw0: 0x0,
+        gcsr_dmw1: 0x0,
+        gcsr_dmw2: 0x0,
+        gcsr_dmw3: 0x0,
+        pgdl: 0x0,
+        pgdh: 0x0,
+    },
+    stack_top: 0x9000000100358000,
+    cpuid: 0x2,
+    power_on: true,
+    init: true,
+}
+[INFO  2] (hvisor::arch::loongarch64::trap:1296) csrxchg emulation for CSR 0x80
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x0
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x2
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x1
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x2
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x6
+[INFO  2] (hvisor::arch::loongarch64::trap:1284) csrrd emulation for CSR 0x380
+[INFO  2] (hvisor::arch::loongarch64::trap:1284) csrrd emulation for CSR 0x300
+[INFO  2] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x93
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x10
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x11
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x12
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x13
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x14
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x1
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x1
+..
+09:47:44 DEBUG hvisor.c:398: memory_region 0: type 0, physical_start c0000000, virtual_start 0, size 10000000
+
+09:47:44 DEBUG hvisor.c:398: memory_reg[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x2
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x4
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x5
+[INFO  2] (hvisor::arch::loongarch64::trap:1284) csrrd emulation for CSR 0x380
+[INFO  2] (hvisor::arch::loongarch64::trap:1284) csrrd emulation for CSR 0x300
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x6
+[INFO  2] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x200
+[INFO  2] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x201
+[INFO  2] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x202
+[INFO  2] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x203
+[INFO  2] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x204
+[INFO  2] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x205
+[INFO  2] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x206
+[INFO  2] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x207
+[INFO  2] (hvisor::arch::loongarch64::trap:1284) csrrd emulation for CSR 0x380
+[INFO  2] (hvisor::arch::loongarch64::trap:1284) csrrd emulation for CSR 0x300
+ion 1: type 0, physical_start d0000000, virtual_start 90000000, size 10000000
+
+09:47:44 DEBUG hvisor.c:398: memory_region 2: type 1, physical_start 1fe00000, virtual_start 1fe00000, size 2000
+
+09:47:44 DEBUG hvisor.c:398: memory_region 3: type 1, physical_start 10080000, virtual_start 10080000, size 1000
+
+09:47:44 DEBUG hvisor.c:398: memory_region 4: type 2, physical_start 30001000, virtual_start 30001000, size 200
+
+09:47:44 DEBUG hvisor.c:398: memory_region 5: type 2, physical_start 30002000, virtual_start 30002000, size 200
+
+09:47:44 DEBUG hvisor.c:398: memory_region 6: type 1, physical_start ffffffff0000, virtual_start ffffffff0000, size 1000
+
+09:47:44 DEBUG hvisor.c:398: memory_region 7: type 1, physical_start 10000000, virtual_start 10000000, size 1000
+
+Kernel size: 33226752, DTB size: 20480
+Zone name: linux2
+Calling ioctl to start zone: [linux2]
+[root@dedsec /]# [   86.623909] do_page_fault(): sending SIGSEGV to hvisor-virtio for invalid read access from 0000000000000020
+[   86.633611] era = 0000555555b55a44 in hvisor[5a44,555555b50000+13000]
+[   86.640128] ra  = 0000555555b55a44 in hvisor[5a44,555555b50000+13000]
+
+
+[root@dedsec /]# cat nohup.out 
+hello09:47:33 INFO  virtio.c:1088: hvisor init
+09:47:33 INFO  virtio.c:1114: hvisor init okay!
+09:47:33 INFO  virtio.c:1252: wheatfox: num_regions is 2
+09:47:33 INFO  virtio.c:1270: wheatfox: zone0_ipa is c0000000, zonex_ipa is 0, mem_size is 10000000
+09:47:33 INFO  virtio.c:1278: wheatfox: mmap zone0_ipa is c0000000, zonex_ipa is 0, mem_size is 10000000 finished
+09:47:33 INFO  virtio.c:1270: wheatfox: zone0_ipa is d0000000, zonex_ipa is 90000000, mem_size is 10000000
+09:47:33 INFO  virtio.c:1278: wheatfox: mmap zone0_ipa is d0000000, zonex_ipa is 90000000, mem_size is 10000000 finished
+09:47:33 INFO  virtio.c:1126: wheatfox: in create_virtio_device_from_json
+09:47:33 INFO  virtio.c:1150: wheatfox: dev_type is 2
+09:47:33 INFO  virtio.c:1160: wheatfox: base_addr is 30002000, len is 200, irq_id is 5
+09:47:33 INFO  virtio.c:1168: wheatfox: img is /tool/linux2-disk.ext4
+09:47:33 INFO  virtio.c:146: create virtio device type virtio-blk, zone id 2, base addr 30002000, len 200, irq id 5
+09:47:33 INFO  virtio.c:308: initializing mmio registers for virtio-blk
+09:47:33 INFO  virtio.c:165: wheatfox: vdev->base_addr is 30002000, vdev->len is 200, vdev->zone_id is 2, vdev->irq_id is 5
+09:47:33 INFO  virtio.c:243: Initializing virtio queue for zone:2, device type:virtio-blk
+09:47:33 INFO  virtio.c:179: wheatfox: init_blk_dev and init_virtio_queue finished
+
+09:47:33 INFO  virtio_blk.c:149: wheatfox: virtio_blk_init: /tool/linux2-disk.ext4, size is 16384
+09:47:33 INFO  virtio.c:230: create virtio-blk success
+09:47:47 WARN  virtio.c:953: no matched virtio dev in zone 2, address is 0x30001000
+

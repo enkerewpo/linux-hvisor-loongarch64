@@ -1,0 +1,993 @@
+
+[INFO] arch_init done
+                     PROGRESS CODE: V02010004 I0
+[INFO] exit_boot_services done[INFO] ok, ready to jump to hvisor entry...
+                                                                         Hello, HVISOR!
+Heap allocator initialization finished: 0x90000001000cc6d0..0x90000001001cc6d0
+heap_test passed!
+Booting CPU 0: 0x90000001001cd000 arch:0x90000001001cd020, DTB: 0xfe430018
+Hello, HVISOR!
+Hello, HVISOR!
+Hello, HVISOR!
+Booting CPU 2: 0x90000001002cd000 arch:0x90000001002cd020, DTB: 0x9000000000000000
+Booting CPU 1: 0x900000010024d000 arch:0x900000010024d020, DTB: 0x9000000000000000
+Booting CPU 3: 0x900000010034d000 arch:0x900000010034d020, DTB: 0x9000000000000000
+Secondary CPU 1 has entered.
+Primary CPU 0 has entered.
+Secondary CPU 3 has entered.
+Secondary CPU 2 has entered.
+[INFO  0] (hvisor:117) Logging is enabled.
+[INFO  0] (hvisor:118) __core_end = 0x90000001001cd000
+[INFO  0] (hvisor:121) Hypervisor initialization in progress...
+[INFO  0] (hvisor:122) build_mode: debug, log_level: info, arch: loongarch64, stats: off
+[INFO  0] (hvisor::memory::frame:282) Frame allocator initialization finished: 0x90000001003cd000..0x90000001013cd000
+[INFO  0] (hvisor::memory::frame:302) frame_allocator_test passed!
+[INFO  0] (hvisor::device::irqchip::ls7a2000:38) loongarch64: irqchip: primary_init_early: checking iochip configs
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:565) loongarch64: print_chip_info: chip config version: 0x14
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:569) loongarch64: print_chip_info: chip feature extioi support: true
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:573) loongarch64: print_chip_info: manufacturer name: Loongson
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:577) loongarch64: print_chip_info: chip name: 3A6000-L
+[INFO  0] (hvisor::device::irqchip::ls7a2000:43) loongarch64: irqchip: testing percore IPI feature
+[INFO  0] (hvisor::device::irqchip::ls7a2000:45) loongarch64: irqchip: percore IPI feature: true
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x200000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x90000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0xF0000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0xC0000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x1FE00000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x10080000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x100D0000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x10000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0xFE00000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x18408000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x60000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x10010000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x0
+[INFO  0] (hvisor::memory::mm:112) region.start: 0xF0000
+[INFO  0] (hvisor::arch::loongarch64::zone:87) loongarch64: pt_init: add mmio handler for 0x1fe0_xxxx region
+[INFO  0] (hvisor::zone:222) zone cpu_set: 0b1
+[INFO  0] (hvisor:159) CPU 0 hv_pt_install OK.
+[WARN  1] (hvisor:154) zone is not created for cpu 1
+[INFO  0] (hvisor::device::irqchip::ls7a2000:62) loongarch64: irqchip: percpu_init: running percpu_init
+[INFO  1] (hvisor:159) CPU 1 hv_pt_install OK.
+[WARN  3] (hvisor:154) zone is not created for cpu 3
+[WARN  2] (hvisor:154) zone is not created for cpu 2
+[INFO  3] (hvisor:159) CPU 3 hv_pt_install OK.
+[INFO  2] (hvisor:159) CPU 2 hv_pt_install OK.
+[INFO  3] (hvisor::device::irqchip::ls7a2000:62) loongarch64: irqchip: percpu_init: running percpu_init
+[INFO  2] (hvisor::device::irqchip::ls7a2000:62) loongarch64: irqchip: percpu_init: running percpu_init
+[INFO  1] (hvisor::device::irqchip::ls7a2000:62) loongarch64: irqchip: percpu_init: running percpu_init
+[INFO  0] (hvisor::arch::loongarch64::ipi:298) ecfg ipi enabled on cpu 0, current lie: TIMER | IPI
+[INFO  2] (hvisor::arch::loongarch64::ipi:298) ecfg ipi enabled on cpu 2, current lie: IPI
+[INFO  3] (hvisor::arch::loongarch64::ipi:298) ecfg ipi enabled on cpu 3, current lie: IPI
+[INFO  1] (hvisor::arch::loongarch64::ipi:298) ecfg ipi enabled on cpu 1, current lie: IPI
+[INFO  0] (hvisor:146) Primary CPU init late...
+[INFO  0] (hvisor::device::irqchip::ls7a2000:51) loongarch64: irqchip: primary_init_late: running primary_init_late
+[INFO  0] (hvisor::device::irqchip::ls7a2000:53) loongarch64: irqchip: primary_init_late: testing UART1
+[INFO  0] (hvisor::device::uart::loongson_uart:232) loongarch: uart: __test_uart1
+[INFO  0] (hvisor::device::uart::loongson_uart:235) loongarch: uart: __test_uart1 init done
+[INFO  0] (hvisor::device::uart::loongson_uart:238) loongarch: uart: __test_uart1 send_str test done
+[INFO  0] (hvisor::device::irqchip::ls7a2000:56) loongarch64: irqchip: primary_init_late: probing pci
+[WARN  0] (hvisor::device::irqchip::ls7a2000::chip:966) loongarch64: probe_pci: probing PCI devices @ 0x800000001a000000
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:978) loongarch64: probe_pci: device 0: vendor id = 0x14, device id = 0x7a00, name = [Loongson Technology LLC] Hyper Transport Bridge Controller	
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:978) loongarch64: probe_pci: device 4: vendor id = 0x14, device id = 0x7a24, name = [Loongson Technology LLC] OHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:978) loongarch64: probe_pci: device 5: vendor id = 0x14, device id = 0x7a24, name = [Loongson Technology LLC] OHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:978) loongarch64: probe_pci: device 6: vendor id = 0x14, device id = 0x7a25, name = [Loongson Technology LLC] LG100 GPU
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:978) loongarch64: probe_pci: device 7: vendor id = 0x14, device id = 0x7a07, name = [Loongson Technology LLC] HDA (High Definition Audio) Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:978) loongarch64: probe_pci: device 8: vendor id = 0x14, device id = 0x7a18, name = [Loongson Technology LLC] SATA 3 AHCI Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:978) loongarch64: probe_pci: device 9: vendor id = 0x14, device id = 0x7a49, name = [Loongson Technology LLC] PCIe x4 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:978) loongarch64: probe_pci: device 10: vendor id = 0x14, device id = 0x7a39, name = [Loongson Technology LLC] PCIe x1 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:978) loongarch64: probe_pci: device 11: vendor id = 0x14, device id = 0x7a39, name = [Loongson Technology LLC] PCIe x1 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:978) loongarch64: probe_pci: device 12: vendor id = 0x14, device id = 0x7a39, name = [Loongson Technology LLC] PCIe x1 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:978) loongarch64: probe_pci: device 13: vendor id = 0x14, device id = 0x7a49, name = [Loongson Technology LLC] PCIe x4 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:978) loongarch64: probe_pci: device 15: vendor id = 0x14, device id = 0x7a69, name = [Loongson Technology LLC] PCIe x16 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:978) loongarch64: probe_pci: device 16: vendor id = 0x14, device id = 0x7a59, name = [Loongson Technology LLC] PCIe x8 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:978) loongarch64: probe_pci: device 19: vendor id = 0x14, device id = 0x7a59, name = [Loongson Technology LLC] PCIe x8 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:978) loongarch64: probe_pci: device 22: vendor id = 0x14, device id = 0x7a1b, name = [Loongson Technology LLC] SPI Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:978) loongarch64: probe_pci: device 25: vendor id = 0x14, device id = 0x7a34, name = [Loongson Technology LLC] xHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:978) loongarch64: probe_pci: device 26: vendor id = 0x14, device id = 0x7a1f, name = [Loongson Technology LLC] Unknown Device
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:978) loongarch64: probe_pci: device 36: vendor id = 0x14, device id = 0x7a24, name = [Loongson Technology LLC] OHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:978) loongarch64: probe_pci: device 37: vendor id = 0x14, device id = 0x7a24, name = [Loongson Technology LLC] OHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:978) loongarch64: probe_pci: device 38: vendor id = 0x14, device id = 0x7a25, name = [Loongson Technology LLC] LG100 GPU
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:978) loongarch64: probe_pci: device 39: vendor id = 0x14, device id = 0x7a07, name = [Loongson Technology LLC] HDA (High Definition Audio) Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:978) loongarch64: probe_pci: device 40: vendor id = 0x14, device id = 0x7a18, name = [Loongson Technology LLC] SATA 3 AHCI Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:978) loongarch64: probe_pci: device 54: vendor id = 0x14, device id = 0x7a1b, name = [Loongson Technology LLC] SPI Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:978) loongarch64: probe_pci: device 57: vendor id = 0x14, device id = 0x7a34, name = [Loongson Technology LLC] xHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:978) loongarch64: probe_pci: device 58: vendor id = 0x14, device id = 0x7a1f, name = [Loongson Technology LLC] Unknown Device
+[WARN  0] (hvisor::device::irqchip::ls7a2000::chip:987) loongarch64: probe_pci: probing PCI devices @ 0x80000efdfe000000
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:998) loongarch64: probe_pci: device 0: vendor id = 0x14, device id = 0x7a00, name = [Loongson Technology LLC] Hyper Transport Bridge Controller	
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:998) loongarch64: probe_pci: device 4: vendor id = 0x14, device id = 0x7a24, name = [Loongson Technology LLC] OHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:998) loongarch64: probe_pci: device 5: vendor id = 0x14, device id = 0x7a24, name = [Loongson Technology LLC] OHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:998) loongarch64: probe_pci: device 6: vendor id = 0x14, device id = 0x7a25, name = [Loongson Technology LLC] LG100 GPU
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:998) loongarch64: probe_pci: device 7: vendor id = 0x14, device id = 0x7a07, name = [Loongson Technology LLC] HDA (High Definition Audio) Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:998) loongarch64: probe_pci: device 8: vendor id = 0x14, device id = 0x7a18, name = [Loongson Technology LLC] SATA 3 AHCI Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:998) loongarch64: probe_pci: device 9: vendor id = 0x14, device id = 0x7a49, name = [Loongson Technology LLC] PCIe x4 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:998) loongarch64: probe_pci: device 10: vendor id = 0x14, device id = 0x7a39, name = [Loongson Technology LLC] PCIe x1 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:998) loongarch64: probe_pci: device 11: vendor id = 0x14, device id = 0x7a39, name = [Loongson Technology LLC] PCIe x1 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:998) loongarch64: probe_pci: device 12: vendor id = 0x14, device id = 0x7a39, name = [Loongson Technology LLC] PCIe x1 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:998) loongarch64: probe_pci: device 13: vendor id = 0x14, device id = 0x7a49, name = [Loongson Technology LLC] PCIe x4 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:998) loongarch64: probe_pci: device 15: vendor id = 0x14, device id = 0x7a69, name = [Loongson Technology LLC] PCIe x16 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:998) loongarch64: probe_pci: device 16: vendor id = 0x14, device id = 0x7a59, name = [Loongson Technology LLC] PCIe x8 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:998) loongarch64: probe_pci: device 19: vendor id = 0x14, device id = 0x7a59, name = [Loongson Technology LLC] PCIe x8 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:998) loongarch64: probe_pci: device 22: vendor id = 0x14, device id = 0x7a1b, name = [Loongson Technology LLC] SPI Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:998) loongarch64: probe_pci: device 25: vendor id = 0x14, device id = 0x7a34, name = [Loongson Technology LLC] xHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:998) loongarch64: probe_pci: device 26: vendor id = 0x14, device id = 0x7a1f, name = [Loongson Technology LLC] Unknown Device
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:998) loongarch64: probe_pci: device 36: vendor id = 0x14, device id = 0x7a24, name = [Loongson Technology LLC] OHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:998) loongarch64: probe_pci: device 37: vendor id = 0x14, device id = 0x7a24, name = [Loongson Technology LLC] OHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:998) loongarch64: probe_pci: device 38: vendor id = 0x14, device id = 0x7a25, name = [Loongson Technology LLC] LG100 GPU
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:998) loongarch64: probe_pci: device 39: vendor id = 0x14, device id = 0x7a07, name = [Loongson Technology LLC] HDA (High Definition Audio) Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:998) loongarch64: probe_pci: device 40: vendor id = 0x14, device id = 0x7a18, name = [Loongson Technology LLC] SATA 3 AHCI Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:998) loongarch64: probe_pci: device 54: vendor id = 0x14, device id = 0x7a1b, name = [Loongson Technology LLC] SPI Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:998) loongarch64: probe_pci: device 57: vendor id = 0x14, device id = 0x7a34, name = [Loongson Technology LLC] xHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:998) loongarch64: probe_pci: device 58: vendor id = 0x14, device id = 0x7a1f, name = [Loongson Technology LLC] Unknown Device
+[WARN  0] (hvisor::device::irqchip::ls7a2000::chip:1007) loongarch64: probe_pci: probing PCI devices @ 0x80000efe00000000
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1018) loongarch64: probe_pci: device 0: vendor id = 0x14, device id = 0x7a00, name = [Loongson Technology LLC] Hyper Transport Bridge Controller	
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1018) loongarch64: probe_pci: device 4: vendor id = 0x14, device id = 0x7a24, name = [Loongson Technology LLC] OHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1018) loongarch64: probe_pci: device 5: vendor id = 0x14, device id = 0x7a24, name = [Loongson Technology LLC] OHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1018) loongarch64: probe_pci: device 6: vendor id = 0x14, device id = 0x7a25, name = [Loongson Technology LLC] LG100 GPU
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1018) loongarch64: probe_pci: device 7: vendor id = 0x14, device id = 0x7a07, name = [Loongson Technology LLC] HDA (High Definition Audio) Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1018) loongarch64: probe_pci: device 8: vendor id = 0x14, device id = 0x7a18, name = [Loongson Technology LLC] SATA 3 AHCI Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1018) loongarch64: probe_pci: device 9: vendor id = 0x14, device id = 0x7a49, name = [Loongson Technology LLC] PCIe x4 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1018) loongarch64: probe_pci: device 10: vendor id = 0x14, device id = 0x7a39, name = [Loongson Technology LLC] PCIe x1 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1018) loongarch64: probe_pci: device 11: vendor id = 0x14, device id = 0x7a39, name = [Loongson Technology LLC] PCIe x1 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1018) loongarch64: probe_pci: device 12: vendor id = 0x14, device id = 0x7a39, name = [Loongson Technology LLC] PCIe x1 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1018) loongarch64: probe_pci: device 13: vendor id = 0x14, device id = 0x7a49, name = [Loongson Technology LLC] PCIe x4 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1018) loongarch64: probe_pci: device 15: vendor id = 0x14, device id = 0x7a69, name = [Loongson Technology LLC] PCIe x16 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1018) loongarch64: probe_pci: device 16: vendor id = 0x14, device id = 0x7a59, name = [Loongson Technology LLC] PCIe x8 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1018) loongarch64: probe_pci: device 19: vendor id = 0x14, device id = 0x7a59, name = [Loongson Technology LLC] PCIe x8 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1018) loongarch64: probe_pci: device 22: vendor id = 0x14, device id = 0x7a1b, name = [Loongson Technology LLC] SPI Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1018) loongarch64: probe_pci: device 25: vendor id = 0x14, device id = 0x7a34, name = [Loongson Technology LLC] xHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1018) loongarch64: probe_pci: device 26: vendor id = 0x14, device id = 0x7a1f, name = [Loongson Technology LLC] Unknown Device
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1018) loongarch64: probe_pci: device 36: vendor id = 0x14, device id = 0x7a24, name = [Loongson Technology LLC] OHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1018) loongarch64: probe_pci: device 37: vendor id = 0x14, device id = 0x7a24, name = [Loongson Technology LLC] OHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1018) loongarch64: probe_pci: device 38: vendor id = 0x14, device id = 0x7a25, name = [Loongson Technology LLC] LG100 GPU
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1018) loongarch64: probe_pci: device 39: vendor id = 0x14, device id = 0x7a07, name = [Loongson Technology LLC] HDA (High Definition Audio) Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1018) loongarch64: probe_pci: device 40: vendor id = 0x14, device id = 0x7a18, name = [Loongson Technology LLC] SATA 3 AHCI Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1018) loongarch64: probe_pci: device 54: vendor id = 0x14, device id = 0x7a1b, name = [Loongson Technology LLC] SPI Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1018) loongarch64: probe_pci: device 57: vendor id = 0x14, device id = 0x7a34, name = [Loongson Technology LLC] xHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1018) loongarch64: probe_pci: device 58: vendor id = 0x14, device id = 0x7a1f, name = [Loongson Technology LLC] Unknown Device
+[INFO  0] (hvisor::device::irqchip::ls7a2000:59) loongarch64: irqchip: primary_init_late finished
+[INFO  1] (hvisor::percpu:70) CPU1: Idling the CPU before starting VM...
+[INFO  0] (hvisor::percpu:73) CPU0: Running the VM...
+[INFO  1] (hvisor::arch::loongarch64::cpu:132) loongarch64: ArchCpu::idle: cpuid=1
+[INFO  0] (hvisor::arch::loongarch64::s2pt:168) loongarch64: S2PTInstr::activate: root_pa: 0x90000001003cd000
+[INFO  1] (hvisor::arch::loongarch64::ipi:298) ecfg ipi enabled on cpu 1, current lie: IPI
+[INFO  0] (hvisor::arch::loongarch64::s2pt:180) loongarch64: S2PTInstr::activate: set tlbrentry to 0x100095000 done!
+[INFO  3] (hvisor::percpu:70) CPU3: Idling the CPU before starting VM...
+[INFO  0] (hvisor::arch::loongarch64::cpu:77) loongarch64: CPU0 run@0x9000000000e94000
+[INFO  3] (hvisor::arch::loongarch64::cpu:132) loongarch64: ArchCpu::idle: cpuid=3
+[INFO  2] (hvisor::percpu:70) CPU2: Idling the CPU before starting VM...
+[INFO  0] (hvisor::arch::loongarch64::cpu:82) loongarch64: @ArchCpu {
+    ctx: LoongArch64ZoneContext {
+        x: [
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+        ],
+        sepc: 0x9000000000e94000,
+        gcsr_crmd: 0x8,
+        gcsr_prmd: 0x0,
+        gcsr_euen: 0x0,
+        gcsr_misc: 0x0,
+        gcsr_ectl: 0x10000,
+        gcsr_estat: 0x0,
+        gcsr_era: 0x0,
+        gcsr_badv: 0x0,
+        gcsr_badi: 0x0,
+        gcsr_eentry: 0x1c000000,
+        gcsr_tlbidx: 0xe000000,
+        gcsr_tlbehi: 0x0,
+        gcsr_tlbelo0: 0x0,
+        gcsr_tlbelo1: 0x0,
+        gcsr_asid: 0xa0000,
+        gcsr_pgdl: 0x0,
+        gcsr_pgdh: 0x0,
+        gcsr_pgd: 0x0,
+        gcsr_pwcl: 0x0,
+        gcsr_pwch: 0x0,
+        gcsr_stlbps: 0xe,
+        gcsr_ravcfg: 0x0,
+        gcsr_cpuid: 0x0,
+        gcsr_prcfg1: 0x72f8,
+        gcsr_prcfg2: 0x3ffff000,
+        gcsr_prcfg3: 0x8073f2,
+        gcsr_save0: 0xd7bdf824b552698f,
+        gcsr_save1: 0xd925451b133846ce,
+        gcsr_save2: 0x2b1d2de72c5fa22,
+        gcsr_save3: 0x0,
+        gcsr_save4: 0x21e70be3bb35287,
+        gcsr_save5: 0x537ef85f7ecea8ec,
+        gcsr_save6: 0x34ce457ec5586ac3,
+        gcsr_save7: 0x3befe8dfd335cc26,
+        gcsr_save8: 0x0,
+        gcsr_save9: 0x0,
+        gcsr_save10: 0x0,
+        gcsr_save11: 0x0,
+        gcsr_save12: 0x0,
+        gcsr_save13: 0x0,
+        gcsr_save14: 0x0,
+        gcsr_save15: 0x0,
+        gcsr_tid: 0x0,
+        gcsr_tcfg: 0x0,
+        gcsr_tval: 0xffffffffffff,
+        gcsr_cntc: 0x0,
+        gcsr_ticlr: 0x0,
+        gcsr_llbctl: 0x0,
+        gcsr_tlbrentry: 0x0,
+        gcsr_tlbrbadv: 0x0,
+        gcsr_tlbrera: 0x0,
+        gcsr_tlbrsave: 0x0,
+        gcsr_tlbrelo0: 0x0,
+        gcsr_tlbrelo1: 0x0,
+        gcsr_tlbrehi: 0x0,
+        gcsr_tlbrprmd: 0x0,
+        gcsr_dmw0: 0x0,
+        gcsr_dmw1: 0x0,
+        gcsr_dmw2: 0x0,
+        gcsr_dmw3: 0x0,
+        pgdl: 0x0,
+        pgdh: 0x0,
+    },
+    stack_top: 0x900000010024d000,
+    cpuid: 0x0,
+    power_on: true,
+    init: true,
+}
+[INFO  3] (hvisor::arch::loongarch64::ipi:298) ecfg ipi enabled on cpu 3, current lie: IPI
+[INFO  2] (hvisor::arch::loongarch64::cpu:132) loongarch64: ArchCpu::idle: cpuid=2
+[INFO  2] (hvisor::arch::loongarch64::ipi:298) ecfg ipi enabled on cpu 2, current lie: IPI
+[INFO  0] (hvisor::arch::loongarch64::trap:1296) csrxchg emulation for CSR 0x80
+[INFO  0] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x0
+[INFO  0] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x2
+[INFO  0] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x1
+[INFO  0] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x2
+[INFO  0] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x6
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrrd.w, target address: 0x1fe00008, size: 4, R
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x8, size: 4, R <-  0x27ff
+[INFO  0] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x93
+[INFO  0] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x10
+[INFO  0] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x11
+[INFO  0] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x12
+[INFO  0] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x13
+[INFO  0] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x14
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrrd.d, target address: 0x1fe00010, size: 8, R
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x10, size: 8, R <-  0x6e6f73676e6f6f4c
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrrd.d, target address: 0x1fe00020, size: 8, R
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x20, size: 8, R <-  0x4c2d303030364133
+[INFO  0] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x1
+[INFO  0] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x1
+[    0.000000] Linux version 6.11.6 (wheatfox@dedsec-amd0) (loongarch64-unknown-linux-gnu-gcc (GCC) 13.0.1 20230316 (experimental), GNU ld (GNU Binutils) 2.40.50.20230316) #410 SMP PREEMPT_DYNAMIC Wed Apr 23 13:27:09 CST 2025
+[    0.000000] 64-bit Loongson Processor probed (LA664 Core)
+[    0.000000] CPU0 revision is: 0014d000 (Loongson-64bit)
+[    0.000000] FPU0 revision is: 00000000
+[    0.000000] ACPI: Early table checksum verification disabled
+[    0.000000] earlycon: ns16550a0 at MMIO 0x000000001fe001e0 (options '115200n8')
+[    0.000000] printk: legacy bootconsole [ns16550a0] enabled
+[    0.000000] OF: reserved mem: 0x00000000c0000000..0x00000000efffffff (786432 KiB) nomap non-reusable nonroot0xc0000000
+[    0.000000] Faking a node at [mem 0x0000000000200000-0x00000000ffffffff]
+[    0.000000] Node0's addrspace_offset is 0x0
+[    0.000000] Node0: start_pfn=0x200, end_pfn=0x100000
+[    0.000000] DMI not present or invalid.
+[    0.000000] The BIOS Version: (null)
+[    0.000000] software IO TLB: area num 1.
+[    0.000000] software IO TLB: mapped [mem 0x0000000004f50000-0x0000000008f50000] (64MB)
+[    0.000000] PM: hibernation: Registered nosave memory: [mem 0x04a80000-0x04a80fff]
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01004, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1004, size: 4, W ->  0xffffffffffffffff
+[    0.000000] Detected 1 available CPU(s)
+[    0.000000] SMP: Allowing 1 CPUs, 0 hotplug CPUs
+[    0.000000] Zone ranges:
+[    0.000000]   DMA32    [mem 0x0000000000200000-0x00000000ffffffff]
+[    0.000000]   Normal   empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000200000-0x000000000effffff]
+[    0.000000]   node   0: [mem 0x0000000090000000-0x000000009fffffff]
+[    0.000000]   node   0: [mem 0x00000000c0000000-0x00000000efffffff]
+[    0.000000]   node   0: [mem 0x00000000f0000000-0x00000000ffffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000200000-0x00000000ffffffff]
+[    0.000000] On node 0, zone DMA32: 512 pages in unavailable ranges
+[    0.000000] On node 0, zone DMA32: 135168 pages in unavailable ranges
+[    0.000000] percpu: Embedded 20 pages/cpu s43480 r8192 d30248 u2097152
+[    0.000000] pcpu-alloc: s43480 r8192 d30248 u2097152 alloc=1*2097152
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Kernel command line: earlycon console=ttyS0,115200n8 initramfs_async=false rootwait debug 
+[    0.000000] Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    0.000000] Fallback order for Node 0: 0 
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 388608
+[    0.000000] Policy zone: DMA32
+[    0.000000] mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Dynamic Preempt: full
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu: 	RCU event tracing is enabled.
+[    0.000000] rcu: 	RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=1.
+[    0.000000] 	Trampoline variant of Tasks RCU enabled.
+[    0.000000] 	Tracing variant of Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.000000] RCU Tasks: Setting shift to 0 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=1.
+[    0.000000] RCU Tasks Trace: Setting shift to 0 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=1.
+[    0.000000] NR_IRQS: 576, nr_irqs: 576, preallocated irqs: 16
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x142c, size: 4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1434, size: 4, W ->  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1400, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1401, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1402, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1403, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1404, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1405, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1406, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1407, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1408, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1409, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x140a, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x140b, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x140c, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x140d, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x140e, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x140f, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1410, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1411, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1412, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1413, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1414, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1415, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1416, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1417, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1418, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1419, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x141a, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x141b, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x141c, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x141d, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x141e, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x141f, size: 1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrrd.d, target address: 0x1fe00420, size: 8, R
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x420, size: 8, R <-  0xf200f8880300
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe00420, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x420, size: 8, W ->  0x1f200f8880300
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe014a0, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x14a0, size: 4, W ->  0x20001
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe014a4, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x14a4, size: 4, W ->  0x80004
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe014a8, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x14a8, size: 4, W ->  0x200010
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe014ac, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x14ac, size: 4, W ->  0x800040
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe014b0, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x14b0, size: 4, W ->  0x2000100
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe014b4, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x14b4, size: 4, W ->  0x8000400
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe014b8, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x14b8, size: 4, W ->  0x20001000
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe014bc, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x14bc, size: 4, W ->  0xffffffff80004000
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe014c0, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x14c0, size: 4, W ->  0x2020202
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe014c4, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x14c4, size: 4, W ->  0x2020202
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c00, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c00, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c04, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c04, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c08, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c08, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c0c, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c0c, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c10, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c10, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c14, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c14, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c18, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c18, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c1c, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c1c, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c20, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c20, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c24, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c24, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c28, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c28, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c2c, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c2c, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c30, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c30, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c34, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c34, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c38, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c38, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c3c, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c3c, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c40, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c40, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c44, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c44, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c48, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c48, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c4c, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c4c, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c50, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c50, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c54, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c54, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c58, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c58, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c5c, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c5c, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c60, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c60, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c64, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c64, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c68, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c68, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c6c, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c6c, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c70, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c70, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c74, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c74, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c78, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c78, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c7c, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c7c, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c80, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c80, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c84, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c84, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c88, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c88, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c8c, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c8c, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c90, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c90, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c94, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c94, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c98, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c98, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01c9c, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1c9c, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01ca0, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1ca0, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01ca4, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1ca4, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01ca8, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1ca8, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01cac, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1cac, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01cb0, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1cb0, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01cb4, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1cb4, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01cb8, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1cb8, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01cbc, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1cbc, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01cc0, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1cc0, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01cc4, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1cc4, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01cc8, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1cc8, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01ccc, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1ccc, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01cd0, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1cd0, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01cd4, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1cd4, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01cd8, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1cd8, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01cdc, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1cdc, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01ce0, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1ce0, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01ce4, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1ce4, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01ce8, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1ce8, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01cec, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1cec, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01cf0, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1cf0, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01cf4, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1cf4, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01cf8, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1cf8, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01cfc, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1cfc, size: 4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01600, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1600, size: 4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01680, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1680, size: 4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01604, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1604, size: 4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01684, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1684, size: 4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01608, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1608, size: 4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01688, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1688, size: 4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe0160c, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x160c, size: 4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe0168c, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x168c, size: 4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01610, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1610, size: 4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01690, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1690, size: 4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01614, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1614, size: 4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01694, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1694, size: 4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01618, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1618, size: 4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe01698, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1698, size: 4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe0161c, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x161c, size: 4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.w, target address: 0x1fe0169c, size: 4, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x169c, size: 4, W ->  0xffffffffffffffff
+[    0.000000] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[INFO  0] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x2
+[INFO  0] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x4
+[INFO  0] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x5
+[    0.000000] Constant clock event device register
+[    0.000000] clocksource: Constant: mask: 0xffffffffffffffff max_cycles: 0x171024e7e0, max_idle_ns: 440795205315 ns
+[    0.000000] sched_clock: 64 bits at 100MHz, resolution 10ns, wraps every 4398046511100ns
+[    0.008039] Constant clock source device register
+[INFO  0] (hvisor::arch::loongarch64::trap:1284) csrrd emulation for CSR 0x380
+[INFO  0] (hvisor::arch::loongarch64::trap:1284) csrrd emulation for CSR 0x300
+[    0.012964] Console: colour dummy device 80x25
+[    0.017511] Calibrating delay loop (skipped), value calculated using timer frequency.. 200.00 BogoMIPS (lpj=1000000)
+[    0.027981] pid_max: default: 32768 minimum: 301
+[    0.032582] LSM: initializing lsm=capability,yama
+[    0.037257] Yama: becoming mindful.
+[    0.040745] Mount-cache hash table entries: 2048 (order: 2, 16384 bytes, linear)
+[    0.048098] Mountpoint-cache hash table entries: 2048 (order: 2, 16384 bytes, linear)
+[    0.056149] ACPI PPTT: No PPTT table found, CPU and cache topology may be inaccurate
+[    0.063851] Invalid BIOS PPTT
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01048, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1048, size: 8, W ->  0x80000004
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01048, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1048, size: 8, W ->  0x80000000
+[    0.067214] rcu: Hierarchical SRCU implementation.
+[    0.071969] rcu: 	Max phase no-delay instances is 1000.
+[    0.077263] smp: Bringing up secondary CPUs ...
+[    0.081763] smp: Brought up 1 node, 1 CPU
+[    0.085771] Memory: 586496K/1554432K available (12864K kernel code, 4137K rwdata, 3620K rodata, 57600K init, 816K bss, 966392K reserved, 0K cma-reserved)
+[    0.099533] devtmpfs: initialized
+[INFO  0] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x6
+[INFO  0] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x200
+[INFO  0] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x201
+[INFO  0] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x202
+[INFO  0] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x203
+[INFO  0] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x204
+[INFO  0] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x205
+[INFO  0] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x206
+[INFO  0] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x207
+[    0.103284] Performance counters: loongarch/loongson64 PMU enabled, 4 64-bit counters available to each CPU.
+[    0.114104] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.123872] futex hash table entries: 256 (order: 2, 16384 bytes, linear)
+[    0.130795] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[INFO  0] (hvisor::arch::loongarch64::trap:1284) csrrd emulation for CSR 0x380
+[INFO  0] (hvisor::arch::loongarch64::trap:1284) csrrd emulation for CSR 0x300
+[    0.136927] thermal_sys: Registered thermal governor 'step_wise'
+[    0.137145] hw-breakpoint: Found 0 breakpoint and 0 watchpoint registers.
+[    0.151329] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.158075] HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+[    0.327059] raid6: lasx     gen() 22144 MB/s
+[    0.497060] raid6: lsx      gen() 13570 MB/s
+[    0.667067] raid6: int64x8  gen()  4081 MB/s
+[    0.837063] raid6: int64x4  gen()  5250 MB/s
+[    1.007062] raid6: int64x2  gen()  4775 MB/s
+[    1.177068] raid6: int64x1  gen()  3695 MB/s
+[    1.181304] raid6: using algorithm lasx gen() 22144 MB/s
+[    1.347060] raid6: .... xor() 12374 MB/s, rmw enabled
+[    1.352073] raid6: using lasx recovery algorithm
+[    1.356700] ACPI: Interpreter disabled.
+[    1.360522] iommu: Default domain type: Translated
+[    1.365277] iommu: DMA domain TLB invalidation policy: strict mode
+[    1.371488] SCSI subsystem initialized
+[    1.375242] libata version 3.00 loaded.
+[    1.379085] pps_core: LinuxPPS API ver. 1 registered
+[    1.384012] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    1.393343] vgaarb: loaded
+[    1.396050] clocksource: Switched to clocksource Constant
+[    1.401473] VFS: Disk quotas dquot_6.6.0
+[    1.405368] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    1.412239] pnp: PnP ACPI: disabled
+[    1.417514] NET: Registered PF_INET protocol family
+[    1.422401] IP idents hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    1.430054] tcp_listen_portaddr_hash hash table entries: 512 (order: 1, 8192 bytes, linear)
+[    1.438389] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    1.446086] TCP established hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    1.453795] TCP bind hash table entries: 8192 (order: 6, 262144 bytes, linear)
+[    1.461003] TCP: Hash tables configured (established 8192 bind 8192)
+[    1.467338] UDP hash table entries: 512 (order: 2, 16384 bytes, linear)
+[    1.473911] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes, linear)
+[    1.480942] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    1.486571] NET: Registered PF_XDP protocol family
+[    1.491328] PCI: CLS 0 bytes, default 64
+[    2.285942] Initialise system trusted keyrings
+[    2.290452] workingset: timestamp_bits=40 max_order=18 bucket_order=0
+[    2.296890] zbud: loaded
+[    2.299525] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    2.305423] SGI XFS with ACLs, security attributes, quota, no debug enabled
+[    2.312493] xor: measuring software checksum speed
+[    2.317487]    8regs           : 13947 MB/sec
+[    2.322172]    8regs_prefetch  :  9057 MB/sec
+[    2.326773]    32regs          : 11868 MB/sec
+[    2.331458]    32regs_prefetch :  9043 MB/sec
+[    2.335969]    lsx             : 17445 MB/sec
+[    2.340434]    lasx            : 23124 MB/sec
+[    2.344757] xor: using function: lasx (23124 MB/sec)
+[    2.349687] Key type asymmetric registered
+[    2.353751] Asymmetric key parser 'x509' registered
+[    2.360307] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 250)
+[    2.367699] io scheduler mq-deadline registered
+[    2.372195] io scheduler kyber registered
+[    2.376185] io scheduler bfq registered
+[    2.381787] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    2.388495] loongson-pci 1a000000.pcie: host bridge /pcie@1a000000 ranges:
+[    2.395336] loongson-pci 1a000000.pcie:       IO 0x0018408000..0x001840ffff -> 0x0000008000
+[    2.403649] loongson-pci 1a000000.pcie:      MEM 0x0060000000..0x007fffffff -> 0x0060000000
+[    2.413854] loongson-pci 1a000000.pcie: PCI host bridge to bus 0000:00
+[    2.420347] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    2.425795] pci_bus 0000:00: root bus resource [io  0x0000-0x7fff] (bus address [0x8000-0xffff])
+[    2.434527] pci_bus 0000:00: root bus resource [mem 0x60000000-0x7fffffff]
+[    2.441375] pci 0000:00:00.0: [0014:7a00] type 00 class 0x060000 conventional PCI endpoint
+[    2.449666] pci 0000:00:00.1: [0014:7a10] type 00 class 0x060000 conventional PCI endpoint
+[    2.457921] pci 0000:00:00.2: [0014:7a20] type 00 class 0x060000 conventional PCI endpoint
+[    2.466179] pci 0000:00:00.3: [0014:7a30] type 00 class 0x060000 conventional PCI endpoint
+[    2.474443] pci 0000:00:04.0: [0014:7a24] type 00 class 0x0c0310 conventional PCI endpoint
+[    2.482661] pci 0000:00:04.0: BAR 0 [mem 0x45940000-0x45947fff 64bit]
+[    2.489101] pci 0000:00:04.1: [0014:7a14] type 00 class 0x0c0320 conventional PCI endpoint
+[    2.497320] pci 0000:00:04.1: BAR 0 [mem 0x45948000-0x4594ffff 64bit]
+[    2.503760] pci 0000:00:05.0: [0014:7a24] type 00 class 0x0c0310 conventional PCI endpoint
+[    2.511979] pci 0000:00:05.0: BAR 0 [mem 0x45950000-0x45957fff 64bit]
+[    2.518418] pci 0000:00:05.1: [0014:7a14] type 00 class 0x0c0320 conventional PCI endpoint
+[    2.526638] pci 0000:00:05.1: BAR 0 [mem 0x45958000-0x4595ffff 64bit]
+[    2.533080] pci 0000:00:06.0: [0014:7a25] type 00 class 0x040000 conventional PCI endpoint
+[    2.541298] pci 0000:00:06.0: BAR 0 [mem 0x45960000-0x459600ff 64bit]
+[    2.547700] pci 0000:00:06.0: BAR 2 [mem 0x30000000-0x3fffffff 64bit]
+[    2.554099] pci 0000:00:06.0: BAR 4 [mem 0x45900000-0x4590ffff 64bit]
+[    2.560535] pci 0000:00:06.1: [0014:7a36] type 00 class 0x030000 conventional PCI endpoint
+[    2.568753] pci 0000:00:06.1: BAR 0 [mem 0x45910000-0x4591ffff 64bit]
+[    2.575187] pci 0000:00:06.1: vgaarb: setting as boot VGA device
+[    2.581152] pci 0000:00:06.1: vgaarb: bridge control possible
+[    2.586857] pci 0000:00:06.1: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+[    2.595340] pci 0000:00:06.2: [0014:7a37] type 00 class 0x040300 conventional PCI endpoint
+[    2.603558] pci 0000:00:06.2: BAR 0 [mem 0x45920000-0x4592ffff 64bit]
+[    2.610000] pci 0000:00:07.0: [0014:7a07] type 00 class 0x040300 conventional PCI endpoint
+[    2.618218] pci 0000:00:07.0: BAR 0 [mem 0x45930000-0x4593ffff 64bit]
+[    2.624656] pci 0000:00:08.0: [0014:7a18] type 00 class 0x010601 conventional PCI endpoint
+[    2.632881] pci 0000:00:08.0: BAR 5 [mem 0x4596b000-0x4596b3ff]
+[    2.638803] pci 0000:00:09.0: [0014:7a49] type 01 class 0x060400 PCIe Root Port
+[    2.646073] pci 0000:00:09.0: BAR 0 [mem 0x45961000-0x45961fff 64bit]
+[    2.652472] pci 0000:00:09.0: PCI bridge to [bus 01]
+[    2.657430] pci 0000:00:09.0: supports D1 D2
+[    2.661666] pci 0000:00:09.0: PME# supported from D0 D1 D3hot D3cold
+[    2.668044] pci 0000:00:0a.0: [0014:7a39] type 01 class 0x060400 PCIe Root Port
+[    2.675311] pci 0000:00:0a.0: BAR 0 [mem 0x45962000-0x45962fff 64bit]
+[    2.681714] pci 0000:00:0a.0: PCI bridge to [bus 02]
+[    2.686645] pci 0000:00:0a.0:   bridge window [io  0x20000-0x20fff]
+[    2.692870] pci 0000:00:0a.0:   bridge window [mem 0x45800000-0x458fffff]
+[    2.699637] pci 0000:00:0a.0: supports D1 D2
+[    2.703873] pci 0000:00:0a.0: PME# supported from D0 D1 D3hot D3cold
+[    2.710248] pci 0000:00:0b.0: [0014:7a39] type 01 class 0x060400 PCIe Root Port
+[    2.717526] pci 0000:00:0b.0: BAR 0 [mem 0x45963000-0x45963fff 64bit]
+[    2.723925] pci 0000:00:0b.0: PCI bridge to [bus 03]
+[    2.728882] pci 0000:00:0b.0: supports D1 D2
+[    2.733119] pci 0000:00:0b.0: PME# supported from D0 D1 D3hot D3cold
+[    2.739493] pci 0000:00:0c.0: [0014:7a39] type 01 class 0x060400 PCIe Root Port
+[    2.746764] pci 0000:00:0c.0: BAR 0 [mem 0x45964000-0x45964fff 64bit]
+[    2.753164] pci 0000:00:0c.0: PCI bridge to [bus 04]
+[    2.758120] pci 0000:00:0c.0: supports D1 D2
+[    2.762356] pci 0000:00:0c.0: PME# supported from D0 D1 D3hot D3cold
+[    2.768728] pci 0000:00:0d.0: [0014:7a49] type 01 class 0x060400 PCIe Root Port
+[    2.775994] pci 0000:00:0d.0: BAR 0 [mem 0x45965000-0x45965fff 64bit]
+[    2.782394] pci 0000:00:0d.0: PCI bridge to [bus 05]
+[    2.787325] pci 0000:00:0d.0:   bridge window [mem 0x45700000-0x457fffff]
+[    2.794085] pci 0000:00:0d.0: supports D1 D2
+[    2.798323] pci 0000:00:0d.0: PME# supported from D0 D1 D3hot D3cold
+[    2.804693] pci 0000:00:0f.0: [0014:7a69] type 01 class 0x060400 PCIe Root Port
+[    2.811962] pci 0000:00:0f.0: BAR 0 [mem 0x45966000-0x45966fff 64bit]
+[    2.818363] pci 0000:00:0f.0: PCI bridge to [bus 06-07]
+[    2.823552] pci 0000:00:0f.0:   bridge window [mem 0x45200000-0x456fffff]
+[    2.830298] pci 0000:00:0f.0:   bridge window [mem 0x45000000-0x450fffff 64bit pref]
+[    2.838010] pci 0000:00:0f.0: supports D1 D2
+[    2.842246] pci 0000:00:0f.0: PME# supported from D0 D1 D3hot D3cold
+[    2.848617] pci 0000:00:10.0: [0014:7a59] type 01 class 0x060400 PCIe Root Port
+[    2.855885] pci 0000:00:10.0: BAR 0 [mem 0x45967000-0x45967fff 64bit]
+[    2.862288] pci 0000:00:10.0: PCI bridge to [bus 08]
+[    2.867244] pci 0000:00:10.0: supports D1 D2
+[    2.871481] pci 0000:00:10.0: PME# supported from D0 D1 D3hot D3cold
+[    2.877861] pci 0000:00:13.0: [0014:7a59] type 01 class 0x060400 PCIe Root Port
+[    2.885128] pci 0000:00:13.0: BAR 0 [mem 0x45968000-0x45968fff 64bit]
+[    2.891531] pci 0000:00:13.0: PCI bridge to [bus 09]
+[    2.896486] pci 0000:00:13.0: supports D1 D2
+[    2.900723] pci 0000:00:13.0: PME# supported from D0 D1 D3hot D3cold
+[    2.907098] pci 0000:00:16.0: [0014:7a1b] type 00 class 0x088000 conventional PCI endpoint
+[    2.915314] pci 0000:00:16.0: BAR 0 [mem 0x45969000-0x45969fff 64bit]
+[    2.921716] pci 0000:00:16.0: BAR 2 [mem 0x44000000-0x44ffffff 64bit]
+[    2.928159] pci 0000:00:19.0: [0014:7a34] type 00 class 0x0c0330 conventional PCI endpoint
+[    2.936377] pci 0000:00:19.0: BAR 0 [mem 0x45100000-0x451fffff 64bit]
+[    2.942816] pci 0000:00:1a.0: [0014:7a1f] type 00 class 0x080600 conventional PCI endpoint
+[    2.951034] pci 0000:00:1a.0: BAR 0 [mem 0x4596a000-0x4596a3ff 64bit]
+[    2.957435] pci 0000:00:1a.0: BAR 2 [mem 0x40000000-0x43ffffff 64bit]
+[    2.963836] pci 0000:00:1a.0: ROM [mem 0xfffff800-0xffffffff pref]
+[    2.970106] pci 0000:02:00.0: [1f0a:6801] type 00 class 0x020000 PCIe Endpoint
+[    2.977321] pci 0000:02:00.0: BAR 0 [mem 0x45800000-0x45803fff 64bit]
+[    2.983763] pci 0000:02:00.0: BAR 4 [io  0x20000-0x200ff]
+[    2.989276] pci 0000:02:00.0: supports D1
+[    2.993253] pci 0000:02:00.0: PME# supported from D0 D1 D3hot D3cold
+[    2.999803] pci 0000:05:00.0: [1e4b:1202] type 00 class 0x010802 PCIe Endpoint
+[    3.006993] pci 0000:05:00.0: BAR 0 [mem 0x45700000-0x45703fff 64bit]
+[    3.013475] pci 0000:05:00.0: PME# supported from D0 D3hot D3cold
+[    3.019691] pci 0000:06:00.0: [8086:1521] type 00 class 0x020000 PCIe Endpoint
+[    3.026885] pci 0000:06:00.0: BAR 0 [mem 0x45500000-0x455fffff]
+[    3.032788] pci 0000:06:00.0: BAR 3 [mem 0x4560c000-0x4560ffff]
+[    3.038792] pci 0000:06:00.0: PME# supported from D0 D3hot D3cold
+[    3.044878] pci 0000:06:00.0: VF BAR 0 [mem 0x450e0000-0x450e3fff 64bit pref]
+[    3.051969] pci 0000:06:00.0: VF BAR 0 [mem 0x450e0000-0x450fffff 64bit pref]: contains BAR 0 for 8 VFs
+[    3.061329] pci 0000:06:00.0: VF BAR 3 [mem 0x450c0000-0x450c3fff 64bit pref]
+[    3.068419] pci 0000:06:00.0: VF BAR 3 [mem 0x450c0000-0x450dffff 64bit pref]: contains BAR 3 for 8 VFs
+[    3.077966] pci 0000:06:00.1: [8086:1521] type 00 class 0x020000 PCIe Endpoint
+[    3.085157] pci 0000:06:00.1: BAR 0 [mem 0x45400000-0x454fffff]
+[    3.091064] pci 0000:06:00.1: BAR 3 [mem 0x45608000-0x4560bfff]
+[    3.097071] pci 0000:06:00.1: PME# supported from D0 D3hot D3cold
+[    3.103157] pci 0000:06:00.1: VF BAR 0 [mem 0x450a0000-0x450a3fff 64bit pref]
+[    3.110247] pci 0000:06:00.1: VF BAR 0 [mem 0x450a0000-0x450bffff 64bit pref]: contains BAR 0 for 8 VFs
+[    3.119606] pci 0000:06:00.1: VF BAR 3 [mem 0x45080000-0x45083fff 64bit pref]
+[    3.126695] pci 0000:06:00.1: VF BAR 3 [mem 0x45080000-0x4509ffff 64bit pref]: contains BAR 3 for 8 VFs
+[    3.136225] pci 0000:06:00.2: [8086:1521] type 00 class 0x020000 PCIe Endpoint
+[    3.143415] pci 0000:06:00.2: BAR 0 [mem 0x45300000-0x453fffff]
+[    3.149321] pci 0000:06:00.2: BAR 3 [mem 0x45604000-0x45607fff]
+[    3.155316] pci 0000:06:00.2: PME# supported from D0 D3hot D3cold
+[    3.161404] pci 0000:06:00.2: VF BAR 0 [mem 0x45060000-0x45063fff 64bit pref]
+[    3.168493] pci 0000:06:00.2: VF BAR 0 [mem 0x45060000-0x4507ffff 64bit pref]: contains BAR 0 for 8 VFs
+[    3.177852] pci 0000:06:00.2: VF BAR 3 [mem 0x45040000-0x45043fff 64bit pref]
+[    3.184940] pci 0000:06:00.2: VF BAR 3 [mem 0x45040000-0x4505ffff 64bit pref]: contains BAR 3 for 8 VFs
+[    3.194470] pci 0000:06:00.3: [8086:1521] type 00 class 0x020000 PCIe Endpoint
+[    3.201663] pci 0000:06:00.3: BAR 0 [mem 0x45200000-0x452fffff]
+[    3.207569] pci 0000:06:00.3: BAR 3 [mem 0x45600000-0x45603fff]
+[    3.213564] pci 0000:06:00.3: PME# supported from D0 D3hot D3cold
+[    3.219652] pci 0000:06:00.3: VF BAR 0 [mem 0x45020000-0x45023fff 64bit pref]
+[    3.226746] pci 0000:06:00.3: VF BAR 0 [mem 0x45020000-0x4503ffff 64bit pref]: contains BAR 0 for 8 VFs
+[    3.236104] pci 0000:06:00.3: VF BAR 3 [mem 0x45000000-0x45003fff 64bit pref]
+[    3.243192] pci 0000:06:00.3: VF BAR 3 [mem 0x45000000-0x4501ffff 64bit pref]: contains BAR 3 for 8 VFs
+[    3.252775] pci 0000:00:0f.0: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 06-07] add_size 100000 add_align 100000
+[    3.264462] pci 0000:00:06.0: BAR 2 [mem 0x60000000-0x6fffffff 64bit]: assigned
+[    3.271728] pci 0000:00:1a.0: BAR 2 [mem 0x70000000-0x73ffffff 64bit]: assigned
+[    3.278992] pci 0000:00:16.0: BAR 2 [mem 0x74000000-0x74ffffff 64bit]: assigned
+[    3.286257] pci 0000:00:0a.0: bridge window [mem 0x75000000-0x750fffff]: assigned
+[    3.293690] pci 0000:00:0d.0: bridge window [mem 0x75100000-0x751fffff]: assigned
+[    3.301126] pci 0000:00:0f.0: bridge window [mem 0x75200000-0x756fffff]: assigned
+[    3.308562] pci 0000:00:0f.0: bridge window [mem 0x75700000-0x757fffff 64bit pref]: assigned
+[    3.316948] pci 0000:00:19.0: BAR 0 [mem 0x75800000-0x758fffff 64bit]: assigned
+[    3.324211] pci 0000:00:06.0: BAR 4 [mem 0x75900000-0x7590ffff 64bit]: assigned
+[    3.331475] pci 0000:00:06.1: BAR 0 [mem 0x75910000-0x7591ffff 64bit]: assigned
+[    3.338739] pci 0000:00:06.2: BAR 0 [mem 0x75920000-0x7592ffff 64bit]: assigned
+[    3.346001] pci 0000:00:07.0: BAR 0 [mem 0x75930000-0x7593ffff 64bit]: assigned
+[    3.353265] pci 0000:00:04.0: BAR 0 [mem 0x75940000-0x75947fff 64bit]: assigned
+[    3.360529] pci 0000:00:04.1: BAR 0 [mem 0x75948000-0x7594ffff 64bit]: assigned
+[    3.367793] pci 0000:00:05.0: BAR 0 [mem 0x75950000-0x75957fff 64bit]: assigned
+[    3.375055] pci 0000:00:05.1: BAR 0 [mem 0x75958000-0x7595ffff 64bit]: assigned
+[    3.382319] pci 0000:00:09.0: BAR 0 [mem 0x75960000-0x75960fff 64bit]: assigned
+[    3.389585] pci 0000:00:0a.0: BAR 0 [mem 0x75961000-0x75961fff 64bit]: assigned
+[    3.396849] pci 0000:00:0a.0: bridge window [io  0x4000-0x4fff]: assigned
+[    3.403592] pci 0000:00:0b.0: BAR 0 [mem 0x75962000-0x75962fff 64bit]: assigned
+[    3.410858] pci 0000:00:0c.0: BAR 0 [mem 0x75963000-0x75963fff 64bit]: assigned
+[    3.418123] pci 0000:00:0d.0: BAR 0 [mem 0x75964000-0x75964fff 64bit]: assigned
+[    3.425385] pci 0000:00:0f.0: BAR 0 [mem 0x75965000-0x75965fff 64bit]: assigned
+[    3.432650] pci 0000:00:10.0: BAR 0 [mem 0x75966000-0x75966fff 64bit]: assigned
+[    3.439915] pci 0000:00:13.0: BAR 0 [mem 0x75967000-0x75967fff 64bit]: assigned
+[    3.447180] pci 0000:00:16.0: BAR 0 [mem 0x75968000-0x75968fff 64bit]: assigned
+[    3.454443] pci 0000:00:1a.0: ROM [mem 0x75969000-0x759697ff pref]: assigned
+[    3.461446] pci 0000:00:08.0: BAR 5 [mem 0x75969800-0x75969bff]: assigned
+[    3.468190] pci 0000:00:1a.0: BAR 0 [mem 0x75969c00-0x75969fff 64bit]: assigned
+[    3.475453] pci 0000:00:06.0: BAR 0 [mem 0x7596a000-0x7596a0ff 64bit]: assigned
+[    3.482724] pci 0000:00:09.0: PCI bridge to [bus 01]
+[    3.487657] pci 0000:02:00.0: BAR 0 [mem 0x75000000-0x75003fff 64bit]: assigned
+[    3.494933] pci 0000:02:00.0: BAR 4 [io  0x4000-0x40ff]: assigned
+[    3.500990] pci 0000:00:0a.0: PCI bridge to [bus 02]
+[    3.505918] pci 0000:00:0a.0:   bridge window [io  0x4000-0x4fff]
+[    3.511972] pci 0000:00:0a.0:   bridge window [mem 0x75000000-0x750fffff]
+[    3.518718] pci 0000:00:0b.0: PCI bridge to [bus 03]
+[    3.523649] pci 0000:00:0c.0: PCI bridge to [bus 04]
+[    3.528582] pci 0000:05:00.0: BAR 0 [mem 0x75100000-0x75103fff 64bit]: assigned
+[    3.535848] pci 0000:00:0d.0: PCI bridge to [bus 05]
+[    3.540777] pci 0000:00:0d.0:   bridge window [mem 0x75100000-0x751fffff]
+[    3.547526] pci 0000:06:00.0: BAR 0 [mem 0x75200000-0x752fffff]: assigned
+[    3.554271] pci 0000:06:00.1: BAR 0 [mem 0x75300000-0x753fffff]: assigned
+[    3.561017] pci 0000:06:00.2: BAR 0 [mem 0x75400000-0x754fffff]: assigned
+[    3.567764] pci 0000:06:00.3: BAR 0 [mem 0x75500000-0x755fffff]: assigned
+[    3.574509] pci 0000:06:00.0: BAR 3 [mem 0x75600000-0x75603fff]: assigned
+[    3.581255] pci 0000:06:00.0: VF BAR 0 [mem 0x75700000-0x7571ffff 64bit pref]: assigned
+[    3.589213] pci 0000:06:00.0: VF BAR 3 [mem 0x75720000-0x7573ffff 64bit pref]: assigned
+[    3.597170] pci 0000:06:00.1: BAR 3 [mem 0x75604000-0x75607fff]: assigned
+[    3.603915] pci 0000:06:00.1: VF BAR 0 [mem 0x75740000-0x7575ffff 64bit pref]: assigned
+[    3.611872] pci 0000:06:00.1: VF BAR 3 [mem 0x75760000-0x7577ffff 64bit pref]: assigned
+[    3.619828] pci 0000:06:00.2: BAR 3 [mem 0x75608000-0x7560bfff]: assigned
+[    3.626575] pci 0000:06:00.2: VF BAR 0 [mem 0x75780000-0x7579ffff 64bit pref]: assigned
+[    3.634531] pci 0000:06:00.2: VF BAR 3 [mem 0x757a0000-0x757bffff 64bit pref]: assigned
+[    3.642488] pci 0000:06:00.3: BAR 3 [mem 0x7560c000-0x7560ffff]: assigned
+[    3.649234] pci 0000:06:00.3: VF BAR 0 [mem 0x757c0000-0x757dffff 64bit pref]: assigned
+[    3.657191] pci 0000:06:00.3: VF BAR 3 [mem 0x757e0000-0x757fffff 64bit pref]: assigned
+[    3.665150] pci 0000:00:0f.0: PCI bridge to [bus 06-07]
+[    3.670339] pci 0000:00:0f.0:   bridge window [mem 0x75200000-0x756fffff]
+[    3.677083] pci 0000:00:0f.0:   bridge window [mem 0x75700000-0x757fffff 64bit pref]
+[    3.684777] pci 0000:00:10.0: PCI bridge to [bus 08]
+[    3.689709] pci 0000:00:13.0: PCI bridge to [bus 09]
+[    3.694639] pci_bus 0000:00: resource 4 [io  0x0000-0x7fff]
+[    3.700173] pci_bus 0000:00: resource 5 [mem 0x60000000-0x7fffffff]
+[    3.706399] pci_bus 0000:02: resource 0 [io  0x4000-0x4fff]
+[    3.711931] pci_bus 0000:02: resource 1 [mem 0x75000000-0x750fffff]
+[    3.718156] pci_bus 0000:05: resource 1 [mem 0x75100000-0x751fffff]
+[    3.724379] pci_bus 0000:06: resource 1 [mem 0x75200000-0x756fffff]
+[    3.730604] pci_bus 0000:06: resource 2 [mem 0x75700000-0x757fffff 64bit pref]
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0xfffffffe80001608
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0x1f0001c40
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0xffffffff80001608
+[    3.738192] pcieport 0000:00:09.0: PME: Signaling with IRQ 21
+[    3.744117] pcieport 0000:00:09.0: AER: enabled with IRQ 21
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0xfffffffd80001608
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0x100e8001c40
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0xffffffff80001608
+[    3.750046] pcieport 0000:00:0a.0: PME: Signaling with IRQ 23
+[    3.755962] pcieport 0000:00:0a.0: AER: enabled with IRQ 23
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0xfffffffb80001608
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0x10000d8001c40
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0xffffffff80001608
+[    3.761889] pcieport 0000:00:0b.0: PME: Signaling with IRQ 25
+[    3.767815] pcieport 0000:00:0b.0: AER: enabled with IRQ 25
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0xfffffff780001608
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0x1000000b8001c40
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0xffffffff80001608
+[    3.773731] pcieport 0000:00:0c.0: PME: Signaling with IRQ 27
+[    3.779664] pcieport 0000:00:0c.0: AER: enabled with IRQ 27
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0xffffffef80001608
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0x1f0001c44
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0xffffffff80001608
+[    3.785575] pcieport 0000:00:0d.0: PME: Signaling with IRQ 29
+[    3.791506] pcieport 0000:00:0d.0: AER: enabled with IRQ 29
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0xffffffdf80001608
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0x100e8001c44
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0xffffffff80001608
+[    3.797433] pcieport 0000:00:0f.0: PME: Signaling with IRQ 31
+[    3.803347] pcieport 0000:00:0f.0: AER: enabled with IRQ 31
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0xffffffbf80001608
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0x10000d8001c44
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0xffffffff80001608
+[    3.809275] pcieport 0000:00:10.0: PME: Signaling with IRQ 33
+[    3.815192] pcieport 0000:00:10.0: AER: enabled with IRQ 33
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0xffffff7f80001608
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0x1000000b8001c44
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0xffffffff80001608
+[    3.821120] pcieport 0000:00:13.0: PME: Signaling with IRQ 35
+[    3.827055] pcieport 0000:00:13.0: AER: enabled with IRQ 35
+[    3.833572] Serial: 8250/16550 driver, 16 ports, IRQ sharing enabled
+[    3.841041] printk: legacy console [ttyS0] disabled
+[    3.845963] 1fe001e0.serial: ttyS0 at MMIO 0x1fe001e0 (irq = 36, base_baud = 6250000) is a 16550A
+[    3.854812] printk: legacy console [ttyS0] enabled
+[    3.854812] printk: legacy console [ttyS0] enabled
+[    3.864339] printk: legacy bootconsole [ns16550a0] disabled
+[    3.864339] printk: legacy bootconsole [ns16550a0] disabled
+[    3.896251] loongson 0000:00:06.1: Found LS7A2000 bridge chipset, revision: 2
+[    3.903370] loongson 0000:00:06.1: [drm] dc: 400MHz, gmc: 1200MHz, gpu: 480MHz
+[    3.910559] loongson 0000:00:06.1: [drm] Dedicated vram start: 0x60000000, size: 256MiB
+[    3.918581] loongson 0000:00:06.1: [drm] VRAM: 65536 pages ready
+[    3.924547] loongson 0000:00:06.1: [drm] GTT: 131072 pages ready
+[    3.930566] loongson 0000:00:06.1: [drm] lsdc-i2c0(sda pin mask=1, scl pin mask=2) created
+[    3.938809] loongson 0000:00:06.1: [drm] lsdc-i2c1(sda pin mask=4, scl pin mask=8) created
+[    3.947033] loongson 0000:00:06.1: [drm] display pipe-0 has HDMI and/or VGA
+[    3.953951] loongson 0000:00:06.1: [drm] display pipe-1 has HDMI 
+[    3.960024] loongson 0000:00:06.1: [drm] Total 2 outputs
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0xfffffeff80001600
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0x1f0001c08
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01158, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1158, size: 8, W ->  0xffffffff80001600
+[    4.005617] loongson 0000:00:06.1: [drm] registered irq: 37
+[    4.011506] [drm] Initialized loongson 1.0.0 for 0000:00:06.1 on minor 0
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrrd.d, target address: 0x1fe01800, size: 8, R
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1800, size: 8, R <-  0x100
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01800, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1800, size: 8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrrd.d, target address: 0x1fe01808, size: 8, R
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1808, size: 8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrrd.d, target address: 0x1fe01810, size: 8, R
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1810, size: 8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrrd.d, target address: 0x1fe01818, size: 8, R
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1818, size: 8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrrd.d, target address: 0x1fe01800, size: 8, R
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1800, size: 8, R <-  0x100
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01800, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1800, size: 8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrrd.d, target address: 0x1fe01808, size: 8, R
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1808, size: 8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrrd.d, target address: 0x1fe01810, size: 8, R
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1810, size: 8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrrd.d, target address: 0x1fe01818, size: 8, R
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1818, size: 8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrrd.d, target address: 0x1fe01800, size: 8, R
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1800, size: 8, R <-  0x100
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01800, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1800, size: 8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrrd.d, target address: 0x1fe01808, size: 8, R
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1808, size: 8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrrd.d, target address: 0x1fe01810, size: 8, R
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1810, size: 8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrrd.d, target address: 0x1fe01818, size: 8, R
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1818, size: 8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrrd.d, target address: 0x1fe01800, size: 8, R
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1800, size: 8, R <-  0x100
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01800, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1800, size: 8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrrd.d, target address: 0x1fe01808, size: 8, R
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1808, size: 8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrrd.d, target address: 0x1fe01810, size: 8, R
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1810, size: 8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrrd.d, target address: 0x1fe01818, size: 8, R
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1818, size: 8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrrd.d, target address: 0x1fe01800, size: 8, R
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1800, size: 8, R <-  0x100
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrwr.d, target address: 0x1fe01800, size: 8, W
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1800, size: 8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::trap:1443) iocsr issues a mmio access: iocsrrd.d, target address: 0x1fe01808, size: 8, R
+[WARN  0] (hvisor::arch::loongarch64::zone:430) loongarch64: generic mmio handler: target address: 0x1808, size: 8, R <-  0x0
+... then it continues like above, maybe polling something

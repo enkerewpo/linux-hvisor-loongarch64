@@ -131,7 +131,7 @@ show_help() {
         
         echo -e "${BOLD}Main commands:${NC}"
         echo -e "    ${CYAN}def${NC} [root|nonroot]     | Run defconfig for specified zone"
-        echo -e "    ${CYAN}build${NC} [root|nonroot]   | Build kernel for specified zone"
+        echo -e "    ${CYAN}kernel${NC} [root|nonroot]   | Build kernel for specified zone"
         echo -e "    ${CYAN}save${NC} [root|nonroot]    | Save defconfig for specified zone"
         echo -e "    ${CYAN}menu${NC} [root|nonroot]    | Run menuconfig for specified zone\n"
         
@@ -144,11 +144,11 @@ show_help() {
         echo -e "${BOLD}Build Flow:${NC}"
         echo -e "    1. For root zone:"
         echo -e "       - Run '${CYAN}def root${NC}' to configure"
-        echo -e "       - Run '${CYAN}build root${NC}' to build"
+        echo -e "       - Run '${CYAN}kernel root${NC}' to build"
         echo -e "       - Run '${CYAN}save root${NC}' to save config (optional)\n"
         echo -e "    2. For nonroot zone:"
         echo -e "       - Run '${CYAN}def nonroot${NC}' to configure"
-        echo -e "       - Run '${CYAN}build nonroot${NC}' to build"
+        echo -e "       - Run '${CYAN}kernel nonroot${NC}' to build"
         echo -e "       - Run '${CYAN}save nonroot${NC}' to save config (optional)\n"
         
         echo -e "${BOLD}Output:${NC}"
@@ -162,10 +162,20 @@ copy_to_target() {
     local src_dir=$2
     local timestamp=$(date "+%Y-%m-%d_%H-%M-%S")
     
-    echo -e "${GREEN}Copying files to target/$type${NC}"
-    cp "$src_dir/arch/$ARCH/boot/vmlinux.bin" "target/$type/vmlinux.bin"
-    $GNU_READELF -a "$src_dir/vmlinux" > "target/$type/vmlinux.readelf.txt"
-    echo "$timestamp" > "target/$type/build_timestamp.txt"
+    if [ "$type" = "root" ]; then
+        echo -e "${GREEN}Copying files to target/$type${NC}"
+        cp "$src_dir/arch/$ARCH/boot/vmlinux.bin" "target/$type/vmlinux.bin"
+        $GNU_READELF -a "$src_dir/vmlinux" > "target/$type/vmlinux.readelf.txt"
+        echo "$timestamp" > "target/$type/build_timestamp.txt"
+        echo "CHOSEN: $CHOSEN_ROOT" >> "target/$type/build_timestamp.txt"
+    fi
+    if [ "$type" = "nonroot" ]; then
+        echo -e "${GREEN}Copying files to target/$type${NC}"
+        cp "$src_dir/arch/$ARCH/boot/vmlinux.bin" "target/$type/vmlinux.bin"
+        $GNU_READELF -a "$src_dir/vmlinux" > "target/$type/vmlinux.readelf.txt"
+        echo "$timestamp" > "target/$type/build_timestamp.txt"
+        echo "CHOSEN: $CHOSEN_NONROOT" >> "target/$type/build_timestamp.txt"
+    fi
 }
 
 build_kernel() {
@@ -178,7 +188,11 @@ build_kernel() {
         exit 1
     fi
     
-    echo -e "${GREEN}Building kernel for $type with LLVM=$LLVM, NUM_JOBS=$NUM_JOBS${NC}"
+    if [ "$type" = "root" ]; then
+        echo -e "${GREEN}Building kernel for $type with chosen verion $CHOSEN_ROOT${NC}"
+    else
+        echo -e "${GREEN}Building kernel for $type with chosen verion $CHOSEN_NONROOT${NC}"
+    fi
     echo ""
     make $args -j$NUM_JOBS
     echo -e "${GREEN}Running readelf${NC}"
@@ -239,7 +253,7 @@ def)
     esac
     ;;
 
-build)
+kernel)
     case "$2" in
         root)
             build_kernel "root" "$LINUX_SRC_DIR_ROOT" "$ARGS_ROOT"

@@ -2,8 +2,8 @@
 
 # https://www.qemu.org/docs/master/system/loongarch/virt.html
 
-CHOSEN=$(cat chosen)
-KERNEL_PATH=linux-${CHOSEN}/arch/loongarch/boot/vmlinux.efi
+CHOSEN_ROOT=$(cat chosen_root)
+KERNEL_PATH=linux-${CHOSEN_ROOT}/arch/loongarch/boot/vmlinux.efi
 
 # virt,dumpdtb=virt.dtb
 # dtc -I dtb -O dts -o virt.dts virt.dtb

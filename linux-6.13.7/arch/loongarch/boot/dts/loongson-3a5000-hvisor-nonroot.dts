@@ -40,14 +40,14 @@
 		status = "okay";
 	};
 	// virtio blk
-	virtio_mmio@30002000 {
-		dma-coherent;
-		compatible = "virtio,mmio";
-		interrupt-parent = <&cpuintc>;
-		interrupts = <5>;// = hwirq
-		reg = <0x0 0x30002000 0x0 0x200>;
-		status = "okay";
-	};
+	// virtio_mmio@30002000 {
+	// 	dma-coherent;
+	// 	compatible = "virtio,mmio";
+	// 	interrupt-parent = <&cpuintc>;
+	// 	interrupts = <5>;// = hwirq
+	// 	reg = <0x0 0x30002000 0x0 0x200>;
+	// 	status = "okay";
+	// };
 };
 
 &uart1 {

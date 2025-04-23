@@ -176,7 +176,7 @@
 			reg = <0x0 0x100d0100 0x0 0x100>;
 			interrupt-parent = <&pic>;// pic-rtc0
 			interrupts = <52 IRQ_TYPE_LEVEL_HIGH>;
-			status = "disabled";
+			// status = "disabled";
 		};
 		
 		osc_clk: osc-clock@0 {
