@@ -45,8 +45,8 @@
 		compatible = "virtio,mmio";
 		// interrupt-parent = <&cpuintc>;
 		// interrupts = <5>;// = hwirq
-		interrupt-parent = <&liointc>;
-		interrupts = <30 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-parent = <&cpuintc>;
+		interrupts = <5>;// = hwirq
 		reg = <0x0 0x30002000 0x0 0x200>;
 		status = "okay";
 	};
