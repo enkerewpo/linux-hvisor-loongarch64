@@ -1,0 +1,613 @@
+[INFO  0] (hvisor::zone:222) zone cpu_set: 0b100
+[DEBUG 0] (hvisor::event:141) loongarch64:: send_event: cpu_id: 2, ipi_int_id: 7, event_id: 0
+[DEBUG 0] (hvisor::arch::loongarch64::ipi:32) loongarch64: arch_send_event: sending event to cpu: 2, sgi_num: 7
+[DEBUG 0] (hvisor::arch::loongarch64::ipi:186) ipi_write_action_legacy: sending action: 0x7 to cpu: 2
+[DEBUG 0] (hvisor::arch::loongarch64::ipi:201) ipi_write_action_legacy: finished sending action: 0x7 to cpu: 2
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: INT(Interrupt) ecode=0x0 esubcode=0x0 is=0x1000 badv=0x0 badi=0x0 era=0x9000000100072980
+[DEBUG 0] (hvisor::arch::loongarch64::trap:1230) HVC result: 0x0
+[DEBUG 0] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:283) This is an interrupt exception, is=0x1000, ecfg.lie=IPI
+[DEBUG 2] (hvisor::arch::loongarch64::trap:1184) ipi interrupt, status = 0x7
+[DEBUG 2] (hvisor::arch::loongarch64::trap:1189) this cpu's events: [0]
+[INFO  2] (hvisor::event:112) cpu 2 wakeup
+[INFO  2] (hvisor::arch::loongarch64::s2pt:168) loongarch64: S2PTInstr::activate: root_pa: 0x90000001008db000
+[INFO  2] (hvisor::arch::loongarch64::s2pt:180) loongarch64: S2PTInstr::activate: set tlbrentry to 0x1000a0000 done!
+[INFO  2] (hvisor::arch::loongarch64::cpu:77) loongarch64: CPU2 run@0x9000000000e4c000
+[INFO  2] (hvisor::arch::loongarch64::cpu:82) loongarch64: @ArchCpu {
+    ctx: LoongArch64ZoneContext {
+        x: [
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+        ],
+        sepc: 0x9000000000e4c000,
+        gcsr_crmd: 0x8,
+        gcsr_prmd: 0x0,
+        gcsr_euen: 0x0,
+        gcsr_misc: 0x0,
+        gcsr_ectl: 0x10000,
+        gcsr_estat: 0x0,
+        gcsr_era: 0x0,
+        gcsr_badv: 0x0,
+        gcsr_badi: 0x0,
+        gcsr_eentry: 0x1c000000,
+        gcsr_tlbidx: 0xe000000,
+        gcsr_tlbehi: 0x0,
+        gcsr_tlbelo0: 0x0,
+        gcsr_tlbelo1: 0x0,
+        gcsr_asid: 0xa0000,
+        gcsr_pgdl: 0x0,
+        gcsr_pgdh: 0x0,
+        gcsr_pgd: 0x0,
+        gcsr_pwcl: 0x0,
+        gcsr_pwch: 0x0,
+        gcsr_stlbps: 0xe,
+        gcsr_ravcfg: 0x0,
+        gcsr_cpuid: 0x2,
+        gcsr_prcfg1: 0x72f8,
+        gcsr_prcfg2: 0x3ffff000,
+        gcsr_prcfg3: 0x8073f2,
+        gcsr_save0: 0xb0,
+        gcsr_save1: 0x2ad5e844,
+        gcsr_save2: 0x7ffff3c7da50,
+        gcsr_save3: 0x0,
+        gcsr_save4: 0x87efd9dffdfbe917,
+        gcsr_save5: 0xdd76ea1ffb6f57fa,
+        gcsr_save6: 0x8decd8fea4fabf79,
+        gcsr_save7: 0xbb20cf4d98655745,
+        gcsr_save8: 0x0,
+        gcsr_save9: 0x0,
+        gcsr_save10: 0x0,
+        gcsr_save11: 0x0,
+        gcsr_save12: 0x0,
+        gcsr_save13: 0x0,
+        gcsr_save14: 0x0,
+        gcsr_save15: 0x0,
+        gcsr_tid: 0x2,
+        gcsr_tcfg: 0x0,
+        gcsr_tval: 0xffffffffffff,
+        gcsr_cntc: 0x0,
+        gcsr_ticlr: 0x0,
+        gcsr_llbctl: 0x0,
+        gcsr_tlbrentry: 0x0,
+        gcsr_tlbrbadv: 0x0,
+        gcsr_tlbrera: 0x0,
+        gcsr_tlbrsave: 0x0,
+        gcsr_tlbrelo0: 0x0,
+        gcsr_tlbrelo1: 0x0,
+        gcsr_tlbrehi: 0x0,
+        gcsr_tlbrprmd: 0x0,
+        gcsr_dmw0: 0x0,
+        gcsr_dmw1: 0x0,
+        gcsr_dmw2: 0x0,
+        gcsr_dmw3: 0x0,
+        pgdl: 0x0,
+        pgdh: 0x0,
+    },
+    stack_top: 0x9000000100358000,
+    cpuid: 0x2,
+    power_on: true,
+    init: true,
+}
+[DEBUG 2] (hvisor::arch::loongarch64::cpu:87) loongarch64: ArchCpu::run: percpu_s=0x90000001002d8000
+[DEBUG 2] (hvisor::arch::loongarch64::cpu:91) loongarch64: ArchCpu::run: ctx_addr=0x90000001002d8020, size=768
+[DEBUG 2] (hvisor::arch::loongarch64::cpu:96) loongarch64: ArchCpu::run: stack_tp=0x9000000100358000
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: INT(Interrupt) ecode=0x0 esubcode=0x0 is=0x1000 badv=0x0 badi=0x0 era=0x9000000000e4c000
+[DEBUG 2] (hvisor::arch::loongarch64::trap:283) This is an interrupt exception, is=0x1000, ecfg.lie=IPI
+[DEBUG 2] (hvisor::arch::loongarch64::trap:1184) ipi interrupt, status = 0x7
+[DEBUG 2] (hvisor::arch::loongarch64::trap:1189) this cpu's events: []
+[DEBUG 2] (hvisor::arch::loongarch64::ipi:267) clear_all_ipi: IPI status for cpu 2: 0x0
+[DEBUG 2] (hvisor::arch::loongarch64::ipi:252) enable_ipi: IPI enabled for cpu 2
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x40201ac era=0x9000000000e4c0a0
+[INFO  2] (hvisor::arch::loongarch64::trap:1296) csrxchg emulation for CSR 0x80
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x6d8c era=0x9000000000239554
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x6d8c era=0x9000000000239560
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x2
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x6f39 era=0x9000000000239598
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x1
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x6d8c era=0x9000000000239630
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x2
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x6d8c era=0x9000000000239768
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x6
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x40e000c era=0x90000000002397e0
+[INFO  2] (hvisor::arch::loongarch64::trap:1284) csrrd emulation for CSR 0x380
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x40c000d era=0x90000000002397e4
+[INFO  2] (hvisor::arch::loongarch64::trap:1284) csrrd emulation for CSR 0x300
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x4024c2c era=0x900000000023c3e8
+[INFO  2] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x93
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x6dad era=0x9000000000248e3c
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x10
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x6dce era=0x9000000000248e70
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x11
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x6dce era=0x9000000000248ec4
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x12
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x6dce era=0x9000000000248f40
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x13
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x6dce era=0x9000000000248f40
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x14
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x6480dad era=0x900000000023997c
+[DEBUG 2] (hvisor::arch::loongarch64::trap:1350) iocsr emulation, ty = 3, rd = 13, rj = 13
+[DEBUG 2] (hvisor::arch::loongarch64::trap:1351) GPR[rd] = 0x10, GPR[rj] = 0x10
+[DEBUG 2] (hvisor::arch::loongarch64::trap:1431) iocsr issues a mmio access: iocsrrd.d, target address: 0x1fe00010, size: 8, R
+[DEBUG 2] (hvisor::arch::loongarch64::trap:1442) handle mmio success, v=0x6e6f73676e6f6f4c
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x6480dad era=0x9000000000239988
+[DEBUG 2] (hvisor::arch::loongarch64::trap:1350) iocsr emulation, ty = 3, rd = 13, rj = 13
+[DEBUG 2] (hvisor::arch::loongarch64::trap:1351) GPR[rd] = 0x20, GPR[rj] = 0x20
+[DEBUG 2] (hvisor::arch::loongarch64::trap:1431) iocsr issues a mmio access: iocsrrd.d, target address: 0x1fe00020, size: 8, R
+[DEBUG 2] (hvisor::arch::loongarch64::trap:1442) handle mmio success, v=0x4c2d303030364133
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x648098c era=0x90000000002399cc
+[DEBUG 2] (hvisor::arch::loongarch64::trap:1350) iocsr emulation, ty = 2, rd = 12, rj = 12
+[DEBUG 2] (hvisor::arch::loongarch64::trap:1351) GPR[rd] = 0x8, GPR[rj] = 0x8
+[DEBUG 2] (hvisor::arch::loongarch64::trap:1431) iocsr issues a mmio access: iocsrrd.w, target address: 0x1fe00008, size: 4, R
+[DEBUG 2] (hvisor::arch::loongarch64::trap:1442) handle mmio success, v=0x27ff
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x6d8d era=0x9000000000239a80
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x1
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x6d8c era=0x9000000000239a8c
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x1
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x6d8c era=0x9000000000e64ebc
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x2
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x6d8c era=0x9000000000e64ed4
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x4
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x6dad era=0x9000000000e64ee0
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x5
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x40e0004 era=0x9000000000248178
+[INFO  2] (hvisor::arch::loongarch64::trap:1284) csrrd emulation for CSR 0x380
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x40c0004 era=0x900000000024818c
+[INFO  2] (hvisor::arch::loongarch64::trap:1284) csrrd emulation for CSR 0x300
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x6f18 era=0x9000000000e65bd4
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x6
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x408002c era=0x9000000000246e50
+[INFO  2] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x200
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x4080425 era=0x900000000024647c
+[INFO  2] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x201
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x4080837 era=0x9000000000246e6c
+[INFO  2] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x202
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x4080c25 era=0x9000000000246448
+[INFO  2] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x203
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x408102c era=0x9000000000246f24
+[INFO  2] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x204
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x4081425 era=0x9000000000246474
+[INFO  2] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x205
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x408182c era=0x9000000000246eac
+[INFO  2] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x206
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x4081c25 era=0x9000000000246458
+[INFO  2] (hvisor::arch::loongarch64::trap:1290) csrwr emulation for CSR 0x207
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x40e000d era=0x9000000000e65cc4
+[INFO  2] (hvisor::arch::loongarch64::trap:1284) csrrd emulation for CSR 0x380
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x0 badi=0x40c0006 era=0x9000000000e65cd8
+[INFO  2] (hvisor::arch::loongarch64::trap:1284) csrrd emulation for CSR 0x300
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIL(Page Illegal Load) ecode=0x1 esubcode=0x0 is=0x0 badv=0x30002000 badi=0x24000086 era=0x90000000009f45e4
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIL(Page Illegal Load): ecode=0x1, esubcode=0x0, era=0x90000000009f45e4, is=0x0, badi=0x24000086, badv=0x30002000
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! <- read mmio_access@0x30002000 s=0x4 v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x74726976
+[DEBUG 2] (hvisor::arch::loongarch64::trap:488) read from mmio, raw=0x74726976, trimmed=0x74726976, extended=0x74726976
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIL(Page Illegal Load) ecode=0x1 esubcode=0x0 is=0x0 badv=0x30002004 badi=0x24000586 era=0x90000000009f4604
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIL(Page Illegal Load): ecode=0x1, esubcode=0x0, era=0x90000000009f4604, is=0x0, badi=0x24000586, badv=0x30002004
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! <- read mmio_access@0x30002004 s=0x4 v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x2
+[DEBUG 2] (hvisor::arch::loongarch64::trap:488) read from mmio, raw=0x2, trimmed=0x2, extended=0x2
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIL(Page Illegal Load) ecode=0x1 esubcode=0x0 is=0x0 badv=0x30002008 badi=0x2400098c era=0x90000000009f4628
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIL(Page Illegal Load): ecode=0x1, esubcode=0x0, era=0x90000000009f4628, is=0x0, badi=0x2400098c, badv=0x30002008
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! <- read mmio_access@0x30002008 s=0x4 v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x2
+[DEBUG 2] (hvisor::arch::loongarch64::trap:488) read from mmio, raw=0x2, trimmed=0x2, extended=0x2
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIL(Page Illegal Load) ecode=0x1 esubcode=0x0 is=0x0 badv=0x3000200c badi=0x24000d8c era=0x90000000009f4640
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIL(Page Illegal Load): ecode=0x1, esubcode=0x0, era=0x90000000009f4640, is=0x0, badi=0x24000d8c, badv=0x3000200c
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! <- read mmio_access@0x3000200c s=0x4 v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x48564953
+[DEBUG 2] (hvisor::arch::loongarch64::trap:488) read from mmio, raw=0x48564953, trimmed=0x48564953, extended=0x48564953
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIS(Page Illegal Store) ecode=0x2 esubcode=0x0 is=0x0 badv=0x30002070 badi=0x2981c180 era=0x90000000009f3780
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIS(Page Illegal Store): ecode=0x2, esubcode=0x0, era=0x90000000009f3780, is=0x0, badi=0x2981c180, badv=0x30002070
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! ->write mmio_access@0x30002070 s=0x4 v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIL(Page Illegal Load) ecode=0x1 esubcode=0x0 is=0x0 badv=0x30002070 badi=0x24007184 era=0x90000000009f386c
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIL(Page Illegal Load): ecode=0x1, esubcode=0x0, era=0x90000000009f386c, is=0x0, badi=0x24007184, badv=0x30002070
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! <- read mmio_access@0x30002070 s=0x4 v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:488) read from mmio, raw=0x0, trimmed=0x0, extended=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIS(Page Illegal Store) ecode=0x2 esubcode=0x0 is=0x0 badv=0x30002070 badi=0x2981c185 era=0x90000000009f43a8
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIS(Page Illegal Store): ecode=0x2, esubcode=0x0, era=0x90000000009f43a8, is=0x0, badi=0x2981c185, badv=0x30002070
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! ->write mmio_access@0x30002070 s=0x4 v=0x1
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x1
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[    0.000000] Linux version 6.13.7 (wheatfox@dedsec-amd0) (loongarch64-unknown-linux-gnu-gcc (GCC) 13.0.1 20230316 (experimental), GNU ld (GNU Binutils) 2.40.50.20230316) #202 PREEMPT_RT Thu Apr 24 11:39:52 CST 2025
+[    0.000000] Loongson-64bit Processor probed (LA664 Core)
+[    0.000000] CPU0 revision is: 0014d000 (Loongson-64bit)
+[    0.000000] FPU0 revision is: 00000000
+[    0.000000] ACPI: Early table checksum verification disabled
+[    0.000000] OF: reserved mem: Reserved memory: No reserved-memory node in the DT
+[    0.000000] DMI not present or invalid.
+[    0.000000] The BIOS Version: (null)
+[    0.000000] software IO TLB: area num 1.
+[    0.000000] software IO TLB: mapped [mem 0x00000000021b0000-0x00000000061b0000] (64MB)
+[    0.000000] PM: hibernation: Registered nosave memory: [mem 0x01d84000-0x01d84fff]
+[    0.000000] Zone ranges:
+[    0.000000]   DMA32    [mem 0x0000000000200000-0x00000000ffffffff]
+[    0.000000]   Normal   empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000200000-0x000000000effffff]
+[    0.000000]   node   0: [mem 0x0000000090000000-0x000000009fffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000200000-0x000000009fffffff]
+[    0.000000] On node 0, zone DMA32: 512 pages in unavailable ranges
+[    0.000000] On node 0, zone DMA32: 135168 pages in unavailable ranges
+[    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Kernel command line: earlycon console=ttyS0,115200n8 initramfs_async=false rootwait debug 
+[    0.000000] printk: log buffer data + meta data: 262144 + 917504 = 1179648 bytes
+[    0.000000] Dentry cache hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 126464
+[    0.000000] mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Dynamic Preempt: full
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu: 	RCU event tracing is enabled.
+[    0.000000] rcu: 	RCU priority boosting: priority 1 delay 500 ms.
+[    0.000000] rcu: 	RCU_SOFTIRQ processing moved to rcuc kthreads.
+[    0.000000] 	No expedited grace period (rcu_normal_after_boot).
+[    0.000000] 	Trampoline variant of Tasks RCU enabled.
+[    0.000000] 	Tracing variant of Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+[    0.000000] RCU Tasks: Setting shift to 0 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=1.
+[    0.000000] RCU Tasks Trace: Setting shift to 0 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=1.
+[    0.000000] NR_IRQS: 832, nr_irqs: 64, preallocated irqs: 16
+[    0.000000] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.000000] Constant clock event device register
+[    0.000000] clocksource: Constant: mask: 0xffffffffffffffff max_cycles: 0x171024e7e0, max_idle_ns: 440795205315 ns
+[    0.000000] sched_clock: 64 bits at 100MHz, resolution 10ns, wraps every 4398046511100ns
+[    0.000002] Constant clock source device register
+[    0.021523] Console: colour dummy device 80x25
+[    0.021548] Calibrating delay loop (skipped), value calculated using timer frequency.. 200.00 BogoMIPS (lpj=1000000)
+[    0.021556] pid_max: default: 32768 minimum: 301
+[    0.021580] LSM: initializing lsm=capability,yama
+[    0.021600] Yama: becoming mindful.
+[    0.021643] Mount-cache hash table entries: 1024 (order: 1, 8192 bytes, linear)
+[    0.021649] Mountpoint-cache hash table entries: 1024 (order: 1, 8192 bytes, linear)
+[    0.022500] rcu: Hierarchical SRCU implementation.
+[    0.022503] rcu: 	Max phase no-delay instances is 1000.
+[    0.022718] Memory: 388356K/505856K available (12544K kernel code, 3505K rwdata, 4212K rodata, 11264K init, 779K bss, 116000K reserved, 0K cma-reserved)
+[    0.022886] devtmpfs: initialized
+[    0.023449] Performance counters: loongarch/loongson64 PMU enabled, 4 64-bit counters available to each CPU.
+[    0.120084] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.120092] futex hash table entries: 256 (order: 1, 12288 bytes, linear)
+[    0.120391] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.120879] thermal_sys: Registered thermal governor 'step_wise'
+[    0.142404] hw-breakpoint: Found 0 breakpoint and 0 watchpoint registers.
+[    0.143194] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.143197] HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+[    0.313509] raid6: lasx     gen() 23339 MB/s
+[    0.483504] raid6: lsx      gen() 13571 MB/s
+[    0.653518] raid6: int64x8  gen()  4090 MB/s
+[    0.823507] raid6: int64x4  gen()  5251 MB/s
+[    0.993506] raid6: int64x2  gen()  4775 MB/s
+[    1.163515] raid6: int64x1  gen()  3699 MB/s
+[    1.163518] raid6: using algorithm lasx gen() 23339 MB/s
+[    1.333505] raid6: .... xor() 13146 MB/s, rmw enabled
+[    1.333507] raid6: using lasx recovery algorithm
+[    1.333618] ACPI: Interpreter disabled.
+[    1.333652] iommu: Default domain type: Translated
+[    1.333655] iommu: DMA domain TLB invalidation policy: strict mode
+[    1.333802] SCSI subsystem initialized
+[    1.333882] libata version 3.00 loaded.
+[    1.333978] pps_core: LinuxPPS API ver. 1 registered
+[    1.333981] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    1.334477] vgaarb: loaded
+[    1.334515] clocksource: Switched to clocksource Constant
+[    1.334636] VFS: Disk quotas dquot_6.6.0
+[    1.334646] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    1.334722] pnp: PnP ACPI: disabled
+[    1.339473] NET: Registered PF_INET protocol family
+[    1.339534] IP idents hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    1.339767] tcp_listen_portaddr_hash hash table entries: 256 (order: 1, 8192 bytes, linear)
+[    1.339773] Table-[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIL(Page Illegal Load) ecode=0x1 esubcode=0x0 is=0x0 badv=0x30002070 badi=0x24007184 era=0x90000000009f386c
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIL(Page Illegal Load): ecode=0x1, esubcode=0x0, era=0x90000000009f386c, is=0x0, badi=0x24007184, badv=0x30002070
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! <- read mmio_access@0x30002070 s=0x4 v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x1
+[DEBUG 2] (hvisor::arch::loongarch64::trap:488) read from mmio, raw=0x1, trimmed=0x1, extended=0x1
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    1.339779] TCP established hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[    1.339790] TCP bind hash table entries: 4096 (order: 6, 262144 bytes, linear)
+[    1.339823] TCP: Hash tables configured (established 4096 bind 4096)
+[    1.339857] UDP hash table entries: 256 (order: 3, 40960 bytes, linear)
+[    1.339870] UDP-Lite hash table entries: 256 (order: 3, 40960 bytes, linear)
+[    1.339928] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    1.339946] NET: Registered PF_XDP protocol family
+[    1.339954] PCI: CLS 0 bytes, default 64
+[    1.564317] Initialise system trusted keyrings
+[    1.564397] workingset: timestamp_bits=46 max_order=17 bucket_order=0
+[    1.564426] zbud: loaded
+[    1.564677] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    1.564842] SGI XFS with ACLs, security attributes, quota, no debug enabled
+[    1.565069] xor: measuring software checksum speed
+[    1.565308]    8regs           : 13869 MB/sec
+[    1.565666]    8regs_prefetch  :  9230 MB/sec
+[    1.565902]    32regs          : 13958 MB/sec
+[    1.566260]    32regs_prefetch :  9216 MB/sec
+[    1.566493]    lsx             : 14109 MB/sec
+[    1.566683]    lasx            : 17442 MB/sec
+[    1.566684] xor: using function: lasx (17442 MB/sec)
+[    1.566689] Key type asymmetric registered
+[    1.566691] Asymmetric key parser 'x509' registered
+[    1.568921] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 250)
+[    1.568986] io scheduler mq-deadline registered
+[    1.568989] io scheduler kyber registered
+[    1.569004] io scheduler bfq registered
+[    1.570996] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    1.648638] Serial: 8250/16550 driver, 16 ports, IRQ sharing enabled
+[    1.651364] of_serial 1fe001e0.serial: error -ENXIO: IRQ index 0 not found
+[    1.651485] printk: legacy console [ttyS0] disabled
+[    1.651675] 1fe001e0.serial: ttyS0 at MMIO 0x1fe001e0 (irq = 0, base_baud = 6250000) is a 16550A
+[    1.651693] printk: legacy console [ttyS0] enabled
+[    1.974673] brd: module loaded
+[    2.194845] loop: module loaded
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIS(Page Illegal Store) ecode=0x2 esubcode=0x0 is=0x0 badv=0x30002070 badi=0x2981c185 era=0x90000000009f43a8
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIS(Page Illegal Store): ecode=0x2, esubcode=0x0, era=0x90000000009f43a8, is=0x0, badi=0x2981c185, badv=0x30002070
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! ->write mmio_access@0x30002070 s=0x4 v=0x3
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x3
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIS(Page Illegal Store) ecode=0x2 esubcode=0x0 is=0x0 badv=0x30002014 badi=0x2980518d era=0x90000000009f3820
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIS(Page Illegal Store): ecode=0x2, esubcode=0x0, era=0x90000000009f3820, is=0x0, badi=0x2980518d, badv=0x30002014
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! ->write mmio_access@0x30002014 s=0x4 v=0x1
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x1
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIL(Page Illegal Load) ecode=0x1 esubcode=0x0 is=0x0 badv=0x30002010 badi=0x2400118c era=0x90000000009f382c
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIL(Page Illegal Load): ecode=0x1, esubcode=0x0, era=0x90000000009f382c, is=0x0, badi=0x2400118c, badv=0x30002010
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! <- read mmio_access@0x30002010 s=0x4 v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x1
+[DEBUG 2] (hvisor::arch::loongarch64::trap:488) read from mmio, raw=0x1, trimmed=0x1, extended=0x1
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIS(Page Illegal Store) ecode=0x2 esubcode=0x0 is=0x0 badv=0x30002014 badi=0x298051a0 era=0x90000000009f3844
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIS(Page Illegal Store): ecode=0x2, esubcode=0x0, era=0x90000000009f3844, is=0x0, badi=0x298051a0, badv=0x30002014
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! ->write mmio_access@0x30002014 s=0x4 v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIL(Page Illegal Load) ecode=0x1 esubcode=0x0 is=0x0 badv=0x30002010 badi=0x240011a4 era=0x90000000009f3850
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIL(Page Illegal Load): ecode=0x1, esubcode=0x0, era=0x90000000009f3850, is=0x0, badi=0x240011a4, badv=0x30002010
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! <- read mmio_access@0x30002010 s=0x4 v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x100000006
+[DEBUG 2] (hvisor::arch::loongarch64::trap:488) read from mmio, raw=0x100000006, trimmed=0x6, extended=0x6
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIS(Page Illegal Store) ecode=0x2 esubcode=0x0 is=0x0 badv=0x30002024 badi=0x2980918d era=0x90000000009f38c4
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIS(Page Illegal Store): ecode=0x2, esubcode=0x0, era=0x90000000009f38c4, is=0x0, badi=0x2980918d, badv=0x30002024
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! ->write mmio_access@0x30002024 s=0x4 v=0x1
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x1
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIS(Page Illegal Store) ecode=0x2 esubcode=0x0 is=0x0 badv=0x30002020 badi=0x2980818d era=0x90000000009f38d8
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIS(Page Illegal Store): ecode=0x2, esubcode=0x0, era=0x90000000009f38d8, is=0x0, badi=0x2980818d, badv=0x30002020
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! ->write mmio_access@0x30002020 s=0x4 v=0x1
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x1
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIS(Page Illegal Store) ecode=0x2 esubcode=0x0 is=0x0 badv=0x30002024 badi=0x29809180 era=0x90000000009f38e8
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIS(Page Illegal Store): ecode=0x2, esubcode=0x0, era=0x90000000009f38e8, is=0x0, badi=0x29809180, badv=0x30002024
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! ->write mmio_access@0x30002024 s=0x4 v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIS(Page Illegal Store) ecode=0x2 esubcode=0x0 is=0x0 badv=0x30002020 badi=0x2980818d era=0x90000000009f38fc
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIS(Page Illegal Store): ecode=0x2, esubcode=0x0, era=0x90000000009f38fc, is=0x0, badi=0x2980818d, badv=0x30002020
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! ->write mmio_access@0x30002020 s=0x4 v=0x6
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x6
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIL(Page Illegal Load) ecode=0x1 esubcode=0x0 is=0x0 badv=0x30002070 badi=0x24007184 era=0x90000000009f386c
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIL(Page Illegal Load): ecode=0x1, esubcode=0x0, era=0x90000000009f386c, is=0x0, badi=0x24007184, badv=0x30002070
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! <- read mmio_access@0x30002070 s=0x4 v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x3
+[DEBUG 2] (hvisor::arch::loongarch64::trap:488) read from mmio, raw=0x3, trimmed=0x3, extended=0x3
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIS(Page Illegal Store) ecode=0x2 esubcode=0x0 is=0x0 badv=0x30002070 badi=0x2981c185 era=0x90000000009f43a8
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIS(Page Illegal Store): ecode=0x2, esubcode=0x0, era=0x90000000009f43a8, is=0x0, badi=0x2981c185, badv=0x30002070
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! ->write mmio_access@0x30002070 s=0x4 v=0xb
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0xb
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIL(Page Illegal Load) ecode=0x1 esubcode=0x0 is=0x0 badv=0x30002070 badi=0x24007184 era=0x90000000009f386c
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIL(Page Illegal Load): ecode=0x1, esubcode=0x0, era=0x90000000009f386c, is=0x0, badi=0x24007184, badv=0x30002070
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! <- read mmio_access@0x30002070 s=0x4 v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0xb
+[DEBUG 2] (hvisor::arch::loongarch64::trap:488) read from mmio, raw=0xb, trimmed=0xb, extended=0xb
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIS(Page Illegal Store) ecode=0x2 esubcode=0x0 is=0x0 badv=0x30002030 badi=0x2980c1dd era=0x90000000009f3d40
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIS(Page Illegal Store): ecode=0x2, esubcode=0x0, era=0x90000000009f3d40, is=0x0, badi=0x2980c1dd, badv=0x30002030
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! ->write mmio_access@0x30002030 s=0x4 v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[    2.523686] virtio_blk virtio0: 1/0/0 default/read/poll queues
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIL(Page Illegal Load) ecode=0x1 esubcode=0x0 is=0x0 badv=0x30002044 badi=0x3808324c era=0x90000000009f3d68
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIL(Page Illegal Load): ecode=0x1, esubcode=0x0, era=0x90000000009f3d68, is=0x0, badi=0x3808324c, badv=0x30002044
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! <- read mmio_access@0x30002044 s=0x4 v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:488) read from mmio, raw=0x0, trimmed=0x0, extended=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIL(Page Illegal Load) ecode=0x1 esubcode=0x0 is=0x0 badv=0x30002034 badi=0x240035c5 era=0x90000000009f3d98
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIL(Page Illegal Load): ecode=0x1, esubcode=0x0, era=0x90000000009f3d98, is=0x0, badi=0x240035c5, badv=0x30002034
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! <- read mmio_access@0x30002034 s=0x4 v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x200
+[DEBUG 2] (hvisor::arch::loongarch64::trap:488) read from mmio, raw=0x200, trimmed=0x200, extended=0x200
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIS(Page Illegal Store) ecode=0x2 esubcode=0x0 is=0x0 badv=0x30002038 badi=0x2980e1e4 era=0x90000000009f3dfc
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIS(Page Illegal Store): ecode=0x2, esubcode=0x0, era=0x90000000009f3dfc, is=0x0, badi=0x2980e1e4, badv=0x30002038
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! ->write mmio_access@0x30002038 s=0x4 v=0x200
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x200
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIS(Page Illegal Store) ecode=0x2 esubcode=0x0 is=0x0 badv=0x30002080 badi=0x29820211 era=0x90000000009f3e24
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIS(Page Illegal Store): ecode=0x2, esubcode=0x0, era=0x90000000009f3e24, is=0x0, badi=0x29820211, badv=0x30002080
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! ->write mmio_access@0x30002080 s=0x4 v=0x8840000
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x8840000
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIS(Page Illegal Store) ecode=0x2 esubcode=0x0 is=0x0 badv=0x30002084 badi=0x29821204 era=0x90000000009f3e38
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIS(Page Illegal Store): ecode=0x2, esubcode=0x0, era=0x90000000009f3e38, is=0x0, badi=0x29821204, badv=0x30002084
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! ->write mmio_access@0x30002084 s=0x4 v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIS(Page Illegal Store) ecode=0x2 esubcode=0x0 is=0x0 badv=0x30002090 badi=0x29824211 era=0x90000000009f3e54
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIS(Page Illegal Store): ecode=0x2, esubcode=0x0, era=0x90000000009f3e54, is=0x0, badi=0x29824211, badv=0x30002090
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! ->write mmio_access@0x30002090 s=0x4 v=0x8842000
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x8842000
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIS(Page Illegal Store) ecode=0x2 esubcode=0x0 is=0x0 badv=0x30002094 badi=0x29825204 era=0x90000000009f3e68
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIS(Page Illegal Store): ecode=0x2, esubcode=0x0, era=0x90000000009f3e68, is=0x0, badi=0x29825204, badv=0x30002094
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! ->write mmio_access@0x30002094 s=0x4 v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIS(Page Illegal Store) ecode=0x2 esubcode=0x0 is=0x0 badv=0x300020a0 badi=0x29828211 era=0x90000000009f3e84
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIS(Page Illegal Store): ecode=0x2, esubcode=0x0, era=0x90000000009f3e84, is=0x0, badi=0x29828211, badv=0x300020a0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! ->write mmio_access@0x300020a0 s=0x4 v=0x8843000
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x8843000
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIS(Page Illegal Store) ecode=0x2 esubcode=0x0 is=0x0 badv=0x300020a4 badi=0x29829204 era=0x90000000009f3e98
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIS(Page Illegal Store): ecode=0x2, esubcode=0x0, era=0x90000000009f3e98, is=0x0, badi=0x29829204, badv=0x300020a4
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! ->write mmio_access@0x300020a4 s=0x4 v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIS(Page Illegal Store) ecode=0x2 esubcode=0x0 is=0x0 badv=0x30002044 badi=0x2981120f era=0x90000000009f3eac
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIS(Page Illegal Store): ecode=0x2, esubcode=0x0, era=0x90000000009f3eac, is=0x0, badi=0x2981120f, badv=0x30002044
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! ->write mmio_access@0x30002044 s=0x4 v=0x1
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x1
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIL(Page Illegal Load) ecode=0x1 esubcode=0x0 is=0x0 badv=0x3000210c badi=0x3808172c era=0x90000000009f4324
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIL(Page Illegal Load): ecode=0x1, esubcode=0x0, era=0x90000000009f4324, is=0x0, badi=0x3808172c, badv=0x3000210c
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! <- read mmio_access@0x3000210c s=0x4 v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x200
+[DEBUG 2] (hvisor::arch::loongarch64::trap:488) read from mmio, raw=0x200, trimmed=0x200, extended=0x200
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIL(Page Illegal Load) ecode=0x1 esubcode=0x0 is=0x0 badv=0x30002108 badi=0x3808172c era=0x90000000009f4324
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIL(Page Illegal Load): ecode=0x1, esubcode=0x0, era=0x90000000009f4324, is=0x0, badi=0x3808172c, badv=0x30002108
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! <- read mmio_access@0x30002108 s=0x4 v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x20000004000
+[DEBUG 2] (hvisor::arch::loongarch64::trap:488) read from mmio, raw=0x20000004000, trimmed=0x4000, extended=0x4000
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIL(Page Illegal Load) ecode=0x1 esubcode=0x0 is=0x0 badv=0x300020fc badi=0x2400fd84 era=0x90000000009f4380
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIL(Page Illegal Load): ecode=0x1, esubcode=0x0, era=0x90000000009f4380, is=0x0, badi=0x2400fd84, badv=0x300020fc
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! <- read mmio_access@0x300020fc s=0x4 v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:488) read from mmio, raw=0x0, trimmed=0x0, extended=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIL(Page Illegal Load) ecode=0x1 esubcode=0x0 is=0x0 badv=0x30002100 badi=0x38085f2c era=0x90000000009f42ac
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIL(Page Illegal Load): ecode=0x1, esubcode=0x0, era=0x90000000009f42ac, is=0x0, badi=0x38085f2c, badv=0x30002100
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! <- read mmio_access@0x30002100 s=0x4 v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x4000
+[DEBUG 2] (hvisor::arch::loongarch64::trap:488) read from mmio, raw=0x4000, trimmed=0x4000, extended=0x4000
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIL(Page Illegal Load) ecode=0x1 esubcode=0x0 is=0x0 badv=0x30002104 badi=0x38085f2c era=0x90000000009f42d4
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIL(Page Illegal Load): ecode=0x1, esubcode=0x0, era=0x90000000009f42d4, is=0x0, badi=0x38085f2c, badv=0x30002104
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! <- read mmio_access@0x30002104 s=0x4 v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x400000000000
+[DEBUG 2] (hvisor::arch::loongarch64::trap:488) read from mmio, raw=0x400000000000, trimmed=0x0, extended=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIL(Page Illegal Load) ecode=0x1 esubcode=0x0 is=0x0 badv=0x300020fc badi=0x2400fd84 era=0x90000000009f4380
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIL(Page Illegal Load): ecode=0x1, esubcode=0x0, era=0x90000000009f4380, is=0x0, badi=0x2400fd84, badv=0x300020fc
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! <- read mmio_access@0x300020fc s=0x4 v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:488) read from mmio, raw=0x0, trimmed=0x0, extended=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIL(Page Illegal Load) ecode=0x1 esubcode=0x0 is=0x0 badv=0x30002070 badi=0x24007184 era=0x90000000009f386c
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIL(Page Illegal Load): ecode=0x1, esubcode=0x0, era=0x90000000009f386c, is=0x0, badi=0x24007184, badv=0x30002070
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! <- read mmio_access@0x30002070 s=0x4 v=0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0xb
+[DEBUG 2] (hvisor::arch::loongarch64::trap:488) read from mmio, raw=0xb, trimmed=0xb, extended=0xb
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[    2.712064] virtio_blk virtio0: [vda] 16384 512-byte logical blocks (8.39 MB/8.00 MiB)
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIS(Page Illegal Store) ecode=0x2 esubcode=0x0 is=0x0 badv=0x30002070 badi=0x2981c185 era=0x90000000009f43a8
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIS(Page Illegal Store): ecode=0x2, esubcode=0x0, era=0x90000000009f43a8, is=0x0, badi=0x2981c185, badv=0x30002070
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! ->write mmio_access@0x30002070 s=0x4 v=0xf
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0xf
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: PIS(Page Illegal Store) ecode=0x2 esubcode=0x0 is=0x0 badv=0x30002050 badi=0x2981418d era=0x90000000009f3768
+[DEBUG 2] (hvisor::arch::loongarch64::trap:308) exception: PIS(Page Illegal Store): ecode=0x2, esubcode=0x0, era=0x90000000009f3768, is=0x0, badi=0x2981418d, badv=0x30002050
+[DEBUG 2] (hvisor::arch::loongarch64::trap:459) !!!! ->write mmio_access@0x30002050 s=0x4 v=0x0
+[DEBUG 2] (hvisor::device::virtio_trampoline:50) notify !!!, cpu id is 2
+[DEBUG 2] (hvisor::arch::loongarch64::trap:469) handle mmio success, v=0x0
+[DEBUG 0] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: HVC(Hypervisor Call) ecode=0x17 esubcode=0x0 is=0x0 badv=0x0 badi=0x2b8000 era=0xffff800002002378
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 0] (hvisor::arch::loongarch64::trap:1217) HVC exception, HVC call code: 0x1, arg0: 0x0, arg1: 0x0
+[DEBUG 0] (hvisor::hypercall:71) hypercall: code=HvVirtioInjectIrq, arg0=0x0, arg1=0x0
+[DEBUG 0] (hvisor::hypercall:163) hv_virtio_inject_irq: hypercall for trigger target cpu to inject irq
+[DEBUG 0] (hvisor::hypercall:187) hv_virtio_inject_irq: cpu 2 status: Idle
+[DEBUG 0] (hvisor::event:141) loongarch64:: send_event: cpu_id: 2, ipi_int_id: 7, event_id: 2
+[DEBUG 0] (hvisor::arch::loongarch64::ipi:32) loongarch64: arch_send_event: sending event to cpu: 2, sgi_num: 7
+[DEBUG 0] (hvisor::arch::loongarch64::ipi:186) ipi_write_action_legacy: sending action: 0x7 to cpu: 2
+[DEBUG 0] (hvisor::arch::loongarch64::ipi:201) ipi_write_action_legacy: finished sending action: 0x7 to cpu: 2
+[DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: INT(Interrupt) ecode=0x0 esubcode=0x0 is=0x1000 badv=0x30002050 badi=0x6488000 era=0x900000000023a08c
+[DEBUG 0] (hvisor::arch::loongarch64::trap:1230) HVC result: 0x0
+[DEBUG 0] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[DEBUG 2] (hvisor::arch::loongarch64::trap:283) This is an interrupt exception, is=0x1000, ecfg.lie=IPI
+[DEBUG 2] (hvisor::arch::loongarch64::trap:1184) ipi interrupt, status = 0x7
+[DEBUG 2] (hvisor::arch::loongarch64::trap:1189) this cpu's events: [2]
+[WARN  2] (hvisor::device::irqchip::ls7a2000:88) loongarch64: inject_irq: _irq: 5, is_hardware: false
+[DEBUG 2] (hvisor::arch::loongarch64::ipi:267) clear_all_ipi: IPI status for cpu 2: 0x0
+[DEBUG 2] (hvisor::arch::loongarch64::ipi:252) enable_ipi: IPI enabled for cpu 2
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+[    2.825177] random: crng init done
+

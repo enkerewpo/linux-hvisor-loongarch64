@@ -1,0 +1,5 @@
+[root@dedsec /]# [DEBUG 2] (hvisor::arch::loongarch64::trap:201) loongarch64: trap_handler: GSPR(Guest Sensitive Privileged Resource) ecode=0x16 esubcode=0x0 is=0x0 badv=0x30001050 badi=0x6ca5 era=0x900000000023bc34
+[INFO  2] (hvisor::arch::loongarch64::trap:1247) cpucfg emulation, target cpucfg index is 0x0
+[DEBUG 2] (hvisor::arch::loongarch64::trap:255) loongarch64: trap_handler: return
+
+900000000023b78c <__show_regs>:

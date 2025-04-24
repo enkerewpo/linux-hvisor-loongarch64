@@ -166,6 +166,7 @@ copy_to_target() {
         echo -e "${GREEN}Copying files to target/$type${NC}"
         cp "$src_dir/arch/$ARCH/boot/vmlinux.bin" "target/$type/vmlinux.bin"
         $GNU_READELF -a "$src_dir/vmlinux" > "target/$type/vmlinux.readelf.txt"
+        # $GNU_OBJDUMP -S -d "$src_dir/vmlinux" > "target/$type/vmlinux.asm"
         echo "$timestamp" > "target/$type/build_timestamp.txt"
         echo "CHOSEN: $CHOSEN_ROOT" >> "target/$type/build_timestamp.txt"
     fi
@@ -173,6 +174,7 @@ copy_to_target() {
         echo -e "${GREEN}Copying files to target/$type${NC}"
         cp "$src_dir/arch/$ARCH/boot/vmlinux.bin" "target/$type/vmlinux.bin"
         $GNU_READELF -a "$src_dir/vmlinux" > "target/$type/vmlinux.readelf.txt"
+        # $GNU_OBJDUMP -S -d "$src_dir/vmlinux" > "target/$type/vmlinux.asm"
         echo "$timestamp" > "target/$type/build_timestamp.txt"
         echo "CHOSEN: $CHOSEN_NONROOT" >> "target/$type/build_timestamp.txt"
     fi

@@ -13,11 +13,11 @@
 	model = "Loongson3 hvisor nonroot zone board";
 	
 	aliases {
-		serial0 = &uart1;
+		serial = &uart0;
 	};
 	
 	chosen {
-		// stdout-path = "serial0:115200n8";
+		// stdout-path = "serial:115200n8";
 		bootargs = "earlycon console=ttyS0,115200n8 initramfs_async=false rootwait debug";
 		// stdout-path = "/virtio_mmio@30001000";
 		// bootargs = "earlycon console=hvc0 rootwait debug";
@@ -31,26 +31,28 @@
 	};
 	
 	// virtio console
-	virtio_mmio@30001000 {
-		dma-coherent;
-		compatible = "virtio,mmio";
-		interrupt-parent = <&cpuintc>;
-		interrupts = <4>;// = hwirq
-		reg = <0x0 0x30001000 0x0 0x200>;
-		status = "okay";
-	};
-	// virtio blk
-	// virtio_mmio@30002000 {
+	// virtio_mmio@30001000 {
 	// 	dma-coherent;
 	// 	compatible = "virtio,mmio";
 	// 	interrupt-parent = <&cpuintc>;
-	// 	interrupts = <5>;// = hwirq
-	// 	reg = <0x0 0x30002000 0x0 0x200>;
+	// 	interrupts = <4>;// = hwirq
+	// 	reg = <0x0 0x30001000 0x0 0x200>;
 	// 	status = "okay";
 	// };
+	// virtio blk
+	virtio_mmio@30002000 {
+		dma-coherent;
+		compatible = "virtio,mmio";
+		// interrupt-parent = <&cpuintc>;
+		// interrupts = <5>;// = hwirq
+		interrupt-parent = <&liointc>;
+		interrupts = <30 IRQ_TYPE_LEVEL_HIGH>;
+		reg = <0x0 0x30002000 0x0 0x200>;
+		status = "okay";
+	};
 };
 
-&uart1 {
+&uart0 {
 	status = "okay";
 	// set the above 'uart1' to 'uart0' if you don't have a COM connection right now
 };
