@@ -31,14 +31,14 @@
 	};
 	
 	// virtio console
-	// virtio_mmio@30001000 {
-	// 	dma-coherent;
-	// 	compatible = "virtio,mmio";
-	// 	interrupt-parent = <&cpuintc>;
-	// 	interrupts = <4>;// = hwirq
-	// 	reg = <0x0 0x30001000 0x0 0x200>;
-	// 	status = "okay";
-	// };
+	virtio_mmio@30001000 {
+		dma-coherent;
+		compatible = "virtio,mmio";
+		interrupt-parent = <&cpuintc>;
+		interrupts = <4>;// = hwirq
+		reg = <0x0 0x30001000 0x0 0x200>;
+		status = "okay";
+	};
 	// virtio blk
 	virtio_mmio@30002000 {
 		dma-coherent;
