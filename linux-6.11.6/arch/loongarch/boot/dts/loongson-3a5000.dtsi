@@ -124,60 +124,60 @@
 		#address-cells = <2>;
 		#size-cells = <2>;
 		
-		// liointc: interrupt-controller@1fe01400 {
-		// 	compatible = "loongson,liointc-1.0";
-		// 	reg = <0x0 0x1fe01400 0x0 0x64>;
-		// 	interrupt-controller;
-		// 	#interrupt-cells = <2>;
-		// 	interrupt-parent = <&cpuintc>;
-		// 	interrupts = <2>;
-		// 	interrupt-names = "int0";
-		// 	loongson,parent_int_map =
-		// 	<0xffffffff>, /* int0 */
-		// 	<0x00000000>, /* int1 */
-		// 	<0x00000000>, /* int2 */
-		// 	<0x00000000>; /* int3 */
-		// };
+		liointc: interrupt-controller@1fe01400 {
+			compatible = "loongson,liointc-1.0";
+			reg = <0x0 0x1fe01400 0x0 0x64>;
+			interrupt-controller;
+			#interrupt-cells = <2>;
+			interrupt-parent = <&cpuintc>;
+			interrupts = <2>;
+			interrupt-names = "int0";
+			loongson,parent_int_map =
+			<0xffffffff>, /* int0 */
+			<0x00000000>, /* int1 */
+			<0x00000000>, /* int2 */
+			<0x00000000>; /* int3 */
+		};
 		
-		// eiointc: interrupt-controller@1fe01600 {
-		// 	compatible = "loongson,ls2k2000-eiointc";
-		// 	reg = <0x0 0x1fe01600 0x0 0xea00>;
-		// 	interrupt-controller;
-		// 	#interrupt-cells = <1>;
-		// 	interrupt-parent = <&cpuintc>;
-		// 	interrupts = <3>;
-		// 	phandle = <0x8002>;
-		// };
+		eiointc: interrupt-controller@1fe01600 {
+			compatible = "loongson,ls2k2000-eiointc";
+			reg = <0x0 0x1fe01600 0x0 0xea00>;
+			interrupt-controller;
+			#interrupt-cells = <1>;
+			interrupt-parent = <&cpuintc>;
+			interrupts = <3>;
+			phandle = <0x8002>;
+		};
 		
-		// pic: interrupt-controller@10000000 {
-		// 	compatible = "loongson,pch-pic-1.0";// Platform Controller Hub - Programmable Interrupt Controller
-		// 	reg = <0x0 0x10000000 0x0 0x400>;
-		// 	interrupt-controller;
-		// 	#interrupt-cells = <2>;
-		// 	loongson,pic-base-vec = <0>;
-		// 	interrupt-parent = <&eiointc>;
-		// 	phandle = <0x8003>;
-		// };
+		pic: interrupt-controller@10000000 {
+			compatible = "loongson,pch-pic-1.0";// Platform Controller Hub - Programmable Interrupt Controller
+			reg = <0x0 0x10000000 0x0 0x400>;
+			interrupt-controller;
+			#interrupt-cells = <2>;
+			loongson,pic-base-vec = <0>;
+			interrupt-parent = <&eiointc>;
+			phandle = <0x8003>;
+		};
 		
-		// msi: msi-controller@1fe01140 {
-		// 	compatible = "loongson,pch-msi-1.0";
-		// 	reg = <0x0 0x1fe01140 0x0 0x8>;
-		// 	interrupt-controller;
-		// 	#interrupt-cells = <1>;
-		// 	msi-controller;
-		// 	loongson,msi-base-vec = <64>;
-		// 	loongson,msi-num-vecs = <192>;
-		// 	interrupt-parent = <&eiointc>;
-		// 	phandle = <0x8004>;
-		// };
+		msi: msi-controller@1fe01140 {
+			compatible = "loongson,pch-msi-1.0";
+			reg = <0x0 0x1fe01140 0x0 0x8>;
+			interrupt-controller;
+			#interrupt-cells = <1>;
+			msi-controller;
+			loongson,msi-base-vec = <64>;
+			loongson,msi-num-vecs = <192>;
+			interrupt-parent = <&eiointc>;
+			phandle = <0x8004>;
+		};
 		
-		// rtc0: rtc@100d0100 {
-		// 	compatible = "loongson,ls7a-rtc";// Real Time Clock
-		// 	reg = <0x0 0x100d0100 0x0 0x100>;
-		// 	interrupt-parent = <&pic>;// pic-rtc0
-		// 	interrupts = <52 IRQ_TYPE_LEVEL_HIGH>;
-		// 	// status = "disabled";
-		// };
+		rtc0: rtc@100d0100 {
+			compatible = "loongson,ls7a-rtc";// Real Time Clock
+			reg = <0x0 0x100d0100 0x0 0x100>;
+			interrupt-parent = <&pic>;// pic-rtc0
+			interrupts = <52 IRQ_TYPE_LEVEL_HIGH>;
+			// status = "disabled";
+		};
 		
 		osc_clk: osc-clock@0 {
 			#clock-cells = <0>;
