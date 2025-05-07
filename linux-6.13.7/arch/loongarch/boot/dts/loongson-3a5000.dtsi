@@ -12,13 +12,41 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 		
-		cpu@0 {
+		core0: cpu@0 {
 			compatible = "loongson,loongson3";
 			device_type = "cpu";
 			reg = <0x0>;
 			l2-cache = <&vcache0>;
 			next-level-cache = <&scache0>;
 			numa-node-id = <0>;
+			status = "disabled";
+		};
+		core1: cpu@1 {
+			compatible = "loongson,loongson3";
+			device_type = "cpu";
+			reg = <0x1>;
+			l2-cache = <&vcache1>;
+			next-level-cache = <&scache0>;
+			numa-node-id = <0>;
+			status = "disabled";
+		};
+		core2: cpu@2 {
+			compatible = "loongson,loongson3";
+			device_type = "cpu";
+			reg = <0x2>;
+			l2-cache = <&vcache2>;
+			next-level-cache = <&scache0>;
+			numa-node-id = <0>;
+			status = "disabled";
+		};
+		core3: cpu@3 {
+			compatible = "loongson,loongson3";
+			device_type = "cpu";
+			reg = <0x3>;
+			l2-cache = <&vcache3>;
+			next-level-cache = <&scache0>;
+			numa-node-id = <0>;
+			status = "disabled";
 		};
 		vcache0: l2-cache0 {
 			compatible = "cache";
@@ -95,7 +123,8 @@
 		};
 		scache3: l3-cache3 {
 			compatible = "cache";
-	}; };
+		};
+	};
 };
 
 / {

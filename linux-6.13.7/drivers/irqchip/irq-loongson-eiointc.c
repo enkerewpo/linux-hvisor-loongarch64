@@ -139,6 +139,9 @@ static int eiointc_set_irq_affinity(struct irq_data *d, const struct cpumask *af
 	raw_spin_lock_irqsave(&affinity_lock, flags);
 
 	cpu = cpumask_first_and_and(&priv->cpuspan_map, affinity, cpu_online_mask);
+
+	pr_info("wheatfox: eiointc_set_irq_affinity, cpu=%d, nr_cpu_ids=%d\n", cpu, nr_cpu_ids);
+
 	if (cpu >= nr_cpu_ids) {
 		raw_spin_unlock_irqrestore(&affinity_lock, flags);
 		return -EINVAL;
@@ -148,10 +151,12 @@ static int eiointc_set_irq_affinity(struct irq_data *d, const struct cpumask *af
 	regaddr = EIOINTC_REG_ENABLE_VEC(vector);
 
 	if (priv->flags & EIOINTC_USE_CPU_ENCODE) {
+		pr_info("wheatfox: eiointc_set_irq_affinity, EIOINTC_USE_CPU_ENCODE\n");
 		iocsr_write32(EIOINTC_ALL_ENABLE_VEC_MASK(vector), regaddr);
 		veiointc_set_irq_route(vector, cpu);
 		iocsr_write32(EIOINTC_ALL_ENABLE, regaddr);
 	} else {
+		pr_info("wheatfox: eiointc_set_irq_affinity, !EIOINTC_USE_CPU_ENCODE -> ANY_SEND, regaddr=%x, vector=%x, priv->node=%x, priv->node_map=%x\n", regaddr, vector, priv->node, priv->node_map);
 		/* Mask target vector */
 		csr_any_send(regaddr, EIOINTC_ALL_ENABLE_VEC_MASK(vector),
 			     0x0, priv->node * CORES_PER_EIO_NODE);

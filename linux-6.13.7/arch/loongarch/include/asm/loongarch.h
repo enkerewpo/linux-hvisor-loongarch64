@@ -1204,7 +1204,6 @@ static inline void csr_any_send(unsigned int addr, unsigned int data,
 				unsigned int data_mask, unsigned int cpu)
 {
 	uint64_t val = 0;
-
 	val = IOCSR_ANY_SEND_BLOCKING | addr;
 	val |= (cpu << IOCSR_ANY_SEND_CPU_SHIFT);
 	val |= (data_mask << IOCSR_ANY_SEND_MASK_SHIFT);

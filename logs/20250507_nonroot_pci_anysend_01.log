@@ -1,0 +1,783 @@
+Hello, UART1!
+[    0.000000] Linux version 6.13.7 (wheatfox@dedsec-amd0) (loongarch64-unknown-linux-gnu-gcc (GCC) 13.0.1 20230316 (experimental), GNU ld (GNU Binutils) 2.40.50.20230316) #209 SMP PREEMPT_RT Wed May  7 21:53:08 CST 2025
+[    0.000000] Loongson-64bit Processor probed (LA664 Core)
+[    0.000000] CPU0 revision is: 0014d000 (Loongson-64bit)
+[    0.000000] FPU0 revision is: 00000000
+[    0.000000] ACPI: Early table checksum verification disabled
+[    0.000000] OF: reserved mem: Reserved memory: No reserved-memory node in the DT
+[    0.000000] DMI not present or invalid.
+[    0.000000] The BIOS Version: (null)
+[    0.000000] software IO TLB: area num 1.
+[    0.000000] software IO TLB: mapped [mem 0x0000000002210000-0x0000000006210000] (64MB)
+[    0.000000] PM: hibernation: Registered nosave memory: [mem 0x01ddc000-0x01ddcfff]
+[    0.000000] Detected 1 available CPU(s)
+[    0.000000] SMP: Allowing 1 CPUs, 0 hotplug CPUs
+[    0.000000] Zone ranges:
+[    0.000000]   DMA32    [mem 0x0000000000200000-0x00000000ffffffff]
+[    0.000000]   Normal   empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000200000-0x000000000effffff]
+[    0.000000]   node   0: [mem 0x0000000090000000-0x000000009fffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000200000-0x000000009fffffff]
+[    0.000000] On node 0, zone DMA32: 512 pages in unavailable ranges
+[    0.000000] On node 0, zone DMA32: 135168 pages in unavailable ranges
+[    0.000000] percpu: Embedded 21 pages/cpu s45808 r8192 d32016 u86016
+[    0.000000] pcpu-alloc: s45808 r8192 d32016 u86016 alloc=21*4096
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Kernel command line: earlycon console=ttyS0,115200n8 initramfs_async=false rootwait debug 
+[    0.000000] printk: log buffer data + meta data: 262144 + 917504 = 1179648 bytes
+[    0.000000] Dentry cache hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 126464
+[    0.000000] mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Dynamic Preempt: full
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu: 	RCU event tracing is enabled.
+[    0.000000] rcu: 	RCU restricting CPUs from NR_CPUS=64 to nr_cpu_ids=1.
+[    0.000000] rcu: 	RCU priority boosting: priority 1 delay 500 ms.
+[    0.000000] rcu: 	RCU_SOFTIRQ processing moved to rcuc kthreads.
+[    0.000000] 	No expedited grace period (rcu_normal_after_boot).
+[    0.000000] 	Trampoline variant of Tasks RCU enabled.
+[    0.000000] 	Tracing variant of Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.000000] RCU Tasks: Setting shift to 0 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=1.
+[    0.000000] RCU Tasks Trace: Setting shift to 0 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=1.
+[    0.000000] NR_IRQS: 16960, nr_irqs: 320, preallocated irqs: 16
+[    0.000000] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.000000] Constant clock event device register
+[    0.000000] clocksource: Constant: mask: 0xffffffffffffffff max_cycles: 0x171024e7e0, max_idle_ns: 440795205315 ns
+[    0.000000] sched_clock: 64 bits at 100MHz, resolution 10ns, wraps every 4398046511100ns
+[    0.000003] Constant clock source device register
+[    0.000272] Console: colour dummy device 80x25
+[    0.000300] Calibrating delay loop (skipped), value calculated using timer frequency.. 200.00 BogoMIPS (lpj=1000000)
+[    0.000309] pid_max: default: 32768 minimum: 301
+[    0.000339] LSM: initializing lsm=capability,yama
+[    0.000357] Yama: becoming mindful.
+[    0.000412] Mount-cache hash table entries: 1024 (order: 1, 8192 bytes, linear)
+[    0.000417] Mountpoint-cache hash table entries: 1024 (order: 1, 8192 bytes, linear)
+[    0.000879] ACPI PPTT: No PPTT table found, CPU and cache topology may be inaccurate
+[    0.000881] Invalid BIOS PPTT
+[    0.001723] rcu: Hierarchical SRCU implementation.
+[    0.001726] rcu: 	Max phase no-delay instances is 1000.
+[    0.002145] smp: Bringing up secondary CPUs ...
+[    0.002154] smp: Brought up 1 node, 1 CPU
+[    0.002194] Memory: 387664K/505856K available (12800K kernel code, 3519K rwdata, 4248K rodata, 11328K init, 806K bss, 116452K reserved, 0K cma-reserved)
+[    0.002404] devtmpfs: initialized
+[    0.003313] Performance counters: loongarch/loongson64 PMU enabled, 4 64-bit counters available to each CPU.
+[    0.004355] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.004362] futex hash table entries: 256 (order: 2, 16384 bytes, linear)
+[    0.004724] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.005389] thermal_sys: Registered thermal governor 'step_wise'
+[    0.005677] hw-breakpoint: Found 0 breakpoint and 0 watchpoint registers.
+[    0.007607] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.007609] HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+[    0.177468] raid6: lasx     gen() 22091 MB/s
+[    0.347466] raid6: lsx      gen() 13555 MB/s
+[    0.517483] raid6: int64x8  gen()  4119 MB/s
+[    0.687474] raid6: int64x4  gen()  5382 MB/s
+[    0.857466] raid6: int64x2  gen()  4774 MB/s
+[    1.027490] raid6: int64x1  gen()  3093 MB/s
+[    1.027493] raid6: using algorithm lasx gen() 22091 MB/s
+[    1.197481] raid6: .... xor() 11667 MB/s, rmw enabled
+[    1.197484] raid6: using lasx recovery algorithm
+[    1.197614] ACPI: Interpreter disabled.
+[    1.197658] iommu: Default domain type: Translated
+[    1.197660] iommu: DMA domain TLB invalidation policy: strict mode
+[    1.197831] SCSI subsystem initialized
+[    1.197933] libata version 3.00 loaded.
+[    1.198048] pps_core: LinuxPPS API ver. 1 registered
+[    1.198051] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    1.198685] vgaarb: loaded
+[    1.198744] clocksource: Switched to clocksource Constant
+[    1.198909] VFS: Disk quotas dquot_6.6.0
+[    1.198922] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    1.199015] pnp: PnP ACPI: disabled
+[    1.204774] NET: Registered PF_INET protocol family
+[    1.204834] IP idents hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    1.205075] tcp_listen_portaddr_hash hash table entries: 256 (order: 1, 10240 bytes, linear)
+[    1.205082] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    1.205088] TCP established hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[    1.205107] TCP bind hash table entries: 4096 (order: 6, 327680 bytes, linear)
+[    1.205153] TCP: Hash tables configured (established 4096 bind 4096)
+[    1.205191] UDP hash table entries: 256 (order: 3, 40960 bytes, linear)
+[    1.205205] UDP-Lite hash table entries: 256 (order: 3, 40960 bytes, linear)
+[    1.205274] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    1.205294] NET: Registered PF_XDP protocol family
+[    1.205303] PCI: CLS 0 bytes, default 64
+[    1.459546] Initialise system trusted keyrings
+[    1.459633] workingset: timestamp_bits=46 max_order=17 bucket_order=0
+[    1.459673] zbud: loaded
+[    1.459944] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    1.460128] SGI XFS with ACLs, security attributes, quota, no debug enabled
+[    1.460381] xor: measuring software checksum speed
+[    1.460619]    8regs           : 13967 MB/sec
+[    1.460947]    8regs_prefetch  : 10061 MB/sec
+[    1.461187]    32regs          : 13761 MB/sec
+[    1.461515]    32regs_prefetch : 10038 MB/sec
+[    1.461749]    lsx             : 14116 MB/sec
+[    1.461893]    lasx            : 22978 MB/sec
+[    1.461894] xor: using function: lasx (22978 MB/sec)
+[    1.461901] Key type asymmetric registered
+[    1.461905] Asymmetric key parser 'x509' registered
+[    1.464398] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 250)
+[    1.474478] io scheduler mq-deadline registered
+[    1.474483] io scheduler kyber registered
+[    1.474502] io scheduler bfq registered
+[    1.476609] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    1.476674] loongson-pci 1a000000.pcie: host bridge /pcie@1a000000 ranges:
+[    1.476688] loongson-pci 1a000000.pcie:       IO 0x0018408000..0x001840ffff -> 0x0000008000
+[    1.476699] loongson-pci 1a000000.pcie:      MEM 0x0060000000..0x007fffffff -> 0x0060000000
+[    1.476713] [wheatfox] loongson_pci_probe: found bridge pcie
+[    1.476718] [kai] loongson_pci_reg1: start=fe00000000, end=fe1fffffff
+[    1.476725] [kai] loongson_cfg1_base=800000fe00000000
+[    1.476727] [wheatfox] loongson_pci_probe: bridge pcie initialized, calling pci_host_probe
+[    1.476824] loongson-pci 1a000000.pcie: PCI host bridge to bus 0000:00
+[    1.476831] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    1.476837] pci_bus 0000:00: root bus resource [io  0x0000-0x7fff] (bus address [0x8000-0xffff])
+[    1.476841] pci_bus 0000:00: root bus resource [mem 0x60000000-0x7fffffff]
+[    1.476864] pci 0000:00:00.0: [0014:7a00] type 00 class 0x060000 conventional PCI endpoint
+[    1.477005] pci 0000:00:00.1: [0014:7a10] type 00 class 0x060000 conventional PCI endpoint
+[    1.477113] pci 0000:00:00.2: [0014:7a20] type 00 class 0x060000 conventional PCI endpoint
+[    1.477227] pci 0000:00:00.3: [0014:7a30] type 00 class 0x060000 conventional PCI endpoint
+[    1.477348] pci 0000:00:04.0: [0014:7a24] type 00 class 0x0c0310 conventional PCI endpoint
+[    1.477356] pci 0000:00:04.0: BAR 0 [mem 0x75940000-0x75947fff 64bit]
+[    1.477462] pci 0000:00:04.1: [0014:7a14] type 00 class 0x0c0320 conventional PCI endpoint
+[    1.477471] pci 0000:00:04.1: BAR 0 [mem 0x75948000-0x7594ffff 64bit]
+[    1.477580] pci 0000:00:05.0: [0014:7a24] type 00 class 0x0c0310 conventional PCI endpoint
+[    1.477588] pci 0000:00:05.0: BAR 0 [mem 0x75950000-0x75957fff 64bit]
+[    1.477698] pci 0000:00:05.1: [0014:7a14] type 00 class 0x0c0320 conventional PCI endpoint
+[    1.477707] pci 0000:00:05.1: BAR 0 [mem 0x75958000-0x7595ffff 64bit]
+[    1.477813] pci 0000:00:06.0: [0014:7a25] type 00 class 0x040000 conventional PCI endpoint
+[    1.477822] pci 0000:00:06.0: BAR 0 [mem 0x7596a000-0x7596a0ff 64bit]
+[    1.477827] pci 0000:00:06.0: BAR 2 [mem 0x60000000-0x6fffffff 64bit]
+[    1.477832] pci 0000:00:06.0: BAR 4 [mem 0x75900000-0x7590ffff 64bit]
+[    1.477931] pci 0000:00:06.1: [0014:7a36] type 00 class 0x030000 conventional PCI endpoint
+[    1.477939] pci 0000:00:06.1: BAR 0 [mem 0x75910000-0x7591ffff 64bit]
+[    1.478032] pci 0000:00:06.1: vgaarb: setting as boot VGA device
+[    1.478035] pci 0000:00:06.1: vgaarb: bridge control possible
+[    1.478037] pci 0000:00:06.1: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+[    1.478062] pci 0000:00:06.2: [0014:7a37] type 00 class 0x040300 conventional PCI endpoint
+[    1.478070] pci 0000:00:06.2: BAR 0 [mem 0x75920000-0x7592ffff 64bit]
+[    1.478180] pci 0000:00:07.0: [0014:7a07] type 00 class 0x040300 conventional PCI endpoint
+[    1.478187] pci 0000:00:07.0: BAR 0 [mem 0x75930000-0x7593ffff 64bit]
+[    1.478293] pci 0000:00:08.0: [0014:7a18] type 00 class 0x010601 conventional PCI endpoint
+[    1.478308] pci 0000:00:08.0: BAR 5 [mem 0x75969800-0x75969bff]
+[    1.478417] pci 0000:00:09.0: [0014:7a49] type 01 class 0x060400 PCIe Root Port
+[    1.478428] pci 0000:00:09.0: BAR 0 [mem 0x75960000-0x75960fff 64bit]
+[    1.478434] pci 0000:00:09.0: PCI bridge to [bus 01]
+[    1.478472] pci 0000:00:09.0: supports D1 D2
+[    1.478474] pci 0000:00:09.0: PME# supported from D0 D1 D3hot D3cold
+[    1.478635] pci 0000:00:0a.0: [0014:7a39] type 01 class 0x060400 PCIe Root Port
+[    1.478646] pci 0000:00:0a.0: BAR 0 [mem 0x75961000-0x75961fff 64bit]
+[    1.478653] pci 0000:00:0a.0: PCI bridge to [bus 02]
+[    1.478658] pci 0000:00:0a.0:   bridge window [io  0x4000-0x4fff]
+[    1.478661] pci 0000:00:0a.0:   bridge window [mem 0x75000000-0x750fffff]
+[    1.478694] pci 0000:00:0a.0: supports D1 D2
+[    1.478697] pci 0000:00:0a.0: PME# supported from D0 D1 D3hot D3cold
+[    1.478958] pci 0000:00:0b.0: [0014:7a39] type 01 class 0x060400 PCIe Root Port
+[    1.478969] pci 0000:00:0b.0: BAR 0 [mem 0x75962000-0x75962fff 64bit]
+[    1.478975] pci 0000:00:0b.0: PCI bridge to [bus 03]
+[    1.479011] pci 0000:00:0b.0: supports D1 D2
+[    1.479014] pci 0000:00:0b.0: PME# supported from D0 D1 D3hot D3cold
+[    1.479168] pci 0000:00:0c.0: [0014:7a39] type 01 class 0x060400 PCIe Root Port
+[    1.479179] pci 0000:00:0c.0: BAR 0 [mem 0x75963000-0x75963fff 64bit]
+[    1.479185] pci 0000:00:0c.0: PCI bridge to [bus 04]
+[    1.479220] pci 0000:00:0c.0: supports D1 D2
+[    1.479223] pci 0000:00:0c.0: PME# supported from D0 D1 D3hot D3cold
+[    1.479371] pci 0000:00:0d.0: [0014:7a49] type 01 class 0x060400 PCIe Root Port
+[    1.479380] pci 0000:00:0d.0: BAR 0 [mem 0x75964000-0x75964fff 64bit]
+[    1.479386] pci 0000:00:0d.0: PCI bridge to [bus 05]
+[    1.479390] pci 0000:00:0d.0:   bridge window [mem 0x75100000-0x751fffff]
+[    1.479415] pci 0000:00:0d.0: supports D1 D2
+[    1.479418] pci 0000:00:0d.0: PME# supported from D0 D1 D3hot D3cold
+[    1.479569] pci 0000:00:0f.0: [0014:7a69] type 01 class 0x060400 PCIe Root Port
+[    1.479578] pci 0000:00:0f.0: BAR 0 [mem 0x75965000-0x75965fff 64bit]
+[    1.479583] pci 0000:00:0f.0: PCI bridge to [bus 06-07]
+[    1.479588] pci 0000:00:0f.0:   bridge window [mem 0x75200000-0x756fffff]
+[    1.479593] pci 0000:00:0f.0:   bridge window [mem 0x75700000-0x757fffff 64bit pref]
+[    1.479619] pci 0000:00:0f.0: supports D1 D2
+[    1.479621] pci 0000:00:0f.0: PME# supported from D0 D1 D3hot D3cold
+[    1.479767] pci 0000:00:10.0: [0014:7a59] type 01 class 0x060400 PCIe Root Port
+[    1.479778] pci 0000:00:10.0: BAR 0 [mem 0x75966000-0x75966fff 64bit]
+[    1.479785] pci 0000:00:10.0: PCI bridge to [bus 08]
+[    1.479820] pci 0000:00:10.0: supports D1 D2
+[    1.479823] pci 0000:00:10.0: PME# supported from D0 D1 D3hot D3cold
+[    1.479982] pci 0000:00:13.0: [0014:7a59] type 01 class 0x060400 PCIe Root Port
+[    1.479992] pci 0000:00:13.0: BAR 0 [mem 0x75967000-0x75967fff 64bit]
+[    1.479999] pci 0000:00:13.0: PCI bridge to [bus 09]
+[    1.480034] pci 0000:00:13.0: supports D1 D2
+[    1.480036] pci 0000:00:13.0: PME# supported from D0 D1 D3hot D3cold
+[    1.480187] pci 0000:00:16.0: [0014:7a1b] type 00 class 0x088000 conventional PCI endpoint
+[    1.480196] pci 0000:00:16.0: BAR 0 [mem 0x75968000-0x75968fff 64bit]
+[    1.480202] pci 0000:00:16.0: BAR 2 [mem 0x74000000-0x74ffffff 64bit]
+[    1.480320] pci 0000:00:19.0: [0014:7a34] type 00 class 0x0c0330 conventional PCI endpoint
+[    1.480329] pci 0000:00:19.0: BAR 0 [mem 0x75800000-0x758fffff 64bit]
+[    1.480437] pci 0000:00:1a.0: [0014:7a1f] type 00 class 0x080600 conventional PCI endpoint
+[    1.480445] pci 0000:00:1a.0: BAR 0 [mem 0x75969c00-0x75969fff 64bit]
+[    1.480451] pci 0000:00:1a.0: BAR 2 [mem 0x70000000-0x73ffffff 64bit]
+[    1.480458] pci 0000:00:1a.0: ROM [mem 0xfffff800-0xffffffff pref]
+[    1.480736] pci 0000:02:00.0: [1f0a:6801] type 00 class 0x020000 PCIe Endpoint
+[    1.480779] pci 0000:02:00.0: BAR 0 [mem 0x75000000-0x75003fff 64bit]
+[    1.480828] pci 0000:02:00.0: BAR 4 [io  0x4000-0x40ff]
+[    1.480990] pci 0000:02:00.0: supports D1
+[    1.480992] pci 0000:02:00.0: PME# supported from D0 D1 D3hot D3cold
+[    1.481428] pci 0000:05:00.0: [1e4b:1202] type 00 class 0x010802 PCIe Endpoint
+[    1.481445] pci 0000:05:00.0: BAR 0 [mem 0x75100000-0x75103fff 64bit]
+[    1.481540] pci 0000:05:00.0: PME# supported from D0 D3hot D3cold
+[    1.481825] pci 0000:06:00.0: [8086:1521] type 00 class 0x020000 PCIe Endpoint
+[    1.481845] pci 0000:06:00.0: BAR 0 [mem 0x75200000-0x752fffff]
+[    1.481874] pci 0000:06:00.0: BAR 3 [mem 0x75600000-0x75603fff]
+[    1.482007] pci 0000:06:00.0: PME# supported from D0 D3hot D3cold
+[    1.482049] pci 0000:06:00.0: VF BAR 0 [mem 0x75700000-0x75703fff 64bit pref]
+[    1.482052] pci 0000:06:00.0: VF BAR 0 [mem 0x75700000-0x7571ffff 64bit pref]: contains BAR 0 for 8 VFs
+[    1.482078] pci 0000:06:00.0: VF BAR 3 [mem 0x75720000-0x75723fff 64bit pref]
+[    1.482081] pci 0000:06:00.0: VF BAR 3 [mem 0x75720000-0x7573ffff 64bit pref]: contains BAR 3 for 8 VFs
+[    1.482377] pci 0000:06:00.1: [8086:1521] type 00 class 0x020000 PCIe Endpoint
+[    1.482397] pci 0000:06:00.1: BAR 0 [mem 0x75300000-0x753fffff]
+[    1.482426] pci 0000:06:00.1: BAR 3 [mem 0x75604000-0x75607fff]
+[    1.482553] pci 0000:06:00.1: PME# supported from D0 D3hot D3cold
+[    1.482594] pci 0000:06:00.1: VF BAR 0 [mem 0x75740000-0x75743fff 64bit pref]
+[    1.482597] pci 0000:06:00.1: VF BAR 0 [mem 0x75740000-0x7575ffff 64bit pref]: contains BAR 0 for 8 VFs
+[    1.482623] pci 0000:06:00.1: VF BAR 3 [mem 0x75760000-0x75763fff 64bit pref]
+[    1.482625] pci 0000:06:00.1: VF BAR 3 [mem 0x75760000-0x7577ffff 64bit pref]: contains BAR 3 for 8 VFs
+[    1.482913] pci 0000:06:00.2: [8086:1521] type 00 class 0x020000 PCIe Endpoint
+[    1.482933] pci 0000:06:00.2: BAR 0 [mem 0x75400000-0x754fffff]
+[    1.482962] pci 0000:06:00.2: BAR 3 [mem 0x75608000-0x7560bfff]
+[    1.483089] pci 0000:06:00.2: PME# supported from D0 D3hot D3cold
+[    1.483130] pci 0000:06:00.2: VF BAR 0 [mem 0x75780000-0x75783fff 64bit pref]
+[    1.483133] pci 0000:06:00.2: VF BAR 0 [mem 0x75780000-0x7579ffff 64bit pref]: contains BAR 0 for 8 VFs
+[    1.483158] pci 0000:06:00.2: VF BAR 3 [mem 0x757a0000-0x757a3fff 64bit pref]
+[    1.483161] pci 0000:06:00.2: VF BAR 3 [mem 0x757a0000-0x757bffff 64bit pref]: contains BAR 3 for 8 VFs
+[    1.483444] pci 0000:06:00.3: [8086:1521] type 00 class 0x020000 PCIe Endpoint
+[    1.483464] pci 0000:06:00.3: BAR 0 [mem 0x75500000-0x755fffff]
+[    1.483492] pci 0000:06:00.3: BAR 3 [mem 0x7560c000-0x7560ffff]
+[    1.483619] pci 0000:06:00.3: PME# supported from D0 D3hot D3cold
+[    1.483660] pci 0000:06:00.3: VF BAR 0 [mem 0x757c0000-0x757c3fff 64bit pref]
+[    1.483663] pci 0000:06:00.3: VF BAR 0 [mem 0x757c0000-0x757dffff 64bit pref]: contains BAR 0 for 8 VFs
+[    1.483688] pci 0000:06:00.3: VF BAR 3 [mem 0x757e0000-0x757e3fff 64bit pref]
+[    1.483691] pci 0000:06:00.3: VF BAR 3 [mem 0x757e0000-0x757fffff 64bit pref]: contains BAR 3 for 8 VFs
+[    1.484096] pci 0000:00:0f.0: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 06-07] add_size 100000 add_align 100000
+[    1.484125] pci 0000:00:06.0: BAR 2 [mem 0x60000000-0x6fffffff 64bit]: assigned
+[    1.484134] pci 0000:00:1a.0: BAR 2 [mem 0x70000000-0x73ffffff 64bit]: assigned
+[    1.484141] pci 0000:00:16.0: BAR 2 [mem 0x74000000-0x74ffffff 64bit]: assigned
+[    1.484148] pci 0000:00:0a.0: bridge window [mem 0x75000000-0x750fffff]: assigned
+[    1.484152] pci 0000:00:0d.0: bridge window [mem 0x75100000-0x751fffff]: assigned
+[    1.484156] pci 0000:00:0f.0: bridge window [mem 0x75200000-0x756fffff]: assigned
+[    1.484159] pci 0000:00:0f.0: bridge window [mem 0x75700000-0x757fffff 64bit pref]: assigned
+[    1.484163] pci 0000:00:19.0: BAR 0 [mem 0x75800000-0x758fffff 64bit]: assigned
+[    1.484169] pci 0000:00:06.0: BAR 4 [mem 0x75900000-0x7590ffff 64bit]: assigned
+[    1.484177] pci 0000:00:06.1: BAR 0 [mem 0x75910000-0x7591ffff 64bit]: assigned
+[    1.484184] pci 0000:00:06.2: BAR 0 [mem 0x75920000-0x7592ffff 64bit]: assigned
+[    1.484190] pci 0000:00:07.0: BAR 0 [mem 0x75930000-0x7593ffff 64bit]: assigned
+[    1.484197] pci 0000:00:04.0: BAR 0 [mem 0x75940000-0x75947fff 64bit]: assigned
+[    1.484203] pci 0000:00:04.1: BAR 0 [mem 0x75948000-0x7594ffff 64bit]: assigned
+[    1.484210] pci 0000:00:05.0: BAR 0 [mem 0x75950000-0x75957fff 64bit]: assigned
+[    1.484216] pci 0000:00:05.1: BAR 0 [mem 0x75958000-0x7595ffff 64bit]: assigned
+[    1.484223] pci 0000:00:09.0: BAR 0 [mem 0x75960000-0x75960fff 64bit]: assigned
+[    1.484231] pci 0000:00:0a.0: BAR 0 [mem 0x75961000-0x75961fff 64bit]: assigned
+[    1.484237] pci 0000:00:0a.0: bridge window [io  0x4000-0x4fff]: assigned
+[    1.484242] pci 0000:00:0b.0: BAR 0 [mem 0x75962000-0x75962fff 64bit]: assigned
+[    1.484250] pci 0000:00:0c.0: BAR 0 [mem 0x75963000-0x75963fff 64bit]: assigned
+[    1.484257] pci 0000:00:0d.0: BAR 0 [mem 0x75964000-0x75964fff 64bit]: assigned
+[    1.484264] pci 0000:00:0f.0: BAR 0 [mem 0x75965000-0x75965fff 64bit]: assigned
+[    1.484272] pci 0000:00:10.0: BAR 0 [mem 0x75966000-0x75966fff 64bit]: assigned
+[    1.484279] pci 0000:00:13.0: BAR 0 [mem 0x75967000-0x75967fff 64bit]: assigned
+[    1.484287] pci 0000:00:16.0: BAR 0 [mem 0x75968000-0x75968fff 64bit]: assigned
+[    1.484294] pci 0000:00:1a.0: ROM [mem 0x75969000-0x759697ff pref]: assigned
+[    1.484299] pci 0000:00:08.0: BAR 5 [mem 0x75969800-0x75969bff]: assigned
+[    1.484305] pci 0000:00:1a.0: BAR 0 [mem 0x75969c00-0x75969fff 64bit]: assigned
+[    1.484312] pci 0000:00:06.0: BAR 0 [mem 0x7596a000-0x7596a0ff 64bit]: assigned
+[    1.484325] pci 0000:00:09.0: PCI bridge to [bus 01]
+[    1.484337] pci 0000:02:00.0: BAR 0 [mem 0x75000000-0x75003fff 64bit]: assigned
+[    1.484357] pci 0000:02:00.0: BAR 4 [io  0x4000-0x40ff]: assigned
+[    1.484366] pci 0000:00:0a.0: PCI bridge to [bus 02]
+[    1.484370] pci 0000:00:0a.0:   bridge window [io  0x4000-0x4fff]
+[    1.484373] pci 0000:00:0a.0:   bridge window [mem 0x75000000-0x750fffff]
+[    1.484378] pci 0000:00:0b.0: PCI bridge to [bus 03]
+[    1.484383] pci 0000:00:0c.0: PCI bridge to [bus 04]
+[    1.484392] pci 0000:05:00.0: BAR 0 [mem 0x75100000-0x75103fff 64bit]: assigned
+[    1.484402] pci 0000:00:0d.0: PCI bridge to [bus 05]
+[    1.484407] pci 0000:00:0d.0:   bridge window [mem 0x75100000-0x751fffff]
+[    1.484419] pci 0000:06:00.0: BAR 0 [mem 0x75200000-0x752fffff]: assigned
+[    1.484426] pci 0000:06:00.1: BAR 0 [mem 0x75300000-0x753fffff]: assigned
+[    1.484433] pci 0000:06:00.2: BAR 0 [mem 0x75400000-0x754fffff]: assigned
+[    1.484439] pci 0000:06:00.3: BAR 0 [mem 0x75500000-0x755fffff]: assigned
+[    1.484446] pci 0000:06:00.0: BAR 3 [mem 0x75600000-0x75603fff]: assigned
+[    1.484452] pci 0000:06:00.0: VF BAR 0 [mem 0x75700000-0x7571ffff 64bit pref]: assigned
+[    1.484461] pci 0000:06:00.0: VF BAR 3 [mem 0x75720000-0x7573ffff 64bit pref]: assigned
+[    1.484469] pci 0000:06:00.1: BAR 3 [mem 0x75604000-0x75607fff]: assigned
+[    1.484475] pci 0000:06:00.1: VF BAR 0 [mem 0x75740000-0x7575ffff 64bit pref]: assigned
+[    1.484483] pci 0000:06:00.1: VF BAR 3 [mem 0x75760000-0x7577ffff 64bit pref]: assigned
+[    1.484491] pci 0000:06:00.2: BAR 3 [mem 0x75608000-0x7560bfff]: assigned
+[    1.484497] pci 0000:06:00.2: VF BAR 0 [mem 0x75780000-0x7579ffff 64bit pref]: assigned
+[    1.484505] pci 0000:06:00.2: VF BAR 3 [mem 0x757a0000-0x757bffff 64bit pref]: assigned
+[    1.484513] pci 0000:06:00.3: BAR 3 [mem 0x7560c000-0x7560ffff]: assigned
+[    1.484519] pci 0000:06:00.3: VF BAR 0 [mem 0x757c0000-0x757dffff 64bit pref]: assigned
+[    1.484527] pci 0000:06:00.3: VF BAR 3 [mem 0x757e0000-0x757fffff 64bit pref]: assigned
+[    1.484538] pci 0000:00:0f.0: PCI bridge to [bus 06-07]
+[    1.484543] pci 0000:00:0f.0:   bridge window [mem 0x75200000-0x756fffff]
+[    1.484546] pci 0000:00:0f.0:   bridge window [mem 0x75700000-0x757fffff 64bit pref]
+[    1.484550] pci 0000:00:10.0: PCI bridge to [bus 08]
+[    1.484555] pci 0000:00:13.0: PCI bridge to [bus 09]
+[    1.484561] pci_bus 0000:00: resource 4 [io  0x0000-0x7fff]
+[    1.484564] pci_bus 0000:00: resource 5 [mem 0x60000000-0x7fffffff]
+[    1.484568] pci_bus 0000:02: resource 0 [io  0x4000-0x4fff]
+[    1.484570] pci_bus 0000:02: resource 1 [mem 0x75000000-0x750fffff]
+[    1.484572] pci_bus 0000:05: resource 1 [mem 0x75100000-0x751fffff]
+[    1.484574] pci_bus 0000:06: resource 1 [mem 0x75200000-0x756fffff]
+[    1.484576] pci_bus 0000:06: resource 2 [mem 0x75700000-0x757fffff 64bit pref]
+[    1.484975] eiointc: wheatfox: eiointc_set_irq_affinity, cpu=0, nr_cpu_ids=1
+[    1.484978] eiointc: wheatfox: eiointc_set_irq_affinity, !EIOINTC_USE_CPU_ENCODE -> ANY_SEND
+[    1.485232] pcieport 0000:00:09.0: PME: Signaling with IRQ 21
+[    1.485406] pcieport 0000:00:09.0: AER: enabled with IRQ 21
+[    1.485852] eiointc: wheatfox: eiointc_set_irq_affinity, cpu=0, nr_cpu_ids=1
+[    1.485855] eiointc: wheatfox: eiointc_set_irq_affinity, !EIOINTC_USE_CPU_ENCODE -> ANY_SEND
+[    1.486105] pcieport 0000:00:0a.0: PME: Signaling with IRQ 23
+[    1.486276] pcieport 0000:00:0a.0: AER: enabled with IRQ 23
+[    1.486715] eiointc: wheatfox: eiointc_set_irq_affinity, cpu=0, nr_cpu_ids=1
+[    1.486719] eiointc: wheatfox: eiointc_set_irq_affinity, !EIOINTC_USE_CPU_ENCODE -> ANY_SEND
+[    1.486968] pcieport 0000:00:0b.0: PME: Signaling with IRQ 25
+[    1.487136] pcieport 0000:00:0b.0: AER: enabled with IRQ 25
+[    1.487580] eiointc: wheatfox: eiointc_set_irq_affinity, cpu=0, nr_cpu_ids=1
+[    1.487583] eiointc: wheatfox: eiointc_set_irq_affinity, !EIOINTC_USE_CPU_ENCODE -> ANY_SEND
+[    1.487833] pcieport 0000:00:0c.0: PME: Signaling with IRQ 27
+[    1.488008] pcieport 0000:00:0c.0: AER: enabled with IRQ 27
+[    1.488447] eiointc: wheatfox: eiointc_set_irq_affinity, cpu=0, nr_cpu_ids=1
+[    1.488450] eiointc: wheatfox: eiointc_set_irq_affinity, !EIOINTC_USE_CPU_ENCODE -> ANY_SEND
+[    1.488731] pcieport 0000:00:0d.0: PME: Signaling with IRQ 29
+[    1.488961] pcieport 0000:00:0d.0: AER: enabled with IRQ 29
+[    1.489396] eiointc: wheatfox: eiointc_set_irq_affinity, cpu=0, nr_cpu_ids=1
+[    1.489399] eiointc: wheatfox: eiointc_set_irq_affinity, !EIOINTC_USE_CPU_ENCODE -> ANY_SEND
+[    1.489648] pcieport 0000:00:0f.0: PME: Signaling with IRQ 31
+[    1.489817] pcieport 0000:00:0f.0: AER: enabled with IRQ 31
+[    1.490266] eiointc: wheatfox: eiointc_set_irq_affinity, cpu=0, nr_cpu_ids=1
+[    1.490269] eiointc: wheatfox: eiointc_set_irq_affinity, !EIOINTC_USE_CPU_ENCODE -> ANY_SEND
+[    1.490519] pcieport 0000:00:10.0: PME: Signaling with IRQ 33
+[    1.490697] pcieport 0000:00:10.0: AER: enabled with IRQ 33
+[    1.491144] eiointc: wheatfox: eiointc_set_irq_affinity, cpu=0, nr_cpu_ids=1
+[    1.491146] eiointc: wheatfox: eiointc_set_irq_affinity, !EIOINTC_USE_CPU_ENCODE -> ANY_SEND
+[    1.491397] pcieport 0000:00:13.0: PME: Signaling with IRQ 35
+[    1.491579] pcieport 0000:00:13.0: AER: enabled with IRQ 35
+[    1.495714] Serial: 8250/16550 driver, 16 ports, IRQ sharing enabled
+[    1.499179] of_serial 10080000.serial: error -ENXIO: IRQ index 0 not found
+[    1.499315] printk: legacy console [ttyS0] disabled
+[    1.499551] 10080000.serial: ttyS0 at MMIO 0x10080000 (irq = 0, base_baud = 3125000) is a 16550A
+[    1.499582] printk: legacy console [ttyS0] enabled
+[    2.051070] loongson 0000:00:06.1: Found LS7A2000 bridge chipset, revision: 2
+[    2.051138] loongson 0000:00:06.1: [drm] dc: 400MHz, gmc: 1200MHz, gpu: 480MHz
+[    2.051150] loongson 0000:00:06.1: [drm] Dedicated vram start: 0x60000000, size: 256MiB
+[    2.088796] loongson 0000:00:06.1: [drm] VRAM: 65536 pages ready
+[    2.088803] loongson 0000:00:06.1: [drm] GTT: 131072 pages ready
+[    2.088894] loongson 0000:00:06.1: [drm] lsdc-i2c0(sda pin mask=1, scl pin mask=2) created
+[    2.088950] loongson 0000:00:06.1: [drm] lsdc-i2c1(sda pin mask=4, scl pin mask=8) created
+[    2.088961] loongson 0000:00:06.1: [drm] display pipe-0 has HDMI and/or VGA
+[    2.088971] loongson 0000:00:06.1: [drm] display pipe-1 has HDMI 
+[    2.088993] loongson 0000:00:06.1: [drm] Total 2 outputs
+[    3.965428] eiointc: wheatfox: eiointc_set_irq_affinity, cpu=0, nr_cpu_ids=1
+[    3.965432] eiointc: wheatfox: eiointc_set_irq_affinity, !EIOINTC_USE_CPU_ENCODE -> ANY_SEND
+[    3.965678] loongson 0000:00:06.1: [drm] registered irq: 37
+[    3.966286] [drm] Initialized loongson 1.0.0 for 0000:00:06.1 on minor 0
+[    4.178762] random: crng init done
+[    4.258910] ------------[ cut here ]------------
+[    4.258912] [CRTC:45:LS-CRTC-1] vblank wait timed out
+[    4.258933] WARNING: CPU: 0 PID: 1 at drivers/gpu/drm/drm_atomic_helper.c:1682 drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[    4.258946] Modules linked in:
+[    4.258950] CPU: 0 UID: 0 PID: 1 Comm: swapper/0 Not tainted 6.13.7 #209
+[    4.258955] pc 9000000000aba9e4 ra 9000000000aba9e4 tp 9000000006888000 sp 900000000688b540
+[    4.258958] a0 0000000000000029 a1 9000000001ed0f80 a2 900000000688b2c8 a3 9000000001ed0f88
+[    4.258960] a4 9000000001ed0f80 a5 900000000688b2c0 a6 0000000000000001 a7 0000000000000001
+[    4.258961] t0 6da97ae7219dfa6a t1 6da97ae7219dfa6a t2 0000000000000000 t3 80000000ffffe17f
+[    4.258963] t4 00000000ffffe17f t5 0000000000000181 t6 000000000000002f t7 0000000000000063
+[    4.258965] t8 000000000000002d u0 9000000001c65fb0 s9 0000000000000ae0 s0 0000000000000038
+[    4.258967] s1 0000000000000002 s2 9000000006ee8000 s3 9000000006eeaef0 s4 0000000000000038
+[    4.258969] s5 0000000000000001 s6 0000000000000001 s7 90000000069a7200 s8 0000000000000000
+[    4.258970]    ra: 9000000000aba9e4 drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[    4.258976]   ERA: 9000000000aba9e4 drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[    4.258980]  CRMD: 000000b0 (PLV0 -IE -DA +PG DACF=CC DACM=CC -WE)
+[    4.258987]  PRMD: 00000004 (PPLV0 +PIE -PWE)
+[    4.258990]  EUEN: 00000000 (-FPE -SXE -ASXE -BTE)
+[    4.258994]  ECFG: 00071c1d (LIE=0,2-4,10-12 VS=7)
+[    4.258998] ESTAT: 000c0000 [BRK] (IS= ECode=12 EsubCode=0)
+[    4.259178]  PRID: 0014d000 (Loongson-64bit, Loongson3)
+[    4.259182] CPU: 0 UID: 0 PID: 1 Comm: swapper/0 Not tainted 6.13.7 #209
+[    4.259185] Stack : 9000000001cbaf68 0000000000000000 900000000023d3fc 9000000006888000
+[    4.259191]         900000000688b190 900000000688b198 0000000000000000 900000000688b2d8
+[    4.259195]         900000000688b2d0 900000000688b2d0 900000000688b040 0000000000000001
+[    4.259198]         0000000000000001 900000000688b198 6da97ae7219dfa6a 9000000006908000
+[    4.259202]         80000000ffffe193 00000000ffffe193 0000000000000195 0000000000000020
+[    4.259206]         0000000000000063 000000000000000c 000000000493b000 0000000000000ae0
+[    4.259209]         0000000000000000 0000000000000000 9000000001c334a0 9000000001dec000
+[    4.259214]         0000000000000000 0000000000000692 0000000000000001 90000000069a7200
+[    4.259217]         0000000000000000 0000000000000000 900000000023d414 00000001200aff44
+[    4.259221]         00000000000000b0 0000000000000004 0000000000000000 0000000000071c1d
+[    4.259224]         ...
+[    4.259226] Call Trace:
+[    4.259227] [<900000000023d414>] show_stack+0x5c/0x180
+[    4.259235] [<90000000002390dc>] dump_stack_lvl+0x70/0xa0
+[    4.259239] [<9000000000258304>] __warn+0x84/0xfc
+[    4.259243] [<9000000000e59838>] report_bug+0x19c/0x204
+[    4.259249] [<9000000000e8b17c>] do_bp+0x264/0x2b4
+[    4.259256] [<0000000000000000>] 0x0
+[    4.259259] [<9000000000aba9e4>] drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[    4.259265] [<9000000000abb82c>] drm_atomic_helper_commit_tail+0x88/0xa4
+[    4.259269] [<9000000000abc8c8>] commit_tail+0xac/0x190
+[    4.259273] [<9000000000abcb18>] drm_atomic_helper_commit+0x164/0x190
+[    4.259277] [<9000000000a7b618>] drm_atomic_commit+0x8c/0xc4
+[    4.259280] [<9000000000aafcb4>] drm_client_modeset_commit_atomic+0x23c/0x280
+[    4.259284] [<9000000000aaff58>] drm_client_modeset_commit_locked+0x6c/0x17c
+[    4.259287] [<9000000000ab0094>] drm_client_modeset_commit+0x2c/0x58
+[    4.259289] [<9000000000ac8d2c>] __drm_fb_helper_restore_fbdev_mode_unlocked+0xb0/0xf8
+[    4.259295] [<9000000000ac8da0>] drm_fb_helper_set_par+0x2c/0x48
+[    4.259300] [<900000000099e24c>] fbcon_init+0x260/0x58c
+[    4.259304] [<9000000000a4ae80>] visual_init+0xb4/0x118
+[    4.259310] [<9000000000a4d8fc>] do_bind_con_driver.isra.0+0x210/0x454
+[    4.259315] [<9000000000a4dc88>] do_take_over_console+0x148/0x1f8
+[    4.259318] [<900000000099b25c>] do_fbcon_takeover+0x60/0xd0
+[    4.259323] [<900000000099f9d8>] fbcon_fb_registered+0x12c/0x18c
+[    4.259327] [<90000000009935e0>] do_register_framebuffer+0x1e0/0x288
+[    4.259331] [<90000000009936b4>] register_framebuffer+0x2c/0x54
+[    4.259334] [<9000000000ac71c4>] __drm_fb_helper_initial_config_and_unlock+0x350/0x580
+[    4.259339] [<9000000000ac92b8>] drm_fbdev_client_hotplug+0x80/0xd8
+[    4.259344] [<9000000000aaeaec>] drm_client_register+0x5c/0xa0
+[    4.259346] [<9000000000ac9410>] drm_fbdev_client_setup+0xa4/0x190
+[    4.259351] [<9000000000ac90c4>] drm_client_setup+0x14/0x50
+[    4.259355] [<9000000000ae3598>] lsdc_pci_probe+0x464/0x584
+[    4.259359] [<9000000000964988>] pci_device_probe+0xbc/0x160
+[    4.259364] [<9000000000af7034>] really_probe+0xac/0x2dc
+[    4.259370] [<9000000000af72f0>] __driver_probe_device+0x8c/0x128
+[    4.259374] [<9000000000af7484>] driver_probe_device+0x3c/0x118
+[    4.259378] [<9000000000af7754>] __driver_attach+0x98/0x194
+[    4.259382] [<9000000000af4cf8>] bus_for_each_dev+0x88/0xe8
+[    4.259386] [<9000000000af614c>] bus_add_driver+0xf4/0x208
+[    4.259389] [<9000000000af850c>] driver_register+0x68/0x134
+[    4.259393] [<900000000023a154>] do_one_initcall+0x78/0x1cc
+[    4.259397] [<9000000000ea0f9c>] kernel_init_freeable+0x1c8/0x238
+[    4.259403] [<9000000000e8c244>] kernel_init+0x1c/0x108
+[    4.259408] [<900000000023b2a8>] ret_from_kernel_thread+0xc/0xa4
+[    4.259412] 
+[    4.259414] ---[ end trace 0000000000000000 ]---
+[   14.428912] loongson 0000:00:06.1: [drm] *ERROR* flip_done timed out
+[   14.428917] loongson 0000:00:06.1: [drm] *ERROR* [CRTC:45:LS-CRTC-1] commit wait timed out
+[   24.668909] loongson 0000:00:06.1: [drm] *ERROR* flip_done timed out
+[   24.668913] loongson 0000:00:06.1: [drm] *ERROR* [CONNECTOR:35:HDMI-A-2] commit wait timed out
+[   34.908907] loongson 0000:00:06.1: [drm] *ERROR* flip_done timed out
+[   34.908911] loongson 0000:00:06.1: [drm] *ERROR* [PLANE:41:ls-primary-plane-1] commit wait timed out
+[   35.018908] ------------[ cut here ]------------
+[   35.018910] [CRTC:45:LS-CRTC-1] vblank wait timed out
+[   35.018926] WARNING: CPU: 0 PID: 1 at drivers/gpu/drm/drm_atomic_helper.c:1682 drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[   35.018935] Modules linked in:
+[   35.018939] CPU: 0 UID: 0 PID: 1 Comm: swapper/0 Tainted: G        W          6.13.7 #209
+[   35.018943] Tainted: [W]=WARN
+[   35.018945] pc 9000000000aba9e4 ra 9000000000aba9e4 tp 9000000006888000 sp 900000000688b2c0
+[   35.018947] a0 0000000000000029 a1 9000000001ed0f80 a2 900000000688b048 a3 9000000001ed0f88
+[   35.018949] a4 9000000001ed0f80 a5 900000000688b040 a6 0000000000000001 a7 0000000000000001
+[   35.018951] t0 6da97ae7219dfa6a t1 6da97ae7219dfa6a t2 0000000000000000 t3 80000000ffffe1d3
+[   35.018952] t4 00000000ffffe1d3 t5 00000000000001d5 t6 000000000000002f t7 0000000000000063
+[   35.018954] t8 000000000000002d u0 9000000001c65fb0 s9 0000000000001936 s0 0000000000000038
+[   35.018956] s1 0000000000000002 s2 9000000006ee8000 s3 9000000006eeaef0 s4 0000000000000038
+[   35.018957] s5 0000000000000001 s6 0000000000000001 s7 90000000069a7200 s8 0000000000000000
+[   35.018959]    ra: 9000000000aba9e4 drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[   35.018963]   ERA: 9000000000aba9e4 drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[   35.018967]  CRMD: 000000b0 (PLV0 -IE -DA +PG DACF=CC DACM=CC -WE)
+[   35.018973]  PRMD: 00000004 (PPLV0 +PIE -PWE)
+[   35.018977]  EUEN: 00000000 (-FPE -SXE -ASXE -BTE)
+[   35.018981]  ECFG: 00071c1d (LIE=0,2-4,10-12 VS=7)
+[   35.018984] ESTAT: 000c0000 [BRK] (IS= ECode=12 EsubCode=0)
+[   35.019164]  PRID: 0014d000 (Loongson-64bit, Loongson3)
+[   35.019168] CPU: 0 UID: 0 PID: 1 Comm: swapper/0 Tainted: G        W          6.13.7 #209
+[   35.019171] Tainted: [W]=WARN
+[   35.019173] Stack : 9000000001c870d0 0000000000000000 900000000023d3fc 9000000006888000
+[   35.019178]         900000000688af10 900000000688af18 0000000000000000 900000000688b058
+[   35.019181]         900000000688b050 900000000688b050 900000000688adc0 0000000000000001
+[   35.019185]         0000000000000001 900000000688af18 6da97ae7219dfa6a 9000000006908000
+[   35.019189]         80000000ffffe1e9 00000000ffffe1e9 00000000000001eb 0000000000000020
+[   35.019193]         0000000000000063 000000000000000c 000000000493b000 0000000000001936
+[   35.019197]         0000000000000000 0000000000000000 9000000001c334a0 9000000001dec000
+[   35.019200]         0000000000000000 0000000000000692
+[   35.019202] Call Trace:
+[   35.019203] [<900000000023d414>] show_stack+0x5c/0x180
+[   35.019209] [<90000000002390dc>] dump_stack_lvl+0x70/0xa0
+[   35.019213] [<9000000000258304>] __warn+0x84/0xfc
+[   35.019216] [<9000000000e59838>] report_bug+0x19c/0x204
+[   35.019220] [<9000000000e8b17c>] do_bp+0x264/0x2b4
+[   35.019225] [<0000000000000000>] 0x0
+[   35.019227] [<9000000000aba9e4>] drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[   35.019233] [<9000000000abb82c>] drm_atomic_helper_commit_tail+0x88/0xa4
+[   35.019238] [<9000000000abc8c8>] commit_tail+0xac/0x190
+[   35.019242] [<9000000000abcb18>] drm_atomic_helper_commit+0x164/0x190
+[   35.019246] [<9000000000a7b618>] drm_atomic_commit+0x8c/0xc4
+[   35.019249] [<9000000000aafcb4>] drm_client_modeset_commit_atomic+0x23c/0x280
+[   35.019252] [<9000000000aaff58>] drm_client_modeset_commit_locked+0x6c/0x17c
+[   35.019255] [<9000000000ac88f8>] drm_fb_helper_pan_display+0x100/0x248
+[   35.019259] [<9000000000992db0>] fb_pan_display+0x74/0x124
+[   35.019264] [<90000000009a0358>] bit_update_start+0x20/0x4c
+[   35.019267] [<900000000099f238>] fbcon_switch+0x3cc/0x59c
+[   35.019270] [<9000000000a4c0a0>] redraw_screen+0xf0/0x298
+[   35.019273] [<900000000099c12c>] fbcon_prepare_logo+0x470/0x4b8
+[   35.019278] [<900000000099e3c4>] fbcon_init+0x3d8/0x58c
+[   35.019281] [<9000000000a4ae80>] visual_init+0xb4/0x118
+[   35.019285] [<9000000000a4d8fc>] do_bind_con_driver.isra.0+0x210/0x454
+[   35.019288] [<9000000000a4dc88>] do_take_over_console+0x148/0x1f8
+[   35.019291] [<900000000099b25c>] do_fbcon_takeover+0x60/0xd0
+[   35.019296] [<900000000099f9d8>] fbcon_fb_registered+0x12c/0x18c
+[   35.019298] [<90000000009935e0>] do_register_framebuffer+0x1e0/0x288
+[   35.019302] [<90000000009936b4>] register_framebuffer+0x2c/0x54
+[   35.019305] [<9000000000ac71c4>] __drm_fb_helper_initial_config_and_unlock+0x350/0x580
+[   35.019309] [<9000000000ac92b8>] drm_fbdev_client_hotplug+0x80/0xd8
+[   35.019314] [<9000000000aaeaec>] drm_client_register+0x5c/0xa0
+[   35.019317] [<9000000000ac9410>] drm_fbdev_client_setup+0xa4/0x190
+[   35.019321] [<9000000000ac90c4>] drm_client_setup+0x14/0x50
+[   35.019325] [<9000000000ae3598>] lsdc_pci_probe+0x464/0x584
+[   35.019328] [<9000000000964988>] pci_device_probe+0xbc/0x160
+[   35.019333] [<9000000000af7034>] really_probe+0xac/0x2dc
+[   35.019337] [<9000000000af72f0>] __driver_probe_device+0x8c/0x128
+[   35.019341] [<9000000000af7484>] driver_probe_device+0x3c/0x118
+[   35.019345] [<9000000000af7754>] __driver_attach+0x98/0x194
+[   35.019349] [<9000000000af4cf8>] bus_for_each_dev+0x88/0xe8
+[   35.019352] [<9000000000af614c>] bus_add_driver+0xf4/0x208
+[   35.019356] [<9000000000af850c>] driver_register+0x68/0x134
+[   35.019360] [<900000000023a154>] do_one_initcall+0x78/0x1cc
+[   35.019364] [<9000000000ea0f9c>] kernel_init_freeable+0x1c8/0x238
+[   35.019369] [<9000000000e8c244>] kernel_init+0x1c/0x108
+[   35.019374] [<900000000023b2a8>] ret_from_kernel_thread+0xc/0xa4
+[   35.019378] 
+[   35.019379] ---[ end trace 0000000000000000 ]---
+[   35.141251] Console: switching to colour frame buffer device 240x67
+[   45.148907] loongson 0000:00:06.1: [drm] *ERROR* flip_done timed out
+[   45.148912] loongson 0000:00:06.1: [drm] *ERROR* [CRTC:45:LS-CRTC-1] commit wait timed out
+[   55.388906] loongson 0000:00:06.1: [drm] *ERROR* flip_done timed out
+[   55.388910] loongson 0000:00:06.1: [drm] *ERROR* [CONNECTOR:35:HDMI-A-2] commit wait timed out
+[   65.628908] loongson 0000:00:06.1: [drm] *ERROR* flip_done timed out
+[   65.628912] loongson 0000:00:06.1: [drm] *ERROR* [PLANE:41:ls-primary-plane-1] commit wait timed out
+[   65.738907] ------------[ cut here ]------------
+[   65.738909] [CRTC:45:LS-CRTC-1] vblank wait timed out
+[   65.738925] WARNING: CPU: 0 PID: 1 at drivers/gpu/drm/drm_atomic_helper.c:1682 drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[   65.738933] Modules linked in:
+[   65.738936] CPU: 0 UID: 0 PID: 1 Comm: swapper/0 Tainted: G        W          6.13.7 #209
+[   65.738940] Tainted: [W]=WARN
+[   65.738942] pc 9000000000aba9e4 ra 9000000000aba9e4 tp 9000000006888000 sp 900000000688b400
+[   65.738945] a0 0000000000000029 a1 9000000001ed0f80 a2 900000000688b188 a3 9000000001ed0f88
+[   65.738946] a4 9000000001ed0f80 a5 900000000688b180 a6 0000000000000001 a7 0000000000000001
+[   65.738948] t0 6da97ae7219dfa6a t1 6da97ae7219dfa6a t2 0000000000000000 t3 80000000ffffe22a
+[   65.738950] t4 00000000ffffe22a t5 000000000000022c t6 000000000000002f t7 0000000000000063
+[   65.738951] t8 000000000000002d u0 9000000001c65fb0 s9 0000000000002780 s0 0000000000000038
+[   65.738953] s1 0000000000000002 s2 9000000006ee8000 s3 9000000006eeaef0 s4 0000000000000038
+[   65.738955] s5 0000000000000001 s6 0000000000000001 s7 90000000069a7200 s8 0000000000000000
+[   65.738956]    ra: 9000000000aba9e4 drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[   65.738961]   ERA: 9000000000aba9e4 drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[   65.738965]  CRMD: 000000b0 (PLV0 -IE -DA +PG DACF=CC DACM=CC -WE)
+[   65.738971]  PRMD: 00000004 (PPLV0 +PIE -PWE)
+[   65.738974]  EUEN: 00000000 (-FPE -SXE -ASXE -BTE)
+[   65.738978]  ECFG: 00071c1d (LIE=0,2-4,10-12 VS=7)
+[   65.738981] ESTAT: 000c0000 [BRK] (IS= ECode=12 EsubCode=0)
+[   65.739161]  PRID: 0014d000 (Loongson-64bit, Loongson3)
+[   65.739165] CPU: 0 UID: 0 PID: 1 Comm: swapper/0 Tainted: G        W          6.13.7 #209
+[   65.739168] Tainted: [W]=WARN
+[   65.739170] Stack : 9000000001c870d0 0000000000000000 900000000023d3fc 9000000006888000
+[   65.739174]         900000000688b050 900000000688b058 0000000000000000 900000000688b198
+[   65.739178]         900000000688b190 900000000688b190 900000000688af00 0000000000000001
+[   65.739182]         0000000000000001 900000000688b058 6da97ae7219dfa6a 9000000006908000
+[   65.739186]         80000000ffffe240 00000000ffffe240 0000000000000242 0000000000000020
+[   65.739189]         0000000000000063 000000000000000c 000000000493b000 0000000000002780
+[   65.739193]         0000000000000000 0000000000000000 9000000001c334a0 9000000001dec000
+[   65.739197]         0000000000000000 0000000000000692 0000000000000001 90000000069a7200
+[   65.739200]         0000000000000000 0000000000000000 900000000023d414 00000001200aff44
+[   65.739204]         00000000000000b0 0000000000000004 0000000000000000 0000000000071c1d
+[   65.739208]         ...
+[   65.739209] Call Trace:
+[   65.739210] [<900000000023d414>] show_stack+0x5c/0x180
+[   65.739216] [<90000000002390dc>] dump_stack_lvl+0x70/0xa0
+[   65.739220] [<9000000000258304>] __warn+0x84/0xfc
+[   65.739222] [<9000000000e59838>] report_bug+0x19c/0x204
+[   65.739227] [<9000000000e8b17c>] do_bp+0x264/0x2b4
+[   65.739232] [<0000000000000000>] 0x0
+[   65.739234] [<9000000000aba9e4>] drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[   65.739239] [<9000000000abb82c>] drm_atomic_helper_commit_tail+0x88/0xa4
+[   65.739244] [<9000000000abc8c8>] commit_tail+0xac/0x190
+[   65.739247] [<9000000000abcb18>] drm_atomic_helper_commit+0x164/0x190
+[   65.739251] [<9000000000a7b618>] drm_atomic_commit+0x8c/0xc4
+[   65.739254] [<9000000000aafcb4>] drm_client_modeset_commit_atomic+0x23c/0x280
+[   65.739257] [<9000000000aaff58>] drm_client_modeset_commit_locked+0x6c/0x17c
+[   65.739260] [<9000000000ac88f8>] drm_fb_helper_pan_display+0x100/0x248
+[   65.739265] [<9000000000992db0>] fb_pan_display+0x74/0x124
+[   65.739269] [<90000000009a0358>] bit_update_start+0x20/0x4c
+[   65.739272] [<900000000099f238>] fbcon_switch+0x3cc/0x59c
+[   65.739275] [<9000000000a4c0a0>] redraw_screen+0xf0/0x298
+[   65.739278] [<9000000000a4d9d0>] do_bind_con_driver.isra.0+0x2e4/0x454
+[   65.739281] [<9000000000a4dc88>] do_take_over_console+0x148/0x1f8
+[   65.739283] [<900000000099b25c>] do_fbcon_takeover+0x60/0xd0
+[   65.739287] [<900000000099f9d8>] fbcon_fb_registered+0x12c/0x18c
+[   65.739290] [<90000000009935e0>] do_register_framebuffer+0x1e0/0x288
+[   65.739293] [<90000000009936b4>] register_framebuffer+0x2c/0x54
+[   65.739297] [<9000000000ac71c4>] __drm_fb_helper_initial_config_and_unlock+0x350/0x580
+[   65.739301] [<9000000000ac92b8>] drm_fbdev_client_hotplug+0x80/0xd8
+[   65.739305] [<9000000000aaeaec>] drm_client_register+0x5c/0xa0
+[   65.739308] [<9000000000ac9410>] drm_fbdev_client_setup+0xa4/0x190
+[   65.739312] [<9000000000ac90c4>] drm_client_setup+0x14/0x50
+[   65.739316] [<9000000000ae3598>] lsdc_pci_probe+0x464/0x584
+[   65.739319] [<9000000000964988>] pci_device_probe+0xbc/0x160
+[   65.739323] [<9000000000af7034>] really_probe+0xac/0x2dc
+[   65.739328] [<9000000000af72f0>] __driver_probe_device+0x8c/0x128
+[   65.739331] [<9000000000af7484>] driver_probe_device+0x3c/0x118
+[   65.739335] [<9000000000af7754>] __driver_attach+0x98/0x194
+[   65.739339] [<9000000000af4cf8>] bus_for_each_dev+0x88/0xe8
+[   65.739343] [<9000000000af614c>] bus_add_driver+0xf4/0x208
+[   65.739346] [<9000000000af850c>] driver_register+0x68/0x134
+[   65.739350] [<900000000023a154>] do_one_initcall+0x78/0x1cc
+[   65.739354] [<9000000000ea0f9c>] kernel_init_freeable+0x1c8/0x238
+[   65.739359] [<9000000000e8c244>] kernel_init+0x1c/0x108
+[   65.739363] [<900000000023b2a8>] ret_from_kernel_thread+0xc/0xa4
+[   65.739367] 
+[   65.739368] ---[ end trace 0000000000000000 ]---
+[   65.870617] loongson 0000:00:06.1: [drm] fb0: loongsondrmfb frame buffer device
+[   66.598949] brd: module loaded
+[   66.919062] loop: module loaded
+[   66.919967] virtio_blk virtio1: 1/0/0 default/read/poll queues
+[   66.921417] virtio_blk virtio1: [vda] 16384 512-byte logical blocks (8.39 MB/8.00 MiB)
+[   67.238953] megaraid cmm: 2.20.2.7 (Release Date: Sun Jul 16 00:01:03 EST 2006)
+[   67.258757] megaraid: 2.20.5.1 (Release Date: Thu Nov 16 15:32:35 EST 2006)
+[   67.258799] megasas: 07.727.03.00-rc1
+[   67.258864] mpt3sas version 51.100.00.00 loaded
+[   67.448982] ahci 0000:00:08.0: version 3.0
+[   67.449029] ahci 0000:00:08.0: SSS flag set, parallel bus scan disabled
+[   67.449051] ahci 0000:00:08.0: AHCI vers 0001.0300, 32 command slots, 6 Gbps, SATA mode
+[   67.449055] ahci 0000:00:08.0: 4/4 ports implemented (port mask 0xf)
+[   67.449058] ahci 0000:00:08.0: flags: 64bit ncq sntf stag pm led clo only pmp pio slum part ccc apst 
+[   67.508779] nvme nvme0: pci function 0000:05:00.0
+[   67.518764] eiointc: wheatfox: eiointc_set_irq_affinity, cpu=0, nr_cpu_ids=1
+[   67.518768] eiointc: wheatfox: eiointc_set_irq_affinity, !EIOINTC_USE_CPU_ENCODE -> ANY_SEND
+[   67.568767] eiointc: wheatfox: eiointc_set_irq_affinity, cpu=0, nr_cpu_ids=1
+[   67.568771] eiointc: wheatfox: eiointc_set_irq_affinity, !EIOINTC_USE_CPU_ENCODE -> ANY_SEND
+[   67.593707] scsi host0: ahci
+[   67.593991] scsi host1: ahci
+[   67.594270] scsi host2: ahci
+[   67.594557] scsi host3: ahci
+[   67.594700] ata1: SATA max UDMA/133 abar m1024@0x75969800 port 0x75969900 irq 39 lpm-pol 0
+[   67.594705] ata2: SATA max UDMA/133 abar m1024@0x75969800 port 0x75969980 irq 39 lpm-pol 0
+[   67.594708] ata3: SATA max UDMA/133 abar m1024@0x75969800 port 0x75969a00 irq 39 lpm-pol 0
+[   67.594710] ata4: SATA max UDMA/133 abar m1024@0x75969800 port 0x75969a80 irq 39 lpm-pol 0
+[   67.596003] igb: Intel(R) Gigabit Ethernet Network Driver
+[   67.596006] igb: Copyright (c) 2007-2014 Intel Corporation.
+[   67.710311] igb 0000:06:00.0: Intel(R) Gigabit Ethernet Network Connection
+[   67.710315] igb 0000:06:00.0: eth0: (PCIe:5.0Gb/s:Width x4) 6c:b3:11:9a:e8:74
+[   67.710639] igb 0000:06:00.0: eth0: PBA No: H47822-001
+[   67.710641] igb 0000:06:00.0: Using MSI-X interrupts. 1 rx queue(s), 1 tx queue(s)
+[   67.800937] igb 0000:06:00.1: Intel(R) Gigabit Ethernet Network Connection
+[   67.800940] igb 0000:06:00.1: eth1: (PCIe:5.0Gb/s:Width x4) 6c:b3:11:9a:e8:75
+[   67.801264] igb 0000:06:00.1: eth1: PBA No: H47822-001
+[   67.801267] igb 0000:06:00.1: Using MSI-X interrupts. 1 rx queue(s), 1 tx queue(s)
+[   67.883267] igb 0000:06:00.2: Intel(R) Gigabit Ethernet Network Connection
+[   67.883271] igb 0000:06:00.2: eth2: (PCIe:5.0Gb/s:Width x4) 6c:b3:11:9a:e8:76
+[   67.883595] igb 0000:06:00.2: eth2: PBA No: H47822-001
+[   67.883596] igb 0000:06:00.2: Using MSI-X interrupts. 1 rx queue(s), 1 tx queue(s)
+[   67.909480] ata1: SATA link down (SStatus 0 SControl 300)
+[   67.958510] igb 0000:06:00.3: Intel(R) Gigabit Ethernet Network Connection
+[   67.958514] igb 0000:06:00.3: eth3: (PCIe:5.0Gb/s:Width x4) 6c:b3:11:9a:e8:77
+[   67.972772] igb 0000:06:00.3: eth3: PBA No: H47822-001
+[   67.972775] igb 0000:06:00.3: Using MSI-X interrupts. 1 rx queue(s), 1 tx queue(s)
+[   67.972921] i2c_dev: i2c /dev entries driver
+[   67.973727] device-mapper: ioctl: 4.48.0-ioctl (2023-03-01) initialised: dm-devel@lists.linux.dev
+[   67.973774] hid: raw HID events driver (C) Jiri Kosina
+[   67.973916] NET: Registered PF_INET6 protocol family
+[   67.974485] Segment Routing with IPv6
+[   67.974505] In-situ OAM (IOAM) with IPv6
+[   67.974541] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[   68.032242] Loading compiled-in X.509 certificates
+[   68.044556] Btrfs loaded, zoned=yes, fsverity=no
+[   68.068818] OF: fdt: not creating '/sys/firmware/fdt': CRC check failed
+[   68.068841] clk: Disabling unused clocks
+[   78.428923] loongson 0000:00:06.1: [drm] *ERROR* flip_done timed out
+[   78.428928] loongson 0000:00:06.1: [drm] *ERROR* [CRTC:45:LS-CRTC-1] commit wait timed out
+[   88.668910] loongson 0000:00:06.1: [drm] *ERROR* flip_done timed out
+[   88.668913] loongson 0000:00:06.1: [drm] *ERROR* [CONNECTOR:35:HDMI-A-2] commit wait timed out
+[   98.908911] loongson 0000:00:06.1: [drm] *ERROR* flip_done timed out
+[   98.908914] loongson 0000:00:06.1: [drm] *ERROR* [PLANE:41:ls-primary-plane-1] commit wait timed out
+[   99.018908] ------------[ cut here ]------------
+[   99.018911] [CRTC:45:LS-CRTC-1] vblank wait timed out
+[   99.018932] WARNING: CPU: 0 PID: 9 at drivers/gpu/drm/drm_atomic_helper.c:1682 drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[   99.018945] Modules linked in:
+[   99.018951] CPU: 0 UID: 0 PID: 9 Comm: kworker/0:1 Tainted: G        W          6.13.7 #209
+[   99.018956] Tainted: [W]=WARN
+[   99.018959] Workqueue: events output_poll_execute
+[   99.018965] pc 9000000000aba9e4 ra 9000000000aba9e4 tp 90000000068ac000 sp 90000000068afa10
+[   99.018968] a0 0000000000000029 a1 9000000001ed0f80 a2 90000000068af798 a3 9000000001ed0f88
+[   99.018970] a4 9000000001ed0f80 a5 90000000068af790 a6 0000000000000001 a7 0000000000000001
+[   99.018972] t0 6da97ae7219dfa6a t1 6da97ae7219dfa6a t2 0000000000000000 t3 80000000ffffe2b9
+[   99.018973] t4 00000000ffffe2b9 t5 00000000000002bb t6 000000000000002f t7 0000000000000063
+[   99.018975] t8 000000000000002d u0 9000000001c65fb0 s9 000000000000368d s0 0000000000000038
+[   99.018977] s1 0000000000000002 s2 9000000006ee8000 s3 9000000006eeaef0 s4 0000000000000038
+[   99.018978] s5 0000000000000001 s6 0000000000000001 s7 9000000009234e00 s8 0000000000000000
+[   99.018980]    ra: 9000000000aba9e4 drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[   99.018985]   ERA: 9000000000aba9e4 drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[   99.018989]  CRMD: 000000b0 (PLV0 -IE -DA +PG DACF=CC DACM=CC -WE)
+[   99.018996]  PRMD: 00000004 (PPLV0 +PIE -PWE)
+[   99.019000]  EUEN: 00000000 (-FPE -SXE -ASXE -BTE)
+[   99.019003]  ECFG: 00071c3d (LIE=0,2-5,10-12 VS=7)
+[   99.019007] ESTAT: 000c0000 [BRK] (IS= ECode=12 EsubCode=0)
+[   99.019101]  PRID: 0014d000 (Loongson-64bit, Loongson3)
+[   99.019106] CPU: 0 UID: 0 PID: 9 Comm: kworker/0:1 Tainted: G        W          6.13.7 #209
+[   99.019110] Tainted: [W]=WARN
+[   99.019112] Workqueue: events output_poll_execute
+[   99.019118] Stack : 900000000680b900 0000000000000000 900000000023d3fc 90000000068ac000
+[   99.019122]         90000000068af660 90000000068af668 0000000000000000 90000000068af7a8
+[   99.019126]         90000000068af7a0 90000000068af7a0 90000000068af480 0000000000000001
+[   99.019130]         0000000000000001 90000000068af668 6da97ae7219dfa6a 9000000006908000
+[   99.019134]         80000000ffffe2d1 00000000ffffe2d1 00000000000002d3 000000000000002f
+[   99.019138]         0000000000000063 9000000001ad9f27 000000000493b000 000000000000368d
+[   99.019141]         0000000000000000 0000000000000000 9000000001c334a0 9000000001dec000
+[   99.019145]         0000000000000000 0000000000000692 0000000000000001 9000000009234e00
+[   99.019149]         0000000000000000 0000000000000000 900000000023d414 00000001200aff44
+[   99.019152]         00000000000000b0 0000000000000004 0000000000000000 0000000000071c3d
+[   99.019156]         ...
+[   99.019158] Call Trace:
+[   99.019159] [<900000000023d414>] show_stack+0x5c/0x180
+[   99.019166] [<90000000002390dc>] dump_stack_lvl+0x70/0xa0
+[   99.019170] [<9000000000258304>] __warn+0x84/0xfc
+[   99.019173] [<9000000000e59838>] report_bug+0x19c/0x204
+[   99.019181] [<9000000000e8b17c>] do_bp+0x264/0x2b4
+[   99.019187] [<0000000000000000>] 0x0
+[   99.019190] [<9000000000aba9e4>] drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[   99.019196] [<9000000000abb82c>] drm_atomic_helper_commit_tail+0x88/0xa4
+[   99.019200] [<9000000000abc8c8>] commit_tail+0xac/0x190
+[   99.019204] [<9000000000abcb18>] drm_atomic_helper_commit+0x164/0x190
+[   99.019208] [<9000000000a7b618>] drm_atomic_commit+0x8c/0xc4
+[   99.019212] [<9000000000aafcb4>] drm_client_modeset_commit_atomic+0x23c/0x280
+[   99.019215] [<9000000000aaff58>] drm_client_modeset_commit_locked+0x6c/0x17c
+[   99.019218] [<9000000000ab0094>] drm_client_modeset_commit+0x2c/0x58
+[   99.019221] [<9000000000ac8d2c>] __drm_fb_helper_restore_fbdev_mode_unlocked+0xb0/0xf8
+[   99.019227] [<9000000000ac8c4c>] drm_fb_helper_hotplug_event+0xe8/0x118
+[   99.019231] [<9000000000aaf3fc>] drm_client_dev_hotplug+0xd8/0x140
+[   99.019234] [<9000000000ac4418>] output_poll_execute+0x27c/0x284
+[   99.019237] [<9000000000276244>] process_one_work+0x168/0x2dc
+[   99.019242] [<9000000000276b14>] worker_thread+0x2e8/0x3d4
+[   99.019245] [<900000000027f7ec>] kthread+0x124/0x130
+[   99.019250] [<900000000023b2a8>] ret_from_kernel_thread+0xc/0xa4
+[   99.019254] 
+[   99.019255] ---[ end trace 0000000000000000 ]---
+[  130.908949] nvme nvme0: I/O tag 28 (001c) QID 0 timeout, disable controller
+[  130.917135] nvme nvme0: Identify Controller failed (-4)
+[  130.917340] nvme 0000:05:00.0: probe with driver nvme failed with error -5
+[  131.232002] ata2: SATA link down (SStatus 0 SControl 300)
+[  131.562008] ata3: SATA link down (SStatus 0 SControl 300)
+[  131.891853] ata4: SATA link down (SStatus 0 SControl 300)
+[  131.903990] Freeing unused kernel image (initmem) memory: 11328K
+[  131.903995] This architecture does not have kernel memory protection.
+[  131.904002] Run /init as init process
+[  131.904004]   with arguments:
+[  131.904005]     /init
+[  131.904006]   with environment:
+[  131.904007]     HOME=/
+[  131.904007]     TERM=linux
+Starting syslogd: OK
+Starting klogd: OK
+Running sysctl: OK
+Starting system message bus: done
+Starting telnetd: OK
+Welcome to hvisor(loongarch) nonroot linux! Buildroot/wheatfox 2025
+[root@nonroot-dedsec /]# 
+[root@nonroot-dedsec /]# uname -a
+Linux nonroot-dedsec 6.13.7 #209 SMP PREEMPT_RT Wed May  7 21:53:08 CST 2025 loongarch64 GNU/Linux
+[root@nonroot-dedsec /]# 

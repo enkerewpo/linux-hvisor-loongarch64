@@ -13,7 +13,7 @@
 	model = "Loongson3 hvisor nonroot zone board";
 	
 	aliases {
-		serial = &uart0;
+		serial = &uart1;
 	};
 	
 	chosen {
@@ -178,7 +178,11 @@
 	};
 };
 
-&uart0 {
+&core2 {
+	status = "okay";
+};
+
+&uart1 {
 	status = "okay";
 	// set the above 'uart1' to 'uart0' if you don't have a COM connection right now
 };

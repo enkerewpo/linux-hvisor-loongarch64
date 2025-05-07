@@ -1,0 +1,2039 @@
+[INFO] arch_init done
+                     PROGRESS CODE: V02010004 I0
+[INFO] exit_boot_services done[INFO] ok, ready to jump to hvisor entry...
+                                                                         Hello, HVISOR!
+Heap allocator initialization finished: 0x90000001000d5708..0x90000001001d5708
+heap_test passed!
+Booting CPU 0: 0x90000001001d6000 arch:0x90000001001d6020, DTB: 0xfe430018
+Hello, HVISOR!
+Hello, HVISOR!
+Booting CPU 1: 0x9000000100256000 arch:0x9000000100256020, DTB: 0x9000000000000000
+Booting CPU 2: 0x90000001002d6000 arch:0x90000001002d6020, DTB: 0x9000000000000000
+Hello, HVISOR!
+Booting CPU 3: 0x9000000100356000 arch:0x9000000100356020, DTB: 0x9000000000000000
+Secondary CPU 1 has entered.
+Primary CPU 0 has entered.
+Secondary CPU 3 has entered.
+[INFO  0] (hvisor:117) Logging is enabled.
+Secondary CPU 2 has entered.
+[INFO  0] (hvisor:118) __core_end = 0x90000001001d6000
+[INFO  0] (hvisor:121) Hypervisor initialization in progress...
+[INFO  0] (hvisor:122) build_mode: debug, log_level: info, arch: loongarch64, stats: off
+[INFO  0] (hvisor::memory::frame:282) Frame allocator initialization finished: 0x90000001003d6000..0x90000001013d6000
+[INFO  0] (hvisor::memory::frame:302) frame_allocator_test passed!
+[INFO  0] (hvisor::device::irqchip::ls7a2000:39) loongarch64: irqchip: primary_init_early: checking iochip configs
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:565) loongarch64: print_chip_info: chip config version: 0x14
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:569) loongarch64: print_chip_info: chip feature extioi support: true
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:573) loongarch64: print_chip_info: manufacturer name: Loongson
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:577) loongarch64: print_chip_info: chip name: 3A6000-L
+[INFO  0] (hvisor::device::irqchip::ls7a2000:44) loongarch64: irqchip: testing percore IPI feature
+[INFO  0] (hvisor::device::irqchip::ls7a2000:46) loongarch64: irqchip: percore IPI feature: true
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x200000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x90000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0xF0000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0xC0000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x1FE00000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x10080000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x100D0000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x10000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0xFE00000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x18408000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x60000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x10010000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x0
+[INFO  0] (hvisor::memory::mm:112) region.start: 0xF0000
+[INFO  0] (hvisor::arch::loongarch64::zone:92) loongarch64: pt_init: add mmio handler for 0x1fe0_xxxx mmio region
+[INFO  0] (hvisor::zone:222) zone cpu_set: 0b1
+[WARN  1] (hvisor:154) zone is not created for cpu 1
+[INFO  0] (hvisor:159) CPU 0 hv_pt_install OK.
+[INFO  1] (hvisor:159) CPU 1 hv_pt_install OK.
+[WARN  3] (hvisor:154) zone is not created for cpu 3
+[INFO  1] (hvisor::device::irqchip::ls7a2000:63) loongarch64: irqchip: percpu_init: running percpu_init
+[INFO  0] (hvisor::device::irqchip::ls7a2000:63) loongarch64: irqchip: percpu_init: running percpu_init
+[INFO  1] (hvisor::arch::loongarch64::ipi:299) ecfg ipi enabled on cpu 1, current lie: TIMER | IPI
+[INFO  0] (hvisor::arch::loongarch64::ipi:299) ecfg ipi enabled on cpu 0, current lie: TIMER | IPI
+[INFO  3] (hvisor:159) CPU 3 hv_pt_install OK.
+[WARN  2] (hvisor:154) zone is not created for cpu 2
+[INFO  3] (hvisor::device::irqchip::ls7a2000:63) loongarch64: irqchip: percpu_init: running percpu_init
+[INFO  2] (hvisor:159) CPU 2 hv_pt_install OK.
+[INFO  3] (hvisor::arch::loongarch64::ipi:299) ecfg ipi enabled on cpu 3, current lie: TIMER | IPI
+[INFO  2] (hvisor::device::irqchip::ls7a2000:63) loongarch64: irqchip: percpu_init: running percpu_init
+[INFO  2] (hvisor::arch::loongarch64::ipi:299) ecfg ipi enabled on cpu 2, current lie: TIMER | IPI
+[INFO  0] (hvisor:146) Primary CPU init late...
+[INFO  0] (hvisor::device::irqchip::ls7a2000:52) loongarch64: irqchip: primary_init_late: running primary_init_late
+[INFO  0] (hvisor::device::irqchip::ls7a2000:54) loongarch64: irqchip: primary_init_late: testing UART1
+[INFO  0] (hvisor::device::uart::loongson_uart:232) loongarch: uart: __test_uart1
+[INFO  0] (hvisor::device::uart::loongson_uart:235) loongarch: uart: __test_uart1 init done
+[INFO  0] (hvisor::device::uart::loongson_uart:238) loongarch: uart: __test_uart1 send_str test done
+[INFO  0] (hvisor::device::irqchip::ls7a2000:57) loongarch64: irqchip: primary_init_late: probing pci
+[WARN  0] (hvisor::device::irqchip::ls7a2000::chip:963) loongarch64: probe_pci: probing PCI devices @ 0x80000efe00000000
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 0: vendor=0x14 device=0x7a00 name=[Loongson Technology LLC] Hyper Transport Bridge Controller	
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 4: vendor=0x14 device=0x7a24 name=[Loongson Technology LLC] OHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 5: vendor=0x14 device=0x7a24 name=[Loongson Technology LLC] OHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 6: vendor=0x14 device=0x7a25 name=[Loongson Technology LLC] LG100 GPU
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 7: vendor=0x14 device=0x7a07 name=[Loongson Technology LLC] HDA (High Definition Audio) Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 8: vendor=0x14 device=0x7a18 name=[Loongson Technology LLC] SATA 3 AHCI Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 9: vendor=0x14 device=0x7a49 name=[Loongson Technology LLC] PCIe x4 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 10: vendor=0x14 device=0x7a39 name=[Loongson Technology LLC] PCIe x1 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 11: vendor=0x14 device=0x7a39 name=[Loongson Technology LLC] PCIe x1 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 12: vendor=0x14 device=0x7a39 name=[Loongson Technology LLC] PCIe x1 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 13: vendor=0x14 device=0x7a49 name=[Loongson Technology LLC] PCIe x4 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 15: vendor=0x14 device=0x7a69 name=[Loongson Technology LLC] PCIe x16 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 16: vendor=0x14 device=0x7a59 name=[Loongson Technology LLC] PCIe x8 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 19: vendor=0x14 device=0x7a59 name=[Loongson Technology LLC] PCIe x8 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 22: vendor=0x14 device=0x7a1b name=[Loongson Technology LLC] SPI Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 25: vendor=0x14 device=0x7a34 name=[Loongson Technology LLC] xHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 26: vendor=0x14 device=0x7a1f name=[Loongson Technology LLC] Unknown Device
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 36: vendor=0x14 device=0x7a24 name=[Loongson Technology LLC] OHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 37: vendor=0x14 device=0x7a24 name=[Loongson Technology LLC] OHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 38: vendor=0x14 device=0x7a25 name=[Loongson Technology LLC] LG100 GPU
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 39: vendor=0x14 device=0x7a07 name=[Loongson Technology LLC] HDA (High Definition Audio) Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 40: vendor=0x14 device=0x7a18 name=[Loongson Technology LLC] SATA 3 AHCI Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 54: vendor=0x14 device=0x7a1b name=[Loongson Technology LLC] SPI Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 57: vendor=0x14 device=0x7a34 name=[Loongson Technology LLC] xHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 58: vendor=0x14 device=0x7a1f name=[Loongson Technology LLC] Unknown Device
+[INFO  0] (hvisor::device::irqchip::ls7a2000:60) loongarch64: irqchip: primary_init_late finished
+[INFO  0] (hvisor::percpu:73) CPU0: Running the VM...
+[INFO  1] (hvisor::percpu:70) CPU1: Idling the CPU before starting VM...
+[INFO  0] (hvisor::arch::loongarch64::s2pt:168) loongarch64: S2PTInstr::activate: root_pa: 0x90000001003d6000
+[INFO  1] (hvisor::arch::loongarch64::cpu:132) loongarch64: ArchCpu::idle: cpuid=1
+[INFO  0] (hvisor::arch::loongarch64::s2pt:180) loongarch64: S2PTInstr::activate: set tlbrentry to 0x10009e000 done!
+[INFO  1] (hvisor::arch::loongarch64::ipi:299) ecfg ipi enabled on cpu 1, current lie: TIMER | IPI
+[INFO  0] (hvisor::arch::loongarch64::cpu:77) loongarch64: CPU0 run@0x9000000000da4000
+[INFO  3] (hvisor::percpu:70) CPU3: Idling the CPU before starting VM...
+[INFO  0] (hvisor::arch::loongarch64::cpu:82) loongarch64: @ArchCpu {
+    ctx: LoongArch64ZoneContext {
+        x: [
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+        ],
+        sepc: 0x9000000000da4000,
+        gcsr_crmd: 0x8,
+        gcsr_prmd: 0x0,
+        gcsr_euen: 0x0,
+        gcsr_misc: 0x0,
+        gcsr_ectl: 0x10000,
+        gcsr_estat: 0x0,
+        gcsr_era: 0x0,
+        gcsr_badv: 0x0,
+        gcsr_badi: 0x0,
+        gcsr_eentry: 0x1c000000,
+        gcsr_tlbidx: 0xe000000,
+        gcsr_tlbehi: 0x0,
+        gcsr_tlbelo0: 0x0,
+        gcsr_tlbelo1: 0x0,
+        gcsr_asid: 0xa0000,
+        gcsr_pgdl: 0x0,
+        gcsr_pgdh: 0x0,
+        gcsr_pgd: 0x0,
+        gcsr_pwcl: 0x0,
+        gcsr_pwch: 0x0,
+        gcsr_stlbps: 0xe,
+        gcsr_ravcfg: 0x0,
+        gcsr_cpuid: 0x0,
+        gcsr_prcfg1: 0x72f8,
+        gcsr_prcfg2: 0x3ffff000,
+        gcsr_prcfg3: 0x8073f2,
+        gcsr_save0: 0x0,
+        gcsr_save1: 0x2ee2ffc,
+        gcsr_save2: 0x7ffff37e5a50,
+        gcsr_save3: 0x4a15000,
+        gcsr_save4: 0x421e60be3bb35397,
+        gcsr_save5: 0x127cdc5f7fc2a8ec,
+        gcsr_save6: 0x34ce457ec5586bc3,
+        gcsr_save7: 0x3bcfe9ffd335c4a6,
+        gcsr_save8: 0x0,
+        gcsr_save9: 0x0,
+        gcsr_save10: 0x0,
+        gcsr_save11: 0x0,
+        gcsr_save12: 0x0,
+        gcsr_save13: 0x0,
+        gcsr_save14: 0x0,
+        gcsr_save15: 0x0,
+        gcsr_tid: 0x0,
+        gcsr_tcfg: 0x0,
+        gcsr_tval: 0xffffffffffff,
+        gcsr_cntc: 0x0,
+        gcsr_ticlr: 0x0,
+        gcsr_llbctl: 0x0,
+        gcsr_tlbrentry: 0x0,
+        gcsr_tlbrbadv: 0x0,
+        gcsr_tlbrera: 0x0,
+        gcsr_tlbrsave: 0x0,
+        gcsr_tlbrelo0: 0x0,
+        gcsr_tlbrelo1: 0x0,
+        gcsr_tlbrehi: 0x0,
+        gcsr_tlbrprmd: 0x0,
+        gcsr_dmw0: 0x0,
+        gcsr_dmw1: 0x0,
+        gcsr_dmw2: 0x0,
+        gcsr_dmw3: 0x0,
+        pgdl: 0x0,
+        pgdh: 0x0,
+    },
+    stack_top: 0x9000000100256000,
+    cpuid: 0x0,
+    power_on: true,
+    init: true,
+}
+[INFO  2] (hvisor::percpu:70) CPU2: Idling the CPU before starting VM...
+[INFO  2] (hvisor::arch::loongarch64::cpu:132) loongarch64: ArchCpu::idle: cpuid=2
+[INFO  0] (hvisor::arch::loongarch64::trap:1346) csrxchg emulation for CSR 0x80
+[INFO  2] (hvisor::arch::loongarch64::ipi:299) ecfg ipi enabled on cpu 2, current lie: TIMER | IPI
+[INFO  3] (hvisor::arch::loongarch64::cpu:132) loongarch64: ArchCpu::idle: cpuid=3
+[INFO  3] (hvisor::arch::loongarch64::ipi:299) ecfg ipi enabled on cpu 3, current lie: TIMER | IPI
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x0
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x2
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x1
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x2
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x6
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x90000000002207dc, offset=0x8, size=4, R <-  0x27ff
+[INFO  0] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x93
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x10
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x11
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x12
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x13
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x14
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000220ab0, offset=0x10, size=8, R <-  0x6e6f73676e6f6f4c
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000220abc, offset=0x20, size=8, R <-  0x4c2d303030364133
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x1
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x1
+[    0.000000] Linux version 6.11.6 (wheatfox@dedsec-amd0) (loongarch64-unknown-linux-gnu-gcc (GCC) 13.0.1 20230316 (experimental), GNU ld (GNU Binutils) 2.40.50.20230316) #461 SMP PREEMPT_DYNAMIC Wed May  7 21:32:00 CST 2025
+[    0.000000] 64-bit Loongson Processor probed (LA664 Core)
+[    0.000000] CPU0 revision is: 0014d000 (Loongson-64bit)
+[    0.000000] FPU0 revision is: 00000000
+[    0.000000] ACPI: Early table checksum verification disabled
+[    0.000000] earlycon: ns16550a0 at MMIO 0x000000001fe001e0 (options '115200n8')
+[    0.000000] printk: legacy bootconsole [ns16550a0] enabled
+[    0.000000] OF: reserved mem: 0x00000000c0000000..0x00000000efffffff (786432 KiB) nomap non-reusable nonroot0xc0000000
+[    0.000000] Faking a node at [mem 0x0000000000200000-0x00000000ffffffff]
+[    0.000000] Node0's addrspace_offset is 0x0
+[    0.000000] Node0: start_pfn=0x200, end_pfn=0x100000
+[    0.000000] DMI not present or invalid.
+[    0.000000] The BIOS Version: (null)
+[    0.000000] software IO TLB: area num 1.
+[    0.000000] software IO TLB: mapped [mem 0x0000000004e60000-0x0000000008e60000] (64MB)
+[    0.000000] PM: hibernation: Registered nosave memory: [mem 0x04994000-0x04994fff]
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000dc60bc, offset=0x1004, size=4, W ->  0xffffffffffffffff
+[    0.000000] Detected 1 available CPU(s)
+[    0.000000] SMP: Allowing 1 CPUs, 0 hotplug CPUs
+[    0.000000] Zone ranges:
+[    0.000000]   DMA32    [mem 0x0000000000200000-0x00000000ffffffff]
+[    0.000000]   Normal   empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000200000-0x000000000effffff]
+[    0.000000]   node   0: [mem 0x0000000090000000-0x000000009fffffff]
+[    0.000000]   node   0: [mem 0x00000000c0000000-0x00000000efffffff]
+[    0.000000]   node   0: [mem 0x00000000f0000000-0x00000000ffffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000200000-0x00000000ffffffff]
+[    0.000000] On node 0, zone DMA32: 512 pages in unavailable ranges
+[    0.000000] On node 0, zone DMA32: 135168 pages in unavailable ranges
+[    0.000000] percpu: Embedded 20 pages/cpu s43480 r8192 d30248 u2097152
+[    0.000000] pcpu-alloc: s43480 r8192 d30248 u2097152 alloc=1*2097152
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Kernel command line: earlycon console=ttyS0,115200n8 initramfs_async=false rootwait debug 
+[    0.000000] Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    0.000000] Fallback order for Node 0: 0 
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 388608
+[    0.000000] Policy zone: DMA32
+[    0.000000] mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Dynamic Preempt: full
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu: 	RCU event tracing is enabled.
+[    0.000000] rcu: 	RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=1.
+[    0.000000] 	Trampoline variant of Tasks RCU enabled.
+[    0.000000] 	Tracing variant of Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.000000] RCU Tasks: Setting shift to 0 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=1.
+[    0.000000] RCU Tasks Trace: Setting shift to 0 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=1.
+[    0.000000] NR_IRQS: 576, nr_irqs: 576, preallocated irqs: 16
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d961b8, offset=0x142c, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d961c4, offset=0x1434, size=4, W ->  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x1400, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x1401, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x1402, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x1403, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x1404, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x1405, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x1406, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x1407, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x1408, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x1409, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x140a, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x140b, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x140c, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x140d, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x140e, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x140f, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x1410, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x1411, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x1412, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x1413, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x1414, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x1415, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x1416, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x1417, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x1418, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x1419, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x141a, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x141b, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x141c, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x141d, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x141e, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000d96254, offset=0x141f, size=1, W ->  0x11
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x900000000084ff0c, offset=0x420, size=8, R <-  0xf200f8880300
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x900000000084ff1c, offset=0x420, size=8, W ->  0x1f200f8880300
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x900000000084ff58, offset=0x14a0, size=4, W ->  0x20001
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x900000000084ff58, offset=0x14a4, size=4, W ->  0x80004
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x900000000084ff58, offset=0x14a8, size=4, W ->  0x200010
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x900000000084ff58, offset=0x14ac, size=4, W ->  0x800040
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x900000000084ff58, offset=0x14b0, size=4, W ->  0x2000100
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x900000000084ff58, offset=0x14b4, size=4, W ->  0x8000400
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x900000000084ff58, offset=0x14b8, size=4, W ->  0x20001000
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x900000000084ff58, offset=0x14bc, size=4, W ->  0xffffffff80004000
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x900000000084ffa4, offset=0x14c0, size=4, W ->  0x2020202
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x900000000084ffa4, offset=0x14c4, size=4, W ->  0x2020202
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c00, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c04, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c08, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c0c, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c10, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c14, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c18, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c1c, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c20, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c24, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c28, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c2c, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c30, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c34, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c38, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c3c, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c40, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c44, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c48, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c4c, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c50, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c54, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c58, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c5c, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c60, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c64, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c68, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c6c, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c70, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c74, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c78, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c7c, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c80, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c84, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c88, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c8c, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c90, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c94, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c98, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1c9c, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1ca0, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1ca4, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1ca8, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1cac, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1cb0, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1cb4, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1cb8, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1cbc, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1cc0, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1cc4, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1cc8, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1ccc, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1cd0, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1cd4, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1cd8, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1cdc, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1ce0, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1ce4, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1ce8, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1cec, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1cf0, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1cf4, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1cf8, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850000, offset=0x1cfc, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850030, offset=0x1600, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850038, offset=0x1680, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850030, offset=0x1604, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850038, offset=0x1684, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850030, offset=0x1608, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850038, offset=0x1688, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850030, offset=0x160c, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850038, offset=0x168c, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850030, offset=0x1610, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850038, offset=0x1690, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850030, offset=0x1614, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850038, offset=0x1694, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850030, offset=0x1618, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850038, offset=0x1698, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850030, offset=0x161c, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850038, offset=0x169c, size=4, W ->  0xffffffffffffffff
+[    0.000000] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x2
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x4
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x5
+[    0.000000] Constant clock event device register
+[    0.000000] clocksource: Constant: mask: 0xffffffffffffffff max_cycles: 0x171024e7e0, max_idle_ns: 440795205315 ns
+[    0.000000] sched_clock: 64 bits at 100MHz, resolution 10ns, wraps every 4398046511100ns
+[    0.008039] Constant clock source device register
+[INFO  0] (hvisor::arch::loongarch64::trap:1334) csrrd emulation for CSR 0x380
+[INFO  0] (hvisor::arch::loongarch64::trap:1334) csrrd emulation for CSR 0x300
+[    0.012969] Console: colour dummy device 80x25
+[    0.017514] Calibrating delay loop (skipped), value calculated using timer frequency.. 200.00 BogoMIPS (lpj=1000000)
+[    0.027984] pid_max: default: 32768 minimum: 301
+[    0.032585] LSM: initializing lsm=capability,yama
+[    0.037260] Yama: becoming mindful.
+[    0.040748] Mount-cache hash table entries: 2048 (order: 2, 16384 bytes, linear)
+[    0.048100] Mountpoint-cache hash table entries: 2048 (order: 2, 16384 bytes, linear)
+[    0.056149] ACPI PPTT: No PPTT table found, CPU and cache topology may be inaccurate
+[    0.063851] Invalid BIOS PPTT
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000dc6168, offset=0x1048, size=8, W ->  0x80000004
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000dc6170, offset=0x1048, size=8, W ->  0x80000000
+[    0.067215] rcu: Hierarchical SRCU implementation.
+[    0.071970] rcu: 	Max phase no-delay instances is 1000.
+[    0.077262] smp: Bringing up secondary CPUs ...
+[    0.081762] smp: Brought up 1 node, 1 CPU
+[    0.085770] Memory: 587460K/1554432K available (11904K kernel code, 4104K rwdata, 3452K rodata, 57792K init, 806K bss, 965428K reserved, 0K cma-reserved)
+[    0.099532] devtmpfs: initialized
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x6
+[INFO  0] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x200
+[INFO  0] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x201
+[INFO  0] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x202
+[INFO  0] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x203
+[INFO  0] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x204
+[INFO  0] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x205
+[INFO  0] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x206
+[INFO  0] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x207
+[    0.103286] Performance counters: loongarch/loongson64 PMU enabled, 4 64-bit counters available to each CPU.
+[    0.114104] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.123872] futex hash table entries: 256 (order: 2, 16384 bytes, linear)
+[    0.130797] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[INFO  0] (hvisor::arch::loongarch64::trap:1334) csrrd emulation for CSR 0x380
+[INFO  0] (hvisor::arch::loongarch64::trap:1334) csrrd emulation for CSR 0x300
+[    0.136926] thermal_sys: Registered thermal governor 'step_wise'
+[    0.137144] hw-breakpoint: Found 0 breakpoint and 0 watchpoint registers.
+[    0.151332] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.158078] HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+[    0.164710] ACPI: Interpreter disabled.
+[    0.168530] iommu: Default domain type: Translated
+[    0.173286] iommu: DMA domain TLB invalidation policy: strict mode
+[    0.179500] SCSI subsystem initialized
+[    0.183253] libata version 3.00 loaded.
+[    0.187095] pps_core: LinuxPPS API ver. 1 registered
+[    0.192022] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.201361] vgaarb: loaded
+[    0.204069] clocksource: Switched to clocksource Constant
+[    0.209492] VFS: Disk quotas dquot_6.6.0
+[    0.213388] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.220259] pnp: PnP ACPI: disabled
+[    0.225533] NET: Registered PF_INET protocol family
+[    0.230419] IP idents hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    0.238050] tcp_listen_portaddr_hash hash table entries: 512 (order: 1, 8192 bytes, linear)
+[    0.246390] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.254087] TCP established hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.261797] TCP bind hash table entries: 8192 (order: 6, 262144 bytes, linear)
+[    0.269006] TCP: Hash tables configured (established 8192 bind 8192)
+[    0.275341] UDP hash table entries: 512 (order: 2, 16384 bytes, linear)
+[    0.281916] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes, linear)
+[    0.288946] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.294575] NET: Registered PF_XDP protocol family
+[    0.299332] PCI: CLS 0 bytes, default 64
+[    1.134236] Initialise system trusted keyrings
+[    1.138720] workingset: timestamp_bits=40 max_order=18 bucket_order=0
+[    1.145145] zbud: loaded
+[    1.147776] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    1.153679] SGI XFS with ACLs, security attributes, quota, no debug enabled
+[    1.160763] Key type asymmetric registered
+[    1.164831] Asymmetric key parser 'x509' registered
+[    1.171372] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 250)
+[    1.178772] io scheduler mq-deadline registered
+[    1.183268] io scheduler kyber registered
+[    1.187259] io scheduler bfq registered
+[    1.192868] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    1.199577] loongson-pci 1a000000.pcie: host bridge /pcie@1a000000 ranges:
+[    1.206428] loongson-pci 1a000000.pcie:       IO 0x0018408000..0x001840ffff -> 0x0000008000
+[    1.214739] loongson-pci 1a000000.pcie:      MEM 0x0060000000..0x007fffffff -> 0x0060000000
+[    1.225031] loongson-pci 1a000000.pcie: PCI host bridge to bus 0000:00
+[    1.231516] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    1.236968] pci_bus 0000:00: root bus resource [io  0x0000-0x7fff] (bus address [0x8000-0xffff])
+[    1.245704] pci_bus 0000:00: root bus resource [mem 0x60000000-0x7fffffff]
+[    1.252549] pci 0000:00:00.0: [0014:7a00] type 00 class 0x060000 conventional PCI endpoint
+[    1.260842] pci 0000:00:00.1: [0014:7a10] type 00 class 0x060000 conventional PCI endpoint
+[    1.269101] pci 0000:00:00.2: [0014:7a20] type 00 class 0x060000 conventional PCI endpoint
+[    1.277364] pci 0000:00:00.3: [0014:7a30] type 00 class 0x060000 conventional PCI endpoint
+[    1.285634] pci 0000:00:04.0: [0014:7a24] type 00 class 0x0c0310 conventional PCI endpoint
+[    1.293850] pci 0000:00:04.0: BAR 0 [mem 0x45940000-0x45947fff 64bit]
+[    1.300295] pci 0000:00:04.1: [0014:7a14] type 00 class 0x0c0320 conventional PCI endpoint
+[    1.308514] pci 0000:00:04.1: BAR 0 [mem 0x45948000-0x4594ffff 64bit]
+[    1.314958] pci 0000:00:05.0: [0014:7a24] type 00 class 0x0c0310 conventional PCI endpoint
+[    1.323173] pci 0000:00:05.0: BAR 0 [mem 0x45950000-0x45957fff 64bit]
+[    1.329614] pci 0000:00:05.1: [0014:7a14] type 00 class 0x0c0320 conventional PCI endpoint
+[    1.337833] pci 0000:00:05.1: BAR 0 [mem 0x45958000-0x4595ffff 64bit]
+[    1.344276] pci 0000:00:06.0: [0014:7a25] type 00 class 0x040000 conventional PCI endpoint
+[    1.352491] pci 0000:00:06.0: BAR 0 [mem 0x45960000-0x459600ff 64bit]
+[    1.358893] pci 0000:00:06.0: BAR 2 [mem 0x30000000-0x3fffffff 64bit]
+[    1.365294] pci 0000:00:06.0: BAR 4 [mem 0x45900000-0x4590ffff 64bit]
+[    1.371728] pci 0000:00:06.1: [0014:7a36] type 00 class 0x030000 conventional PCI endpoint
+[    1.379946] pci 0000:00:06.1: BAR 0 [mem 0x45910000-0x4591ffff 64bit]
+[    1.386382] pci 0000:00:06.1: vgaarb: setting as boot VGA device
+[    1.392347] pci 0000:00:06.1: vgaarb: bridge control possible
+[    1.398051] pci 0000:00:06.1: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+[    1.406534] pci 0000:00:06.2: [0014:7a37] type 00 class 0x040300 conventional PCI endpoint
+[    1.414751] pci 0000:00:06.2: BAR 0 [mem 0x45920000-0x4592ffff 64bit]
+[    1.421192] pci 0000:00:07.0: [0014:7a07] type 00 class 0x040300 conventional PCI endpoint
+[    1.429410] pci 0000:00:07.0: BAR 0 [mem 0x45930000-0x4593ffff 64bit]
+[    1.435851] pci 0000:00:08.0: [0014:7a18] type 00 class 0x010601 conventional PCI endpoint
+[    1.444076] pci 0000:00:08.0: BAR 5 [mem 0x4596b000-0x4596b3ff]
+[    1.449995] pci 0000:00:09.0: [0014:7a49] type 01 class 0x060400 PCIe Root Port
+[    1.457265] pci 0000:00:09.0: BAR 0 [mem 0x45961000-0x45961fff 64bit]
+[    1.463665] pci 0000:00:09.0: PCI bridge to [bus 01]
+[    1.468623] pci 0000:00:09.0: supports D1 D2
+[    1.472860] pci 0000:00:09.0: PME# supported from D0 D1 D3hot D3cold
+[    1.479239] pci 0000:00:0a.0: [0014:7a39] type 01 class 0x060400 PCIe Root Port
+[    1.486509] pci 0000:00:0a.0: BAR 0 [mem 0x45962000-0x45962fff 64bit]
+[    1.492908] pci 0000:00:0a.0: PCI bridge to [bus 02]
+[    1.497840] pci 0000:00:0a.0:   bridge window [io  0x20000-0x20fff]
+[    1.504064] pci 0000:00:0a.0:   bridge window [mem 0x45800000-0x458fffff]
+[    1.510832] pci 0000:00:0a.0: supports D1 D2
+[    1.515070] pci 0000:00:0a.0: PME# supported from D0 D1 D3hot D3cold
+[    1.521443] pci 0000:00:0b.0: [0014:7a39] type 01 class 0x060400 PCIe Root Port
+[    1.528713] pci 0000:00:0b.0: BAR 0 [mem 0x45963000-0x45963fff 64bit]
+[    1.535114] pci 0000:00:0b.0: PCI bridge to [bus 03]
+[    1.540069] pci 0000:00:0b.0: supports D1 D2
+[    1.544307] pci 0000:00:0b.0: PME# supported from D0 D1 D3hot D3cold
+[    1.550679] pci 0000:00:0c.0: [0014:7a39] type 01 class 0x060400 PCIe Root Port
+[    1.557950] pci 0000:00:0c.0: BAR 0 [mem 0x45964000-0x45964fff 64bit]
+[    1.564352] pci 0000:00:0c.0: PCI bridge to [bus 04]
+[    1.569306] pci 0000:00:0c.0: supports D1 D2
+[    1.573542] pci 0000:00:0c.0: PME# supported from D0 D1 D3hot D3cold
+[    1.579914] pci 0000:00:0d.0: [0014:7a49] type 01 class 0x060400 PCIe Root Port
+[    1.587182] pci 0000:00:0d.0: BAR 0 [mem 0x45965000-0x45965fff 64bit]
+[    1.593581] pci 0000:00:0d.0: PCI bridge to [bus 05]
+[    1.598512] pci 0000:00:0d.0:   bridge window [mem 0x45700000-0x457fffff]
+[    1.605272] pci 0000:00:0d.0: supports D1 D2
+[    1.609509] pci 0000:00:0d.0: PME# supported from D0 D1 D3hot D3cold
+[    1.615882] pci 0000:00:0f.0: [0014:7a69] type 01 class 0x060400 PCIe Root Port
+[    1.623147] pci 0000:00:0f.0: BAR 0 [mem 0x45966000-0x45966fff 64bit]
+[    1.629549] pci 0000:00:0f.0: PCI bridge to [bus 06-07]
+[    1.634740] pci 0000:00:0f.0:   bridge window [mem 0x45200000-0x456fffff]
+[    1.641485] pci 0000:00:0f.0:   bridge window [mem 0x45000000-0x450fffff 64bit pref]
+[    1.649196] pci 0000:00:0f.0: supports D1 D2
+[    1.653432] pci 0000:00:0f.0: PME# supported from D0 D1 D3hot D3cold
+[    1.659803] pci 0000:00:10.0: [0014:7a59] type 01 class 0x060400 PCIe Root Port
+[    1.667075] pci 0000:00:10.0: BAR 0 [mem 0x45967000-0x45967fff 64bit]
+[    1.673474] pci 0000:00:10.0: PCI bridge to [bus 08]
+[    1.678430] pci 0000:00:10.0: supports D1 D2
+[    1.682666] pci 0000:00:10.0: PME# supported from D0 D1 D3hot D3cold
+[    1.689057] pci 0000:00:13.0: [0014:7a59] type 01 class 0x060400 PCIe Root Port
+[    1.696327] pci 0000:00:13.0: BAR 0 [mem 0x45968000-0x45968fff 64bit]
+[    1.702727] pci 0000:00:13.0: PCI bridge to [bus 09]
+[    1.707683] pci 0000:00:13.0: supports D1 D2
+[    1.711919] pci 0000:00:13.0: PME# supported from D0 D1 D3hot D3cold
+[    1.718295] pci 0000:00:16.0: [0014:7a1b] type 00 class 0x088000 conventional PCI endpoint
+[    1.726513] pci 0000:00:16.0: BAR 0 [mem 0x45969000-0x45969fff 64bit]
+[    1.732912] pci 0000:00:16.0: BAR 2 [mem 0x44000000-0x44ffffff 64bit]
+[    1.739357] pci 0000:00:19.0: [0014:7a34] type 00 class 0x0c0330 conventional PCI endpoint
+[    1.747575] pci 0000:00:19.0: BAR 0 [mem 0x45100000-0x451fffff 64bit]
+[    1.754017] pci 0000:00:1a.0: [0014:7a1f] type 00 class 0x080600 conventional PCI endpoint
+[    1.762235] pci 0000:00:1a.0: BAR 0 [mem 0x4596a000-0x4596a3ff 64bit]
+[    1.768636] pci 0000:00:1a.0: BAR 2 [mem 0x40000000-0x43ffffff 64bit]
+[    1.775040] pci 0000:00:1a.0: ROM [mem 0xfffff800-0xffffffff pref]
+[    1.781310] pci 0000:02:00.0: [1f0a:6801] type 00 class 0x020000 PCIe Endpoint
+[    1.788525] pci 0000:02:00.0: BAR 0 [mem 0x45800000-0x45803fff 64bit]
+[    1.794969] pci 0000:02:00.0: BAR 4 [io  0x20000-0x200ff]
+[    1.800481] pci 0000:02:00.0: supports D1
+[    1.804461] pci 0000:02:00.0: PME# supported from D0 D1 D3hot D3cold
+[    1.811010] pci 0000:05:00.0: [1e4b:1202] type 00 class 0x010802 PCIe Endpoint
+[    1.818200] pci 0000:05:00.0: BAR 0 [mem 0x45700000-0x45703fff 64bit]
+[    1.824683] pci 0000:05:00.0: PME# supported from D0 D3hot D3cold
+[    1.830893] pci 0000:06:00.0: [8086:1521] type 00 class 0x020000 PCIe Endpoint
+[    1.838087] pci 0000:06:00.0: BAR 0 [mem 0x45500000-0x455fffff]
+[    1.843991] pci 0000:06:00.0: BAR 3 [mem 0x4560c000-0x4560ffff]
+[    1.849994] pci 0000:06:00.0: PME# supported from D0 D3hot D3cold
+[    1.856083] pci 0000:06:00.0: VF BAR 0 [mem 0x450e0000-0x450e3fff 64bit pref]
+[    1.863170] pci 0000:06:00.0: VF BAR 0 [mem 0x450e0000-0x450fffff 64bit pref]: contains BAR 0 for 8 VFs
+[    1.872529] pci 0000:06:00.0: VF BAR 3 [mem 0x450c0000-0x450c3fff 64bit pref]
+[    1.879619] pci 0000:06:00.0: VF BAR 3 [mem 0x450c0000-0x450dffff 64bit pref]: contains BAR 3 for 8 VFs
+[    1.889166] pci 0000:06:00.1: [8086:1521] type 00 class 0x020000 PCIe Endpoint
+[    1.896359] pci 0000:06:00.1: BAR 0 [mem 0x45400000-0x454fffff]
+[    1.902263] pci 0000:06:00.1: BAR 3 [mem 0x45608000-0x4560bfff]
+[    1.908259] pci 0000:06:00.1: PME# supported from D0 D3hot D3cold
+[    1.914348] pci 0000:06:00.1: VF BAR 0 [mem 0x450a0000-0x450a3fff 64bit pref]
+[    1.921436] pci 0000:06:00.1: VF BAR 0 [mem 0x450a0000-0x450bffff 64bit pref]: contains BAR 0 for 8 VFs
+[    1.930794] pci 0000:06:00.1: VF BAR 3 [mem 0x45080000-0x45083fff 64bit pref]
+[    1.937883] pci 0000:06:00.1: VF BAR 3 [mem 0x45080000-0x4509ffff 64bit pref]: contains BAR 3 for 8 VFs
+[    1.947413] pci 0000:06:00.2: [8086:1521] type 00 class 0x020000 PCIe Endpoint
+[    1.954606] pci 0000:06:00.2: BAR 0 [mem 0x45300000-0x453fffff]
+[    1.960509] pci 0000:06:00.2: BAR 3 [mem 0x45604000-0x45607fff]
+[    1.966506] pci 0000:06:00.2: PME# supported from D0 D3hot D3cold
+[    1.972592] pci 0000:06:00.2: VF BAR 0 [mem 0x45060000-0x45063fff 64bit pref]
+[    1.979682] pci 0000:06:00.2: VF BAR 0 [mem 0x45060000-0x4507ffff 64bit pref]: contains BAR 0 for 8 VFs
+[    1.989040] pci 0000:06:00.2: VF BAR 3 [mem 0x45040000-0x45043fff 64bit pref]
+[    1.996131] pci 0000:06:00.2: VF BAR 3 [mem 0x45040000-0x4505ffff 64bit pref]: contains BAR 3 for 8 VFs
+[    2.005660] pci 0000:06:00.3: [8086:1521] type 00 class 0x020000 PCIe Endpoint
+[    2.012851] pci 0000:06:00.3: BAR 0 [mem 0x45200000-0x452fffff]
+[    2.018757] pci 0000:06:00.3: BAR 3 [mem 0x45600000-0x45603fff]
+[    2.024755] pci 0000:06:00.3: PME# supported from D0 D3hot D3cold
+[    2.030841] pci 0000:06:00.3: VF BAR 0 [mem 0x45020000-0x45023fff 64bit pref]
+[    2.037932] pci 0000:06:00.3: VF BAR 0 [mem 0x45020000-0x4503ffff 64bit pref]: contains BAR 0 for 8 VFs
+[    2.047291] pci 0000:06:00.3: VF BAR 3 [mem 0x45000000-0x45003fff 64bit pref]
+[    2.054395] pci 0000:06:00.3: VF BAR 3 [mem 0x45000000-0x4501ffff 64bit pref]: contains BAR 3 for 8 VFs
+[    2.063981] pci 0000:00:0f.0: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 06-07] add_size 100000 add_align 100000
+[    2.075668] pci 0000:00:06.0: BAR 2 [mem 0x60000000-0x6fffffff 64bit]: assigned
+[    2.082932] pci 0000:00:1a.0: BAR 2 [mem 0x70000000-0x73ffffff 64bit]: assigned
+[    2.090197] pci 0000:00:16.0: BAR 2 [mem 0x74000000-0x74ffffff 64bit]: assigned
+[    2.097461] pci 0000:00:0a.0: bridge window [mem 0x75000000-0x750fffff]: assigned
+[    2.104897] pci 0000:00:0d.0: bridge window [mem 0x75100000-0x751fffff]: assigned
+[    2.112331] pci 0000:00:0f.0: bridge window [mem 0x75200000-0x756fffff]: assigned
+[    2.119766] pci 0000:00:0f.0: bridge window [mem 0x75700000-0x757fffff 64bit pref]: assigned
+[    2.128152] pci 0000:00:19.0: BAR 0 [mem 0x75800000-0x758fffff 64bit]: assigned
+[    2.135416] pci 0000:00:06.0: BAR 4 [mem 0x75900000-0x7590ffff 64bit]: assigned
+[    2.142679] pci 0000:00:06.1: BAR 0 [mem 0x75910000-0x7591ffff 64bit]: assigned
+[    2.149943] pci 0000:00:06.2: BAR 0 [mem 0x75920000-0x7592ffff 64bit]: assigned
+[    2.157207] pci 0000:00:07.0: BAR 0 [mem 0x75930000-0x7593ffff 64bit]: assigned
+[    2.164471] pci 0000:00:04.0: BAR 0 [mem 0x75940000-0x75947fff 64bit]: assigned
+[    2.171733] pci 0000:00:04.1: BAR 0 [mem 0x75948000-0x7594ffff 64bit]: assigned
+[    2.178997] pci 0000:00:05.0: BAR 0 [mem 0x75950000-0x75957fff 64bit]: assigned
+[    2.186261] pci 0000:00:05.1: BAR 0 [mem 0x75958000-0x7595ffff 64bit]: assigned
+[    2.193524] pci 0000:00:09.0: BAR 0 [mem 0x75960000-0x75960fff 64bit]: assigned
+[    2.200794] pci 0000:00:0a.0: BAR 0 [mem 0x75961000-0x75961fff 64bit]: assigned
+[    2.208059] pci 0000:00:0a.0: bridge window [io  0x4000-0x4fff]: assigned
+[    2.214805] pci 0000:00:0b.0: BAR 0 [mem 0x75962000-0x75962fff 64bit]: assigned
+[    2.222069] pci 0000:00:0c.0: BAR 0 [mem 0x75963000-0x75963fff 64bit]: assigned
+[    2.229334] pci 0000:00:0d.0: BAR 0 [mem 0x75964000-0x75964fff 64bit]: assigned
+[    2.236599] pci 0000:00:0f.0: BAR 0 [mem 0x75965000-0x75965fff 64bit]: assigned
+[    2.243862] pci 0000:00:10.0: BAR 0 [mem 0x75966000-0x75966fff 64bit]: assigned
+[    2.251127] pci 0000:00:13.0: BAR 0 [mem 0x75967000-0x75967fff 64bit]: assigned
+[    2.258392] pci 0000:00:16.0: BAR 0 [mem 0x75968000-0x75968fff 64bit]: assigned
+[    2.265656] pci 0000:00:1a.0: ROM [mem 0x75969000-0x759697ff pref]: assigned
+[    2.272658] pci 0000:00:08.0: BAR 5 [mem 0x75969800-0x75969bff]: assigned
+[    2.279403] pci 0000:00:1a.0: BAR 0 [mem 0x75969c00-0x75969fff 64bit]: assigned
+[    2.286667] pci 0000:00:06.0: BAR 0 [mem 0x7596a000-0x7596a0ff 64bit]: assigned
+[    2.293936] pci 0000:00:09.0: PCI bridge to [bus 01]
+[    2.298870] pci 0000:02:00.0: BAR 0 [mem 0x75000000-0x75003fff 64bit]: assigned
+[    2.306148] pci 0000:02:00.0: BAR 4 [io  0x4000-0x40ff]: assigned
+[    2.312203] pci 0000:00:0a.0: PCI bridge to [bus 02]
+[    2.317133] pci 0000:00:0a.0:   bridge window [io  0x4000-0x4fff]
+[    2.323185] pci 0000:00:0a.0:   bridge window [mem 0x75000000-0x750fffff]
+[    2.329931] pci 0000:00:0b.0: PCI bridge to [bus 03]
+[    2.334863] pci 0000:00:0c.0: PCI bridge to [bus 04]
+[    2.339795] pci 0000:05:00.0: BAR 0 [mem 0x75100000-0x75103fff 64bit]: assigned
+[    2.347063] pci 0000:00:0d.0: PCI bridge to [bus 05]
+[    2.351991] pci 0000:00:0d.0:   bridge window [mem 0x75100000-0x751fffff]
+[    2.358740] pci 0000:06:00.0: BAR 0 [mem 0x75200000-0x752fffff]: assigned
+[    2.365487] pci 0000:06:00.1: BAR 0 [mem 0x75300000-0x753fffff]: assigned
+[    2.372232] pci 0000:06:00.2: BAR 0 [mem 0x75400000-0x754fffff]: assigned
+[    2.378978] pci 0000:06:00.3: BAR 0 [mem 0x75500000-0x755fffff]: assigned
+[    2.385724] pci 0000:06:00.0: BAR 3 [mem 0x75600000-0x75603fff]: assigned
+[    2.392469] pci 0000:06:00.0: VF BAR 0 [mem 0x75700000-0x7571ffff 64bit pref]: assigned
+[    2.400427] pci 0000:06:00.0: VF BAR 3 [mem 0x75720000-0x7573ffff 64bit pref]: assigned
+[    2.408384] pci 0000:06:00.1: BAR 3 [mem 0x75604000-0x75607fff]: assigned
+[    2.415130] pci 0000:06:00.1: VF BAR 0 [mem 0x75740000-0x7575ffff 64bit pref]: assigned
+[    2.423086] pci 0000:06:00.1: VF BAR 3 [mem 0x75760000-0x7577ffff 64bit pref]: assigned
+[    2.431043] pci 0000:06:00.2: BAR 3 [mem 0x75608000-0x7560bfff]: assigned
+[    2.437790] pci 0000:06:00.2: VF BAR 0 [mem 0x75780000-0x7579ffff 64bit pref]: assigned
+[    2.445748] pci 0000:06:00.2: VF BAR 3 [mem 0x757a0000-0x757bffff 64bit pref]: assigned
+[    2.453703] pci 0000:06:00.3: BAR 3 [mem 0x7560c000-0x7560ffff]: assigned
+[    2.460450] pci 0000:06:00.3: VF BAR 0 [mem 0x757c0000-0x757dffff 64bit pref]: assigned
+[    2.468407] pci 0000:06:00.3: VF BAR 3 [mem 0x757e0000-0x757fffff 64bit pref]: assigned
+[    2.476367] pci 0000:00:0f.0: PCI bridge to [bus 06-07]
+[    2.481555] pci 0000:00:0f.0:   bridge window [mem 0x75200000-0x756fffff]
+[    2.488299] pci 0000:00:0f.0:   bridge window [mem 0x75700000-0x757fffff 64bit pref]
+[    2.495995] pci 0000:00:10.0: PCI bridge to [bus 08]
+[    2.500926] pci 0000:00:13.0: PCI bridge to [bus 09]
+[    2.505858] pci_bus 0000:00: resource 4 [io  0x0000-0x7fff]
+[    2.511391] pci_bus 0000:00: resource 5 [mem 0x60000000-0x7fffffff]
+[    2.517616] pci_bus 0000:02: resource 0 [io  0x4000-0x4fff]
+[    2.523148] pci_bus 0000:02: resource 1 [mem 0x75000000-0x750fffff]
+[    2.529373] pci_bus 0000:05: resource 1 [mem 0x75100000-0x751fffff]
+[    2.535598] pci_bus 0000:06: resource 1 [mem 0x75200000-0x756fffff]
+[    2.541822] pci_bus 0000:06: resource 2 [mem 0x75700000-0x757fffff 64bit pref]
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850324, offset=0x1158, size=8, W ->  0xfffffffe80001608
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850440, offset=0x1158, size=8, W ->  0x1f0001c40
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850478, offset=0x1158, size=8, W ->  0xffffffff80001608
+[    2.549408] pcieport 0000:00:09.0: PME: Signaling with IRQ 21
+[    2.555341] pcieport 0000:00:09.0: AER: enabled with IRQ 21
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850324, offset=0x1158, size=8, W ->  0xfffffffd80001608
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850440, offset=0x1158, size=8, W ->  0x100e8001c40
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850478, offset=0x1158, size=8, W ->  0xffffffff80001608
+[    2.561262] pcieport 0000:00:0a.0: PME: Signaling with IRQ 23
+[    2.567187] pcieport 0000:00:0a.0: AER: enabled with IRQ 23
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850324, offset=0x1158, size=8, W ->  0xfffffffb80001608
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850440, offset=0x1158, size=8, W ->  0x10000d8001c40
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850478, offset=0x1158, size=8, W ->  0xffffffff80001608
+[    2.573101] pcieport 0000:00:0b.0: PME: Signaling with IRQ 25
+[    2.579028] pcieport 0000:00:0b.0: AER: enabled with IRQ 25
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850324, offset=0x1158, size=8, W ->  0xfffffff780001608
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850440, offset=0x1158, size=8, W ->  0x1000000b8001c40
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850478, offset=0x1158, size=8, W ->  0xffffffff80001608
+[    2.584957] pcieport 0000:00:0c.0: PME: Signaling with IRQ 27
+[    2.590875] pcieport 0000:00:0c.0: AER: enabled with IRQ 27
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850324, offset=0x1158, size=8, W ->  0xffffffef80001608
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850440, offset=0x1158, size=8, W ->  0x1f0001c44
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850478, offset=0x1158, size=8, W ->  0xffffffff80001608
+[    2.596794] pcieport 0000:00:0d.0: PME: Signaling with IRQ 29
+[    2.602708] pcieport 0000:00:0d.0: AER: enabled with IRQ 29
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850324, offset=0x1158, size=8, W ->  0xffffffdf80001608
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850440, offset=0x1158, size=8, W ->  0x100e8001c44
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850478, offset=0x1158, size=8, W ->  0xffffffff80001608
+[    2.608631] pcieport 0000:00:0f.0: PME: Signaling with IRQ 31
+[    2.614564] pcieport 0000:00:0f.0: AER: enabled with IRQ 31
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850324, offset=0x1158, size=8, W ->  0xffffffbf80001608
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850440, offset=0x1158, size=8, W ->  0x10000d8001c44
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850478, offset=0x1158, size=8, W ->  0xffffffff80001608
+[    2.620482] pcieport 0000:00:10.0: PME: Signaling with IRQ 33
+[    2.626412] pcieport 0000:00:10.0: AER: enabled with IRQ 33
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850324, offset=0x1158, size=8, W ->  0xffffff7f80001608
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850440, offset=0x1158, size=8, W ->  0x1000000b8001c44
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850478, offset=0x1158, size=8, W ->  0xffffffff80001608
+[    2.632331] pcieport 0000:00:13.0: PME: Signaling with IRQ 35
+[    2.638264] pcieport 0000:00:13.0: AER: enabled with IRQ 35
+[    2.644795] Serial: 8250/16550 driver, 16 ports, IRQ sharing enabled
+[    2.652169] of_serial 1fe001e0.serial: error -ENXIO: IRQ index 0 not found
+[    2.659083] printk: legacy console [ttyS0] disabled
+[    2.664009] 1fe001e0.serial: ttyS0 at MMIO 0x1fe001e0 (irq = 0, base_baud = 6250000) is a 16550A
+[    2.672759] printk: legacy console [ttyS0] enabled
+[    2.672759] printk: legacy console [ttyS0] enabled
+[    2.682274] printk: legacy bootconsole [ns16550a0] disabled
+[    2.682274] printk: legacy bootconsole [ns16550a0] disabled
+[    2.714256] loongson 0000:00:06.1: Found LS7A2000 bridge chipset, revision: 2
+[    2.721373] loongson 0000:00:06.1: [drm] dc: 400MHz, gmc: 1200MHz, gpu: 480MHz
+[    2.728561] loongson 0000:00:06.1: [drm] Dedicated vram start: 0x60000000, size: 256MiB
+[    2.736581] loongson 0000:00:06.1: [drm] VRAM: 65536 pages ready
+[    2.742546] loongson 0000:00:06.1: [drm] GTT: 131072 pages ready
+[    2.748567] loongson 0000:00:06.1: [drm] lsdc-i2c0(sda pin mask=1, scl pin mask=2) created
+[    2.756808] loongson 0000:00:06.1: [drm] lsdc-i2c1(sda pin mask=4, scl pin mask=8) created
+[    2.765033] loongson 0000:00:06.1: [drm] display pipe-0 has HDMI and/or VGA
+[    2.771951] loongson 0000:00:06.1: [drm] display pipe-1 has HDMI 
+[    2.778022] loongson 0000:00:06.1: [drm] Total 2 outputs
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850324, offset=0x1158, size=8, W ->  0xfffffeff80001600
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850440, offset=0x1158, size=8, W ->  0x1f0001c08
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850478, offset=0x1158, size=8, W ->  0xffffffff80001600
+[    2.823609] loongson 0000:00:06.1: [drm] registered irq: 36
+[    2.829497] [drm] Initialized loongson 1.0.0 for 0000:00:06.1 on minor 0
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850108, offset=0x1800, size=8, R <-  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850110, offset=0x1800, size=8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850108, offset=0x1808, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850108, offset=0x1810, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850108, offset=0x1818, size=8, R <-  0x0
+[    3.131815] Console: switching to colour frame buffer device 240x67
+[    3.284077] loongson 0000:00:06.1: [drm] fb0: loongsondrmfb frame buffer device
+[    3.306017] brd: module loaded
+[    3.310309] loop: module loaded
+[    3.324150] megaraid cmm: 2.20.2.7 (Release Date: Sun Jul 16 00:01:03 EST 2006)
+[    3.331434] megaraid: 2.20.5.1 (Release Date: Thu Nov 16 15:32:35 EST 2006)
+[    3.354092] megasas: 07.727.03.00-rc1
+[    3.357747] mpt3sas version 48.100.00.00 loaded
+[    3.362587] nvme nvme0: pci function 0000:05:00.0
+[    3.367676] ahci 0000:00:08.0: version 3.0
+[    3.371871] ahci 0000:00:08.0: SSS flag set, parallel bus scan disabled
+[    3.388216] ahci 0000:00:08.0: AHCI vers 0001.0300, 32 command slots, 6 Gbps, SATA mode
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850324, offset=0x1158, size=8, W ->  0xfffffeff80001608
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850440, offset=0x1158, size=8, W ->  0x1f0001c48
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850478, offset=0x1158, size=8, W ->  0xffffffff80001608
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850108, offset=0x1808, size=8, R <-  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850110, offset=0x1808, size=8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850108, offset=0x1808, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850108, offset=0x1800, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850108, offset=0x1808, size=8, R <-  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850108, offset=0x1800, size=8, R <-  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850108, offset=0x1808, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850108, offset=0x1800, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850108, offset=0x1808, size=8, R <-  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850108, offset=0x1800, size=8, R <-  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850108, offset=0x1808, size=8, R <-  0x0
+[    3.402736] nvme nvme0: allocated 8 MiB host memory buffer.
+[    3.414075] ahci 0000:00:08.0: 4/4 ports implemented (port mask 0xf)
+[    3.420748] ahci 0000:00:08.0: flags: 64bit ncq sntf stag pm led clo only pmp pio slum part ccc apst 
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850108, offset=0x1800, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850108, offset=0x1808, size=8, R <-  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850324, offset=0x1158, size=8, W ->  0xfffffeff80001608
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850440, offset=0x1158, size=8, W ->  0x1f0001c48
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850478, offset=0x1158, size=8, W ->  0xffffffff80001608
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850324, offset=0x1158, size=8, W ->  0xfffffdff80001600
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850440, offset=0x1158, size=8, W ->  0x100e8001c08
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850478, offset=0x1158, size=8, W ->  0xffffffff80001600
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850324, offset=0x1158, size=8, W ->  0xfffffdff80001608
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850440, offset=0x1158, size=8, W ->  0x100e8001c48
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850478, offset=0x1158, size=8, W ->  0xffffffff80001608
+[    3.449206] nvme nvme0: 1/0/0 default/read/poll queues
+[    3.458175] scsi host0: ahci
+[    3.462124] scsi host1: ahci
+[    3.474083] nvme nvme0: Ignoring bogus Namespace Identifiers
+[    3.479836] scsi host2: ahci
+[    3.483159] scsi host3: ahci
+[    3.494126] ata1: SATA max UDMA/133 abar m1024@0x75969800 port 0x75969900 irq 37 lpm-pol 0
+[    3.502340] ata2: SATA max UDMA/133 abar m1024@0x75969800 port 0x75969980 irq 37 lpm-pol 0
+[    3.524075] ata3: SATA max UDMA/133 abar m1024@0x75969800 port 0x75969a00 irq 37 lpm-pol 0
+[    3.532289] ata4: SATA max UDMA/133 abar m1024@0x75969800 port 0x75969a80 irq 37 lpm-pol 0
+[    3.564153] igb: Intel(R) Gigabit Ethernet Network Driver
+[    3.569515] igb: Copyright (c) 2007-2014 Intel Corporation.
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850110, offset=0x1808, size=8, W ->  0x200
+[    3.588978]  nvme0n1: p1
+[    3.634079] random: crng init done
+[    3.642408] igb 0000:06:00.0: Intel(R) Gigabit Ethernet Network Connection
+[    3.649249] igb 0000:06:00.0: eth0: (PCIe:5.0Gb/s:Width x4) 6c:b3:11:9a:e8:74
+[    3.657026] igb 0000:06:00.0: eth0: PBA No: H47822-001
+[    3.662128] igb 0000:06:00.0: Using MSI-X interrupts. 1 rx queue(s), 1 tx queue(s)
+[    3.714749] igb 0000:06:00.1: Intel(R) Gigabit Ethernet Network Connection
+[    3.721939] igb 0000:06:00.1: eth1: (PCIe:5.0Gb/s:Width x4) 6c:b3:11:9a:e8:75
+[    3.729516] igb 0000:06:00.1: eth1: PBA No: H47822-001
+[    3.734990] igb 0000:06:00.1: Using MSI-X interrupts. 1 rx queue(s), 1 tx queue(s)
+[    3.787791] igb 0000:06:00.2: Intel(R) Gigabit Ethernet Network Connection
+[    3.794992] igb 0000:06:00.2: eth2: (PCIe:5.0Gb/s:Width x4) 6c:b3:11:9a:e8:76
+[    3.802556] igb 0000:06:00.2: eth2: PBA No: H47822-001
+[    3.807665] igb 0000:06:00.2: Using MSI-X interrupts. 1 rx queue(s), 1 tx queue(s)
+[    3.861071] igb 0000:06:00.3: Intel(R) Gigabit Ethernet Network Connection
+[    3.867913] igb 0000:06:00.3: eth3: (PCIe:5.0Gb/s:Width x4) 6c:b3:11:9a:e8:77
+[    3.875689] igb 0000:06:00.3: eth3: PBA No: H47822-001
+[    3.880794] igb 0000:06:00.3: Using MSI-X interrupts. 1 rx queue(s), 1 tx queue(s)
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000850324, offset=0x1158, size=8, W ->  0xfffffbff80001600
+[    3.890900] loongson-rtc 100d0100.rtc: registered as rtc0
+[    3.896893] loongson-rtc 100d0100.rtc: setting system clock to 2025-05-07T13:30:01 UTC (1746624601)
+[    3.906253] ata1: SATA link down (SStatus 0 SControl 300)
+[    3.911803] i2c_dev: i2c /dev entries driver
+[    3.916303] device-mapper: ioctl: 4.48.0-ioctl (2023-03-01) initialised: dm-devel@lists.linux.dev
+[    3.925507] hid: raw HID events driver (C) Jiri Kosina
+[    3.930840] NET: Registered PF_INET6 protocol family
+[    3.936072] Segment Routing with IPv6
+[    3.940078] In-situ OAM (IOAM) with IPv6
+[    3.944143] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    3.952599] Loading compiled-in X.509 certificates
+[    3.960017] Demotion targets for Node 0: null
+[    4.170171] OF: fdt: not creating '/sys/firmware/fdt': CRC check failed
+[    4.176771] clk: Disabling unused clocks
+[    4.266826] ata2: SATA link down (SStatus 0 SControl 300)
+[    4.604477] ata3: SATA link down (SStatus 0 SControl 300)
+[    4.945271] ata4: SATA link down (SStatus 0 SControl 300)
+[    4.969340] Freeing unused kernel image (initmem) memory: 57792K
+[    4.975348] This architecture does not have kernel memory protection.
+[    4.981755] Run /init as init process
+[    4.985726]   with arguments:
+[    4.988829]     /init
+[    4.991078]   with environment:
+[    4.994195]     HOME=/
+[    4.996531]     TERM=linux
+Starting syslogd: OK
+Starting klogd: OK
+Running sysctl: OK
+Starting system message bus: done
+Starting telnetd: OK
+Welcome to hvisor(loongarch) root linux! Buildroot/wheatfox 2025
+[root@dedsec /]# 
+[root@dedsec /]# ./daemon.sh 
+[   10.586497] hvisor: loading out-of-tree module taints kernel.
+[   10.592415] hvisor init done!!!
+hvisor not insta[INFO  0] (hvisor::hypercall:130) handle hvc init virtio, shared_region_addr = 0x9369b000
+[INFO  0] (hvisor::hypercall:157) hvisor device region base is 0x900000009369b000
+[   10.600436] virtio bridge mmap succeed!
+[   10.604816] non root region mmap succeed!
+[   10.609067] non root region mmap succeed!
+lled, installing...
+successfully installed hvisor
+Starting hvisor with configuration: /tool/virtio_cfg.json
+nohup: appending output to nohup.out
+[root@dedsec /]# ./start.sh 
+booting zone lin[   11.603185] non root region mmap succeed!
+ux2 with configuration: /tool/li[   11.640153] non root region mmap succeed!
+nux2.json
+13:30[   11.664151] hvisor: calling hypercall to start zone
+[INFO  0] (hvisor::hypercall:222) hv_zone_start: config: HvZoneConfig {
+    zone_id: 0x2,
+    cpus: 0x4,
+    num_memory_regions: 0xd,
+    memory_regions: [
+        HvConfigMemoryRegion {
+            mem_type: 0x0,
+            physical_start: 0xc0000000,
+            virtual_start: 0x0,
+            size: 0x10000000,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x0,
+            physical_start: 0xd0000000,
+            virtual_start: 0x90000000,
+            size: 0x10000000,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x1,
+            physical_start: 0x1fe00000,
+            virtual_start: 0x1fe00000,
+            size: 0x1000,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x1,
+            physical_start: 0x10080000,
+            virtual_start: 0x10080000,
+            size: 0x1000,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x2,
+            physical_start: 0x30001000,
+            virtual_start: 0x30001000,
+            size: 0x200,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x2,
+            physical_start: 0x30002000,
+            virtual_start: 0x30002000,
+            size: 0x200,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x1,
+            physical_start: 0xffffffff0000,
+            virtual_start: 0xffffffff0000,
+            size: 0x1000,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x1,
+            physical_start: 0x10000000,
+            virtual_start: 0x10000000,
+            size: 0x1000,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x1,
+            physical_start: 0x100d0000,
+            virtual_start: 0x100d0000,
+            size: 0x1000,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x1,
+            physical_start: 0xefe00000000,
+            virtual_start: 0xfe00000000,
+            size: 0x20000000,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x1,
+            physical_start: 0x18408000,
+            virtual_start: 0x18408000,
+            size: 0x8000,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x1,
+            physical_start: 0x60000000,
+            virtual_start: 0x60000000,
+            size: 0x20000000,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x1,
+            physical_start: 0x10010000,
+            virtual_start: 0x10010000,
+            size: 0x10000,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x0,
+            physical_start: 0x0,
+            virtual_start: 0x0,
+            size: 0x0,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x0,
+            physical_start: 0x0,
+            virtual_start: 0x0,
+            size: 0x0,
+        },
+        HvConfigMemoryRegion {
+            mem_type: 0x0,
+            physical_start: 0x0,
+            virtual_start: 0x0,
+            size: 0x0,
+        },
+    ],
+    num_interrupts: 0x2,
+    interrupts: [
+        0x4,
+        0x5,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+    ],
+    num_ivc_configs: 0x0,
+    ivc_configs: [
+        HvIvcConfig {
+            ivc_id: 0x0,
+            peer_id: 0x0,
+            control_table_ipa: 0x0,
+            shared_mem_ipa: 0x0,
+            rw_sec_size: 0x0,
+            out_sec_size: 0x0,
+            interrupt_num: 0x0,
+            max_peers: 0x0,
+        },
+        HvIvcConfig {
+            ivc_id: 0x0,
+            peer_id: 0x0,
+            control_table_ipa: 0x0,
+            shared_mem_ipa: 0x0,
+            rw_sec_size: 0x0,
+            out_sec_size: 0x0,
+            interrupt_num: 0x0,
+            max_peers: 0x0,
+        },
+    ],
+    entry_point: 0x9000000000e8c000,
+    kernel_load_paddr: 0xc0200000,
+    kernel_size: 0x2010000,
+    dtb_load_paddr: 0xc0000000,
+    dtb_size: 0x5000,
+    name: [
+        0x6c,
+        0x69,
+        0x6e,
+        0x75,
+        0x78,
+        0x32,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+    ],
+    arch_config: HvArchZoneConfig {
+        dummy: 0x0,
+    },
+    pci_config: HvPciConfig {
+        ecam_base: 0x0,
+        ecam_size: 0x0,
+        io_base: 0x0,
+        io_size: 0x0,
+        pci_io_base: 0x0,
+        mem32_base: 0x0,
+        mem32_size: 0x0,
+        pci_mem32_base: 0x0,
+        mem64_base: 0x0,
+        mem64_size: 0x0,
+        pci_mem64_base: 0x0,
+    },
+    num_pci_devs: 0x0,
+    alloc_pci_devs: [
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+        0x0,
+    ],
+}
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x0
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x90000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x1FE00000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x10080000
+[INFO  0] (hvisor::arch::loongarch64::zone:63) loongarch64: pt_init: register virtio mmio region: HvConfigMemoryRegion {
+    mem_type: 0x2,
+    physical_start: 0x30001000,
+    virtual_start: 0x30001000,
+    size: 0x200,
+}
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x30001000
+[INFO  0] (hvisor::arch::loongarch64::zone:63) loongarch64: pt_init: register virtio mmio region: HvConfigMemoryRegion {
+    mem_type: 0x2,
+    physical_start: 0x30002000,
+    virtual_start: 0x30002000,
+    size: 0x200,
+}
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x30002000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0xFFFFFFFF0000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x10000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x100D0000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0xFE00000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x18408000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x60000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x10010000
+[INFO  0] (hvisor::arch::loongarch64::zone:92) loongarch64: pt_init: add mmio handler for 0x1fe0_xxxx mmio region
+[INFO  0] (hvisor::zone:222) zone cpu_set: 0b100
+[INFO  2] (hvisor::event:112) cpu 2 wakeup
+[INFO  2] (hvisor::arch::loongarch64::s2pt:168) loongarch64: S2PTInstr::activate: root_pa: 0x90000001008d9000
+[INFO  2] (hvisor::arch::loongarch64::s2pt:180) loongarch64: S2PTInstr::activate: set tlbrentry to 0x10009e000 done!
+[INFO  2] (hvisor::arch::loongarch64::cpu:77) loongarch64: CPU2 run@0x9000000000e8c000
+[INFO  2] (hvisor::arch::loongarch64::cpu:82) loongarch64: @ArchCpu {
+    ctx: LoongArch64ZoneContext {
+        x: [
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+        ],
+        sepc: 0x9000000000e8c000,
+        gcsr_crmd: 0x8,
+        gcsr_prmd: 0x0,
+        gcsr_euen: 0x0,
+        gcsr_misc: 0x0,
+        gcsr_ectl: 0x10000,
+        gcsr_estat: 0x0,
+        gcsr_era: 0x0,
+        gcsr_badv: 0x0,
+        gcsr_badi: 0x0,
+        gcsr_eentry: 0x1c000000,
+        gcsr_tlbidx: 0xe000000,
+        gcsr_tlbehi: 0x0,
+        gcsr_tlbelo0: 0x0,
+        gcsr_tlbelo1: 0x0,
+        gcsr_asid: 0xa0000,
+        gcsr_pgdl: 0x0,
+        gcsr_pgdh: 0x0,
+        gcsr_pgd: 0x0,
+        gcsr_pwcl: 0x0,
+        gcsr_pwch: 0x0,
+        gcsr_stlbps: 0xe,
+        gcsr_ravcfg: 0x0,
+        gcsr_cpuid: 0x2,
+        gcsr_prcfg1: 0x72f8,
+        gcsr_prcfg2: 0x3ffff000,
+        gcsr_prcfg3: 0x8073f2,
+        gcsr_save0: 0x800000001fe001e0,
+        gcsr_save1: 0x0,
+        gcsr_save2: 0x120001ccc,
+        gcsr_save3: 0x0,
+        gcsr_save4: 0x87ecd9dfb5fbe917,
+        gcsr_save5: 0xdd76eabfbbe55f7a,
+        gcsr_save6: 0x9decc07ea4fa3d71,
+        gcsr_save7: 0xbb20cd5d39677545,
+        gcsr_save8: 0x0,
+        gcsr_save9: 0x0,
+        gcsr_save10: 0x0,
+        gcsr_save11: 0x0,
+        gcsr_save12: 0x0,
+        gcsr_save13: 0x0,
+        gcsr_save14: 0x0,
+        gcsr_save15: 0x0,
+        gcsr_tid: 0x2,
+        gcsr_tcfg: 0x0,
+        gcsr_tval: 0xffffffffffff,
+        gcsr_cntc: 0x0,
+        gcsr_ticlr: 0x0,
+        gcsr_llbctl: 0x0,
+        gcsr_tlbrentry: 0x0,
+        gcsr_tlbrbadv: 0x0,
+        gcsr_tlbrera: 0x0,
+        gcsr_tlbrsave: 0x0,
+        gcsr_tlbrelo0: 0x0,
+        gcsr_tlbrelo1: 0x0,
+        gcsr_tlbrehi: 0x0,
+        gcsr_tlbrprmd: 0x0,
+        gcsr_dmw0: 0x0,
+        gcsr_dmw1: 0x0,
+        gcsr_dmw2: 0x0,
+        gcsr_dmw3: 0x0,
+        pgdl: 0x0,
+        pgdh: 0x0,
+    },
+    stack_top: 0x9000000100356000,
+    cpuid: 0x2,
+    power_on: true,
+    init: true,
+}
+[INFO  2] (hvisor::arch::loongarch64::trap:1346) csrxchg emulation for CSR 0x80
+[INFO  2] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x0
+[INFO  2] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x2
+[INFO  2] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x1
+[INFO  2] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x2
+[INFO  2] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x6
+[INFO  2] (hvisor::arch::loongarch64::trap:1334) csrrd emulation for CSR 0x380
+[INFO  2] (hvisor::arch::loongarch64::trap:1334) csrrd emulation for CSR 0x300
+[INFO  2] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x93
+[INFO  2] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x10
+[INFO  2] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x11
+[INFO  2] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x12
+[INFO  2] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x13
+[INFO  2] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x14
+[INFO  2] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x1
+[INFO  2] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x1
+:09 DEBUG hvisor.c:398: memory_region 0: type 0, physical_start c0000000, virtual_start 0, size 10000000
+
+13:30:09 DEBUG hvisor.c:398: memory_region 1: ty[WARN  2] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x900000000093bef4, offset=0x420, size=8, R <-  0x1f200f8880100
+[WARN  2] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x900000000093bf04, offset=0x420, size=8, W ->  0x1f200f8880100
+[INFO  2] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x2
+[INFO  2] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x4
+[INFO  2] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x5
+[INFO  2] (hvisor::arch::loongarch64::trap:1334) csrrd emulation for CSR 0x380
+[INFO  2] (hvisor::arch::loongarch64::trap:1334) csrrd emulation for CSR 0x300
+[WARN  2] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000ea6088, offset=0x1048, size=8, W ->  0x80000004
+[WARN  2] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x9000000000ea6090, offset=0x1048, size=8, W ->  0x80000000
+[INFO  2] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x6
+[INFO  2] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x200
+[INFO  2] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x201
+[INFO  2] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x202
+[INFO  2] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x203
+[INFO  2] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x204
+[INFO  2] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x205
+[INFO  2] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x206
+[INFO  2] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x207
+[INFO  2] (hvisor::arch::loongarch64::trap:1334) csrrd emulation for CSR 0x380
+[INFO  2] (hvisor::arch::loongarch64::trap:1334) csrrd emulation for CSR 0x300
+pe 0, physical_start d0000000, virtual_start 90000000, size 10000000
+
+13:30:09 DEBUG hvisor.c:398: memory_region 2: type 1, physical_start 1fe00000, virtual_start 1fe00000, size 1000
+
+13:30:09 DEBUG hvisor.c:398: memory_region 3: type 1, physical_start 10080000, virtual_start 10080000, size 1000
+
+13:30:09 DEBUG hvisor.c:398: memory_region 4: type 2, physical_start 30001000, virtual_start 30001000, size 200
+
+13:30:09 DEBUG hvisor.c:398: memory_region 5: type 2, physical_start 30002000, virtual_start 30002000, size 200
+
+13:30:09 DEBUG hvisor.c:398: memory_region 6: type 1, physical_start ffffffff0000, virtual_start ffffffff0000, size 1000
+
+13:30:09 DEBUG hvisor.c:398: memory_region 7: type 1, physical_start 10000000, virtual_start 10000000, size 1000
+
+13:30:09 DEBUG hvisor.c:398: memory_region 8: type 1, physical_start 100d0000, virtual_start 100d0000, size 1000
+
+13:30:09 DEBUG hvisor.c:398: memory_region 9: type 1, physical_start efe00000000, virtual_start fe00000000, size 20000000
+
+13:30:09 DEBUG hvisor.c:398: memory_reg[    0.000000] Linux version 6.13.7 (wheatfox@dedsec-amd0) (loongarch64-unknown-linux-gnu-gcc (GCC) 13.0.1 20230316 (experimental), GNU ld (GNU Binutils) 2.40.50.20230316) #207 SMP PREEMPT_RT Wed May  7 21:27:58 CST 2025
+[    0.000000] Loongson-64bit Processor probed (LA664 Core)
+[    0.000000] CPU0 revision is: 0014d000 (Loongson-64bit)
+[    0.000000] FPU0 revision is: 00000000
+[    0.000000] ACPI: Early table checksum verification disabled
+[    0.000000] OF: reserved mem: Reserved memory: No reserved-memory node in the DT
+[    0.000000] DMI not present or invalid.
+[    0.000000] The BIOS Version: (null)
+[    0.000000] software IO TLB: area num 1.
+[    0.000000] software IO TLB: mapped [mem 0x0000000002210000-0x0000000006210000] (64MB)
+[    0.000000] PM: hibernation: Registered nosave memory: [mem 0x01ddc000-0x01ddcfff]
+[    0.000000] Detected 1 available CPU(s)
+[    0.000000] SMP: Allowing 1 CPUs, 0 hotplug CPUs
+[    0.000000] Zone ranges:
+[    0.000000]   DMA32    [mem 0x0000000000200000-0x00000000ffffffff]
+[    0.000000]   Normal   empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000200000-0x000000000effffff]
+[    0.000000]   node   0: [mem 0x0000000090000000-0x000000009fffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000200000-0x000000009fffffff]
+[    0.000000] On node 0, zone DMA32: 512 pages in unavailable ranges
+[    0.000000] On node 0, zone DMA32: 135168 pages in unavailable ranges
+[    0.000000] percpu: Embedded 21 pages/cpu s45808 r8192 d32016 u86016
+[    0.000000] pcpu-alloc: s45808 r8192 d32016 u86016 alloc=21*4096
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Kernel command line: earlycon console=ttyS0,115200n8 initramfs_async=false rootwait debug 
+[    0.000000] printk: log buffer data + meta data: 262144 + 917504 = 1179648 bytes
+[    0.000000] Dentry cache hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 126464
+[    0.000000] mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Dynamic Preempt: full
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu: 	RCU event tracing is enabled.
+[    0.000000] rcu: 	RCU restricting CPUs from NR_CPUS=64 to nr_cpu_ids=1.
+[    0.000000] rcu: 	RCU priority boosting: priority 1 delay 500 ms.
+[    0.000000] rcu: 	RCU_SOFTIRQ processing moved to rcuc kthreads.
+[    0.000000] 	No expedited grace period (rcu_normal_after_boot).
+[    0.000000] 	Trampoline variant of Tasks RCU enabled.
+[    0.000000] 	Tracing variant of Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.000000] RCU Tasks: Setting shift to 0 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=1.
+[    0.000000] RCU Tasks Trace: Setting shift to 0 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=1.
+[    0.000000] NR_IRQS: 16960, nr_irqs: 320, preallocated irqs: 16
+[    0.000000] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.000000] Constant clock event device register
+[    0.000000] clocksource: Constant: mask: 0xffffffffffffffff max_cycles: 0x171024e7e0, max_idle_ns: 440795205315 ns
+[    0.000000] sched_clock: 64 bits at 100MHz, resolution 10ns, wraps every 4398046511100ns
+[    0.000003] Constant clock source device register
+[    0.000273] Console: colour dummy device 80x25
+[    0.000300] Calibrating delay loop (skipped), value calculated using timer frequency.. 200.00 BogoMIPS (lpj=1000000)
+[    0.000308] pid_max: default: 32768 minimum: 301
+[    0.000338] LSM: initializing lsm=capability,yama
+[    0.000358] Yama: becoming mindful.
+[    0.000408] Mount-cache hash table entries: 1024 (order: 1, 8192 bytes, linear)
+[    0.000414] Mountpoint-cache hash table entries: 1024 (order: 1, 8192 bytes, linear)
+[    0.000867] ACPI PPTT: No PPTT table found, CPU and cache topology may be inaccurate
+[    0.000870] Invalid BIOS PPTT
+[    0.001639] rcu: Hierarchical SRCU implementation.
+[    0.001642] rcu: 	Max phase no-delay instances is 1000.
+[    0.002008] smp: Bringing up secondary CPUs ...
+[    0.002017] smp: Brought up 1 node, 1 CPU
+[    0.002058] Memory: 387664K/505856K available (12800K kernel code, 3519K rwdata, 4248K rodata, 11328K init, 806K bss, 116452K reserved, 0K cma-reserved)
+[    0.002259] devtmpfs: initialized
+[    0.003148] Performance counters: loongarch/loongson64 PMU enabled, 4 64-bit counters available to each CPU.
+[    0.004181] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.004188] futex hash table entries: 256 (order: 2, 16384 bytes, linear)
+[    0.004553] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.005223] thermal_sys: Registered thermal governor 'step_wise'
+[    0.005519] hw-breakpoint: Found 0 breakpoint and 0 watchpoint registers.
+[    0.007431] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.007434] HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+[    0.177290] raid6: lasx     gen() 22091 MB/s
+[    0.347290] raid6: lsx      gen() 13555 MB/s
+[    0.517299] raid6: int64x8  gen()  4118 MB/s
+[    0.687298] raid6: int64x4  gen()  5382 MB/s
+[    0.857290] raid6: int64x2  gen()  4774 MB/s
+[    1.027295] raid6: int64x1  gen()  3093 MB/s
+[    1.027297] raid6: using algorithm lasx gen() 22091 MB/s
+[    1.197316] raid6: .... xor() 11667 MB/s, rmw enabled
+[    1.197319] raid6: using lasx recovery algorithm
+[    1.197452] ACPI: Interpreter disabled.
+[    1.197495] iommu: Default domain type: Translated
+[    1.197497] iommu: DMA domain TLB invalidation policy: strict mode
+[    1.197674] SCSI subsystem initialized
+[    1.197775] libata version 3.00 loaded.
+[    1.197891] pps_core: LinuxPPS API ver. 1 registered
+[    1.197894] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    1.198522] vgaarb: loaded
+[    1.198582] clocksource: Switched to clocksource Constant
+[    1.198747] VFS: Disk quotas dquot_6.6.0
+[    1.198760] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    1.198859] pnp: PnP ACPI: disabled
+[    1.204603] NET: Registered PF_INET protocol family
+[    1.204673] IP idents hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    1.204914] tcp_listen_portaddr_hash hash table entries: 256 (order: 1, 10240 bytes, linear)
+[    1.204920] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    1.204927] TCP established hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[    1.204946] TCP bind hash table entries: 4096 (order: 6, 327680 bytes, linear)
+[    1.204983] TCP: Hash tables configured (established 4096 bind 4096)
+[    1.205021] UDP hash table entries: 256 (order: 3, 40960 bytes, linear)
+[    1.205036] UDP-Lite hash table entries: 256 (order: 3, 40960 bytes, linear)
+[    1.205107] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    1.205127] NET: Registered PF_XDP protocol family
+[    1.205136] PCI: CLS 0 bytes, default 64
+[    1.459245] Initialise system trusted keyrings
+[    1.459336] workingset: timestamp_bits=46 max_order=17 bucket_order=0
+[    1.459377] zbud: loaded
+[    1.459646] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    1.459829] SGI XFS with ACLs, security attributes, quota, no debug enabled
+[    1.460089] xor: measuring software checksum speed
+[    1.460326]    8regs           : 13982 MB/sec
+[    1.460655]    8regs_prefetch  : 10053 MB/sec
+[    1.460895]    32regs          : 13737 MB/sec
+[    1.461224]    32regs_prefetch : 10033 MB/sec
+[    1.461457]    lsx             : 14121 MB/sec
+[    1.461601]    lasx            : 22977 MB/sec
+[    1.461602] xor: using function: lasx (22977 MB/sec)
+[    1.461609] Key type asymmetric registered
+[    1.461612] Asymmetric key parser 'x509' registered
+[    1.464105] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 250)
+[    1.464179] io scheduler mq-deadline registered
+[    1.464182] io scheduler kyber registered
+[    1.464200] io scheduler bfq registered
+[    1.466297] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    1.466360] loongson-pci 1a000000.pcie: host bridge /pcie@1a000000 ranges:
+[    1.466374] loongson-pci 1a000000.pcie:       IO 0x0018408000..0x001840ffff -> 0x0000008000
+[    1.466387] loongson-pci 1a000000.pcie:      MEM 0x0060000000..0x007fffffff -> 0x0060000000
+[    1.466401] [wheatfox] loongson_pci_probe: found bridge pcie
+[    1.466405] [kai] loongson_pci_reg1: start=fe00000000, end=fe1fffffff
+[    1.466413] [kai] loongson_cfg1_base=800000fe00000000
+[    1.466415] [wheatfox] loongson_pci_probe: bridge pcie initialized, calling pci_host_probe
+[    1.466510] loongson-pci 1a000000.pcie: PCI host bridge to bus 0000:00
+[    1.466518] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    1.466524] pci_bus 0000:00: root bus resource [io  0x0000-0x7fff] (bus address [0x8000-0xffff])
+[    1.466528] pci_bus 0000:00: root bus resource [mem 0x60000000-0x7fffffff]
+[    1.466552] pci 0000:00:00.0: [0014:7a00] type 00 class 0x060000 conventional PCI endpoint
+[    1.466691] pci 0000:00:00.1: [0014:7a10] type 00 class 0x060000 conventional PCI endpoint
+[    1.466804] pci 0000:00:00.2: [0014:7a20] type 00 class 0x060000 conventional PCI endpoint
+[    1.466914] pci 0000:00:00.3: [0014:7a30] type 00 class 0x060000 conventional PCI endpoint
+[    1.467037] pci 0000:00:04.0: [0014:7a24] type 00 class 0x0c0310 conventional PCI endpoint
+[    1.467046] pci 0000:00:04.0: BAR 0 [mem 0x75940000-0x75947fff 64bit]
+[    1.467153] pci 0000:00:04.1: [0014:7a14] type 00 class 0x0c0320 conventional PCI endpoint
+[    1.467162] pci 0000:00:04.1: BAR 0 [mem 0x75948000-0x7594ffff 64bit]
+[    1.467273] pci 0000:00:05.0: [0014:7a24] type 00 class 0x0c0310 conventional PCI endpoint
+[    1.467281] pci 0000:00:05.0: BAR 0 [mem 0x75950000-0x75957fff 64bit]
+[    1.467387] pci 0000:00:05.1: [0014:7a14] type 00 class 0x0c0320 conventional PCI endpoint
+[    1.467395] pci 0000:00:05.1: BAR 0 [mem 0x75958000-0x7595ffff 64bit]
+[    1.467502] pci 0000:00:06.0: [0014:7a25] type 00 class 0x040000 conventional PCI endpoint
+[    1.467510] pci 0000:00:06.0: BAR 0 [mem 0x7596a000-0x7596a0ff 64bit]
+[    1.467515] pci 0000:00:06.0: BAR 2 [mem 0x60000000-0x6fffffff 64bit]
+[    1.467520] pci 0000:00:06.0: BAR 4 [mem 0x75900000-0x7590ffff 64bit]
+[    1.467619] pci 0000:00:06.1: [0014:7a36] type 00 class 0x030000 conventional PCI endpoint
+[    1.467627] pci 0000:00:06.1: BAR 0 [mem 0x75910000-0x7591ffff 64bit]
+[    1.467720] pci 0000:00:06.1: vgaarb: setting as boot VGA device
+[    1.467724] pci 0000:00:06.1: vgaarb: bridge control possible
+[    1.467726] pci 0000:00:06.1: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+[    1.467751] pci 0000:00:06.2: [0014:7a37] type 00 class 0x040300 conventional PCI endpoint
+[    1.467759] pci 0000:00:06.2: BAR 0 [mem 0x75920000-0x7592ffff 64bit]
+[    1.467868] pci 0000:00:07.0: [0014:7a07] type 00 class 0x040300 conventional PCI endpoint
+[    1.467875] pci 0000:00:07.0: BAR 0 [mem 0x75930000-0x7593ffff 64bit]
+[    1.467985] pci 0000:00:08.0: [0014:7a18] type 00 class 0x010601 conventional PCI endpoint
+[    1.467999] pci 0000:00:08.0: BAR 5 [mem 0x75969800-0x75969bff]
+[    1.468109] pci 0000:00:09.0: [0014:7a49] type 01 class 0x060400 PCIe Root Port
+[    1.468120] pci 0000:00:09.0: BAR 0 [mem 0x75960000-0x75960fff 64bit]
+[    1.468125] pci 0000:00:09.0: PCI bridge to [bus 01]
+[    1.468162] pci 0000:00:09.0: supports D1 D2
+[    1.468166] pci 0000:00:09.0: PME# supported from D0 D1 D3hot D3cold
+[    1.468325] pci 0000:00:0a.0: [0014:7a39] type 01 class 0x060400 PCIe Root Port
+[    1.468336] pci 0000:00:0a.0: BAR 0 [mem 0x75961000-0x75961fff 64bit]
+[    1.468342] pci 0000:00:0a.0: PCI bridge to [bus 02]
+[    1.468346] pci 0000:00:0a.0:   bridge window [io  0x4000-0x4fff]
+[    1.468349] pci 0000:00:0a.0:   bridge window [mem 0x75000000-0x750fffff]
+[    1.468382] pci 0000:00:0a.0: supports D1 D2
+[    1.468384] pci 0000:00:0a.0: PME# supported from D0 D1 D3hot D3cold
+[    1.468538] pci 0000:00:0b.0: [0014:7a39] type 01 class 0x060400 PCIe Root Port
+[    1.468549] pci 0000:00:0b.0: BAR 0 [mem 0x75962000-0x75962fff 64bit]
+[    1.468556] pci 0000:00:0b.0: PCI bridge to [bus 03]
+[    1.468676] pci 0000:00:0b.0: supports D1 D2
+[    1.468679] pci 0000:00:0b.0: PME# supported from D0 D1 D3hot D3cold
+[    1.468834] pci 0000:00:0c.0: [0014:7a39] type 01 class 0x060400 PCIe Root Port
+[    1.468846] pci 0000:00:0c.0: BAR 0 [mem 0x75963000-0x75963fff 64bit]
+[    1.468851] pci 0000:00:0c.0: PCI bridge to [bus 04]
+[    1.468887] pci 0000:00:0c.0: supports D1 D2
+[    1.468889] pci 0000:00:0c.0: PME# supported from D0 D1 D3hot D3cold
+[    1.469036] pci 0000:00:0d.0: [0014:7a49] type 01 class 0x060400 PCIe Root Port
+[    1.469044] pci 0000:00:0d.0: BAR 0 [mem 0x75964000-0x75964fff 64bit]
+[    1.469050] pci 0000:00:0d.0: PCI bridge to [bus 05]
+[    1.469055] pci 0000:00:0d.0:   bridge window [mem 0x75100000-0x751fffff]
+[    1.469080] pci 0000:00:0d.0: supports D1 D2
+[    1.469082] pci 0000:00:0d.0: PME# supported from D0 D1 D3hot D3cold
+[    1.469232] pci 0000:00:0f.0: [0014:7a69] type 01 class 0x060400 PCIe Root Port
+[    1.469242] pci 0000:00:0f.0: BAR 0 [mem 0x75965000-0x75965fff 64bit]
+[    1.469247] pci 0000:00:0f.0: PCI bridge to [bus 06-07]
+[    1.469252] pci 0000:00:0f.0:   bridge window [mem 0x75200000-0x756fffff]
+[    1.469258] pci 0000:00:0f.0:   bridge window [mem 0x75700000-0x757fffff 64bit pref]
+[    1.469284] pci 0000:00:0f.0: supports D1 D2
+[    1.469286] pci 0000:00:0f.0: PME# supported from D0 D1 D3hot D3cold
+[    1.469430] pci 0000:00:10.0: [0014:7a59] type 01 class 0x060400 PCIe Root Port
+[    1.469441] pci 0000:00:10.0: BAR 0 [mem 0x75966000-0x75966fff 64bit]
+[    1.469447] pci 0000:00:10.0: PCI bridge to [bus 08]
+[    1.469482] pci 0000:00:10.0: supports D1 D2
+[    1.469485] pci 0000:00:10.0: PME# supported from D0 D1 D3hot D3cold
+[    1.469643] pci 0000:00:13.0: [0014:7a59] type 01 class 0x060400 PCIe Root Port
+[    1.469654] pci 0000:00:13.0: BAR 0 [mem 0x75967000-0x75967fff 64bit]
+[    1.469660] pci 0000:00:13.0: PCI bridge to [bus 09]
+[    1.469695] pci 0000:00:13.0: supports D1 D2
+[    1.469698] pci 0000:00:13.0: PME# supported from D0 D1 D3hot D3cold
+[    1.469851] pci 0000:00:16.0: [0014:7a1b] type 00 class 0x088000 conventional PCI endpoint
+[    1.469860] pci 0000:00:16.0: BAR 0 [mem 0x75968000-0x75968fff 64bit]
+[    1.469866] pci 0000:00:16.0: BAR 2 [mem 0x74000000-0x74ffffff 64bit]
+[    1.469980] pci 0000:00:19.0: [0014:7a34] type 00 class 0x0c0330 conventional PCI endpoint
+[    1.469988] pci 0000:00:19.0: BAR 0 [mem 0x75800000-0x758fffff 64bit]
+[    1.470097] pci 0000:00:1a.0: [0014:7a1f] type 00 class 0x080600 conventional PCI endpoint
+[    1.470105] pci 0000:00:1a.0: BAR 0 [mem 0x75969c00-0x75969fff 64bit]
+[    1.470111] pci 0000:00:1a.0: BAR 2 [mem 0x70000000-0x73ffffff 64bit]
+[    1.470118] pci 0000:00:1a.0: ROM [mem 0xfffff800-0xffffffff pref]
+[    1.470397] pci 0000:02:00.0: [1f0a:6801] type 00 class 0x020000 PCIe Endpoint
+[    1.470439] pci 0000:02:00.0: BAR 0 [mem 0x75000000-0x75003fff 64bit]
+[    1.470488] pci 0000:02:00.0: BAR 4 [io  0x4000-0x40ff]
+[    1.470648] pci 0000:02:00.0: supports D1
+[    1.470651] pci 0000:02:00.0: PME# supported from D0 D1 D3hot D3cold
+[    1.471088] pci 0000:05:00.0: [1e4b:1202] type 00 class 0x010802 PCIe Endpoint
+[    1.471105] pci 0000:05:00.0: BAR 0 [mem 0x75100000-0x75103fff 64bit]
+[    1.471200] pci 0000:05:00.0: PME# supported from D0 D3hot D3cold
+[    1.471487] pci 0000:06:00.0: [8086:1521] type 00 class 0x020000 PCIe Endpoint
+[    1.471508] pci 0000:06:00.0: BAR 0 [mem 0x75200000-0x752fffff]
+[    1.471536] pci 0000:06:00.0: BAR 3 [mem 0x75600000-0x75603fff]
+[    1.471669] pci 0000:06:00.0: PME# supported from D0 D3hot D3cold
+[    1.471712] pci 0000:06:00.0: VF BAR 0 [mem 0x75700000-0x75703fff 64bit pref]
+[    1.471715] pci 0000:06:00.0: VF BAR 0 [mem 0x75700000-0x7571ffff 64bit pref]: contains BAR 0 for 8 VFs
+[    1.471741] pci 0000:06:00.0: VF BAR 3 [mem 0x75720000-0x75723fff 64bit pref]
+[    1.471743] pci 0000:06:00.0: VF BAR 3 [mem 0x75720000-0x7573ffff 64bit pref]: contains BAR 3 for 8 VFs
+[    1.472040] pci 0000:06:00.1: [8086:1521] type 00 class 0x020000 PCIe Endpoint
+[    1.472060] pci 0000:06:00.1: BAR 0 [mem 0x75300000-0x753fffff]
+[    1.472090] pci 0000:06:00.1: BAR 3 [mem 0x75604000-0x75607fff]
+[    1.472216] pci 0000:06:00.1: PME# supported from D0 D3hot D3cold
+[    1.472257] pci 0000:06:00.1: VF BAR 0 [mem 0x75740000-0x75743fff 64bit pref]
+[    1.472260] pci 0000:06:00.1: VF BAR 0 [mem 0x75740000-0x7575ffff 64bit pref]: contains BAR 0 for 8 VFs
+[    1.472286] pci 0000:06:00.1: VF BAR 3 [mem 0x75760000-0x75763fff 64bit pref]
+[    1.472289] pci 0000:06:00.1: VF BAR 3 [mem 0x75760000-0x7577ffff 64bit pref]: contains BAR 3 for 8 VFs
+[    1.472576] pci 0000:06:00.2: [8086:1521] type 00 class 0x020000 PCIe Endpoint
+[    1.472597] pci 0000:06:00.2: BAR 0 [mem 0x75400000-0x754fffff]
+[    1.472625] pci 0000:06:00.2: BAR 3 [mem 0x75608000-0x7560bfff]
+[    1.472752] pci 0000:06:00.2: PME# supported from D0 D3hot D3cold
+[    1.472793] pci 0000:06:00.2: VF BAR 0 [mem 0x75780000-0x75783fff 64bit pref]
+[    1.472797] pci 0000:06:00.2: VF BAR 0 [mem 0x75780000-0x7579ffff 64bit pref]: contains BAR 0 for 8 VFs
+[    1.472823] pci 0000:06:00.2: VF BAR 3 [mem 0x757a0000-0x757a3fff 64bit pref]
+[    1.472825] pci 0000:06:00.2: VF BAR 3 [mem 0x757a0000-0x757bffff 64bit pref]: contains BAR 3 for 8 VFs
+[    1.473111] pci 0000:06:00.3: [8086:1521] type 00 class 0x020000 PCIe Endpoint
+[    1.473131] pci 0000:06:00.3: BAR 0 [mem 0x75500000-0x755fffff]
+[    1.473160] pci 0000:06:00.3: BAR 3 [mem 0x7560c000-0x7560ffff]
+[    1.473286] pci 0000:06:00.3: PME# supported from D0 D3hot D3cold
+[    1.473328] pci 0000:06:00.3: VF BAR 0 [mem 0x757c0000-0x757c3fff 64bit pref]
+[    1.473332] pci 0000:06:00.3: VF BAR 0 [mem 0x757c0000-0x757dffff 64bit pref]: contains BAR 0 for 8 VFs
+[    1.473357] pci 0000:06:00.3: VF BAR 3 [mem 0x757e0000-0x757e3fff 64bit pref]
+[    1.473360] pci 0000:06:00.3: VF BAR 3 [mem 0x757e0000-0x757fffff 64bit pref]: contains BAR 3 for 8 VFs
+[    1.473775] pci 0000:00:0f.0: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 06-07] add_size 100000 add_align 100000
+[    1.473806] pci 0000:00:06.0: BAR 2 [mem 0x60000000-0x6fffffff 64bit]: assigned
+[    1.473814] pci 0000:00:1a.0: BAR 2 [mem 0x70000000-0x73ffffff 64bit]: assigned
+[    1.473821] pci 0000:00:16.0: BAR 2 [mem 0x74000000-0x74ffffff 64bit]: assigned
+[    1.473827] pci 0000:00:0a.0: bridge window [mem 0x75000000-0x750fffff]: assigned
+[    1.473831] pci 0000:00:0d.0: bridge window [mem 0x75100000-0x751fffff]: assigned
+[    1.473835] pci 0000:00:0f.0: bridge window [mem 0x75200000-0x756fffff]: assigned
+[    1.473839] pci 0000:00:0f.0: bridge window [mem 0x75700000-0x757fffff 64bit pref]: assigned
+[    1.473844] pci 0000:00:19.0: BAR 0 [mem 0x75800000-0x758fffff 64bit]: assigned
+[    1.473850] pci 0000:00:06.0: BAR 4 [mem 0x75900000-0x7590ffff 64bit]: assigned
+[    1.473856] pci 0000:00:06.1: BAR 0 [mem 0x75910000-0x7591ffff 64bit]: assigned
+[    1.473862] pci 0000:00:06.2: BAR 0 [mem 0x75920000-0x7592ffff 64bit]: assigned
+[    1.473868] pci 0000:00:07.0: BAR 0 [mem 0x75930000-0x7593ffff 64bit]: assigned
+[    1.473874] pci 0000:00:04.0: BAR 0 [mem 0x75940000-0x75947fff 64bit]: assigned
+[    1.473880] pci 0000:00:04.1: BAR 0 [mem 0x75948000-0x7594ffff 64bit]: assigned
+[    1.473886] pci 0000:00:05.0: BAR 0 [mem 0x75950000-0x75957fff 64bit]: assigned
+[    1.473892] pci 0000:00:05.1: BAR 0 [mem 0x75958000-0x7595ffff 64bit]: assigned
+[    1.473899] pci 0000:00:09.0: BAR 0 [mem 0x75960000-0x75960fff 64bit]: assigned
+[    1.473907] pci 0000:00:0a.0: BAR 0 [mem 0x75961000-0x75961fff 64bit]: assigned
+[    1.473914] pci 0000:00:0a.0: bridge window [io  0x4000-0x4fff]: assigned
+[    1.473918] pci 0000:00:0b.0: BAR 0 [mem 0x75962000-0x75962fff 64bit]: assigned
+[    1.473926] pci 0000:00:0c.0: BAR 0 [mem 0x75963000-0x75963fff 64bit]: assigned
+[    1.473934] pci 0000:00:0d.0: BAR 0 [mem 0x75964000-0x75964fff 64bit]: assigned
+[    1.473941] pci 0000:00:0f.0: BAR 0 [mem 0x75965000-0x75965fff 64bit]: assigned
+[    1.473947] pci 0000:00:10.0: BAR 0 [mem 0x75966000-0x75966fff 64bit]: assigned
+[    1.473956] pci 0000:00:13.0: BAR 0 [mem 0x75967000-0x75967fff 64bit]: assigned
+[    1.473964] pci 0000:00:16.0: BAR 0 [mem 0x75968000-0x75968fff 64bit]: assigned
+[    1.473971] pci 0000:00:1a.0: ROM [mem 0x75969000-0x759697ff pref]: assigned
+[    1.473976] pci 0000:00:08.0: BAR 5 [mem 0x75969800-0x75969bff]: assigned
+[    1.473982] pci 0000:00:1a.0: BAR 0 [mem 0x75969c00-0x75969fff 64bit]: assigned
+[    1.473989] pci 0000:00:06.0: BAR 0 [mem 0x7596a000-0x7596a0ff 64bit]: assigned
+[    1.474003] pci 0000:00:09.0: PCI bridge to [bus 01]
+[    1.474014] pci 0000:02:00.0: BAR 0 [mem 0x75000000-0x75003fff 64bit]: assigned
+[    1.474035] pci 0000:02:00.0: BAR 4 [io  0x4000-0x40ff]: assigned
+[    1.474045] pci 0000:00:0a.0: PCI bridge to [bus 02]
+[    1.474049] pci 0000:00:0a.0:   bridge window [io  0x4000-0x4fff]
+[    1.474053] pci 0000:00:0a.0:   bridge window [mem 0x75000000-0x750fffff]
+[    1.474057] pci 0000:00:0b.0: PCI bridge to [bus 03]
+[    1.474062] pci 0000:00:0c.0: PCI bridge to [bus 04]
+[    1.474072] pci 0000:05:00.0: BAR 0 [mem 0x75100000-0x75103fff 64bit]: assigned
+[    1.474082] pci 0000:00:0d.0: PCI bridge to [bus 05]
+[    1.474086] pci 0000:00:0d.0:   bridge window [mem 0x75100000-0x751fffff]
+[    1.474099] pci 0000:06:00.0: BAR 0 [mem 0x75200000-0x752fffff]: assigned
+[    1.474107] pci 0000:06:00.1: BAR 0 [mem 0x75300000-0x753fffff]: assigned
+[    1.474114] pci 0000:06:00.2: BAR 0 [mem 0x75400000-0x754fffff]: assigned
+[    1.474120] pci 0000:06:00.3: BAR 0 [mem 0x75500000-0x755fffff]: assigned
+[    1.474126] pci 0000:06:00.0: BAR 3 [mem 0x75600000-0x75603fff]: assigned
+[    1.474133] pci 0000:06:00.0: VF BAR 0 [mem 0x75700000-0x7571ffff 64bit pref]: assigned
+[    1.474141] pci 0000:06:00.0: VF BAR 3 [mem 0x75720000-0x7573ffff 64bit pref]: assigned
+[    1.474149] pci 0000:06:00.1: BAR 3 [mem 0x75604000-0x75607fff]: assigned
+[    1.474155] pci 0000:06:00.1: VF BAR 0 [mem 0x75740000-0x7575ffff 64bit pref]: assigned
+[    1.474163] pci 0000:06:00.1: VF BAR 3 [mem 0x75760000-0x7577ffff 64bit pref]: assigned
+[    1.474170] pci 0000:06:00.2: BAR 3 [mem 0x75608000-0x7560bfff]: assigned
+[    1.474177] pci 0000:06:00.2: VF BAR 0 [mem 0x75780000-0x7579ffff 64bit pref]: assigned
+[    1.474184] pci 0000:06:00.2: VF BAR 3 [mem 0x757a0000-0x757bffff 64bit pref]: assigned
+[    1.474192] pci 0000:06:00.3: BAR 3 [mem 0x7560c000-0x7560ffff]: assigned
+[    1.474198] pci 0000:06:00.3: VF BAR 0 [mem 0x757c0000-0x757dffff 64bit pref]: assigned
+[    1.474205] pci 0000:06:00.3: VF BAR 3 [mem 0x757e0000-0x757fffff 64bit pref]: assigned
+[    1.474216] pci 0000:00:0f.0: PCI bridge to [bus 06-07]
+[    1.474221] pci 0000:00:0f.0:   bridge window [mem 0x75200000-0x756fffff]
+[    1.474225] pci 0000:00:0f.0:   bridge window [mem 0x75700000-0x757fffff 64bit pref]
+[    1.474229] pci 0000:00:10.0: PCI bridge to [bus 08]
+[    1.474234] pci 0000:00:13.0: PCI bridge to [bus 09]
+[    1.474241] pci_bus 0000:00: resource 4 [io  0x0000-0x7fff]
+[    1.474243] pci_bus 0000:00: resource 5 [mem 0x60000000-0x7fffffff]
+[    1.474246] pci_bus 0000:02: resource 0 [io  0x4000-0x4fff]
+[    1.474248] pci_bus 0000:02: resource 1 [mem 0x75000000-0x750fffff]
+[    1.474250] pci_bus 0000:05: resource 1 [mem 0x75100000-0x751fffff]
+[    1.474253] pci_bus 0000:06: resource 1 [mem 0x75200000-0x756fffff]
+[    1.474254] pci_bus 0000:06: resource 2 [mem 0x75700000-0x757fffff 64bit pref]
+[    1.474903] pcieport 0000:00:09.0: PME: Signaling with IRQ 21
+[    1.475072] pcieport 0000:00:09.0: AER: enabled with IRQ 21
+[    1.475774] pcieport 0000:00:0a.0: PME: Signaling with IRQ 23
+[    1.475952] pcieport 0000:00:0a.0: AER: enabled with IRQ 23
+[    1.476645] pcieport 0000:00:0b.0: PME: Signaling with IRQ 25
+[    1.476818] pcieport 0000:00:0b.0: AER: enabled with IRQ 25
+[    1.477514] pcieport 0000:00:0c.0: PME: Signaling with IRQ 27
+[    1.477693] pcieport 0000:00:0c.0: AER: enabled with IRQ 27
+[    1.478387] pcieport 0000:00:0d.0: PME: Signaling with IRQ 29
+[    1.478568] pcieport 0000:00:0d.0: AER: enabled with IRQ 29
+[    1.479321] pcieport 0000:00:0f.0: PME: Signaling with IRQ 31
+[    1.479492] pcieport 0000:00:0f.0: AER: enabled with IRQ 31
+[    1.480191] pcieport 0000:00:10.0: PME: Signaling with IRQ 33
+[    1.480364] pcieport 0000:00:10.0: AER: enabled with IRQ 33
+[    1.481050] pcieport 0000:00:13.0: PME: Signaling with IRQ 35
+[    1.481230] pcieport 0000:00:13.0: AER: enabled with IRQ 35
+[    1.495474] Serial: 8250/16550 driver, 16 ports, IRQ sharing enabled
+[    1.498991] of_serial 1fe001e0.serial: error -ENXIO: IRQ index 0 not found
+[    1.499128] printk: legacy console [ttyS0] disabled
+[    1.499367] 1fe001e0.serial: ttyS0 at MMIO 0x1fe001e0 (irq = 0, base_baud = 6250000) is a 16550A
+[    1.499399] printk: legacy console [ttyS0] enabled
+[    2.058872] loongson 0000:00:06.1: Found LS7A2000 bridge chipset, revision: 2
+[    2.058936] loongson 0000:00:06.1: [drm] dc: 400MHz, gmc: 1200MHz, gpu: 480MHz
+[    2.058947] loongson 0000:00:06.1: [drm] Dedicated vram start: 0x60000000, size: 256MiB
+[    2.088646] loongson 0000:00:06.1: [drm] VRAM: 65536 pages ready
+[    2.088652] loongson 0000:00:06.1: [drm] GTT: 131072 pages ready
+[    2.088746] loongson 0000:00:06.1: [drm] lsdc-i2c0(sda pin mask=1, scl pin mask=2) created
+[    2.088802] loongson 0000:00:06.1: [drm] lsdc-i2c1(sda pin mask=4, scl pin mask=8) created
+[    2.088814] loongson 0000:00:06.1: [drm] display pipe-0 has HDMI and/or VGA
+[    2.088822] loongson 0000:00:06.1: [drm] display pipe-1 has HDMI 
+[    2.088846] loongson 0000:00:06.1: [drm] Total 2 outputs
+[    3.843260] loongson 0000:00:06.1: [drm] registered irq: 37
+[    3.843868] [drm] Initialized loongson 1.0.0 for 0000:00:06.1 on minor 0
+[WARN  2] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x5555556fada0, offset=0x1040, size=4, W ->  0xffffffff80000003
+[INFO  2] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x0
+[INFO  2] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x0
+[INFO  2] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x0
+[    4.038599] random: crng init done
+[    4.118744] ------------[ cut here ]------------
+[    4.118747] [CRTC:45:LS-CRTC-1] vblank wait timed out
+[    4.118767] WARNING: CPU: 0 PID: 1 at drivers/gpu/drm/drm_atomic_helper.c:1682 drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[    4.118782] Modules linked in:
+[    4.118786] CPU: 0 UID: 0 PID: 1 Comm: swapper/0 Not tainted 6.13.7 #207
+[    4.118790] pc 9000000000aba9b4 ra 9000000000aba9b4 tp 9000000006888000 sp 900000000688b540
+[    4.118793] a0 0000000000000029 a1 9000000001ed0f80 a2 900000000688b2c8 a3 9000000001ed0f88
+[    4.118795] a4 9000000001ed0f80 a5 900000000688b2c0 a6 0000000000000001 a7 0000000000000001
+[    4.118798] t0 cde9f3063e1a41a0 t1 cde9f3063e1a41a0 t2 0000000000000000 t3 80000000ffffe16d
+[    4.118799] t4 00000000ffffe16d t5 000000000000016f t6 000000000000002f t7 0000000000000063
+[    4.118801] t8 000000000000002d u0 9000000001c65ec8 s9 0000000000000aed s0 0000000000000038
+[    4.118803] s1 0000000000000002 s2 9000000006ee8000 s3 9000000006eeaef0 s4 0000000000000038
+[    4.118805] s5 0000000000000001 s6 0000000000000001 s7 90000000069a7400 s8 0000000000000000
+[    4.118806]    ra: 9000000000aba9b4 drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[    4.118811]   ERA: 9000000000aba9b4 drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[    4.118815]  CRMD: 000000b0 (PLV0 -IE -DA +PG DACF=CC DACM=CC -WE)
+[    4.118822]  PRMD: 00000004 (PPLV0 +PIE -PWE)
+[    4.118825]  EUEN: 00000000 (-FPE -SXE -ASXE -BTE)
+[    4.118830]  ECFG: 00071c1d (LIE=0,2-4,10-12 VS=7)
+[    4.118833] ESTAT: 000c0000 [BRK] (IS= ECode=12 EsubCode=0)
+[    4.119014]  PRID: 0014d000 (Loongson-64bit, Loongson3)
+[    4.119018] CPU: 0 UID: 0 PID: 1 Comm: swapper/0 Not tainted 6.13.7 #207
+[    4.119022] Stack : 9000000001cbae80 0000000000000000 900000000023d3fc 9000000006888000
+[    4.119027]         900000000688b190 900000000688b198 0000000000000000 900000000688b2d8
+[    4.119031]         900000000688b2d0 900000000688b2d0 900000000688b040 0000000000000001
+[    4.119035]         0000000000000001 900000000688b198 cde9f3063e1a41a0 9000000006908000
+[    4.119038]         80000000ffffe181 00000000ffffe181 0000000000000183 0000000000000020
+[    4.119042]         0000000000000063 000000000000000c 000000000493b000 0000000000000aed
+[    4.119046]         0000000000000000 0000000000000000 9000000001c334a0 9000000001dec000
+[    4.119049]         0000000000000000 0000000000000692 0000000000000001 90000000069a7400
+[    4.119053]         0000000000000000 0000000000000000 900000000023d414 00007ffffbb1aff8
+[    4.119057]         00000000000000b0 0000000000000004 0000000000000000 0000000000071c1d
+[    4.119060]         ...
+[    4.119062] Call Trace:
+[    4.119063] [<900000000023d414>] show_stack+0x5c/0x180
+[    4.119071] [<90000000002390dc>] dump_stack_lvl+0x70/0xa0
+[    4.119075] [<9000000000258304>] __warn+0x84/0xfc
+[    4.119079] [<9000000000e59838>] report_bug+0x19c/0x204
+[    4.119085] [<9000000000e8b17c>] do_bp+0x264/0x2b4
+[    4.119092] [<0000000000000000>] 0x0
+[    4.119095] [<9000000000aba9b4>] drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[    4.119101] [<9000000000abb7fc>] drm_atomic_helper_commit_tail+0x88/0xa4
+[    4.119105] [<9000000000abc898>] commit_tail+0xac/0x190
+[    4.119109] [<9000000000abcae8>] drm_atomic_helper_commit+0x164/0x190
+[    4.119113] [<9000000000a7b5e8>] drm_atomic_commit+0x8c/0xc4
+[    4.119116] [<9000000000aafc84>] drm_client_modeset_commit_atomic+0x23c/0x280
+[    4.119120] [<9000000000aaff28>] drm_client_modeset_commit_locked+0x6c/0x17c
+[    4.119122] [<9000000000ab0064>] drm_client_modeset_commit+0x2c/0x58
+[    4.119125] [<9000000000ac8cfc>] __drm_fb_helper_restore_fbdev_mode_unlocked+0xb0/0xf8
+[    4.119131] [<9000000000ac8d70>] drm_fb_helper_set_par+0x2c/0x48
+[    4.119135] [<900000000099e21c>] fbcon_init+0x260/0x58c
+[    4.119139] [<9000000000a4ae50>] visual_init+0xb4/0x118
+[    4.119145] [<9000000000a4d8cc>] do_bind_con_driver.isra.0+0x210/0x454
+[    4.119148] [<9000000000a4dc58>] do_take_over_console+0x148/0x1f8
+[    4.119151] [<900000000099b22c>] do_fbcon_takeover+0x60/0xd0
+[    4.119156] [<900000000099f9a8>] fbcon_fb_registered+0x12c/0x18c
+[    4.119159] [<90000000009935b0>] do_register_framebuffer+0x1e0/0x288
+[    4.119163] [<9000000000993684>] register_framebuffer+0x2c/0x54
+[    4.119167] [<9000000000ac7194>] __drm_fb_helper_initial_config_and_unlock+0x350/0x580
+[    4.119172] [<9000000000ac9288>] drm_fbdev_client_hotplug+0x80/0xd8
+[    4.119176] [<9000000000aaeabc>] drm_client_register+0x5c/0xa0
+[    4.119179] [<9000000000ac93e0>] drm_fbdev_client_setup+0xa4/0x190
+[    4.119184] [<9000000000ac9094>] drm_client_setup+0x14/0x50
+[    4.119188] [<9000000000ae3568>] lsdc_pci_probe+0x464/0x584
+[    4.119192] [<9000000000964958>] pci_device_probe+0xbc/0x160
+[    4.119197] [<9000000000af7004>] really_probe+0xac/0x2dc
+[    4.119202] [<9000000000af72c0>] __driver_probe_device+0x8c/0x128
+[    4.119207] [<9000000000af7454>] driver_probe_device+0x3c/0x118
+[    4.119211] [<9000000000af7724>] __driver_attach+0x98/0x194
+[    4.119214] [<9000000000af4cc8>] bus_for_each_dev+0x88/0xe8
+[    4.119218] [<9000000000af611c>] bus_add_driver+0xf4/0x208
+[    4.119222] [<9000000000af84dc>] driver_register+0x68/0x134
+[    4.119226] [<900000000023a154>] do_one_initcall+0x78/0x1cc
+[    4.119230] [<9000000000ea0f9c>] kernel_init_freeable+0x1c8/0x238
+[    4.119236] [<9000000000e8c244>] kernel_init+0x1c/0x108
+[    4.119240] [<900000000023b2a8>] ret_from_kernel_thread+0xc/0xa4
+[    4.119244] 
+[    4.119245] ---[ end trace 0000000000000000 ]---
+[   14.478751] loongson 0000:00:06.1: [drm] *ERROR* flip_done timed out
+[   14.478755] loongson 0000:00:06.1: [drm] *ERROR* [CRTC:45:LS-CRTC-1] commit wait timed out
+[   24.718748] loongson 0000:00:06.1: [drm] *ERROR* flip_done timed out
+[   24.718752] loongson 0000:00:06.1: [drm] *ERROR* [CONNECTOR:35:HDMI-A-2] commit wait timed out
+[   34.958748] loongson 0000:00:06.1: [drm] *ERROR* flip_done timed out
+[   34.958751] loongson 0000:00:06.1: [drm] *ERROR* [PLANE:41:ls-primary-plane-1] commit wait timed out
+[   35.068746] ------------[ cut here ]------------
+[   35.068749] [CRTC:45:LS-CRTC-1] vblank wait timed out
+[   35.068765] WARNING: CPU: 0 PID: 1 at drivers/gpu/drm/drm_atomic_helper.c:1682 drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[   35.068773] Modules linked in:
+[   35.068777] CPU: 0 UID: 0 PID: 1 Comm: swapper/0 Tainted: G        W          6.13.7 #207
+[   35.068781] Tainted: [W]=WARN
+[   35.068782] pc 9000000000aba9b4 ra 9000000000aba9b4 tp 9000000006888000 sp 900000000688b2c0
+[   35.068785] a0 0000000000000029 a1 9000000001ed0f80 a2 900000000688b048 a3 9000000001ed0f88
+[   35.068787] a4 9000000001ed0f80 a5 900000000688b040 a6 0000000000000001 a7 0000000000000001
+[   35.068788] t0 cde9f3063e1a41a0 t1 cde9f3063e1a41a0 t2 0000000000000000 t3 80000000ffffe1c1
+[   35.068790] t4 00000000ffffe1c1 t5 00000000000001c3 t6 000000000000002f t7 0000000000000063
+[   35.068792] t8 000000000000002d u0 9000000001c65ec8 s9 000000000000195b s0 0000000000000038
+[   35.068793] s1 0000000000000002 s2 9000000006ee8000 s3 9000000006eeaef0 s4 0000000000000038
+[   35.068795] s5 0000000000000001 s6 0000000000000001 s7 90000000069a7400 s8 0000000000000000
+[   35.068797]    ra: 9000000000aba9b4 drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[   35.068802]   ERA: 9000000000aba9b4 drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[   35.068806]  CRMD: 000000b0 (PLV0 -IE -DA +PG DACF=CC DACM=CC -WE)
+[   35.068813]  PRMD: 00000004 (PPLV0 +PIE -PWE)
+[   35.068816]  EUEN: 00000000 (-FPE -SXE -ASXE -BTE)
+[   35.068820]  ECFG: 00071c1d (LIE=0,2-4,10-12 VS=7)
+[   35.068823] ESTAT: 000c0000 [BRK] (IS= ECode=12 EsubCode=0)
+[   35.069003]  PRID: 0014d000 (Loongson-64bit, Loongson3)
+[   35.069007] CPU: 0 UID: 0 PID: 1 Comm: swapper/0 Tainted: G        W          6.13.7 #207
+[   35.069010] Tainted: [W]=WARN
+[   35.069012] Stack : 9000000001c86fe8 0000000000000000 900000000023d3fc 9000000006888000
+[   35.069016]         900000000688af10 900000000688af18 0000000000000000 900000000688b058
+[   35.069020]         900000000688b050 900000000688b050 900000000688adc0 0000000000000001
+[   35.069024]         0000000000000001 900000000688af18 cde9f3063e1a41a0 9000000006908000
+[   35.069027]         80000000ffffe1d7 00000000ffffe1d7 00000000000001d9 0000000000000020
+[   35.069031]         0000000000000063 000000000000000c 000000000493b000 000000000000195b
+[   35.069035]         0000000000000000 0000000000000000 9000000001c334a0 9000000001dec000
+[   35.069038]         0000000000000000 0000000000000692
+[   35.069041] Call Trace:
+[   35.069042] [<900000000023d414>] show_stack+0x5c/0x180
+[   35.069048] [<90000000002390dc>] dump_stack_lvl+0x70/0xa0
+[   35.069052] [<9000000000258304>] __warn+0x84/0xfc
+[   35.069056] [<9000000000e59838>] report_bug+0x19c/0x204
+[   35.069060] [<9000000000e8b17c>] do_bp+0x264/0x2b4
+[   35.069066] [<0000000000000000>] 0x0
+[   35.069068] [<9000000000aba9b4>] drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[   35.069074] [<9000000000abb7fc>] drm_atomic_helper_commit_tail+0x88/0xa4
+[   35.069078] [<9000000000abc898>] commit_tail+0xac/0x190
+[   35.069082] [<9000000000abcae8>] drm_atomic_helper_commit+0x164/0x190
+[   35.069086] [<9000000000a7b5e8>] drm_atomic_commit+0x8c/0xc4
+[   35.069089] [<9000000000aafc84>] drm_client_modeset_commit_atomic+0x23c/0x280
+[   35.069092] [<9000000000aaff28>] drm_client_modeset_commit_locked+0x6c/0x17c
+[   35.069095] [<9000000000ac88c8>] drm_fb_helper_pan_display+0x100/0x248
+[   35.069100] [<9000000000992d80>] fb_pan_display+0x74/0x124
+[   35.069104] [<90000000009a0328>] bit_update_start+0x20/0x4c
+[   35.069107] [<900000000099f208>] fbcon_switch+0x3cc/0x59c
+[   35.069110] [<9000000000a4c070>] redraw_screen+0xf0/0x298
+[   35.069112] [<900000000099c0fc>] fbcon_prepare_logo+0x470/0x4b8
+[   35.069117] [<900000000099e394>] fbcon_init+0x3d8/0x58c
+[   35.069119] [<9000000000a4ae50>] visual_init+0xb4/0x118
+[   35.069123] [<9000000000a4d8cc>] do_bind_con_driver.isra.0+0x210/0x454
+[   35.069126] [<9000000000a4dc58>] do_take_over_console+0x148/0x1f8
+[   35.069129] [<900000000099b22c>] do_fbcon_takeover+0x60/0xd0
+[   35.069133] [<900000000099f9a8>] fbcon_fb_registered+0x12c/0x18c
+[   35.069136] [<90000000009935b0>] do_register_framebuffer+0x1e0/0x288
+[   35.069139] [<9000000000993684>] register_framebuffer+0x2c/0x54
+[   35.069142] [<9000000000ac7194>] __drm_fb_h[WARN  2] (hvisor::device::irqchip::ls7a2000:89) loongarch64: inject_irq: _irq: 5, is_hardware: false
+[WARN  2] (hvisor::device::irqchip::ls7a2000:126) loongarch64: clear_hwi_injected_irq: current gintc: 0xff00
+elper_initial_config_and_unlock+0x350/0x580
+[   35.069147] [<9000000000ac9288>] drm_fbdev_client_hotplug+0x80/0xd8
+[   35.069151] [<9000000000aaeabc>] drm_client_register+0x5c/0xa0
+[   35.069154] [<9000000000ac93e0>] drm_fbdev_client_setup+0xa4/0x190
+[   35.069158] [<9000000000ac9094>] drm_client_setup+0x14/0x50
+[   35.069162] [<9000000000ae3568>] lsdc_pci_probe+0x464/0x584
+[   35.069165] [<9000000000964958>] pci_device_probe+0xbc/0x160
+[   35.069169] [<9000000000af7004>] really_probe+0xac/0x2dc
+[   35.069174] [<9000000000af72c0>] __driver_probe_device+0x8c/0x128
+[   35.069178] [<9000000000af7454>] driver_probe_device+0x3c/0x118
+[   35.069182] [<9000000000af7724>] __driver_attach+0x98/0x194
+[   35.069186] [<9000000000af4cc8>] bus_for_each_dev+0x88/0xe8
+[   35.069189] [<9000000000af611c>] bus_add_driver+0xf4/0x208
+[   35.069193] [<9000000000af84dc>] driver_register+0x68/0x134
+[   35.069197] [<900000000023a154>] do_one_initcall+0x78/0x1cc
+[   35.069201] [<9000000000ea0f9c>] kernel_init_freeable+0x1c8/0x238
+[   35.069206] [<9000000000e8c244>] kernel_init+0x1c/0x108
+[   35.069211] [<900000000023b2a8>] ret_from_kernel_thread+0xc/0xa4
+[   35.069215] 
+[   35.069216] ---[ end trace 0000000000000000 ]---
+[   35.071615] Console: switching to colour frame buffer device 240x67
+[   45.198747] loongson 0000:00:06.1: [drm] *ERROR* flip_done timed out
+[   45.198751] loongson 0000:00:06.1: [drm] *ERROR* [CRTC:45:LS-CRTC-1] commit wait timed out
+[   55.438747] loongson 0000:00:06.1: [drm] *ERROR* flip_done timed out
+[   55.438751] loongson 0000:00:06.1: [drm] *ERROR* [CONNECTOR:35:HDMI-A-2] commit wait timed out
+[  37m[WA6RN  50] (hv.isor:6:ar7ch::loong8ar7ch64::zone4:534) 4loon]garch64:  gelneric mmioo handler, zone_era=0x9o00000000n0850110, ogffsset=0x1808o, size=8,n W  ->  0x1000
+00:00:06.1: [drm] *ERROR* flip_done timed out
+[   65.678748] loongson 0000:00:06.1: [drm] *ERROR* [PLANE:41:ls-primary-plane-1] commit wait timed out
+[   65.788744] ------------[ cut here ]------------
+[   65.788746] [CRTC:45:LS-CRTC-1] vblank wait timed out
+[   65.788762] WARNING: CPU: 0 PID: 1 at drivers/gpu/drm/drm_atomic_helper.c:1682 drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[   65.788770] Modules linked in:
+[   65.788773] CPU: 0 UID: 0 PID: 1 Comm: swapper/0 Tainted: G        W          6.13.7 #207
+[   65.788777] Tainted: [W]=WARN
+[   65.788779] pc 9000000000aba9b4 ra 9000000000aba9b4 tp 9000000006888000 sp 900000000688b400
+[   65.788781] a0 0000000000000029 a1 9000000001ed0f80 a2 900000000688b188 a3 9000000001ed0f88
+[   65.788783] a4 9000000001ed0f80 a5 900000000688b180 a6 0000000000000001 a7 0000000000000001
+[   65.788784] t0 cde9f3063e1a41a0 t1 cde9f3063e1a41a0 t2 0000000000000000 t3 80000000ffffe218
+[   65.788786] t4 00000000ffffe218 t5 000000000000021a t6 000000000000002f t7 0000000000000063
+[   65.788787] t8 000000000000002d u0 9000000001c65ec8 s9 00000000000027ad s0 0000000000000038
+[   65.788789] s1 0000000000000002 s2 9000000006ee8000 s3 9000000006eeaef0 s4 0000000000000038
+[   65.788791] s5 0000000000000001 s6 0000000000000001 s7 90000000069a7400 s8 0000000000000000
+[   65.788792]    ra: 9000000000aba9b4 drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[   65.788798]   ERA: 9000000000aba9b4 drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[   65.788802]  CRMD: 000000b0 (PLV0 -IE -DA +PG DACF=CC DACM=CC -WE)
+[   65.788808]  PRMD: 00000004 (PPLV0 +PIE -PWE)
+[   65.788811]  EUEN: 00000000 (-FPE -SXE -ASXE -BTE)
+[   65.788815]  ECFG: 00071c1d (LIE=0,2-4,10-12 VS=7)
+[   65.788819] ESTAT: 000c0000 [BRK] (IS= ECode=12 EsubCode=0)
+[   65.788999]  PRID: 0014d000 (Loongson-64bit, Loongson3)
+[   65.789002] CPU: 0 UID: 0 PID: 1 Comm: swapper/0 Tainted: G        W          6.13.7 #207
+[   65.789006] Tainted: [W]=WARN
+[   65.789007] Stack : 9000000001c86fe8 0000000000000000 900000000023d3fc 9000000006888000
+[   65.789012]         900000000688b050 900000000688b058 0000000000000000 900000000688b198
+[   65.789016]         900000000688b190 900000000688b190 900000000688af00 0000000000000001
+[   65.789020]         0000000000000001 900000000688b058 cde9f3063e1a41a0 9000000006908000
+[   65.789024]         80000000ffffe22e 00000000ffffe22e 0000000000000230 0000000000000020
+[   65.789027]         0000000000000063 000000000000000c 000000000493b000 00000000000027ad
+[   65.789031]         0000000000000000 0000000000000000 9000000001c334a0 9000000001dec000
+[   65.789035]         0000000000000000 0000000000000692 0000000000000001 90000000069a7400
+[   65.789038]         0000000000000000 0000000000000000 900000000023d414 00007ffffbb1aff8
+[   65.789042]         00000000000000b0 0000000000000004 0000000000000000 0000000000071c1d
+[   65.789045]         ...
+[   65.789047] Call Trace:
+[   65.789048] [<900000000023d414>] show_stack+0x5c/0x180
+[   65.789054] [<90000000002390dc>] dump_stack_lvl+0x70/0xa0
+[   65.789057] [<9000000000258304>] __warn+0x84/0xfc
+[   65.789060] [<9000000000e59838>] report_bug+0x19c/0x204
+[   65.789064] [<9000000000e8b17c>] do_bp+0x264/0x2b4
+[   65.789070] [<0000000000000000>] 0x0
+[   65.789072] [<9000000000aba9b4>] drm_atomic_helper_wait_for_vblanks.part.0+0x230/0x25c
+[   65.789077] [<9000000000abb7fc>] drm_atomic_helper_commit_tail+0x88/0xa4
+[   65.789082] [<9000000000abc898>] commit_tail+0xac/0x190
+[   65.789086] [<9000000000abcae8>] drm_atomic_helper_commit+0x164/0x190
+[   65.789090] [<9000000000a7b5e8>] drm_atomic_commit+0x8c/0xc4
+[   65.789092] [<9000000000aafc84>] drm_client_modeset_commit_atomic+0x23c/0x280
+[   65.789095] [<9000000000aaff28>] drm_client_modeset_commit_locked+0x6c/0x17c
+[   65.789098] [<9000000000ac88c8>] drm_fb_helper_pan_display+0x100/0x248
+[   65.789102] [<9000000000992d80>] fb_pan_display+0x74/0x124
+[   65.789106] [<90000000009a0328>] bit_update_start+0x20/0x4c
+[   65.789110] [<900000000099f208>] fbcon_switch+0x3cc/0x59c
+[   65.789113] [<9000000000a4c070>] redraw_screen+0xf0/0x298
+[   65.789115] [<9000000000a4d9a0>] do_bind_con_driver.isra.0+0x2e4/0x454
+[   65.789118] [<9000000000a4dc58>] do_take_over_console+0x148/0x1f8
+[   65.789121] [<900000000099b22c>] do_fbcon_takeover+0x60/0xd0
+[   65.789125] [<900000000099f9a8>] fbcon_fb_registered+0x12c/0x18c
+[   65.789128] [<90000000009935b0>] do_register_framebuffer+0x1e0/0x288
+[   65.789131] [<9000000000993684>] register_framebuffer+0x2c/0x54
+[   65.789135] [<9000000000ac7194>] __drm_fb_helper_initial_config_and_unlock+0x350/0x580
+[   65.789139] [<9000000000ac9288>] drm_fbdev_client_hotplug+0x80/0xd8
+[   65.789143] [<9000000000aaeabc>] drm_client_register+0x5c/0xa0
+[   65.789146] [<9000000000ac93e0>] drm_fbdev_client_setup+0xa4/0x190
+[   65.789150] [<9000000000ac9094>] drm_client_setup+0x14/0x50
+[   65.789154] [<9000000000ae3568>] lsdc_pci_probe+0x464/0x584
+[   65.789156] [<9000000000964958>] pci_device_probe+0xbc/0x160
+[   65.789161] [<9000000000af7004>] really_probe+0xac/0x2dc
+[   65.789165] [<9000000000af72c0>] __driver_probe_device+0x8c/0x128
+[   65.789169] [<9000000000af7454>] driver_probe_device+0x3c/0x118
+[   65.789173] [<9000000000af7724>] __driver_attach+0x98/0x194
+[   65.789177] [<9000000000af4cc8>] bus_for_each_dev+0x88/0xe8
+[   65.789180] [<9000000000af611c>] bus_add_driver+0xf4/0x208
+[   65.789184] [<9000000000af84dc>] driver_register+0x68/0x134
+[   65.789188] [<900000000023a154>] do_one_initcall+0x78/0x1cc
+[   65.789192] [<9000000000ea0f9c>] kernel_init_freeable+0x1c8/0x238
+[   65.789196] [<9000000000e8c244>] kernel_init+0x1c/0x108
+[   65.789201] [<900000000023b2a8>] ret_from_kernel_thread+0xc/0xa4
+[   65.789205] 
+[   65.789206] ---[ end trace 0000000000000000 ]---
+[   65.920355] loongson 0000:00:06.1: [drm] fb0: loongsondrmfb frame buffer device
+[   66.348786] brd: module loaded
+[   66.658887] loop: module loaded
+[   66.659757] virtio_blk virtio1: 1/0/0 default/read/poll queues
+[   66.661175] virtio_blk virtio1: [vda] 16384 512-byte logical blocks (8.39 MB/8.00 MiB)
+[   66.978798] megaraid cmm: 2.20.2.7 (Release Date: Sun Jul 16 00:01:03 EST 2006)
+[   66.991086] megaraid: 2.20.5.1 (Release Date: Thu Nov 16 15:32:35 EST 2006)
+[   66.991128] megasas: 07.727.03.00-rc1
+[   66.991195] mpt3sas version 51.100.00.00 loaded
+[   67.039013] ahci 0000:00:08.0: version 3.0
+[   67.039060] ahci 0000:00:08.0: SSS flag set, parallel bus scan disabled
+[   67.039080] ahci 0000:00:08.0: AHCI vers 0001.0300, 32 command slots, 6 Gbps, SATA mode
+[   67.039085] ahci 0000:00:08.0: 4/4 ports implemented (port mask 0xf)
+[   67.039088] ahci 0000:00:08.0: flags: 64bit ncq sntf stag pm led clo only pmp pio slum part ccc apst 
+[   67.039398] nvme nvme0: pci function 0000:05:00.0
+[   67.278646] scsi host0: ahci
+[   67.388639] scsi host1: ahci
+[   67.488641] scsi host2: ahci
+[   67.598643] scsi host3: ahci
+[   67.598784] ata1: SATA max UDMA/133 abar m1024@0x75969800 port 0x75969900 irq 39 lpm-pol 0
+[   67.598789] ata2: SATA max UDMA/133 abar m1024@0x75969800 port 0x75969980 irq 39 lpm-pol 0
+[   67.598792] ata3: SATA max UDMA/133 abar m1024@0x75969800 port 0x75969a00 irq 39 lpm-pol 0
+[   67.598794] ata4: SATA max UDMA/133 abar m1024@0x75969800 port 0x75969a80 irq 39 lpm-pol 0
+[   67.598967] igb: Intel(R) Gigabit Ethernet Network Driver
+[   67.598970] igb: Copyright (c) 2007-2014 Intel Corporation.
+[   67.825424] igb 0000:06:00.0: Intel(R) Gigabit Ethernet Network Connection
+[   67.825429] igb 0000:06:00.0: eth0: (PCIe:5.0Gb/s:Width x4) 6c:b3:11:9a:e8:74
+[   67.825753] igb 0000:06:00.0: eth0: PBA No: H47822-001
+[   67.825755] igb 0000:06:00.0: Using MSI-X interrupts. 1 rx queue(s), 1 tx queue(s)
+[   67.894135] igb 0000:06:00.1: Intel(R) Gigabit Ethernet Network Connection
+[   67.894139] igb 0000:06:00.1: eth1: (PCIe:5.0Gb/s:Width x4) 6c:b3:11:9a:e8:75
+[   67.894463] igb 0000:06:00.1: eth1: PBA No: H47822-001
+[   67.894465] igb 0000:06:00.1: Using MSI-X interrupts. 1 rx queue(s), 1 tx queue(s)
+[   67.963717] igb 0000:06:00.2: Intel(R) Gigabit Ethernet Network Connection
+[   67.963721] igb 0000:06:00.2: eth2: (PCIe:5.0Gb/s:Width x4) 6c:b3:11:9a:e8:76
+[   67.964045] igb 0000:06:00.2: eth2: PBA No: H47822-001
+[   67.964046] igb 0000:06:00.2: Using MSI-X interrupts. 1 rx queue(s), 1 tx queue(s)
+[   67.988612] ata1: SATA link down (SStatus 0 SControl 300)
+[   68.041357] igb 0000:06:00.3: Intel(R) Gigabit Ethernet Network Connection
+[   68.041361] igb 0000:06:00.3: eth3: (PCIe:5.0Gb/s:Width x4) 6c:b3:11:9a:e8:77
+[   68.041685] igb 0000:06:00.3: eth3: PBA No: H47822-001
+[   68.041687] igb 0000:06:00.3: Using MSI-X interrupts. 1 rx queue(s), 1 tx queue(s)
+[   68.041832] i2c_dev: i2c /dev entries driver
+[   68.042636] device-mapper: ioctl: 4.48.0-ioctl (2023-03-01) initialised: dm-devel@lists.linux.dev
+[   68.042682] hid: raw HID events driver (C) Jiri Kosina
+[   68.042832] NET: Registered PF_INET6 protocol family
+[   68.043407] Segment Routing with IPv6
+[   68.043427] In-situ OAM (IOAM) with IPv6
+[   68.043462] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[   68.118009] Loading compiled-in X.509 certificates
+[   68.130281] Btrfs loaded, zoned=yes, fsverity=no
+[   68.148625] OF: fdt: not creating '/sys/firmware/fdt': CRC check failed
+[   68.148648] clk: Disabling unused clocks
+[   77.838750] loongson 0000:00:06.1: [drm] *ERROR* flip_done timed out
+[   77.838754] loongson 0000:00:06.1: [drm] *ERROR* [CRTC:45:LS-CRTC-1] commit wait timed out
+ion 10: type 1, physical_start 18408000, virtual_start 18408000,
+ size 8000
+
+13:30:09 DEBU
+G hvisor.c:398: memory_region 11: type 1, physical_start 60000000, virtual_start 60
+000000, size 20000000
+
+13:30:09 DEBUG hvisor.c:398: memory_region 12: type 1, physical_start 10010000, virtual_start 10010000, size 10000
+
+Kernel size: 33619968, DTB size: 20480
+Zone name: linux2
+Calling ioctl to start zone: [linux2]
+
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# 
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x900000000023b348, offset=0x1800, size=8, R <-  0x100 (compressed, repeated 10000 times)
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x900000000023b348, offset=0x1808, size=8, R <-  0x0 (compressed, repeated 10000 times)
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x900000000023b348, offset=0x1810, size=8, R <-  0x0 (compressed, repeated 10000 times)
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x900000000023b348, offset=0x1818, size=8, R <-  0x0 (compressed, repeated 10000 times)
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# 
+[WARN  0] (hvisor::arch::loongarch64::zone:534) loongarch64: generic mmio handler, zone_era=0x900000000023b348, offset=0x1800, size=8, W ->  0x100 (compressed, repeated 10000 times)
+[root@dedsec /]# 
+[root@dedsec /]# 
+
+[root@dedsec /]# 
+[root@dedsec /]# 
+[root@dedsec /]# [   88.078747] loongson 0000:00:06.1: [drm] *ERROR* flip_done timed out
+[   88.078751] loongson 0000:00:06.1: [drm] *ERROR* [CONNECTOR:35:HDMI-A-2] commit wait timed out
+
+[root@dedsec /]# 
