@@ -156,7 +156,7 @@ static int eiointc_set_irq_affinity(struct irq_data *d, const struct cpumask *af
 		veiointc_set_irq_route(vector, cpu);
 		iocsr_write32(EIOINTC_ALL_ENABLE, regaddr);
 	} else {
-		pr_info("wheatfox: eiointc_set_irq_affinity, !EIOINTC_USE_CPU_ENCODE -> ANY_SEND, regaddr=%x, vector=%x, priv->node=%x, priv->node_map=%x\n", regaddr, vector, priv->node, priv->node_map);
+		pr_info("wheatfox: eiointc_set_irq_affinity, !EIOINTC_USE_CPU_ENCODE -> ANY_SEND, regaddr=0x%x, vector=0x%x, priv->node=0x%x, priv->node_map=0x%x\n", regaddr, vector, priv->node, priv->node_map);
 		/* Mask target vector */
 		csr_any_send(regaddr, EIOINTC_ALL_ENABLE_VEC_MASK(vector),
 			     0x0, priv->node * CORES_PER_EIO_NODE);
@@ -207,6 +207,8 @@ static int eiointc_router_init(unsigned int cpu)
 	else
 		cores = CORES_PER_VEIO_NODE;
 
+	pr_info("wheatfox: eiointc_router_init, cpu=%d, node=%d, index=%d, cores=%d, logical_cpu=%d\n", cpu, node, index, cores, cpu_logical_map(cpu));
+
 	if ((cpu_logical_map(cpu) % cores) == 0) {
 		eiointc_enable();
 
@@ -223,13 +225,20 @@ static int eiointc_router_init(unsigned int cpu)
 
 		for (i = 0; i < eiointc_priv[0]->vec_count / 4; i++) {
 			/* Route to Node-0 Core-0 */
-			if (eiointc_priv[index]->flags & EIOINTC_USE_CPU_ENCODE)
+			if (eiointc_priv[index]->flags & EIOINTC_USE_CPU_ENCODE) {
+				pr_info("wheatfox: eiointc_router_init, EIOINTC_USE_CPU_ENCODE\n");
 				bit = cpu_logical_map(0);
-			else if (index == 0)
+			}
+			else if (index == 0) {
+				pr_info("wheatfox: eiointc_router_init, index == 0\n");
 				bit = BIT(cpu_logical_map(0));
-			else
+			}
+			else {
+				pr_info("wheatfox: eiointc_router_init, else\n");
 				bit = (eiointc_priv[index]->node << 4) | 1;
+			}
 
+			pr_info("wheatfox: eiointc_router_init, i=%d, bit=0x%x\n", i, bit);
 			data = bit | (bit << 8) | (bit << 16) | (bit << 24);
 			iocsr_write32(data, EIOINTC_REG_ROUTE + i * 4);
 		}
