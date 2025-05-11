@@ -93,6 +93,9 @@ static int avecintc_set_affinity(struct irq_data *data, const struct cpumask *de
 	int cpu, ret, vector;
 	struct avecintc_data *adata;
 
+	pr_info("wheatfox: avecintc_set_affinity, data->hwirq=%d, data->irq=%d, data->chip_data=%p\n", (int)data->hwirq, (int)data->irq, (void *)data->chip_data);
+	pr_info("wheatfox: dest = %*pbl\n", cpumask_pr_args(dest));
+
 	scoped_guard(raw_spinlock, &loongarch_avec.lock) {
 		adata = irq_data_get_irq_chip_data(data);
 
@@ -201,6 +204,7 @@ static void avecintc_compose_msi_msg(struct irq_data *d, struct msi_msg *msg)
 	msg->address_lo = (loongarch_avec.msi_base_addr | (adata->vec & 0xff) << 4)
 			  | ((cpu_logical_map(adata->cpu & 0xffff)) << 12);
 	msg->data = 0x0;
+	pr_info("wheatfox: msi_msg, address_hi=0x%x, address_lo=0x%x, data=0x%x\n", msg->address_hi, msg->address_lo, msg->data);
 }
 
 static struct irq_chip avec_irq_controller = {
@@ -342,6 +346,8 @@ static int __init avecintc_init(struct irq_domain *parent)
 	unsigned long value;
 
 	raw_spin_lock_init(&loongarch_avec.lock);
+
+	pr_info("wheatfox: avecintc_init, parent->name = %s\n", parent->name);
 
 	loongarch_avec.fwnode = irq_domain_alloc_named_fwnode("AVECINTC");
 	if (!loongarch_avec.fwnode) {

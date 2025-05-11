@@ -129,3 +129,13 @@ obj-$(CONFIG_IRQ_IDT3243X)		+= irq-idt3243x.o
 obj-$(CONFIG_APPLE_AIC)			+= irq-apple-aic.o
 obj-$(CONFIG_MCHP_EIC)			+= irq-mchp-eic.o
 obj-$(CONFIG_SUNPLUS_SP7021_INTC)	+= irq-sp7021-intc.o
+
+# add DEBUG to all loongson files
+CFLAGS_irq-loongson-cpu.o += -DDEBUG
+CFLAGS_irq-loongson-avec.o += -DDEBUG
+CFLAGS_irq-loongson-liointc.o += -DDEBUG
+CFLAGS_irq-loongson-eiointc.o += -DDEBUG
+CFLAGS_irq-loongson-htvec.o += -DDEBUG
+CFLAGS_irq-loongson-htpic.o += -DDEBUG
+CFLAGS_irq-loongson-pch-pic.o += -DDEBUG
+CFLAGS_irq-loongson-pch-msi.o += -DDEBUG

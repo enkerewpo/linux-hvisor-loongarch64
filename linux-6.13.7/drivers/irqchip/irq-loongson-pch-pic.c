@@ -230,6 +230,8 @@ static int pch_pic_alloc(struct irq_domain *domain, unsigned int virq,
 	if (err)
 		return err;
 
+	pr_debug("debug: wheatfox: pch_pic_alloc, virq = %d -> hwirq = %lu\n", virq, hwirq);
+
 	/* Write vector ID */
 	writeb(priv->ht_vec_base + hwirq, priv->base + PCH_INT_HTVEC(hwirq_to_bit(priv, hwirq)));
 
@@ -346,6 +348,9 @@ static int pch_pic_init(phys_addr_t addr, unsigned long size, int vec_base,
 						priv->vec_count, domain_handle,
 						&pch_pic_domain_ops, priv);
 
+	pr_debug("debug: wheatfox: pch_pic_init, base = 0x%llx, size = 0x%lx, vec_base = %d, gsi_base = %d, vec_count = %d\n", addr, size, vec_base, gsi_base, priv->vec_count);
+	pr_debug("debug: wheatfox: pch_pic_init, priv->pic_domain->name = %s\n", priv->pic_domain->name);
+
 	if (!priv->pic_domain) {
 		pr_err("Failed to create IRQ domain\n");
 		goto iounmap_base;
@@ -381,6 +386,9 @@ static int pch_pic_of_init(struct device_node *node,
 		return -EINVAL;
 
 	parent_domain = irq_find_host(parent);
+
+	pr_debug("debug: wheatfox: pch_pic_of_init, parent_domain->name = %s\n", parent_domain->name);
+
 	if (!parent_domain) {
 		pr_err("Failed to find the parent domain\n");
 		return -ENXIO;

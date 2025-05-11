@@ -207,7 +207,7 @@ static int eiointc_router_init(unsigned int cpu)
 	else
 		cores = CORES_PER_VEIO_NODE;
 
-	pr_info("wheatfox: eiointc_router_init, cpu=%d, node=%d, index=%d, cores=%d, logical_cpu=%d\n", cpu, node, index, cores, cpu_logical_map(cpu));
+	pr_debug("debug: wheatfox: eiointc_router_init, cpu=%d, node=%d, index=%d, cores=%d, logical_cpu=%d\n", cpu, node, index, cores, cpu_logical_map(cpu));
 
 	if ((cpu_logical_map(cpu) % cores) == 0) {
 		eiointc_enable();
@@ -226,19 +226,19 @@ static int eiointc_router_init(unsigned int cpu)
 		for (i = 0; i < eiointc_priv[0]->vec_count / 4; i++) {
 			/* Route to Node-0 Core-0 */
 			if (eiointc_priv[index]->flags & EIOINTC_USE_CPU_ENCODE) {
-				pr_info("wheatfox: eiointc_router_init, EIOINTC_USE_CPU_ENCODE\n");
+				// pr_info("wheatfox: eiointc_router_init, EIOINTC_USE_CPU_ENCODE\n");
 				bit = cpu_logical_map(0);
 			}
 			else if (index == 0) {
-				pr_info("wheatfox: eiointc_router_init, index == 0\n");
+				// pr_info("wheatfox: eiointc_router_init, index == 0\n");
 				bit = BIT(cpu_logical_map(0));
 			}
 			else {
-				pr_info("wheatfox: eiointc_router_init, else\n");
+				// pr_info("wheatfox: eiointc_router_init, else\n");
 				bit = (eiointc_priv[index]->node << 4) | 1;
 			}
 
-			pr_info("wheatfox: eiointc_router_init, i=%d, bit=0x%x\n", i, bit);
+			pr_debug("debug: wheatfox: eiointc_router_init, i=%d, bit=0x%x\n", i, bit);
 			data = bit | (bit << 8) | (bit << 16) | (bit << 24);
 			iocsr_write32(data, EIOINTC_REG_ROUTE + i * 4);
 		}

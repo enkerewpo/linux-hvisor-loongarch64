@@ -66,6 +66,7 @@ static void pch_msi_compose_msi_msg(struct irq_data *data,
 	msg->address_hi = upper_32_bits(priv->doorbell);
 	msg->address_lo = lower_32_bits(priv->doorbell);
 	msg->data = data->hwirq;
+	pr_debug("debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x%x, msg->address_lo=0x%x, msg->data=0x%x\n", msg->address_hi, msg->address_lo, msg->data);
 }
 
 static struct irq_chip middle_irq_chip = {
@@ -86,6 +87,8 @@ static int pch_msi_parent_domain_alloc(struct irq_domain *domain,
 	fwspec.param_count = 1;
 	fwspec.param[0] = hwirq;
 
+	pr_debug("debug: wheatfox: pch_msi_parent_domain_alloc, virq = %d, hwirq = %d, domain = %s\n", virq, hwirq, domain->name);
+
 	return irq_domain_alloc_irqs_parent(domain, virq, 1, &fwspec);
 }
 
@@ -99,6 +102,8 @@ static int pch_msi_middle_domain_alloc(struct irq_domain *domain,
 	hwirq = pch_msi_allocate_hwirq(priv, nr_irqs);
 	if (hwirq < 0)
 		return hwirq;
+
+	pr_debug("debug: wheatfox: pch_msi_middle_domain_alloc, virq = %d, hwirq = %d, domain = %s\n", virq, hwirq, domain->name);
 
 	for (i = 0; i < nr_irqs; i++) {
 		err = pch_msi_parent_domain_alloc(domain, virq + i, hwirq + i);
@@ -162,6 +167,9 @@ static int pch_msi_init_domains(struct pch_msi_data *priv,
 						    domain_handle,
 						    &pch_msi_middle_domain_ops,
 						    priv);
+	
+	pr_debug("debug: wheatfox: pch_msi_init_domains, middle_domain->name = %s\n", middle_domain->name);
+
 	if (!middle_domain) {
 		pr_err("Failed to create the MSI middle domain\n");
 		return -ENOMEM;
@@ -199,10 +207,12 @@ static int pch_msi_init(phys_addr_t msg_address, int irq_base, int irq_count,
 		 priv->num_irqs, priv->irq_first);
 
 	ret = pch_msi_init_domains(priv, parent_domain, domain_handle);
+
 	if (ret)
 		goto err_map;
 
 	pch_msi_handle[nr_pics++] = domain_handle;
+	pr_debug("debug: wheatfox: pch_msi_init, nr_pics = %d\n", nr_pics);
 	return 0;
 
 err_map:
@@ -222,6 +232,9 @@ static int pch_msi_of_init(struct device_node *node, struct device_node *parent)
 	struct irq_domain *parent_domain;
 
 	parent_domain = irq_find_host(parent);
+
+	pr_debug("debug: wheatfox: pch_msi_of_init, parent_domain->name = %s\n", parent_domain->name);
+
 	if (!parent_domain) {
 		pr_err("Failed to find the parent domain\n");
 		return -ENXIO;
@@ -243,6 +256,9 @@ static int pch_msi_of_init(struct device_node *node, struct device_node *parent)
 	}
 
 	err = pch_msi_init(res.start, irq_base, irq_count, parent_domain, of_node_to_fwnode(node));
+
+	pr_debug("debug: wheatfox: pch_msi_of_init finished with err = %d\n", err);
+
 	if (err < 0)
 		return err;
 
