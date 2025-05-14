@@ -1,0 +1,1574 @@
+
+[INFO] arch_init done
+                     PROGRESS CODE: V02010004 I0
+[INFO] exit_boot_services done[INFO] ok, ready to jump to hvisor entry...
+                                                                         Hello, HVISOR!
+Heap allocator initialization finished: 0x90000001000d9708..0x90000001001d9708
+heap_test passed!
+Booting CPU 0: 0x90000001001da000 arch:0x90000001001da020, DTB: 0xfe430018
+Hello, HVISOR!
+Hello, HVISOR!
+Hello, HVISOR!
+Booting CPU 3: 0x900000010035a000 arch:0x900000010035a020, DTB: 0x9000000000000000
+Booting CPU 2: 0x90000001002da000 arch:0x90000001002da020, DTB: 0x9000000000000000
+Booting CPU 1: 0x900000010025a000 arch:0x900000010025a020, DTB: 0x9000000000000000
+Secondary CPU 1 has entered.
+Primary CPU 0 has entered.
+Secondary CPU 3 has entered.
+[INFO  0] (hvisor:117) Logging is enabled.
+Secondary CPU 2 has entered.
+[INFO  0] (hvisor:118) __core_end = 0x90000001001da000
+[INFO  0] (hvisor:121) Hypervisor initialization in progress...
+[INFO  0] (hvisor:122) build_mode: debug, log_level: info, arch: loongarch64, stats: off
+[INFO  0] (hvisor::memory::frame:282) Frame allocator initialization finished: 0x90000001003da000..0x90000001013da000
+[INFO  0] (hvisor::memory::frame:302) frame_allocator_test passed!
+[INFO  0] (hvisor::device::irqchip::ls7a2000:39) loongarch64: irqchip: primary_init_early: checking iochip configs
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:565) loongarch64: print_chip_info: chip config version: 0x14
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:569) loongarch64: print_chip_info: chip feature extioi support: true
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:573) loongarch64: print_chip_info: manufacturer name: Loongson
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:577) loongarch64: print_chip_info: chip name: 3A6000-L
+[INFO  0] (hvisor::device::irqchip::ls7a2000:44) loongarch64: irqchip: testing percore IPI feature
+[INFO  0] (hvisor::device::irqchip::ls7a2000:46) loongarch64: irqchip: percore IPI feature: true
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x200000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x90000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0xF0000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0xC0000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x1FE00000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x10080000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x100D0000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x10000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0xFE00000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x18408000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x60000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x10010000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x0
+[INFO  0] (hvisor::memory::mm:112) region.start: 0xF0000
+[INFO  0] (hvisor::arch::loongarch64::zone:93) loongarch64: pt_init: add mmio handler for 0x1fe0_xxxx mmio region
+[INFO  0] (hvisor::zone:222) zone cpu_set: 0b1
+[WARN  1] (hvisor:154) zone is not created for cpu 1
+[INFO  0] (hvisor:159) CPU 0 hv_pt_install OK.
+[INFO  1] (hvisor:159) CPU 1 hv_pt_install OK.
+[INFO  0] (hvisor::device::irqchip::ls7a2000:63) loongarch64: irqchip: percpu_init: running percpu_init
+[INFO  1] (hvisor::device::irqchip::ls7a2000:63) loongarch64: irqchip: percpu_init: running percpu_init
+[INFO  0] (hvisor::arch::loongarch64::ipi:299) ecfg ipi enabled on cpu 0, current lie: TIMER | IPI
+[WARN  3] (hvisor:154) zone is not created for cpu 3
+[WARN  2] (hvisor:154) zone is not created for cpu 2
+[INFO  3] (hvisor:159) CPU 3 hv_pt_install OK.
+[INFO  1] (hvisor::arch::loongarch64::ipi:299) ecfg ipi enabled on cpu 1, current lie: TIMER | IPI
+[INFO  3] (hvisor::device::irqchip::ls7a2000:63) loongarch64: irqchip: percpu_init: running percpu_init
+[INFO  2] (hvisor:159) CPU 2 hv_pt_install OK.
+[INFO  3] (hvisor::arch::loongarch64::ipi:299) ecfg ipi enabled on cpu 3, current lie: TIMER | IPI
+[INFO  2] (hvisor::device::irqchip::ls7a2000:63) loongarch64: irqchip: percpu_init: running percpu_init
+[INFO  2] (hvisor::arch::loongarch64::ipi:299) ecfg ipi enabled on cpu 2, current lie: TIMER | IPI
+[INFO  0] (hvisor:146) Primary CPU init late...
+[INFO  0] (hvisor::device::irqchip::ls7a2000:52) loongarch64: irqchip: primary_init_late: running primary_init_late
+[INFO  0] (hvisor::device::irqchip::ls7a2000:54) loongarch64: irqchip: primary_init_late: testing UART1
+[INFO  0] (hvisor::device::uart::loongson_uart:232) loongarch: uart: __test_uart1
+[INFO  0] (hvisor::device::uart::loongson_uart:235) loongarch: uart: __test_uart1 init done
+[INFO  0] (hvisor::device::uart::loongson_uart:238) loongarch: uart: __test_uart1 send_str test done
+[INFO  0] (hvisor::device::irqchip::ls7a2000:57) loongarch64: irqchip: primary_init_late: probing pci
+[WARN  0] (hvisor::device::irqchip::ls7a2000::chip:963) loongarch64: probe_pci: probing PCI devices @ 0x80000efe00000000
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 0: vendor=0x14 device=0x7a00 name=[Loongson Technology LLC] Hyper Transport Bridge Controller	
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 4: vendor=0x14 device=0x7a24 name=[Loongson Technology LLC] OHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 5: vendor=0x14 device=0x7a24 name=[Loongson Technology LLC] OHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 6: vendor=0x14 device=0x7a25 name=[Loongson Technology LLC] LG100 GPU
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 7: vendor=0x14 device=0x7a07 name=[Loongson Technology LLC] HDA (High Definition Audio) Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 8: vendor=0x14 device=0x7a18 name=[Loongson Technology LLC] SATA 3 AHCI Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 9: vendor=0x14 device=0x7a49 name=[Loongson Technology LLC] PCIe x4 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 10: vendor=0x14 device=0x7a39 name=[Loongson Technology LLC] PCIe x1 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 11: vendor=0x14 device=0x7a39 name=[Loongson Technology LLC] PCIe x1 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 12: vendor=0x14 device=0x7a39 name=[Loongson Technology LLC] PCIe x1 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 13: vendor=0x14 device=0x7a49 name=[Loongson Technology LLC] PCIe x4 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 15: vendor=0x14 device=0x7a69 name=[Loongson Technology LLC] PCIe x16 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 16: vendor=0x14 device=0x7a59 name=[Loongson Technology LLC] PCIe x8 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 19: vendor=0x14 device=0x7a59 name=[Loongson Technology LLC] PCIe x8 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 22: vendor=0x14 device=0x7a1b name=[Loongson Technology LLC] SPI Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 25: vendor=0x14 device=0x7a34 name=[Loongson Technology LLC] xHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 26: vendor=0x14 device=0x7a1f name=[Loongson Technology LLC] Unknown Device
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 36: vendor=0x14 device=0x7a24 name=[Loongson Technology LLC] OHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 37: vendor=0x14 device=0x7a24 name=[Loongson Technology LLC] OHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 38: vendor=0x14 device=0x7a25 name=[Loongson Technology LLC] LG100 GPU
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 39: vendor=0x14 device=0x7a07 name=[Loongson Technology LLC] HDA (High Definition Audio) Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 40: vendor=0x14 device=0x7a18 name=[Loongson Technology LLC] SATA 3 AHCI Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 54: vendor=0x14 device=0x7a1b name=[Loongson Technology LLC] SPI Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 57: vendor=0x14 device=0x7a34 name=[Loongson Technology LLC] xHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:974) loongarch64: probe_pci: device 58: vendor=0x14 device=0x7a1f name=[Loongson Technology LLC] Unknown Device
+[INFO  0] (hvisor::device::irqchip::ls7a2000:60) loongarch64: irqchip: primary_init_late finished
+[INFO  0] (hvisor::percpu:73) CPU0: Running the VM...
+[INFO  1] (hvisor::percpu:70) CPU1: Idling the CPU before starting VM...
+[INFO  0] (hvisor::arch::loongarch64::s2pt:168) loongarch64: S2PTInstr::activate: root_pa: 0x90000001003da000
+[INFO  1] (hvisor::arch::loongarch64::cpu:132) loongarch64: ArchCpu::idle: cpuid=1
+[INFO  0] (hvisor::arch::loongarch64::s2pt:180) loongarch64: S2PTInstr::activate: set tlbrentry to 0x1000a1000 done!
+[INFO  1] (hvisor::arch::loongarch64::ipi:299) ecfg ipi enabled on cpu 1, current lie: TIMER | IPI
+[INFO  0] (hvisor::arch::loongarch64::cpu:77) loongarch64: CPU0 run@0x9000000000e60000
+[INFO  2] (hvisor::percpu:70) CPU2: Idling the CPU before starting VM...
+[INFO  0] (hvisor::arch::loongarch64::cpu:82) loongarch64: @ArchCpu {
+    ctx: LoongArch64ZoneContext {
+        x: [
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+        ],
+        sepc: 0x9000000000e60000,
+        gcsr_crmd: 0x8,
+        gcsr_prmd: 0x0,
+        gcsr_euen: 0x0,
+        gcsr_misc: 0x0,
+        gcsr_ectl: 0x10000,
+        gcsr_estat: 0x0,
+        gcsr_era: 0x0,
+        gcsr_badv: 0x0,
+        gcsr_badi: 0x0,
+        gcsr_eentry: 0x1c000000,
+        gcsr_tlbidx: 0xe000000,
+        gcsr_tlbehi: 0x0,
+        gcsr_tlbelo0: 0x0,
+        gcsr_tlbelo1: 0x0,
+        gcsr_asid: 0xa0000,
+        gcsr_pgdl: 0x0,
+        gcsr_pgdh: 0x0,
+        gcsr_pgd: 0x0,
+        gcsr_pwcl: 0x0,
+        gcsr_pwch: 0x0,
+        gcsr_stlbps: 0xe,
+        gcsr_ravcfg: 0x0,
+        gcsr_cpuid: 0x0,
+        gcsr_prcfg1: 0x72f8,
+        gcsr_prcfg2: 0x3ffff000,
+        gcsr_prcfg3: 0x8073f2,
+        gcsr_save0: 0xb0,
+        gcsr_save1: 0x4,
+        gcsr_save2: 0x7ffff34d992c,
+        gcsr_save3: 0x4a4f000,
+        gcsr_save4: 0x521e60fe3bb35287,
+        gcsr_save5: 0x135ad85f7ecab8ec,
+        gcsr_save6: 0x34ce457ec4594ac3,
+        gcsr_save7: 0x3befe8dfd135d4a6,
+        gcsr_save8: 0x0,
+        gcsr_save9: 0x0,
+        gcsr_save10: 0x0,
+        gcsr_save11: 0x0,
+        gcsr_save12: 0x0,
+        gcsr_save13: 0x0,
+        gcsr_save14: 0x0,
+        gcsr_save15: 0x0,
+        gcsr_tid: 0x0,
+        gcsr_tcfg: 0x0,
+        gcsr_tval: 0xffffffffffff,
+        gcsr_cntc: 0x0,
+        gcsr_ticlr: 0x0,
+        gcsr_llbctl: 0x0,
+        gcsr_tlbrentry: 0x0,
+        gcsr_tlbrbadv: 0x0,
+        gcsr_tlbrera: 0x0,
+        gcsr_tlbrsave: 0x0,
+        gcsr_tlbrelo0: 0x0,
+        gcsr_tlbrelo1: 0x0,
+        gcsr_tlbrehi: 0x0,
+        gcsr_tlbrprmd: 0x0,
+        gcsr_dmw0: 0x0,
+        gcsr_dmw1: 0x0,
+        gcsr_dmw2: 0x0,
+        gcsr_dmw3: 0x0,
+        pgdl: 0x0,
+        pgdh: 0x0,
+    },
+    stack_top: 0x900000010025a000,
+    cpuid: 0x0,
+    power_on: true,
+    init: true,
+}
+[INFO  2] (hvisor::arch::loongarch64::cpu:132) loongarch64: ArchCpu::idle: cpuid=2
+[INFO  2] (hvisor::arch::loongarch64::ipi:299) ecfg ipi enabled on cpu 2, current lie: TIMER | IPI
+[INFO  3] (hvisor::percpu:70) CPU3: Idling the CPU before starting VM...
+[INFO  0] (hvisor::arch::loongarch64::trap:1346) csrxchg emulation for CSR 0x80
+[INFO  3] (hvisor::arch::loongarch64::cpu:132) loongarch64: ArchCpu::idle: cpuid=3
+[INFO  3] (hvisor::arch::loongarch64::ipi:299) ecfg ipi enabled on cpu 3, current lie: TIMER | IPI
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x0
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x2
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x1
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x2
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x6
+[INFO  0] (hvisor::arch::loongarch64::trap:1334) csrrd emulation for CSR 0x380
+[INFO  0] (hvisor::arch::loongarch64::trap:1334) csrrd emulation for CSR 0x300
+[INFO  0] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x93
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x10
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x11
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x12
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x13
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x14
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x900000000023997c, offset=0x10, size=8, R <-  0x10
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x9000000000239988, offset=0x20, size=8, R <-  0x20
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000002399cc, offset=0x8, size=4, R <-  0x8
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x1
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x1
+[    0.000000] Linux version 6.13.7 (wheatfox@dedsec-amd0) (loongarch64-unknown-linux-gnu-gcc (GCC) 13.0.1 20230316 (experimental), GNU ld (GNU Binutils) 2.40.50.20230316) #231 PREEMPT_DYNAMIC Wed May 14 14:21:16 CST 2025
+[    0.000000] Loongson-64bit Processor probed (LA664 Core)
+[    0.000000] CPU0 revision is: 0014d000 (Loongson-64bit)
+[    0.000000] FPU0 revision is: 00000000
+[    0.000000] ACPI: Early table checksum verification disabled
+[    0.000000] earlycon: ns16550a0 at MMIO 0x000000001fe001e0 (options '115200n8')
+[    0.000000] printk: legacy bootconsole [ns16550a0] enabled
+[    0.000000] OF: reserved mem: 0x00000000c0000000..0x00000000efffffff (786432 KiB) nomap non-reusable nonroot0xc0000000
+[    0.000000] DMI not present or invalid.
+[    0.000000] The BIOS Version: (null)
+[    0.000000] software IO TLB: area num 1.
+[    0.000000] software IO TLB: mapped [mem 0x0000000004ec0000-0x0000000008ec0000] (64MB)
+[    0.000000] PM: hibernation: Registered nosave memory: [mem 0x04a94000-0x04a94fff]
+[    0.000000] Zone ranges:
+[    0.000000]   DMA32    [mem 0x0000000000200000-0x00000000ffffffff]
+[    0.000000]   Normal   empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000200000-0x000000000effffff]
+[    0.000000]   node   0: [mem 0x0000000090000000-0x000000009fffffff]
+[    0.000000]   node   0: [mem 0x00000000c0000000-0x00000000efffffff]
+[    0.000000]   node   0: [mem 0x00000000f0000000-0x00000000ffffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000200000-0x00000000ffffffff]
+[    0.000000] On node 0, zone DMA32: 512 pages in unavailable ranges
+[    0.000000] On node 0, zone DMA32: 135168 pages in unavailable ranges
+[    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Kernel command line: earlycon console=ttyS0,115200n8 initramfs_async=false rootwait debug 
+[    0.000000] printk: log buffer data + meta data: 262144 + 917504 = 1179648 bytes
+[    0.000000] Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 388608
+[    0.000000] mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Dynamic Preempt: full
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu: 	RCU event tracing is enabled.
+[    0.000000] 	Trampoline variant of Tasks RCU enabled.
+[    0.000000] 	Tracing variant of Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+[    0.000000] RCU Tasks: Setting shift to 0 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=1.
+[    0.000000] RCU Tasks Trace: Setting shift to 0 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=1.
+[    0.000000] NR_IRQS: 832, nr_irqs: 64, preallocated irqs: 16
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, cpu=0, node=0, index=0, cores=4, logical_cpu=0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x9000000000912690, offset=0x420, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009126a0, offset=0x420, size=8, W ->  0x1f200f8880300
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009126e4, offset=0x14a0, size=4, W ->  0x20001
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009126e4, offset=0x14a4, size=4, W ->  0x80004
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009126e4, offset=0x14a8, size=4, W ->  0x200010
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009126e4, offset=0x14ac, size=4, W ->  0x800040
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009126e4, offset=0x14b0, size=4, W ->  0x2000100
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009126e4, offset=0x14b4, size=4, W ->  0x8000400
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009126e4, offset=0x14b8, size=4, W ->  0x20001000
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009126e4, offset=0x14bc, size=4, W ->  0xffffffff80004000
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x900000000091272c, offset=0x14c0, size=4, W ->  0x2020202
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x900000000091272c, offset=0x14c4, size=4, W ->  0x2020202
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=0, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c00, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[0], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[0], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[1], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[1], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[2], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[2], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[3], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[3], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=1, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c04, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[4], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[4], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[5], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[5], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[6], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[6], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[7], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[7], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=2, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c08, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[8], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[8], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[9], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[9], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[10], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[10], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[11], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[11], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=3, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c0c, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[12], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[12], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[13], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[13], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[14], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[14], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[15], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[15], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=4, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c10, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[16], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[16], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[17], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[17], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[18], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[18], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[19], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[19], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=5, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c14, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[20], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[20], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[21], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[21], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[22], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[22], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[23], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[23], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=6, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c18, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[24], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[24], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[25], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[25], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[26], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[26], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[27], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[27], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=7, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c1c, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[28], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[28], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[29], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[29], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[30], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[30], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[31], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[31], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=8, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c20, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[32], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[32], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[33], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[33], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[34], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[34], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[35], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[35], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=9, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c24, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[36], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[36], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[37], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[37], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[38], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[38], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[39], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[39], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=10, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c28, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[40], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[40], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[41], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[41], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[42], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[42], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[43], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[43], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=11, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c2c, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[44], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[44], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[45], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[45], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[46], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[46], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[47], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[47], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=12, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c30, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[48], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[48], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[49], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[49], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[50], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[50], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[51], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[51], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=13, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c34, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[52], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[52], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[53], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[53], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[54], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[54], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[55], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[55], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=14, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c38, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[56], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[56], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[57], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[57], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[58], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[58], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[59], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[59], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=15, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c3c, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[60], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[60], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[61], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[61], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[62], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[62], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[63], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[63], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=16, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c40, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[64], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[64], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[65], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[65], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[66], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[66], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[67], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[67], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=17, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c44, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[68], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[68], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[69], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[69], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[70], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[70], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[71], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[71], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=18, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c48, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[72], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[72], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[73], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[73], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[74], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[74], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[75], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[75], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=19, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c4c, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[76], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[76], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[77], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[77], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[78], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[78], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[79], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[79], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=20, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c50, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[80], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[80], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[81], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[81], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[82], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[82], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[83], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[83], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=21, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c54, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[84], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[84], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[85], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[85], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[86], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[86], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[87], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[87], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=22, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c58, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[88], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[88], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[89], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[89], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[90], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[90], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[91], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[91], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=23, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c5c, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[92], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[92], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[93], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[93], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[94], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[94], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[95], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[95], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=24, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c60, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[96], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[96], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[97], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[97], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[98], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[98], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[99], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[99], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=25, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c64, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[100], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[100], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[101], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[101], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[102], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[102], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[103], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[103], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=26, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c68, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[104], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[104], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[105], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[105], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[106], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[106], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[107], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[107], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=27, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c6c, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[108], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[108], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[109], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[109], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[110], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[110], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[111], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[111], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=28, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c70, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[112], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[112], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[113], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[113], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[114], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[114], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[115], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[115], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=29, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c74, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[116], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[116], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[117], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[117], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[118], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[118], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[119], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[119], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=30, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c78, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[120], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[120], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[121], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[121], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[122], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[122], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[123], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[123], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=31, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c7c, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[124], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[124], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[125], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[125], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[126], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[126], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[127], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[127], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=32, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c80, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[128], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[128], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[129], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[129], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[130], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[130], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[131], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[131], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=33, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c84, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[132], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[132], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[133], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[133], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[134], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[134], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[135], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[135], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=34, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c88, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[136], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[136], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[137], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[137], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[138], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[138], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[139], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[139], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=35, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c8c, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[140], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[140], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[141], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[141], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[142], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[142], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[143], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[143], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=36, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c90, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[144], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[144], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[145], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[145], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[146], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[146], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[147], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[147], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=37, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c94, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[148], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[148], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[149], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[149], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[150], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[150], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[151], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[151], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=38, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c98, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[152], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[152], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[153], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[153], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[154], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[154], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[155], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[155], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=39, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1c9c, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[156], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[156], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[157], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[157], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[158], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[158], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[159], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[159], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=40, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1ca0, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[160], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[160], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[161], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[161], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[162], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[162], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[163], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[163], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=41, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1ca4, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[164], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[164], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[165], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[165], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[166], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[166], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[167], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[167], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=42, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1ca8, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[168], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[168], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[169], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[169], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[170], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[170], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[171], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[171], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=43, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1cac, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[172], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[172], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[173], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[173], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[174], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[174], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[175], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[175], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=44, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1cb0, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[176], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[176], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[177], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[177], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[178], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[178], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[179], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[179], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=45, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1cb4, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[180], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[180], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[181], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[181], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[182], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[182], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[183], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[183], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=46, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1cb8, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[184], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[184], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[185], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[185], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[186], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[186], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[187], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[187], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=47, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1cbc, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[188], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[188], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[189], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[189], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[190], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[190], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[191], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[191], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=48, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1cc0, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[192], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[192], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[193], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[193], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[194], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[194], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[195], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[195], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=49, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1cc4, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[196], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[196], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[197], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[197], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[198], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[198], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[199], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[199], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=50, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1cc8, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[200], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[200], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[201], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[201], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[202], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[202], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[203], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[203], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=51, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1ccc, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[204], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[204], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[205], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[205], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[206], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[206], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[207], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[207], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=52, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1cd0, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[208], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[208], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[209], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[209], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[210], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[210], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[211], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[211], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=53, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1cd4, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[212], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[212], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[213], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[213], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[214], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[214], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[215], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[215], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=54, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1cd8, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[216], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[216], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[217], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[217], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[218], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[218], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[219], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[219], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=55, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1cdc, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[220], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[220], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[221], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[221], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[222], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[222], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[223], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[223], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=56, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1ce0, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[224], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[224], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[225], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[225], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[226], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[226], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[227], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[227], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=57, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1ce4, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[228], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[228], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[229], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[229], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[230], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[230], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[231], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[231], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=58, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1ce8, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[232], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[232], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[233], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[233], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[234], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[234], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[235], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[235], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=59, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1cec, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[236], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[236], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[237], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[237], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[238], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[238], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[239], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[239], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=60, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1cf0, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[240], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[240], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[241], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[241], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[242], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[242], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[243], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[243], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=61, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1cf4, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[244], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[244], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[245], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[245], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[246], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[246], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[247], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[247], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=62, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1cf8, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[248], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[248], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[249], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[249], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[250], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[250], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[251], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[251], value=0x1
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, i=63, bit=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127a0, offset=0x1cfc, size=4, W ->  0x1010101
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[252], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[252], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[253], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[253], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[254], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[254], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:521) found extioi[255], node_selection=1, irq_target=0, changed cpu routing to 0
+[WARN  0] (hvisor::arch::loongarch64::zone:529) write core mapping for extioi[255], value=0x1
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127cc, offset=0x1600, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127d4, offset=0x1680, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127cc, offset=0x1604, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127d4, offset=0x1684, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127cc, offset=0x1608, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127d4, offset=0x1688, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127cc, offset=0x160c, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127d4, offset=0x168c, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127cc, offset=0x1610, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127d4, offset=0x1690, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127cc, offset=0x1614, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127d4, offset=0x1694, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127cc, offset=0x1618, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127d4, offset=0x1698, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127cc, offset=0x161c, size=4, W ->  0xffffffffffffffff
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009127d4, offset=0x169c, size=4, W ->  0xffffffffffffffff
+[    0.000000] pch-pic: debug: wheatfox: pch_pic_of_init, parent_domain->name = :platform:interrupt-controller@1fe01600
+[    0.000000] pch-pic: debug: wheatfox: pch_pic_init, base = 0x10000000, size = 0x400, vec_base = 0, gsi_base = 0, vec_count = 64
+[    0.000000] pch-pic: debug: wheatfox: pch_pic_init, priv->pic_domain->name = :platform:interrupt-controller@10000000
+[    0.000000] pch-msi: debug: wheatfox: pch_msi_of_init, parent_domain->name = :platform:interrupt-controller@1fe01600
+[    0.000000] pch-msi: Registering 192 MSIs, starting at 64
+[    0.000000] pch-msi: debug: wheatfox: pch_msi_init_domains, middle_domain->name = :platform:msi-controller@1fe01140
+[    0.000000] pch-msi: debug: wheatfox: pch_msi_init, nr_pics = 1
+[    0.000000] pch-msi: debug: wheatfox: pch_msi_of_init finished with err = 0
+[    0.000000] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x2
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x4
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x5
+[    0.000000] Constant clock event device register
+[    0.000000] clocksource: Constant: mask: 0xffffffffffffffff max_cycles: 0x171024e7e0, max_idle_ns: 440795205315 ns
+[    0.000000] sched_clock: 64 bits at 100MHz, resolution 10ns, wraps every 4398046511100ns
+[    0.008039] Constant clock source device register
+[INFO  0] (hvisor::arch::loongarch64::trap:1334) csrrd emulation for CSR 0x380
+[INFO  0] (hvisor::arch::loongarch64::trap:1334) csrrd emulation for CSR 0x300
+[    0.012956] Console: colour dummy device 80x25
+[    0.017500] Calibrating delay loop (skipped), value calculated using timer frequency.. 200.00 BogoMIPS (lpj=1000000)
+[    0.027968] pid_max: default: 32768 minimum: 301
+[    0.032565] LSM: initializing lsm=capability,yama
+[    0.037251] Yama: becoming mindful.
+[    0.040741] Mount-cache hash table entries: 2048 (order: 2, 16384 bytes, linear)
+[    0.048093] Mountpoint-cache hash table entries: 2048 (order: 2, 16384 bytes, linear)
+[    0.056348] rcu: Hierarchical SRCU implementation.
+[    0.061103] rcu: 	Max phase no-delay instances is 1000.
+[    0.066354] Memory: 587248K/1554432K available (12608K kernel code, 3500K rwdata, 4212K rodata, 57344K init, 763K bss, 965756K reserved, 0K cma-reserved)
+[    0.080103] devtmpfs: initialized
+[INFO  0] (hvisor::arch::loongarch64::trap:1297) cpucfg emulation, target cpucfg index is 0x6
+[INFO  0] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x200
+[INFO  0] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x201
+[INFO  0] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x202
+[INFO  0] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x203
+[INFO  0] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x204
+[INFO  0] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x205
+[INFO  0] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x206
+[INFO  0] (hvisor::arch::loongarch64::trap:1340) csrwr emulation for CSR 0x207
+[    0.083789] Performance counters: loongarch/loongson64 PMU enabled, 4 64-bit counters available to each CPU.
+[    0.094589] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.104358] futex hash table entries: 256 (order: 0, 6144 bytes, linear)
+[    0.111185] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[INFO  0] (hvisor::arch::loongarch64::trap:1334) csrrd emulation for CSR 0x380
+[INFO  0] (hvisor::arch::loongarch64::trap:1334) csrrd emulation for CSR 0x300
+[    0.117269] thermal_sys: Registered thermal governor 'step_wise'
+[    0.117485] hw-breakpoint: Found 0 breakpoint and 0 watchpoint registers.
+[    0.131558] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.138304] HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+[    0.307398] raid6: lasx     gen() 22154 MB/s
+[    0.477399] raid6: lsx      gen() 13573 MB/s
+[    0.647406] raid6: int64x8  gen()  4082 MB/s
+[    0.817399] raid6: int64x4  gen()  5251 MB/s
+[    0.987399] raid6: int64x2  gen()  4776 MB/s
+[    1.157404] raid6: int64x1  gen()  3691 MB/s
+[    1.161640] raid6: using algorithm lasx gen() 22154 MB/s
+[    1.327398] raid6: .... xor() 12368 MB/s, rmw enabled
+[    1.332413] raid6: using lasx recovery algorithm
+[    1.337039] ACPI: Interpreter disabled.
+[    1.340857] iommu: Default domain type: Translated
+[    1.345611] iommu: DMA domain TLB invalidation policy: strict mode
+[    1.351822] SCSI subsystem initialized
+[    1.355568] libata version 3.00 loaded.
+[    1.359407] pps_core: LinuxPPS API ver. 1 registered
+[    1.364334] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    1.373639] vgaarb: loaded
+[    1.376339] clocksource: Switched to clocksource Constant
+[    1.381766] VFS: Disk quotas dquot_6.6.0
+[    1.385661] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    1.392527] pnp: PnP ACPI: disabled
+[    1.397655] NET: Registered PF_INET protocol family
+[    1.402541] IP idents hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    1.410216] tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 4096 bytes, linear)
+[    1.418518] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    1.426212] TCP established hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    1.433922] TCP bind hash table entries: 8192 (order: 5, 131072 bytes, linear)
+[    1.441122] TCP: Hash tables configured (established 8192 bind 8192)
+[    1.447459] UDP hash table entries: 512 (order: 3, 32768 bytes, linear)
+[    1.454035] UDP-Lite hash table entries: 512 (order: 3, 32768 bytes, linear)
+[    1.461067] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    1.466695] NET: Registered PF_XDP protocol family
+[    1.471452] PCI: CLS 0 bytes, default 64
+[    2.275470] Initialise system trusted keyrings
+[    2.279962] workingset: timestamp_bits=46 max_order=18 bucket_order=0
+[    2.286389] zbud: loaded
+[    2.289015] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    2.294909] SGI XFS with ACLs, security attributes, quota, no debug enabled
+[    2.301976] xor: measuring software checksum speed
+[    2.307012]    8regs           : 11826 MB/sec
+[    2.311667]    8regs_prefetch  :  9877 MB/sec
+[    2.316225]    32regs          : 13907 MB/sec
+[    2.320883]    32regs_prefetch :  9847 MB/sec
+[    2.325392]    lsx             : 17515 MB/sec
+[    2.329903]    lasx            : 17513 MB/sec
+[    2.334225] xor: using function: lsx (17515 MB/sec)
+[    2.339068] Key type asymmetric registered
+[    2.343131] Asymmetric key parser 'x509' registered
+[    2.349601] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 250)
+[    2.356990] io scheduler mq-deadline registered
+[    2.361486] io scheduler kyber registered
+[    2.365469] io scheduler bfq registered
+[    2.371099] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    2.377801] loongson-pci 1a000000.pcie: host bridge /pcie@1a000000 ranges:
+[    2.384642] loongson-pci 1a000000.pcie:       IO 0x0018408000..0x001840ffff -> 0x0000008000
+[    2.392953] loongson-pci 1a000000.pcie:      MEM 0x0060000000..0x007fffffff -> 0x0060000000
+[    2.401267] [wheatfox] loongson_pci_probe: found bridge pcie
+[    2.406893] [kai] loongson_pci_reg1: start=fe00000000, end=fe1fffffff
+[    2.413292] [kai] loongson_cfg1_base=800000fe00000000
+[    2.418309] [wheatfox] loongson_pci_probe: bridge pcie initialized, calling pci_host_probe
+[    2.426560] loongson-pci 1a000000.pcie: PCI host bridge to bus 0000:00
+[    2.433046] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    2.438496] pci_bus 0000:00: root bus resource [io  0x0000-0x7fff] (bus address [0x8000-0xffff])
+[    2.447228] pci_bus 0000:00: root bus resource [mem 0x60000000-0x7fffffff]
+[    2.454072] pci 0000:00:00.0: [0014:7a00] type 00 class 0x060000 conventional PCI endpoint
+[    2.462352] pci 0000:00:00.1: [0014:7a10] type 00 class 0x060000 conventional PCI endpoint
+[    2.470603] pci 0000:00:00.2: [0014:7a20] type 00 class 0x060000 conventional PCI endpoint
+[    2.478858] pci 0000:00:00.3: [0014:7a30] type 00 class 0x060000 conventional PCI endpoint
+[    2.487121] pci 0000:00:04.0: [0014:7a24] type 00 class 0x0c0310 conventional PCI endpoint
+[    2.495336] pci 0000:00:04.0: BAR 0 [mem 0x45940000-0x45947fff 64bit]
+[    2.501774] pci 0000:00:04.1: [0014:7a14] type 00 class 0x0c0320 conventional PCI endpoint
+[    2.509992] pci 0000:00:04.1: BAR 0 [mem 0x45948000-0x4594ffff 64bit]
+[    2.516430] pci 0000:00:05.0: [0014:7a24] type 00 class 0x0c0310 conventional PCI endpoint
+[    2.524646] pci 0000:00:05.0: BAR 0 [mem 0x45950000-0x45957fff 64bit]
+[    2.531082] pci 0000:00:05.1: [0014:7a14] type 00 class 0x0c0320 conventional PCI endpoint
+[    2.539300] pci 0000:00:05.1: BAR 0 [mem 0x45958000-0x4595ffff 64bit]
+[    2.545736] pci 0000:00:06.0: [0014:7a25] type 00 class 0x040000 conventional PCI endpoint
+[    2.553953] pci 0000:00:06.0: BAR 0 [mem 0x45960000-0x459600ff 64bit]
+[    2.560353] pci 0000:00:06.0: BAR 2 [mem 0x30000000-0x3fffffff 64bit]
+[    2.566754] pci 0000:00:06.0: BAR 4 [mem 0x45900000-0x4590ffff 64bit]
+[    2.573183] pci 0000:00:06.1: [0014:7a36] type 00 class 0x030000 conventional PCI endpoint
+[    2.581401] pci 0000:00:06.1: BAR 0 [mem 0x45910000-0x4591ffff 64bit]
+[    2.587832] pci 0000:00:06.1: vgaarb: setting as boot VGA device
+[    2.593797] pci 0000:00:06.1: vgaarb: bridge control possible
+[    2.599502] pci 0000:00:06.1: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+[    2.607983] pci 0000:00:06.2: [0014:7a37] type 00 class 0x040300 conventional PCI endpoint
+[    2.616198] pci 0000:00:06.2: BAR 0 [mem 0x45920000-0x4592ffff 64bit]
+[    2.622636] pci 0000:00:07.0: [0014:7a07] type 00 class 0x040300 conventional PCI endpoint
+[    2.630853] pci 0000:00:07.0: BAR 0 [mem 0x45930000-0x4593ffff 64bit]
+[    2.637291] pci 0000:00:08.0: [0014:7a18] type 00 class 0x010601 conventional PCI endpoint
+[    2.645512] pci 0000:00:08.0: BAR 5 [mem 0x4596b000-0x4596b3ff]
+[    2.651430] pci 0000:00:09.0: [0014:7a49] type 01 class 0x060400 PCIe Root Port
+[    2.658700] pci 0000:00:09.0: BAR 0 [mem 0x45961000-0x45961fff 64bit]
+[    2.665099] pci 0000:00:09.0: PCI bridge to [bus 01]
+[    2.670056] pci 0000:00:09.0: supports D1 D2
+[    2.674293] pci 0000:00:09.0: PME# supported from D0 D1 D3hot D3cold
+[    2.680668] pci 0000:00:0a.0: [0014:7a39] type 01 class 0x060400 PCIe Root Port
+[    2.687937] pci 0000:00:0a.0: BAR 0 [mem 0x45962000-0x45962fff 64bit]
+[    2.694337] pci 0000:00:0a.0: PCI bridge to [bus 02]
+[    2.699274] pci 0000:00:0a.0:   bridge window [io  0x20000-0x20fff]
+[    2.705499] pci 0000:00:0a.0:   bridge window [mem 0x45800000-0x458fffff]
+[    2.712267] pci 0000:00:0a.0: supports D1 D2
+[    2.716505] pci 0000:00:0a.0: PME# supported from D0 D1 D3hot D3cold
+[    2.722874] pci 0000:00:0b.0: [0014:7a39] type 01 class 0x060400 PCIe Root Port
+[    2.730144] pci 0000:00:0b.0: BAR 0 [mem 0x45963000-0x45963fff 64bit]
+[    2.736545] pci 0000:00:0b.0: PCI bridge to [bus 03]
+[    2.741499] pci 0000:00:0b.0: supports D1 D2
+[    2.745735] pci 0000:00:0b.0: PME# supported from D0 D1 D3hot D3cold
+[    2.752105] pci 0000:00:0c.0: [0014:7a39] type 01 class 0x060400 PCIe Root Port
+[    2.759375] pci 0000:00:0c.0: BAR 0 [mem 0x45964000-0x45964fff 64bit]
+[    2.765774] pci 0000:00:0c.0: PCI bridge to [bus 04]
+[    2.770729] pci 0000:00:0c.0: supports D1 D2
+[    2.774965] pci 0000:00:0c.0: PME# supported from D0 D1 D3hot D3cold
+[    2.781333] pci 0000:00:0d.0: [0014:7a49] type 01 class 0x060400 PCIe Root Port
+[    2.788600] pci 0000:00:0d.0: BAR 0 [mem 0x45965000-0x45965fff 64bit]
+[    2.794999] pci 0000:00:0d.0: PCI bridge to [bus 05]
+[    2.799930] pci 0000:00:0d.0:   bridge window [mem 0x45700000-0x457fffff]
+[    2.806690] pci 0000:00:0d.0: supports D1 D2
+[    2.810926] pci 0000:00:0d.0: PME# supported from D0 D1 D3hot D3cold
+[    2.817296] pci 0000:00:0f.0: [0014:7a69] type 01 class 0x060400 PCIe Root Port
+[    2.824562] pci 0000:00:0f.0: BAR 0 [mem 0x45966000-0x45966fff 64bit]
+[    2.830963] pci 0000:00:0f.0: PCI bridge to [bus 06-07]
+[    2.836152] pci 0000:00:0f.0:   bridge window [mem 0x45200000-0x456fffff]
+[    2.842898] pci 0000:00:0f.0:   bridge window [mem 0x45000000-0x450fffff 64bit pref]
+[    2.850609] pci 0000:00:0f.0: supports D1 D2
+[    2.854845] pci 0000:00:0f.0: PME# supported from D0 D1 D3hot D3cold
+[    2.861213] pci 0000:00:10.0: [0014:7a59] type 01 class 0x060400 PCIe Root Port
+[    2.868482] pci 0000:00:10.0: BAR 0 [mem 0x45967000-0x45967fff 64bit]
+[    2.874881] pci 0000:00:10.0: PCI bridge to [bus 08]
+[    2.879836] pci 0000:00:10.0: supports D1 D2
+[    2.884073] pci 0000:00:10.0: PME# supported from D0 D1 D3hot D3cold
+[    2.890449] pci 0000:00:13.0: [0014:7a59] type 01 class 0x060400 PCIe Root Port
+[    2.897718] pci 0000:00:13.0: BAR 0 [mem 0x45968000-0x45968fff 64bit]
+[    2.904118] pci 0000:00:13.0: PCI bridge to [bus 09]
+[    2.909073] pci 0000:00:13.0: supports D1 D2
+[    2.913309] pci 0000:00:13.0: PME# supported from D0 D1 D3hot D3cold
+[    2.919682] pci 0000:00:16.0: [0014:7a1b] type 00 class 0x088000 conventional PCI endpoint
+[    2.927899] pci 0000:00:16.0: BAR 0 [mem 0x45969000-0x45969fff 64bit]
+[    2.934299] pci 0000:00:16.0: BAR 2 [mem 0x44000000-0x44ffffff 64bit]
+[    2.940740] pci 0000:00:19.0: [0014:7a34] type 00 class 0x0c0330 conventional PCI endpoint
+[    2.948959] pci 0000:00:19.0: BAR 0 [mem 0x45100000-0x451fffff 64bit]
+[    2.955394] pci 0000:00:1a.0: [0014:7a1f] type 00 class 0x080600 conventional PCI endpoint
+[    2.963611] pci 0000:00:1a.0: BAR 0 [mem 0x4596a000-0x4596a3ff 64bit]
+[    2.970012] pci 0000:00:1a.0: BAR 2 [mem 0x40000000-0x43ffffff 64bit]
+[    2.976414] pci 0000:00:1a.0: ROM [mem 0xfffff800-0xffffffff pref]
+[    2.982683] pci 0000:02:00.0: [1f0a:6801] type 00 class 0x020000 PCIe Endpoint
+[    2.989897] pci 0000:02:00.0: BAR 0 [mem 0x45800000-0x45803fff 64bit]
+[    2.996341] pci 0000:02:00.0: BAR 4 [io  0x20000-0x200ff]
+[    3.001852] pci 0000:02:00.0: supports D1
+[    3.005829] pci 0000:02:00.0: PME# supported from D0 D1 D3hot D3cold
+[    3.012375] pci 0000:05:00.0: [1e4b:1202] type 00 class 0x010802 PCIe Endpoint
+[    3.019564] pci 0000:05:00.0: BAR 0 [mem 0x45700000-0x45703fff 64bit]
+[    3.026042] pci 0000:05:00.0: PME# supported from D0 D3hot D3cold
+[    3.032249] pci 0000:06:00.0: [8086:1521] type 00 class 0x020000 PCIe Endpoint
+[    3.039443] pci 0000:06:00.0: BAR 0 [mem 0x45500000-0x455fffff]
+[    3.045346] pci 0000:06:00.0: BAR 3 [mem 0x4560c000-0x4560ffff]
+[    3.051347] pci 0000:06:00.0: PME# supported from D0 D3hot D3cold
+[    3.057436] pci 0000:06:00.0: VF BAR 0 [mem 0x450e0000-0x450e3fff 64bit pref]
+[    3.064524] pci 0000:06:00.0: VF BAR 0 [mem 0x450e0000-0x450fffff 64bit pref]: contains BAR 0 for 8 VFs
+[    3.073882] pci 0000:06:00.0: VF BAR 3 [mem 0x450c0000-0x450c3fff 64bit pref]
+[    3.080971] pci 0000:06:00.0: VF BAR 3 [mem 0x450c0000-0x450dffff 64bit pref]: contains BAR 3 for 8 VFs
+[    3.090511] pci 0000:06:00.1: [8086:1521] type 00 class 0x020000 PCIe Endpoint
+[    3.097703] pci 0000:06:00.1: BAR 0 [mem 0x45400000-0x454fffff]
+[    3.103606] pci 0000:06:00.1: BAR 3 [mem 0x45608000-0x4560bfff]
+[    3.109601] pci 0000:06:00.1: PME# supported from D0 D3hot D3cold
+[    3.115687] pci 0000:06:00.1: VF BAR 0 [mem 0x450a0000-0x450a3fff 64bit pref]
+[    3.122777] pci 0000:06:00.1: VF BAR 0 [mem 0x450a0000-0x450bffff 64bit pref]: contains BAR 0 for 8 VFs
+[    3.132135] pci 0000:06:00.1: VF BAR 3 [mem 0x45080000-0x45083fff 64bit pref]
+[    3.139224] pci 0000:06:00.1: VF BAR 3 [mem 0x45080000-0x4509ffff 64bit pref]: contains BAR 3 for 8 VFs
+[    3.148751] pci 0000:06:00.2: [8086:1521] type 00 class 0x020000 PCIe Endpoint
+[    3.155941] pci 0000:06:00.2: BAR 0 [mem 0x45300000-0x453fffff]
+[    3.161846] pci 0000:06:00.2: BAR 3 [mem 0x45604000-0x45607fff]
+[    3.167841] pci 0000:06:00.2: PME# supported from D0 D3hot D3cold
+[    3.173926] pci 0000:06:00.2: VF BAR 0 [mem 0x45060000-0x45063fff 64bit pref]
+[    3.181016] pci 0000:06:00.2: VF BAR 0 [mem 0x45060000-0x4507ffff 64bit pref]: contains BAR 0 for 8 VFs
+[    3.190374] pci 0000:06:00.2: VF BAR 3 [mem 0x45040000-0x45043fff 64bit pref]
+[    3.197463] pci 0000:06:00.2: VF BAR 3 [mem 0x45040000-0x4505ffff 64bit pref]: contains BAR 3 for 8 VFs
+[    3.206993] pci 0000:06:00.3: [8086:1521] type 00 class 0x020000 PCIe Endpoint
+[    3.214183] pci 0000:06:00.3: BAR 0 [mem 0x45200000-0x452fffff]
+[    3.220088] pci 0000:06:00.3: BAR 3 [mem 0x45600000-0x45603fff]
+[    3.226081] pci 0000:06:00.3: PME# supported from D0 D3hot D3cold
+[    3.232168] pci 0000:06:00.3: VF BAR 0 [mem 0x45020000-0x45023fff 64bit pref]
+[    3.239258] pci 0000:06:00.3: VF BAR 0 [mem 0x45020000-0x4503ffff 64bit pref]: contains BAR 0 for 8 VFs
+[    3.248616] pci 0000:06:00.3: VF BAR 3 [mem 0x45000000-0x45003fff 64bit pref]
+[    3.255704] pci 0000:06:00.3: VF BAR 3 [mem 0x45000000-0x4501ffff 64bit pref]: contains BAR 3 for 8 VFs
+[    3.265278] pci 0000:00:0f.0: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 06-07] add_size 100000 add_align 100000
+[    3.276965] pci 0000:00:06.0: BAR 2 [mem 0x60000000-0x6fffffff 64bit]: assigned
+[    3.284228] pci 0000:00:1a.0: BAR 2 [mem 0x70000000-0x73ffffff 64bit]: assigned
+[    3.291493] pci 0000:00:16.0: BAR 2 [mem 0x74000000-0x74ffffff 64bit]: assigned
+[    3.298757] pci 0000:00:0a.0: bridge window [mem 0x75000000-0x750fffff]: assigned
+[    3.306191] pci 0000:00:0d.0: bridge window [mem 0x75100000-0x751fffff]: assigned
+[    3.313626] pci 0000:00:0f.0: bridge window [mem 0x75200000-0x756fffff]: assigned
+[    3.321061] pci 0000:00:0f.0: bridge window [mem 0x75700000-0x757fffff 64bit pref]: assigned
+[    3.329447] pci 0000:00:19.0: BAR 0 [mem 0x75800000-0x758fffff 64bit]: assigned
+[    3.336711] pci 0000:00:06.0: BAR 4 [mem 0x75900000-0x7590ffff 64bit]: assigned
+[    3.343973] pci 0000:00:06.1: BAR 0 [mem 0x75910000-0x7591ffff 64bit]: assigned
+[    3.351237] pci 0000:00:06.2: BAR 0 [mem 0x75920000-0x7592ffff 64bit]: assigned
+[    3.358500] pci 0000:00:07.0: BAR 0 [mem 0x75930000-0x7593ffff 64bit]: assigned
+[    3.365762] pci 0000:00:04.0: BAR 0 [mem 0x75940000-0x75947fff 64bit]: assigned
+[    3.373026] pci 0000:00:04.1: BAR 0 [mem 0x75948000-0x7594ffff 64bit]: assigned
+[    3.380289] pci 0000:00:05.0: BAR 0 [mem 0x75950000-0x75957fff 64bit]: assigned
+[    3.387553] pci 0000:00:05.1: BAR 0 [mem 0x75958000-0x7595ffff 64bit]: assigned
+[    3.394816] pci 0000:00:09.0: BAR 0 [mem 0x75960000-0x75960fff 64bit]: assigned
+[    3.402080] pci 0000:00:0a.0: BAR 0 [mem 0x75961000-0x75961fff 64bit]: assigned
+[    3.409344] pci 0000:00:0a.0: bridge window [io  0x4000-0x4fff]: assigned
+[    3.416087] pci 0000:00:0b.0: BAR 0 [mem 0x75962000-0x75962fff 64bit]: assigned
+[    3.423352] pci 0000:00:0c.0: BAR 0 [mem 0x75963000-0x75963fff 64bit]: assigned
+[    3.430617] pci 0000:00:0d.0: BAR 0 [mem 0x75964000-0x75964fff 64bit]: assigned
+[    3.437881] pci 0000:00:0f.0: BAR 0 [mem 0x75965000-0x75965fff 64bit]: assigned
+[    3.445144] pci 0000:00:10.0: BAR 0 [mem 0x75966000-0x75966fff 64bit]: assigned
+[    3.452408] pci 0000:00:13.0: BAR 0 [mem 0x75967000-0x75967fff 64bit]: assigned
+[    3.459673] pci 0000:00:16.0: BAR 0 [mem 0x75968000-0x75968fff 64bit]: assigned
+[    3.466936] pci 0000:00:1a.0: ROM [mem 0x75969000-0x759697ff pref]: assigned
+[    3.473938] pci 0000:00:08.0: BAR 5 [mem 0x75969800-0x75969bff]: assigned
+[    3.480682] pci 0000:00:1a.0: BAR 0 [mem 0x75969c00-0x75969fff 64bit]: assigned
+[    3.487946] pci 0000:00:06.0: BAR 0 [mem 0x7596a000-0x7596a0ff 64bit]: assigned
+[    3.495213] pci 0000:00:09.0: PCI bridge to [bus 01]
+[    3.500147] pci 0000:02:00.0: BAR 0 [mem 0x75000000-0x75003fff 64bit]: assigned
+[    3.507424] pci 0000:02:00.0: BAR 4 [io  0x4000-0x40ff]: assigned
+[    3.513480] pci 0000:00:0a.0: PCI bridge to [bus 02]
+[    3.518409] pci 0000:00:0a.0:   bridge window [io  0x4000-0x4fff]
+[    3.524461] pci 0000:00:0a.0:   bridge window [mem 0x75000000-0x750fffff]
+[    3.531206] pci 0000:00:0b.0: PCI bridge to [bus 03]
+[    3.536137] pci 0000:00:0c.0: PCI bridge to [bus 04]
+[    3.541069] pci 0000:05:00.0: BAR 0 [mem 0x75100000-0x75103fff 64bit]: assigned
+[    3.548336] pci 0000:00:0d.0: PCI bridge to [bus 05]
+[    3.553265] pci 0000:00:0d.0:   bridge window [mem 0x75100000-0x751fffff]
+[    3.560014] pci 0000:06:00.0: BAR 0 [mem 0x75200000-0x752fffff]: assigned
+[    3.566760] pci 0000:06:00.1: BAR 0 [mem 0x75300000-0x753fffff]: assigned
+[    3.573505] pci 0000:06:00.2: BAR 0 [mem 0x75400000-0x754fffff]: assigned
+[    3.580250] pci 0000:06:00.3: BAR 0 [mem 0x75500000-0x755fffff]: assigned
+[    3.586996] pci 0000:06:00.0: BAR 3 [mem 0x75600000-0x75603fff]: assigned
+[    3.593741] pci 0000:06:00.0: VF BAR 0 [mem 0x75700000-0x7571ffff 64bit pref]: assigned
+[    3.601699] pci 0000:06:00.0: VF BAR 3 [mem 0x75720000-0x7573ffff 64bit pref]: assigned
+[    3.609656] pci 0000:06:00.1: BAR 3 [mem 0x75604000-0x75607fff]: assigned
+[    3.616402] pci 0000:06:00.1: VF BAR 0 [mem 0x75740000-0x7575ffff 64bit pref]: assigned
+[    3.624358] pci 0000:06:00.1: VF BAR 3 [mem 0x75760000-0x7577ffff 64bit pref]: assigned
+[    3.632315] pci 0000:06:00.2: BAR 3 [mem 0x75608000-0x7560bfff]: assigned
+[    3.639061] pci 0000:06:00.2: VF BAR 0 [mem 0x75780000-0x7579ffff 64bit pref]: assigned
+[    3.647018] pci 0000:06:00.2: VF BAR 3 [mem 0x757a0000-0x757bffff 64bit pref]: assigned
+[    3.654973] pci 0000:06:00.3: BAR 3 [mem 0x7560c000-0x7560ffff]: assigned
+[    3.661719] pci 0000:06:00.3: VF BAR 0 [mem 0x757c0000-0x757dffff 64bit pref]: assigned
+[    3.669676] pci 0000:06:00.3: VF BAR 3 [mem 0x757e0000-0x757fffff 64bit pref]: assigned
+[    3.677635] pci 0000:00:0f.0: PCI bridge to [bus 06-07]
+[    3.682823] pci 0000:00:0f.0:   bridge window [mem 0x75200000-0x756fffff]
+[    3.689567] pci 0000:00:0f.0:   bridge window [mem 0x75700000-0x757fffff 64bit pref]
+[    3.697261] pci 0000:00:10.0: PCI bridge to [bus 08]
+[    3.702192] pci 0000:00:13.0: PCI bridge to [bus 09]
+[    3.707124] pci_bus 0000:00: resource 4 [io  0x0000-0x7fff]
+[    3.712656] pci_bus 0000:00: resource 5 [mem 0x60000000-0x7fffffff]
+[    3.718885] pci_bus 0000:02: resource 0 [io  0x4000-0x4fff]
+[    3.724417] pci_bus 0000:02: resource 1 [mem 0x75000000-0x750fffff]
+[    3.730643] pci_bus 0000:05: resource 1 [mem 0x75100000-0x751fffff]
+[    3.736868] pci_bus 0000:06: resource 1 [mem 0x75200000-0x756fffff]
+[    3.743092] pci_bus 0000:06: resource 2 [mem 0x75700000-0x757fffff 64bit pref]
+[    3.750350] pch-pic: debug: wheatfox: pch_pic_alloc, virq = 18 -> hwirq = 0
+[    3.757318] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 19, hwirq = 64, domain = :platform:msi-controller@1fe01140-5
+[    3.769338] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 19, hwirq = 64, domain = :platform:msi-controller@1fe01140-5
+[    3.781359] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x40
+[    3.792715] pcieport 0000:00:09.0: PME: Signaling with IRQ 19
+[    3.798473] pcieport 0000:00:09.0: AER: enabled with IRQ 19
+[    3.804085] pch-pic: debug: wheatfox: pch_pic_alloc, virq = 20 -> hwirq = 1
+[    3.811037] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 21, hwirq = 65, domain = :platform:msi-controller@1fe01140-5
+[    3.823056] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 21, hwirq = 65, domain = :platform:msi-controller@1fe01140-5
+[    3.835078] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x41
+[    3.846427] pcieport 0000:00:0a.0: PME: Signaling with IRQ 21
+[    3.852176] pcieport 0000:00:0a.0: AER: enabled with IRQ 21
+[    3.857793] pch-pic: debug: wheatfox: pch_pic_alloc, virq = 22 -> hwirq = 2
+[    3.864737] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 23, hwirq = 66, domain = :platform:msi-controller@1fe01140-5
+[    3.876757] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 23, hwirq = 66, domain = :platform:msi-controller@1fe01140-5
+[    3.888777] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x42
+[    3.900128] pcieport 0000:00:0b.0: PME: Signaling with IRQ 23
+[    3.905877] pcieport 0000:00:0b.0: AER: enabled with IRQ 23
+[    3.911496] pch-pic: debug: wheatfox: pch_pic_alloc, virq = 24 -> hwirq = 3
+[    3.918447] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 25, hwirq = 67, domain = :platform:msi-controller@1fe01140-5
+[    3.930467] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 25, hwirq = 67, domain = :platform:msi-controller@1fe01140-5
+[    3.942489] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x43
+[    3.953836] pcieport 0000:00:0c.0: PME: Signaling with IRQ 25
+[    3.959587] pcieport 0000:00:0c.0: AER: enabled with IRQ 25
+[    3.965199] pch-pic: debug: wheatfox: pch_pic_alloc, virq = 26 -> hwirq = 4
+[    3.972146] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 27, hwirq = 68, domain = :platform:msi-controller@1fe01140-5
+[    3.984165] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 27, hwirq = 68, domain = :platform:msi-controller@1fe01140-5
+[    3.996187] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x44
+[    4.007534] pcieport 0000:00:0d.0: PME: Signaling with IRQ 27
+[    4.013279] pcieport 0000:00:0d.0: AER: enabled with IRQ 27
+[    4.018895] pch-pic: debug: wheatfox: pch_pic_alloc, virq = 28 -> hwirq = 5
+[    4.025836] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 29, hwirq = 69, domain = :platform:msi-controller@1fe01140-5
+[    4.037856] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 29, hwirq = 69, domain = :platform:msi-controller@1fe01140-5
+[    4.049875] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x45
+[    4.061224] pcieport 0000:00:0f.0: PME: Signaling with IRQ 29
+[    4.066972] pcieport 0000:00:0f.0: AER: enabled with IRQ 29
+[    4.072587] pch-pic: debug: wheatfox: pch_pic_alloc, virq = 30 -> hwirq = 6
+[    4.079536] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 31, hwirq = 70, domain = :platform:msi-controller@1fe01140-5
+[    4.091555] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 31, hwirq = 70, domain = :platform:msi-controller@1fe01140-5
+[    4.103576] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x46
+[    4.114925] pcieport 0000:00:10.0: PME: Signaling with IRQ 31
+[    4.120683] pcieport 0000:00:10.0: AER: enabled with IRQ 31
+[    4.126301] pch-pic: debug: wheatfox: pch_pic_alloc, virq = 32 -> hwirq = 7
+[    4.133251] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 33, hwirq = 71, domain = :platform:msi-controller@1fe01140-5
+[    4.145270] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 33, hwirq = 71, domain = :platform:msi-controller@1fe01140-5
+[    4.157293] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x47
+[    4.168642] pcieport 0000:00:13.0: PME: Signaling with IRQ 33
+[    4.174390] pcieport 0000:00:13.0: AER: enabled with IRQ 33
+[    4.180847] Serial: 8250/16550 driver, 16 ports, IRQ sharing enabled
+[    4.188149] of_serial 1fe001e0.serial: error -ENXIO: IRQ index 0 not found
+[    4.195044] printk: legacy console [ttyS0] disabled
+[    4.199973] 1fe001e0.serial: ttyS0 at MMIO 0x1fe001e0 (irq = 0, base_baud = 6250000) is a 16550A
+[    4.208729] printk: legacy console [ttyS0] enabled
+[    4.208729] printk: legacy console [ttyS0] enabled
+[    4.218250] printk: legacy bootconsole [ns16550a0] disabled
+[    4.218250] printk: legacy bootconsole [ns16550a0] disabled
+[    4.246526] pch-pic: debug: wheatfox: pch_pic_alloc, virq = 34 -> hwirq = 8
+[    4.253450] loongson 0000:00:06.1: Found LS7A2000 bridge chipset, revision: 2
+[    4.260573] loongson 0000:00:06.1: [drm] dc: 400MHz, gmc: 1200MHz, gpu: 480MHz
+[    4.267759] loongson 0000:00:06.1: [drm] Dedicated vram start: 0x60000000, size: 256MiB
+[    4.275761] loongson 0000:00:06.1: [drm] VRAM: 65536 pages ready
+[    4.281731] loongson 0000:00:06.1: [drm] GTT: 131072 pages ready
+[    4.287738] loongson 0000:00:06.1: [drm] lsdc-i2c0(sda pin mask=1, scl pin mask=2) created
+[    4.295962] loongson 0000:00:06.1: [drm] lsdc-i2c1(sda pin mask=4, scl pin mask=8) created
+[    4.304181] loongson 0000:00:06.1: [drm] display pipe-0 has HDMI and/or VGA
+[    4.311101] loongson 0000:00:06.1: [drm] display pipe-1 has HDMI 
+[    4.317167] loongson 0000:00:06.1: [drm] Total 2 outputs
+[    4.362487] loongson 0000:00:06.1: [drm] registered irq: 34
+[    4.368195] [drm] Initialized loongson 1.0.0 for 0000:00:06.1 on minor 0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1800, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1800, size=8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1808, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1810, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1818, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1800, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1800, size=8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1808, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1810, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1818, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1800, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1800, size=8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1808, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1810, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1818, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1800, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1800, size=8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1808, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1810, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1818, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1800, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1800, size=8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1808, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1810, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1818, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1800, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1800, size=8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1808, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1810, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1818, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1800, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1800, size=8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1808, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1810, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1818, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1800, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1800, size=8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1808, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1810, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1818, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1800, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1800, size=8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1808, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1810, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1818, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1800, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1800, size=8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1808, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1810, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1818, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1800, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1800, size=8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1808, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1810, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1818, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1800, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1800, size=8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1808, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1810, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1818, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1800, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1800, size=8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1808, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1810, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1818, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1800, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1800, size=8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1808, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1810, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1818, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1800, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1800, size=8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1808, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1810, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1818, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1800, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1800, size=8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1808, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1810, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1818, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1800, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1800, size=8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1808, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1810, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1818, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1800, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1800, size=8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1808, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1810, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1818, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1800, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1800, size=8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1808, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1810, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1818, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1800, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1800, size=8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1808, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1810, size=8, R <-  0x0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a0, offset=0x1818, size=8, R <-  0x0
+[    4.670076] Console: switching to colour frame buffer device 240x67
+[    4.696349] loongson 0000:00:06.1: [drm] fb0: loongsondrmfb frame buffer device
+[    4.708124] brd: module loaded
+[    4.717466] loop: module loaded
+[    4.726417] megaraid cmm: 2.20.2.7 (Release Date: Sun Jul 16 00:01:03 EST 2006)
+[    4.746353] megaraid: 2.20.5.1 (Release Date: Thu Nov 16 15:32:35 EST 2006)
+[    4.753281] megasas: 07.727.03.00-rc1
+[    4.766370] mpt3sas version 51.100.00.00 loaded
+[    4.771428] pch-pic: debug: wheatfox: pch_pic_alloc, virq = 35 -> hwirq = 9
+[    4.786355] ahci 0000:00:08.0: version 3.0
+[    4.790719] ahci 0000:00:08.0: SSS flag set, parallel bus scan disabled
+[    4.797491] nvme nvme0: pci function 0000:05:00.0
+[    4.802199] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 36, hwirq = 72, domain = :platform:msi-controller@1fe01140-5
+[    4.826363] ahci 0000:00:08.0: AHCI vers 0001.0300, 32 command slots, 6 Gbps, SATA mode
+[    4.834320] ahci 0000:00:08.0: 4/4 ports implemented (port mask 0xf)
+[    4.840906] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 36, hwirq = 72, domain = :platform:msi-controller@1fe01140-5
+[    4.866346] ahci 0000:00:08.0: flags: 64bit ncq sntf stag pm led clo only pmp pio slum part ccc apst 
+[    4.876093] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x48
+[    4.896389] scsi host0: ahci
+[    4.906459] scsi host1: ahci
+[    4.909442] scsi host2: ahci
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1808, size=8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1808, size=8, W ->  0x100
+[    4.916855] scsi host3: ahci
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1808, size=8, W ->  0x100
+[    4.920419] nvme nvme0: allocated 8 MiB host memory buffer (1 segment).
+[    4.936393] ata1: SATA max UDMA/133 abar m1024@0x75969800 port 0x75969900 irq 35 lpm-pol 0
+[    4.944607] ata2: SATA max UDMA/133 abar m1024@0x75969800 port 0x75969980 irq 35 lpm-pol 0
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1808, size=8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1808, size=8, W ->  0x100
+[    4.957925] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 36, hwirq = 72, domain = :platform:msi-controller@1fe01140-5
+[    4.976348] ata3: SATA max UDMA/133 abar m1024@0x75969800 port 0x75969a00 irq 35 lpm-pol 0
+[    4.984833] ata4: SATA max UDMA/133 abar m1024@0x75969800 port 0x75969a80 irq 35 lpm-pol 0
+[    4.996345] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 36, hwirq = 72, domain = :platform:msi-controller@1fe01140-5
+[    5.026350] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x48
+[    5.038020] igb: Intel(R) Gigabit Ethernet Network Driver
+[    5.043469] igb: Copyright (c) 2007-2014 Intel Corporation.
+[    5.056417] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 37, hwirq = 73, domain = :platform:msi-controller@1fe01140-5
+[    5.086347] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 37, hwirq = 73, domain = :platform:msi-controller@1fe01140-5
+[    5.106630] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 38, hwirq = 74, domain = :platform:msi-controller@1fe01140-5
+[    5.118924] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x49
+[    5.146347] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 38, hwirq = 74, domain = :platform:msi-controller@1fe01140-5
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1808, size=8, W ->  0x100
+[    5.162162] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x4a
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1808, size=8, W ->  0x100
+[    5.174351] nvme nvme0: 1/0/0 default/read/poll queues
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1808, size=8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1808, size=8, W ->  0x100
+[    5.196409] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 38, hwirq = 74, domain = :platform:msi-controller@1fe01140-5
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1808, size=8, W ->  0x100
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1808, size=8, W ->  0x100
+[    5.220137] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 38, hwirq = 74, domain = :platform:msi-controller@1fe01140-5
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1808, size=8, W ->  0x100
+[    5.246350] nvme nvme0: Ignoring bogus Namespace Identifiers
+[    5.252267] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x4a
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1808, size=8, W ->  0x100
+[    5.274510] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 39, hwirq = 75, domain = :platform:msi-controller@1fe01140-5
+[    5.301971] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 39, hwirq = 75, domain = :platform:msi-controller@1fe01140-5
+[    5.326344] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x4b
+[    5.353117] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 40, hwirq = 76, domain = :platform:msi-controller@1fe01140-5
+[    5.370467] ata1: SATA link down (SStatus 0 SControl 300)
+[    5.378866] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 40, hwirq = 76, domain = :platform:msi-controller@1fe01140-5
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1808, size=8, W ->  0x200
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1808, size=8, W ->  0x200
+[    5.392290] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x4c
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1808, size=8, W ->  0x200
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1808, size=8, W ->  0x200
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1808, size=8, W ->  0x200
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1808, size=8, W ->  0x200
+[WARN  0] (hvisor::arch::loongarch64::zone:588) loongarch64: generic mmio handler, zone_era=0x90000000009128a8, offset=0x1808, size=8, W ->  0x200
+[    5.408340]  nvme0n1: p1
+[    5.446346] random: crng init done
+[    5.452494] igb 0000:06:00.0: Intel(R) Gigabit Ethernet Network Connection
+[    5.459330] igb 0000:06:00.0: eth0: (PCIe:5.0Gb/s:Width x4) 6c:b3:11:9a:e8:74
+[    5.467013] igb 0000:06:00.0: eth0: PBA No: H47822-001
+[    5.472114] igb 0000:06:00.0: Using MSI-X interrupts. 1 rx queue(s), 1 tx queue(s)
+[    5.480220] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 41, hwirq = 77, domain = :platform:msi-controller@1fe01140-5
+[    5.492242] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 41, hwirq = 77, domain = :platform:msi-controller@1fe01140-5
+[    5.504532] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x4d
+[    5.516349] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 41, hwirq = 77, domain = :platform:msi-controller@1fe01140-5
+[    5.528740] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 41, hwirq = 77, domain = :platform:msi-controller@1fe01140-5
+[    5.540918] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x4d
+[    5.552530] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 42, hwirq = 78, domain = :platform:msi-controller@1fe01140-5
+[    5.564969] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 42, hwirq = 78, domain = :platform:msi-controller@1fe01140-5
+[    5.577422] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x4e
+[    5.588933] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 43, hwirq = 79, domain = :platform:msi-controller@1fe01140-5
+[    5.601225] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 43, hwirq = 79, domain = :platform:msi-controller@1fe01140-5
+[    5.613676] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x4f
+[    5.670962] igb 0000:06:00.1: Intel(R) Gigabit Ethernet Network Connection
+[    5.677798] igb 0000:06:00.1: eth1: (PCIe:5.0Gb/s:Width x4) 6c:b3:11:9a:e8:75
+[    5.685482] igb 0000:06:00.1: eth1: PBA No: H47822-001
+[    5.690589] igb 0000:06:00.1: Using MSI-X interrupts. 1 rx queue(s), 1 tx queue(s)
+[    5.698694] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 44, hwirq = 80, domain = :platform:msi-controller@1fe01140-5
+[    5.710717] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 44, hwirq = 80, domain = :platform:msi-controller@1fe01140-5
+[    5.723009] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x50
+[    5.734767] ata2: SATA link down (SStatus 0 SControl 300)
+[    5.740344] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 44, hwirq = 80, domain = :platform:msi-controller@1fe01140-5
+[    5.752648] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 44, hwirq = 80, domain = :platform:msi-controller@1fe01140-5
+[    5.765091] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x50
+[    5.776588] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 45, hwirq = 81, domain = :platform:msi-controller@1fe01140-5
+[    5.788879] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 45, hwirq = 81, domain = :platform:msi-controller@1fe01140-5
+[    5.801343] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x51
+[    5.813101] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 46, hwirq = 82, domain = :platform:msi-controller@1fe01140-5
+[    5.825265] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 46, hwirq = 82, domain = :platform:msi-controller@1fe01140-5
+[    5.837558] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x52
+[    5.893256] igb 0000:06:00.2: Intel(R) Gigabit Ethernet Network Connection
+[    5.900089] igb 0000:06:00.2: eth2: (PCIe:5.0Gb/s:Width x4) 6c:b3:11:9a:e8:76
+[    5.907771] igb 0000:06:00.2: eth2: PBA No: H47822-001
+[    5.912873] igb 0000:06:00.2: Using MSI-X interrupts. 1 rx queue(s), 1 tx queue(s)
+[    5.920704] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 47, hwirq = 83, domain = :platform:msi-controller@1fe01140-5
+[    5.932996] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 47, hwirq = 83, domain = :platform:msi-controller@1fe01140-5
+[    5.945447] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x53
+[    5.957255] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 47, hwirq = 83, domain = :platform:msi-controller@1fe01140-5
+[    5.969385] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 47, hwirq = 83, domain = :platform:msi-controller@1fe01140-5
+[    5.981679] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x53
+[    5.993453] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 48, hwirq = 84, domain = :platform:msi-controller@1fe01140-5
+[    6.005887] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 48, hwirq = 84, domain = :platform:msi-controller@1fe01140-5
+[    6.018078] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x54
+[    6.029694] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 49, hwirq = 85, domain = :platform:msi-controller@1fe01140-5
+[    6.042129] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 49, hwirq = 85, domain = :platform:msi-controller@1fe01140-5
+[    6.054581] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x55
+[    6.081127] ata3: SATA link down (SStatus 0 SControl 300)
+[    6.115021] igb 0000:06:00.3: Intel(R) Gigabit Ethernet Network Connection
+[    6.121855] igb 0000:06:00.3: eth3: (PCIe:5.0Gb/s:Width x4) 6c:b3:11:9a:e8:77
+[    6.129267] igb 0000:06:00.3: eth3: PBA No: H47822-001
+[    6.134639] igb 0000:06:00.3: Using MSI-X interrupts. 1 rx queue(s), 1 tx queue(s)
+[    6.142378] i2c_dev: i2c /dev entries driver
+[    6.147135] device-mapper: ioctl: 4.48.0-ioctl (2023-03-01) initialised: dm-devel@lists.linux.dev
+[    6.155966] hid: raw HID events driver (C) Jiri Kosina
+[    6.161177] NET: Registered PF_INET6 protocol family
+[    6.166672] Segment Routing with IPv6
+[    6.170313] In-situ OAM (IOAM) with IPv6
+[    6.174226] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    6.182858] Loading compiled-in X.509 certificates
+[    6.190013] Btrfs loaded, zoned=yes, fsverity=no
+[    6.216377] OF: fdt: not creating '/sys/firmware/fdt': CRC check failed
+[    6.222959] clk: Disabling unused clocks
+[    6.427130] ata4: SATA link down (SStatus 0 SControl 300)
+[    6.451880] Freeing unused kernel image (initmem) memory: 57344K
+[    6.457893] This architecture does not have kernel memory protection.
+[    6.464297] Run /init as init process
+[    6.468210]   with arguments:
+[    6.471306]     /init
+[    6.473555]   with environment:
+[    6.476677]     HOME=/
+[    6.479013]     TERM=linux
+Starting syslogd: OK
+Starting klogd: OK
+Running sysctl: OK
+Starting system message bus: done
+Starting telnetd: OK
+Welcome to hvisor(loongarch) root linux! Buildroot/wheatfox 2025
+[root@dedsec /]# mount /dev/nvme0
+nvme0      nvme0n1    nvme0n1p1  
+[root@dedsec /]# mount /dev/nvme0n1p1 /mnt
+mount: /mnt: unknown filesystem type 'vfat'.
+[root@dedsec /]# 
