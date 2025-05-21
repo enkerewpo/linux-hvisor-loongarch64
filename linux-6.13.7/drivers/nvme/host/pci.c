@@ -1083,6 +1083,27 @@ static inline bool nvme_cqe_pending(struct nvme_queue *nvmeq)
 {
 	struct nvme_completion *hcqe = &nvmeq->cqes[nvmeq->cq_head];
 
+	// // dump all cqes in the ring
+	// pr_info("wheatfox: nvme_cqe_pending, nvmeq->cq_head=%d, nvmeq->cq_phase=%d\n",
+	// 	nvmeq->cq_head, nvmeq->cq_phase);
+	
+	// // print CQE ring buffer address info
+	// pr_info("wheatfox: CQE ring buffer: virt_addr=%px, dma_addr=%llx, size=%d bytes\n",
+	// 	nvmeq->cqes,
+	// 	(unsigned long long)nvmeq->cq_dma_addr,
+	// 	nvmeq->q_depth * sizeof(struct nvme_completion));
+	
+	// // dump all CQEs in the ring
+	// for (int i = 0; i < nvmeq->q_depth; i++) {
+	// 	struct nvme_completion *cqe = &nvmeq->cqes[i];
+	// 	pr_info("wheatfox: CQE[%d]: status=0x%x, command_id=%d, sq_head=%d, sq_id=%d\n",
+	// 		i,
+	// 		le16_to_cpu(READ_ONCE(cqe->status)),
+	// 		READ_ONCE(cqe->command_id),
+	// 		le16_to_cpu(READ_ONCE(cqe->sq_head)),
+	// 		le16_to_cpu(READ_ONCE(cqe->sq_id)));
+	// }
+
 	return (le16_to_cpu(READ_ONCE(hcqe->status)) & 1) == nvmeq->cq_phase;
 }
 
@@ -1152,9 +1173,12 @@ static inline int nvme_poll_cq(struct nvme_queue *nvmeq,
 			       struct io_comp_batch *iob)
 {
 	int found = 0;
+	// pr_info("wheatfox: nvme_poll_cq, nvmeq:cq_vector=%d, iob@0x%px\n",
+	// 	nvmeq->cq_vector, iob);
 
 	while (nvme_cqe_pending(nvmeq)) {
 		found++;
+		// pr_info("wheatfox: nvme_poll_cq, found=%d\n", found);
 		/*
 		 * load-load control dependency between phase and the rest of
 		 * the cqe requires a full read memory barrier
@@ -1164,8 +1188,12 @@ static inline int nvme_poll_cq(struct nvme_queue *nvmeq,
 		nvme_update_cq_head(nvmeq);
 	}
 
-	if (found)
+	if (found) {
+		// pr_info("wheatfox: nvme_poll_cq, ring_cq_doorbell because found=%d\n", found);
 		nvme_ring_cq_doorbell(nvmeq);
+	} else {
+		// pr_info("wheatfox: nvme_poll_cq, not found !!!\n");
+	}
 	return found;
 }
 
@@ -1174,11 +1202,18 @@ static irqreturn_t nvme_irq(int irq, void *data)
 	struct nvme_queue *nvmeq = data;
 	DEFINE_IO_COMP_BATCH(iob);
 
+	// pr_info("wheatfox: nvme_irq, irq = %d, nvmeq:cq_vector=%d,qid=%d,q_depth=%d,q_phase=%d\n",
+	// 	irq, nvmeq->cq_vector, nvmeq->qid, nvmeq->q_depth, nvmeq->cq_phase);
+
 	if (nvme_poll_cq(nvmeq, &iob)) {
-		if (!rq_list_empty(&iob.req_list))
+		if (!rq_list_empty(&iob.req_list)) {
+			// pr_info("wheatfox: nvme_irq, iob req_list is not empty, calling nvme_pci_complete_batch\n");
 			nvme_pci_complete_batch(&iob);
+		}
+		// pr_info("wheatfox: nvme_irq, handled io_comp_batch\n");
 		return IRQ_HANDLED;
 	}
+	// pr_info("wheatfox: nvme_irq, not handled !!!\n");
 	return IRQ_NONE;
 }
 
@@ -1697,6 +1732,8 @@ static int queue_request_irq(struct nvme_queue *nvmeq)
 		return pci_request_irq(pdev, nvmeq->cq_vector, nvme_irq_check,
 				nvme_irq, nvmeq, "nvme%dq%d", nr, nvmeq->qid);
 	} else {
+		pr_info("wheatfox: queue_request_irq, call pci_request_irq with pdev->irq=%d, nvmeq->cq_vector = %d\n",
+			pdev->irq, nvmeq->cq_vector);
 		return pci_request_irq(pdev, nvmeq->cq_vector, nvme_irq,
 				NULL, nvmeq, "nvme%dq%d", nr, nvmeq->qid);
 	}

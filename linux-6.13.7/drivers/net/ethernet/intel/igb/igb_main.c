@@ -7069,6 +7069,8 @@ static irqreturn_t igb_msix_ring(int irq, void *data)
 {
 	struct igb_q_vector *q_vector = data;
 
+	// pr_info("wheatfox: igb_msix_ring, irq = %d, q_vector:cpu=%d,name=%s,itr_val=%d\n", irq, q_vector->cpu, q_vector->name, q_vector->itr_val);
+
 	/* Write the ITR value calculated from the previous interrupt. */
 	igb_write_itr(q_vector);
 

@@ -808,6 +808,9 @@ void handle_edge_irq(struct irq_desc *desc)
 
 	kstat_incr_irqs_this_cpu(desc);
 
+	// pr_info("wheatfox: handle_edge_irq, desc->irq_data.irq = %d, desc->irq_data.hwirq = %d, irq_ack = 0x%px\n",
+	// 	desc->irq_data.irq, (int)desc->irq_data.hwirq, desc->irq_data.chip->irq_ack);
+
 	/* Start handling the irq */
 	desc->irq_data.chip->irq_ack(&desc->irq_data);
 
@@ -1382,6 +1385,8 @@ EXPORT_SYMBOL_GPL(irq_chip_disable_parent);
 void irq_chip_ack_parent(struct irq_data *data)
 {
 	data = data->parent_data;
+	// pr_info("wheatfox: irq_chip_ack_parent, data->irq = %d, data->chip->irq_ack = 0x%px\n",
+	// 	data->irq, data->chip->irq_ack);
 	data->chip->irq_ack(data);
 }
 EXPORT_SYMBOL_GPL(irq_chip_ack_parent);

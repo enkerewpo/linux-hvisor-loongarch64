@@ -120,7 +120,7 @@ ifndef CONFIG_KASAN
 cflags-y += -fno-builtin-memcpy -fno-builtin-memmove -fno-builtin-memset
 endif
 
-load-y		= 0x9000000000200000
+load-y		= 0x90000000c0200000
 bootvars-y	= VMLINUX_LOAD_ADDRESS=$(load-y)
 
 drivers-$(CONFIG_PCI)		+= arch/loongarch/pci/

@@ -23,11 +23,16 @@
 	
 	memory@200000 {
 		device_type = "memory";
-		reg = <0 0x00200000 0 0x0ee00000
+		reg = <
+		0 0x00200000 0 0x0ee00000
 		0 0x90000000 0 0x10000000
-		0 0xf0000000 0 0x10000000
+		
 		0 0xc0000000 0 0x30000000
-		>;
+		
+		0 0x40000000 0 0x20000000
+		
+		0 0xf0000000 0 0x10000000
+		>; // the last part will alwarys be system ram! (with extra inneer reserved memory) so we have to add one extra region at the end.
 	};
 	
 	hvisor_virtio_device {
@@ -40,9 +45,13 @@
 		#address-cells = <0x02>;
 		#size-cells = <0x02>;
 		ranges;
-		nonroot0xc0000000 {
+		nonroot1 {
 			no-map;
 			reg = <0x00 0xc0000000 0x00 0x30000000>;
+		};
+		nonroot2 {
+			no-map;
+			reg = <0x00 0x40000000 0x00 0x20000000>;
 		};
 	};
 	

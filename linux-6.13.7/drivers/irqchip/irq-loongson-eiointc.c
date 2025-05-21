@@ -238,7 +238,7 @@ static int eiointc_router_init(unsigned int cpu)
 				bit = (eiointc_priv[index]->node << 4) | 1;
 			}
 
-			pr_debug("debug: wheatfox: eiointc_router_init, i=%d, bit=0x%x\n", i, bit);
+			// pr_debug("debug: wheatfox: eiointc_router_init, i=%d, bit=0x%x\n", i, bit);
 			data = bit | (bit << 8) | (bit << 16) | (bit << 24);
 			iocsr_write32(data, EIOINTC_REG_ROUTE + i * 4);
 		}
@@ -270,12 +270,15 @@ static void eiointc_irq_dispatch(struct irq_desc *desc)
 		if (!pending)
 			continue;
 
+		pr_info("wheatfox: eiointc_irq_dispatch, pending=0x%llx, priv->eiointc_domain->name=%s\n", pending, priv->eiointc_domain->name);
+
 		/* Clear the IRQs */
 		iocsr_write64(pending, EIOINTC_REG_ISR + (i << 3));
 		while (pending) {
 			int bit = __ffs(pending);
 			int irq = bit + VEC_COUNT_PER_REG * i;
 
+			pr_info("wheatfox: eiointc_irq_dispatch, hwirq=%d\n", irq);
 			generic_handle_domain_irq(priv->eiointc_domain, irq);
 			pending &= ~BIT(bit);
 			handled = true;
@@ -460,6 +463,8 @@ static int __init eiointc_init(struct eiointc_priv *priv, int parent_irq,
 		pr_err("loongson-extioi: cannot add IRQ domain\n");
 		return -ENOMEM;
 	}
+
+	pr_info("wheatfox: eiointc_init, created eiointc domain, name=%s\n", priv->eiointc_domain->name);
 
 	if (kvm_para_has_feature(KVM_FEATURE_VIRT_EXTIOI)) {
 		val = iocsr_read32(EXTIOI_VIRT_FEATURES);

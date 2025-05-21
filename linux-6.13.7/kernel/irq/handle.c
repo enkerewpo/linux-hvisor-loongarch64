@@ -133,6 +133,9 @@ void __irq_wake_thread(struct irq_desc *desc, struct irqaction *action)
 	 */
 	atomic_inc(&desc->threads_active);
 
+	// pr_info("wheatfox: __irq_wake_thread, irq = %d, action->thread = 0x%px, calling wake_up_process\n",
+	// 	desc->irq_data.irq, action->thread);
+
 	wake_up_process(action->thread);
 }
 
@@ -146,6 +149,11 @@ irqreturn_t __handle_irq_event_percpu(struct irq_desc *desc)
 
 	for_each_action_of_desc(desc, action) {
 		irqreturn_t res;
+
+		// if (!(irq == 17)) {
+		// 	pr_info("wheatfox: __handle_irq_event_percpu, irq = %d, action->handler = 0x%px\n",
+		// 	irq, action->handler);
+		// }
 
 		/*
 		 * If this IRQ would be threaded under force_irqthreads, mark it so.
