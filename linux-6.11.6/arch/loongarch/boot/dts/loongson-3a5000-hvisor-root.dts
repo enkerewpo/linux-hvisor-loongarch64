@@ -30,6 +30,8 @@
 		0 0xc0000000 0 0x30000000
 		0 0xa0000000 0 0x20000000
 
+		0x1 0x00000000 0 0x20000000
+
 		0 0xf0000000 0 0x10000000
 		>; // the last part will alwarys be system ram! (with extra inneer reserved memory) so we have to add one extra region at the end.
 	};
@@ -51,6 +53,10 @@
 		nonroot2 {
 			no-map;
 			reg = <0x00 0xa0000000 0x00 0x20000000>;
+		};
+		nonroot3 {
+			no-map;
+			reg = <0x01 0x00000000 0x00 0x20000000>;
 		};
 	};
 	
