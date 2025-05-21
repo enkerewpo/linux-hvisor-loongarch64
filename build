@@ -145,8 +145,8 @@ show_help() {
         echo -e "    ${CYAN}menu${NC} [root|nonroot]    | Run menuconfig for specified zone"
         echo -e "    ${CYAN}zone${NC} <type> <name> <entry> | Build kernel with custom zone config"
         echo -e "        type: root|nonroot"
-        echo -e "        name: zone name"
-        echo -e "        entry: vmlinux entry point (hex, e.g. 0x90000000c0200000)\n"
+        echo -e "        name: zone name, used for selecting CONFIG_BUILTIN_DTB_NAME"
+        echo -e "        entry: vmlinux load addr override (hex, e.g. 0x90000000c0200000)\n"
         
         echo -e "${BOLD}Utility commands:${NC}"
         echo -e "    ${CYAN}help${NC}                  | Show this help message"
@@ -154,19 +154,10 @@ show_help() {
         echo -e "    ${CYAN}rootfs${NC}                | Build rootfs"
         echo -e "    ${CYAN}nonroot_setup${NC}         | Setup nonroot rootfs\n"
         
-        echo -e "${BOLD}Build Flow:${NC}"
-        echo -e "    1. For root zone:"
-        echo -e "       - Run '${CYAN}def root${NC}' to configure"
-        echo -e "       - Run '${CYAN}kernel root${NC}' to build"
-        echo -e "       - Run '${CYAN}save root${NC}' to save config (optional)\n"
-        echo -e "    2. For nonroot zone:"
-        echo -e "       - Run '${CYAN}def nonroot${NC}' to configure"
-        echo -e "       - Run '${CYAN}kernel nonroot${NC}' to build"
-        echo -e "       - Run '${CYAN}save nonroot${NC}' to save config (optional)\n"
-        
         echo -e "${BOLD}Output:${NC}"
         echo -e "    Files will be organized in ${GREEN}target/root${NC} and ${GREEN}target/nonroot${NC} directories."
-    } | less -R
+        echo -e "    or ${GREEN}target/root-{zone_name}${NC} and ${GREEN}target/nonroot-{zone_name}${NC} if zone is specified"
+    }
     exit 0
 }
 
@@ -282,9 +273,9 @@ build_kernel_with_entry() {
     local dts_file=""
     
     if [ "$type" = "root" ]; then
-        dts_file="loongson-3a5000-hvisor-root.dtb"
+        dts_file="loongson-3a5000-hvisor-root"
     else
-        dts_file="${zone_name}.dts"
+        dts_file="${zone_name}"
     fi
     
     # Update CONFIG_BUILTIN_DTB_NAME in .config
