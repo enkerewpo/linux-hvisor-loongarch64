@@ -277,7 +277,8 @@ build_kernel_with_entry() {
     # Update load-y in Makefile
     sed -i "s/^load-y.*=.*/load-y\t\t= $vmlinux_entry/" "$makefile_path"
     
-    # Build kernel
+    # since we manually change the load-y, we need clean everything before build
+    make $args clean
     make $args -j$NUM_JOBS
     
     # Restore original Makefile
