@@ -277,7 +277,20 @@ build_kernel_with_entry() {
     # Update load-y in Makefile
     sed -i "s/^load-y.*=.*/load-y\t\t= $vmlinux_entry/" "$makefile_path"
     
-    # since we manually change the load-y, we need clean everything before build
+    # Update .config to use the correct .dts file
+    local config_path="$src_dir/.config"
+    local dts_file=""
+    
+    if [ "$type" = "root" ]; then
+        dts_file="loongson-3a5000-hvisor-root.dtb"
+    else
+        dts_file="${zone_name}.dts"
+    fi
+    
+    # Update CONFIG_BUILTIN_DTB_NAME in .config
+    sed -i "s/^CONFIG_BUILTIN_DTB_NAME=.*/CONFIG_BUILTIN_DTB_NAME=\"$dts_file\"/" "$config_path"
+    
+    # since we manually change the load-y and .config, we need clean everything before build
     make $args clean
     make $args -j$NUM_JOBS
     
@@ -300,6 +313,7 @@ build_kernel_with_entry() {
     echo "$(date "+%Y-%m-%d_%H-%M-%S")" > "target/${type}-${zone_name}/build_timestamp.txt"
     echo "CHOSEN: $(if [ "$type" = "root" ]; then echo $CHOSEN_ROOT; else echo $CHOSEN_NONROOT; fi)" >> "target/${type}-${zone_name}/build_timestamp.txt"
     echo "ENTRY_POINT: $vmlinux_entry" >> "target/${type}-${zone_name}/build_timestamp.txt"
+    echo "DTS_FILE: $dts_file" >> "target/${type}-${zone_name}/build_timestamp.txt"
     
     echo -e "${GREEN}Done${NC}"
 }
