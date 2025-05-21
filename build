@@ -34,6 +34,13 @@ setup_target_dirs() {
     mkdir -p target/nonroot
 }
 
+# Create zone-specific target directories
+setup_zone_target_dirs() {
+    local type=$1
+    local zone_name=$2
+    mkdir -p "target/${type}-${zone_name}"
+}
+
 print_available_versions() {
     echo -e "${BOLD}Available versions to set in the chosen files:${NC}"
     # dump all the dirname with linux-*
@@ -69,8 +76,10 @@ check_chosen() {
 # check if linux directories exist
 check_chosen $CHOSEN_ROOT
 check_chosen $CHOSEN_NONROOT
-echo -e "${GREEN}Chosen linux source for root:${NC} linux-$CHOSEN_ROOT"
-echo -e "${GREEN}Chosen linux source for nonroot:${NC} linux-$CHOSEN_NONROOT"
+# echo -e "${GREEN}Chosen linux source for root:${NC} linux-$CHOSEN_ROOT"
+# echo -e "${GREEN}Chosen linux source for nonroot:${NC} linux-$CHOSEN_NONROOT"
+
+echo -e "${GREEN}CURRENT CONFIG:${NC} root: $CHOSEN_ROOT, nonroot: $CHOSEN_NONROOT"
 
 # set to your LLVM installation path, linux require clang 18+ to build
 LLVM=1
@@ -133,7 +142,11 @@ show_help() {
         echo -e "    ${CYAN}def${NC} [root|nonroot]     | Run defconfig for specified zone"
         echo -e "    ${CYAN}kernel${NC} [root|nonroot]   | Build kernel for specified zone"
         echo -e "    ${CYAN}save${NC} [root|nonroot]    | Save defconfig for specified zone"
-        echo -e "    ${CYAN}menu${NC} [root|nonroot]    | Run menuconfig for specified zone\n"
+        echo -e "    ${CYAN}menu${NC} [root|nonroot]    | Run menuconfig for specified zone"
+        echo -e "    ${CYAN}zone${NC} <type> <name> <entry> | Build kernel with custom zone config"
+        echo -e "        type: root|nonroot"
+        echo -e "        name: zone name"
+        echo -e "        entry: vmlinux entry point (hex, e.g. 0x90000000c0200000)\n"
         
         echo -e "${BOLD}Utility commands:${NC}"
         echo -e "    ${CYAN}help${NC}                  | Show this help message"
@@ -229,6 +242,93 @@ setup_nonroot_rootfs() {
     echo -e "${GREEN}Rootfs setup complete${NC}"
 }
 
+# Function to validate hex address
+validate_hex_address() {
+    local addr=$1
+    if ! [[ $addr =~ ^0x[0-9a-fA-F]+$ ]]; then
+        echo -e "${RED}Error:${NC} Invalid hex address format. Must start with 0x followed by hex digits."
+        exit 1
+    fi
+}
+
+# Function to build kernel with custom entry point
+build_kernel_with_entry() {
+    local type=$1
+    local src_dir=$2
+    local args=$3
+    local zone_name=$4
+    local vmlinux_entry=$5
+    
+    if [ ! -f "$FLAG" ]; then
+        echo -e "${RED}Error:${NC} Please run defconfig first"
+        exit 1
+    fi
+    
+    echo -e "${GREEN}Building kernel for $type zone '$zone_name' with entry point $vmlinux_entry${NC}"
+    echo ""
+    
+    # Temporarily modify the Makefile to use custom entry point
+    local makefile_path="$src_dir/arch/$ARCH/Makefile"
+    local original_load_y=$(grep "^load-y" "$makefile_path" | cut -d'=' -f2 | tr -d ' ')
+    
+    # Backup original Makefile
+    cp "$makefile_path" "${makefile_path}.bak"
+    
+    # Update load-y in Makefile
+    sed -i "s/^load-y.*=.*/load-y\t\t= $vmlinux_entry/" "$makefile_path"
+    
+    # Build kernel
+    make $args -j$NUM_JOBS
+    
+    # Restore original Makefile
+    mv "${makefile_path}.bak" "$makefile_path"
+    
+    echo -e "${GREEN}Running readelf${NC}"
+    $GNU_READELF -a "$src_dir/vmlinux" > "$src_dir/vmlinux.readelf.txt"
+    $GNU_OBJDUMP -d "$src_dir/vmlinux" > "$src_dir/vmlinux.asm"
+    echo -e "${GREEN}Generating compile_commands.json${NC}"
+    cd "$src_dir"
+    python3 scripts/clang-tools/gen_compile_commands.py
+    cd ..
+    
+    # Copy files to zone-specific target directory
+    echo -e "${GREEN}Copying files to target/${type}-${zone_name}${NC}"
+    cp "$src_dir/arch/$ARCH/boot/vmlinux.bin" "target/${type}-${zone_name}/vmlinux-${zone_name}.bin"
+    $GNU_READELF -a "$src_dir/vmlinux" > "target/${type}-${zone_name}/vmlinux.readelf.txt"
+    $GNU_OBJDUMP -S -d "$src_dir/vmlinux" > "target/${type}-${zone_name}/vmlinux.asm"
+    echo "$(date "+%Y-%m-%d_%H-%M-%S")" > "target/${type}-${zone_name}/build_timestamp.txt"
+    echo "CHOSEN: $(if [ "$type" = "root" ]; then echo $CHOSEN_ROOT; else echo $CHOSEN_NONROOT; fi)" >> "target/${type}-${zone_name}/build_timestamp.txt"
+    echo "ENTRY_POINT: $vmlinux_entry" >> "target/${type}-${zone_name}/build_timestamp.txt"
+    
+    echo -e "${GREEN}Done${NC}"
+}
+
+# Function to handle zone building
+handle_zone_build() {
+    local type=$1
+    local zone_name=$2
+    local vmlinux_entry=$3
+    
+    # Validate type
+    if [ "$type" != "root" ] && [ "$type" != "nonroot" ]; then
+        echo -e "${RED}Error:${NC} Type must be 'root' or 'nonroot'"
+        exit 1
+    fi
+    
+    # Validate hex address
+    validate_hex_address "$vmlinux_entry"
+    
+    # Setup zone-specific directories
+    setup_zone_target_dirs "$type" "$zone_name"
+    
+    # Build kernel with custom entry point
+    if [ "$type" = "root" ]; then
+        build_kernel_with_entry "root" "$LINUX_SRC_DIR_ROOT" "$ARGS_ROOT" "$zone_name" "$vmlinux_entry"
+    else
+        build_kernel_with_entry "nonroot" "$LINUX_SRC_DIR_NONROOT" "$ARGS_NONROOT" "$zone_name" "$vmlinux_entry"
+    fi
+}
+
 # Create target directories
 setup_target_dirs
 
@@ -268,6 +368,16 @@ kernel)
             show_help
             ;;
     esac
+    ;;
+
+zone)
+    if [ $# -ne 4 ]; then
+        echo -e "${RED}Error:${NC} Invalid number of arguments"
+        echo -e "Usage: build zone <root|nonroot> <zone_name> <vmlinux_entry>"
+        exit 1
+    fi
+    
+    handle_zone_build "$2" "$3" "$4"
     ;;
 
 save)
