@@ -270,7 +270,7 @@ static void eiointc_irq_dispatch(struct irq_desc *desc)
 		if (!pending)
 			continue;
 
-		pr_info("wheatfox: eiointc_irq_dispatch, pending=0x%llx, priv->eiointc_domain->name=%s\n", pending, priv->eiointc_domain->name);
+		// pr_info("wheatfox: eiointc_irq_dispatch, pending=0x%llx, priv->eiointc_domain->name=%s\n", pending, priv->eiointc_domain->name);
 
 		/* Clear the IRQs */
 		iocsr_write64(pending, EIOINTC_REG_ISR + (i << 3));
@@ -278,7 +278,7 @@ static void eiointc_irq_dispatch(struct irq_desc *desc)
 			int bit = __ffs(pending);
 			int irq = bit + VEC_COUNT_PER_REG * i;
 
-			pr_info("wheatfox: eiointc_irq_dispatch, hwirq=%d\n", irq);
+			// pr_info("wheatfox: eiointc_irq_dispatch, hwirq=%d\n", irq);
 			generic_handle_domain_irq(priv->eiointc_domain, irq);
 			pending &= ~BIT(bit);
 			handled = true;

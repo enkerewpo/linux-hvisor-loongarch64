@@ -1,0 +1,878 @@
+Hello, UART1!
+[    0.000000] Linux version 6.13.7 (wheatfox@dedsec-amd0) (loongarch64-unknown-linux-gnu-gcc (GCC) 13.0.1 20230316 (experimental), GNU ld (GNU Binutils) 2.40.50.20230316) #308 PREEMPT_DYNAMIC Wed May 21 14:21:48 CST 2025
+[    0.000000] Loongson-64bit Processor probed (LA664 Core)
+[    0.000000] CPU0 revision is: 0014d000 (Loongson-64bit)
+[    0.000000] FPU0 revision is: 00000000
+[    0.000000] ACPI: Early table checksum verification disabled
+[    0.000000] OF: reserved mem: Reserved memory: No reserved-memory node in the DT
+[    0.000000] DMI not present or invalid.
+[    0.000000] The BIOS Version: (null)
+[    0.000000] software IO TLB: area num 1.
+[    0.000000] software IO TLB: mapped [mem 0x00000000c2200000-0x00000000c6200000] (64MB)
+[    0.000000] PM: hibernation: Registered nosave memory: [mem 0xc1dec000-0xc1decfff]
+[    0.000000] Zone ranges:
+[    0.000000]   DMA32    [mem 0x00000000c0200000-0x00000000ffffffff]
+[    0.000000]   Normal   empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x00000000c0200000-0x00000000ceffffff]
+[    0.000000]   node   0: [mem 0x00000000d0000000-0x00000000dfffffff]
+[    0.000000] Initmem setup node 0 [mem 0x00000000c0200000-0x00000000dfffffff]
+[    0.000000] On node 0, zone DMA32: 512 pages in unavailable ranges
+[    0.000000] On node 0, zone DMA32: 4096 pages in unavailable ranges
+[    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Kernel command line: earlycon console=ttyS0,115200n8 initramfs_async=false rootwait debug loglevel=8 earlyprintk 
+[    0.000000] Unknown kernel command line parameters "earlyprintk", will be passed to user space.
+[    0.000000] printk: log buffer data + meta data: 262144 + 917504 = 1179648 bytes
+[    0.000000] Dentry cache hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 126464
+[    0.000000] mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Dynamic Preempt: full
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu: 	RCU event tracing is enabled.
+[    0.000000] 	Trampoline variant of Tasks RCU enabled.
+[    0.000000] 	Tracing variant of Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+[    0.000000] RCU Tasks: Setting shift to 0 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=1.
+[    0.000000] RCU Tasks Trace: Setting shift to 0 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=1.
+[    0.000000] NR_IRQS: 832, nr_irqs: 64, preallocated irqs: 16
+[    0.000000] eiointc: wheatfox: eiointc_init, created eiointc domain, name=:platform:interrupt-controller@1fe01600
+[    0.000000] eiointc: debug: wheatfox: eiointc_router_init, cpu=0, node=0, index=0, cores=4, logical_cpu=0
+[    0.000000] pch-pic: debug: wheatfox: pch_pic_of_init, parent_domain->name = :platform:interrupt-controller@1fe01600
+[    0.000000] pch-pic: debug: wheatfox: pch_pic_init, base = 0x10000000, size = 0x400, vec_base = 0, gsi_base = 0, vec_count = 64
+[    0.000000] pch-pic: debug: wheatfox: pch_pic_init, priv->pic_domain->name = :platform:interrupt-controller@10000000
+[    0.000000] pch-msi: debug: wheatfox: pch_msi_of_init, parent_domain->name = :platform:interrupt-controller@1fe01600
+[    0.000000] pch-msi: Registering 192 MSIs, starting at 64
+[    0.000000] pch-msi: debug: wheatfox: pch_msi_init_domains, middle_domain->name = :platform:msi-controller@1fe01140
+[    0.000000] pch-msi: debug: wheatfox: pch_msi_init, nr_pics = 1
+[    0.000000] pch-msi: debug: wheatfox: pch_msi_of_init finished with err = 0
+[    0.000000] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.000000] Constant clock event device register
+[    0.000000] clocksource: Constant: mask: 0xffffffffffffffff max_cycles: 0x171024e7e0, max_idle_ns: 440795205315 ns
+[    0.000000] sched_clock: 64 bits at 100MHz, resolution 10ns, wraps every 4398046511100ns
+[    0.000004] Constant clock source device register
+[    0.000265] Console: colour dummy device 80x25
+[    0.000292] Calibrating delay loop (skipped), value calculated using timer frequency.. 200.00 BogoMIPS (lpj=1000000)
+[    0.000300] pid_max: default: 32768 minimum: 301
+[    0.000322] LSM: initializing lsm=capability,yama
+[    0.000343] Yama: becoming mindful.
+[    0.000386] Mount-cache hash table entries: 1024 (order: 1, 8192 bytes, linear)
+[    0.000391] Mountpoint-cache hash table entries: 1024 (order: 1, 8192 bytes, linear)
+[    0.001168] rcu: Hierarchical SRCU implementation.
+[    0.001171] rcu: 	Max phase no-delay instances is 1000.
+[    0.001283] Memory: 396288K/505856K available (12288K kernel code, 3402K rwdata, 4060K rodata, 12096K init, 753K bss, 108140K reserved, 0K cma-reserved)
+[    0.001458] devtmpfs: initialized
+[    0.001907] Performance counters: loongarch/loongson64 PMU enabled, 4 64-bit counters available to each CPU.
+[    0.002836] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.002843] futex hash table entries: 256 (order: 0, 6144 bytes, linear)
+[    0.003099] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.003425] thermal_sys: Registered thermal governor 'step_wise'
+[    0.003676] hw-breakpoint: Found 0 breakpoint and 0 watchpoint registers.
+[    0.005183] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.005186] HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+[    0.175488] raid6: lasx     gen() 22616 MB/s
+[    0.345483] raid6: lsx      gen() 13205 MB/s
+[    0.515489] raid6: int64x8  gen()  3415 MB/s
+[    0.685484] raid6: int64x4  gen()  4772 MB/s
+[    0.855484] raid6: int64x2  gen()  4332 MB/s
+[    1.025493] raid6: int64x1  gen()  3380 MB/s
+[    1.025496] raid6: using algorithm lasx gen() 22616 MB/s
+[    1.195484] raid6: .... xor() 12344 MB/s, rmw enabled
+[    1.195486] raid6: using lasx recovery algorithm
+[    1.195577] ACPI: Interpreter disabled.
+[    1.195602] iommu: Default domain type: Translated
+[    1.195605] iommu: DMA domain TLB invalidation policy: strict mode
+[    1.195719] SCSI subsystem initialized
+[    1.195789] pps_core: LinuxPPS API ver. 1 registered
+[    1.195791] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    1.196182] vgaarb: loaded
+[    1.196220] clocksource: Switched to clocksource Constant
+[    1.196331] VFS: Disk quotas dquot_6.6.0
+[    1.196342] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    1.196402] pnp: PnP ACPI: disabled
+[    1.200217] NET: Registered PF_INET protocol family
+[    1.200273] IP idents hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    1.200492] tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 4096 bytes, linear)
+[    1.200497] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    1.200502] TCP established hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[    1.200511] TCP bind hash table entries: 4096 (order: 4, 65536 bytes, linear)
+[    1.200522] TCP: Hash tables configured (established 4096 bind 4096)
+[    1.200553] UDP hash table entries: 256 (order: 2, 16384 bytes, linear)
+[    1.200562] UDP-Lite hash table entries: 256 (order: 2, 16384 bytes, linear)
+[    1.200608] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    1.200623] NET: Registered PF_XDP protocol family
+[    1.200630] PCI: CLS 0 bytes, default 64
+[    1.455211] Initialise system trusted keyrings
+[    1.455293] workingset: timestamp_bits=46 max_order=17 bucket_order=0
+[    1.455323] zbud: loaded
+[    1.455512] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    1.455656] SGI XFS with ACLs, security attributes, quota, no debug enabled
+[    1.455865] xor: measuring software checksum speed
+[    1.456139]    8regs           : 12154 MB/sec
+[    1.456551]    8regs_prefetch  :  8331 MB/sec
+[    1.456823]    32regs          : 12229 MB/sec
+[    1.457203]    32regs_prefetch :  8662 MB/sec
+[    1.457398]    lsx             : 16942 MB/sec
+[    1.457537]    lasx            : 23894 MB/sec
+[    1.457538] xor: using function: lasx (23894 MB/sec)
+[    1.457543] Key type asymmetric registered
+[    1.457545] Asymmetric key parser 'x509' registered
+[    1.459635] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 250)
+[    1.459692] io scheduler mq-deadline registered
+[    1.459695] io scheduler kyber registered
+[    1.459708] io scheduler bfq registered
+[    1.461701] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    1.461747] loongson-pci 1a000000.pcie: host bridge /pcie@1a000000 ranges:
+[    1.461764] loongson-pci 1a000000.pcie:       IO 0x0018408000..0x001840ffff -> 0x0000008000
+[    1.461772] loongson-pci 1a000000.pcie:      MEM 0x0060000000..0x007fffffff -> 0x0060000000
+[    1.461783] [wheatfox] loongson_pci_probe: found bridge pcie
+[    1.461787] [kai] loongson_pci_reg1: start=fe00000000, end=fe1fffffff
+[    1.461792] [kai] loongson_cfg1_base=800000fe00000000
+[    1.461794] [wheatfox] loongson_pci_probe: bridge pcie initialized, calling pci_host_probe
+[    1.461859] loongson-pci 1a000000.pcie: PCI host bridge to bus 0000:00
+[    1.461865] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    1.461869] pci_bus 0000:00: root bus resource [io  0x0000-0x7fff] (bus address [0x8000-0xffff])
+[    1.461872] pci_bus 0000:00: root bus resource [mem 0x60000000-0x7fffffff]
+[    1.461894] pci 0000:00:00.0: [0014:7a00] type 00 class 0x060000 conventional PCI endpoint
+[    1.461992] pci 0000:00:00.1: [0014:7a10] type 00 class 0x060000 conventional PCI endpoint
+[    1.462062] pci 0000:00:00.2: [0014:7a20] type 00 class 0x060000 conventional PCI endpoint
+[    1.462132] pci 0000:00:00.3: [0014:7a30] type 00 class 0x060000 conventional PCI endpoint
+[    1.462211] pci 0000:00:04.0: [0014:7a24] type 00 class 0x0c0310 conventional PCI endpoint
+[    1.462220] pci 0000:00:04.0: BAR 0 [mem 0x45940000-0x45947fff 64bit]
+[    1.462284] pci 0000:00:04.1: [0014:7a14] type 00 class 0x0c0320 conventional PCI endpoint
+[    1.462292] pci 0000:00:04.1: BAR 0 [mem 0x45948000-0x4594ffff 64bit]
+[    1.462358] pci 0000:00:05.0: [0014:7a24] type 00 class 0x0c0310 conventional PCI endpoint
+[    1.462365] pci 0000:00:05.0: BAR 0 [mem 0x45950000-0x45957fff 64bit]
+[    1.462431] pci 0000:00:05.1: [0014:7a14] type 00 class 0x0c0320 conventional PCI endpoint
+[    1.462439] pci 0000:00:05.1: BAR 0 [mem 0x45958000-0x4595ffff 64bit]
+[    1.462505] pci 0000:00:06.0: [0014:7a25] type 00 class 0x040000 conventional PCI endpoint
+[    1.462513] pci 0000:00:06.0: BAR 0 [mem 0x45960000-0x459600ff 64bit]
+[    1.462518] pci 0000:00:06.0: BAR 2 [mem 0x30000000-0x3fffffff 64bit]
+[    1.462522] pci 0000:00:06.0: BAR 4 [mem 0x45900000-0x4590ffff 64bit]
+[    1.462583] pci 0000:00:06.1: [0014:7a36] type 00 class 0x030000 conventional PCI endpoint
+[    1.462591] pci 0000:00:06.1: BAR 0 [mem 0x45910000-0x4591ffff 64bit]
+[    1.462649] pci 0000:00:06.1: vgaarb: setting as boot VGA device
+[    1.462652] pci 0000:00:06.1: vgaarb: bridge control possible
+[    1.462655] pci 0000:00:06.1: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+[    1.462674] pci 0000:00:06.2: [0014:7a37] type 00 class 0x040300 conventional PCI endpoint
+[    1.462681] pci 0000:00:06.2: BAR 0 [mem 0x45920000-0x4592ffff 64bit]
+[    1.462751] pci 0000:00:07.0: [0014:7a07] type 00 class 0x040300 conventional PCI endpoint
+[    1.462758] pci 0000:00:07.0: BAR 0 [mem 0x45930000-0x4593ffff 64bit]
+[    1.462823] pci 0000:00:08.0: [0014:7a18] type 00 class 0x010601 conventional PCI endpoint
+[    1.462836] pci 0000:00:08.0: BAR 5 [mem 0x4596b000-0x4596b3ff]
+[    1.462903] pci 0000:00:09.0: [0014:7a49] type 01 class 0x060400 PCIe Root Port
+[    1.462913] pci 0000:00:09.0: BAR 0 [mem 0x45961000-0x45961fff 64bit]
+[    1.462919] pci 0000:00:09.0: PCI bridge to [bus 01]
+[    1.462953] pci 0000:00:09.0: supports D1 D2
+[    1.462956] pci 0000:00:09.0: PME# supported from D0 D1 D3hot D3cold
+[    1.463052] pci 0000:00:0a.0: [0014:7a39] type 01 class 0x060400 PCIe Root Port
+[    1.463062] pci 0000:00:0a.0: BAR 0 [mem 0x45962000-0x45962fff 64bit]
+[    1.463067] pci 0000:00:0a.0: PCI bridge to [bus 02]
+[    1.463071] pci 0000:00:0a.0:   bridge window [io  0x20000-0x20fff]
+[    1.463074] pci 0000:00:0a.0:   bridge window [mem 0x45800000-0x458fffff]
+[    1.463103] pci 0000:00:0a.0: supports D1 D2
+[    1.463106] pci 0000:00:0a.0: PME# supported from D0 D1 D3hot D3cold
+[    1.463196] pci 0000:00:0b.0: [0014:7a39] type 01 class 0x060400 PCIe Root Port
+[    1.463206] pci 0000:00:0b.0: BAR 0 [mem 0x45963000-0x45963fff 64bit]
+[    1.463212] pci 0000:00:0b.0: PCI bridge to [bus 03]
+[    1.463243] pci 0000:00:0b.0: supports D1 D2
+[    1.463246] pci 0000:00:0b.0: PME# supported from D0 D1 D3hot D3cold
+[    1.463337] pci 0000:00:0c.0: [0014:7a39] type 01 class 0x060400 PCIe Root Port
+[    1.463348] pci 0000:00:0c.0: BAR 0 [mem 0x45964000-0x45964fff 64bit]
+[    1.463353] pci 0000:00:0c.0: PCI bridge to [bus 04]
+[    1.463387] pci 0000:00:0c.0: supports D1 D2
+[    1.463389] pci 0000:00:0c.0: PME# supported from D0 D1 D3hot D3cold
+[    1.463481] pci 0000:00:0d.0: [0014:7a49] type 01 class 0x060400 PCIe Root Port
+[    1.463490] pci 0000:00:0d.0: BAR 0 [mem 0x45965000-0x45965fff 64bit]
+[    1.463495] pci 0000:00:0d.0: PCI bridge to [bus 05]
+[    1.463499] pci 0000:00:0d.0:   bridge window [mem 0x45700000-0x457fffff]
+[    1.463524] pci 0000:00:0d.0: supports D1 D2
+[    1.463527] pci 0000:00:0d.0: PME# supported from D0 D1 D3hot D3cold
+[    1.463623] pci 0000:00:0f.0: [0014:7a69] type 01 class 0x060400 PCIe Root Port
+[    1.463632] pci 0000:00:0f.0: BAR 0 [mem 0x45966000-0x45966fff 64bit]
+[    1.463637] pci 0000:00:0f.0: PCI bridge to [bus 06-07]
+[    1.463642] pci 0000:00:0f.0:   bridge window [mem 0x45200000-0x456fffff]
+[    1.463647] pci 0000:00:0f.0:   bridge window [mem 0x45000000-0x450fffff 64bit pref]
+[    1.463670] pci 0000:00:0f.0: supports D1 D2
+[    1.463672] pci 0000:00:0f.0: PME# supported from D0 D1 D3hot D3cold
+[    1.463760] pci 0000:00:10.0: [0014:7a59] type 01 class 0x060400 PCIe Root Port
+[    1.463772] pci 0000:00:10.0: BAR 0 [mem 0x45967000-0x45967fff 64bit]
+[    1.463778] pci 0000:00:10.0: PCI bridge to [bus 08]
+[    1.463812] pci 0000:00:10.0: supports D1 D2
+[    1.463814] pci 0000:00:10.0: PME# supported from D0 D1 D3hot D3cold
+[    1.463919] pci 0000:00:13.0: [0014:7a59] type 01 class 0x060400 PCIe Root Port
+[    1.463931] pci 0000:00:13.0: BAR 0 [mem 0x45968000-0x45968fff 64bit]
+[    1.463937] pci 0000:00:13.0: PCI bridge to [bus 09]
+[    1.463973] pci 0000:00:13.0: supports D1 D2
+[    1.463975] pci 0000:00:13.0: PME# supported from D0 D1 D3hot D3cold
+[    1.464075] pci 0000:00:16.0: [0014:7a1b] type 00 class 0x088000 conventional PCI endpoint
+[    1.464083] pci 0000:00:16.0: BAR 0 [mem 0x45969000-0x45969fff 64bit]
+[    1.464088] pci 0000:00:16.0: BAR 2 [mem 0x44000000-0x44ffffff 64bit]
+[    1.464164] pci 0000:00:19.0: [0014:7a34] type 00 class 0x0c0330 conventional PCI endpoint
+[    1.464173] pci 0000:00:19.0: BAR 0 [mem 0x45100000-0x451fffff 64bit]
+[    1.464247] pci 0000:00:1a.0: [0014:7a1f] type 00 class 0x080600 conventional PCI endpoint
+[    1.464255] pci 0000:00:1a.0: BAR 0 [mem 0x4596a000-0x4596a3ff 64bit]
+[    1.464260] pci 0000:00:1a.0: BAR 2 [mem 0x40000000-0x43ffffff 64bit]
+[    1.464267] pci 0000:00:1a.0: ROM [mem 0xfffff800-0xffffffff pref]
+[    1.464463] pci 0000:02:00.0: [1f0a:6801] type 00 class 0x020000 PCIe Endpoint
+[    1.464505] pci 0000:02:00.0: BAR 0 [mem 0x45800000-0x45803fff 64bit]
+[    1.464554] pci 0000:02:00.0: BAR 4 [io  0x20000-0x200ff]
+[    1.464718] pci 0000:02:00.0: supports D1
+[    1.464721] pci 0000:02:00.0: PME# supported from D0 D1 D3hot D3cold
+[    1.465044] pci 0000:05:00.0: [1e4b:1202] type 00 class 0x010802 PCIe Endpoint
+[    1.465061] pci 0000:05:00.0: BAR 0 [mem 0x45700000-0x45703fff 64bit]
+[    1.465157] pci 0000:05:00.0: PME# supported from D0 D3hot D3cold
+[    1.465368] pci 0000:06:00.0: [8086:1521] type 00 class 0x020000 PCIe Endpoint
+[    1.465388] pci 0000:06:00.0: BAR 0 [mem 0x45500000-0x455fffff]
+[    1.465417] pci 0000:06:00.0: BAR 3 [mem 0x4560c000-0x4560ffff]
+[    1.465552] pci 0000:06:00.0: PME# supported from D0 D3hot D3cold
+[    1.465593] pci 0000:06:00.0: VF BAR 0 [mem 0x450e0000-0x450e3fff 64bit pref]
+[    1.465597] pci 0000:06:00.0: VF BAR 0 [mem 0x450e0000-0x450fffff 64bit pref]: contains BAR 0 for 8 VFs
+[    1.465623] pci 0000:06:00.0: VF BAR 3 [mem 0x450c0000-0x450c3fff 64bit pref]
+[    1.465625] pci 0000:06:00.0: VF BAR 3 [mem 0x450c0000-0x450dffff 64bit pref]: contains BAR 3 for 8 VFs
+[    1.465875] pci 0000:06:00.1: [8086:1521] type 00 class 0x020000 PCIe Endpoint
+[    1.465896] pci 0000:06:00.1: BAR 0 [mem 0x45400000-0x454fffff]
+[    1.465925] pci 0000:06:00.1: BAR 3 [mem 0x45608000-0x4560bfff]
+[    1.466051] pci 0000:06:00.1: PME# supported from D0 D3hot D3cold
+[    1.466095] pci 0000:06:00.1: VF BAR 0 [mem 0x450a0000-0x450a3fff 64bit pref]
+[    1.466099] pci 0000:06:00.1: VF BAR 0 [mem 0x450a0000-0x450bffff 64bit pref]: contains BAR 0 for 8 VFs
+[    1.466124] pci 0000:06:00.1: VF BAR 3 [mem 0x45080000-0x45083fff 64bit pref]
+[    1.466127] pci 0000:06:00.1: VF BAR 3 [mem 0x45080000-0x4509ffff 64bit pref]: contains BAR 3 for 8 VFs
+[    1.466397] pci 0000:06:00.2: [8086:1521] type 00 class 0x020000 PCIe Endpoint
+[    1.466418] pci 0000:06:00.2: BAR 0 [mem 0x45300000-0x453fffff]
+[    1.466447] pci 0000:06:00.2: BAR 3 [mem 0x45604000-0x45607fff]
+[    1.466575] pci 0000:06:00.2: PME# supported from D0 D3hot D3cold
+[    1.466615] pci 0000:06:00.2: VF BAR 0 [mem 0x45060000-0x45063fff 64bit pref]
+[    1.466618] pci 0000:06:00.2: VF BAR 0 [mem 0x45060000-0x4507ffff 64bit pref]: contains BAR 0 for 8 VFs
+[    1.466643] pci 0000:06:00.2: VF BAR 3 [mem 0x45040000-0x45043fff 64bit pref]
+[    1.466645] pci 0000:06:00.2: VF BAR 3 [mem 0x45040000-0x4505ffff 64bit pref]: contains BAR 3 for 8 VFs
+[    1.466876] pci 0000:06:00.3: [8086:1521] type 00 class 0x020000 PCIe Endpoint
+[    1.466897] pci 0000:06:00.3: BAR 0 [mem 0x45200000-0x452fffff]
+[    1.466925] pci 0000:06:00.3: BAR 3 [mem 0x45600000-0x45603fff]
+[    1.467052] pci 0000:06:00.3: PME# supported from D0 D3hot D3cold
+[    1.467094] pci 0000:06:00.3: VF BAR 0 [mem 0x45020000-0x45023fff 64bit pref]
+[    1.467097] pci 0000:06:00.3: VF BAR 0 [mem 0x45020000-0x4503ffff 64bit pref]: contains BAR 0 for 8 VFs
+[    1.467122] pci 0000:06:00.3: VF BAR 3 [mem 0x45000000-0x45003fff 64bit pref]
+[    1.467125] pci 0000:06:00.3: VF BAR 3 [mem 0x45000000-0x4501ffff 64bit pref]: contains BAR 3 for 8 VFs
+[    1.467441] pci 0000:00:0f.0: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 06-07] add_size 100000 add_align 100000
+[    1.467466] pci 0000:00:06.0: BAR 2 [mem 0x60000000-0x6fffffff 64bit]: assigned
+[    1.467473] pci 0000:00:1a.0: BAR 2 [mem 0x70000000-0x73ffffff 64bit]: assigned
+[    1.467478] pci 0000:00:16.0: BAR 2 [mem 0x74000000-0x74ffffff 64bit]: assigned
+[    1.467483] pci 0000:00:0a.0: bridge window [mem 0x75000000-0x750fffff]: assigned
+[    1.467485] pci 0000:00:0d.0: bridge window [mem 0x75100000-0x751fffff]: assigned
+[    1.467488] pci 0000:00:0f.0: bridge window [mem 0x75200000-0x756fffff]: assigned
+[    1.467490] pci 0000:00:0f.0: bridge window [mem 0x75700000-0x757fffff 64bit pref]: assigned
+[    1.467493] pci 0000:00:19.0: BAR 0 [mem 0x75800000-0x758fffff 64bit]: assigned
+[    1.467497] pci 0000:00:06.0: BAR 4 [mem 0x75900000-0x7590ffff 64bit]: assigned
+[    1.467501] pci 0000:00:06.1: BAR 0 [mem 0x75910000-0x7591ffff 64bit]: assigned
+[    1.467505] pci 0000:00:06.2: BAR 0 [mem 0x75920000-0x7592ffff 64bit]: assigned
+[    1.467509] pci 0000:00:07.0: BAR 0 [mem 0x75930000-0x7593ffff 64bit]: assigned
+[    1.467513] pci 0000:00:04.0: BAR 0 [mem 0x75940000-0x75947fff 64bit]: assigned
+[    1.467517] pci 0000:00:04.1: BAR 0 [mem 0x75948000-0x7594ffff 64bit]: assigned
+[    1.467521] pci 0000:00:05.0: BAR 0 [mem 0x75950000-0x75957fff 64bit]: assigned
+[    1.467525] pci 0000:00:05.1: BAR 0 [mem 0x75958000-0x7595ffff 64bit]: assigned
+[    1.467529] pci 0000:00:09.0: BAR 0 [mem 0x75960000-0x75960fff 64bit]: assigned
+[    1.467535] pci 0000:00:0a.0: BAR 0 [mem 0x75961000-0x75961fff 64bit]: assigned
+[    1.467540] pci 0000:00:0a.0: bridge window [io  0x4000-0x4fff]: assigned
+[    1.467543] pci 0000:00:0b.0: BAR 0 [mem 0x75962000-0x75962fff 64bit]: assigned
+[    1.467549] pci 0000:00:0c.0: BAR 0 [mem 0x75963000-0x75963fff 64bit]: assigned
+[    1.467554] pci 0000:00:0d.0: BAR 0 [mem 0x75964000-0x75964fff 64bit]: assigned
+[    1.467559] pci 0000:00:0f.0: BAR 0 [mem 0x75965000-0x75965fff 64bit]: assigned
+[    1.467564] pci 0000:00:10.0: BAR 0 [mem 0x75966000-0x75966fff 64bit]: assigned
+[    1.467570] pci 0000:00:13.0: BAR 0 [mem 0x75967000-0x75967fff 64bit]: assigned
+[    1.467576] pci 0000:00:16.0: BAR 0 [mem 0x75968000-0x75968fff 64bit]: assigned
+[    1.467580] pci 0000:00:1a.0: ROM [mem 0x75969000-0x759697ff pref]: assigned
+[    1.467584] pci 0000:00:08.0: BAR 5 [mem 0x75969800-0x75969bff]: assigned
+[    1.467588] pci 0000:00:1a.0: BAR 0 [mem 0x75969c00-0x75969fff 64bit]: assigned
+[    1.467593] pci 0000:00:06.0: BAR 0 [mem 0x7596a000-0x7596a0ff 64bit]: assigned
+[    1.467606] pci 0000:00:09.0: PCI bridge to [bus 01]
+[    1.467614] pci 0000:02:00.0: BAR 0 [mem 0x75000000-0x75003fff 64bit]: assigned
+[    1.467633] pci 0000:02:00.0: BAR 4 [io  0x4000-0x40ff]: assigned
+[    1.467640] pci 0000:00:0a.0: PCI bridge to [bus 02]
+[    1.467643] pci 0000:00:0a.0:   bridge window [io  0x4000-0x4fff]
+[    1.467646] pci 0000:00:0a.0:   bridge window [mem 0x75000000-0x750fffff]
+[    1.467651] pci 0000:00:0b.0: PCI bridge to [bus 03]
+[    1.467656] pci 0000:00:0c.0: PCI bridge to [bus 04]
+[    1.467662] pci 0000:05:00.0: BAR 0 [mem 0x75100000-0x75103fff 64bit]: assigned
+[    1.467670] pci 0000:00:0d.0: PCI bridge to [bus 05]
+[    1.467673] pci 0000:00:0d.0:   bridge window [mem 0x75100000-0x751fffff]
+[    1.467682] pci 0000:06:00.0: BAR 0 [mem 0x75200000-0x752fffff]: assigned
+[    1.467688] pci 0000:06:00.1: BAR 0 [mem 0x75300000-0x753fffff]: assigned
+[    1.467694] pci 0000:06:00.2: BAR 0 [mem 0x75400000-0x754fffff]: assigned
+[    1.467698] pci 0000:06:00.3: BAR 0 [mem 0x75500000-0x755fffff]: assigned
+[    1.467703] pci 0000:06:00.0: BAR 3 [mem 0x75600000-0x75603fff]: assigned
+[    1.467708] pci 0000:06:00.0: VF BAR 0 [mem 0x75700000-0x7571ffff 64bit pref]: assigned
+[    1.467715] pci 0000:06:00.0: VF BAR 3 [mem 0x75720000-0x7573ffff 64bit pref]: assigned
+[    1.467721] pci 0000:06:00.1: BAR 3 [mem 0x75604000-0x75607fff]: assigned
+[    1.467725] pci 0000:06:00.1: VF BAR 0 [mem 0x75740000-0x7575ffff 64bit pref]: assigned
+[    1.467732] pci 0000:06:00.1: VF BAR 3 [mem 0x75760000-0x7577ffff 64bit pref]: assigned
+[    1.467738] pci 0000:06:00.2: BAR 3 [mem 0x75608000-0x7560bfff]: assigned
+[    1.467742] pci 0000:06:00.2: VF BAR 0 [mem 0x75780000-0x7579ffff 64bit pref]: assigned
+[    1.467748] pci 0000:06:00.2: VF BAR 3 [mem 0x757a0000-0x757bffff 64bit pref]: assigned
+[    1.467754] pci 0000:06:00.3: BAR 3 [mem 0x7560c000-0x7560ffff]: assigned
+[    1.467759] pci 0000:06:00.3: VF BAR 0 [mem 0x757c0000-0x757dffff 64bit pref]: assigned
+[    1.467764] pci 0000:06:00.3: VF BAR 3 [mem 0x757e0000-0x757fffff 64bit pref]: assigned
+[    1.467774] pci 0000:00:0f.0: PCI bridge to [bus 06-07]
+[    1.467777] pci 0000:00:0f.0:   bridge window [mem 0x75200000-0x756fffff]
+[    1.467780] pci 0000:00:0f.0:   bridge window [mem 0x75700000-0x757fffff 64bit pref]
+[    1.467783] pci 0000:00:10.0: PCI bridge to [bus 08]
+[    1.467788] pci 0000:00:13.0: PCI bridge to [bus 09]
+[    1.467794] pci_bus 0000:00: resource 4 [io  0x0000-0x7fff]
+[    1.467796] pci_bus 0000:00: resource 5 [mem 0x60000000-0x7fffffff]
+[    1.467799] pci_bus 0000:02: resource 0 [io  0x4000-0x4fff]
+[    1.467801] pci_bus 0000:02: resource 1 [mem 0x75000000-0x750fffff]
+[    1.467804] pci_bus 0000:05: resource 1 [mem 0x75100000-0x751fffff]
+[    1.467806] pci_bus 0000:06: resource 1 [mem 0x75200000-0x756fffff]
+[    1.467808] pci_bus 0000:06: resource 2 [mem 0x75700000-0x757fffff 64bit pref]
+[    1.467933] pch-pic: debug: wheatfox: pch_pic_alloc, virq = 18 -> hwirq = 0
+[    1.468017] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 19, hwirq = 64, domain = :platform:msi-controller@1fe01140-5
+[    1.468021] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 19, hwirq = 64, domain = :platform:msi-controller@1fe01140-5
+[    1.468028] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x40
+[    1.468085] pcieport 0000:00:09.0: PME: Signaling with IRQ 19
+[    1.468198] pcieport 0000:00:09.0: AER: enabled with IRQ 19
+[    1.468355] pch-pic: debug: wheatfox: pch_pic_alloc, virq = 20 -> hwirq = 1
+[    1.468422] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 21, hwirq = 65, domain = :platform:msi-controller@1fe01140-5
+[    1.468425] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 21, hwirq = 65, domain = :platform:msi-controller@1fe01140-5
+[    1.468431] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x41
+[    1.468487] pcieport 0000:00:0a.0: PME: Signaling with IRQ 21
+[    1.468585] pcieport 0000:00:0a.0: AER: enabled with IRQ 21
+[    1.468743] pch-pic: debug: wheatfox: pch_pic_alloc, virq = 22 -> hwirq = 2
+[    1.468814] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 23, hwirq = 66, domain = :platform:msi-controller@1fe01140-5
+[    1.468817] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 23, hwirq = 66, domain = :platform:msi-controller@1fe01140-5
+[    1.468822] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x42
+[    1.468878] pcieport 0000:00:0b.0: PME: Signaling with IRQ 23
+[    1.468973] pcieport 0000:00:0b.0: AER: enabled with IRQ 23
+[    1.469143] pch-pic: debug: wheatfox: pch_pic_alloc, virq = 24 -> hwirq = 3
+[    1.469208] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 25, hwirq = 67, domain = :platform:msi-controller@1fe01140-5
+[    1.469211] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 25, hwirq = 67, domain = :platform:msi-controller@1fe01140-5
+[    1.469217] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x43
+[    1.469272] pcieport 0000:00:0c.0: PME: Signaling with IRQ 25
+[    1.469368] pcieport 0000:00:0c.0: AER: enabled with IRQ 25
+[    1.469530] pch-pic: debug: wheatfox: pch_pic_alloc, virq = 26 -> hwirq = 4
+[    1.469594] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 27, hwirq = 68, domain = :platform:msi-controller@1fe01140-5
+[    1.469597] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 27, hwirq = 68, domain = :platform:msi-controller@1fe01140-5
+[    1.469603] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x44
+[    1.469656] pcieport 0000:00:0d.0: PME: Signaling with IRQ 27
+[    1.469749] pcieport 0000:00:0d.0: AER: enabled with IRQ 27
+[    1.469908] pch-pic: debug: wheatfox: pch_pic_alloc, virq = 28 -> hwirq = 5
+[    1.469977] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 29, hwirq = 69, domain = :platform:msi-controller@1fe01140-5
+[    1.469980] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 29, hwirq = 69, domain = :platform:msi-controller@1fe01140-5
+[    1.469985] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x45
+[    1.470037] pcieport 0000:00:0f.0: PME: Signaling with IRQ 29
+[    1.470132] pcieport 0000:00:0f.0: AER: enabled with IRQ 29
+[    1.470294] pch-pic: debug: wheatfox: pch_pic_alloc, virq = 30 -> hwirq = 6
+[    1.470356] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 31, hwirq = 70, domain = :platform:msi-controller@1fe01140-5
+[    1.470359] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 31, hwirq = 70, domain = :platform:msi-controller@1fe01140-5
+[    1.470365] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x46
+[    1.470416] pcieport 0000:00:10.0: PME: Signaling with IRQ 31
+[    1.470519] pcieport 0000:00:10.0: AER: enabled with IRQ 31
+[    1.470679] pch-pic: debug: wheatfox: pch_pic_alloc, virq = 32 -> hwirq = 7
+[    1.470746] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 33, hwirq = 71, domain = :platform:msi-controller@1fe01140-5
+[    1.470750] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 33, hwirq = 71, domain = :platform:msi-controller@1fe01140-5
+[    1.470755] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x47
+[    1.470806] pcieport 0000:00:13.0: PME: Signaling with IRQ 33
+[    1.470906] pcieport 0000:00:13.0: AER: enabled with IRQ 33
+[    1.474099] Serial: 8250/16550 driver, 16 ports, IRQ sharing enabled
+[    1.476365] of_serial 10080000.serial: error -ENXIO: IRQ index 0 not found
+[    1.476477] printk: legacy console [ttyS0] disabled
+[    1.476647] 10080000.serial: ttyS0 at MMIO 0x10080000 (irq = 0, base_baud = 3125000) is a 16550A
+[    1.476670] printk: legacy console [ttyS0] enabled
+[    4.083235] brd: module loaded
+[    4.088554] loop: module loaded
+[    4.092573] virtio_blk virtio1: 1/0/0 default/read/poll queues
+[    4.099635] virtio_blk virtio1: [vda] 16384 512-byte logical blocks (8.39 MB/8.00 MiB)
+[    4.109203] megaraid cmm: 2.20.2.7 (Release Date: Sun Jul 16 00:01:03 EST 2006)
+[    4.116539] megaraid: 2.20.5.1 (Release Date: Thu Nov 16 15:32:35 EST 2006)
+[    4.123484] megasas: 07.727.03.00-rc1
+[    4.127180] mpt3sas version 51.100.00.00 loaded
+[    4.132280] nvme nvme0: pci function 0000:05:00.0
+[    4.137033] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 36, hwirq = 72, domain = :platform:msi-controller@1fe01140-5
+[    4.149068] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 36, hwirq = 72, domain = :platform:msi-controller@1fe01140-5
+[    4.161132] igb: Intel(R) Gigabit Ethernet Network Driver
+[    4.166508] igb: Copyright (c) 2007-2014 Intel Corporation.
+[    4.172103] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x48
+[    4.183768] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 37, hwirq = 73, domain = :platform:msi-controller@1fe01140-5
+[    4.195883] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 37, hwirq = 73, domain = :platform:msi-controller@1fe01140-5
+[    4.207935] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x49
+[    4.219275] wheatfox: queue_request_irq, call pci_request_irq with pdev->irq=26, nvmeq->cq_vector = 0
+[    4.228541] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 37, hwirq = 73, domain = :platform:msi-controller@1fe01140-5
+[    4.240617] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 37, hwirq = 73, domain = :platform:msi-controller@1fe01140-5
+[    4.252806] eiointc: wheatfox: eiointc_irq_dispatch, pending=0x100, priv->eiointc_domain->name=:platform:interrupt-controller@1fe01600
+[    4.252894] eiointc: wheatfox: eiointc_irq_dispatch, hwirq=72
+[    4.270883] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x49
+[    4.282380] eiointc: wheatfox: eiointc_irq_dispatch, pending=0x100, priv->eiointc_domain->name=:platform:interrupt-controller@1fe01600
+[    4.282468] eiointc: wheatfox: eiointc_irq_dispatch, hwirq=72
+[    4.300466] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 38, hwirq = 74, domain = :platform:msi-controller@1fe01140-5
+[    4.312654] eiointc: wheatfox: eiointc_irq_dispatch, pending=0x100, priv->eiointc_domain->name=:platform:interrupt-controller@1fe01600
+[    4.312741] eiointc: wheatfox: eiointc_irq_dispatch, hwirq=72
+[    4.330678] nvme nvme0: allocated 8 MiB host memory buffer (1 segment).
+[    4.337273] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 38, hwirq = 74, domain = :platform:msi-controller@1fe01140-5
+[    4.349460] eiointc: wheatfox: eiointc_irq_dispatch, pending=0x100, priv->eiointc_domain->name=:platform:interrupt-controller@1fe01600
+[    4.349548] eiointc: wheatfox: eiointc_irq_dispatch, hwirq=72
+[    4.367487] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x4a
+[    4.378984] eiointc: wheatfox: eiointc_irq_dispatch, pending=0x100, priv->eiointc_domain->name=:platform:interrupt-controller@1fe01600
+[    4.379072] eiointc: wheatfox: eiointc_irq_dispatch, hwirq=72
+[    4.397083] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 36, hwirq = 72, domain = :platform:msi-controller@1fe01140-5
+[    4.409118] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 36, hwirq = 72, domain = :platform:msi-controller@1fe01140-5
+[    4.421152] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x48
+[    4.432534] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 39, hwirq = 75, domain = :platform:msi-controller@1fe01140-5
+[    4.444578] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 39, hwirq = 75, domain = :platform:msi-controller@1fe01140-5
+[    4.456640] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 40, hwirq = 76, domain = :platform:msi-controller@1fe01140-5
+[    4.468677] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x4b
+[    4.480016] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 40, hwirq = 76, domain = :platform:msi-controller@1fe01140-5
+[    4.492063] wheatfox: queue_request_irq, call pci_request_irq with pdev->irq=26, nvmeq->cq_vector = 0
+[    4.501245] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x4c
+[    4.514122] eiointc: wheatfox: eiointc_irq_dispatch, pending=0x100, priv->eiointc_domain->name=:platform:interrupt-controller@1fe01600
+[    4.526226] eiointc: wheatfox: eiointc_irq_dispatch, hwirq=72
+[    4.534033] eiointc: wheatfox: eiointc_irq_dispatch, pending=0x100, priv->eiointc_domain->name=:platform:interrupt-controller@1fe01600
+[    4.546135] eiointc: wheatfox: eiointc_irq_dispatch, hwirq=72
+[    4.552034] wheatfox: queue_request_irq, call pci_request_irq with pdev->irq=26, nvmeq->cq_vector = 1
+[    4.571112] nvme nvme0: 1/0/0 default/read/poll queues
+[    4.578122] eiointc: wheatfox: eiointc_irq_dispatch, pending=0x100, priv->eiointc_domain->name=:platform:interrupt-controller@1fe01600
+[    4.590225] eiointc: wheatfox: eiointc_irq_dispatch, hwirq=72
+[    4.597710] eiointc: wheatfox: eiointc_irq_dispatch, pending=0x100, priv->eiointc_domain->name=:platform:interrupt-controller@1fe01600
+[    4.609813] eiointc: wheatfox: eiointc_irq_dispatch, hwirq=72
+[    4.617622] eiointc: wheatfox: eiointc_irq_dispatch, pending=0x100, priv->eiointc_domain->name=:platform:interrupt-controller@1fe01600
+[    4.629726] eiointc: wheatfox: eiointc_irq_dispatch, hwirq=72
+[    4.638387] eiointc: wheatfox: eiointc_irq_dispatch, pending=0x100, priv->eiointc_domain->name=:platform:interrupt-controller@1fe01600
+[    4.650491] eiointc: wheatfox: eiointc_irq_dispatch, hwirq=72
+[    4.657140] igb 0000:06:00.0: Intel(R) Gigabit Ethernet Network Connection
+[    4.664143] eiointc: wheatfox: eiointc_irq_dispatch, pending=0x100, priv->eiointc_domain->name=:platform:interrupt-controller@1fe01600
+[    4.664231] eiointc: wheatfox: eiointc_irq_dispatch, hwirq=72
+[    4.682150] nvme nvme0: Ignoring bogus Namespace Identifiers
+[    4.687823] igb 0000:06:00.0: eth0: (PCIe:5.0Gb/s:Width x4) 6c:b3:11:9a:e8:74
+[    4.695088] eiointc: wheatfox: eiointc_irq_dispatch, pending=0x100, priv->eiointc_domain->name=:platform:interrupt-controller@1fe01600
+[    4.695176] eiointc: wheatfox: eiointc_irq_dispatch, hwirq=72
+[    4.713792] igb 0000:06:00.0: eth0: PBA No: H47822-001
+[    4.719068] eiointc: wheatfox: eiointc_irq_dispatch, pending=0x800, priv->eiointc_domain->name=:platform:interrupt-controller@1fe01600
+[    4.719156] eiointc: wheatfox: eiointc_irq_dispatch, hwirq=75
+[    4.737115] igb 0000:06:00.0: Using MSI-X interrupts. 1 rx queue(s), 1 tx queue(s)
+[    4.744810] eiointc: wheatfox: eiointc_irq_dispatch, pending=0x800, priv->eiointc_domain->name=:platform:interrupt-controller@1fe01600
+[    4.744898] eiointc: wheatfox: eiointc_irq_dispatch, hwirq=75
+[    4.763024] eiointc: wheatfox: eiointc_irq_dispatch, pending=0x800, priv->eiointc_domain->name=:platform:interrupt-controller@1fe01600
+[    4.775128] eiointc: wheatfox: eiointc_irq_dispatch, hwirq=75
+[    4.781241] eiointc: wheatfox: eiointc_irq_dispatch, pending=0x800, priv->eiointc_domain->name=:platform:interrupt-controller@1fe01600
+[    4.793343] eiointc: wheatfox: eiointc_irq_dispatch, hwirq=75
+[    4.799452] eiointc: wheatfox: eiointc_irq_dispatch, pending=0x800, priv->eiointc_domain->name=:platform:interrupt-controller@1fe01600
+[    4.811555] eiointc: wheatfox: eiointc_irq_dispatch, hwirq=75
+[    4.817822] eiointc: wheatfox: eiointc_irq_dispatch, pending=0x800, priv->eiointc_domain->name=:platform:interrupt-controller@1fe01600
+[    4.829925] eiointc: wheatfox: eiointc_irq_dispatch, hwirq=75
+[    4.836109] eiointc: wheatfox: eiointc_irq_dispatch, pending=0x800, priv->eiointc_domain->name=:platform:interrupt-controller@1fe01600
+[    4.848213] eiointc: wheatfox: eiointc_irq_dispatch, hwirq=75
+[    4.854160] eiointc: wheatfox: eiointc_irq_dispatch, pending=0x800, priv->eiointc_domain->name=:platform:interrupt-controller@1fe01600
+[    4.866181] eiointc: wheatfox: eiointc_irq_dispatch, hwirq=75
+[    4.871992] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 41, hwirq = 77, domain = :platform:msi-controller@1fe01140-5
+[    4.884017] eiointc: wheatfox: eiointc_irq_dispatch, pending=0x800, priv->eiointc_domain->name=:platform:interrupt-controller@1fe01600
+[    4.884023] eiointc: wheatfox: eiointc_irq_dispatch, hwirq=75
+[    4.901814] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 41, hwirq = 77, domain = :platform:msi-controller@1fe01140-5
+[    4.913839] eiointc: wheatfox: eiointc_irq_dispatch, pending=0x800, priv->eiointc_domain->name=:platform:interrupt-controller@1fe01600
+[    4.913844] eiointc: wheatfox: eiointc_irq_dispatch, hwirq=75
+[    4.931645]  nvme0n1: p1
+[    4.934353] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x4d
+[    4.945777] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 41, hwirq = 77, domain = :platform:msi-controller@1fe01140-5
+[    4.957850] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 41, hwirq = 77, domain = :platform:msi-controller@1fe01140-5
+[    4.969884] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x4d
+[    4.981267] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 42, hwirq = 78, domain = :platform:msi-controller@1fe01140-5
+[    4.993302] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 42, hwirq = 78, domain = :platform:msi-controller@1fe01140-5
+[    5.005336] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x4e
+[    5.016700] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 43, hwirq = 79, domain = :platform:msi-controller@1fe01140-5
+[    5.028730] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 43, hwirq = 79, domain = :platform:msi-controller@1fe01140-5
+[    5.040763] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x4f
+[    5.096712] igb 0000:06:00.1: Intel(R) Gigabit Ethernet Network Connection
+[    5.103547] igb 0000:06:00.1: eth1: (PCIe:5.0Gb/s:Width x4) 6c:b3:11:9a:e8:75
+[    5.110968] igb 0000:06:00.1: eth1: PBA No: H47822-001
+[    5.116073] igb 0000:06:00.1: Using MSI-X interrupts. 1 rx queue(s), 1 tx queue(s)
+[    5.123974] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 44, hwirq = 80, domain = :platform:msi-controller@1fe01140-5
+[    5.136005] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 44, hwirq = 80, domain = :platform:msi-controller@1fe01140-5
+[    5.148040] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x50
+[    5.159468] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 44, hwirq = 80, domain = :platform:msi-controller@1fe01140-5
+[    5.171499] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 44, hwirq = 80, domain = :platform:msi-controller@1fe01140-5
+[    5.183533] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x50
+[    5.194903] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 45, hwirq = 81, domain = :platform:msi-controller@1fe01140-5
+[    5.206933] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 45, hwirq = 81, domain = :platform:msi-controller@1fe01140-5
+[    5.218968] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x51
+[    5.230331] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 46, hwirq = 82, domain = :platform:msi-controller@1fe01140-5
+[    5.242362] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 46, hwirq = 82, domain = :platform:msi-controller@1fe01140-5
+[    5.254394] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x52
+[    5.276233] random: crng init done
+[    5.314056] igb 0000:06:00.2: Intel(R) Gigabit Ethernet Network Connection
+[    5.320900] igb 0000:06:00.2: eth2: (PCIe:5.0Gb/s:Width x4) 6c:b3:11:9a:e8:76
+[    5.328324] igb 0000:06:00.2: eth2: PBA No: H47822-001
+[    5.333429] igb 0000:06:00.2: Using MSI-X interrupts. 1 rx queue(s), 1 tx queue(s)
+[    5.341319] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 47, hwirq = 83, domain = :platform:msi-controller@1fe01140-5
+[    5.353351] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 47, hwirq = 83, domain = :platform:msi-controller@1fe01140-5
+[    5.365382] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x53
+[    5.376806] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 47, hwirq = 83, domain = :platform:msi-controller@1fe01140-5
+[    5.388839] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 47, hwirq = 83, domain = :platform:msi-controller@1fe01140-5
+[    5.400873] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x53
+[    5.412241] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 48, hwirq = 84, domain = :platform:msi-controller@1fe01140-5
+[    5.424270] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 48, hwirq = 84, domain = :platform:msi-controller@1fe01140-5
+[    5.436306] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x54
+[    5.447669] pch-msi: debug: wheatfox: pch_msi_middle_domain_alloc, virq = 49, hwirq = 85, domain = :platform:msi-controller@1fe01140-5
+[    5.459699] pch-msi: debug: wheatfox: pch_msi_parent_domain_alloc, virq = 49, hwirq = 85, domain = :platform:msi-controller@1fe01140-5
+[    5.471731] pch-msi: debug: wheatfox: pch_msi_compose_msi_msg, msg->address_hi=0x0, msg->address_lo=0x1fe01140, msg->data=0x55
+[    5.526863] igb 0000:06:00.3: Intel(R) Gigabit Ethernet Network Connection
+[    5.533697] igb 0000:06:00.3: eth3: (PCIe:5.0Gb/s:Width x4) 6c:b3:11:9a:e8:77
+[    5.541119] igb 0000:06:00.3: eth3: PBA No: H47822-001
+[    5.546231] igb 0000:06:00.3: Using MSI-X interrupts. 1 rx queue(s), 1 tx queue(s)
+[    5.553862] i2c_dev: i2c /dev entries driver
+[    5.558508] hid: raw HID events driver (C) Jiri Kosina
+[    5.563732] NET: Registered PF_INET6 protocol family
+[    5.569097] Segment Routing with IPv6
+[    5.572750] In-situ OAM (IOAM) with IPv6
+[    5.576681] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    5.586806] Loading compiled-in X.509 certificates
+[    5.594729] Btrfs loaded, zoned=yes, fsverity=no
+[    5.616286] OF: fdt: not creating '/sys/firmware/fdt': CRC check failed
+[    5.622879] clk: Disabling unused clocks
+[    5.658264] Freeing unused kernel image (initmem) memory: 12096K
+[    5.664236] This architecture does not have kernel memory protection.
+[    5.696235] Run /init as init process
+[    5.699871]   with arguments:
+[    5.702813]     /init
+[    5.705065]     earlyprintk
+[    5.726226]   with environment:
+[    5.729342]     HOME=/
+[    5.731679]     TERM=linux
+Starting syslogd: OK
+Starting klogd: OK
+Running sysctl: OK
+Starting system message bus: done
+Starting telnetd: OK
+Welcome to hvisor(loongarch) nonroot linux! Buildroot/wheatfox 2025
+[root@nonroot-dedsec /]# lspci -tv
+-[0000:00]-+-00.0  Loongson Technology LLC Hyper Transport Bridge Controller
+           +-00.1  Loongson Technology LLC Device 7a10
+           +-00.2  Loongson Technology LLC Device 7a20
+           +-00.3  Loongson Technology LLC Device 7a30
+           +-04.0  Loongson Technology LLC OHCI USB Controller
+           +-04.1  Loongson Technology LLC EHCI USB Controller
+           +-05.0  Loongson Technology LLC OHCI USB Controller
+           +-05.1  Loongson Technology LLC EHCI USB Controller
+           +-06.0  Loongson Technology LLC Device 7a25
+           +-06.1  Loongson Technology LLC Device 7a36
+           +-06.2  Loongson Technology LLC Device 7a37
+           +-07.0  Loongson Technology LLC HDA (High Definition Audio) Controller
+           +-08.0  Loongson Technology LLC Device 7a18
+           +-09.0-[01]--
+           +-0a.0-[02]----00.0  Device 1f0a:6801
+           +-0b.0-[03]--
+           +-0c.0-[04]--
+           +-0d.0-[05]----00.0  Device 1e4b:1202
+           +-0f.0-[06-07]--+-00.0  Intel Corporation I350 Gigabit Network Connection
+           |               +-00.1  Intel Corporation I350 Gigabit Network Connection
+           |               +-00.2  Intel Corporation I350 Gigabit Network Connection
+           |               \-00.3  Intel Corporation I350 Gigabit Network Connection
+           +-10.0-[08]--
+           +-13.0-[09]--
+           +-16.0  Loongson Technology LLC Device 7a1b
+           +-19.0  Loongson Technology LLC Device 7a34
+           \-1a.0  Loongson Technology LLC Device 7a1f
+
+
+[root@nonroot-dedsec /]# 
+[root@nonroot-dedsec /]# 
+[root@nonroot-dedsec /]# lspci -v
+00:00.0 Host bridge: Loongson Technology LLC Hyper Transport Bridge Controller
+	Subsystem: Loongson Technology LLC Hyper Transport Bridge Controller
+	Flags: fast devsel
+	Capabilities: [40] HyperTransport: Slave or Primary Interface
+	Capabilities: [60] HyperTransport: Retry Mode
+	Capabilities: [6c] HyperTransport: Interrupt Discovery and Configuration
+	Capabilities: [70] HyperTransport: Interrupt Discovery and Configuration
+	Capabilities: [c0] HyperTransport: #1a
+
+00:00.1 Host bridge: Loongson Technology LLC Device 7a10 (rev 01)
+	Flags: fast devsel
+
+00:00.2 Host bridge: Loongson Technology LLC Device 7a20 (rev 01)
+	Flags: fast devsel
+
+00:00.3 Host bridge: Loongson Technology LLC Device 7a30
+	Flags: fast devsel
+
+00:04.0 USB controller: Loongson Technology LLC OHCI USB Controller (rev 02) (prog-if 10 [OHCI])
+	Flags: bus master, fast devsel, latency 0, IRQ 113
+	Memory at 75940000 (64-bit, non-prefetchable) [size=32K]
+
+00:04.1 USB controller: Loongson Technology LLC EHCI USB Controller (rev 02) (prog-if 20 [EHCI])
+	Flags: bus master, VGA palette snoop, fast devsel, latency 0, IRQ 112
+	Memory at 75948000 (64-bit, non-prefetchable) [size=32K]
+
+00:05.0 USB controller: Loongson Technology LLC OHCI USB Controller (rev 02) (prog-if 10 [OHCI])
+	Flags: bus master, fast devsel, latency 0, IRQ 115
+	Memory at 75950000 (64-bit, non-prefetchable) [size=32K]
+
+00:05.1 USB controller: Loongson Technology LLC EHCI USB Controller (rev 02) (prog-if 20 [EHCI])
+	Flags: bus master, VGA palette snoop, fast devsel, latency 0, IRQ 114
+	Memory at 75958000 (64-bit, non-prefetchable) [size=32K]
+
+00:06.0 Multimedia video controller: Loongson Technology LLC Device 7a25 (rev 01)
+	Flags: bus master, VGA palette snoop, fast devsel, latency 0, IRQ 93
+	Memory at 7596a000 (64-bit, non-prefetchable) [size=256]
+	Memory at 60000000 (64-bit, non-prefetchable) [size=256M]
+	Memory at 75900000 (64-bit, non-prefetchable) [size=64K]
+
+00:06.1 VGA compatible controller: Loongson Technology LLC Device 7a36 (rev 02) (prog-if 00 [VGA controller])
+	Flags: bus master, VGA palette snoop, fast devsel, latency 0, IRQ 92
+	Memory at 75910000 (64-bit, non-prefetchable) [size=64K]
+
+00:06.2 Audio device: Loongson Technology LLC Device 7a37
+	Flags: bus master, VGA palette snoop, fast devsel, latency 0, IRQ 92
+	Memory at 75920000 (64-bit, non-prefetchable) [size=64K]
+
+00:07.0 Audio device: Loongson Technology LLC HDA (High Definition Audio) Controller
+	Flags: bus master, VGA palette snoop, fast devsel, latency 0, IRQ 122
+	Memory at 75930000 (64-bit, non-prefetchable) [size=64K]
+
+00:08.0 SATA controller: Loongson Technology LLC Device 7a18 (prog-if 01 [AHCI 1.0])
+	Flags: bus master, VGA palette snoop, fast devsel, latency 0, IRQ 80
+	Memory at 75969800 (32-bit, non-prefetchable) [size=1K]
+
+00:09.0 PCI bridge: Loongson Technology LLC Device 7a49 (prog-if 00 [Normal decode])
+	Flags: bus master, fast devsel, latency 0, IRQ 19
+	Memory at 75960000 (64-bit, non-prefetchable) [size=4K]
+	Bus: primary=00, secondary=01, subordinate=01, sec-latency=0
+	I/O behind bridge: [disabled]
+	Memory behind bridge: [disabled]
+	Prefetchable memory behind bridge: [disabled]
+	Capabilities: [40] Power Management version 3
+	Capabilities: [50] MSI: Enable+ Count=1/1 Maskable- 64bit+
+	Capabilities: [70] Express Root Port (Slot-), MSI 00
+	Capabilities: [100] Advanced Error Reporting
+	Capabilities: [140] Secondary PCI Express
+	Kernel driver in use: pcieport
+
+00:0a.0 PCI bridge: Loongson Technology LLC Device 7a39 (prog-if 00 [Normal decode])
+	Flags: bus master, fast devsel, latency 0, IRQ 21
+	Memory at 75961000 (64-bit, non-prefetchable) [size=4K]
+	Bus: primary=00, secondary=02, subordinate=02, sec-latency=0
+	I/O behind bridge: 0000c000-0000cfff [size=4K]
+	Memory behind bridge: 75000000-750fffff [size=1M]
+	Prefetchable memory behind bridge: [disabled]
+	Capabilities: [40] Power Management version 3
+	Capabilities: [50] MSI: Enable+ Count=1/1 Maskable- 64bit+
+	Capabilities: [70] Express Root Port (Slot-), MSI 00
+	Capabilities: [100] Advanced Error Reporting
+	Capabilities: [140] Secondary PCI Express
+	Kernel driver in use: pcieport
+
+00:0b.0 PCI bridge: Loongson Technology LLC Device 7a39 (prog-if 00 [Normal decode])
+	Flags: bus master, fast devsel, latency 0, IRQ 23
+	Memory at 75962000 (64-bit, non-prefetchable) [size=4K]
+	Bus: primary=00, secondary=03, subordinate=03, sec-latency=0
+	I/O behind bridge: [disabled]
+	Memory behind bridge: [disabled]
+	Prefetchable memory behind bridge: [disabled]
+	Capabilities: [40] Power Management version 3
+	Capabilities: [50] MSI: Enable+ Count=1/1 Maskable- 64bit+
+	Capabilities: [70] Express Root Port (Slot-), MSI 00
+	Capabilities: [100] Advanced Error Reporting
+	Capabilities: [140] Secondary PCI Express
+	Kernel driver in use: pcieport
+
+00:0c.0 PCI bridge: Loongson Technology LLC Device 7a39 (prog-if 00 [Normal decode])
+	Flags: bus master, fast devsel, latency 0, IRQ 25
+	Memory at 75963000 (64-bit, non-prefetchable) [size=4K]
+	Bus: primary=00, secondary=04, subordinate=04, sec-latency=0
+	I/O behind bridge: [disabled]
+	Memory behind bridge: [disabled]
+	Prefetchable memory behind bridge: [disabled]
+	Capabilities: [40] Power Management version 3
+	Capabilities: [50] MSI: Enable+ Count=1/1 Maskable- 64bit+
+	Capabilities: [70] Express Root Port (Slot-), MSI 00
+	Capabilities: [100] Advanced Error Reporting
+	Capabilities: [140] Secondary PCI Express
+	Kernel driver in use: pcieport
+
+00:0d.0 PCI bridge: Loongson Technology LLC Device 7a49 (prog-if 00 [Normal decode])
+	Flags: bus master, fast devsel, latency 0, IRQ 27
+	Memory at 75964000 (64-bit, non-prefetchable) [size=4K]
+	Bus: primary=00, secondary=05, subordinate=05, sec-latency=0
+	I/O behind bridge: [disabled]
+	Memory behind bridge: 75100000-751fffff [size=1M]
+	Prefetchable memory behind bridge: [disabled]
+	Capabilities: [40] Power Management version 3
+	Capabilities: [50] MSI: Enable+ Count=1/1 Maskable- 64bit+
+	Capabilities: [70] Express Root Port (Slot-), MSI 00
+	Capabilities: [100] Advanced Error Reporting
+	Capabilities: [140] Secondary PCI Express
+	Kernel driver in use: pcieport
+
+00:0f.0 PCI bridge: Loongson Technology LLC Device 7a69 (prog-if 00 [Normal decode])
+	Flags: bus master, fast devsel, latency 0, IRQ 29
+	Memory at 75965000 (64-bit, non-prefetchable) [size=4K]
+	Bus: primary=00, secondary=06, subordinate=07, sec-latency=0
+	I/O behind bridge: [disabled]
+	Memory behind bridge: 75200000-756fffff [size=5M]
+	Prefetchable memory behind bridge: 0000000075700000-00000000757fffff [size=1M]
+	Capabilities: [40] Power Management version 3
+	Capabilities: [50] MSI: Enable+ Count=1/1 Maskable- 64bit+
+	Capabilities: [70] Express Root Port (Slot-), MSI 00
+	Capabilities: [100] Advanced Error Reporting
+	Capabilities: [140] Secondary PCI Express
+	Kernel driver in use: pcieport
+
+00:10.0 PCI bridge: Loongson Technology LLC Device 7a59 (prog-if 00 [Normal decode])
+	Flags: bus master, fast devsel, latency 0, IRQ 31
+	Memory at 75966000 (64-bit, non-prefetchable) [size=4K]
+	Bus: primary=00, secondary=08, subordinate=08, sec-latency=0
+	I/O behind bridge: [disabled]
+	Memory behind bridge: [disabled]
+	Prefetchable memory behind bridge: [disabled]
+	Capabilities: [40] Power Management version 3
+	Capabilities: [50] MSI: Enable+ Count=1/1 Maskable- 64bit+
+	Capabilities: [70] Express Root Port (Slot-), MSI 00
+	Capabilities: [100] Advanced Error Reporting
+	Capabilities: [140] Secondary PCI Express
+	Kernel driver in use: pcieport
+
+00:13.0 PCI bridge: Loongson Technology LLC Device 7a59 (prog-if 00 [Normal decode])
+	Flags: bus master, fast devsel, latency 0, IRQ 33
+	Memory at 75967000 (64-bit, non-prefetchable) [size=4K]
+	Bus: primary=00, secondary=09, subordinate=09, sec-latency=0
+	I/O behind bridge: [disabled]
+	Memory behind bridge: [disabled]
+	Prefetchable memory behind bridge: [disabled]
+	Capabilities: [40] Power Management version 3
+	Capabilities: [50] MSI: Enable+ Count=1/1 Maskable- 64bit+
+	Capabilities: [70] Express Root Port (Slot-), MSI 00
+	Capabilities: [100] Advanced Error Reporting
+	Capabilities: [140] Secondary PCI Express
+	Kernel driver in use: pcieport
+
+00:16.0 System peripheral: Loongson Technology LLC Device 7a1b
+	Flags: bus master, VGA palette snoop, fast devsel, latency 0, IRQ 255
+	Memory at 75968000 (64-bit, non-prefetchable) [size=4K]
+	Memory at 74000000 (64-bit, non-prefetchable) [size=16M]
+
+00:19.0 USB controller: Loongson Technology LLC Device 7a34 (prog-if 30 [XHCI])
+	Flags: bus master, fast devsel, latency 0, IRQ 64
+	Memory at 75800000 (64-bit, non-prefetchable) [size=1M]
+
+00:1a.0 IOMMU: Loongson Technology LLC Device 7a1f
+	Flags: bus master, VGA palette snoop, fast devsel, latency 0, IRQ 64
+	Memory at 75969c00 (64-bit, non-prefetchable) [size=1K]
+	Memory at 70000000 (64-bit, non-prefetchable) [size=64M]
+	Expansion ROM at 75969000 [disabled] [size=2K]
+
+02:00.0 Ethernet controller: Device 1f0a:6801 (rev 01)
+	Subsystem: Device 2066:9806
+	Flags: bus master, fast devsel, latency 0, IRQ 97
+	Memory at 75000000 (64-bit, non-prefetchable) [size=16K]
+	I/O ports at 4000 [size=256]
+	Capabilities: [40] Power Management version 3
+	Capabilities: [50] MSI: Enable- Count=1/8 Maskable+ 64bit+
+	Capabilities: [70] Express Endpoint, MSI 00
+	Capabilities: [b0] MSI-X: Enable- Count=6 Masked-
+	Capabilities: [100] Advanced Error Reporting
+	Capabilities: [148] Latency Tolerance Reporting
+	Capabilities: [150] L1 PM Substates
+
+05:00.0 Non-Volatile memory controller: Device 1e4b:1202 (rev 01) (prog-if 02 [NVM Express])
+	Subsystem: Device 1e4b:1202
+	Flags: bus master, fast devsel, latency 0, IRQ 26
+	Memory at 75100000 (64-bit, non-prefetchable) [size=16K]
+	Capabilities: [40] Power Management version 3
+	Capabilities: [50] MSI: Enable- Count=1/32 Maskable+ 64bit+
+	Capabilities: [70] Express Endpoint, MSI 1f
+	Capabilities: [b0] MSI-X: Enable+ Count=9 Masked-
+	Capabilities: [100] Advanced Error Reporting
+	Capabilities: [148] Device Serial Number 00-00-00-00-00-00-00-00
+	Capabilities: [158] Alternative Routing-ID Interpretation (ARI)
+	Capabilities: [168] Secondary PCI Express
+	Capabilities: [1d4] Latency Tolerance Reporting
+	Capabilities: [1dc] L1 PM Substates
+	Capabilities: [1ec] Vendor Specific Information: ID=0002 Rev=4 Len=100 <?>
+	Capabilities: [2ec] Vendor Specific Information: ID=0001 Rev=1 Len=038 <?>
+	Kernel driver in use: nvme
+
+06:00.0 Ethernet controller: Intel Corporation I350 Gigabit Network Connection (rev 01)
+	Subsystem: Intel Corporation Ethernet Server Adapter I350-T4
+	Flags: bus master, fast devsel, latency 0, IRQ 28
+	Memory at 75200000 (32-bit, non-prefetchable) [size=1M]
+	Memory at 75600000 (32-bit, non-prefetchable) [size=16K]
+	Capabilities: [40] Power Management version 3
+	Capabilities: [50] MSI: Enable- Count=1/1 Maskable+ 64bit+
+	Capabilities: [70] MSI-X: Enable+ Count=10 Masked-
+	Capabilities: [a0] Express Endpoint, MSI 00
+	Capabilities: [100] Advanced Error Reporting
+	Capabilities: [140] Device Serial Number 6c-b3-11-ff-ff-9a-e8-74
+	Capabilities: [150] Alternative Routing-ID Interpretation (ARI)
+	Capabilities: [160] Single Root I/O Virtualization (SR-IOV)
+	Capabilities: [1a0] Transaction Processing Hints
+	Capabilities: [1c0] Latency Tolerance Reporting
+	Capabilities: [1d0] Access Control Services
+	Kernel driver in use: igb
+
+06:00.1 Ethernet controller: Intel Corporation I350 Gigabit Network Connection (rev 01)
+	Subsystem: Intel Corporation Ethernet Server Adapter I350-T4
+	Flags: bus master, fast devsel, latency 0, IRQ 28
+	Memory at 75300000 (32-bit, non-prefetchable) [size=1M]
+	Memory at 75604000 (32-bit, non-prefetchable) [size=16K]
+	Capabilities: [40] Power Management version 3
+	Capabilities: [50] MSI: Enable- Count=1/1 Maskable+ 64bit+
+	Capabilities: [70] MSI-X: Enable+ Count=10 Masked-
+	Capabilities: [a0] Express Endpoint, MSI 00
+	Capabilities: [100] Advanced Error Reporting
+	Capabilities: [140] Device Serial Number 6c-b3-11-ff-ff-9a-e8-74
+	Capabilities: [150] Alternative Routing-ID Interpretation (ARI)
+	Capabilities: [160] Single Root I/O Virtualization (SR-IOV)
+	Capabilities: [1a0] Transaction Processing Hints
+	Capabilities: [1d0] Access Control Services
+	Kernel driver in use: igb
+
+06:00.2 Ethernet controller: Intel Corporation I350 Gigabit Network Connection (rev 01)
+	Subsystem: Intel Corporation Ethernet Server Adapter I350-T4
+	Flags: bus master, fast devsel, latency 0, IRQ 28
+	Memory at 75400000 (32-bit, non-prefetchable) [size=1M]
+	Memory at 75608000 (32-bit, non-prefetchable) [size=16K]
+	Capabilities: [40] Power Management version 3
+	Capabilities: [50] MSI: Enable- Count=1/1 Maskable+ 64bit+
+	Capabilities: [70] MSI-X: Enable+ Count=10 Masked-
+	Capabilities: [a0] Express Endpoint, MSI 00
+	Capabilities: [100] Advanced Error Reporting
+	Capabilities: [140] Device Serial Number 6c-b3-11-ff-ff-9a-e8-74
+	Capabilities: [150] Alternative Routing-ID Interpretation (ARI)
+	Capabilities: [160] Single Root I/O Virtualization (SR-IOV)
+	Capabilities: [1a0] Transaction Processing Hints
+	Capabilities: [1d0] Access Control Services
+	Kernel driver in use: igb
+
+06:00.3 Ethernet controller: Intel Corporation I350 Gigabit Network Connection (rev 01)
+	Subsystem: Intel Corporation Ethernet Server Adapter I350-T4
+	Flags: bus master, fast devsel, latency 0, IRQ 28
+	Memory at 75500000 (32-bit, non-prefetchable) [size=1M]
+	Memory at 7560c000 (32-bit, non-prefetchable) [size=16K]
+	Capabilities: [40] Power Management version 3
+	Capabilities: [50] MSI: Enable- Count=1/1 Maskable+ 64bit+
+	Capabilities: [70] MSI-X: Enable+ Count=10 Masked-
+	Capabilities: [a0] Express Endpoint, MSI 00
+	Capabilities: [100] Advanced Error Reporting
+	Capabilities: [140] Device Serial Number 6c-b3-11-ff-ff-9a-e8-74
+	Capabilities: [150] Alternative Routing-ID Interpretation (ARI)
+	Capabilities: [160] Single Root I/O Virtualization (SR-IOV)
+	Capabilities: [1a0] Transaction Processing Hints
+	Capabilities: [1d0] Access Control Services
+	Kernel driver in use: igb
+
+[root@nonroot-dedsec /]# cat /proc/interrupts 
+           CPU0       
+ 17:   26878509  CPUINTC  11  timer
+ 19:          0 PCH-PCI-MSI-0000:00:09.0   0  PCIe PME, aerdrv, PCIe bwctrl
+ 21:          0 PCH-PCI-MSI-0000:00:0a.0   0  PCIe PME, aerdrv, PCIe bwctrl
+ 23:          0 PCH-PCI-MSI-0000:00:0b.0   0  PCIe PME, aerdrv, PCIe bwctrl
+ 25:          0 PCH-PCI-MSI-0000:00:0c.0   0  PCIe PME, aerdrv, PCIe bwctrl
+ 27:          0 PCH-PCI-MSI-0000:00:0d.0   0  PCIe PME, aerdrv, PCIe bwctrl
+ 29:          0 PCH-PCI-MSI-0000:00:0f.0   0  PCIe PME, aerdrv, PCIe bwctrl
+ 31:          0 PCH-PCI-MSI-0000:00:10.0   0  PCIe PME, aerdrv, PCIe bwctrl
+ 33:          0 PCH-PCI-MSI-0000:00:13.0   0  PCIe PME, aerdrv, PCIe bwctrl
+ 34:          0  CPUINTC   4  virtio0
+ 35:          1  CPUINTC   5  virtio1
+ 36:          8 PCH-PCI-MSIX-0000:05:00.0   0  nvme0q0
+ 39:         10 PCH-PCI-MSIX-0000:05:00.0   1  nvme0q1
+ERR:          0
+[root@nonroot-dedsec /]# 
