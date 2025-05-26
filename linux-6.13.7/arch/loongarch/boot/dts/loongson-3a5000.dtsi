@@ -187,17 +187,17 @@
 			phandle = <0x8003>;
 		};
 		
-		msi: msi-controller@1fe01140 {
-			compatible = "loongson,pch-msi-1.0";
-			reg = <0x0 0x1fe01140 0x0 0x8>;
-			interrupt-controller;
-			#interrupt-cells = <1>;
-			msi-controller;
-			loongson,msi-base-vec = <64>;
-			loongson,msi-num-vecs = <192>;
-			interrupt-parent = <&eiointc>;
-			phandle = <0x8004>;
-		};
+		// msi: msi-controller@1fe01140 {
+		// 	compatible = "loongson,pch-msi-1.0";
+		// 	reg = <0x0 0x1fe01140 0x0 0x8>;
+		// 	interrupt-controller;
+		// 	#interrupt-cells = <1>;
+		// 	msi-controller;
+		// 	loongson,msi-base-vec = <64>;
+		// 	loongson,msi-num-vecs = <192>;
+		// 	interrupt-parent = <&eiointc>;
+		// 	phandle = <0x8004>;
+		// };
 		
 		rtc0: rtc@100d0100 {
 			compatible = "loongson,ls7a-rtc";// Real Time Clock
