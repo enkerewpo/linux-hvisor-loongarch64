@@ -17,10 +17,11 @@
 	};
 	
 	chosen {
-		// stdout-path = "serial:115200n8";
-		bootargs = "earlycon console=ttyS0,115200n8 initramfs_async=false rootwait debug loglevel=8 earlyprintk";
-		// stdout-path = "/virtio_mmio@30001000";
-		// bootargs = "earlycon console=hvc0 rootwait debug";
+		// initramfs
+		// bootargs = "earlycon console=ttyS0,115200n8 initramfs_async=false rootwait debug loglevel=8 earlyprintk";
+
+		// SSD root, a {zone_name}-disk.ext4 virtio blk file on SSD root_hvisor partition
+		bootargs = "earlycon console=ttyS0,115200n8 root=/dev/vda rootwait";
 	};
 	
 	memory@200000 {
@@ -188,10 +189,6 @@
 		
 		#interrupt-cells = <0x01>;
 	};
-};
-
-&core2 {
-	status = "okay";
 };
 
 &uart1 {

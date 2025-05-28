@@ -133,8 +133,8 @@
 		// 	interrupts = <2>;
 		// 	interrupt-names = "int0";
 		// 	loongson,parent_int_map =
-		// 	<0xffffffff>, /* int0 */
-		// 	<0x00000000>, /* int1 */
+		// 	<0x00000000>, /* int0 */
+		// 	<0xffffffff>, /* int1 */
 		// 	<0x00000000>, /* int2 */
 		// 	<0x00000000>; /* int3 */
 		// };
@@ -198,10 +198,10 @@
 		
 		uart0: serial@1fe001e0 {
 			compatible = "ns16550a";
-			reg = <0x0 0x1fe001e0 0x0 0x8>;
+			reg = <0x0 0x1fe001e0 0x0 0x100>;
 			clock-frequency = <100000000>;// 100M
-			// interrupt-parent = <&liointc>;
-			// interrupts = <10 IRQ_TYPE_LEVEL_HIGH>;
+			// interrupt-parent = <&pic>;
+			// interrupts = <8 IRQ_TYPE_LEVEL_HIGH>;
 			no-loopback-test;
 			status = "disabled";
 		};
