@@ -13,7 +13,7 @@
 	model = "Loongson3 hvisor nonroot zone board";
 	
 	aliases {
-		serial = &uart1;
+		serial = &uart0;
 	};
 	
 	chosen {
@@ -21,7 +21,7 @@
 		// bootargs = "earlycon console=ttyS0,115200n8 initramfs_async=false rootwait debug loglevel=8 earlyprintk";
 
 		// SSD root, a {zone_name}-disk.ext4 virtio blk file on SSD root_hvisor partition
-		bootargs = "earlycon console=ttyS0,115200n8 root=/dev/vda rootwait";
+		bootargs = "earlycon console=ttyS0,115200n8 rootwait root=/dev/vda rw";
 	};
 	
 	memory@200000 {
@@ -191,7 +191,7 @@
 	};
 };
 
-&uart1 {
+&uart0 {
 	status = "okay";
 	// set the above 'uart1' to 'uart0' if you don't have a COM connection right now
 };
