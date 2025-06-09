@@ -210,8 +210,8 @@
 			compatible = "ns16550a";
 			reg = <0x0 0x10080000 0x0 0x100>;
 			clock-frequency = <50000000>;// 50M (according to ACPI ASL)
-			interrupt-parent = <&pic>;
-			interrupts = <8 IRQ_TYPE_LEVEL_HIGH>;
+			// interrupt-parent = <&pic>;
+			// interrupts = <8 IRQ_TYPE_LEVEL_HIGH>;
 			no-loopback-test;
 			status = "disabled";
 		};
