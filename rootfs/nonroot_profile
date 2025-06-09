@@ -1,37 +1,53 @@
 export PATH="/bin:/sbin:/usr/bin:/usr/sbin"
 
 if [ "$PS1" ]; then
-	if [ "$(id -u)" -eq 0 ]; then
-		export PS1='[\u@\h \W]# '
-	else
-		export PS1='$ '
-	fi
+    if [ "$(id -u)" -eq 0 ]; then
+        export PS1='[\u@\h \W]# '
+    else
+        export PS1='$ '
+    fi
 fi
 
 export EDITOR='/bin/vi'
 
+# Source configuration files from /etc/profile.d
+# for i in /etc/profile.d/*.sh ; do
+# 	if [ -r "$i" ]; then
+# 		. $i
+# 	fi
+# done
+# unset i
+
+# sleep 2
+# echo "Processing /etc/profile..."
+# echo "we will run three script symbol three stage"
+# echo "some stage will waste a few minutes. don't shutdowm until finish!"
+# /home/handle_judge.sh | tee /dev/tty0
 YELLOW_START="\033[33m"
 YELLOW_END="\033[0m"
 BOLD_START="\033[1m"
 BOLD_END="\033[0m"
+GREEN_START="\033[32m"
+GREEN_END="\033[0m"
+BLUE_START="\033[34m"
+BLUE_END="\033[0m"
 
+print_cpu_info() {
+    local cpu_info=$(cat /proc/cpuinfo | grep "model name" | head -n 1 | awk '{print $4, $5, $6, $7, $8, $9, $10}')
+    echo "$cpu_info"
+}
 
+echo -e "${YELLOW_START}Welcome to hvisor(loongarch) zone! Buildroot/wheatfox 2025${YELLOW_END}"
+echo -e "${BLUE_START}KERNEL:      ${BLUE_END} $(cat /proc/version)"
+echo -e "${BLUE_START}TIME:        ${BLUE_END} $(date '+%Y-%m-%d %H:%M:%S')"
+echo -e "${BLUE_START}ROOT_MOUNT:  ${BLUE_END} $(df -h / | tail -n 1 | awk '{print $1}') ($(mount | grep " / " | awk '{print $5}'))"
+echo -e "${BLUE_START}HOSTNAME:    ${BLUE_END} $(hostname)"
 
-# uncomment this to login into hvc0 virtio console
-# ========================================================================================
-if [ ! -f /.shell_lock ]; then
-	touch /.shell_lock
-	echo "----------------------------------------------------------------------------------" >/dev/hvc0
-	echo "Welcome to hvisor nonroot linux with virtio console! / wheatfox" >/dev/hvc0
-	exec bash --login </dev/hvc0 >/dev/hvc0 2>&1
-	# /bin/wsh
+if [ -d "/tool" ]; then
+    echo -e "${YELLOW_START}root zone detected, quick guides for booting nonroot zones:${YELLOW_END}"
+    echo -e " 1. ./daemon.sh"
+    echo -e " 2. ./start.sh 1 # boot linux1, replace 1 with 2 or 3 to boot other zones"
+    echo -e " 3. screen /dev/pts/0 # open the console of linux1, replace 0 with 1 or 2 to open other consoles"
+else
+    echo -e "${YELLOW_START}nonroot zone detected.${YELLOW_END}"
 fi
-# ========================================================================================
-
-
-
-
-# uncomment this to login into normal COM uart
-# ========================================================================================
-# echo -e "${YELLOW_START}${BOLD_START}Welcome to hvisor(loongarch) nonroot linux! Buildroot/wheatfox 2025${BOLD_END}${YELLOW_END}"
-# ========================================================================================

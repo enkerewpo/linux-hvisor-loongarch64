@@ -225,12 +225,14 @@ setup_nonroot_rootfs() {
     sudo cpio -id <"$ROOTFS_DIR/nonroot_tmproot.cpio"
     sudo rm -rf tool *.sh
     sudo cp "$ROOTFS_DIR/nonroot_profile" etc/profile
-    $GNU_GCC "$ROOTFS_DIR/my_init/init.c" -o "$ROOTFS_DIR/my_init/init" -static
-    sudo cp "$ROOTFS_DIR/my_init/init" bin/wsh
+    sudo cp "$ROOTFS_DIR/nonroot_inittab" etc/inittab
+    # $GNU_GCC "$ROOTFS_DIR/my_init/init.c" -o "$ROOTFS_DIR/my_init/init" -static
+    # sudo cp "$ROOTFS_DIR/my_init/init" bin/wsh
     sudo rm -f etc/hostname
     sudo echo "nonroot-dedsec" | sudo tee etc/hostname
     sudo find . | cpio -o -H newc | gzip -9 >"$ROOTFS_DIR/nonroot_fs.cpio.gz"
-    echo -e "${GREEN}Rootfs setup complete${NC}"
+    local fullpath=$(realpath "$ROOTFS_DIR/nonroot_fs.cpio.gz")
+    echo -e "${GREEN}Rootfs setup complete, a trimmed rootfs for nonroot is at $fullpath${NC}"
 }
 
 # Function to validate hex address
