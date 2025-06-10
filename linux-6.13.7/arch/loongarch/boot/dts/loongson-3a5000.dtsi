@@ -195,13 +195,13 @@
 		// 	phandle = <0x8004>;
 		// };
 		
-		// rtc0: rtc@100d0100 {
-		// 	compatible = "loongson,ls7a-rtc";// Real Time Clock
-		// 	reg = <0x0 0x100d0100 0x0 0x100>;
-		// 	interrupt-parent = <&pic>;// pic-rtc0
-		// 	interrupts = <52 IRQ_TYPE_LEVEL_HIGH>;
-		// 	status = "disabled";
-		// };
+		rtc0: rtc@100d0100 {
+			compatible = "loongson,ls7a-rtc";// Real Time Clock
+			reg = <0x0 0x100d0100 0x0 0x100>;
+			interrupt-parent = <&pic>;// pic-rtc0
+			interrupts = <52 IRQ_TYPE_LEVEL_HIGH>;
+			status = "disabled";
+		};
 		
 		osc_clk: osc-clock@0 {
 			#clock-cells = <0>;
