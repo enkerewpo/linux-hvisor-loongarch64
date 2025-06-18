@@ -27,9 +27,7 @@ null::sysinit:/bin/ln -sf /proc/self/fd/2 /dev/stderr
 # now run any rc scripts
 ::sysinit:/etc/init.d/rcS
 
-
-# hvc0::respawn:/sbin/agetty -a root -L 115200 hvc0 vt100
-hvc0::respawn:/sbin/agetty -L 115200 hvc0 vt100
+hvc0::respawn:/sbin/agetty -a root -L 115200 hvc0 vt100
 
 # Stuff to do for the 3-finger salute
 #::ctrlaltdel:/sbin/reboot

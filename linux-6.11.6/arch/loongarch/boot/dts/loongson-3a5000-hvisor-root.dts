@@ -8,22 +8,28 @@
 
 #include "loongson-3a5000.dtsi"
 
+// if you changed this, remember to change the aliases at chosen/stdout-path
+&uart0 {
+	status = "okay";
+};
+
+
 / {
 	compatible = "loongson,ls3a5000-root", "loongson,ls3a5000";
 	model = "Loongson3 hvisor root zone board";
 	
 	aliases {
-		serial = &uart1;
+		serial = &uart0;
 	};
 	
 	chosen {
 		stdout-path = "serial:115200n8";
 
 		// initramfs
-		// bootargs = "earlycon console=ttyS0,115200n8 initramfs_async=false rootwait debug";
+		bootargs = "earlycon console=ttyS0,115200n8 initramfs_async=false rootwait debug";
 
 		// SSD root, on SSD partition 4 with ext4 format
-		bootargs = "earlycon console=ttyS0,115200n8 root=/dev/nvme0n1p4 rootwait rw";
+		// bootargs = "earlycon console=ttyS0,115200n8 root=/dev/nvme0n1p4 rootwait rw";
 	};
 	
 	memory@200000 {
@@ -197,9 +203,4 @@
 
 		#interrupt-cells = <0x01>;
 	};
-};
-
-// if you changed this, remember to change the aliases at the top of this file
-&uart1 {
-	status = "okay";
 };

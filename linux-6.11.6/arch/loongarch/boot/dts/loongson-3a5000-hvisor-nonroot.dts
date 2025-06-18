@@ -8,12 +8,16 @@
 
 #include "loongson-3a5000.dtsi"
 
+&uart0 {
+	status = "okay";
+};
+
 / {
 	compatible = "loongson,ls3a5000-root", "loongson,ls3a5000";
 	model = "Loongson3 hvisor nonroot zone board";
 	
 	aliases {
-		serial0 = &uart1;
+		serial0 = &uart0;
 	};
 	
 	chosen {
@@ -48,9 +52,4 @@
 		reg = <0x0 0x30002000 0x0 0x200>;
 		status = "okay";
 	};
-};
-
-&uart1 {
-	status = "okay";
-	// set the above 'uart1' to 'uart0' if you don't have a COM connection right now
 };

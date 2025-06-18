@@ -188,13 +188,13 @@
 			reg = <0 0 0 0>;
 		};
 		
-		clks: clock-controller@1fe00480 {
-			compatible = "loongson";
-			reg = <0 0x1fe00480 0 1>;
-			clocks = <&osc_clk>;// clks-osc_clk
-			clock-names = "ref_clk";
-			#clock-cells = <1>;
-		};
+		// clks: clock-controller@1fe00480 { // PLL0 - USB GMAC
+		// 	compatible = "loongson";
+		// 	reg = <0 0x1fe00480 0 1>;
+		// 	clocks = <&osc_clk>;// clks-osc_clk
+		// 	clock-names = "ref_clk";
+		// 	#clock-cells = <1>;
+		// };
 		
 		uart0: serial@1fe001e0 {
 			compatible = "ns16550a";
@@ -205,13 +205,14 @@
 			no-loopback-test;
 			status = "disabled";
 		};
-		
-		uart1: serial@10080000 {
+
+		uart1_yy: serial@10080000 {
+			// a board special uart for yy motherboard
 			compatible = "ns16550a";
 			reg = <0x0 0x10080000 0x0 0x100>;
 			clock-frequency = <50000000>;// 50M (according to ACPI ASL)
-			// interrupt-parent = <&pic>;
-			// interrupts = <8 IRQ_TYPE_LEVEL_HIGH>;
+			interrupt-parent = <&pic>;
+			interrupts = <8 IRQ_TYPE_LEVEL_HIGH>;
 			no-loopback-test;
 			status = "disabled";
 		};

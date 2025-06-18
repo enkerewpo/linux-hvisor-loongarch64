@@ -8,6 +8,10 @@
 
 #include "loongson-3a5000.dtsi"
 
+&uart0 {
+	status = "okay";
+};
+
 / {
 	compatible = "loongson,ls3a5000-root", "loongson,ls3a5000";
 	model = "Loongson3 hvisor root zone board";
@@ -171,8 +175,4 @@
 
 	// 	#interrupt-cells = <0x01>;
 	// };
-};
-
-&uart0 {
-	status = "okay";
 };

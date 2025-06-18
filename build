@@ -217,6 +217,10 @@ setup_nonroot_rootfs() {
     local TMPROOT="$ROOTFS_DIR/nonroot_tmproot"
 
     echo -e "${GREEN}Setting up nonroot rootfs${NC}"
+    if [ ! -f "$ROOTFS_DIR/buildroot/rootfs.cpio.gz" ]; then
+        echo -e "${RED}Error:${NC} rootfs.cpio.gz not found in $ROOTFS_DIR/buildroot, please symlink or copy your base rootfs to $ROOTFS_DIR/buildroot/rootfs.cpio.gz"
+        exit 1
+    fi
     cp "$ROOTFS_DIR/buildroot/rootfs.cpio.gz" "$ROOTFS_DIR/nonroot_tmproot.cpio.gz"
     gzip -d "$ROOTFS_DIR/nonroot_tmproot.cpio.gz" -f
     sudo rm -rf "$TMPROOT"
@@ -430,9 +434,10 @@ clean)
     ;;
 
 rootfs)
-    echo -e "${YELLOW}Building rootfs${NC}"
-    cd "$WORKDIR/rootfs"
-    make
+    echo -e "${YELLOW}Building rootfs (busybox) manually is deprecated${NC}"
+    # echo -e "${YELLOW}Building rootfs${NC}"
+    # cd "$WORKDIR/rootfs"
+    # make
     ;;
 
 nonroot_setup)
