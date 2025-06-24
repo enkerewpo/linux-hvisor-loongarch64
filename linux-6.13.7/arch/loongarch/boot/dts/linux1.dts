@@ -9,7 +9,7 @@
 #include "loongson-3a5000.dtsi"
 
 
-&uart1_yy {
+&uart0 {
 	status = "okay";
 };
 
@@ -19,7 +19,7 @@
 	model = "Loongson3 hvisor nonroot zone board";
 	
 	aliases {
-		serial = &uart1_yy;
+		serial = &uart0;
 	};
 	
 	chosen {

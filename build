@@ -168,7 +168,7 @@ copy_to_target() {
     
     if [ "$type" = "root" ]; then
         echo -e "${GREEN}Copying files to target/$type${NC}"
-        cp "$src_dir/arch/$ARCH/boot/vmlinux.bin" "target/$type/vmlinux.bin"
+        cp -v "$src_dir/arch/$ARCH/boot/vmlinux.bin" "target/$type/vmlinux.bin"
         $GNU_READELF -a "$src_dir/vmlinux" > "target/$type/vmlinux.readelf.txt"
         $GNU_OBJDUMP -S -d "$src_dir/vmlinux" > "target/$type/vmlinux.asm"
         echo "$timestamp" > "target/$type/build_timestamp.txt"
@@ -176,7 +176,7 @@ copy_to_target() {
     fi
     if [ "$type" = "nonroot" ]; then
         echo -e "${GREEN}Copying files to target/$type${NC}"
-        cp "$src_dir/arch/$ARCH/boot/vmlinux.bin" "target/$type/vmlinux.bin"
+        cp -v "$src_dir/arch/$ARCH/boot/vmlinux.bin" "target/$type/vmlinux.bin"
         $GNU_READELF -a "$src_dir/vmlinux" > "target/$type/vmlinux.readelf.txt"
         $GNU_OBJDUMP -S -d "$src_dir/vmlinux" > "target/$type/vmlinux.asm"
         echo "$timestamp" > "target/$type/build_timestamp.txt"
@@ -209,6 +209,9 @@ build_kernel() {
     python3 scripts/clang-tools/gen_compile_commands.py
     cd ..
     copy_to_target $type $src_dir
+    target_dir="$src_dir/../target/$type"
+    # install modules into target folder
+    make $args modules_install INSTALL_MOD_PATH="$target_dir/kernel_modules"
     echo -e "${GREEN}Done${NC}"
 }
 
@@ -311,7 +314,9 @@ build_kernel_with_entry() {
     echo "CHOSEN: $(if [ "$type" = "root" ]; then echo $CHOSEN_ROOT; else echo $CHOSEN_NONROOT; fi)" >> "target/${type}-${zone_name}/build_timestamp.txt"
     echo "ENTRY_POINT: $vmlinux_entry" >> "target/${type}-${zone_name}/build_timestamp.txt"
     echo "DTS_FILE: $dts_file" >> "target/${type}-${zone_name}/build_timestamp.txt"
-    
+    # install modules into target folder
+    target_dir="$src_dir/../target/${type}-${zone_name}"
+    make $args modules_install INSTALL_MOD_PATH="$target_dir/kernel_modules"
     echo -e "${GREEN}Done${NC}"
 }
 

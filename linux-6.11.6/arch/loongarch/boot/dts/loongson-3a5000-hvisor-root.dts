@@ -9,7 +9,7 @@
 #include "loongson-3a5000.dtsi"
 
 // if you changed this, remember to change the aliases at chosen/stdout-path
-&uart0 {
+&uart1_yy {
 	status = "okay";
 };
 
@@ -19,7 +19,7 @@
 	model = "Loongson3 hvisor root zone board";
 	
 	aliases {
-		serial = &uart0;
+		serial = &uart1_yy;
 	};
 	
 	chosen {
