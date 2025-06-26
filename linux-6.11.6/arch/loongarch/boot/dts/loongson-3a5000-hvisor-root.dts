@@ -10,26 +10,29 @@
 
 // if you changed this, remember to change the aliases at chosen/stdout-path
 &uart1_yy {
-	status = "okay";
+	// status = "okay";
 };
 
+&uart0 {
+	status = "okay";
+};
 
 / {
 	compatible = "loongson,ls3a5000-root", "loongson,ls3a5000";
 	model = "Loongson3 hvisor root zone board";
 	
 	aliases {
-		serial = &uart1_yy;
+		serial = &uart0;
 	};
 	
 	chosen {
 		stdout-path = "serial:115200n8";
 
 		// initramfs
-		bootargs = "earlycon console=ttyS0,115200n8 initramfs_async=false rootwait debug";
+		// bootargs = "earlycon console=ttyS0,115200n8 initramfs_async=false rootwait debug";
 
 		// SSD root, on SSD partition 4 with ext4 format
-		// bootargs = "earlycon console=ttyS0,115200n8 root=/dev/nvme0n1p4 rootwait rw";
+		bootargs = "earlycon console=ttyS0,115200n8 root=/dev/nvme0n1p4 rootwait rw";
 	};
 	
 	memory@200000 {
@@ -81,6 +84,8 @@
 	pcie@1a000000 {
 		compatible = "loongson,ls7a-pci";
 		
+		status = "disabled"; // use this to enable/disable the PCIe devices
+
 		// configuration space
 		reg =
 		<0x00 0x1a000000 0x0 0x20000000>,

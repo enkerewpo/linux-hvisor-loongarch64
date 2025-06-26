@@ -24,10 +24,10 @@
 	
 	chosen {
 		// initramfs
-		bootargs = "earlycon console=ttyS0,115200n8 initramfs_async=false rootwait debug loglevel=8 earlyprintk";
+		// bootargs = "earlycon console=ttyS0,115200n8 initramfs_async=false rootwait debug loglevel=8 earlyprintk";
 		
 		// SSD root, a {zone_name}-disk.ext4 virtio blk file on SSD root_hvisor partition
-		// bootargs = "earlycon console=ttyS0,115200n8 rootwait root=/dev/vda rw";
+		bootargs = "earlycon console=ttyS0,115200n8 rootwait root=/dev/vda rw";
 	};
 	
 	memory@200000 {
