@@ -1,0 +1,740 @@
+[INFO  0] (hvisor::arch::loongarch64::trap:1378) csrxchg emulation for CSR 0x80
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x0
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x2
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x1
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x2
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x6
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x93
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x10
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x11
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x12
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x13
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x14
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x1
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x1
+[    0.000000] Linux version 6.11.6 (wheatfox@dedsec-amd0) (loongarch64-unknown-linux-gnu-gcc (GCC) 13.0.1 20230316 (experimental), GNU ld (GNU Binutils) 2.40.50.20230316) #614 SMP PREEMPT_DYNAMIC Mon Jul  7 17:01:38 CST 2025
+[    0.000000] 64-bit Loongson Processor probed (LA664 Core)
+[    0.000000] CPU0 revision is: 0014d000 (Loongson-64bit)
+[    0.000000] FPU0 revision is: 00000000
+[    0.000000] ACPI: Early table checksum verification disabled
+[    0.000000] earlycon: ns16550a0 at MMIO 0x000000001fe001e0 (options '115200n8')
+[    0.000000] printk: legacy bootconsole [ns16550a0] enabled
+[    0.000000] OF: reserved mem: 0x00000000a0000000..0x00000000bfffffff (524288 KiB) nomap non-reusable nonroot2
+[    0.000000] OF: reserved mem: 0x00000000c0000000..0x00000000dfffffff (524288 KiB) nomap non-reusable nonroot1
+[    0.000000] OF: reserved mem: 0x0000000100000000..0x000000011fffffff (524288 KiB) nomap non-reusable nonroot3
+[    0.000000] OF: reserved mem: 0x0000000140000000..0x00000001407fffff (8192 KiB) nomap non-reusable shmem@0
+[    0.000000] Faking a node at [mem 0x0000000000200000-0x000000016fffffff]
+[    0.000000] Node0's addrspace_offset is 0x0
+[    0.000000] Node0: start_pfn=0x200, end_pfn=0x170000
+[    0.000000] DMI not present or invalid.
+[    0.000000] The BIOS Version: (null)
+[    0.000000] software IO TLB: area num 1.
+[    0.000000] software IO TLB: mapped [mem 0x0000000005840000-0x0000000009840000] (64MB)
+[    0.000000] Detected 1 available CPU(s)
+[    0.000000] SMP: Allowing 1 CPUs, 0 hotplug CPUs
+[    0.000000] Zone ranges:
+[    0.000000]   DMA32    [mem 0x0000000000200000-0x00000000ffffffff]
+[    0.000000]   Normal   [mem 0x0000000100000000-0x000000016fffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000200000-0x000000000effffff]
+[    0.000000]   node   0: [mem 0x0000000090000000-0x000000009fffffff]
+[    0.000000]   node   0: [mem 0x00000000a0000000-0x00000000dfffffff]
+[    0.000000]   node   0: [mem 0x00000000e0000000-0x00000000ffffffff]
+[    0.000000]   node   0: [mem 0x0000000100000000-0x000000011fffffff]
+[    0.000000]   node   0: [mem 0x0000000140000000-0x00000001407fffff]
+[    0.000000]   node   0: [mem 0x0000000160000000-0x000000016fffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000200000-0x000000016fffffff]
+[    0.000000] On node 0, zone DMA32: 512 pages in unavailable ranges
+[    0.000000] On node 0, zone DMA32: 135168 pages in unavailable ranges
+[    0.000000] On node 0, zone Normal: 129024 pages in unavailable ranges
+[    0.000000] On node 0, zone Normal: 65536 pages in unavailable ranges
+[    0.000000] percpu: Embedded 18 pages/cpu s34328 r8192 d31208 u2097152
+[    0.000000] Kernel command line: earlycon console=ttyS0,115200n8 root=/dev/nvme0n1p4 rootwait rw 
+[    0.000000] Dentry cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    0.000000] Fallback order for Node 0: 0 
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 718336
+[    0.000000] Policy zone: Normal
+[    0.000000] mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Dynamic Preempt: full
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu: 	RCU event tracing is enabled.
+[    0.000000] rcu: 	RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=1.
+[    0.000000] 	Trampoline variant of Tasks RCU enabled.
+[    0.000000] 	Tracing variant of Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.000000] RCU Tasks: Setting shift to 0 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=1.
+[    0.000000] RCU Tasks Trace: Setting shift to 0 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=1.
+[    0.000000] NR_IRQS: 576, nr_irqs: 576, preallocated irqs: 16
+[    0.000000] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.000000] wheatfox: timekeeping_init, wall_time is 0.000000000, boot_offset is 0.000000000
+[    0.000000] wheatfox: timekeeping_init, wall_to_mono is 0.000000000
+[    0.000000] wheatfox: tk_setup_internals, clock is jiffies
+[    0.000000] wheatfox: tk_setup_internals, tk->tkr_mono.cycle_last is 4294937296
+[    0.000000] wheatfox: tk_setup_internals, tk->tkr_raw.cycle_last is 4294937296
+[    0.000000] wheatfox: tk_setup_internals, tk->xtime_interval is 2560000000
+[    0.000000] wheatfox: tk_setup_internals, tk->xtime_remainder is 0
+[    0.000000] wheatfox: tk_setup_internals, tk->raw_interval is 2560000000
+[    0.000000] wheatfox: tk_setup_internals, tk->tkr_mono.shift is 8
+[    0.000000] wheatfox: tk_setup_internals, tk->tkr_raw.shift is 8
+[    0.000000] wheatfox: tk_setup_internals, tk->ntp_tick is 42949672960000000
+[    0.000000] wheatfox: tk_setup_internals, tk->tkr_mono.mult is 2560000000
+[    0.000000] wheatfox: tk_setup_internals, tk->tkr_raw.mult is 2560000000
+[    0.000000] wheatfox: tk_setup_internals finished
+[    0.000000] wheatfox: timekeeping_init finished
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x2
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x4
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x5
+[    0.000000] wheatfox: time_init, const_clock_freq is 100000000
+[    0.000000] wheatfox: time_init, init_offset is -5481877191
+[    0.000000] wheatfox: constant_set_state_periodic, period is 1000000, const_clock_freq is 100000000, HZ is 100
+[    0.000000] wheatfox: get_loops_per_jiffy, const_clock_freq is 100000000, lpj is 1000000
+[    0.000000] Constant clock event device register
+[    0.000000] wheatfox: constant_clocksource_init, freq is 100000000
+[    0.000000] clocksource: Constant: mask: 0xffffffffffffffff max_cycles: 0x171024e7e0, max_idle_ns: 440795205315 ns
+[    0.000000] wheatfox: constant_clocksource_init, res is 0
+[    0.000000] sched_clock: 64 bits at 100MHz, resolution 10ns, wraps every 4398046511100ns
+[    0.008039] Constant clock source device register
+[INFO  0] (hvisor::arch::loongarch64::trap:1366) csrrd emulation for CSR 0x380
+[INFO  0] (hvisor::arch::loongarch64::trap:1366) csrrd emulation for CSR 0x300
+[    0.012971] Console: colour dummy device 80x25
+[    0.017515] Calibrating delay loop (skipped), value calculated using timer frequency.. 
+[    0.017518] wheatfox: calibrate_delay, lpj of this cpu (0) is 1000000, set to cpu_loops_per_jiffy
+[    0.025477] wheatfox: HZ is 100 
+[    0.037493] 200.00 BogoMIPS (lpj=1000000)
+[    0.041474] pid_max: default: 32768 minimum: 301
+[    0.046075] LSM: initializing lsm=capability,yama
+[    0.050748] Yama: becoming mindful.
+[    0.054242] Mount-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[    0.061592] Mountpoint-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[    0.069643] ACPI PPTT: No PPTT table found, CPU and cache topology may be inaccurate
+[    0.077345] Invalid BIOS PPTT
+[    0.080612] rcu: Hierarchical SRCU implementation.
+[    0.085367] rcu: 	Max phase no-delay instances is 1000.
+[    0.090660] smp: Bringing up secondary CPUs ...
+[    0.095159] smp: Brought up 1 node, 1 CPU
+[    0.099168] Memory: 1067516K/2873344K available (11776K kernel code, 4086K rwdata, 3428K rodata, 68096K init, 786K bss, 1804460K reserved, 0K cma-reserved)
+[    0.113204] devtmpfs: initialized
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x6
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x200
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x201
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x202
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x203
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x204
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x205
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x206
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x207
+[    0.116993] Performance counters: loongarch/loongson64 PMU enabled, 4 64-bit counters available to each CPU.
+[    0.127799] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.137568] futex hash table entries: 256 (order: 2, 16384 bytes, linear)
+[    0.144500] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[INFO  0] (hvisor::arch::loongarch64::trap:1366) csrrd emulation for CSR 0x380
+[INFO  0] (hvisor::arch::loongarch64::trap:1366) csrrd emulation for CSR 0x300
+[    0.150624] thermal_sys: Registered thermal governor 'step_wise'
+[    0.150845] hw-breakpoint: Found 0 breakpoint and 0 watchpoint registers.
+[    0.164104] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.170851] HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+[    0.177478] ACPI: Interpreter disabled.
+[    0.181299] iommu: Default domain type: Translated
+[    0.186053] iommu: DMA domain TLB invalidation policy: strict mode
+[    0.192265] SCSI subsystem initialized
+[    0.196050] pps_core: LinuxPPS API ver. 1 registered
+[    0.200981] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.210308] vgaarb: loaded
+[    0.213016] wheatfox: tk_setup_internals, clock is Constant
+[    0.218549] wheatfox: tk_setup_internals, tk->tkr_mono.cycle_last is 26843797
+[    0.225636] wheatfox: tk_setup_internals, tk->tkr_raw.cycle_last is 26843797
+[    0.232637] wheatfox: tk_setup_internals, tk->xtime_interval is 167772160000000
+[    0.239897] wheatfox: tk_setup_internals, tk->xtime_remainder is 0
+[    0.246033] wheatfox: tk_setup_internals, tk->raw_interval is 167772160000000
+[    0.253120] wheatfox: tk_setup_internals, tk->tkr_mono.shift is 24
+[    0.259256] wheatfox: tk_setup_internals, tk->tkr_raw.shift is 24
+[    0.265306] wheatfox: tk_setup_internals, tk->ntp_tick is 42949672960000000
+[    0.272220] wheatfox: tk_setup_internals, tk->tkr_mono.mult is 167772160
+[    0.278874] wheatfox: tk_setup_internals, tk->tkr_raw.mult is 167772160
+[    0.285443] wheatfox: tk_setup_internals finished
+[    0.290114] clocksource: Switched to clocksource Constant
+[    0.295531] VFS: Disk quotas dquot_6.6.0
+[    0.299430] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.306297] pnp: PnP ACPI: disabled
+[    0.311546] NET: Registered PF_INET protocol family
+[    0.316441] IP idents hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    0.324276] tcp_listen_portaddr_hash hash table entries: 1024 (order: 2, 16384 bytes, linear)
+[    0.332783] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.340479] TCP established hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    0.348375] TCP bind hash table entries: 16384 (order: 7, 524288 bytes, linear)
+[    0.355697] TCP: Hash tables configured (established 16384 bind 16384)
+[    0.362206] UDP hash table entries: 1024 (order: 3, 32768 bytes, linear)
+[    0.368872] UDP-Lite hash table entries: 1024 (order: 3, 32768 bytes, linear)
+[    0.375991] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.381619] NET: Registered PF_XDP protocol family
+[    0.386376] PCI: CLS 0 bytes, default 64
+[    0.398734] Initialise system trusted keyrings
+[    0.403184] workingset: timestamp_bits=40 max_order=19 bucket_order=0
+[    0.418593] zbud: loaded
+[    0.421211] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.438630] SGI XFS with ACLs, security attributes, quota, no debug enabled
+[    0.445689] Key type asymmetric registered
+[    0.458561] Asymmetric key parser 'x509' registered
+[    1.018551] wheatfox: debug guest virtual timer, count is 100, stable_counter_val is 106843886, last_stable_counter_val is 0, diff is 106843886
+[    1.362677] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 250)
+[    1.370084] io scheduler mq-deadline registered
+[    1.374581] io scheduler kyber registered
+[    1.378581] io scheduler bfq registered
+[    1.384180] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    1.391775] Serial: 8250/16550 driver, 16 ports, IRQ sharing enabled
+[    1.399046] of_serial 1fe001e0.serial: error -ENXIO: IRQ index 0 not found
+[    1.405937] printk: legacy console [ttyS0] disabled
+[    1.410898] 1fe001e0.serial: ttyS0 at MMIO 0x1fe001e0 (irq = 0, base_baud = 6250000) is a 16550A
+[    1.419657] printk: legacy console [ttyS0] enabled
+[    1.419657] printk: legacy console [ttyS0] enabled
+[    1.429182] printk: legacy bootconsole [ns16550a0] disabled
+[    1.429182] printk: legacy bootconsole [ns16550a0] disabled
+[    1.445601] wheatfox: debug guest virtual timer, count is 200, stable_counter_val is 149549011, last_stable_counter_val is 106843886, diff is 42705125
+[    1.460998] brd: module loaded
+[    1.465771] loop: module loaded
+[    1.469005] megaraid cmm: 2.20.2.7 (Release Date: Sun Jul 16 00:01:03 EST 2006)
+[    1.476292] megaraid: 2.20.5.1 (Release Date: Thu Nov 16 15:32:35 EST 2006)
+[    1.483223] megasas: 07.727.03.00-rc1
+[    1.486874] mpt3sas version 48.100.00.00 loaded
+[    1.491655] igb: Intel(R) Gigabit Ethernet Network Driver
+[    1.497016] igb: Copyright (c) 2007-2014 Intel Corporation.
+[    1.502599] i2c_dev: i2c /dev entries driver
+[    1.506931] device-mapper: ioctl: 4.48.0-ioctl (2023-03-01) initialised: dm-devel@lists.linux.dev
+[    1.515775] hid: raw HID events driver (C) Jiri Kosina
+[    1.520977] NET: Registered PF_INET6 protocol family
+[    1.526121] Segment Routing with IPv6
+[    1.529775] In-situ OAM (IOAM) with IPv6
+[    1.533684] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    1.542205] Loading compiled-in X.509 certificates
+[    1.549281] Demotion targets for Node 0: null
+[    1.755494] OF: fdt: not creating '/sys/firmware/fdt': CRC check failed
+[    1.762089] clk: Disabling unused clocks
+[    1.775841] Freeing unused kernel image (initmem) memory: 68096K
+[    1.781835] This architecture does not have kernel memory protection.
+[    1.788238] Run /init as init process
+Starting syslogd: OK
+Starting klogd: OK
+Running sysctl: OK
+Starting system message bus: [    2.458550] wheatfox: debug guest virtual timer, count is 300, stable_counter_val is 250843823, last_stable_counter_val is 149549011, diff is 101294812
+[    3.468549] wheatfox: debug guest virtual timer, count is 400, stable_counter_val is 351843812, last_stable_counter_val is 250843823, diff is 100999989
+[    4.478549] wheatfox: debug guest virtual timer, count is 500, stable_counter_val is 452843814, last_stable_counter_val is 351843812, diff is 101000002
+[    5.488549] wheatfox: debug guest virtual timer, count is 600, stable_counter_val is 553843815, last_stable_counter_val is 452843814, diff is 101000001
+[    6.498549] wheatfox: debug guest virtual timer, count is 700, stable_counter_val is 654843825, last_stable_counter_val is 553843815, diff is 101000010
+[    6.828555] random: crng init done
+done
+Starting t[    6.848852] wheatfox: debug guest virtual timer, count is 800, stable_counter_val is 689874112, last_stable_counter_val is 654843825, diff is 35030287
+[    6.863498] wheatfox: debug guest virtual timer, count is 900, stable_counter_val is 691338699, last_stable_counter_val is 689874112, diff is 1464587
+elnetd: OK
+    6.877058] wheatfox: debug guest virtual timer, count is 1000, stable_counter_val is 692694732, last_stable_counter_val is 691338699, diff is 1356033
+mWelcome to hvis[    6.891602] wheatfox: debug guest virtual timer, count is 1100, stable_counter_val is 694149127, last_stable_counter_val is 692694732, diff is 1454395
+[    6.906096] wheatfox: debug guest virtual timer, count is 1200, stable_counter_val is 695598479, last_stable_counter_val is 694149127, diff is 1449352
+or(loongarch) zo[    6.919733] wheatfox: debug guest virtual timer, count is 1300, stable_counter_val is 696962230, last_stable_counter_val is 695598479, diff is 1363751
+[    6.934252] wheatfox: debug guest virtual timer, count is 1400, stable_counter_val is 698414118, last_stable_counter_val is 696962230, diff is 1451888
+ne! Buildroot/wh[    6.947887] wheatfox: debug guest virtual timer, count is 1500, stable_counter_val is 699777665, last_stable_counter_val is 698414118, diff is 1363547
+[    6.962410] wheatfox: debug guest virtual timer, count is 1600, stable_counter_val is 701229899, last_stable_counter_val is 699777665, diff is 1452234
+[    6.976931] wheatfox: debug guest virtual timer, count is 1700, stable_counter_val is 702682014, last_stable_counter_val is 701229899, diff is 1452115
+
+KERNEL:   [    6.990578] wheatfox: debug guest virtual timer, count is 1800, stable_counter_val is 704046688, last_stable_counter_val is 702682014, diff is 1364674
+[    7.005093] wheatfox: debug guest virtual timer, count is 1900, stable_counter_val is 705498214, last_stable_counter_val is 704046688, diff is 1451526
+    Linux ve[    7.018730] wheatfox: debug guest virtual timer, count is 2000, stable_counter_val is 706861925, last_stable_counter_val is 705498214, diff is 1363711
+rsion 6.11.6 (wh[    7.033249] wheatfox: debug guest virtual timer, count is 2100, stable_counter_val is 708313861, last_stable_counter_val is 706861925, diff is 1451936
+[    7.047771] wheatfox: debug guest virtual timer, count is 2200, stable_counter_val is 709766000, last_stable_counter_val is 708313861, diff is 1452139
+eatfox@dedsec-am[    7.061406] wheatfox: debug guest virtual timer, count is 2300, stable_counter_val is 711129511, last_stable_counter_val is 709766000, diff is 1363511
+[    7.075926] wheatfox: debug guest virtual timer, count is 2400, stable_counter_val is 712581479, last_stable_counter_val is 711129511, diff is 1451968
+d0) (loongarch64[    7.089560] wheatfox: debug guest virtual timer, count is 2500, stable_counter_val is 713944937, last_stable_counter_val is 712581479, diff is 1363458
+[    7.104088] wheatfox: debug guest virtual timer, count is 2600, stable_counter_val is 715397697, last_stable_counter_val is 713944937, diff is 1452760
+-unknown-linux-g[    7.117722] wheatfox: debug guest virtual timer, count is 2700, stable_counter_val is 716761145, last_stable_counter_val is 715397697, diff is 1363448
+nu-gcc (GCC) 13.[    7.132245] wheatfox: debug guest virtual timer, count is 2800, stable_counter_val is 718213457, last_stable_counter_val is 716761145, diff is 1452312
+[    7.146767] wheatfox: debug guest virtual timer, count is 2900, stable_counter_val is 719665579, last_stable_counter_val is 718213457, diff is 1452122
+0.1 20230316 (ex[    7.160402] wheatfox: debug guest virtual timer, count is 3000, stable_counter_val is 721029114, last_stable_counter_val is 719665579, diff is 1363535
+[    7.174921] wheatfox: debug guest virtual timer, count is 3100, stable_counter_val is 722481033, last_stable_counter_val is 721029114, diff is 1451919
+perimental), GNU[    7.188558] wheatfox: debug guest virtual timer, count is 3200, stable_counter_val is 723844738, last_stable_counter_val is 722481033, diff is 1363705
+ ld (GNU Binutil[    7.203078] wheatfox: debug guest virtual timer, count is 3300, stable_counter_val is 725296715, last_stable_counter_val is 723844738, diff is 1451977
+[    7.217598] wheatfox: debug guest virtual timer, count is 3400, stable_counter_val is 726748684, last_stable_counter_val is 725296715, diff is 1451969
+s) 2.40.50.20230[    7.231232] wheatfox: debug guest virtual timer, count is 3500, stable_counter_val is 728112137, last_stable_counter_val is 726748684, diff is 1363453
+[    7.245752] wheatfox: debug guest virtual timer, count is 3600, stable_counter_val is 729564076, last_stable_counter_val is 728112137, diff is 1451939
+316) #614 SMP PR[    7.259386] wheatfox: debug guest virtual timer, count is 3700, stable_counter_val is 730927553, last_stable_counter_val is 729564076, diff is 1363477
+[    7.273907] wheatfox: debug guest virtual timer, count is 3800, stable_counter_val is 732379653, last_stable_counter_val is 730927553, diff is 1452100
+EEMPT_DYNAMIC Mo[    7.287543] wheatfox: debug guest virtual timer, count is 3900, stable_counter_val is 733743179, last_stable_counter_val is 732379653, diff is 1363526
+n Jul  7 17:01:3[    7.302068] wheatfox: debug guest virtual timer, count is 4000, stable_counter_val is 735195747, last_stable_counter_val is 733743179, diff is 1452568
+[    7.316588] wheatfox: debug guest virtual timer, count is 4100, stable_counter_val is 736647768, last_stable_counter_val is 735195747, diff is 1452021
+8 CST 2025
+    7.330224] wheatfox: debug guest virtual timer, count is 4200, stable_counter_val is 738011361, last_stable_counter_val is 736647768, diff is 1363593
+[    7.344744] wheatfox: debug guest virtual timer, count is 4300, stable_counter_val is 739463313, last_stable_counter_val is 738011361, diff is 1451952
+mTIME:            7.358379] wheatfox: debug guest virtual timer, count is 4400, stable_counter_val is 740826820, last_stable_counter_val is 739463313, diff is 1363507
+0m 1970-01-01 00[    7.372901] wheatfox: debug guest virtual timer, count is 4500, stable_counter_val is 742279028, last_stable_counter_val is 740826820, diff is 1452208
+[    7.387421] wheatfox: debug guest virtual timer, count is 4600, stable_counter_val is 743731034, last_stable_counter_val is 742279028, diff is 1452006
+:00:06
+df: /: c[    7.401055] wheatfox: debug guest virtual timer, count is 4700, stable_counter_val is 745094459, last_stable_counter_val is 743731034, diff is 1363425
+[    7.415575] wheatfox: debug guest virtual timer, count is 4800, stable_counter_val is 746546446, last_stable_counter_val is 745094459, diff is 1451987
+an't find mount [    7.429210] wheatfox: debug guest virtual timer, count is 4900, stable_counter_val is 747909955, last_stable_counter_val is 746546446, diff is 1363509
+[    7.443731] wheatfox: debug guest virtual timer, count is 5000, stable_counter_val is 749362009, last_stable_counter_val is 747909955, diff is 1452054
+point
+ROOT[    7.457367] wheatfox: debug guest virtual timer, count is 5100, stable_counter_val is 750725619, last_stable_counter_val is 749362009, diff is 1363610
+_MOUNT:   Fi[    7.471895] wheatfox: debug guest virtual timer, count is 5200, stable_counter_val is 752178406, last_stable_counter_val is 750725619, diff is 1452787
+[    7.486411] wheatfox: debug guest virtual timer, count is 5300, stable_counter_val is 753629976, last_stable_counter_val is 752178406, diff is 1451570
+lesystem (rootfs[    7.500045] wheatfox: debug guest virtual timer, count is 5400, stable_counter_val is 754993462, last_stable_counter_val is 753629976, diff is 1363486
+[    7.514564] wheatfox: debug guest virtual timer, count is 5500, stable_counter_val is 756445321, last_stable_counter_val is 754993462, diff is 1451859
+)
+HOSTNAME[    7.528199] wheatfox: debug guest virtual timer, count is 5600, stable_counter_val is 757808783, last_stable_counter_val is 756445321, diff is 1363462
+:     dedsec[    7.542720] wheatfox: debug guest virtual timer, count is 5700, stable_counter_val is 759260909, last_stable_counter_val is 757808783, diff is 1452126
+[    7.557240] wheatfox: debug guest virtual timer, count is 5800, stable_counter_val is 760712960, last_stable_counter_val is 759260909, diff is 1452051
+
+root zone[    7.570878] wheatfox: debug guest virtual timer, count is 5900, stable_counter_val is 762076694, last_stable_counter_val is 760712960, diff is 1363734
+[    7.585394] wheatfox: debug guest virtual timer, count is 6000, stable_counter_val is 763528345, last_stable_counter_val is 762076694, diff is 1451651
+ detected, quick[    7.599034] wheatfox: debug guest virtual timer, count is 6100, stable_counter_val is 764892295, last_stable_counter_val is 763528345, diff is 1363950
+[    7.613550] wheatfox: debug guest virtual timer, count is 6200, stable_counter_val is 766343941, last_stable_counter_val is 764892295, diff is 1451646
+ guides for boot[    7.627188] wheatfox: debug guest virtual timer, count is 6300, stable_counter_val is 767707692, last_stable_counter_val is 766343941, diff is 1363751
+ing nonroot zone[    7.641709] wheatfox: debug guest virtual timer, count is 6400, stable_counter_val is 769159868, last_stable_counter_val is 767707692, diff is 1452176
+[    7.656228] wheatfox: debug guest virtual timer, count is 6500, stable_counter_val is 770611713, last_stable_counter_val is 769159868, diff is 1451845
+s:
+ 1. ./da[    7.669864] wheatfox: debug guest virtual timer, count is 6600, stable_counter_val is 771975351, last_stable_counter_val is 770611713, diff is 1363638
+[    7.684382] wheatfox: debug guest virtual timer, count is 6700, stable_counter_val is 773427086, last_stable_counter_val is 771975351, diff is 1451735
+emon.sh
+ 2. ./s[    7.698017] wheatfox: debug guest virtual timer, count is 6800, stable_counter_val is 774790607, last_stable_counter_val is 773427086, diff is 1363521
+tart.sh 1 # boot[    7.712539] wheatfox: debug guest virtual timer, count is 6900, stable_counter_val is 776242778, last_stable_counter_val is 774790607, diff is 1452171
+[    7.727056] wheatfox: debug guest virtual timer, count is 7000, stable_counter_val is 777694550, last_stable_counter_val is 776242778, diff is 1451772
+ linux1, replace[    7.740691] wheatfox: debug guest virtual timer, count is 7100, stable_counter_val is 779058033, last_stable_counter_val is 777694550, diff is 1363483
+[    7.755210] wheatfox: debug guest virtual timer, count is 7200, stable_counter_val is 780509885, last_stable_counter_val is 779058033, diff is 1451852
+ 1 with 2 or 3 t[    7.768847] wheatfox: debug guest virtual timer, count is 7300, stable_counter_val is 781873592, last_stable_counter_val is 780509885, diff is 1363707
+[    7.783365] wheatfox: debug guest virtual timer, count is 7400, stable_counter_val is 783325435, last_stable_counter_val is 781873592, diff is 1451843
+o boot other zon[    7.797001] wheatfox: debug guest virtual timer, count is 7500, stable_counter_val is 784689054, last_stable_counter_val is 783325435, diff is 1363619
+es
+ 3. screen /[    7.811524] wheatfox: debug guest virtual timer, count is 7600, stable_counter_val is 786141356, last_stable_counter_val is 784689054, diff is 1452302
+[    7.826044] wheatfox: debug guest virtual timer, count is 7700, stable_counter_val is 787593305, last_stable_counter_val is 786141356, diff is 1451949
+dev/pts/0 # open[    7.839679] wheatfox: debug guest virtual timer, count is 7800, stable_counter_val is 788956816, last_stable_counter_val is 787593305, diff is 1363511
+[    7.854197] wheatfox: debug guest virtual timer, count is 7900, stable_counter_val is 790408655, last_stable_counter_val is 788956816, diff is 1451839
+ the console of [    7.867833] wheatfox: debug guest virtual timer, count is 8000, stable_counter_val is 791772177, last_stable_counter_val is 790408655, diff is 1363522
+linux1, replace [    7.882355] wheatfox: debug guest virtual timer, count is 8100, stable_counter_val is 793224448, last_stable_counter_val is 791772177, diff is 1452271
+[    7.896877] wheatfox: debug guest virtual timer, count is 8200, stable_counter_val is 794676573, last_stable_counter_val is 793224448, diff is 1452125
+0 with 1 or 2 to[    7.910513] wheatfox: debug guest virtual timer, count is 8300, stable_counter_val is 796040189, last_stable_counter_val is 794676573, diff is 1363616
+[    7.925030] wheatfox: debug guest virtual timer, count is 8400, stable_counter_val is 797491918, last_stable_counter_val is 796040189, diff is 1451729
+ open other cons[    7.938668] wheatfox: debug guest virtual timer, count is 8500, stable_counter_val is 798855685, last_stable_counter_val is 797491918, diff is 1363767
+oles
+[    7.953189] wheatfox: debug guest virtual timer, count is 8600, stable_counter_val is 800307804, last_stable_counter_val is 798855685, diff is 1452119
+[    7.966843] wheatfox: debug guest virtual timer, count is 8700, stable_counter_val is 801673204, last_stable_counter_val is 800307804, diff is 1365400
+[    7.980533] wheatfox: debug guest virtual timer, count is 8800, stable_counter_val is 803042250, last_stable_counter_val is 801673204, diff is 1369046
+[    7.994167] wheatfox: debug guest virtual timer, count is 8900, stable_counter_val is 804405624, last_stable_counter_val is 803042250, diff is 1363374
+[root@dedsec /]#[    8.007801] wheatfox: debug guest virtual timer, count is 9000, stable_counter_val is 805769052, last_stable_counter_val is 804405624, diff is 1363428
+ [    8.022321] wheatfox: debug guest virtual timer, count is 9100, stable_counter_val is 807221050, last_stable_counter_val is 805769052, diff is 1451998
+[    8.035952] wheatfox: debug guest virtual timer, count is 9200, stable_counter_val is 808584122, last_stable_counter_val is 807221050, diff is 1363072
+[    8.049583] wheatfox: debug guest virtual timer, count is 9300, stable_counter_val is 809947227, last_stable_counter_val is 808584122, diff is 1363105
+[    8.063221] wheatfox: debug guest virtual timer, count is 9400, stable_counter_val is 811310985, last_stable_counter_val is 809947227, diff is 1363758
+[    8.076853] wheatfox: debug guest virtual timer, count is 9500, stable_counter_val is 812674244, last_stable_counter_val is 811310985, diff is 1363259
+[    8.090487] wheatfox: debug guest virtual timer, count is 9600, stable_counter_val is 814037663, last_stable_counter_val is 812674244, diff is 1363419
+[    8.104117] wheatfox: debug guest virtual timer, count is 9700, stable_counter_val is 815400668, last_stable_counter_val is 814037663, diff is 1363005
+[    8.117749] wheatfox: debug guest virtual timer, count is 9800, stable_counter_val is 816763787, last_stable_counter_val is 815400668, diff is 1363119
+[    8.131380] wheatfox: debug guest virtual timer, count is 9900, stable_counter_val is 818126947, last_stable_counter_val is 816763787, diff is 1363160
+[    8.145011] wheatfox: debug guest virtual timer, count is 10000, stable_counter_val is 819490013, last_stable_counter_val is 818126947, diff is 1363066
+[    8.158731] wheatfox: debug guest virtual timer, count is 10100, stable_counter_val is 820861994, last_stable_counter_val is 819490013, diff is 1371981
+[    8.172449] wheatfox: debug guest virtual timer, count is 10200, stable_counter_val is 822233815, last_stable_counter_val is 820861994, diff is 1371821
+[    8.186170] wheatfox: debug guest virtual timer, count is 10300, stable_counter_val is 823605914, last_stable_counter_val is 822233815, diff is 1372099
+[    8.199889] wheatfox: debug guest virtual timer, count is 10400, stable_counter_val is 824977803, last_stable_counter_val is 823605914, diff is 1371889
+[    8.213607] wheatfox: debug guest virtual timer, count is 10500, stable_counter_val is 826349619, last_stable_counter_val is 824977803, diff is 1371816
+[    8.227326] wheatfox: debug guest virtual timer, count is 10600, stable_counter_val is 827721487, last_stable_counter_val is 826349619, diff is 1371868
+[    8.241044] wheatfox: debug guest virtual timer, count is 10700, stable_counter_val is 829093356, last_stable_counter_val is 827721487, diff is 1371869
+[    8.254762] wheatfox: debug guest virtual timer, count is 10800, stable_counter_val is 830465118, last_stable_counter_val is 829093356, diff is 1371762
+[    8.268480] wheatfox: debug guest virtual timer, count is 10900, stable_counter_val is 831836956, last_stable_counter_val is 830465118, diff is 1371838
+[    8.282199] wheatfox: debug guest virtual timer, count is 11000, stable_counter_val is 833208822, last_stable_counter_val is 831836956, diff is 1371866
+[    8.295917] wheatfox: debug guest virtual timer, count is 11100, stable_counter_val is 834580604, last_stable_counter_val is 833208822, diff is 1371782
+[    8.309641] wheatfox: debug guest virtual timer, count is 11200, stable_counter_val is 835953004, last_stable_counter_val is 834580604, diff is 1372400
+[    8.323358] wheatfox: debug guest virtual timer, count is 11300, stable_counter_val is 837324767, last_stable_counter_val is 835953004, diff is 1371763
+[    8.337079] wheatfox: debug guest virtual timer, count is 11400, stable_counter_val is 838696848, last_stable_counter_val is 837324767, diff is 1372081
+[    8.350797] wheatfox: debug guest virtual timer, count is 11500, stable_counter_val is 840068657, last_stable_counter_val is 838696848, diff is 1371809
+[    8.364514] wheatfox: debug guest virtual timer, count is 11600, stable_counter_val is 841440368, last_stable_counter_val is 840068657, diff is 1371711
+[    8.378234] wheatfox: debug guest virtual timer, count is 11700, stable_counter_val is 842812283, last_stable_counter_val is 841440368, diff is 1371915
+[    8.391952] wheatfox: debug guest virtual timer, count is 11800, stable_counter_val is 844184104, last_stable_counter_val is 842812283, diff is 1371821
+[    8.405669] wheatfox: debug guest virtual timer, count is 11900, stable_counter_val is 845555802, last_stable_counter_val is 844184104, diff is 1371698
+[    8.419388] wheatfox: debug guest virtual timer, count is 12000, stable_counter_val is 846927718, last_stable_counter_val is 845555802, diff is 1371916
+[    8.433105] wheatfox: debug guest virtual timer, count is 12100, stable_counter_val is 848299438, last_stable_counter_val is 846927718, diff is 1371720
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[INFO  3] (hvisor::arch::loongarch64::ipi:299) ecfg ipi enabled on cpu 3, current lie: TIMER | IPI
+[INFO  0] (hvisor::arch::loongarch64::trap:1378) csrxchg emulation for CSR 0x80
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x0
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x2
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x1
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x2
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x6
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x93
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x10
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x11
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x12
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x13
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x14
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x1
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x1
+[    0.000000] Linux version 6.11.6 (wheatfox@dedsec-amd0) (loongarch64-unknown-linux-gnu-gcc (GCC) 13.0.1 20230316 (experimental), GNU ld (GNU Binutils) 2.40.50.20230316) #620 SMP PREEMPT_DYNAMIC Mon Jul  7 19:14:25 CST 2025
+[    0.000000] 64-bit Loongson Processor probed (LA664 Core)
+[    0.000000] CPU0 revision is: 0014d000 (Loongson-64bit)
+[    0.000000] FPU0 revision is: 00000000
+[    0.000000] ACPI: Early table checksum verification disabled
+[    0.000000] earlycon: ns16550a0 at MMIO 0x000000001fe001e0 (options '115200n8')
+[    0.000000] printk: legacy bootconsole [ns16550a0] enabled
+[    0.000000] OF: reserved mem: 0x00000000a0000000..0x00000000bfffffff (524288 KiB) nomap non-reusable nonroot2
+[    0.000000] OF: reserved mem: 0x00000000c0000000..0x00000000dfffffff (524288 KiB) nomap non-reusable nonroot1
+[    0.000000] OF: reserved mem: 0x0000000100000000..0x000000011fffffff (524288 KiB) nomap non-reusable nonroot3
+[    0.000000] OF: reserved mem: 0x0000000140000000..0x00000001407fffff (8192 KiB) nomap non-reusable shmem@0
+[    0.000000] Faking a node at [mem 0x0000000000200000-0x000000016fffffff]
+[    0.000000] Node0's addrspace_offset is 0x0
+[    0.000000] Node0: start_pfn=0x200, end_pfn=0x170000
+[    0.000000] DMI not present or invalid.
+[    0.000000] The BIOS Version: (null)
+[    0.000000] software IO TLB: area num 1.
+[    0.000000] software IO TLB: mapped [mem 0x0000000005840000-0x0000000009840000] (64MB)
+[    0.000000] Detected 1 available CPU(s)
+[    0.000000] SMP: Allowing 1 CPUs, 0 hotplug CPUs
+[    0.000000] Zone ranges:
+[    0.000000]   DMA32    [mem 0x0000000000200000-0x00000000ffffffff]
+[    0.000000]   Normal   [mem 0x0000000100000000-0x000000016fffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000200000-0x000000000effffff]
+[    0.000000]   node   0: [mem 0x0000000090000000-0x000000009fffffff]
+[    0.000000]   node   0: [mem 0x00000000a0000000-0x00000000dfffffff]
+[    0.000000]   node   0: [mem 0x00000000e0000000-0x00000000ffffffff]
+[    0.000000]   node   0: [mem 0x0000000100000000-0x000000011fffffff]
+[    0.000000]   node   0: [mem 0x0000000140000000-0x00000001407fffff]
+[    0.000000]   node   0: [mem 0x0000000160000000-0x000000016fffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000200000-0x000000016fffffff]
+[    0.000000] On node 0, zone DMA32: 512 pages in unavailable ranges
+[    0.000000] On node 0, zone DMA32: 135168 pages in unavailable ranges
+[    0.000000] On node 0, zone Normal: 129024 pages in unavailable ranges
+[    0.000000] On node 0, zone Normal: 65536 pages in unavailable ranges
+[    0.000000] percpu: Embedded 18 pages/cpu s34328 r8192 d31208 u2097152
+[    0.000000] Kernel command line: earlycon console=ttyS0,115200n8 root=/dev/nvme0n1p4 rootwait rw 
+[    0.000000] Dentry cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    0.000000] Fallback order for Node 0: 0 
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 718336
+[    0.000000] Policy zone: Normal
+[    0.000000] mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Dynamic Preempt: full
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu: 	RCU event tracing is enabled.
+[    0.000000] rcu: 	RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=1.
+[    0.000000] 	Trampoline variant of Tasks RCU enabled.
+[    0.000000] 	Tracing variant of Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.000000] RCU Tasks: Setting shift to 0 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=1.
+[    0.000000] RCU Tasks Trace: Setting shift to 0 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=1.
+[    0.000000] NR_IRQS: 576, nr_irqs: 576, preallocated irqs: 16
+[    0.000000] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.000000] wheatfox: timekeeping_init, wall_time is 0.000000000, boot_offset is 0.000000000
+[    0.000000] wheatfox: timekeeping_init, wall_to_mono is 0.000000000
+[    0.000000] wheatfox: tk_setup_internals, clock is jiffies
+[    0.000000] wheatfox: tk_setup_internals, tk->tkr_mono.cycle_last is 4294937296
+[    0.000000] wheatfox: tk_setup_internals, tk->tkr_raw.cycle_last is 4294937296
+[    0.000000] wheatfox: tk_setup_internals, tk->xtime_interval is 2560000000
+[    0.000000] wheatfox: tk_setup_internals, tk->xtime_remainder is 0
+[    0.000000] wheatfox: tk_setup_internals, tk->raw_interval is 2560000000
+[    0.000000] wheatfox: tk_setup_internals, tk->tkr_mono.shift is 8
+[    0.000000] wheatfox: tk_setup_internals, tk->tkr_raw.shift is 8
+[    0.000000] wheatfox: tk_setup_internals, tk->ntp_tick is 42949672960000000
+[    0.000000] wheatfox: tk_setup_internals, tk->tkr_mono.mult is 2560000000
+[    0.000000] wheatfox: tk_setup_internals, tk->tkr_raw.mult is 2560000000
+[    0.000000] wheatfox: tk_setup_internals finished
+[    0.000000] wheatfox: timekeeping_init finished
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x2
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x4
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x5
+[    0.000000] wheatfox: time_init, const_clock_freq is 100000000
+[    0.000000] wheatfox: time_init, init_offset is -3000174083
+[    0.000000] wheatfox: time_init, calling constant_clockevent_init
+[    0.000000] wheatfox: constant_clockevent_init, timer irq for cpu 0 is 17
+[    0.000000] wheatfox: constant_set_state_periodic, period is 1000000, const_clock_freq is 100000000, HZ is 100
+[    0.000000] wheatfox: constant_clockevent_init, const_clock_freq is 100000000, min_delta is 1536, max_delta is 281474976710655
+[    0.000000] wheatfox: constant_clockevent_init, calling request_irq for cpu 0, irq is 17
+[    0.000000] wheatfox: get_loops_per_jiffy, const_clock_freq is 100000000, lpj is 1000000
+[    0.000000] wheatfox: constant_clockevent_init, lpj_fine is 1000000
+[    0.000000] Constant clock event device register
+[    0.000000] wheatfox: time_init, calling constant_clocksource_init
+[    0.000000] wheatfox: constant_clocksource_init, freq is 100000000
+[    0.000000] clocksource: Constant: mask: 0xffffffffffffffff max_cycles: 0x171024e7e0, max_idle_ns: 440795205315 ns
+[    0.000000] wheatfox: constant_clocksource_init, res is 0
+[    0.000000] sched_clock: 64 bits at 100MHz, resolution 10ns, wraps every 4398046511100ns
+[    0.008039] Constant clock source device register
+[    0.012706] wheatfox: time_init, calling pv_time_init
+[    0.017720] wheatfox: time_init, done
+[INFO  0] (hvisor::arch::loongarch64::trap:1366) csrrd emulation for CSR 0x380
+[INFO  0] (hvisor::arch::loongarch64::trap:1366) csrrd emulation for CSR 0x300
+[    0.021613] Console: colour dummy device 80x25
+[    0.026158] Calibrating delay loop (skipped), value calculated using timer frequency.. 
+[    0.026160] wheatfox: calibrate_delay, lpj of this cpu (0) is 1000000, set to cpu_loops_per_jiffy
+[    0.034119] wheatfox: HZ is 100 
+[    0.046134] 200.00 BogoMIPS (lpj=1000000)
+[    0.050115] pid_max: default: 32768 minimum: 301
+[    0.054716] LSM: initializing lsm=capability,yama
+[    0.059389] Yama: becoming mindful.
+[    0.062883] Mount-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[    0.070235] Mountpoint-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[    0.078284] ACPI PPTT: No PPTT table found, CPU and cache topology may be inaccurate
+[    0.085986] Invalid BIOS PPTT
+[    0.089254] rcu: Hierarchical SRCU implementation.
+[    0.094009] rcu: 	Max phase no-delay instances is 1000.
+[    0.099301] smp: Bringing up secondary CPUs ...
+[    0.103802] smp: Brought up 1 node, 1 CPU
+[    0.107812] Memory: 1067516K/2873344K available (11776K kernel code, 4086K rwdata, 3428K rodata, 68096K init, 786K bss, 1804460K reserved, 0K cma-reserved)
+[    0.121846] devtmpfs: initialized
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x6
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x200
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x201
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x202
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x203
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x204
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x205
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x206
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x207
+[    0.125633] Performance counters: loongarch/loongson64 PMU enabled, 4 64-bit counters available to each CPU.
+[    0.136442] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.146211] futex hash table entries: 256 (order: 2, 16384 bytes, linear)
+[    0.153145] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[INFO  0] (hvisor::arch::loongarch64::trap:1366) csrrd emulation for CSR 0x380
+[INFO  0] (hvisor::arch::loongarch64::trap:1366) csrrd emulation for CSR 0x300
+[    0.159268] thermal_sys: Registered thermal governor 'step_wise'
+[    0.159489] hw-breakpoint: Found 0 breakpoint and 0 watchpoint registers.
+[    0.172744] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.179489] HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+[    0.186114] ACPI: Interpreter disabled.
+[    0.189935] iommu: Default domain type: Translated
+[    0.194689] iommu: DMA domain TLB invalidation policy: strict mode
+[    0.200902] SCSI subsystem initialized
+[    0.204686] pps_core: LinuxPPS API ver. 1 registered
+[    0.209616] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.218941] vgaarb: loaded
+[    0.221649] wheatfox: tk_setup_internals, clock is Constant
+[    0.227181] wheatfox: tk_setup_internals, tk->tkr_mono.cycle_last is 32158457
+[    0.234269] wheatfox: tk_setup_internals, tk->tkr_raw.cycle_last is 32158457
+[    0.241269] wheatfox: tk_setup_internals, tk->xtime_interval is 167772160000000
+[    0.248529] wheatfox: tk_setup_internals, tk->xtime_remainder is 0
+[    0.254665] wheatfox: tk_setup_internals, tk->raw_interval is 167772160000000
+[    0.261752] wheatfox: tk_setup_internals, tk->tkr_mono.shift is 24
+[    0.267888] wheatfox: tk_setup_internals, tk->tkr_raw.shift is 24
+[    0.273938] wheatfox: tk_setup_internals, tk->ntp_tick is 42949672960000000
+[    0.280852] wheatfox: tk_setup_internals, tk->tkr_mono.mult is 167772160
+[    0.287507] wheatfox: tk_setup_internals, tk->tkr_raw.mult is 167772160
+[    0.294075] wheatfox: tk_setup_internals finished
+[    0.298747] clocksource: Switched to clocksource Constant
+[    0.304162] VFS: Disk quotas dquot_6.6.0
+[    0.308060] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.314927] pnp: PnP ACPI: disabled
+[    0.320170] NET: Registered PF_INET protocol family
+[    0.325065] IP idents hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    0.332898] tcp_listen_portaddr_hash hash table entries: 1024 (order: 2, 16384 bytes, linear)
+[    0.341405] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.349102] TCP established hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    0.356999] TCP bind hash table entries: 16384 (order: 7, 524288 bytes, linear)
+[    0.364324] TCP: Hash tables configured (established 16384 bind 16384)
+[    0.370832] UDP hash table entries: 1024 (order: 3, 32768 bytes, linear)
+[    0.377496] UDP-Lite hash table entries: 1024 (order: 3, 32768 bytes, linear)
+[    0.384615] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.390244] NET: Registered PF_XDP protocol family
+[    0.395000] PCI: CLS 0 bytes, default 64
+[    0.407363] Initialise system trusted keyrings
+[    0.411808] workingset: timestamp_bits=40 max_order=19 bucket_order=0
+[    0.427224] zbud: loaded
+[    0.429842] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.447264] SGI XFS with ACLs, security attributes, quota, no debug enabled
+[    0.454324] Key type asymmetric registered
+[    0.467194] Asymmetric key parser 'x509' registered
+[    1.027184] wheatfox:vtimer:c=100,v=112158543,l=0,d=112158543,tcfg=000f4089,p=0,init=999560,cntc=18446744070709377533
+[    1.366607] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 250)
+[    1.374123] io scheduler mq-deadline registered
+[    1.378659] io scheduler kyber registered
+[    1.382651] io scheduler bfq registered
+[    1.388299] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    1.395860] Serial: 8250/16550 driver, 16 ports, IRQ sharing enabled
+[    1.403136] of_serial 1fe001e0.serial: error -ENXIO: IRQ index 0 not found
+[    1.410042] printk: legacy console [ttyS0] disabled
+[    1.414962] 1fe001e0.serial: ttyS0 at MMIO 0x1fe001e0 (irq = 0, base_baud = 6250000) is a 16550A
+[    1.423726] printk: legacy console [ttyS0] enabled
+[    1.423726] printk: legacy console [ttyS0] enabled
+[    1.433251] printk: legacy bootconsole [ns16550a0] disabled
+[    1.433251] printk: legacy bootconsole [ns16550a0] disabled
+[    1.449673] wheatfox:vtimer:c=200,v=154407596,l=112158543,d=42249053,tcfg=000b75d1,p=0,init=751056,cntc=18446744070709377533
+[    1.461041] wheatfox:vtimer:c=300,v=155544411,l=154407596,d=1136815,tcfg=00095f61,p=0,init=614240,cntc=18446744070709377533
+[    1.474106] brd: module loaded
+[    1.478822] loop: module loaded
+[    1.482051] megaraid cmm: 2.20.2.7 (Release Date: Sun Jul 16 00:01:03 EST 2006)
+[    1.489346] megaraid: 2.20.5.1 (Release Date: Thu Nov 16 15:32:35 EST 2006)
+[    1.496269] megasas: 07.727.03.00-rc1
+[    1.499927] mpt3sas version 48.100.00.00 loaded
+[    1.504700] igb: Intel(R) Gigabit Ethernet Network Driver
+[    1.510065] igb: Copyright (c) 2007-2014 Intel Corporation.
+[    1.515644] i2c_dev: i2c /dev entries driver
+[    1.519984] device-mapper: ioctl: 4.48.0-ioctl (2023-03-01) initialised: dm-devel@lists.linux.dev
+[    1.528829] hid: raw HID events driver (C) Jiri Kosina
+[    1.534026] NET: Registered PF_INET6 protocol family
+[    1.539183] Segment Routing with IPv6
+[    1.542828] In-situ OAM (IOAM) with IPv6
+[    1.546737] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    1.555254] Loading compiled-in X.509 certificates
+[    1.562334] Demotion targets for Node 0: null
+[    1.768543] OF: fdt: not creating '/sys/firmware/fdt': CRC check failed
+[    1.775127] clk: Disabling unused clocks
+[    1.788859] Freeing unused kernel image (initmem) memory: 68096K
+[    1.794833] This architecture does not have kernel memory protection.
+[    1.801264] Run /init as init process
+Starting syslogd: OK
+Starting klogd: OK
+Running sysctl: OK
+Starting system message bus: [    2.467183] wheatfox:vtimer:c=400,v=256158483,l=155544411,d=100614072,tcfg=000f41a9,p=0,init=999848,cntc=18446744070709377533
+[    3.477182] wheatfox:vtimer:c=500,v=357158477,l=256158483,d=100999994,tcfg=000f41c5,p=0,init=999876,cntc=18446744070709377533
+[    4.487182] wheatfox:vtimer:c=600,v=458158477,l=357158477,d=101000000,tcfg=000f41c5,p=0,init=999876,cntc=18446744070709377533
+[    5.497182] wheatfox:vtimer:c=700,v=559158482,l=458158477,d=101000005,tcfg=000f41c5,p=0,init=999876,cntc=18446744070709377533
+[    6.507182] wheatfox:vtimer:c=800,v=660158475,l=559158482,d=100999993,tcfg=000f41b9,p=0,init=999864,cntc=18446744070709377533
+[    7.517182] wheatfox:vtimer:c=900,v=761158471,l=660158475,d=100999996,tcfg=000f41bd,p=0,init=999868,cntc=18446744070709377533
+[    8.527182] wheatfox:vtimer:c=1000,v=862158481,l=761158471,d=101000010,tcfg=000f41b9,p=0,init=999864,cntc=18446744070709377533
+[    9.197188] random: crng init done
+done
+Starting t[    9.217466] wheatfox:vtimer:c=1100,v=931186823,l=862158481,d=69028342,tcfg=000ed431,p=0,init=971824,cntc=18446744070709377533
+[    9.230016] wheatfox:vtimer:c=1200,v=932441879,l=931186823,d=1255056,tcfg=000aefe1,p=0,init=716768,cntc=18446744070709377533
+elnetd: OK
+    9.241452] wheatfox:vtimer:c=1300,v=933585494,l=932441879,d=1143615,tcfg=0008bee5,p=0,init=573156,cntc=18446744070709377533
+[    9.253692] wheatfox:vtimer:c=1400,v=934809504,l=933585494,d=1224010,tcfg=000553e1,p=0,init=349152,cntc=18446744070709377533
+mWelcome to hvis[    9.265104] wheatfox:vtimer:c=1500,v=935950744,l=934809504,d=1141240,tcfg=00032c21,p=0,init=207904,cntc=18446744070709377533
+or(loongarch) zo[    9.277368] wheatfox:vtimer:c=1600,v=937177060,l=935950744,d=1226316,tcfg=000efa59,p=0,init=981592,cntc=18446744070709377533
+[    9.289734] wheatfox:vtimer:c=1700,v=938413692,l=937177060,d=1236632,tcfg=000b5e01,p=0,init=744960,cntc=18446744070709377533
+ne! Buildroot/wh[    9.301123] wheatfox:vtimer:c=1800,v=939552573,l=938413692,d=1138881,tcfg=00093f7d,p=0,init=606076,cntc=18446744070709377533
+[    9.313395] wheatfox:vtimer:c=1900,v=940779799,l=939552573,d=1227226,tcfg=0005c7e5,p=0,init=378852,cntc=18446744070709377533
+[    9.324784] wheatfox:vtimer:c=2000,v=941918709,l=940779799,d=1138910,tcfg=0003a945,p=0,init=239940,cntc=18446744070709377533
+[    9.337056] wheatfox:vtimer:c=2100,v=943145947,l=941918709,d=1227238,tcfg=000031a1,p=0,init=12704,cntc=18446744070709377533
+
+KERNEL:   [    9.348359] wheatfox:vtimer:c=2200,v=944276184,l=943145947,d=1130237,tcfg=000d7725,p=0,init=882468,cntc=18446744070709377533
+[    9.360635] wheatfox:vtimer:c=2300,v=945503814,l=944276184,d=1227630,tcfg=0009fdf9,p=0,init=654840,cntc=18446744070709377533
+    Linux ve[    9.372023] wheatfox:vtimer:c=2400,v=946642633,l=945503814,d=1138819,tcfg=0007dfb5,p=0,init=516020,cntc=18446744070709377533
+[    9.384295] wheatfox:vtimer:c=2500,v=947869809,l=946642633,d=1227176,tcfg=00046845,p=0,init=288836,cntc=18446744070709377533
+rsion 6.11.6 (wh[    9.395684] wheatfox:vtimer:c=2600,v=949008679,l=947869809,d=1138870,tcfg=000249d5,p=0,init=149972,cntc=18446744070709377533
+eatfox@dedsec-am[    9.407960] wheatfox:vtimer:c=2700,v=950236300,l=949008679,d=1227621,tcfg=000e12ed,p=0,init=922348,cntc=18446744070709377533
+[    9.420232] wheatfox:vtimer:c=2800,v=951463517,l=950236300,d=1227217,tcfg=000a9b5d,p=0,init=695132,cntc=18446744070709377533
+d0) (loongarch64[    9.431620] wheatfox:vtimer:c=2900,v=952602315,l=951463517,d=1138798,tcfg=00087d31,p=0,init=556336,cntc=18446744070709377533
+[    9.443892] wheatfox:vtimer:c=3000,v=953829479,l=952602315,d=1227164,tcfg=000505d5,p=0,init=329172,cntc=18446744070709377533
+-unknown-linux-g[    9.455280] wheatfox:vtimer:c=3100,v=954968258,l=953829479,d=1138779,tcfg=0002e7b9,p=0,init=190392,cntc=18446744070709377533
+nu-gcc (GCC) 13.[    9.467554] wheatfox:vtimer:c=3200,v=956195714,l=954968258,d=1227456,tcfg=000eb179,p=0,init=962936,cntc=18446744070709377533
+[    9.479825] wheatfox:vtimer:c=3300,v=957422809,l=956195714,d=1227095,tcfg=000b3a65,p=0,init=735844,cntc=18446744070709377533
+0.1 20230316 (ex[    9.491213] wheatfox:vtimer:c=3400,v=958561611,l=957422809,d=1138802,tcfg=00091c2d,p=0,init=597036,cntc=18446744070709377533
+[    9.503484] wheatfox:vtimer:c=3500,v=959788698,l=958561611,d=1227087,tcfg=0005a521,p=0,init=369952,cntc=18446744070709377533
+perimental), GNU[    9.514872] wheatfox:vtimer:c=3600,v=960927544,l=959788698,d=1138846,tcfg=000386c1,p=0,init=231104,cntc=18446744070709377533
+[    9.527143] wheatfox:vtimer:c=3700,v=962154648,l=960927544,d=1227104,tcfg=00000fa1,p=0,init=4000,cntc=18446744070709377533
+ ld (GNU Binutil[    9.538359] wheatfox:vtimer:c=3800,v=963276195,l=962154648,d=1121547,tcfg=000d7719,p=0,init=882456,cntc=18446744070709377533
+[    9.550631] wheatfox:vtimer:c=3900,v=964503448,l=963276195,d=1227253,tcfg=0009ff65,p=0,init=655204,cntc=18446744070709377533
+s) 2.40.50.20230[    9.562022] wheatfox:vtimer:c=4000,v=965642529,l=964503448,d=1139081,tcfg=0007e01d,p=0,init=516124,cntc=18446744070709377533
+[    9.574291] wheatfox:vtimer:c=4100,v=966869417,l=965642529,d=1226888,tcfg=000469d1,p=0,init=289232,cntc=18446744070709377533
+316) #620 SMP PR[    9.585681] wheatfox:vtimer:c=4200,v=968008380,l=966869417,d=1138963,tcfg=00024afd,p=0,init=150268,cntc=18446744070709377533
+EEMPT_DYNAMIC Mo[    9.597955] wheatfox:vtimer:c=4300,v=969235808,l=968008380,d=1227428,tcfg=000e14dd,p=0,init=922844,cntc=18446744070709377533
+[    9.610227] wheatfox:vtimer:c=4400,v=970463015,l=969235808,d=1227207,tcfg=000a9d55,p=0,init=695636,cntc=18446744070709377533
+n Jul  7 19:14:2[    9.621615] wheatfox:vtimer:c=4500,v=971601777,l=970463015,d=1138762,tcfg=00087f4d,p=0,init=556876,cntc=18446744070709377533
+[    9.633887] wheatfox:vtimer:c=4600,v=972828978,l=971601777,d=1227201,tcfg=000507cd,p=0,init=329676,cntc=18446744070709377533
+5 CST 2025
+    9.645275] wheatfox:vtimer:c=4700,v=973967757,l=972828978,d=1138779,tcfg=0002e9b1,p=0,init=190896,cntc=18446744070709377533
+mTIME:            9.657550] wheatfox:vtimer:c=4800,v=975195267,l=973967757,d=1227510,tcfg=000eb335,p=0,init=963380,cntc=18446744070709377533
+[    9.669822] wheatfox:vtimer:c=4900,v=976422530,l=975195267,d=1227263,tcfg=000b3b7d,p=0,init=736124,cntc=18446744070709377533
+0m 1970-01-01 00[    9.681210] wheatfox:vtimer:c=5000,v=977561306,l=976422530,d=1138776,tcfg=00091d61,p=0,init=597344,cntc=18446744070709377533
+[    9.693483] wheatfox:vtimer:c=5100,v=978788641,l=977561306,d=1227335,tcfg=0005a559,p=0,init=370008,cntc=18446744070709377533
+:00:09
+df: /: c[    9.704872] wheatfox:vtimer:c=5200,v=979927479,l=978788641,d=1138838,tcfg=00038705,p=0,init=231172,cntc=18446744070709377533
+[    9.717143] wheatfox:vtimer:c=5300,v=981154651,l=979927479,d=1227172,tcfg=00000fa1,p=0,init=4000,cntc=18446744070709377533
+an't find mount [    9.728358] wheatfox:vtimer:c=5400,v=982276150,l=981154651,d=1121499,tcfg=000d7745,p=0,init=882500,cntc=18446744070709377533
+[    9.740631] wheatfox:vtimer:c=5500,v=983503372,l=982276150,d=1227222,tcfg=0009ffb1,p=0,init=655280,cntc=18446744070709377533
+point
+ROOT[    9.752018] wheatfox:vtimer:c=5600,v=984642119,l=983503372,d=1138747,tcfg=0007e1b1,p=0,init=516528,cntc=18446744070709377533
+[    9.764291] wheatfox:vtimer:c=5700,v=985869401,l=984642119,d=1227282,tcfg=000469e1,p=0,init=289248,cntc=18446744070709377533
+_MOUNT:   Fi[    9.775678] wheatfox:vtimer:c=5800,v=987008139,l=985869401,d=1138738,tcfg=00024bf1,p=0,init=150512,cntc=18446744070709377533
+lesystem (rootfs[    9.787953] wheatfox:vtimer:c=5900,v=988235551,l=987008139,d=1227412,tcfg=000e15d9,p=0,init=923096,cntc=18446744070709377533
+[    9.800226] wheatfox:vtimer:c=6000,v=989462882,l=988235551,d=1227331,tcfg=000a9dd9,p=0,init=695768,cntc=18446744070709377533
+)
+HOSTNAME[    9.811614] wheatfox:vtimer:c=6100,v=990601676,l=989462882,d=1138794,tcfg=00087fb1,p=0,init=556976,cntc=18446744070709377533
+[    9.823885] wheatfox:vtimer:c=6200,v=991828839,l=990601676,d=1227163,tcfg=00050851,p=0,init=329808,cntc=18446744070709377533
+:     dedsec[    9.835279] wheatfox:vtimer:c=6300,v=992968240,l=991828839,d=1139401,tcfg=0002e7c9,p=0,init=190408,cntc=18446744070709377533
+
+root zone[    9.847555] wheatfox:vtimer:c=6400,v=994195761,l=992968240,d=1227521,tcfg=000eb149,p=0,init=962888,cntc=18446744070709377533
+[    9.859827] wheatfox:vtimer:c=6500,v=995422969,l=994195761,d=1227208,tcfg=000b39c5,p=0,init=735684,cntc=18446744070709377533
+ detected, quick[    9.871220] wheatfox:vtimer:c=6600,v=996562312,l=995422969,d=1139343,tcfg=00091975,p=0,init=596340,cntc=18446744070709377533
+[    9.883486] wheatfox:vtimer:c=6700,v=997788927,l=996562312,d=1226615,tcfg=0005a43d,p=0,init=369724,cntc=18446744070709377533
+ guides for boot[    9.894876] wheatfox:vtimer:c=6800,v=998927891,l=997788927,d=1138964,tcfg=00038569,p=0,init=230760,cntc=18446744070709377533
+[    9.907147] wheatfox:vtimer:c=6900,v=1000154975,l=998927891,d=1227084,tcfg=00000e5d,p=0,init=3676,cntc=18446744070709377533
+ing nonroot zone[    9.918450] wheatfox:vtimer:c=7000,v=1001285350,l=1000154975,d=1130375,tcfg=000d5351,p=0,init=873296,cntc=18446744070709377533
+[    9.930893] wheatfox:vtimer:c=7100,v=1002529603,l=1001285350,d=1244253,tcfg=00099939,p=0,init=629048,cntc=18446744070709377533
+s:
+ 1. ./da[    9.942456] wheatfox:vtimer:c=7200,v=1003685895,l=1002529603,d=1156292,tcfg=000736b9,p=0,init=472760,cntc=18446744070709377533
+[    9.954898] wheatfox:vtimer:c=7300,v=1004930119,l=1003685895,d=1244224,tcfg=00037cb5,p=0,init=228532,cntc=18446744070709377533
+emon.sh
+ 2. ./s[    9.966460] wheatfox:vtimer:c=7400,v=1006086254,l=1004930119,d=1156135,tcfg=00011ad1,p=0,init=72400,cntc=18446744070709377533
+tart.sh 1 # boot[    9.978821] wheatfox:vtimer:c=7500,v=1007322420,l=1006086254,d=1236166,tcfg=000cc285,p=0,init=836228,cntc=18446744070709377533
+[    9.991275] wheatfox:vtimer:c=7600,v=1008567810,l=1007322420,d=1245390,tcfg=000903fd,p=0,init=590844,cntc=18446744070709377533
+ linux1, replace[   10.002840] wheatfox:vtimer:c=7700,v=1009724268,l=1008567810,d=1156458,tcfg=0006a0d1,p=0,init=434384,cntc=18446744070709377533
+[   10.015281] wheatfox:vtimer:c=7800,v=1010968388,l=1009724268,d=1244120,tcfg=0002e739,p=0,init=190264,cntc=18446744070709377533
+ 1 with 2 or 3 t[   10.026842] wheatfox:vtimer:c=7900,v=1012124519,l=1010968388,d=1156131,tcfg=00008555,p=0,init=34132,cntc=18446744070709377533
+o boot other zon[   10.039204] wheatfox:vtimer:c=8000,v=1013360725,l=1012124519,d=1236206,tcfg=000c2ce9,p=0,init=797928,cntc=18446744070709377533
+[   10.051648] wheatfox:vtimer:c=8100,v=1014605071,l=1013360725,d=1244346,tcfg=00087271,p=0,init=553584,cntc=18446744070709377533
+es
+ 3. screen /[   10.063210] wheatfox:vtimer:c=8200,v=1015761312,l=1014605071,d=1156241,tcfg=00061021,p=0,init=397344,cntc=18446744070709377533
+[   10.075660] wheatfox:vtimer:c=8300,v=1017006342,l=1015761312,d=1245030,tcfg=000252f5,p=0,init=152308,cntc=18446744070709377533
+dev/pts/0 # open[   10.087224] wheatfox:vtimer:c=8400,v=1018162658,l=1017006342,d=1156316,tcfg=000f3299,p=0,init=995992,cntc=18446744070709377533
+ the console of [   10.099668] wheatfox:vtimer:c=8500,v=1019407082,l=1018162658,d=1244424,tcfg=000b77d5,p=0,init=751572,cntc=18446744070709377533
+[   10.112111] wheatfox:vtimer:c=8600,v=1020651355,l=1019407082,d=1244273,tcfg=0007bda1,p=0,init=507296,cntc=18446744070709377533
+linux1, replace [   10.123672] wheatfox:vtimer:c=8700,v=1021807479,l=1020651355,d=1156124,tcfg=00055bc5,p=0,init=351172,cntc=18446744070709377533
+[   10.136116] wheatfox:vtimer:c=8800,v=1023051856,l=1021807479,d=1244377,tcfg=0001a12d,p=0,init=106796,cntc=18446744070709377533
+0 with 1 or 2 to[   10.147681] wheatfox:vtimer:c=8900,v=1024208382,l=1023051856,d=1156526,tcfg=000e7ffd,p=0,init=950268,cntc=18446744070709377533
+[   10.160121] wheatfox:vtimer:c=9000,v=1025452361,l=1024208382,d=1243979,tcfg=000ac6f1,p=0,init=706288,cntc=18446744070709377533
+ open other cons[   10.171682] wheatfox:vtimer:c=9100,v=1026608536,l=1025452361,d=1156175,tcfg=000864dd,p=0,init=550108,cntc=18446744070709377533
+[   10.184124] wheatfox:vtimer:c=9200,v=1027852733,l=1026608536,d=1244197,tcfg=0004ab01,p=0,init=305920,cntc=18446744070709377533
+oles
+[   10.195687] wheatfox:vtimer:c=9300,v=1029009000,l=1027852733,d=1156267,tcfg=00024895,p=0,init=149652,cntc=18446744070709377533
+[   10.207267] wheatfox:vtimer:c=9400,v=1030166979,l=1029009000,d=1157979,tcfg=000f21b9,p=0,init=991672,cntc=18446744070709377533
+[   10.218871] wheatfox:vtimer:c=9500,v=1031327367,l=1030166979,d=1160388,tcfg=000caf35,p=0,init=831284,cntc=18446744070709377533
+[root@dedsec /]#[   10.230435] wheatfox:vtimer:c=9600,v=1032483766,l=1031327367,d=1156399,tcfg=000a4c45,p=0,init=674884,cntc=18446744070709377533
+[   10.242877] wheatfox:vtimer:c=9700,v=1033728020,l=1032483766,d=1244254,tcfg=00069229,p=0,init=430632,cntc=18446744070709377533
+ [   10.254436] wheatfox:vtimer:c=9800,v=1034883927,l=1033728020,d=1155907,tcfg=00043121,p=0,init=274720,cntc=18446744070709377533
+[   10.265995] wheatfox:vtimer:c=9900,v=1036039800,l=1034883927,d=1155873,tcfg=0001d049,p=0,init=118856,cntc=18446744070709377533
+[   10.277552] wheatfox:vtimer:c=10000,v=1037195471,l=1036039800,d=1155671,tcfg=000eb26d,p=0,init=963180,cntc=18446744070709377533
+[   10.289196] wheatfox:vtimer:c=10100,v=1038359904,l=1037195471,d=1164433,tcfg=000c3019,p=0,init=798744,cntc=18446744070709377533
+[   10.300840] wheatfox:vtimer:c=10200,v=1039524329,l=1038359904,d=1164425,tcfg=0009add1,p=0,init=634320,cntc=18446744070709377533
+[   10.312484] wheatfox:vtimer:c=10300,v=1040688734,l=1039524329,d=1164405,tcfg=00072b9d,p=0,init=469916,cntc=18446744070709377533
+[   10.324129] wheatfox:vtimer:c=10400,v=1041853228,l=1040688734,d=1164494,tcfg=0004a90d,p=0,init=305420,cntc=18446744070709377533
+[   10.335772] wheatfox:vtimer:c=10500,v=1043017540,l=1041853228,d=1164312,tcfg=00022735,p=0,init=141108,cntc=18446744070709377533
+[   10.347417] wheatfox:vtimer:c=10600,v=1044181978,l=1043017540,d=1164438,tcfg=000ee71d,p=0,init=976668,cntc=18446744070709377533
+[   10.359060] wheatfox:vtimer:c=10700,v=1045346335,l=1044181978,d=1164357,tcfg=000c6521,p=0,init=812320,cntc=18446744070709377533
+[   10.370705] wheatfox:vtimer:c=10800,v=1046510792,l=1045346335,d=1164457,tcfg=0009e2b9,p=0,init=647864,cntc=18446744070709377533
+[   10.382352] wheatfox:vtimer:c=10900,v=1047675486,l=1046510792,d=1164694,tcfg=00075f5d,p=0,init=483164,cntc=18446744070709377533
+[   10.394006] wheatfox:vtimer:c=11000,v=1048840888,l=1047675486,d=1165402,tcfg=0004d941,p=0,init=317760,cntc=18446744070709377533
+[   10.405650] wheatfox:vtimer:c=11100,v=1050005285,l=1048840888,d=1164397,tcfg=00025715,p=0,init=153364,cntc=18446744070709377533
+[   10.417296] wheatfox:vtimer:c=11200,v=1051169939,l=1050005285,d=1164654,tcfg=000f1629,p=0,init=988712,cntc=18446744070709377533
+[   10.428944] wheatfox:vtimer:c=11300,v=1052334679,l=1051169939,d=1164740,tcfg=000c92a5,p=0,init=823972,cntc=18446744070709377533
+[   10.440588] wheatfox:vtimer:c=11400,v=1053499129,l=1052334679,d=1164450,tcfg=000a1049,p=0,init=659528,cntc=18446744070709377533
+[   10.452233] wheatfox:vtimer:c=11500,v=1054663631,l=1053499129,d=1164502,tcfg=00078da9,p=0,init=495016,cntc=18446744070709377533
+[   10.463878] wheatfox:vtimer:c=11600,v=1055828135,l=1054663631,d=1164504,tcfg=00050b11,p=0,init=330512,cntc=18446744070709377533
+[   10.475523] wheatfox:vtimer:c=11700,v=1056992585,l=1055828135,d=1164450,tcfg=000288b5,p=0,init=166068,cntc=18446744070709377533
+[   10.487167] wheatfox:vtimer:c=11800,v=1058157008,l=1056992585,d=1164423,tcfg=0000066d,p=0,init=1644,cntc=18446744070709377533
+[   10.498638] wheatfox:vtimer:c=11900,v=1059304136,l=1058157008,d=1147128,tcfg=000d09f5,p=0,init=854516,cntc=18446744070709377533
+[   10.510283] wheatfox:vtimer:c=12000,v=1060468555,l=1059304136,d=1164419,tcfg=000a87b1,p=0,init=690096,cntc=18446744070709377533
+[   10.521929] wheatfox:vtimer:c=12100,v=1061633150,l=1060468555,d=1164595,tcfg=000804bd,p=0,init=525500,cntc=18446744070709377533
+[   10.533572] wheatfox:vtimer:c=12200,v=1062797527,l=1061633150,d=1164377,tcfg=000582a1,p=0,init=361120,cntc=18446744070709377533
+[   10.545217] wheatfox:vtimer:c=12300,v=1063961974,l=1062797527,d=1164447,tcfg=00030049,p=0,init=196680,cntc=18446744070709377533
+[   10.556860] wheatfox:vtimer:c=12400,v=1065126338,l=1063961974,d=1164364,tcfg=00007e3d,p=0,init=32316,cntc=18446744070709377533
+[   10.568418] wheatfox:vtimer:c=12500,v=1066282071,l=1065126338,d=1155733,tcfg=000d6025,p=0,init=876580,cntc=18446744070709377533
+[   10.580061] wheatfox:vtimer:c=12600,v=1067446395,l=1066282071,d=1164324,tcfg=000ade41,p=0,init=712256,cntc=18446744070709377533
+[   10.591706] wheatfox:vtimer:c=12700,v=1068610854,l=1067446395,d=1164459,tcfg=00085bd9,p=0,init=547800,cntc=18446744070709377533
+[   10.603350] wheatfox:vtimer:c=12800,v=1069775253,l=1068610854,d=1164399,tcfg=0005d9a5,p=0,init=383396,cntc=18446744070709377533

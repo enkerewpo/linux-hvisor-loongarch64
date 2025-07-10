@@ -229,7 +229,7 @@
 			status = "disabled";
 		};
 		
-		uart1_yy: serial@10080000 {
+		uart1: serial@10080000 {
 			// a board special uart for yy motherboard
 			compatible = "ns16550a";
 			reg = <0x0 0x10080000 0x0 0x100>;

@@ -1,0 +1,371 @@
+INFO  0] (hvisor::arch::loongarch64::trap:1378) csrxchg emulation for CSR 0x80
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x0
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x2
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x1
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x2
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x6
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x93
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x10
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x11
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x12
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x13
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x14
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x1
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x1
+[    0.000000] Linux version 6.11.6 (wheatfox@dedsec-amd0) (loongarch64-unknown-linux-gnu-gcc (GCC) 13.0.1 20230316 (experimental), GNU ld (GNU Binutils) 2.40.50.20230316) #633 SMP PREEMPT_DYNAMIC Tue Jul  8 08:18:53 CST 2025
+[    0.000000] 64-bit Loongson Processor probed (LA664 Core)
+[    0.000000] CPU0 revision is: 0014d000 (Loongson-64bit)
+[    0.000000] FPU0 revision is: 00000000
+[    0.000000] ACPI: Early table checksum verification disabled
+[    0.000000] earlycon: ns16550a0 at MMIO 0x000000001fe001e0 (options '115200n8')
+[    0.000000] printk: legacy bootconsole [ns16550a0] enabled
+[    0.000000] OF: reserved mem: 0x00000000a0000000..0x00000000bfffffff (524288 KiB) nomap non-reusable nonroot2
+[    0.000000] OF: reserved mem: 0x00000000c0000000..0x00000000dfffffff (524288 KiB) nomap non-reusable nonroot1
+[    0.000000] OF: reserved mem: 0x0000000100000000..0x000000011fffffff (524288 KiB) nomap non-reusable nonroot3
+[    0.000000] OF: reserved mem: 0x0000000140000000..0x00000001407fffff (8192 KiB) nomap non-reusable shmem@0
+[    0.000000] Faking a node at [mem 0x0000000000200000-0x000000016fffffff]
+[    0.000000] Node0's addrspace_offset is 0x0
+[    0.000000] Node0: start_pfn=0x200, end_pfn=0x170000
+[    0.000000] DMI not present or invalid.
+[    0.000000] The BIOS Version: (null)
+[    0.000000] software IO TLB: area num 1.
+[    0.000000] software IO TLB: mapped [mem 0x0000000005840000-0x0000000009840000] (64MB)
+[    0.000000] Detected 1 available CPU(s)
+[    0.000000] SMP: Allowing 1 CPUs, 0 hotplug CPUs
+[    0.000000] Zone ranges:
+[    0.000000]   DMA32    [mem 0x0000000000200000-0x00000000ffffffff]
+[    0.000000]   Normal   [mem 0x0000000100000000-0x000000016fffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000200000-0x000000000effffff]
+[    0.000000]   node   0: [mem 0x0000000090000000-0x000000009fffffff]
+[    0.000000]   node   0: [mem 0x00000000a0000000-0x00000000dfffffff]
+[    0.000000]   node   0: [mem 0x00000000e0000000-0x00000000ffffffff]
+[    0.000000]   node   0: [mem 0x0000000100000000-0x000000011fffffff]
+[    0.000000]   node   0: [mem 0x0000000140000000-0x00000001407fffff]
+[    0.000000]   node   0: [mem 0x0000000160000000-0x000000016fffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000200000-0x000000016fffffff]
+[    0.000000] On node 0, zone DMA32: 512 pages in unavailable ranges
+[    0.000000] On node 0, zone DMA32: 135168 pages in unavailable ranges
+[    0.000000] On node 0, zone Normal: 129024 pages in unavailable ranges
+[    0.000000] On node 0, zone Normal: 65536 pages in unavailable ranges
+[    0.000000] percpu: Embedded 18 pages/cpu s34328 r8192 d31208 u2097152
+[    0.000000] Kernel command line: earlycon console=ttyS0,115200n8 root=/dev/nvme0n1p4 rootwait rw 
+[    0.000000] Dentry cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    0.000000] Fallback order for Node 0: 0 
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 718336
+[    0.000000] Policy zone: Normal
+[    0.000000] mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Dynamic Preempt: full
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu: 	RCU event tracing is enabled.
+[    0.000000] rcu: 	RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=1.
+[    0.000000] 	Trampoline variant of Tasks RCU enabled.
+[    0.000000] 	Tracing variant of Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.000000] RCU Tasks: Setting shift to 0 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=1.
+[    0.000000] RCU Tasks Trace: Setting shift to 0 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=1.
+[    0.000000] NR_IRQS: 576, nr_irqs: 576, preallocated irqs: 16
+[    0.000000] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.000000] wheatfox: timekeeping_init, wall_time is 0.000000000, boot_offset is 0.000000000
+[    0.000000] wheatfox: timekeeping_init, wall_to_mono is 0.000000000
+[    0.000000] wheatfox: tk_setup_internals, clock is jiffies
+[    0.000000] wheatfox: tk_setup_internals, tk->tkr_mono.cycle_last is 4294937296
+[    0.000000] wheatfox: tk_setup_internals, tk->tkr_raw.cycle_last is 4294937296
+[    0.000000] wheatfox: tk_setup_internals, tk->xtime_interval is 2560000000
+[    0.000000] wheatfox: tk_setup_internals, tk->xtime_remainder is 0
+[    0.000000] wheatfox: tk_setup_internals, tk->raw_interval is 2560000000
+[    0.000000] wheatfox: tk_setup_internals, tk->tkr_mono.shift is 8
+[    0.000000] wheatfox: tk_setup_internals, tk->tkr_raw.shift is 8
+[    0.000000] wheatfox: tk_setup_internals, tk->ntp_tick is 42949672960000000
+[    0.000000] wheatfox: tk_setup_internals, tk->tkr_mono.mult is 2560000000
+[    0.000000] wheatfox: tk_setup_internals, tk->tkr_raw.mult is 2560000000
+[    0.000000] wheatfox: tk_setup_internals finished
+[    0.000000] wheatfox: timekeeping_init finished
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x2
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x4
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x5
+[    0.000000] wheatfox: time_init, const_clock_freq is 100000000
+[    0.000000] wheatfox: time_init, init_offset is -3005838550
+[    0.000000] wheatfox: time_init, calling constant_clockevent_init
+[    0.000000] wheatfox: constant_clockevent_init, timer irq for cpu 0 is 18
+[    0.000000] wheatfox: constant_set_state_periodic, period is 1000000, const_clock_freq is 100000000, HZ is 100
+[    0.000000] wheatfox: constant_clockevent_init, const_clock_freq is 100000000, min_delta is 1536, max_delta is 281474976710655
+[    0.000000] wheatfox: constant_clockevent_init, calling request_irq for cpu 0, irq is 18
+[    0.000000] wheatfox: get_loops_per_jiffy, const_clock_freq is 100000000, lpj is 1000000
+[    0.000000] wheatfox: constant_clockevent_init, lpj_fine is 1000000
+[    0.000000] Constant clock event device register
+[    0.000000] wheatfox: time_init, calling constant_clocksource_init
+[    0.000000] wheatfox: constant_clocksource_init, freq is 100000000
+[    0.000000] clocksource: Constant: mask: 0xffffffffffffffff max_cycles: 0x171024e7e0, max_idle_ns: 440795205315 ns
+[    0.000000] wheatfox: constant_clocksource_init, res is 0
+[    0.000000] sched_clock: 64 bits at 100MHz, resolution 10ns, wraps every 4398046511100ns
+[    0.008039] Constant clock source device register
+[    0.012707] wheatfox: time_init, calling pv_time_init
+[    0.017720] wheatfox: time_init, done
+[INFO  0] (hvisor::arch::loongarch64::trap:1366) csrrd emulation for CSR 0x380
+[INFO  0] (hvisor::arch::loongarch64::trap:1366) csrrd emulation for CSR 0x300
+[    0.021615] Console: colour dummy device 80x25
+[    0.026159] Calibrating delay loop (skipped), value calculated using timer frequency.. 
+[    0.026162] wheatfox: calibrate_delay, lpj of this cpu (0) is 1000000, set to cpu_loops_per_jiffy
+[    0.034120] wheatfox: HZ is 100 
+[    0.046136] 200.00 BogoMIPS (lpj=1000000)
+[    0.050117] pid_max: default: 32768 minimum: 301
+[    0.054718] LSM: initializing lsm=capability,yama
+[    0.059391] Yama: becoming mindful.
+[    0.062887] Mount-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[    0.070237] Mountpoint-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[    0.078286] ACPI PPTT: No PPTT table found, CPU and cache topology may be inaccurate
+[    0.085988] Invalid BIOS PPTT
+[    0.089279] rcu: Hierarchical SRCU implementation.
+[    0.094034] rcu: 	Max phase no-delay instances is 1000.
+[    0.099324] smp: Bringing up secondary CPUs ...
+[    0.103824] smp: Brought up 1 node, 1 CPU
+[    0.107835] Memory: 1067508K/2873344K available (11776K kernel code, 4086K rwdata, 3428K rodata, 68096K init, 786K bss, 1804464K reserved, 0K cma-reserved)
+[    0.121871] devtmpfs: initialized
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x6
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x200
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x201
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x202
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x203
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x204
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x205
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x206
+[INFO  0] (hvisor::arch::loongarch64::trap:1372) csrwr emulation for CSR 0x207
+[    0.125666] Performance counters: loongarch/loongson64 PMU enabled, 4 64-bit counters available to each CPU.
+[    0.136473] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.146241] futex hash table entries: 256 (order: 2, 16384 bytes, linear)
+[    0.153173] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[INFO  0] (hvisor::arch::loongarch64::trap:1366) csrrd emulation for CSR 0x380
+[INFO  0] (hvisor::arch::loongarch64::trap:1366) csrrd emulation for CSR 0x300
+[    0.159298] thermal_sys: Registered thermal governor 'step_wise'
+[    0.159521] hw-breakpoint: Found 0 breakpoint and 0 watchpoint registers.
+[    0.172795] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.179541] HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+[    0.186165] ACPI: Interpreter disabled.
+[    0.189985] iommu: Default domain type: Translated
+[    0.194739] iommu: DMA domain TLB invalidation policy: strict mode
+[    0.200954] SCSI subsystem initialized
+[    0.204739] pps_core: LinuxPPS API ver. 1 registered
+[    0.209669] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.218999] vgaarb: loaded
+[    0.221708] wheatfox: tk_setup_internals, clock is Constant
+[    0.227240] wheatfox: tk_setup_internals, tk->tkr_mono.cycle_last is 32164218
+[    0.234327] wheatfox: tk_setup_internals, tk->tkr_raw.cycle_last is 32164218
+[    0.241328] wheatfox: tk_setup_internals, tk->xtime_interval is 167772160000000
+[    0.248588] wheatfox: tk_setup_internals, tk->xtime_remainder is 0
+[    0.254724] wheatfox: tk_setup_internals, tk->raw_interval is 167772160000000
+[    0.261811] wheatfox: tk_setup_internals, tk->tkr_mono.shift is 24
+[    0.267948] wheatfox: tk_setup_internals, tk->tkr_raw.shift is 24
+[    0.273997] wheatfox: tk_setup_internals, tk->ntp_tick is 42949672960000000
+[    0.280911] wheatfox: tk_setup_internals, tk->tkr_mono.mult is 167772160
+[    0.287566] wheatfox: tk_setup_internals, tk->tkr_raw.mult is 167772160
+[    0.294134] wheatfox: tk_setup_internals finished
+[    0.298806] clocksource: Switched to clocksource Constant
+[    0.304221] VFS: Disk quotas dquot_6.6.0
+[    0.308121] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.314986] pnp: PnP ACPI: disabled
+[    0.320237] NET: Registered PF_INET protocol family
+[    0.325132] IP idents hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    0.332968] tcp_listen_portaddr_hash hash table entries: 1024 (order: 2, 16384 bytes, linear)
+[    0.341475] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.349172] TCP established hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    0.357068] TCP bind hash table entries: 16384 (order: 7, 524288 bytes, linear)
+[    0.364393] TCP: Hash tables configured (established 16384 bind 16384)
+[    0.370902] UDP hash table entries: 1024 (order: 3, 32768 bytes, linear)
+[    0.377566] UDP-Lite hash table entries: 1024 (order: 3, 32768 bytes, linear)
+[    0.384683] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.390313] NET: Registered PF_XDP protocol family
+[    0.395070] PCI: CLS 0 bytes, default 64
+[    0.407423] Initialise system trusted keyrings
+[    0.411870] workingset: timestamp_bits=40 max_order=19 bucket_order=0
+[    0.427284] zbud: loaded
+[    0.429903] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.447322] SGI XFS with ACLs, security attributes, quota, no debug enabled
+[    0.454379] Key type asymmetric registered
+[    0.467254] Asymmetric key parser 'x509' registered
+[    1.027242] wheatfox:vtimer:c=100,v=112164297,l=0,d=112164297,tcfg=000f40a1,p=0,init=999584,cntc=-3005838550
+[    1.367032] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 250)
+[    1.374478] io scheduler mq-deadline registered
+[    1.379013] io scheduler kyber registered
+[    1.383005] io scheduler bfq registered
+[    1.388624] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    1.396189] Serial: 8250/16550 driver, 16 ports, IRQ sharing enabled
+[    1.403532] printk: legacy console [ttyS0] disabled
+[    1.408466] 1fe001e0.serial: ttyS0 at MMIO 0x1fe001e0 (irq = 19, base_baud = 6250000) is a 16550A
+[    1.417319] printk: legacy console [ttyS0] enabled
+[    1.417319] printk: legacy console [ttyS0] enabled
+[    1.426829] printk: legacy bootconsole [ns16550a0] disabled
+[    1.426829] printk: legacy bootconsole [ns16550a0] disabled
+[    1.443259] wheatfox:vtimer:c=200,v=153766121,l=112164297,d=41601824,tcfg=000613d5,p=0,init=398292,cntc=-3005838550
+[    1.453851] wheatfox:vtimer:c=300,v=154825273,l=153766121,d=1059152,tcfg=00052cc9,p=0,init=339144,cntc=-3005838550
+[    1.466148] brd: module loaded
+[    1.470889] loop: module loaded
+[    1.474110] megaraid cmm: 2.20.2.7 (Release Date: Sun Jul 16 00:01:03 EST 2006)
+[    1.481408] megaraid: 2.20.5.1 (Release Date: Thu Nov 16 15:32:35 EST 2006)
+[    1.488338] megasas: 07.727.03.00-rc1
+[    1.491988] mpt3sas version 48.100.00.00 loaded
+[    1.496754] igb: Intel(R) Gigabit Ethernet Network Driver
+[    1.502120] igb: Copyright (c) 2007-2014 Intel Corporation.
+[    1.507699] i2c_dev: i2c /dev entries driver
+[    1.512031] device-mapper: ioctl: 4.48.0-ioctl (2023-03-01) initialised: dm-devel@lists.linux.dev
+[    1.520877] hid: raw HID events driver (C) Jiri Kosina
+[    1.526073] NET: Registered PF_INET6 protocol family
+[    1.531228] Segment Routing with IPv6
+[    1.534873] In-situ OAM (IOAM) with IPv6
+[    1.538792] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    1.547318] Loading compiled-in X.509 certificates
+[    1.554377] Demotion targets for Node 0: null
+[    1.760559] OF: fdt: not creating '/sys/firmware/fdt': CRC check failed
+[    1.767144] clk: Disabling unused clocks
+[    1.781077] Freeing unused kernel image (initmem) memory: 68096K
+[    1.787053] This architecture does not have kernel memory protection.
+[    1.793491] Run /init as init process
+[    2.447241] wheatfox:vtimer:c=400,v=254164241,l=154825273,d=99338968,tcfg=000f41d9,p=0,init=999896,cntc=-3005838550
+[    3.457240] wheatfox:vtimer:c=500,v=355164234,l=254164241,d=100999993,tcfg=000f41d1,p=0,init=999888,cntc=-3005838550
+[    4.467240] wheatfox:vtimer:c=600,v=456164235,l=355164234,d=101000001,tcfg=000f41d1,p=0,init=999888,cntc=-3005838550
+[    5.477240] wheatfox:vtimer:c=700,v=557164240,l=456164235,d=101000005,tcfg=000f41d9,p=0,init=999896,cntc=-3005838550
+[    6.487240] wheatfox:vtimer:c=800,v=658164236,l=557164240,d=100999996,tcfg=000f41d1,p=0,init=999888,cntc=-3005838550
+[    7.497240] wheatfox:vtimer:c=900,v=759164238,l=658164236,d=101000002,tcfg=000f41d1,p=0,init=999888,cntc=-3005838550
+[    8.507240] wheatfox:vtimer:c=1000,v=860164240,l=759164238,d=101000002,tcfg=000f41d9,p=0,init=999896,cntc=-3005838550
+[    9.517240] wheatfox:vtimer:c=1100,v=961164231,l=860164240,d=100999991,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   10.527240] wheatfox:vtimer:c=1200,v=1062164231,l=961164231,d=101000000,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   11.537240] wheatfox:vtimer:c=1300,v=1163164232,l=1062164231,d=101000001,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   12.547240] wheatfox:vtimer:c=1400,v=1264164231,l=1163164232,d=100999999,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   13.557240] wheatfox:vtimer:c=1500,v=1365164231,l=1264164231,d=101000000,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   14.567240] wheatfox:vtimer:c=1600,v=1466164233,l=1365164231,d=101000002,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   15.577240] wheatfox:vtimer:c=1700,v=1567164230,l=1466164233,d=100999997,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   16.587240] wheatfox:vtimer:c=1800,v=1668164235,l=1567164230,d=101000005,tcfg=000f41d1,p=0,init=999888,cntc=-3005838550
+[   17.597240] wheatfox:vtimer:c=1900,v=1769164239,l=1668164235,d=101000004,tcfg=000f41d9,p=0,init=999896,cntc=-3005838550
+[   18.607240] wheatfox:vtimer:c=2000,v=1870164233,l=1769164239,d=100999994,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   19.617240] wheatfox:vtimer:c=2100,v=1971164238,l=1870164233,d=101000005,tcfg=000f41d9,p=0,init=999896,cntc=-3005838550
+[   20.627240] wheatfox:vtimer:c=2200,v=2072164237,l=1971164238,d=100999999,tcfg=000f41d9,p=0,init=999896,cntc=-3005838550
+[   21.637240] wheatfox:vtimer:c=2300,v=2173164233,l=2072164237,d=100999996,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   22.647240] wheatfox:vtimer:c=2400,v=2274164231,l=2173164233,d=100999998,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   22.807241] rcu: INFO: rcu_preempt self-detected stall on CPU
+[   22.812949] rcu: 	0-...!: (2079 ticks this GP) idle=0a14/1/0x4000000000000000 softirq=439/439 fqs=0
+[   22.821941] rcu: 	(t=2100 jiffies g=-1019 q=678 ncpus=1)
+[   22.827215] rcu: rcu_preempt kthread timer wakeup didn't happen for 2099 jiffies! g-1019 f0x0 RCU_GP_WAIT_FQS(5) ->state=0x402
+[   22.838538] rcu: 	Possible timer handling issue on cpu=0 timer-softirq=57
+[   22.845281] rcu: rcu_preempt kthread starved for 2100 jiffies! g-1019 f0x0 RCU_GP_WAIT_FQS(5) ->state=0x402 ->cpu=0
+[   22.855653] rcu: 	Unless rcu_preempt kthread gets sufficient CPU time, OOM is now expected behavior.
+[   22.864728] rcu: RCU grace-period kthread stack dump:
+[   22.869742] task:rcu_preempt     state:I stack:0     pid:16    tgid:16    ppid:2      flags:0x00000800
+[   22.878994] Stack : 0000000000000000 0000000000000000 90000001600a17a8 9000000000d90800
+[   22.886951]         90000000050111c0 0000000000000000 90000001600a10c0 9000000009a071c0
+[   22.894909]         0000000000000000 90000000002ce9b8 0000000000000001 90000000056b1198
+[   22.902865]         9000000005397000 0000000000000000 9000000005021b00 0000000000000000
+[   22.910821]         0000000000000002 2d5a5e88a010acf6 00000000000000b4 90000000056b1000
+[   22.918777]         90000000054841a8 0000000000000001 90000000056b1198 90000001600c3d80
+[   22.926733]         9000000005389000 90000001600c3d08 9000000005397000 90000001600a10c0
+[   22.934690]         0000000000000001 9000000000d90800 00000000ffff8b87 9000000000d96430
+[   22.942647]         9000000005389000 0000000000000000 9000000009a00da8 00000000ffff8b87
+[   22.950603]         90000000002cec9c 0000000002000000 90000001600a10c0 2d5a5e88a010acf6
+[   22.958559]         ...
+[   22.960982] Call Trace:
+[   22.960983] [<9000000000d8ff64>] __schedule+0x844/0x10b0
+[   22.968687] [<9000000000d90800>] schedule+0x30/0x12c
+[   22.973616] [<9000000000d96430>] schedule_timeout+0x90/0x10c
+[   22.979238] [<90000000002b9ca4>] rcu_gp_fqs_loop+0x3a4/0x514
+[   22.984863] [<90000000002bc558>] rcu_gp_kthread+0x154/0x180
+[   22.990398] [<9000000000264984>] kthread+0x124/0x130
+[   22.995329] [<9000000000221208>] ret_from_kernel_thread+0xc/0xa4
+[   23.001297] 
+[   23.002772] CPU: 0 UID: 0 PID: 9 Comm: kworker/0:1 Not tainted 6.11.6 #633
+[   23.009603] Workqueue: pm pm_runtime_work
+[   23.013585] pc 9000000000243cac ra 9000000000d89984 tp 9000000160090000 sp 900000016001bf50
+[   23.021883] a0 0000000000000000 a1 0000000000000000 a2 8200000000d979f8 a3 000000000000019c
+[   23.030182] a4 04924b647ff15781 a5 0000000000000000 a6 90000000056a6138 a7 0000000000000000
+[   23.038481] t0 00000000000000b0 t1 0000000000000004 t2 90000001600990c0 t3 900000000501048c
+[   23.046779] t4 00000000ffff8b88 t5 9000000009a05698 t6 0000000000000002 t7 0000000000000008
+[   23.055077] t8 000000000000b67e u0 90000000057b0078 s9 900000000b833400 s0 9000000160093b10
+[   23.063376] s1 9000000005387080 s2 0000000000000000 s3 900000000500a4d8 s4 0000000000000000
+[   23.071674] s5 90000000056aa7c8 s6 9000000005010000 s7 900000000029293c s8 0000000000000200
+[   23.079972]    ra: 9000000000d89984 do_vint+0x80/0xb4
+[   23.084990]   ERA: 9000000000243cac handle_softirqs+0xb0/0x28c
+[   23.090784]  CRMD: 000000b0 (PLV0 -IE -DA +PG DACF=CC DACM=CC -WE)
+[   23.096930]  PRMD: 00000004 (PPLV0 +PIE -PWE)
+[   23.101256]  EUEN: 00000000 (-FPE -SXE -ASXE -BTE)
+[   23.106017]  ECFG: 00071c1d (LIE=0,2-4,10-12 VS=7)
+[   23.110775] ESTAT: 00000808 [INT] (IS=3,11 ECode=0 EsubCode=0)
+[INFO  0] (hvisor::arch::loongarch64::trap:1329) cpucfg emulation, target cpucfg index is 0x0
+[   23.116658]  PRID: 0014d000 (Loongson-64bit, Loongson3)
+[   23.122011] CPU: 0 UID: 0 PID: 9 Comm: kworker/0:1 Not tainted 6.11.6 #633
+[   23.128841] Workqueue: pm pm_runtime_work
+[   23.132820] Stack : 900000016000a9c0 0000000000000000 900000000022337c 9000000160090000
+[   23.140777]         900000016001b830 900000016001b838 0000000000000000 900000016001b978
+[   23.148734]         900000016001b970 900000016001b970 900000016001b6f0 0000000000000001
+[   23.156690]         0000000000000001 900000016001b838 2d5a5e88a010acf6 90000001600a4300
+[   23.164647]         0000000000000001 0000000000000000 0000000000000111 00000000000004b0
+[   23.172603]         0000000000000000 000000000001f749 00000000049f6000 900000000539d000
+[   23.180560]         0000000000000000 0000000000000000 900000000526c548 9000000005397000
+[   23.188517]         0000000000000000 900000000539d0e8 900000000539d000 00000000000000b0
+[   23.196473]         9000000005011f40 0000000000000000 9000000000223394 0000555569efede8
+[   23.204429]         00000000000000b0 0000000000000004 0000000000000000 0000000000071c1d
+[   23.212385]         ...
+[   23.214808] Call Trace:
+[   23.214809] [<9000000000223394>] show_stack+0x5c/0x180
+[   23.222332] [<9000000000d89610>] dump_stack_lvl+0x70/0xa0
+[   23.227695] [<9000000000d785b4>] rcu_dump_cpu_stacks+0xf8/0x150
+[   23.233578] [<90000000002c0454>] rcu_sched_clock_irq+0x91c/0xe28
+[   23.239545] [<90000000002cfbb0>] update_process_times+0x60/0xb0
+[   23.245425] [<90000000002df2a4>] tick_nohz_handler+0x84/0xfc
+[   23.251048] [<90000000002d085c>] __hrtimer_run_queues+0x154/0x228
+[   23.257101] [<90000000002d1170>] hrtimer_interrupt+0x108/0x298
+[   23.262895] [<9000000000225fb0>] constant_timer_interrupt+0x80/0xe0
+[   23.269121] [<90000000002a3168>] __handle_irq_event_percpu+0x5c/0x168
+[   23.275520] [<90000000002a328c>] handle_irq_event_percpu+0x18/0x6c
+[   23.281659] [<90000000002a918c>] handle_percpu_irq+0x54/0x88
+[   23.287281] [<90000000002a248c>] generic_handle_domain_irq+0x28/0x40
+[   23.293593] [<900000000084076c>] handle_cpu_irq+0x70/0xa8
+[   23.298956] [<9000000000d898ec>] handle_loongarch_irq+0x30/0x48
+[   23.304837] [<9000000000d899b4>] do_vint+0xb0/0xb4
+[   23.309598] [<9000000000d979f8>] _raw_spin_unlock_irqrestore+0x10/0x38
+[   23.316084] 
+[   24.157240] wheatfox:vtimer:c=2500,v=2425164233,l=2274164231,d=151000002,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   25.167240] wheatfox:vtimer:c=2600,v=2526164240,l=2425164233,d=101000007,tcfg=000f41d9,p=0,init=999896,cntc=-3005838550
+[   26.177240] wheatfox:vtimer:c=2700,v=2627164232,l=2526164240,d=100999992,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   27.187240] wheatfox:vtimer:c=2800,v=2728164228,l=2627164232,d=100999996,tcfg=000f41cd,p=0,init=999884,cntc=-3005838550
+[   28.197240] wheatfox:vtimer:c=2900,v=2829164231,l=2728164228,d=101000003,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   29.207240] wheatfox:vtimer:c=3000,v=2930164240,l=2829164231,d=101000009,tcfg=000f41d9,p=0,init=999896,cntc=-3005838550
+[   30.217240] wheatfox:vtimer:c=3100,v=3031164235,l=2930164240,d=100999995,tcfg=000f41d1,p=0,init=999888,cntc=-3005838550
+[   31.227240] wheatfox:vtimer:c=3200,v=3132164234,l=3031164235,d=100999999,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   32.237240] wheatfox:vtimer:c=3300,v=3233164238,l=3132164234,d=101000004,tcfg=000f41d9,p=0,init=999896,cntc=-3005838550
+[   33.247240] wheatfox:vtimer:c=3400,v=3334164240,l=3233164238,d=101000002,tcfg=000f41d9,p=0,init=999896,cntc=-3005838550
+[   34.257240] wheatfox:vtimer:c=3500,v=3435164238,l=3334164240,d=100999998,tcfg=000f41d9,p=0,init=999896,cntc=-3005838550
+[   35.267240] wheatfox:vtimer:c=3600,v=3536164231,l=3435164238,d=100999993,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   36.277240] wheatfox:vtimer:c=3700,v=3637164237,l=3536164231,d=101000006,tcfg=000f41d9,p=0,init=999896,cntc=-3005838550
+[   37.287240] wheatfox:vtimer:c=3800,v=3738164232,l=3637164237,d=100999995,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   38.297240] wheatfox:vtimer:c=3900,v=3839164239,l=3738164232,d=101000007,tcfg=000f41d9,p=0,init=999896,cntc=-3005838550
+[   39.307240] wheatfox:vtimer:c=4000,v=3940164228,l=3839164239,d=100999989,tcfg=000f41cd,p=0,init=999884,cntc=-3005838550
+[   40.317240] wheatfox:vtimer:c=4100,v=4041164236,l=3940164228,d=101000008,tcfg=000f41d1,p=0,init=999888,cntc=-3005838550
+[   41.327240] wheatfox:vtimer:c=4200,v=4142164232,l=4041164236,d=100999996,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   42.337240] wheatfox:vtimer:c=4300,v=4243164239,l=4142164232,d=101000007,tcfg=000f41d9,p=0,init=999896,cntc=-3005838550
+[   43.347240] wheatfox:vtimer:c=4400,v=4344164237,l=4243164239,d=100999998,tcfg=000f41d1,p=0,init=999888,cntc=-3005838550
+[   44.357240] wheatfox:vtimer:c=4500,v=4445164237,l=4344164237,d=101000000,tcfg=000f41d9,p=0,init=999896,cntc=-3005838550
+[   45.367240] wheatfox:vtimer:c=4600,v=4546164231,l=4445164237,d=100999994,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   46.377240] wheatfox:vtimer:c=4700,v=4647164232,l=4546164231,d=101000001,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   47.387240] wheatfox:vtimer:c=4800,v=4748164238,l=4647164232,d=101000006,tcfg=000f41d9,p=0,init=999896,cntc=-3005838550
+[   48.397240] wheatfox:vtimer:c=4900,v=4849164233,l=4748164238,d=100999995,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   49.407240] wheatfox:vtimer:c=5000,v=4950164237,l=4849164233,d=101000004,tcfg=000f41d1,p=0,init=999888,cntc=-3005838550
+[   50.417240] wheatfox:vtimer:c=5100,v=5051164238,l=4950164237,d=101000001,tcfg=000f41d1,p=0,init=999888,cntc=-3005838550
+[   51.427240] wheatfox:vtimer:c=5200,v=5152164233,l=5051164238,d=100999995,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   52.437240] wheatfox:vtimer:c=5300,v=5253164233,l=5152164233,d=101000000,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   53.447240] wheatfox:vtimer:c=5400,v=5354164232,l=5253164233,d=100999999,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   54.457240] wheatfox:vtimer:c=5500,v=5455164234,l=5354164232,d=101000002,tcfg=000f41d1,p=0,init=999888,cntc=-3005838550
+[   55.467240] wheatfox:vtimer:c=5600,v=5556164238,l=5455164234,d=101000004,tcfg=000f41d9,p=0,init=999896,cntc=-3005838550
+[   56.477240] wheatfox:vtimer:c=5700,v=5657164236,l=5556164238,d=100999998,tcfg=000f41d1,p=0,init=999888,cntc=-3005838550
+[   57.487240] wheatfox:vtimer:c=5800,v=5758164232,l=5657164236,d=100999996,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   58.497240] wheatfox:vtimer:c=5900,v=5859164231,l=5758164232,d=100999999,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   59.507240] wheatfox:vtimer:c=6000,v=5960164235,l=5859164231,d=101000004,tcfg=000f41d1,p=0,init=999888,cntc=-3005838550
+[   60.517240] wheatfox:vtimer:c=6100,v=6061164228,l=5960164235,d=100999993,tcfg=000f41cd,p=0,init=999884,cntc=-3005838550
+[   61.527240] wheatfox:vtimer:c=6200,v=6162164238,l=6061164228,d=101000010,tcfg=000f41d9,p=0,init=999896,cntc=-3005838550
+[   62.537240] wheatfox:vtimer:c=6300,v=6263164234,l=6162164238,d=100999996,tcfg=000f41d1,p=0,init=999888,cntc=-3005838550
+[   63.547240] wheatfox:vtimer:c=6400,v=6364164230,l=6263164234,d=100999996,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   64.557240] wheatfox:vtimer:c=6500,v=6465164236,l=6364164230,d=101000006,tcfg=000f41dd,p=0,init=999900,cntc=-3005838550
+[   65.567240] wheatfox:vtimer:c=6600,v=6566164234,l=6465164236,d=100999998,tcfg=000f41d5,p=0,init=999892,cntc=-3005838550
+[   66.577240] wheatfox:vtimer:c=6700,v=6667164235,l=6566164234,d=101000001,tcfg=000f41d1,p=0,init=999888,cntc=-3005838550
+[   67.587240] wheatfox:vtimer:c=6800,v=6768164235,l=6667164235,d=101000000,tcfg=000f41d1,p=0,init=999888,cntc=-3005838550

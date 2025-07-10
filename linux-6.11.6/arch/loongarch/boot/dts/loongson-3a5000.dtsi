@@ -147,6 +147,7 @@
 			interrupt-parent = <&cpuintc>;
 			interrupts = <3>;
 			phandle = <0x8002>;
+			status = "disabled";
 		};
 		
 		pic: interrupt-controller@10000000 {
@@ -157,6 +158,7 @@
 			loongson,pic-base-vec = <0>;
 			interrupt-parent = <&eiointc>;
 			phandle = <0x8003>;
+			status = "disabled";
 		};
 		
 		// root's msi
@@ -170,6 +172,7 @@
 			loongson,msi-num-vecs = <48>; // [64-111(48),112-159(48),160-207(48),208-255(48)]
 			interrupt-parent = <&eiointc>;
 			phandle = <0x8004>;
+			status = "disabled";
 		};
 		
 		rtc0: rtc@100d0100 {
@@ -177,24 +180,15 @@
 			reg = <0x0 0x100d0100 0x0 0x100>;
 			interrupt-parent = <&pic>;// pic-rtc0
 			interrupts = <52 IRQ_TYPE_LEVEL_HIGH>;
-			// status = "disabled";
+			status = "disabled";
 		};
 		
-		osc_clk: osc-clock@0 {
-			#clock-cells = <0>;
+		ref_100m: clock-ref-100m {
 			compatible = "fixed-clock";
+			#clock-cells = <0>;
 			clock-frequency = <100000000>;
-			clock-output-names = "ref_clk";
-			reg = <0 0 0 0>;
+			clock-output-names = "ref_100m";
 		};
-		
-		// clks: clock-controller@1fe00480 { // PLL0 - USB GMAC
-		// 	compatible = "loongson";
-		// 	reg = <0 0x1fe00480 0 1>;
-		// 	clocks = <&osc_clk>;// clks-osc_clk
-		// 	clock-names = "ref_clk";
-		// 	#clock-cells = <1>;
-		// };
 		
 		uart0: serial@1fe001e0 {
 			compatible = "ns16550a";
@@ -202,17 +196,18 @@
 			clock-frequency = <100000000>;// 100M
 			// interrupt-parent = <&pic>;
 			// interrupts = <26 IRQ_TYPE_LEVEL_HIGH>; // from ACPI ASL Interrupt number
+			// interrupt-parent = <&liointc>;
+			// interrupts = <10 IRQ_TYPE_LEVEL_HIGH>;
 			no-loopback-test;
 			status = "disabled";
 		};
 
-		uart1_yy: serial@10080000 {
-			// a board special uart for yy motherboard
+		uart1: serial@10080000 {
 			compatible = "ns16550a";
 			reg = <0x0 0x10080000 0x0 0x100>;
 			clock-frequency = <50000000>;// 50M (according to ACPI ASL)
-			// interrupt-parent = <&pic>;
-			// interrupts = <8 IRQ_TYPE_LEVEL_HIGH>;
+			interrupt-parent = <&pic>;
+			interrupts = <8 IRQ_TYPE_LEVEL_HIGH>;
 			no-loopback-test;
 			status = "disabled";
 		};

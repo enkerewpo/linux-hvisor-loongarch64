@@ -9,7 +9,7 @@
 #include "loongson-3a5000.dtsi"
 
 // if you changed this, remember to change the aliases at chosen/stdout-path
-&uart1_yy {
+&uart1 {
 	// status = "okay";
 };
 
