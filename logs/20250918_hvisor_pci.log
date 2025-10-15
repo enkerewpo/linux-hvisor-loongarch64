@@ -1,0 +1,155 @@
+PROGRESS CODE: V03051007 I0
+[Bds]Stop Hotkey Service!
+[Bds]UnregisterKeyNotify: 000C/0000 Success
+[Bds]UnregisterKeyNotify: 0002/0000 Success
+[Bds]UnregisterKeyNotify: 0016/0000 Success
+[Bds]UnregisterKeyNotify: 0000/000D Success
+PROGRESS CODE: V03051001 I0
+00: <null string> - Healthy
+01: <null string> - Healthy
+Memory  Previous  Current    Next   
+ Type    Pages     Pages     Pages  
+======  ========  ========  ========
+  00    00000020  00000000  00000020
+  06    00000400  00000330  00000400
+  05    000001C0  00000180  000001C0
+  03    00000F00  00000A00  00000F00
+  04    00003CB1  00002660  00003CB1
+[Bds]Booting UEFI Kingston DataTraveler 3.0 E0D55EA573DD18A049D3047E
+ BlockSize : 512 
+ LastBlock : 7377FFF 
+FSOpen: Open '\EFI\BOOT\BOOTLOONGARCH64.EFI' Success
+[Bds] Expand PciRoot(0x0)/Pci(0x5,0x1)/USB(0x2,0x0) -> PciRoot(0x0)/Pci(0x5,0x1)/USB(0x2,0x0)/HD(1,MBR,0x03DA63B5,0x800,0x7377800)/\EFI\BOOT\BOOTLOONGARCH64.EFI
+PROGRESS CODE: V03058000 I0
+InstallProtocolInterface: 5B1B31A1-9562-11D2-8E3F-00A0C969723B FA9C5040
+Loading driver at 0x000ED46D000 EntryPoint=0x000ED46D150 
+InstallProtocolInterface: BC62157E-3E33-4FEC-9920-2D3B36D750DF FA9C5E98
+ProtectUefiImageCommon - 0xFA9C5040
+  - 0x00000000ED46D000 - 0x0000000005D60200
+PROGRESS CODE: V03058001 I0
+[INFO] arch_init done
+                     XhcClearBiosOwnership: called to clear BIOS ownership
+PROGRESS CODE: V02010004 I0
+DisableFloatExitBootServicesEventNotify
+SetUefiImageMemoryAttributes - 0x00000000FDD60000 - 0x0000000000007000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDD50000 - 0x0000000000006000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDD30000 - 0x0000000000009000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDC70000 - 0x00000000000B5000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDC60000 - 0x0000000000006000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDC50000 - 0x0000000000007000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDC40000 - 0x0000000000006000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDC30000 - 0x0000000000005000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDC20000 - 0x0000000000005000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDC10000 - 0x0000000000006000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDC00000 - 0x0000000000006000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDBF0000 - 0x0000000000007000 (0x0000000000000000)
+[INFO] exit_boot_services done
+                              [INFO] ok, ready to jump to hvisor entry...
+                                                                         Hello, start HVISOR at 0x90000001f0000000!
+Heap allocator initialization finished: 0x90000001f00f4050..0x90000001f01f4050
+heap_test passed!
+Booting CPU 0: 0x90000001f0218000 arch:0x90000001f0218020, DTB: 0xfe160018
+Hello, start HVISOR at 0x90000001f0000000!
+Hello, start HVISOR at 0x90000001f0000000!
+Hello, start HVISOR at 0x90000001f0000000!
+Booting CPU 1: 0x90000001f0298000 arch:0x90000001f0298020, DTB: 0x9000000000000000
+Booting CPU 2: 0x90000001f0318000 arch:0x90000001f0318020, DTB: 0x9000000000000000
+Booting CPU 3: 0x90000001f0398000 arch:0x90000001f0398020, DTB: 0x9000000000000000
+Secondary CPU 3 has entered.
+Secondary CPU 2 has entered.
+Primary CPU 0 has entered.
+Secondary CPU 1 has entered.
+[INFO  0] (hvisor:113) Logging is enabled.
+[INFO  0] (hvisor:114) __core_end = 0x90000001f0218000
+[INFO  0] (hvisor:115) mem_pool_start = 0x90000001f0418000
+[INFO  0] (hvisor:116) hv_end = 0x90000001f4418000
+[INFO  0] (hvisor:119) Hypervisor initialization in progress...
+[INFO  0] (hvisor:120) build_mode: debug, log_level: debug, arch: loongarch64, stats: off
+[INFO  0] (hvisor::memory::frame:282) Frame allocator initialization finished: 0x90000001f0418000..0x90000001f4418000
+[INFO  0] (hvisor::memory::frame:302) frame_allocator_test passed!
+[INFO  0] (hvisor::arch::loongarch64::s2pt:199) Dynamical detection of stage-2 paging mode is not supported yet.
+[INFO  0] (hvisor::device::irqchip::ls7a2000:40) loongarch64: irqchip: primary_init_early: checking iochip configs
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:576) loongarch64: print_chip_info: chip config version: 0x14
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:580) loongarch64: print_chip_info: chip feature extioi support: true
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:584) loongarch64: print_chip_info: manufacturer name: Loongson
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:588) loongarch64: print_chip_info: chip name: 3A6000-H
+[INFO  0] (hvisor::device::irqchip::ls7a2000:45) loongarch64: irqchip: testing percore IPI feature
+[INFO  0] (hvisor::device::irqchip::ls7a2000:47) loongarch64: irqchip: percore IPI feature: true
+[INFO  0] (hvisor::arch::loongarch64::iommu:19) loongarch64: iommu_init: do nothing now
+[WARN  0] (hvisor::pci::pci_config:39) loongarch64: hvisor_pci_init: pci_rootcomplex_config: [
+    HvPciConfig {
+        ecam_base: 1090921693184,
+        ecam_size: 536870912,
+        io_base: 406880256,
+        io_size: 32768,
+        pci_io_base: 32768,
+        mem32_base: 0,
+        mem32_size: 0,
+        pci_mem32_base: 0,
+        mem64_base: 1610612736,
+        mem64_size: 536870912,
+        pci_mem64_base: 1610612736,
+    },
+    HvPciConfig {
+        ecam_base: 0,
+        ecam_size: 0,
+        io_base: 0,
+        io_size: 0,
+        pci_io_base: 0,
+        mem32_base: 0,
+        mem32_size: 0,
+        pci_mem32_base: 0,
+        mem64_base: 0,
+        mem64_size: 0,
+        pci_mem64_base: 0,
+    },
+    HvPciConfig {
+        ecam_base: 0,
+        ecam_size: 0,
+        io_base: 0,
+        io_size: 0,
+        pci_io_base: 0,
+        mem32_base: 0,
+        mem32_size: 0,
+        pci_mem32_base: 0,
+        mem64_base: 0,
+        mem64_size: 0,
+        pci_mem64_base: 0,
+    },
+    HvPciConfig {
+        ecam_base: 0,
+        ecam_size: 0,
+        io_base: 0,
+        io_size: 0,
+        pci_io_base: 0,
+        mem32_base: 0,
+        mem32_size: 0,
+        pci_mem32_base: 0,
+        mem64_base: 0,
+        mem64_size: 0,
+        pci_mem64_base: 0,
+    },
+]
+[WARN  0] (hvisor::pci::pci_config:46) loongarch64: hvisor_pci_init: allocating mem32 for mem32_base: 0x0, size: 0x0
+[WARN  0] (hvisor::pci::pci_config:51) loongarch64: hvisor_pci_init: allocating mem64 for mem64_base: 0x60000000, size: 0x20000000
+[WARN  0] (hvisor::pci::pci_config:58) loongarch64: hvisor_pci_init: enumerating rootcomplex: 0xfe00000000
+[WARN  0] (hvisor::pci::pci_struct:504) endpoint
+[WARN  0] (hvisor::pci::pci_struct:540) pci:pci_struct: bar_mem_init, bar_max: 6, allocator: Some(BaseAllocator { mem32: 0..0, mem32_used: 0, mem64: 1610612736..2147483648, mem64_used: 1610612736 }), dev: EndpointHeader(PciRegionMmio { base: 1090921693184, length: 256 })
+[WARN  0] (hvisor::pci::pci_struct:554) pci:pci_struct: bar_mem_init, alloc_memory32, size: 16
+[WARN  0] (hvisor::pci::mem_alloc:66) pci:mem_alloc: alloc_memory32, size: 16, ptr: 0
+[WARN  0] (hvisor::pci::mem_alloc:74) pci:mem_alloc: alloc_memory32, failed, ptr: 0
+[ERROR 0] (hvisor::panic:24) panic occurred: PanicInfo {
+    payload: Any { .. },
+    message: Some(
+        called `Option::unwrap()` on a `None` value,
+    ),
+    location: Location {
+        file: "src/pci/pci_struct.rs",
+        line: 555,
+        col: 83,
+    },
+    can_unwind: true,
+    force_no_backtrace: false,
+}
+
+

@@ -1,3 +1,0 @@
-[submodule "linux-git"]
-	path = linux-git
-	url = https://github.com/enkerewpo/linux
