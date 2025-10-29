@@ -2,7 +2,7 @@
 
 # https://www.qemu.org/docs/master/system/loongarch/virt.html
 
-CHOSEN_ROOT=$(cat chosen_nonroot)
+CHOSEN_ROOT=$(cat chosen_root)
 KERNEL_PATH=linux-${CHOSEN_ROOT}/arch/loongarch/boot/vmlinux.efi
 
 # virt,dumpdtb=virt.dtb
@@ -11,7 +11,7 @@ KERNEL_PATH=linux-${CHOSEN_ROOT}/arch/loongarch/boot/vmlinux.efi
 qemu-system-loongarch64 -m 16G -cpu la464 \
     -machine virt \
     -smp 1 -bios QEMU_EFI.fd -kernel $KERNEL_PATH \
-    -append "root=/dev/ram rdinit=/init console=ttyS0,115200 loglevel=8 debug earlyprintk" \
+    -append "root=/dev/ram rdinit=/init console=ttyS0,115200 loglevel=8 debug" \
     -serial mon:stdio \
     --nographic \
     -device igb,netdev=net0,bus=pcie.0,addr=0x6 \
