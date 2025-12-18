@@ -1,0 +1,2673 @@
+FSOpen: Open '\EFI\BOOT\BOOTLOONGARCH64.EFI' Success
+[Bds] Expand PciRoot(0x0)/Pci(0x4,0x1)/USB(0x2,0x0) -> PciRoot(0x0)/Pci(0x4,0x1)/USB(0x2,0x0)/HD(1,MBR,0x00000000,0x800,0x73777C0)/\EFI\BOOT\BOOTLOONGARCH64.EFI
+PROGRESS CODE: V03058000 I0
+InstallProtocolInterface: 5B1B31A1-9562-11D2-8E3F-00A0C969723B FA9D5040
+Loading driver at 0x000ED04B000 EntryPoint=0x000ED04B150 
+InstallProtocolInterface: BC62157E-3E33-4FEC-9920-2D3B36D750DF FA9D5E98
+ProtectUefiImageCommon - 0xFA9D5040
+  - 0x00000000ED04B000 - 0x0000000005F72000
+PROGRESS CODE: V03058001 I0
+[INFO] arch_init done
+                     XhcClearBiosOwnership: called to clear BIOS ownership
+PROGRESS CODE: V02010004 I0
+DisableFloatExitBootServicesEventNotify
+SetUefiImageMemoryAttributes - 0x00000000FDD60000 - 0x0000000000007000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDD50000 - 0x0000000000006000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDD30000 - 0x0000000000009000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDC70000 - 0x00000000000B5000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDC60000 - 0x0000000000006000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDC50000 - 0x0000000000007000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDC40000 - 0x0000000000006000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDC30000 - 0x0000000000005000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDC20000 - 0x0000000000005000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDC10000 - 0x0000000000006000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDC00000 - 0x0000000000006000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDBF0000 - 0x0000000000007000 (0x0000000000000000)
+[INFO] exit_boot_services done
+                              [INFO] ok, ready to jump to hvisor entry...
+                                                                         Hello, start HVISOR at 0x90000001f0000000!
+Heap allocator initialization finished: 0x90000001f0129068..0x90000001f0229068
+heap_test passed!
+Booting CPU 0: 0x90000001f022a000 arch:0x90000001f022a020, DTB: 0xfe160018
+Hello, start HVISOR at 0x90000001f0000000!
+Hello, start HVISOR at 0x90000001f0000000!
+Booting CPU 1: 0x90000001f02aa000 arch:0x90000001f02aa020, DTB: 0x9000000000000000
+Booting CPU 2: 0x90000001f032a000 arch:0x90000001f032a020, DTB: 0x9000000000000000
+Hello, start HVISOR at 0x90000001f0000000!
+Booting CPU 3: 0x90000001f03aa000 arch:0x90000001f03aa020, DTB: 0x9000000000000000
+Secondary CPU 3 has entered.
+Secondary CPU 2 has entered.
+Primary CPU 0 has entered.
+Secondary CPU 1 has entered.
+[INFO  0] (hvisor:115) Logging is enabled.
+[INFO  0] (hvisor:116) __core_end = 0x90000001f022a000
+[INFO  0] (hvisor:117) mem_pool_start = 0x90000001f042a000
+[INFO  0] (hvisor:118) hv_end = 0x90000001f442a000
+[INFO  0] (hvisor:121) Hypervisor initialization in progress...
+[INFO  0] (hvisor:122) build_mode: debug, log_level: info, arch: loongarch64, stats: off
+[INFO  0] (hvisor::memory::frame:285) Frame allocator initialization finished: 0x90000001f042a000..0x90000001f442a000
+[INFO  0] (hvisor::memory::frame:305) frame_allocator_test passed!
+[INFO  0] (hvisor::arch::loongarch64::s2pt:199) Dynamical detection of stage-2 paging mode is not supported yet.
+[INFO  0] (hvisor::device::irqchip::ls7a2000:40) loongarch64: irqchip: primary_init_early: checking iochip configs
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:576) loongarch64: print_chip_info: chip config version: 0x14
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:580) loongarch64: print_chip_info: chip feature extioi support: true
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:584) loongarch64: print_chip_info: manufacturer name: Loongson
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:588) loongarch64: print_chip_info: chip name: 3A6000-H
+[INFO  0] (hvisor::device::irqchip::ls7a2000:45) loongarch64: irqchip: testing percore IPI feature
+[INFO  0] (hvisor::device::irqchip::ls7a2000:47) loongarch64: irqchip: percore IPI feature: true
+[WARN  0] (hvisor::pci::pci_config:47) begin [
+    HvPciConfig {
+        ecam_base: 1090921693184,
+        ecam_size: 536870912,
+        io_base: 406880256,
+        io_size: 32768,
+        pci_io_base: 32768,
+        mem32_base: 0,
+        mem32_size: 0,
+        pci_mem32_base: 0,
+        mem64_base: 1610612736,
+        mem64_size: 536870912,
+        pci_mem64_base: 1610612736,
+        bus_range_begin: 0,
+        bus_range_end: 31,
+    },
+]
+[WARN  0] (hvisor::pci::pci_config:77) allocator_opt: None
+[INFO  0] (hvisor::pci::pci_config:119) begin enumerate PciIterator {
+    allocator: None,
+    stack: [
+        Bridge {
+            bus: 0,
+            device: 0,
+            subordinate_bus: 0,
+            secondary_bus: 0,
+            primary_bus: 0,
+            mmio: PciConfigMmio {
+                base: 0,
+                length: 0,
+            },
+            has_secondary_link: false,
+        },
+    ],
+    segment: 1090921693184,
+    bus_range: 0..31,
+    function: 0,
+    is_mulitple_function: false,
+    is_finish: false,
+    accessor: LoongArchConfigAccessor {
+        cfg0: 1090921693184,
+        cfg1: 1091190128640,
+        root_bus: 0,
+    },
+}
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe00000000 0000:00:00.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:00.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe00000800 0000:00:01.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:01.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe00001000 0000:00:02.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:02.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe00001800 0000:00:03.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:03.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe00002000 0000:00:04.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:04.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe00002800 0000:00:05.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:05.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe00003000 0000:00:06.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:06.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe00003800 0000:00:07.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:07.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe00004000 0000:00:08.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:08.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe00004800 0000:00:09.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:09.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe00005000 0000:00:0a.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:0a.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe00005800 0000:00:0b.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:0b.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe00006000 0000:00:0c.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:0c.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe00006800 0000:00:0d.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:0d.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe00007000 0000:00:0e.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:0e.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe00007800 0000:00:0f.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:0f.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe00008000 0000:00:10.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:10.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe00008800 0000:00:11.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:11.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe00009000 0000:00:12.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:12.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe00009800 0000:00:13.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:13.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe0000a000 0000:00:14.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:14.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe0000a800 0000:00:15.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:15.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe0000b000 0000:00:16.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:16.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe0000b800 0000:00:17.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:17.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe0000c000 0000:00:18.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:18.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe0000c800 0000:00:19.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:19.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe0000d000 0000:00:1a.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:1a.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe0000d800 0000:00:1b.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:1b.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe0000e000 0000:00:1c.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:1c.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe0000e800 0000:00:1d.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:1d.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe0000f000 0000:00:1e.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:1e.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe0000f800 0000:00:1f.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[WARN  0] (hvisor::pci::pci_struct:653) bar_mem_init allocator: None
+[INFO  0] (hvisor::pci::pci_struct:605) get node bar mem init end BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+]
+[INFO  0] (hvisor::pci::pci_struct:1263) capability {}
+[INFO  0] (hvisor::pci::pci_config:121) node 
+  bdf 0000:00:1f.0
+  vbdf 0000:00:00.0
+  type Endpoint
+  BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]
+   slot 4 [mem 0x0-0x10]
+   slot 5 [mem 0x0-0x10]
+] Rom [0x0-0x800] => [0x0-0x800]
+[INFO  0] (hvisor::pci::pci_struct:805) pci dev next
+[INFO  0] (hvisor::pci::pci_config:125) hvisor pci init done 
+Lazy(
+    Mutex { data: {
+        0000:00:00.0: 
+          bdf 0000:00:00.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]   IO @ 0x1
+        
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:01.0: 
+          bdf 0000:00:01.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]   IO @ 0x1
+        
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:02.0: 
+          bdf 0000:00:02.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]   IO @ 0x1
+        
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:03.0: 
+          bdf 0000:00:03.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]   IO @ 0x1
+        
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:04.0: 
+          bdf 0000:00:04.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]
+           slot 4 [mem 0x0-0x10]
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:05.0: 
+          bdf 0000:00:05.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]
+           slot 4 [mem 0x0-0x10]
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:06.0: 
+          bdf 0000:00:06.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]
+           slot 4 [mem 0x0-0x10]
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:07.0: 
+          bdf 0000:00:07.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]
+           slot 4 [mem 0x0-0x10]
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:08.0: 
+          bdf 0000:00:08.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]   IO @ 0x1
+        
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:09.0: 
+          bdf 0000:00:09.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]   IO @ 0x1
+        
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:0a.0: 
+          bdf 0000:00:0a.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]   IO @ 0x1
+        
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:0b.0: 
+          bdf 0000:00:0b.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]   IO @ 0x1
+        
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:0c.0: 
+          bdf 0000:00:0c.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]
+           slot 4 [mem 0x0-0x10]
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:0d.0: 
+          bdf 0000:00:0d.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]
+           slot 4 [mem 0x0-0x10]
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:0e.0: 
+          bdf 0000:00:0e.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]
+           slot 4 [mem 0x0-0x10]
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:0f.0: 
+          bdf 0000:00:0f.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]
+           slot 4 [mem 0x0-0x10]
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:10.0: 
+          bdf 0000:00:10.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]   IO @ 0x1
+        
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:11.0: 
+          bdf 0000:00:11.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]   IO @ 0x1
+        
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:12.0: 
+          bdf 0000:00:12.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]   IO @ 0x1
+        
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:13.0: 
+          bdf 0000:00:13.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]   IO @ 0x1
+        
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:14.0: 
+          bdf 0000:00:14.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]
+           slot 4 [mem 0x0-0x10]
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:15.0: 
+          bdf 0000:00:15.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]
+           slot 4 [mem 0x0-0x10]
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:16.0: 
+          bdf 0000:00:16.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]
+           slot 4 [mem 0x0-0x10]
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:17.0: 
+          bdf 0000:00:17.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]
+           slot 4 [mem 0x0-0x10]
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:18.0: 
+          bdf 0000:00:18.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]   IO @ 0x1
+        
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:19.0: 
+          bdf 0000:00:19.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]   IO @ 0x1
+        
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:1a.0: 
+          bdf 0000:00:1a.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]   IO @ 0x1
+        
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:1b.0: 
+          bdf 0000:00:1b.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]   IO @ 0x1
+        
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:1c.0: 
+          bdf 0000:00:1c.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]
+           slot 4 [mem 0x0-0x10]
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:1d.0: 
+          bdf 0000:00:1d.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]
+           slot 4 [mem 0x0-0x10]
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:1e.0: 
+          bdf 0000:00:1e.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]
+           slot 4 [mem 0x0-0x10]
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:1f.0: 
+          bdf 0000:00:1f.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]
+           slot 4 [mem 0x0-0x10]
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+    } },
+)
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x200000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x90000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0xF0000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x160000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0xC0000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0xA0000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x100000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x1FE00000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x10080000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x100D0000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x10000000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x10010000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x0
+[INFO  0] (hvisor::memory::mm:112) region.start: 0xF0000
+[INFO  0] (hvisor::memory::mm:112) region.start: 0x140000000
+[INFO  0] (hvisor::arch::loongarch64::zone:94) loongarch64: pt_init: add mmio handler for 0x1fe0_xxxx mmio region
+[INFO  0] (hvisor::arch::loongarch64::zone:97) zone stage-2 memory set: MemorySet {
+    regions: [
+        MemoryRegion {
+            vaddr_range: 0x0..0x10000,
+            size: 0x10000,
+            flags: MemFlags(
+                READ | WRITE | EXECUTE,
+            ),
+            mapper: Offset(
+                0xfffffffffffff000,
+            ),
+        },
+        MemoryRegion {
+            vaddr_range: 0xf0000..0x100000,
+            size: 0x10000,
+            flags: MemFlags(
+                READ | WRITE | EXECUTE,
+            ),
+            mapper: Offset(
+                0x0,
+            ),
+        },
+        MemoryRegion {
+            vaddr_range: 0x200000..0xf000000,
+            size: 0xee00000,
+            flags: MemFlags(
+                READ | WRITE | EXECUTE,
+            ),
+            mapper: Offset(
+                0x0,
+            ),
+        },
+        MemoryRegion {
+            vaddr_range: 0x10000000..0x10001000,
+            size: 0x1000,
+            flags: MemFlags(
+                READ | WRITE | IO,
+            ),
+            mapper: Offset(
+                0x0,
+            ),
+        },
+        MemoryRegion {
+            vaddr_range: 0x10010000..0x10020000,
+            size: 0x10000,
+            flags: MemFlags(
+                READ | WRITE | IO,
+            ),
+            mapper: Offset(
+                0x0,
+            ),
+        },
+        MemoryRegion {
+            vaddr_range: 0x10080000..0x10081000,
+            size: 0x1000,
+            flags: MemFlags(
+                READ | WRITE | IO,
+            ),
+            mapper: Offset(
+                0x0,
+            ),
+        },
+        MemoryRegion {
+            vaddr_range: 0x100d0000..0x100d1000,
+            size: 0x1000,
+            flags: MemFlags(
+                READ | WRITE | IO,
+            ),
+            mapper: Offset(
+                0x0,
+            ),
+        },
+        MemoryRegion {
+            vaddr_range: 0x1fe00000..0x1fe01000,
+            size: 0x1000,
+            flags: MemFlags(
+                READ | WRITE | IO,
+            ),
+            mapper: Offset(
+                0x0,
+            ),
+        },
+        MemoryRegion {
+            vaddr_range: 0x90000000..0xa0000000,
+            size: 0x10000000,
+            flags: MemFlags(
+                READ | WRITE | EXECUTE,
+            ),
+            mapper: Offset(
+                0x0,
+            ),
+        },
+        MemoryRegion {
+            vaddr_range: 0xa0000000..0xc0000000,
+            size: 0x20000000,
+            flags: MemFlags(
+                READ | WRITE | EXECUTE,
+            ),
+            mapper: Offset(
+                0x0,
+            ),
+        },
+        MemoryRegion {
+            vaddr_range: 0xc0000000..0xf0000000,
+            size: 0x30000000,
+            flags: MemFlags(
+                READ | WRITE | EXECUTE,
+            ),
+            mapper: Offset(
+                0x0,
+            ),
+        },
+        MemoryRegion {
+            vaddr_range: 0xf0000000..0x100000000,
+            size: 0x10000000,
+            flags: MemFlags(
+                READ | WRITE | EXECUTE,
+            ),
+            mapper: Offset(
+                0x0,
+            ),
+        },
+        MemoryRegion {
+            vaddr_range: 0x100000000..0x120000000,
+            size: 0x20000000,
+            flags: MemFlags(
+                READ | WRITE | EXECUTE,
+            ),
+            mapper: Offset(
+                0x0,
+            ),
+        },
+        MemoryRegion {
+            vaddr_range: 0x140000000..0x140800000,
+            size: 0x800000,
+            flags: MemFlags(
+                READ | WRITE | EXECUTE,
+            ),
+            mapper: Offset(
+                0x0,
+            ),
+        },
+        MemoryRegion {
+            vaddr_range: 0x160000000..0x170000000,
+            size: 0x10000000,
+            flags: MemFlags(
+                READ | WRITE | EXECUTE,
+            ),
+            mapper: Offset(
+                0x0,
+            ),
+        },
+    ],
+    page_table: "hvisor::arch::loongarch64::paging::Level4PageTable<usize, hvisor::arch::loongarch64::s2pt::PageTableEntry, hvisor::arch::loongarch64::s2pt::S2PTInstr>",
+    page_table_root: 0x90000001f042a000,
+}
+[WARN  0] (hvisor::pci::pci_config:165) can not find dev 0000:00:00.1
+[WARN  0] (hvisor::pci::pci_config:165) can not find dev 0000:00:00.2
+[WARN  0] (hvisor::pci::pci_config:165) can not find dev 0000:00:00.3
+[WARN  0] (hvisor::pci::pci_config:165) can not find dev 0000:00:04.1
+[WARN  0] (hvisor::pci::pci_config:165) can not find dev 0000:00:05.1
+[WARN  0] (hvisor::pci::pci_config:165) can not find dev 0000:00:06.1
+[WARN  0] (hvisor::pci::pci_config:165) can not find dev 0000:00:06.2
+[WARN  0] (hvisor::pci::pci_config:165) can not find dev 0000:02:00.0
+[WARN  0] (hvisor::pci::pci_config:165) can not find dev 0000:05:00.0
+[WARN  0] (hvisor::pci::pci_config:165) can not find dev 0000:06:00.0
+[INFO  0] (hvisor::pci::pci_config:169) vpci bus init done
+ VirtualRootComplex {
+    devs: {
+        0000:00:00.0: 
+          bdf 0000:00:00.0
+          vbdf 0000:00:00.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]   IO @ 0x1
+        
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:04.0: 
+          bdf 0000:00:04.0
+          vbdf 0000:00:04.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]
+           slot 4 [mem 0x0-0x10]
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:05.0: 
+          bdf 0000:00:05.0
+          vbdf 0000:00:05.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]
+           slot 4 [mem 0x0-0x10]
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:06.0: 
+          bdf 0000:00:06.0
+          vbdf 0000:00:06.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]
+           slot 4 [mem 0x0-0x10]
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:07.0: 
+          bdf 0000:00:07.0
+          vbdf 0000:00:07.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]
+           slot 4 [mem 0x0-0x10]
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:08.0: 
+          bdf 0000:00:08.0
+          vbdf 0000:00:08.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]   IO @ 0x1
+        
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:09.0: 
+          bdf 0000:00:09.0
+          vbdf 0000:00:09.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]   IO @ 0x1
+        
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:0a.0: 
+          bdf 0000:00:0a.0
+          vbdf 0000:00:0a.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]   IO @ 0x1
+        
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:0b.0: 
+          bdf 0000:00:0b.0
+          vbdf 0000:00:0b.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]   IO @ 0x1
+        
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:0c.0: 
+          bdf 0000:00:0c.0
+          vbdf 0000:00:0c.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]
+           slot 4 [mem 0x0-0x10]
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:0d.0: 
+          bdf 0000:00:0d.0
+          vbdf 0000:00:0d.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]
+           slot 4 [mem 0x0-0x10]
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:0f.0: 
+          bdf 0000:00:0f.0
+          vbdf 0000:00:0f.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]
+           slot 4 [mem 0x0-0x10]
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:10.0: 
+          bdf 0000:00:10.0
+          vbdf 0000:00:10.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]   IO @ 0x1
+        
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:13.0: 
+          bdf 0000:00:13.0
+          vbdf 0000:00:13.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]   IO @ 0x1
+        
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:16.0: 
+          bdf 0000:00:16.0
+          vbdf 0000:00:16.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]
+           slot 4 [mem 0x0-0x10]
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+        0000:00:19.0: 
+          bdf 0000:00:19.0
+          vbdf 0000:00:19.0
+          type Endpoint
+          BARs [
+           slot 0 [mem 0x0-0x10]
+           slot 1 [mem 0x0-0x10]
+           slot 2 [mem 0x0-0x10]
+           slot 3 [mem 0x0-0x10]   IO @ 0x1
+        
+           slot 5 [mem 0x0-0x10]
+        ] Rom [0x0-0x800] => [0x0-0x800],
+    },
+    base_to_bdf: {
+        1090921693184: 0000:00:00.0,
+        1090921701376: 0000:00:04.0,
+        1090921703424: 0000:00:05.0,
+        1090921705472: 0000:00:06.0,
+        1090921707520: 0000:00:07.0,
+        1090921709568: 0000:00:08.0,
+        1090921711616: 0000:00:09.0,
+        1090921713664: 0000:00:0a.0,
+        1090921715712: 0000:00:0b.0,
+        1090921717760: 0000:00:0c.0,
+        1090921719808: 0000:00:0d.0,
+        1090921723904: 0000:00:0f.0,
+        1090921725952: 0000:00:10.0,
+        1090921732096: 0000:00:13.0,
+        1090921738240: 0000:00:16.0,
+        1090921744384: 0000:00:19.0,
+    },
+}
+[INFO  0] (hvisor::zone:246) zone cpu_set: 0b1
+[INFO  0] (hvisor::device::irqchip::ls7a2000:90) loongarch64: irqchip: percpu_init: running percpu_init
+[WARN  2] (hvisor:165) CPU 2 is not bound to zone0 (root zone)
+[WARN  3] (hvisor:165) CPU 3 is not bound to zone0 (root zone)
+[INFO  2] (hvisor::device::irqchip::ls7a2000:90) loongarch64: irqchip: percpu_init: running percpu_init
+[INFO  3] (hvisor::device::irqchip::ls7a2000:90) loongarch64: irqchip: percpu_init: running percpu_init
+[INFO  2] (hvisor::arch::loongarch64::ipi:300) ecfg ipi enabled on cpu 2, current lie: LineBasedInterrupt(TIMER | IPI)
+[INFO  0] (hvisor::arch::loongarch64::ipi:300) ecfg ipi enabled on cpu 0, current lie: LineBasedInterrupt(TIMER | IPI)
+[INFO  2] (hvisor::device::irqchip::ls7a2000:75) loongarch64: irqchip: clock_cpucfg_dump: cc_freq: 100000000
+[INFO  3] (hvisor::arch::loongarch64::ipi:300) ecfg ipi enabled on cpu 3, current lie: LineBasedInterrupt(TIMER | IPI)
+[WARN  1] (hvisor:165) CPU 1 is not bound to zone0 (root zone)
+[INFO  0] (hvisor::device::irqchip::ls7a2000:75) loongarch64: irqchip: clock_cpucfg_dump: cc_freq: 100000000
+[INFO  1] (hvisor::device::irqchip::ls7a2000:90) loongarch64: irqchip: percpu_init: running percpu_init
+[INFO  0] (hvisor::device::irqchip::ls7a2000:79) loongarch64: irqchip: clock_cpucfg_dump: cc_mul: 1
+[INFO  1] (hvisor::arch::loongarch64::ipi:300) ecfg ipi enabled on cpu 1, current lie: LineBasedInterrupt(TIMER | IPI)
+[INFO  3] (hvisor::device::irqchip::ls7a2000:75) loongarch64: irqchip: clock_cpucfg_dump: cc_freq: 100000000
+[INFO  2] (hvisor::device::irqchip::ls7a2000:79) loongarch64: irqchip: clock_cpucfg_dump: cc_mul: 1
+[INFO  3] (hvisor::device::irqchip::ls7a2000:79) loongarch64: irqchip: clock_cpucfg_dump: cc_mul: 1
+[INFO  2] (hvisor::device::irqchip::ls7a2000:83) loongarch64: irqchip: clock_cpucfg_dump: cc_div: 1
+[INFO  1] (hvisor::device::irqchip::ls7a2000:75) loongarch64: irqchip: clock_cpucfg_dump: cc_freq: 100000000
+[INFO  3] (hvisor::device::irqchip::ls7a2000:83) loongarch64: irqchip: clock_cpucfg_dump: cc_div: 1
+[INFO  1] (hvisor::device::irqchip::ls7a2000:79) loongarch64: irqchip: clock_cpucfg_dump: cc_mul: 1
+[INFO  0] (hvisor::device::irqchip::ls7a2000:83) loongarch64: irqchip: clock_cpucfg_dump: cc_div: 1
+[INFO  1] (hvisor::device::irqchip::ls7a2000:83) loongarch64: irqchip: clock_cpucfg_dump: cc_div: 1
+[INFO  0] (hvisor:157) Primary CPU init late...
+[INFO  0] (hvisor::device::irqchip::ls7a2000:53) loongarch64: irqchip: primary_init_late: running primary_init_late
+[INFO  0] (hvisor::device::irqchip::ls7a2000:55) loongarch64: irqchip: primary_init_late: testing UART1
+[INFO  0] (hvisor::device::uart::loongson_uart:232) loongarch: uart: __test_uart1
+[INFO  0] (hvisor::device::uart::loongson_uart:235) loongarch: uart: __test_uart1 init done
+[INFO  0] (hvisor::device::uart::loongson_uart:238) loongarch: uart: __test_uart1 send_str test done
+[INFO  0] (hvisor::device::irqchip::ls7a2000:58) loongarch64: irqchip: primary_init_late: probing pci
+[WARN  0] (hvisor::device::irqchip::ls7a2000::chip:1060) loongarch64: probe_pci: probing PCI devices @ 0x80000efe00000000
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1071) loongarch64: probe_pci: device 0: vendor=0x14 device=0x7a00 name=[Loongson Technology LLC] Hyper Transport Bridge Controller	
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1071) loongarch64: probe_pci: device 4: vendor=0x14 device=0x7a24 name=[Loongson Technology LLC] OHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1071) loongarch64: probe_pci: device 5: vendor=0x14 device=0x7a24 name=[Loongson Technology LLC] OHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1071) loongarch64: probe_pci: device 6: vendor=0x14 device=0x7a25 name=[Loongson Technology LLC] LG100 GPU
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1071) loongarch64: probe_pci: device 7: vendor=0x14 device=0x7a07 name=[Loongson Technology LLC] HDA (High Definition Audio) Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1071) loongarch64: probe_pci: device 8: vendor=0x14 device=0x7a18 name=[Loongson Technology LLC] SATA 3 AHCI Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1071) loongarch64: probe_pci: device 9: vendor=0x14 device=0x7a49 name=[Loongson Technology LLC] PCIe x4 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1071) loongarch64: probe_pci: device 10: vendor=0x14 device=0x7a39 name=[Loongson Technology LLC] PCIe x1 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1071) loongarch64: probe_pci: device 11: vendor=0x14 device=0x7a39 name=[Loongson Technology LLC] PCIe x1 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1071) loongarch64: probe_pci: device 12: vendor=0x14 device=0x7a39 name=[Loongson Technology LLC] PCIe x1 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1071) loongarch64: probe_pci: device 13: vendor=0x14 device=0x7a49 name=[Loongson Technology LLC] PCIe x4 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1071) loongarch64: probe_pci: device 15: vendor=0x14 device=0x7a69 name=[Loongson Technology LLC] PCIe x16 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1071) loongarch64: probe_pci: device 16: vendor=0x14 device=0x7a59 name=[Loongson Technology LLC] PCIe x8 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1071) loongarch64: probe_pci: device 19: vendor=0x14 device=0x7a59 name=[Loongson Technology LLC] PCIe x8 Root Port
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1071) loongarch64: probe_pci: device 22: vendor=0x14 device=0x7a1b name=[Loongson Technology LLC] SPI Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1071) loongarch64: probe_pci: device 25: vendor=0x14 device=0x7a34 name=[Loongson Technology LLC] xHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1071) loongarch64: probe_pci: device 36: vendor=0x14 device=0x7a24 name=[Loongson Technology LLC] OHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1071) loongarch64: probe_pci: device 37: vendor=0x14 device=0x7a24 name=[Loongson Technology LLC] OHCI USB Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1071) loongarch64: probe_pci: device 38: vendor=0x14 device=0x7a25 name=[Loongson Technology LLC] LG100 GPU
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1071) loongarch64: probe_pci: device 39: vendor=0x14 device=0x7a07 name=[Loongson Technology LLC] HDA (High Definition Audio) Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1071) loongarch64: probe_pci: device 40: vendor=0x14 device=0x7a18 name=[Loongson Technology LLC] SATA 3 AHCI Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1071) loongarch64: probe_pci: device 54: vendor=0x14 device=0x7a1b name=[Loongson Technology LLC] SPI Controller
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:1071) loongarch64: probe_pci: device 57: vendor=0x14 device=0x7a34 name=[Loongson Technology LLC] xHCI USB Controller
+[WARN  0] (hvisor::device::irqchip::ls7a2000::chip:1080) given to linux @ 0xcf00000000: 0x1
+[WARN  0] (hvisor::device::irqchip::ls7a2000::chip:1084) given to linux @ 0xcf00000800: 0x1
+[WARN  0] (hvisor::device::irqchip::ls7a2000::chip:1088) given to linux @ 0xcf00000800: 0x1
+[INFO  0] (hvisor::device::irqchip::ls7a2000:61) loongarch64: irqchip: primary_init_late: clearing extioi SR regs
+[WARN  0] (hvisor::device::irqchip::ls7a2000::chip:783) clear_extioi_sr: clearing extioi SR regs, before: core0: 0x0,0x0,0x0,0x0; core1: 0x0,0x0,0x0,0x0; core2: 0x0,0x0,0x0,0x0; core3: 0x0,0x0,0x0,0x0; 
+[WARN  0] (hvisor::device::irqchip::ls7a2000::chip:845) clear_extioi_sr: clearing extioi SR regs, after: core0: 0x0,0x0,0x0,0x0; core1: 0x0,0x0,0x0,0x0; core2: 0x0,0x0,0x0,0x0; core3: 0x0,0x0,0x0,0x0; 
+[INFO  0] (hvisor::device::irqchip::ls7a2000:64) loongarch64: irqchip: primary_init_late: extioi_sr: core0: 0x0,0x0,0x0,0x0; core1: 0x0,0x0,0x0,0x0; core2: 0x0,0x0,0x0,0x0; core3: 0x0,0x0,0x0,0x0; 
+[INFO  0] (hvisor::device::irqchip::ls7a2000:69) loongarch64: irqchip: primary_init_late finished
+[INFO  3] (hvisor::percpu:74) CPU3: Idling the CPU before starting VM...
+[INFO  2] (hvisor::percpu:74) CPU2: Idling the CPU before starting VM...
+[INFO  3] (hvisor::arch::loongarch64::cpu:136) loongarch64: ArchCpu::idle: cpuid=3
+[INFO  2] (hvisor::arch::loongarch64::cpu:136) loongarch64: ArchCpu::idle: cpuid=2
+[INFO  0] (hvisor::percpu:77) CPU0: Running the VM...
+[INFO  1] (hvisor::percpu:74) CPU1: Idling the CPU before starting VM...
+[INFO  0] (hvisor::arch::loongarch64::s2pt:168) [[memory virtualization]] activating stage-2 pagetable: root_pa: 0x90000001f042a000
+[INFO  1] (hvisor::arch::loongarch64::cpu:136) loongarch64: ArchCpu::idle: cpuid=1
+[INFO  2] (hvisor::arch::loongarch64::ipi:300) ecfg ipi enabled on cpu 2, current lie: LineBasedInterrupt(TIMER | IPI)
+[INFO  1] (hvisor::arch::loongarch64::ipi:300) ecfg ipi enabled on cpu 1, current lie: LineBasedInterrupt(TIMER | IPI)
+[INFO  3] (hvisor::arch::loongarch64::ipi:300) ecfg ipi enabled on cpu 3, current lie: LineBasedInterrupt(TIMER | IPI)
+[INFO  0] (hvisor::arch::loongarch64::s2pt:183) [[memory virtualization]] activating stage 2 pagetable: set tlbrentry to 0x1f00e9000 done!
+[INFO  0] (hvisor::arch::loongarch64::cpu:81) [[CPU virtualization]] CPU0 run@0x9000000000d8c000
+[INFO  0] (hvisor::arch::loongarch64::cpu:86) loongarch64: @ArchCpu {
+    ctx: LoongArch64ZoneContext {
+        x: [
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+        ],
+        sepc: 0x9000000000d8c000,
+        gcsr_crmd: 0x8,
+        gcsr_prmd: 0x0,
+        gcsr_euen: 0x0,
+        gcsr_misc: 0x0,
+        gcsr_ectl: 0x10000,
+        gcsr_estat: 0x0,
+        gcsr_era: 0x0,
+        gcsr_badv: 0x0,
+        gcsr_badi: 0x0,
+        gcsr_eentry: 0x1c000000,
+        gcsr_tlbidx: 0xe000000,
+        gcsr_tlbehi: 0x0,
+        gcsr_tlbelo0: 0x0,
+        gcsr_tlbelo1: 0x0,
+        gcsr_asid: 0xa0000,
+        gcsr_pgdl: 0x0,
+        gcsr_pgdh: 0x0,
+        gcsr_pgd: 0x0,
+        gcsr_pwcl: 0x0,
+        gcsr_pwch: 0x0,
+        gcsr_stlbps: 0xe,
+        gcsr_ravcfg: 0x0,
+        gcsr_cpuid: 0x0,
+        gcsr_prcfg1: 0x72f8,
+        gcsr_prcfg2: 0x3ffff000,
+        gcsr_prcfg3: 0x8073f2,
+        gcsr_save0: 0x0,
+        gcsr_save1: 0x754bb88c,
+        gcsr_save2: 0x7ffff38ecddc,
+        gcsr_save3: 0x49cb000,
+        gcsr_save4: 0x188278ba0e45f512,
+        gcsr_save5: 0xbaf942305e75b102,
+        gcsr_save6: 0x6661a081b9c07928,
+        gcsr_save7: 0x2897ca568dcbd087,
+        gcsr_save8: 0x0,
+        gcsr_save9: 0x0,
+        gcsr_save10: 0x0,
+        gcsr_save11: 0x0,
+        gcsr_save12: 0x0,
+        gcsr_save13: 0x0,
+        gcsr_save14: 0x0,
+        gcsr_save15: 0x0,
+        gcsr_tid: 0x0,
+        gcsr_tcfg: 0x0,
+        gcsr_tval: 0xffffffffffff,
+        gcsr_cntc: 0x0,
+        gcsr_ticlr: 0x0,
+        gcsr_llbctl: 0x0,
+        gcsr_tlbrentry: 0x0,
+        gcsr_tlbrbadv: 0x0,
+        gcsr_tlbrera: 0x0,
+        gcsr_tlbrsave: 0x0,
+        gcsr_tlbrelo0: 0x0,
+        gcsr_tlbrelo1: 0x0,
+        gcsr_tlbrehi: 0x0,
+        gcsr_tlbrprmd: 0x0,
+        gcsr_dmw0: 0x0,
+        gcsr_dmw1: 0x0,
+        gcsr_dmw2: 0x0,
+        gcsr_dmw3: 0x0,
+        pgdl: 0x0,
+        pgdh: 0x0,
+    },
+    stack_top: 0x90000001f02aa000,
+    cpuid: 0x0,
+    power_on: true,
+    init: true,
+}
+[INFO  0] (hvisor::arch::loongarch64::trap:1404) csrxchg emulation for CSR 0x80
+[INFO  0] (hvisor::arch::loongarch64::trap:1355) cpucfg emulation, target cpucfg index is 0x0
+[INFO  0] (hvisor::arch::loongarch64::trap:1355) cpucfg emulation, target cpucfg index is 0x2
+[INFO  0] (hvisor::arch::loongarch64::trap:1355) cpucfg emulation, target cpucfg index is 0x1
+[INFO  0] (hvisor::arch::loongarch64::trap:1355) cpucfg emulation, target cpucfg index is 0x2
+[INFO  0] (hvisor::arch::loongarch64::trap:1355) cpucfg emulation, target cpucfg index is 0x6
+[INFO  0] (hvisor::arch::loongarch64::trap:1398) csrwr emulation for CSR 0x93
+[INFO  0] (hvisor::arch::loongarch64::trap:1355) cpucfg emulation, target cpucfg index is 0x10
+[INFO  0] (hvisor::arch::loongarch64::trap:1355) cpucfg emulation, target cpucfg index is 0x11
+[INFO  0] (hvisor::arch::loongarch64::trap:1355) cpucfg emulation, target cpucfg index is 0x12
+[INFO  0] (hvisor::arch::loongarch64::trap:1355) cpucfg emulation, target cpucfg index is 0x13
+[INFO  0] (hvisor::arch::loongarch64::trap:1355) cpucfg emulation, target cpucfg index is 0x14
+[INFO  0] (hvisor::arch::loongarch64::trap:1355) cpucfg emulation, target cpucfg index is 0x1
+[INFO  0] (hvisor::arch::loongarch64::trap:1355) cpucfg emulation, target cpucfg index is 0x1
+[    0.000000] Linux version 6.11.6 (wheatfox@dedsec-amd0) (loongarch64-unknown-linux-gnu-gcc (GCC) 13.0.1 20230316 (experimental), GNU ld (GNU Binutils) 2.40.50.20230316) #735 SMP PREEMPT_DYNAMIC Thu Nov 20 08:35:58 CST 2025
+[    0.000000] 64-bit Loongson Processor probed (LA664 Core)
+[    0.000000] CPU0 revision is: 0014d000 (Loongson-64bit)
+[    0.000000] FPU0 revision is: 00000000
+[    0.000000] ACPI: Early table checksum verification disabled
+[    0.000000] earlycon: ns16550a0 at MMIO 0x000000001fe001e0 (options '115200n8')
+[    0.000000] printk: legacy bootconsole [ns16550a0] enabled
+[    0.000000] OF: reserved mem: 0x00000000a0000000..0x00000000bfffffff (524288 KiB) nomap non-reusable nonroot2
+[    0.000000] OF: reserved mem: 0x00000000c0000000..0x00000000dfffffff (524288 KiB) nomap non-reusable nonroot1
+[    0.000000] OF: reserved mem: 0x0000000100000000..0x000000011fffffff (524288 KiB) nomap non-reusable nonroot3
+[    0.000000] OF: reserved mem: 0x0000000140000000..0x00000001407fffff (8192 KiB) nomap non-reusable shmem@0
+[    0.000000] Faking a node at [mem 0x0000000000200000-0x000000016fffffff]
+[    0.000000] Node0's addrspace_offset is 0x0
+[    0.000000] Node0: start_pfn=0x200, end_pfn=0x170000
+[    0.000000] DMI not present or invalid.
+[    0.000000] The BIOS Version: (null)
+[    0.000000] software IO TLB: area num 1.
+[    0.000000] software IO TLB: mapped [mem 0x0000000006060000-0x000000000a060000] (64MB)
+[    0.000000] Detected 1 available CPU(s)
+[    0.000000] SMP: Allowing 1 CPUs, 0 hotplug CPUs
+[    0.000000] Zone ranges:
+[    0.000000]   DMA32    [mem 0x0000000000200000-0x00000000ffffffff]
+[    0.000000]   Normal   [mem 0x0000000100000000-0x000000016fffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000200000-0x000000000effffff]
+[    0.000000]   node   0: [mem 0x0000000090000000-0x000000009fffffff]
+[    0.000000]   node   0: [mem 0x00000000a0000000-0x00000000dfffffff]
+[    0.000000]   node   0: [mem 0x00000000e0000000-0x00000000ffffffff]
+[    0.000000]   node   0: [mem 0x0000000100000000-0x000000011fffffff]
+[    0.000000]   node   0: [mem 0x0000000140000000-0x00000001407fffff]
+[    0.000000]   node   0: [mem 0x0000000160000000-0x000000016fffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000200000-0x000000016fffffff]
+[    0.000000] On node 0, zone DMA32: 512 pages in unavailable ranges
+[    0.000000] On node 0, zone DMA32: 135168 pages in unavailable ranges
+[    0.000000] On node 0, zone Normal: 129024 pages in unavailable ranges
+[    0.000000] On node 0, zone Normal: 65536 pages in unavailable ranges
+[    0.000000] percpu: Embedded 18 pages/cpu s34328 r8192 d31208 u2097152
+[    0.000000] pcpu-alloc: s34328 r8192 d31208 u2097152 alloc=1*2097152
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Kernel command line: earlycon console=ttyS0,115200n8 console=tty0 root=/dev/sda8 rootwait rw debug 
+[    0.000000] Dentry cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    0.000000] Fallback order for Node 0: 0 
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 718336
+[    0.000000] Policy zone: Normal
+[    0.000000] mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Dynamic Preempt: full
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu: 	RCU event tracing is enabled.
+[    0.000000] rcu: 	RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=1.
+[    0.000000] 	Trampoline variant of Tasks RCU enabled.
+[    0.000000] 	Tracing variant of Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.000000] RCU Tasks: Setting shift to 0 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=1.
+[    0.000000] RCU Tasks Trace: Setting shift to 0 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=1.
+[    0.000000] NR_IRQS: 576, nr_irqs: 576, preallocated irqs: 16
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[0], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[1], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[2], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[3], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[4], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[5], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[6], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[7], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[8], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[9], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[10], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[11], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[12], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[13], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[14], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[15], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[16], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[17], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[18], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[19], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[20], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[21], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[22], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[23], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[24], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[25], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[26], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[27], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[28], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[29], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[30], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[31], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[32], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[33], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[34], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[35], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[36], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[37], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[38], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[39], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[40], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[41], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[42], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[43], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[44], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[45], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[46], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[47], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[48], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[49], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[50], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[51], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[52], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[53], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[54], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[55], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[56], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[57], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[58], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[59], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[60], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[61], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[62], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[63], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[64], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[65], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[66], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[67], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[68], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[69], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[70], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[71], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[72], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[73], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[74], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[75], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[76], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[77], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[78], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[79], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[80], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[81], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[82], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[83], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[84], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[85], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[86], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[87], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[88], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[89], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[90], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[91], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[92], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[93], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[94], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[95], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[96], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[97], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[98], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[99], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[100], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[101], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[102], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[103], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[104], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[105], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[106], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[107], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[108], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[109], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[110], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[111], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 0, value=0x1
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[112], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[113], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[114], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[115], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[116], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[117], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[118], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[119], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[120], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[121], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[122], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[123], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[124], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[125], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[126], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[127], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[128], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[129], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[130], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[131], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[132], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[133], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[134], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[135], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[136], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[137], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[138], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[139], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[140], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[141], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[142], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[143], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[144], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[145], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[146], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[147], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[148], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[149], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[150], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[151], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[152], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[153], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[154], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[155], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[156], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[157], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[158], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[159], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 1, value=0x2
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[160], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[161], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[162], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[163], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[164], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[165], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[166], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[167], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[168], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[169], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[170], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[171], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[172], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[173], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[174], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[175], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[176], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[177], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[178], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[179], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[180], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[181], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[182], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[183], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[184], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[185], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[186], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[187], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[188], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[189], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[190], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[191], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[192], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[193], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[194], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[195], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[196], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[197], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[198], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[199], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[200], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[201], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[202], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[203], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[204], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[205], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[206], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[207], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 2, value=0x4
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[208], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[209], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[210], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[211], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[212], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[213], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[214], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[215], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[216], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[217], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[218], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[219], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[220], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[221], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[222], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[223], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[224], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[225], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[226], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[227], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[228], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[229], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[230], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[231], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[232], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[233], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[234], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[235], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[236], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[237], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[238], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[239], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[240], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[241], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[242], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[243], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[244], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[245], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[246], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[247], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[248], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[249], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[250], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[251], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[252], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[253], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[254], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[INFO  0] (hvisor::arch::loongarch64::zone:567) [[interrupt virtualization]] extioi[255], node_selection=0x0, irq_target=0x1, changed irq routing to cpu 3, value=0x8
+[    0.000000] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[INFO  0] (hvisor::arch::loongarch64::trap:1355) cpucfg emulation, target cpucfg index is 0x2
+[INFO  0] (hvisor::arch::loongarch64::trap:1355) cpucfg emulation, target cpucfg index is 0x4
+[INFO  0] (hvisor::arch::loongarch64::trap:1355) cpucfg emulation, target cpucfg index is 0x5
+[    0.000000] Constant clock event device register
+[    0.000000] clocksource: Constant: mask: 0xffffffffffffffff max_cycles: 0x171024e7e0, max_idle_ns: 440795205315 ns
+[    0.000000] sched_clock: 64 bits at 100MHz, resolution 10ns, wraps every 4398046511100ns
+[    0.008039] Constant clock source device register
+[INFO  0] (hvisor::arch::loongarch64::trap:1392) csrrd emulation for CSR 0x380
+[INFO  0] (hvisor::arch::loongarch64::trap:1392) csrrd emulation for CSR 0x300
+[    0.033354] Console: colour dummy device 80x25
+[    0.037886] printk: legacy console [tty0] enabled
+[    0.042558] printk: legacy bootconsole [ns16550a0] disabled
+[INFO  0] (hvisor::arch::loongarch64::trap:1355) cpucfg emulation, target cpucfg index is 0x6
+[INFO  0] (hvisor::arch::loongarch64::trap:1398) csrwr emulation for CSR 0x200
+[INFO  0] (hvisor::arch::loongarch64::trap:1398) csrwr emulation for CSR 0x201
+[INFO  0] (hvisor::arch::loongarch64::trap:1398) csrwr emulation for CSR 0x202
+[INFO  0] (hvisor::arch::loongarch64::trap:1398) csrwr emulation for CSR 0x203
+[INFO  0] (hvisor::arch::loongarch64::trap:1398) csrwr emulation for CSR 0x204
+[INFO  0] (hvisor::arch::loongarch64::trap:1398) csrwr emulation for CSR 0x205
+[INFO  0] (hvisor::arch::loongarch64::trap:1398) csrwr emulation for CSR 0x206
+[INFO  0] (hvisor::arch::loongarch64::trap:1398) csrwr emulation for CSR 0x207
+[INFO  0] (hvisor::arch::loongarch64::trap:1392) csrrd emulation for CSR 0x380
+[INFO  0] (hvisor::arch::loongarch64::trap:1392) csrrd emulation for CSR 0x300
+
+

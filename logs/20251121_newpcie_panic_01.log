@@ -1,0 +1,138 @@
+FSOpen: Open '\EFI\BOOT\BOOTLOONGARCH64.EFI' Success
+[Bds] Expand PciRoot(0x0)/Pci(0x4,0x1)/USB(0x2,0x0) -> PciRoot(0x0)/Pci(0x4,0x1)/USB(0x2,0x0)/HD(1,MBR,0x00000000,0x800,0x73777C0)/\EFI\BOOT\BOOTLOONGARCH64.EFI
+InstallProtocolInterface: 5B1B31A1-9562-11D2-8E3F-00A0C969723B FA985440
+Loading driver at 0x000ED00D000 EntryPoint=0x000ED00D150 
+InstallProtocolInterface: BC62157E-3E33-4FEC-9920-2D3B36D750DF FBF61318
+ProtectUefiImageCommon - 0xFA985440
+  - 0x00000000ED00D000 - 0x0000000005F71000
+
+[INFO] arch_init done
+                     XhcClearBiosOwnership: called to clear BIOS ownership
+PROGRESS CODE: V02010004 I0
+DisableFloatExitBootServicesEventNotify
+SetUefiImageMemoryAttributes - 0x00000000FDD60000 - 0x0000000000007000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDD50000 - 0x0000000000006000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDD30000 - 0x0000000000009000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDC70000 - 0x00000000000B5000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDC60000 - 0x0000000000006000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDC50000 - 0x0000000000007000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDC40000 - 0x0000000000006000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDC30000 - 0x0000000000005000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDC20000 - 0x0000000000005000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDC10000 - 0x0000000000006000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDC00000 - 0x0000000000006000 (0x0000000000000000)
+SetUefiImageMemoryAttributes - 0x00000000FDBF0000 - 0x0000000000007000 (0x0000000000000000)
+[INFO] exit_boot_services done
+                              [INFO] ok, ready to jump to hvisor entry...
+                                                                         Hello, start HVISOR at 0x90000001f0000000!
+Heap allocator initialization finished: 0x90000001f0128068..0x90000001f0228068
+heap_test passed!
+Booting CPU 0: 0x90000001f0229000 arch:0x90000001f0229020, DTB: 0xfe160018
+Hello, start HVISOR at 0x90000001f0000000!
+Hello, start HVISOR at 0x90000001f0000000!
+Booting CPU 1: 0x90000001f02a9000 arch:0x90000001f02a9020, DTB: 0x9000000000000000
+Hello, start HVISOR at 0x90000001f0000000!
+Booting CPU 2: 0x90000001f0329000 arch:0x90000001f0329020, DTB: 0x9000000000000000
+Booting CPU 3: 0x90000001f03a9000 arch:0x90000001f03a9020, DTB: 0x9000000000000000
+Primary CPU 0 has entered.
+Secondary CPU 1 has entered.
+[INFO  0] (hvisor:115) Logging is enabled.
+Secondary CPU 2 has entered.
+Secondary CPU 3 has entered.
+[INFO  0] (hvisor:116) __core_end = 0x90000001f0229000
+[INFO  0] (hvisor:117) mem_pool_start = 0x90000001f0429000
+[INFO  0] (hvisor:118) hv_end = 0x90000001f4429000
+[INFO  0] (hvisor:121) Hypervisor initialization in progress...
+[INFO  0] (hvisor:122) build_mode: debug, log_level: info, arch: loongarch64, stats: off
+[INFO  0] (hvisor::memory::frame:285) Frame allocator initialization finished: 0x90000001f0429000..0x90000001f4429000
+[INFO  0] (hvisor::memory::frame:305) frame_allocator_test passed!
+[INFO  0] (hvisor::arch::loongarch64::s2pt:199) Dynamical detection of stage-2 paging mode is not supported yet.
+[INFO  0] (hvisor::device::irqchip::ls7a2000:40) loongarch64: irqchip: primary_init_early: checking iochip configs
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:576) loongarch64: print_chip_info: chip config version: 0x14
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:580) loongarch64: print_chip_info: chip feature extioi support: true
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:584) loongarch64: print_chip_info: manufacturer name: Loongson
+[INFO  0] (hvisor::device::irqchip::ls7a2000::chip:588) loongarch64: print_chip_info: chip name: 3A6000-H
+[INFO  0] (hvisor::device::irqchip::ls7a2000:45) loongarch64: irqchip: testing percore IPI feature
+[INFO  0] (hvisor::device::irqchip::ls7a2000:47) loongarch64: irqchip: percore IPI feature: true
+[WARN  0] (hvisor::pci::pci_config:47) begin [
+    HvPciConfig {
+        ecam_base: 1090921693184,
+        ecam_size: 536870912,
+        io_base: 406880256,
+        io_size: 32768,
+        pci_io_base: 32768,
+        mem32_base: 0,
+        mem32_size: 0,
+        pci_mem32_base: 0,
+        mem64_base: 1610612736,
+        mem64_size: 536870912,
+        pci_mem64_base: 1610612736,
+        bus_range_begin: 0,
+        bus_range_end: 31,
+    },
+]
+[INFO  0] (hvisor::pci::pci_config:117) begin enumerate PciIterator {
+    allocator: Some(
+        BaseAllocator {
+            mem32: 0..0,
+            mem32_used: 0,
+            mem64: 1610612736..2147483648,
+            mem64_used: 1610612736,
+        },
+    ),
+    stack: [
+        Bridge {
+            bus: 0,
+            device: 0,
+            subordinate_bus: 0,
+            secondary_bus: 0,
+            primary_bus: 0,
+            mmio: PciConfigMmio {
+                base: 0,
+                length: 0,
+            },
+            has_secondary_link: false,
+        },
+    ],
+    segment: 1090921693184,
+    bus_range: 0..31,
+    function: 0,
+    is_mulitple_function: false,
+    is_finish: false,
+    accessor: LoongArchConfigAccessor {
+        cfg0: 1090921693184,
+        cfg1: 1091190128640,
+        root_bus: 0,
+    },
+}
+[INFO  0] (hvisor::pci::pci_struct:803) pci dev next
+[INFO  0] (hvisor::pci::pci_struct:559) get node fe00000000 0000:00:00.0
+[WARN  0] (hvisor::pci::pci_struct:565) vender_id 0x1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 0
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 1
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 2
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 3
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 4
+[WARN  0] (hvisor::pci::pci_access:562) parse bar slot 5
+[INFO  0] (hvisor::pci::pci_struct:651) BARs [
+   slot 0 [mem 0x0-0x10]
+   slot 1 [mem 0x0-0x10]
+   slot 2 [mem 0x0-0x10]
+   slot 3 [mem 0x0-0x10]   IO @ 0x1
+
+   slot 5 [mem 0x0-0x10]
+]
+[ERROR 0] (hvisor::panic:24) panic occurred: PanicInfo {
+    payload: Any { .. },
+    message: Some(
+        called `Option::unwrap()` on a `None` value,
+    ),
+    location: Location {
+        file: "src/pci/pci_struct.rs",
+        line: 663,
+        col: 83,
+    },
+    can_unwind: true,
+    force_no_backtrace: false,
+}
+

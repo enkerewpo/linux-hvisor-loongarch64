@@ -10,11 +10,11 @@
 
 // if you changed this, remember to change the aliases
 &uart1 {
-	status = "okay";
+	// status = "okay";
 };
 
 &uart0 {
-	// status = "okay";
+	status = "okay";
 };
 
 / {
@@ -22,7 +22,7 @@
 	model = "Loongson3 hvisor root zone board";
 	
 	aliases {
-		serial = &uart1;
+		serial = &uart0;
 	};
 	
 	chosen {
