@@ -246,18 +246,21 @@ build_kernel() {
     local type=$1
     local src_dir=$2
     local args=$3
-    
+
     if [ ! -f "$FLAG" ]; then
         echo -e "${RED}Error:${NC} Please run defconfig first"
         exit 1
     fi
-    
+
     if [ "$type" = "root" ]; then
         echo -e "${GREEN}Building kernel for $type with chosen verion $CHOSEN_ROOT${NC}"
     else
         echo -e "${GREEN}Building kernel for $type with chosen verion $CHOSEN_NONROOT${NC}"
     fi
     echo ""
+
+    # Root/nonroot kernel: no need to clean — Kbuild tracks defconfig/DTS
+    # changes automatically and does incremental builds correctly.
     make $args -j$NUM_JOBS
     echo -e "${GREEN}Running readelf${NC}"
     $GNU_READELF -a "$src_dir/vmlinux" > "$src_dir/vmlinux.readelf.txt"
@@ -292,8 +295,19 @@ setup_nonroot_rootfs() {
     sudo rm -rf tool *.sh
     sudo cp "$ROOTFS_DIR/nonroot_profile" etc/profile
     sudo cp "$ROOTFS_DIR/nonroot_inittab" etc/inittab
-    # $GNU_GCC "$ROOTFS_DIR/my_init/init.c" -o "$ROOTFS_DIR/my_init/init" -static
-    # sudo cp "$ROOTFS_DIR/my_init/init" bin/wsh
+    # Add pivot.sh for nonroot — allows pivot_root to virtio-blk persistent rootfs
+    # Search in buildroot overlay, hvisor-la64-linux rootfs, or current dir
+    for pivot_src in \
+        "$WORKDIR/../buildroot-loongarch64/board/loongson/ls3a5000/rootfs_ramdisk_overlay/pivot.sh" \
+        "$ROOTFS_DIR/pivot.sh" \
+        "$WORKDIR/pivot.sh"; do
+        if [ -f "$pivot_src" ]; then
+            sudo cp "$pivot_src" pivot.sh
+            sudo chmod +x pivot.sh
+            echo -e "${GREEN}Added pivot.sh from $pivot_src${NC}"
+            break
+        fi
+    done
     sudo rm -f etc/hostname
     sudo echo "nonroot-dedsec" | sudo tee etc/hostname
     sudo find . | cpio -o -H newc | gzip -9 >"$ROOTFS_DIR/nonroot_fs.cpio.gz"
@@ -349,11 +363,12 @@ build_kernel_with_entry() {
     # Update CONFIG_BUILTIN_DTB_NAME in .config
     sed -i "s/^CONFIG_BUILTIN_DTB_NAME=.*/CONFIG_BUILTIN_DTB_NAME=\"$dts_file\"/" "$config_path"
     
-    # Incremental build optimization: only clean if load-y or dtb changed
+    # Incremental build: only clean if load-y changed (linker address).
+    # Kbuild handles defconfig/DTS changes automatically — no need to clean for those.
     local cache_dir="$WORKDIR/.build_cache"
     mkdir -p "$cache_dir"
     local cache_file="$cache_dir/${type}-${zone_name}.cache"
-    local current_sig="load-y=${vmlinux_entry}|dtb=${dts_file}"
+    local current_sig="load-y=${vmlinux_entry}"
     local need_clean=0
 
     if [ -f "$cache_file" ]; then

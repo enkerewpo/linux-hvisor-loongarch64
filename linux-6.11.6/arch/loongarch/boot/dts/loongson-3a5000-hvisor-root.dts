@@ -29,13 +29,14 @@
 	chosen {
 		stdout-path = "serial:115200n8";
 
-		// initramfs
-		// bootargs = "earlycon console=ttyS0,115200n8 initramfs_async=false rootwait rw debug";
+		// initramfs (no root=)
 		// bootargs = "earlycon console=ttyS0,115200n8 console=tty0 rootwait rw debug";
 
-		// SSD root, on SSD partition 4 with ext4 format
-		// bootargs = "earlycon console=ttyS0,115200n8 root=/dev/nvme0n1p4 rootwait rw debug";
-		bootargs = "earlycon console=ttyS0,115200n8 console=tty0 root=/dev/sda8 rootwait rw debug";
+		// NVMe SSD root
+		bootargs = "earlycon console=ttyS0,115200n8 console=tty0 root=/dev/nvme0n1p2 rootfstype=ext4 rootwait rw";
+
+		// SATA root (backup)
+		// bootargs = "earlycon console=ttyS0,115200n8 console=tty0 root=/dev/sda8 rootwait rw debug";
 	};
 	
 	memory@200000 {
