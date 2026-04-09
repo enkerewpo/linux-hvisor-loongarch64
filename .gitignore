@@ -11,3 +11,4 @@ nvme_ext4.img
 chosen
 build
 target
+.build_cache

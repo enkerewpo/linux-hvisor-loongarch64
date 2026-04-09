@@ -28,6 +28,64 @@ CROSS="┼"
 ARCH=loongarch
 CROSS_COMPILE=loongarch64-unknown-linux-gnu-
 
+# Generate build report with git info for traceability
+generate_build_report() {
+    local report_file="$WORKDIR/target/BUILD_REPORT.txt"
+    local repo_dir="$WORKDIR"
+    mkdir -p "$WORKDIR/target"
+
+    local branch=$(git -C "$repo_dir" rev-parse --abbrev-ref HEAD 2>/dev/null || echo "DETACHED")
+    local commit=$(git -C "$repo_dir" rev-parse HEAD 2>/dev/null || echo "unknown")
+    local commit_short=$(git -C "$repo_dir" rev-parse --short HEAD 2>/dev/null || echo "unknown")
+    local commit_date=$(git -C "$repo_dir" log -1 --format="%ci" 2>/dev/null || echo "unknown")
+    local commit_msg=$(git -C "$repo_dir" log -1 --format="%s" 2>/dev/null || echo "unknown")
+    local dirty=""
+    if ! git -C "$repo_dir" diff --quiet 2>/dev/null || ! git -C "$repo_dir" diff --cached --quiet 2>/dev/null; then
+        dirty=" [DIRTY]"
+    fi
+
+    # Also get linux source info
+    get_linux_src_info() {
+        local src_dir="$1"
+        local label="$2"
+        if [ -d "$src_dir/.git" ]; then
+            echo "  $label:"
+            echo "    Branch:  $(git -C "$src_dir" rev-parse --abbrev-ref HEAD 2>/dev/null || echo "DETACHED")"
+            echo "    Commit:  $(git -C "$src_dir" rev-parse --short HEAD 2>/dev/null) ($(git -C "$src_dir" rev-parse HEAD 2>/dev/null))"
+            echo "    Date:    $(git -C "$src_dir" log -1 --format="%ci" 2>/dev/null)"
+            echo "    Message: $(git -C "$src_dir" log -1 --format="%s" 2>/dev/null)"
+            local src_dirty=""
+            if ! git -C "$src_dir" diff --quiet 2>/dev/null || ! git -C "$src_dir" diff --cached --quiet 2>/dev/null; then
+                src_dirty=" [DIRTY]"
+            fi
+            echo "    Status:  ${src_dirty:-clean}"
+        fi
+    }
+
+    {
+        echo "=== hvisor-la64-linux BUILD REPORT ==="
+        echo ""
+        echo "Build Time:    $(date '+%Y-%m-%d %H:%M:%S %Z')"
+        echo "Root Chosen:   $CHOSEN_ROOT"
+        echo "Nonroot Chosen: $CHOSEN_NONROOT"
+        echo ""
+        echo "--- hvisor-la64-linux repo ---"
+        echo "  Branch:  $branch"
+        echo "  Commit:  $commit_short ($commit)"
+        echo "  Date:    $commit_date"
+        echo "  Message: $commit_msg"
+        echo "  Status:  ${dirty:-clean}"
+        echo ""
+        echo "--- Linux kernel sources ---"
+        get_linux_src_info "$LINUX_SRC_DIR_ROOT" "linux-$CHOSEN_ROOT (root)"
+        echo ""
+        get_linux_src_info "$LINUX_SRC_DIR_NONROOT" "linux-$CHOSEN_NONROOT (nonroot)"
+        echo ""
+        echo "=== END ==="
+    } > "$report_file"
+    echo -e "${GREEN}Build report:${NC} $report_file"
+}
+
 # Create target directory structure
 setup_target_dirs() {
     mkdir -p target/root
@@ -212,6 +270,7 @@ build_kernel() {
     target_dir="$src_dir/../target/$type"
     # install modules into target folder
     make $args modules_install INSTALL_MOD_PATH="$target_dir/kernel_modules"
+    generate_build_report
     echo -e "${GREEN}Done${NC}"
 }
 
@@ -290,9 +349,35 @@ build_kernel_with_entry() {
     # Update CONFIG_BUILTIN_DTB_NAME in .config
     sed -i "s/^CONFIG_BUILTIN_DTB_NAME=.*/CONFIG_BUILTIN_DTB_NAME=\"$dts_file\"/" "$config_path"
     
-    # since we manually change the load-y and .config, we need clean everything before build
-    make $args clean
+    # Incremental build optimization: only clean if load-y or dtb changed
+    local cache_dir="$WORKDIR/.build_cache"
+    mkdir -p "$cache_dir"
+    local cache_file="$cache_dir/${type}-${zone_name}.cache"
+    local current_sig="load-y=${vmlinux_entry}|dtb=${dts_file}"
+    local need_clean=0
+
+    if [ -f "$cache_file" ]; then
+        local cached_sig=$(cat "$cache_file")
+        if [ "$cached_sig" != "$current_sig" ]; then
+            echo -e "${YELLOW}Build params changed for zone '$zone_name' (clean required)${NC}"
+            echo -e "${DIM}  old: $cached_sig${NC}"
+            echo -e "${DIM}  new: $current_sig${NC}"
+            need_clean=1
+        else
+            echo -e "${GREEN}Build params unchanged for zone '$zone_name' — incremental build${NC}"
+        fi
+    else
+        echo -e "${YELLOW}No build cache for zone '$zone_name' — full build${NC}"
+        need_clean=1
+    fi
+
+    if [ "$need_clean" -eq 1 ]; then
+        make $args clean
+    fi
     make $args -j$NUM_JOBS
+
+    # Save build signature on success
+    echo "$current_sig" > "$cache_file"
     
     # Restore original Makefile
     mv "${makefile_path}.bak" "$makefile_path"
@@ -317,6 +402,7 @@ build_kernel_with_entry() {
     # install modules into target folder
     target_dir="$src_dir/../target/${type}-${zone_name}"
     make $args modules_install INSTALL_MOD_PATH="$target_dir/kernel_modules"
+    generate_build_report
     echo -e "${GREEN}Done${NC}"
 }
 
