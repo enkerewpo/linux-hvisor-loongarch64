@@ -9,11 +9,11 @@
 #include "loongson-3a5000.dtsi"
 
 &uart0 {
-	status = "okay";
+	status = "disabled";
 };
 
 &uart1 {
-	// status = "okay";
+	status = "disabled";
 };
 
 
@@ -21,26 +21,14 @@
 	compatible = "loongson,ls3a5000-root", "loongson,ls3a5000";
 	model = "Loongson3 hvisor nonroot zone board";
 	
-	aliases {
-		serial = &uart0;
-		// serial = &uart1;
-	};
-	
 	chosen {
-		// initramfs
-		// bootargs = "earlycon console=ttyS0,115200n8 initramfs_async=false rootwait debug loglevel=8 earlyprintk";
-		
-		// SSD root, a {zone_name}-disk.ext4 virtio blk file on SSD root_hvisor partition
-		bootargs = "earlycon console=ttyS0,115200n8 rootwait root=/dev/vda rw";
+		bootargs = "console=hvc0 initramfs_async=false rootwait loglevel=8";
 	};
 	
 	memory@200000 {
 		device_type = "memory";
 		reg = <0 0xc0200000 0 0x0ee00000
 		0 0xd0000000 0 0x10000000
-		0x1 0x40000000 0 0x800000
-		0x1 0x40800000 0 0x800000
-		0x1 0x41000000 0 0x800000
 		>;
 	};
 	

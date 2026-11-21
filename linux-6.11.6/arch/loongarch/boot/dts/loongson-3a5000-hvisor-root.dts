@@ -10,11 +10,11 @@
 
 // if you changed this, remember to change the aliases
 &uart1 {
-	status = "okay";
+	status = "disabled";
 };
 
 &uart0 {
-	// status = "okay";
+	status = "okay";
 };
 
 / {
@@ -22,18 +22,17 @@
 	model = "Loongson3 hvisor root zone board";
 	
 	aliases {
-		// serial = &uart0;
-		serial = &uart1;
+		serial = &uart0;
 	};
 	
 	chosen {
 		stdout-path = "serial:115200n8";
 
-		// initramfs (no root=)
-		// bootargs = "earlycon console=ttyS0,115200n8 console=tty0 rootwait rw debug";
+		// Built-in initramfs
+		bootargs = "earlycon console=ttyS0,115200n8 initramfs_async=false rootwait rw debug loglevel=8 nohlt slub_debug=FZPU,kmalloc-8 slab_nomerge panic_on_warn=1";
 
 		// NVMe SSD root
-		bootargs = "earlycon console=ttyS0,115200n8 console=tty0 root=/dev/nvme0n1p2 rootfstype=ext4 rootwait rw";
+		// bootargs = "earlycon console=ttyS0,115200n8 console=tty0 root=/dev/nvme0n1p2 rootfstype=ext4 rootwait rw";
 
 		// SATA root (backup)
 		// bootargs = "earlycon console=ttyS0,115200n8 console=tty0 root=/dev/sda8 rootwait rw debug";

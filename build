@@ -408,6 +408,12 @@ build_kernel_with_entry() {
     # Copy files to zone-specific target directory
     echo -e "${GREEN}Copying files to target/${type}-${zone_name}${NC}"
     cp "$src_dir/arch/$ARCH/boot/vmlinux.bin" "target/${type}-${zone_name}/vmlinux-${zone_name}.bin"
+    local dtb_path="$src_dir/arch/$ARCH/boot/dts/${dts_file}.dtb"
+    if [ ! -f "$dtb_path" ]; then
+        echo -e "${RED}Error:${NC} Built DTB not found: $dtb_path"
+        exit 1
+    fi
+    cp "$dtb_path" "target/${type}-${zone_name}/${zone_name}.dtb"
     $GNU_READELF -a "$src_dir/vmlinux" > "target/${type}-${zone_name}/vmlinux.readelf.txt"
     $GNU_OBJDUMP -S -d "$src_dir/vmlinux" > "target/${type}-${zone_name}/vmlinux.asm"
     echo "$(date "+%Y-%m-%d_%H-%M-%S")" > "target/${type}-${zone_name}/build_timestamp.txt"
